@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+
+
+
+
+
+
+
+
+
+
+
+
+.FAQ {
+  padding: 3rem 1rem;
+  text-align: center;
+  width: 100vw;
+
+  .SectionTitle {
+    font-size: 96px;
+    font-family: Etherel;
+    color: white;
+    margin-bottom: 1.5rem;
+  }
+
+  .FAQList {
+    max-width: 90%;
+    min-width: 80%;
+    margin: 0 auto;
+
+    .FAQItem {
+      margin: auto 0 auto;
+      width: 100%;
+      //   background-color: #222;
+      border: 1px solid #e5348c;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+
+      .FAQQuestion {
+        background-color: red;
+        width: 100%;
+        padding: 1rem;
+        background: none;
+        border: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 32px;
+        cursor: pointer;
+        height: 100px;
+        font-family: "Lato", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        :focus {
+          outline: none;
+          border: none;
+        }
+        .Arrow {
+          transition: transform 0.3s ease;
+        }
+
+        &.open {
+          transform: rotate(180deg);
+        }
+      }
+
+      .FAQAnswer {
+        // background-color: #333;
+        color: #ddd;
+        width: 100%;
+        font-size: 1rem;
+        overflow: hidden;
+        padding: 0; // GSAP will handle padding animation
+        height: 0px; // GSAP will animate this property
+        p{
+          padding: 0px;
+          margin: 0px;
+          width: 100%;
+          text-align: left;
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .FAQ {
+    padding: 2rem 1rem;
+  }
+}

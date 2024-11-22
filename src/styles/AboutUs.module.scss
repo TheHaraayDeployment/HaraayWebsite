@@ -1,0 +1,435 @@
+//  --------------------------RESPONSIVE ENV--------------------------------------
+$breakpoint-small: 480px;
+$breakpoint-medium: 840px;
+$breakpoint-large: 1024px;
+$breakpoint-extra-large: 1200px;
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == small {
+    @media (max-width: $breakpoint-small) { @content; }
+  } @else if $breakpoint == medium {
+    @media (max-width: $breakpoint-medium) { @content; }
+  } @else if $breakpoint == large {
+    @media (max-width: $breakpoint-large) { @content; }
+  }
+}
+//   @include respond-to(small) {
+//   code here 
+// }
+
+//   @include respond-to(medium) {
+// code here
+// }
+
+
+// ----------------------------------------------------------------------------------
+
+
+.AboutUspage{
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+  
+  h1{
+    font-size: 96px;
+    color: white;
+    font-family: Etherel;
+    font-weight: 600;
+
+    @include respond-to(small) {
+      font-size: 48px;
+    }
+}
+
+h2{
+  font-size: 48px;
+  color: white;
+  font-family: Stara;
+  font-weight: 400;
+
+  @include respond-to(small) {
+    font-size: 24px;
+  }
+}
+
+p{
+  font-size: 24px;
+  text-align: justify;
+  color: white;
+ }
+}
+
+//Hero Section
+.HeroSection{
+width: 100vw;
+height: 100vh;
+
+@include respond-to(small) {
+ padding: 0; 
+}
+
+.heroimg{
+width: 100%;
+  object-fit: cover; 
+  
+  @include respond-to(small) {
+    height: 100%;
+    width: 100%;
+object-fit: cover;
+
+   }
+   @include respond-to(medium) {
+    height: 100%;
+    width: 100%;
+object-fit: cover;
+   }
+}
+
+.herotext{
+  position: absolute;
+  font-size: 96px;
+
+  @include respond-to(small) {
+   
+    font-size: 48px;
+  }
+}
+}
+
+
+//About Section
+
+.AboutUsSection{
+  margin-top: 50px;
+  width: 100%;
+  position: relative;
+  height: 50vh;
+
+
+  padding: 2%;
+
+
+  @include respond-to(small) {
+   margin-top: 0px;
+  //  padding: 0; 
+  }
+  .AboutSection{
+display: flex;
+flex: 1pf 2pf;
+flex-direction: row;
+width: 100%;
+height: 100%;
+
+
+  div{
+    padding: 2%;
+ 
+    width: 50%;
+    height: auto;
+    margin: auto;
+    @include respond-to(small) {
+     width: 100%; 
+    }
+    
+    h1{
+      margin-bottom: 20px;
+    }
+   p{
+    display: flex;
+    
+    font-size: 24px;
+    text-align: justify;
+ 
+    height: 100%;
+    @include respond-to(small) {
+     
+      width: 90vw;
+      padding: 10px;
+    }
+ 
+    
+   }
+   a{
+    font-size: 32px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+   align-items: flex-start;
+   text-align: left !important;
+   
+    &:hover{
+      color: #E5348C;
+    }
+   }
+.AboutSectionImg{
+  @include respond-to(small) {
+   display: none; 
+  }
+}
+   img{
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    @include respond-to(small) {
+      display: none; 
+     }
+  }
+  }
+}}
+
+
+
+//process section
+.ProcessSection{
+width: 100%;
+  // display: inline-flex;
+  // flex-direction: row;
+
+
+  @include respond-to(small) {
+  //  background-color: red; 
+  
+    width: 100%
+}
+}
+
+.processmaindiv{
+  width: 100%;
+  display: inline-flex;
+  flex-direction: row;
+  @include respond-to(small) {
+  flex-direction: column;  
+width: 100%;
+// background-color: #4b4b4b;
+}
+
+  .processtxt{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+
+@include respond-to(small) {
+ width: 100%; 
+margin-left: 0;
+}
+    h2{
+      font-size: 36px;
+margin-top: 50px;      
+    }
+    a{
+      font-size: 18px;
+      width: 200px;
+      font-weight: 600;
+      color: white;
+      text-decoration: none;
+      text-align: center;
+      background-color: #E5348C;
+border-radius: 20px;
+padding: 5px 10px;
+margin-left: 40%;
+
+@include respond-to(small) {
+ display: none; 
+}
+    }
+  }
+ 
+}
+
+.ProcessHeading{
+  width:100%;
+  display: block;
+}
+
+.processContainer {
+
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  // background-color: red;
+  width: 40%;
+  margin: 20px;
+  // margin: auto;
+  // margin-right: 5%;
+ 
+@include respond-to(small) {
+ width: 90%; 
+}  
+}
+
+.processStep {
+// width: 700px;
+// background-color: #4e3e3e;
+width: 100%;
+  display: flex;
+  // align-items: center;
+  position: relative;
+  padding: 20px 0;
+  // opacity: 0;
+  transform: translateX(-20px);
+  animation: fadeInSlide 0.5s ease forwards;
+  // margin: auto;
+  &:nth-child(1) {
+    animation-delay: 0.2s;
+  }
+  &:nth-child(2) {
+    animation-delay: 0.4s;
+  }
+  &:nth-child(3) {
+    animation-delay: 0.6s;
+  }
+  &:nth-child(4) {
+    animation-delay: 0.8s;
+  }
+
+  
+}
+
+.circle {
+  width: 30px !important;
+  min-width: 40px;
+  height: 40px !important;
+  border-radius: 50%;
+  background-color: #4b4b4b;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 15px;
+    
+
+  
+}
+
+.content {
+  // background-color: red;
+  h3 {
+    font-size: 1.2em;
+    margin: 0;
+    color: #ffffff;
+ 
+    text-align: left;
+  }
+  
+  p {
+    margin: 5px 0 0;
+    color: #a9a9a9;
+    font-size: 0.95em;
+  
+  }
+}
+
+@keyframes fadeInSlide {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+
+.OurTeams {
+  padding: 40px 20px;
+  // background-color: #1b1b1b;
+  color: #fff;
+  text-align: center;
+
+  @include respond-to(small) {
+   min-height: 50vh; 
+   margin-bottom: -50px;
+  }
+  h1 {
+    font-size: 96px;
+    margin-bottom: 20px;
+
+    @include respond-to(small) {
+     font-size: 48px; 
+    }
+  }
+
+  .teamdiv {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding-bottom: 10px;
+
+    @include respond-to(small) {
+     width: 90vw;    
+     
+  
+    }
+    .member {
+      flex: 0 0 25%; // 4 items per row on desktop
+      max-width: 300px;
+      padding: 0px;
+      // background: #333;
+      margin-right: 16px;
+      border-radius: 8px;
+      text-align: center;
+      scroll-snap-align: start;
+
+      @include respond-to(small) {
+       max-width: 200px; 
+       }
+      &:last-child {
+        margin-right: 0;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        // border-radius: 50%;
+        margin-bottom: 10px;
+      }
+
+      h3 {
+        font-size: 32px;
+        font-weight: bold;
+        margin-top: 10px;
+        color: white;
+        text-align: left;
+      }
+
+      h4 {
+        font-size: 20px;
+        text-align: left;
+        color: #aaa;
+      }
+
+      p {
+        font-size: 24px;
+        color: #bbb;
+        margin-top: 8px;
+     text-align: justify;
+      }
+    }
+  }
+
+  // Responsive adjustments
+  @media (max-width: 1200px) {
+    .teamdiv .member {
+      flex: 0 0 33.33%; // 3 items per row on large tablets
+    }
+  }
+
+  @media (max-width: 768px) {
+    .teamdiv .member {
+      flex: 0 0 50%; // 2 items per row on small tablets
+    }
+  }
+
+  @media (max-width: 480px) {
+    .teamdiv .member {
+      flex: 0 0 100%; // 1 item per row on mobile
+    }
+  }
+}

@@ -1,0 +1,598 @@
+//  --------------------------RESPONSIVE ENV--------------------------------------
+$breakpoint-small: 480px;
+$breakpoint-medium: 840px;
+$breakpoint-large: 1024px;
+$breakpoint-extra-large: 1200px;
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == small {
+    @media (max-width: $breakpoint-small) { @content; }
+  } @else if $breakpoint == medium {
+    @media (max-width: $breakpoint-medium) { @content; }
+  } @else if $breakpoint == large {
+    @media (max-width: $breakpoint-large) { @content; }
+  }
+}
+//   @include respond-to(small) {
+//   padding: 8px 16px;
+// }
+
+//   @include respond-to(medium) {
+//   padding: 8px 16px;
+// }
+// ----------------------------------------------------------------
+
+
+.contactpage {
+  width: 100vw;
+  height: auto;
+  background-color: #1c1d21;
+  // padding: 10px;
+  @include respond-to(medium) {
+  width: 100vw!important;
+  padding: 0%!important;
+  }
+}
+
+.Herosec {
+  .Herodiv {
+ height: auto;
+    padding: 50px;
+    // gap: 50px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.4fr 2fr;
+
+    @include respond-to(medium) {
+      padding: 20px;
+    gap: 0px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.1fr 2fr;
+
+    @include respond-to(small) {
+     padding: 0; 
+    }
+      }
+    .videodiv {
+
+      video {
+       
+        width: 100%;
+       
+        border-radius: 30px;
+        object-fit: cover;
+        // height: 100%;
+        @include respond-to(medium) {
+        height: 100%;
+          margin: auto 0 ; 
+        }
+      }
+    }
+    .contactformsec {
+    @include respond-to(small) {
+   margin-top: 0px;
+  //  width: auto;
+  //  padding: 0;
+  //  margin: 0;
+    
+  }
+    
+      .contactform {
+        background-color: #aef4f4;
+        width: 85%;
+        color: #2b2322;
+      
+        margin: auto;
+        border-radius: 50px;
+        border-bottom-left-radius: 60px;
+        border-bottom-right-radius: 60px;
+
+          @include respond-to(small) {
+         width: 100%;
+         border-radius: 0;   margin: 0;
+         padding: 0;
+        }
+
+        @include respond-to(medium) {
+         width: 95%; 
+         margin:0% 4%;
+
+        }
+        h1 {
+          color: #2b2322;
+          font-size: 40px;
+          font-family: Stara;
+          line-height: 70px;
+            @include respond-to(small) {
+           
+              font-size: 24px;
+          }
+        }
+        .form {
+          background-color: #1c1d21;
+          border: 1px solid #2b2322;
+          display: flex;
+          width: 100%;
+          padding-bottom: 50px;
+          border-bottom-left-radius: 50px;
+          border-bottom-right-radius: 50px;
+          box-shadow: 0px 0px 20px 0px rgba(231, 231, 231, 0.1);
+            @include respond-to(small) {
+              border-bottom-left-radius: 0px;
+              border-bottom-right-radius: 0px;
+              box-shadow: none;
+             
+          }
+          form {
+            width: 100%;
+            padding: 20px;
+            .forminputes {
+              width: 100%;
+              padding: 10px;
+              flex-direction: column; 
+              .labeldiv{
+                position: relative;
+                margin: 0px;
+                width: 100%;
+                label{
+             margin: 0px;
+             padding: 0px;
+                  text-align: left;
+                  span{
+                    color: red;
+                  }
+
+                }
+               }
+              .descbox{
+                width: 100%
+                ; height: 100px;
+                border-radius: 10px;
+                font-size: 20px;
+                color: white;
+                padding: 10px;
+              }
+              :first-child {
+                display: inline-flex;
+                font-size: 20px;
+                font-family: Stara;
+                color: #ffffff;
+               
+               
+                margin-bottom: 5px;
+                margin-left: 10px;
+                   }
+                  
+              input {
+                padding: 10px;
+                width: 100%;
+                height: 50px;
+                border-radius: 30px;
+                border: 2px #b0b0b0 solid;
+                // border-bottom: 2px solid #c2c2c2;
+                background-color: #1c1d21;
+                color: #ffffff;
+              
+                font-size: 20px;
+                padding-left: 2%;
+
+                
+                ::placeholder {
+                  color: #2f3031;
+                  margin-left: 20%;
+               
+                }
+              }
+              .enquiryinput{
+                display: flex;
+                font-size: 20px;
+                color: white;
+                input[type="radio"] {
+                  width: 20px; // Adjusted size for radio button
+                  height: 20px;
+                  margin:  10px ;
+                
+                  border: 4px solid #000000;
+                  accent-color: #F8EF6E;
+                  // Apply checked styles
+                
+                }
+                
+                h5{
+                  font-size: 20px;
+                  color: white;
+                  margin: auto 10px auto 10px;
+                }
+               
+              }
+            }
+          }
+          .submitbtn {
+            display: flex;
+            input{
+            background-color: #E5348C;
+            width: 330px;
+          height: 60px;
+        font-size: 20px;
+      color: white;    
+    margin-left: 5%;
+            font-size: 25px;
+            border-radius: 30px;
+            }
+  
+  }
+        }
+      }
+    }
+  }
+}
+
+
+// contact details
+
+.contactdetails{
+  width: 100%;
+  min-height: 50vh;
+  padding-left: 100px;
+
+  @include respond-to(small) {
+  width: 100vw !important;
+  padding: 5%;
+  height: auto;
+  }
+
+  @include respond-to(medium) {
+    width:98% !important;
+    padding: 5% 4% 5% 4% !important;
+    height: auto;
+  }
+  .contactdetailsdiv{
+    width: 100%;
+   padding: 0px !important;
+    display: flex;
+    justify-content: space-around;
+gap: 5%;
+
+@include respond-to(small) {
+  width: 100% !important;
+  display: inline-block;
+  }
+
+  @include respond-to(medium) {
+    width: 100% !important; 
+     display: inline-block;
+  }
+
+
+
+.leftdiv , .rightdiv{
+ justify-content: center
+ ;
+ text-align: left; 
+ height: 100%;align-items: flex-start;
+ width: 100%;
+
+ @include respond-to(medium) {
+  margin-top: 10vh;
+ }
+ div{
+  margin: 50px 0;
+
+  @include respond-to(small) {
+    margin: 20px 0px !important ;
+    width: 100%;
+    // overflow: hidden ;
+    }
+    @include respond-to(medium) {
+      margin: 20px 0px !important ;
+      width: 100%;
+    }
+ }
+}
+    h1{
+      color: white;
+      font-size: 96px;
+    
+      font-family: Etherel;
+      font-weight: 800;
+      
+      @include respond-to(small) {
+        // font-size: 36px !important;
+        font-size: 50px !important ;
+        margin: 0px !important ;
+        padding: 0px !important;
+        }
+      
+    }
+    div{
+      height: 50px;
+      color: white;
+      margin: 10px 0px 10px 0px;
+      
+     
+      @include respond-to(small) {
+      
+       margin: 70px 0px 0px !important;
+      }
+
+      @include respond-to(medium) {
+        margin: 20px 0px 0px !important;
+      }
+
+
+      p{
+        font-size: 24px;
+         
+        @include respond-to(small) {
+         font-size: 20px; 
+         margin: 10px 0px 10px 0px !important ;
+        }
+        @include respond-to(medium) {
+         font-size: 24px; 
+         margin: 10px 0px 0px 0px !important;
+        }
+        
+      }
+    }
+
+    h4{
+      font-size: 32px;
+      text-decoration: underline;
+      color: #F8EF6E;
+
+
+        @include respond-to(small) {
+          font-size: 28px !important;
+          margin:-10px 0px 100px !important; 
+          
+          color: #F8EF6E;
+      }
+
+      @include respond-to(medium) {
+       font-size: 32px; 
+       margin: -20px 0 0px 0px;
+       font-weight: 400;   color: #F8EF6E;
+      }
+    }
+    .phoneno{
+        @include respond-to(small) {
+      font-size: 28px;
+      padding-top: 50px;
+       font-weight: 400;   color: #F8EF6E;
+   
+      }
+      @include respond-to(medium) {
+        margin:30px 0px 0px !important; 
+        font-weight: 400;
+        color: #F8EF6E;
+      }
+    }
+  }
+}
+
+
+
+// partners 
+
+
+
+
+.partnerslogo {
+  display: inline-flex;
+  transform: rotate(-5deg);
+
+}
+.partnerstext {
+  margin-top: 50px;
+  display: flex;
+  gap: 100px;
+  transform: rotate(-5deg);
+}
+.partners {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+
+  @include respond-to(small) {
+    width: 100vw!important;
+    height: auto!important;
+    margin-top: 0px!important;
+
+    h1{
+      font-size: 50px !important ;
+
+    }
+  }
+  .partnrshead {
+    width: 50%;
+    position: absolute;
+    left: 0;
+    top: 10%;
+  @include respond-to(small) {
+    width: 100% !important ;
+    position: absolute;
+    left: 0;
+    top: 10%;
+}
+
+    h1 {
+      font-size: 96px;
+      margin: 40px;
+      margin-bottom: 0px;
+      font-weight: 800;
+      font-family: Etherel;
+      text-align: left;
+
+      @include respond-to(small) {
+       
+        margin-left:30px; 
+      }
+    }
+    p {
+      text-align: left;
+      font-size: 32px;
+      width: 40vw;
+      line-height: 36px;
+      margin-left: 40px;
+      color: white;
+
+        @include respond-to(small) {
+       font-size: 20px ;
+       width: 90vw;
+       padding: 3% 15% 0% 0% ;
+       text-align: left;
+       line-height: 30px;
+      }
+    }
+  }
+}
+.Wearesec {
+  background-color: #b8e7e7;
+  min-height: 20vh;
+
+  h1 {
+    font-size: 96px;
+    color: #e5348c;
+  }
+  h2 {
+    font-size: 48px;
+    font-weight: 400;
+  }
+  .Subherotxtbtn {
+    button {
+      margin: 20px;
+      border-radius: 20px;
+    }
+    :second-child button {
+      background-color: #e5348c;
+      color: white;
+    }
+  }
+}
+
+.imageslider2 {
+  margin-top: 50px;
+  width: 100vw; /* The visible area */
+  overflow: hidden; /* Hide the overflow */
+  transform: rotate(-5deg);
+  @include respond-to(small) {
+  width: 100vw;
+}
+  .imagetrack2 {
+    display: flex; /* Align images in a row */
+    width: calc(6 * 100vw); /* 6 images */
+    animation: slide2 120s linear infinite;
+    // transform: translateX(300vw);
+    gap: 50px; 
+      @include respond-to(small) {
+        gap: 0px; 
+    }
+    img {
+      width: 400px; /* Set each image width to 100vw */
+      flex-shrink: 0; /* Prevent images from shrinking */
+    }
+  }
+
+  @keyframes slide2 {
+    0% {
+      transform: translateX(-600vw); /* Start from the first image */
+    }
+    100% {
+      transform: translateX(0vw); /* Move one full image width to the left */
+    }
+  }
+}
+
+
+
+.partnercontent {
+  width: 100%;
+  margin-top: 130px;
+  @include respond-to(small) {
+   margin-top: 0; 
+  }
+}
+
+.imageslider {
+  margin-top: 150px;
+  width: 100vw; /* The visible area */
+  overflow: hidden; /* Hide the overflow */
+  transform: rotate(-5deg);
+
+
+
+  @include respond-to(small) {
+ margin-top: 0px; 
+}
+  .imagetrack {
+    display: flex; /* Align images in a row */
+    width: calc(6 * 100vw); /* 6 images */
+    animation: slide 30s linear infinite;
+
+    img {
+      width: 200px; /* Set each image width to 100vw */
+      flex-shrink: 0; /* Prevent images from shrinking */
+
+        @include respond-to(small) {
+       width: 100px; 
+      }
+    }
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translateX(0); /* Start from the first image */
+    }
+    100% {
+      transform: translateX(-100vw); /* Move one full image width to the left */
+    }
+  }
+}
+
+
+
+
+// Responsiveness 
+
+
+
+@media (max-width: 576px) { // Mobile devices
+  
+  // Hero Section
+  .Herosec {
+    .Herodiv {
+      display: block;
+      margin: 0;
+      padding: 5px;
+
+      .videodiv {
+        margin-bottom: 30px;
+
+        video {
+          width: 100%;
+          height: 50vh;
+          border-radius: 0;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  // Contact Form Section
+  .contactformsec {
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+
+    .contactform {
+      width: 100%;
+      margin: 20px auto;
+      border-radius: 0;
+
+      .headtxt {
+        font-size: 155px;
+      }
+    }
+  }
+}

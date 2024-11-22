@@ -1,0 +1,329 @@
+@import "../styles/variables.scss";
+$mobile: 600px;
+$tablet: 1024px;
+$desktop: 1200px;
+.creamforest-case-study {
+  width: 100vw;
+  overflow-x: hidden;
+
+  .creamforest-hero {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    z-index: -1;
+
+    @media (max-width: $mobile) {
+      height: auto;
+      margin-top: 50px;
+    } // Tablet
+
+    @media (max-width: $tablet) and (min-width: $mobile) {
+      height: auto;
+      margin-top: 50px;
+    }
+
+    &-background {
+      position: static;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      img {
+        width: 100vw;
+        height: 100%;
+        object-fit: cover;
+        @media (max-width: $mobile) {
+          object-fit: contain;
+          width: 150%;
+          // height: 100px;
+        } // Tablet
+
+        @media (max-width: $tablet) and (min-width: $mobile) {
+          object-fit: contain;
+          width: 100vw;
+        }
+      }
+    }
+
+    &-content {
+      padding: 10px;
+      background-color: transparent;
+      // filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+      position: absolute;
+      top: 15%;
+      left: 2%;
+      z-index: 1;
+      color: white;
+      text-align: center;
+      font-family: var(--font-stara);
+      // font-weight: var(--medium);
+      font-size: 20px;
+      backdrop-filter: blur(1px);
+      // filter: blur(8px);
+      line-height: 20px;
+      // -webkit-filter: blur(8px);
+
+      @media (max-width: $mobile) {
+        position: absolute;
+        top: 65%;
+        margin: 0px;
+        z-index: +10;
+
+        left: 10%;
+        // background-color: #333;
+      } // Tablet
+
+      @media (max-width: $tablet) and (min-width: $mobile) {
+        position: absolute;
+        top: 65%;
+        margin: 0px;
+        z-index: +10;
+
+        left: 10%;
+        // background-color: #333;
+      }
+
+      h1 {
+        font-size: 80px;
+        font-weight: 600;
+
+        @media (max-width: $mobile) {
+          font-size: 35px;
+          font-weight: 700;
+        } // Tablet
+
+        @media (max-width: $tablet) and (min-width: $mobile) {
+          font-size: 35px;
+          font-weight: 700;
+        }
+      }
+
+      p {
+        font-size: 1.1rem;
+        font-weight: lighter;
+        @media (max-width: $mobile) {
+          font-size: 18px;
+          font-weight: 600;
+          margin-top: -10px;
+        } // Tablet
+
+        @media (max-width: $tablet) and (min-width: $mobile) {
+          font-size: 18px;
+          font-weight: 600;
+        }
+      }
+
+      // Responsive adjustments
+    }
+  }
+
+  // hero ends other section start
+  .client-brief,
+  .overview {
+    padding: var(--spacing-md) 0;
+
+    h2 {
+      font-size: 2rem;
+      color: var(--secondary-color);
+      text-wrap: nowrap;
+    }
+
+    p {
+      font-size: 1rem;
+      color: var(--text-color);
+    }
+  }
+}
+
+.bakers-hero-image {
+  width: 100%;
+  //   height: 100%;
+  margin-top: 0px;
+}
+
+.bakerscase-container {
+  padding: 20px;
+  margin: 0 auto;
+  width: 100%;
+  background-color: white;
+}
+
+.creamforestcase-section {
+  margin-bottom: 50px;
+}
+
+.creamforestcase-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+  h2 {
+    text-wrap: nowrap;
+  }
+}
+
+.bakerscase-text h2 {
+  //   font-size: 2rem;
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  width: 400px;
+  //   background-color: #333;
+
+  @media (max-width: $mobile) {
+    font-size: 24px;
+    font-weight: 600;
+  } // Tablet
+
+  @media (max-width: $tablet) and (min-width: $mobile) {
+    font-size: 48px;
+    font-weight: 600;
+  }
+}
+
+.bakerscase-text p {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  //   column-width: 800px;
+  //   width: 700px;
+
+  @media (max-width: $mobile) {
+    font-size: 18px;
+    font-weight: 500;
+    text-align: justify;
+  } // Tablet
+
+  @media (max-width: $tablet) and (min-width: $mobile) {
+    font-size: 18px;
+    text-align: justify;
+    font-weight: 500;
+  }
+}
+
+.bakerscase-image {
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+  .bakerscase-section {
+    padding: 20px;
+  }
+
+  .bakerscase-text {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .bakerscase-text h2 {
+    font-size: 2.5rem;
+    margin-right: 20px;
+    font-size: 48px;
+    font-weight: 500;
+  }
+
+  .bakerscase-text p {
+    font-size: 1.3rem;
+    max-width: 800px;
+    font-size: 24px;
+  }
+
+  .bakerscase-image {
+    width: 100%;
+    margin-top: 40px;
+  }
+}
+
+// last section
+
+.bakerscase-casestudies-container {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.bakerscase-casestudies {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.bakerscase-casestudy {
+  width: 30%;
+  text-align: center;
+}
+
+.bakerscase-casestudy-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.bakerscase-casestudy-image:hover {
+  transform: scale(1.05);
+}
+
+.bakerscase-casestudy-title {
+  font-size: 1.2rem;
+  margin-top: 15px;
+  color: #333;
+}
+
+.bakerscase-casestudies-button {
+  padding: 12px 40px;
+  font-size: 1.2rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.bakerscase-casestudies-button:hover {
+  background-color: #555;
+}
+
+.bakerscase-button-icon {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .bakerscase-casestudies {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bakerscase-casestudy {
+    width: 80%;
+    margin-bottom: 20px;
+    // background-color: aquamarine;
+  }
+}
+
+.bakerscase-text {
+  h2 {
+    @media (max-width: $mobile) {
+      font-size: 24px;
+      font-weight: 500;
+    } // Tablet
+
+    @media (max-width: $tablet) and (min-width: $mobile) {
+      font-size: 24px;
+      font-weight: 500;
+    }
+  }
+}

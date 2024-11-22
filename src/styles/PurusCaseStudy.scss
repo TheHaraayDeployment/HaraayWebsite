@@ -1,0 +1,178 @@
+@import "../styles/variables.scss";
+
+.case-study {
+  width: 100%;
+
+  .hero {
+    background-color: #ffffff;
+    padding: var(--spacing-lg) 0;
+    text-align: center;
+    width: 100%;
+
+    h1 {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: var(--text-color);
+    }
+  }
+
+  .client-brief,
+  .overview {
+    padding: var(--spacing-md) 0;
+
+    h2 {
+      font-size: 2rem;
+      color: var(--secondary-color);
+    }
+
+    p {
+      font-size: 1rem;
+      color: var(--text-color);
+    }
+  }
+}
+
+.purus-hero-image {
+  width: 150;
+  height: 100%;
+  // margin: auto;
+  // margin-left: 15%;
+  margin-top: 0px;
+}
+.puruscase-container {
+  padding: 20px;
+  // max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.puruscase-section {
+  margin-bottom: 50px;
+}
+
+.puruscase-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.puruscase-text h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.puruscase-text p {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  width: 100%;
+  // background-color: var(--primary-color);
+  // margin-bottom: 20px;
+}
+
+.puruscase-image {
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+  .puruscase-section {
+    padding: 20px;
+  }
+
+  .puruscase-text {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .puruscase-text h2 {
+    font-size: 2.5rem;
+    margin-right: 20px;
+  }
+
+  .puruscase-text p {
+    font-size: 1.3rem;
+    max-width: 600px;
+  }
+
+  .puruscase-image {
+    width: 100%;
+    margin-top: 40px;
+  }
+}
+
+// last section
+
+.puruscase-casestudies-container {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.puruscase-casestudies {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.puruscase-casestudy {
+  width: 30%;
+  text-align: center;
+}
+
+.puruscase-casestudy-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.puruscase-casestudy-image:hover {
+  transform: scale(1.05);
+}
+
+.puruscase-casestudy-title {
+  font-size: 1.2rem;
+  margin-top: 15px;
+  color: #333;
+}
+
+.puruscase-casestudies-button {
+  padding: 12px 40px;
+  font-size: 1.2rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.puruscase-casestudies-button:hover {
+  background-color: #555;
+}
+
+.puruscase-button-icon {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .puruscase-casestudies {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .puruscase-casestudy {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+}

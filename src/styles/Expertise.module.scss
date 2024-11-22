@@ -1,0 +1,301 @@
+//  --------------------------RESPONSIVE ENV--------------------------------------
+$breakpoint-small: 480px;
+$breakpoint-medium: 840px;
+$breakpoint-large: 1024px;
+$breakpoint-extra-large: 1200px;
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint==small {
+    @media (max-width: $breakpoint-small) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint==medium {
+    @media (max-width: $breakpoint-medium) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint==large {
+    @media (max-width: $breakpoint-large) {
+      @content;
+    }
+  }
+}
+
+//   @include respond-to(small) {
+//   padding: 8px 16px;
+// }
+
+//   @include respond-to(medium) {
+//   padding: 8px 16px;
+// }
+// ----------------------------------------------------------------
+
+
+.ExpertiseMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  // background-color: #131313;
+  background-color: rgb(0, 0, 0);
+  color: rgb(238, 236, 236);
+
+  @include respond-to(small) {
+   width: 100vw; 
+  }
+}
+
+/* Common Styles for All Service Sections */
+.ServiceSection {
+  display: flex;
+  flex-direction: row;
+  padding: 5rem 2rem;
+  width: 100%;
+  //   max-width: 1200px;
+  margin: 0 auto;
+
+  @include respond-to(medium) {
+    min-height: 50vh !important;
+  }
+
+  .ServiceContent {
+    flex: 1.5;
+    padding: 0 2rem;
+   
+
+    h2 {
+      font-size: 64px;
+      color: white;
+      font-family: Etherel;
+      font-weight: 600;
+      // text-align: left;
+
+      @include respond-to(small) {
+        font-size: 48px;
+        text-align: left
+      }
+    }
+
+    p {
+      width: 100%;
+      margin: 1.5rem 0;
+      font-size: 24px;
+      line-height: 1.3;
+      font-family: Stara;
+      @include respond-to(small) {
+
+        text-align: left;
+      }
+    }
+
+    .Capabilities {
+      h4 {
+        font-size: 32px;
+        font-weight: 500;
+      }
+display: flex ;
+flex-direction: row;
+gap: 100px;
+      ul {
+        list-style-type: none;
+        padding: 0;
+        width: 300px;
+
+        li {
+          margin: 0.5rem 0;
+          display: flex;
+          justify-content: flex-start;
+          gap: 10px;
+          font-size: 24px;
+          font-weight: 500;
+          cursor: pointer;
+
+          span {
+            display: none;
+          }
+          &:hover {
+            text-decoration: underline;
+          }
+          &:hover span {
+            transform: translateX(10px);
+            display: flex;
+            text-decoration: none !important;
+            border: none;
+          
+          }
+
+         
+        }
+      }
+    }
+
+    .Capabilitiesright {
+      h4 {
+        font-size: 32px;
+        font-weight: 500;
+        margin-right: 150px;
+        // text-align: center;
+
+
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+
+        li {
+          margin: 0.5rem 0;
+          display: flex;
+          justify-content: flex-end;
+          gap: 10px;
+          font-size: 24px;
+          font-weight: 500;
+          cursor: pointer;
+
+          @include respond-to(small) {
+            justify-content: start;
+          }
+
+          @include respond-to(medium) {}
+
+          span {
+            display: none;
+          }
+
+          &:hover span {
+            transform: translateX(10px);
+            display: flex;
+          }
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  .ServiceImage {
+    flex: 1;
+
+    width: 100%;
+    height: 400px;
+    /* Adjust this value as needed */
+
+    @include respond-to(small) {
+      position: absolute;
+      bottom: 0;
+      width: 50%;
+      right: 0;
+      object-fit: cover;
+
+    }
+
+    @include respond-to(medium) {
+      position: absolute;
+      bottom: 0;
+      width: 50%;
+      right: 0;
+      // transform: translateY(-50%);
+      object-fit: cover;
+    }
+  }
+
+  /* Alignment variations */
+  &.leftAlign {
+    flex-direction: row;
+    /* Text on the left, image on the right */
+    text-align: left;
+  }
+
+  &.rightAlign {
+    flex-direction: row-reverse;
+    /* Text on the right, image on the left */
+    text-align: right;
+
+    @include respond-to(small) {
+      flex-direction: row;
+      /* Text on the left, image on the right */
+      text-align: left;
+    }
+
+    @include respond-to(medium) {
+      flex-direction: row-reverse;
+      /* Text on the right, image on the left */
+      text-align: right;
+    }
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    .ServiceContent {
+      padding: 0;
+      margin-bottom: 2rem;
+    }
+
+    .ServiceImage {
+      height: 300px;
+    }
+
+    &.rightAlign {
+      flex-direction: column;
+      /* For mobile, maintain vertical stacking */
+    }
+  }
+}
+
+/* Hero Section */
+.Herosec {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("../assets/ExpertiseHero.svg") no-repeat center/cover;
+
+  .HeroContent {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: white;
+
+    h1 {
+      font-size: 96px;
+      font-weight: 700;
+      font-family: Etherel;
+
+      @include respond-to(medium) {
+        font-size: 96px;
+        font-weight: 700;
+        font-family: Etherel;
+      }
+    }
+
+    p {
+      font-size: 48px;
+      margin-top: 0.5rem;
+      font-family: Stara;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .HeroContent {
+      h1 {
+        // font-size: 2rem;
+      }
+
+      p {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+
+}

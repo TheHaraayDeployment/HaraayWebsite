@@ -1,0 +1,49 @@
+@import "./styles/variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  font-family: var(--font-stara);
+  color: var(--text-color);
+  /* background-color: #ffffff; */
+  line-height: 1.6;
+  width: 100vw;
+  /* padding-left: 3%; */
+  /* padding-right: 3%; */
+  /* overflow-x: hidden; */
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-secondary);
+  color: var(--primary-color);
+}
+
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  padding: 0 var(--spacing-md);
+  /* max-width: 1200px; */
+  margin: 0 auto;
+}
+

@@ -1,0 +1,624 @@
+
+$mobile: 600px;
+$tablet: 1024px;
+$desktop: 1200px;
+.bakerscase-detail-page {
+  // General container styling
+  width: 100vw;
+  // padding-top: 30px;
+  background-color: transparent;
+}
+body {
+  background-color: transparent;
+}
+.bakstreetdet-hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  z-index: -1;
+  @media (max-width: $mobile) {
+    height: 20vh;
+    width: 100%;
+    margin-top: 50px;
+  } // Tablet
+
+  @media (max-width: $tablet) and (min-width: $mobile) {
+    height: 20vh;
+    width: 100%;
+  }
+  &-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-content {
+    padding: 10px;
+    background-color: transparent;
+    // filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    position: absolute;
+    top: 15%;
+    left: 2%;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    font-family: var(--font-stara);
+    // font-weight: var(--medium);
+    font-size: 20px;
+    // backdrop-filter: blur(8px);
+    // filter: blur(8px);
+    // -webkit-filter: blur(8px);
+
+    h1 {
+      font-size: 80px;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 1.1rem;
+      font-weight: lighter;
+    }
+
+    // Responsive adjustments
+    @media (max-width: 1024px) {
+      h1 {
+        font-size: 3rem;
+      }
+      p {
+        font-size: 1.3rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      p {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+.bakstreetdet-blank {
+  height: 100vh;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .bakstreetdet-content {
+    text-align: center;
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h2 {
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+// NEXT SECTIONS
+
+.bakstreetdet-mainsections {
+  background-color: white;
+}
+.bakerdetail-client-brief {
+  text-align: center;
+  margin-bottom: 40px;
+
+  .bakerdetail-subtitle {
+    font-size: 1.2rem;
+    color: #888;
+  }
+
+  .bakerdetail-client-brief-text {
+    margin-top: 20px;
+    background-color: #333;
+    // padding-left: 50px;
+    p {
+      font-size: 1rem;
+    }
+  }
+}
+
+.bakerdetail-overview,
+.bakerdetail-branding,
+.bakerdetail-color-palette,
+.bakerdetail-packaging {
+  margin-bottom: 40px;
+
+  .bakerdetail-overview-images,
+  .bakerdetail-branding-images,
+  .bakerdetail-packaging-images {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+
+    img {
+      width: 48%;
+      border-radius: 8px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+
+  .bakerdetail-color-samples {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+
+    .color-sample {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      transition: transform 0.4s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .bakerdetail-overview-images,
+  .bakerdetail-branding-images,
+  .bakerdetail-packaging-images {
+    flex-direction: column;
+
+    img {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+
+  .bakerdetail-color-samples {
+    flex-direction: column;
+    align-items: center;
+
+    .color-sample {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .bakerdetail-container {
+    padding: 10px;
+  }
+
+  h2,
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+.responsive-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+
+  &__left {
+    flex: 1;
+    h2 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      margin-left: 20px;
+    }
+    p {
+      margin-left: 20px;
+      // font-size: 1.2rem;
+      font-size: 24px;
+      text-align: justify;
+    }
+  }
+
+  &__right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__image {
+      width: 100%;
+      max-width: 620px;
+      max-height: 212px;
+      height: auto;
+      margin-bottom: 10px;
+
+      &--bottom {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  // Media Queries for Responsive Design
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    &__right {
+      flex-direction: row;
+      justify-content: space-between;
+
+      &__image {
+        width: 48%;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    &__left {
+      h2 {
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    &__right {
+      // flex-direction: column;
+
+      &__image {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+.imgscroll-section {
+  // background-color: #333;
+  // width: 800px;
+  height: 50vh;
+  position: relative;
+  gap: 5px;
+  // background-color: #333;
+  overflow-y: scroll;
+
+  @media (max-width: $mobile) {
+    display: inline-flex;
+  } // Tablet
+
+  @media (max-width: $tablet) and (min-width: $mobile) {
+    display: inline-flex;
+  }
+  img {
+    width: 620px;
+    height: 412px;
+    object-fit: cover;
+    // box-shadow: "0 0 200px rgba(0,0,0,0.9) inset";
+  }
+}
+.bakers-full-width-image {
+  width: 100%;
+  // height: 560px;
+  object-fit: cover;
+  ::-webkit-scrollbar {
+    display: none;
+
+    @media (max-width: $mobile) {
+      width: 100vw;
+      height: 50px;
+      object-fit: cover;
+    } // Tablet
+
+    @media (max-width: $tablet) and (min-width: $mobile) {
+      width: 100%;
+      height: 50px;
+      object-fit: cover;
+    }
+  }
+}
+
+.bakers-casestudy-details-packaging-info {
+  // background-color: #333;
+  width: 400px;
+  height: 100px;
+  // font-size: 50px;
+  display: flex;
+  margin: auto auto auto 50px;
+  gap: 50px;
+
+  h5 {
+    font-size: 32px;
+    font-weight: 200;
+  }
+
+  h6 {
+    font-size: 24;
+  }
+}
+
+.bakerscase-casestudies-container {
+  background-color: white;
+}
+
+.imgscroll-section-overlay {
+  width: 620px;
+  height: 50px;
+  background-color: red;
+  position: static;
+  bottom: 0px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 0, 0, 0.6)
+  ); // Adjust transparency and darkness
+
+  @media (max-width: $mobile) {
+    display: none;
+  } // Tablet
+
+  @media (max-width: $tablet) and (min-width: $mobile) {
+    display: none;
+  }
+}
+
+// -----------------------------------------------------------------------------------------------resposiveness
+// .bakerscase-detail-page {
+//   width: 100vw;
+//   background-color: transparent;
+// }
+
+// .bakstreetdet-hero {
+//   position: relative;
+//   height: 100vh;
+//   width: 100%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   text-align: center;
+//   overflow: hidden;
+//   z-index: -1;
+
+//   &-background {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+
+//     img {
+//       width: 100%;
+//       height: 100%;
+//       object-fit: cover;
+//     }
+//   }
+
+//   &-content {
+//     padding: 10px;
+//     position: absolute;
+//     top: 15%;
+//     left: 2%;
+//     z-index: 1;
+//     color: white;
+//     text-align: center;
+//     font-family: var(--font-stara);
+//     font-size: 20px;
+
+//     h1 {
+//       font-size: 80px;
+//       font-weight: 600;
+//     }
+
+//     p {
+//       font-size: 1.1rem;
+//       font-weight: lighter;
+//     }
+
+//     @media (max-width: 1024px) {
+//       h1 {
+//         font-size: 3rem;
+//       }
+//       p {
+//         font-size: 1.3rem;
+//       }
+//     }
+
+//     @media (max-width: 768px) {
+//       h1 {
+//         font-size: 2.5rem;
+//       }
+//       p {
+//         font-size: 1.2rem;
+//       }
+//     }
+
+//     @media (max-width: 480px) {
+//       h1 {
+//         font-size: 2rem;
+//       }
+//       p {
+//         font-size: 1rem;
+//       }
+//     }
+//   }
+// }
+
+// .responsive-section {
+//   display: flex;
+//   background-color: #fff;
+//   justify-content: space-between;
+//   align-items: center;
+//   padding: 20px;
+//   gap: 20px;
+
+//   &__left {
+//     flex: 1;
+//     h2 {
+//       font-size: 48px;
+//       margin-bottom: 10px;
+//       margin-left: 20px;
+//     }
+
+//     p {
+//       margin-left: 20px;
+//       font-size: 1rem;
+//     }
+//   }
+
+//   &__right {
+//     flex: 1;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+
+//     .responsive-section__image {
+//       width: 100%;
+//       max-width: 500px;
+//       margin-bottom: 20px;
+//       object-fit: contain;
+//     }
+//   }
+
+//   @media (max-width: 1024px) {
+//     flex-direction: column;
+//     align-items: center;
+//     text-align: center;
+
+//     &__left {
+//       h2 {
+//         font-size: 2.5rem;
+//       }
+//       p {
+//         font-size: 1.1rem;
+//       }
+//     }
+//   }
+
+//   @media (max-width: 768px) {
+//     padding: 15px;
+//     gap: 10px;
+
+//     &__left {
+//       h2 {
+//         font-size: 2rem;
+//       }
+//       p {
+//         font-size: 1rem;
+//       }
+//     }
+//   }
+
+//   @media (max-width: 480px) {
+//     flex-direction: column;
+//     padding: 10px;
+
+//     &__left {
+//       h2 {
+//         font-size: 1.5rem;
+//       }
+//       p {
+//         font-size: 0.9rem;
+//       }
+//     }
+
+//     &__right {
+//       .responsive-section__image {
+//         max-width: 100%;
+//         margin-bottom: 15px;
+//       }
+//     }
+//   }
+// }
+
+// .bakers-full-width-image {
+//   width: 100%;
+//   margin: 20px 0;
+//   background-color: #fff;
+//   @media (max-width: 768px) {
+//     margin: 10px 0;
+//   }
+
+//   @media (max-width: 480px) {
+//     margin: 5px 0;
+//   }
+// }
+
+// // Button Styles
+// .bakerscase-casestudies-button {
+//   background-color: #011351;
+//   color: white;
+//   padding: 10px 20px;
+//   border-radius: 5px;
+//   font-size: 1rem;
+//   cursor: pointer;
+//   margin: 20px auto;
+//   display: block;
+
+//   @media (max-width: 768px) {
+//     font-size: 0.9rem;
+//     padding: 8px 16px;
+//   }
+
+//   @media (max-width: 480px) {
+//     font-size: 0.8rem;
+//     padding: 6px 12px;
+//   }
+// }
+
+// // Hide custom cursor on mobile
+// @media (max-width: 768px) {
+//   .animated-cursor {
+//     display: none;
+//   }
+// }
+
+// extra aniamtion ////////////////////////////////////////////////////////////////////////////////////////////////////////

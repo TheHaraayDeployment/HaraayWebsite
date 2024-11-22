@@ -1,0 +1,44 @@
+.Letstalk {
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    /* Stack children vertically */
+    align-items: center;
+    /* Center horizontally */
+    justify-content: center;
+    /* Center vertically */
+
+    h1 {
+        width: 80%;
+        font-size: 80px;
+        text-align: center;
+
+        span {
+            text-decoration-line: underline;
+            font-style: italic;
+        }
+    }
+
+    div {
+        margin-top: 50px;
+        width: 80%;
+        text-align: center;
+
+        display: inline-flex;
+        gap: 5%;
+
+        h2 {
+            margin: auto;
+            text-align: center;
+            font-size: 40px;
+            color: #f8ef6ec9;
+            margin-bottom: 20px;
+
+            :hover {
+                transform: scale(1.1);
+                transition: transform 0.3s ease-in-out;
+            }
+        }
+    }
+}

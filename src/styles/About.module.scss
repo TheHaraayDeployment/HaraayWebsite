@@ -1,0 +1,261 @@
+.WorkMain {
+  width: 100%;
+  height: auto;
+
+  color: white;
+}
+
+.AboutUs {
+  width: 100%;
+  background: black;
+  color: white;
+}
+
+.Herosec {
+  background: url("../assets/aboutushero.svg");
+  background-size: cover;
+  height: 100vh;
+}
+
+.div1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.div2 {
+  margin-top: 250px;
+  text-align: center;
+  font-size: 78px;
+}
+
+.AboutHaraay {
+  display: flex;
+  margin: 20px 20px;
+
+  &-img img {
+    width: 600px;
+    height: 400px;
+  }
+}
+
+.AboutHaraay > div > h1 {
+  font-size: 96px;
+  margin: 20px 20px;
+}
+
+.AboutHaraay > div > p {
+  font-size: 24px;
+  margin: 20px 20px;
+}
+
+.AboutHaraay > div > a {
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 20px 20px;
+  color: white;
+}
+
+.Process > h1 {
+  text-align: center;
+  font-size: 96px;
+}
+
+.Process-two {
+  display: flex;
+  justify-content: center;
+
+  .steps {
+    text-align: center;
+    margin: 0px 30px 0px 0px;
+
+    h1 {
+      font-size: 32px;
+    }
+    button {
+      background-color: #ff00a2;
+      border: none;
+      border-radius: 20px;
+      color: white;
+      font-weight: 500;
+      height: 35px;
+      width: 130px;
+      margin: 10px 0px 0px 0px;
+      cursor: pointer;
+    }
+  }
+
+  .Scroll {
+    &-numbers {
+      // margin: 20px 20px;
+      position: absolute;
+
+      .ScrollOne {
+        display: flex;
+        position: absolute;
+        background: #414141;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        right: -20;
+      }
+
+      .ScrollTwo {
+        display: flex;
+        position: absolute;
+        background: #414141;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        top: 125;
+        right: -20;
+      }
+
+      .ScrollThree {
+        display: flex;
+        position: absolute;
+        background: #414141;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        top: 250;
+        right: -20;
+      }
+
+      .ScrollFour {
+        display: flex;
+        position: absolute;
+        background: #414141;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        top: 375;
+        right: -20;
+      }
+    }
+
+    &-description {
+      margin: 0px 0px 0px 50px;
+
+      p {
+        width: 400px;
+        height: 100px;
+      }
+    }
+  }
+
+  .ProgressBar {
+    position: absolute;
+    width: 3px;
+    height: 380px;
+    background-color: #ff00a2;
+    top: 20px;
+    left: 40%;
+    z-index: 0;
+  }
+}
+
+.ActualProgressBar {
+}
+
+.OurTeam {
+  h1 {
+    font-size: 96px;
+    text-align: center;
+  }
+  &-info {
+    display: flex;
+    justify-content: center;
+
+    div {
+      margin: 20px 20px;
+
+      h1 {
+        font-size: 32px;
+        text-align: left;
+      }
+
+      img {
+        width: 250px;
+        height: 350px;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+$mobile: 400px;
+@media (max-width: $mobile) {
+  .AboutUs {
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+  }
+
+  .Herosec {
+    width: 100%;
+  }
+
+  .AboutHaraay {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    img {
+      width: 100vw;
+      object-fit: cover;
+    }
+  }
+
+  .Process-two {
+    display: block;
+    width: 100%;
+
+    button {
+      display: none;
+    }
+
+    &-content {
+      display: flex;
+      width: 100%;
+      .Scroll {
+        &-numbers {
+          margin-left: 25px;
+        }
+
+        &-description {
+          p {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .OurTeam {
+    width: 100%;
+    overflow: hidden;
+
+    img {
+    }
+
+    &-info {
+      width: 100%;
+      margin: 0;
+      overflow-x: scroll;
+    }
+  }
+}
