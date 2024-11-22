@@ -5,7 +5,7 @@ $desktop: 1200px;
 .navbar {
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 100vw;
   background-color: #ffffffc4;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   padding: var(--spacing-sm) 0;
