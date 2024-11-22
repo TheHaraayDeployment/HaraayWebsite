@@ -7,7 +7,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import "./App.css";
-import PageTransition from "./components/PageTransition"; // Import the transition component
+// import PageTransition from "./components/Pagetransition.jsx"; // Import the transition component
 import Lenis from "@studio-freight/lenis";
 import useNavigationEvent from "./components/useNavigationEvent.jsx";
 
@@ -36,11 +36,10 @@ import SereneCaseStudyDetail from "./pages/SereneCaseStudydetails.jsx";
 import NotFound from "./pages/NotFound.jsx";
 import ScrollToTop from "./components/ScrollToTop";
 import Preloader from "./components/Preloader.jsx";
-import AkoyaCaseStudy from "./pages/CaseStudy/AkoyaCaseStudy.jsx"; 
-import LoknetaCaseStudy from "./pages/CaseStudy/LoknetaCaseStudy.jsx"; 
+import AkoyaCaseStudy from "./pages/CaseStudy/AkoyaCaseStudy.jsx";
+import LoknetaCaseStudy from "./pages/CaseStudy/LoknetaCaseStudy.jsx";
 import BoscheCaseStudy from "./pages/CaseStudy/BoscheCaseStudy.jsx";
 import Countdown from "./Countdown.jsx";
-
 
 function App() {
   const isNavigating = useNavigationEvent(); // Get navigation event status
@@ -102,7 +101,8 @@ function App() {
     "/service1",
     "/service2",
     "/service3",
-    "/service4","/casestudy/akoya",
+    "/service4",
+    "/casestudy/akoya",
     "/casestudy/bakersstreet",
     "/casestudy/creamforest",
     "/casestudy/virat",
@@ -110,25 +110,26 @@ function App() {
     "/casestudy/bakersstreet/detail",
     "/casestudy/creamforest/detail",
     "/casestudy/virat/detail",
-    "/casestudy/sereneskin/detail","/casestudy/lokneta" , "/casestudy/bosche"
+    "/casestudy/sereneskin/detail",
+    "/casestudy/lokneta",
+    "/casestudy/bosche",
   ];
   const isValidRoute = validRoutes.includes(location.pathname);
   const showHeaderFooter = location.pathname !== "/404";
 
   return (
     <>
-     
       {isNavigating && <Preloader trigger={isNavigating} />}
 
-{/* Countdown component */}
-      <Countdown/>
+      {/* Countdown component */}
+      {/* <Countdown /> */}
       {/*  */}
-      
-      {/* <div className="App">
+
+      <div className="App">
         {isValidRoute && <Navbar />}
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/countdown" element={<Countdown/>} />
+          <Route path="/countdown" element={<Countdown />} />
           <Route path="/works" element={<Works />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact-us" element={<Contact />} />
@@ -140,20 +141,38 @@ function App() {
           <Route path="/service4" element={<Service4 />} />
           <Route path="/casestudy/akoya" element={<AkoyaCaseStudy />} />
           <Route path="/casestudy/lokneta" element={<LoknetaCaseStudy />} />
-          <Route path="/casestudy/bosche" element={<BoscheCaseStudy/>} />
+          <Route path="/casestudy/bosche" element={<BoscheCaseStudy />} />
 
           <Route path="/casestudy/bakersstreet" element={<BakersCaseStudy />} />
-          <Route path="/casestudy/creamforest" element={<CreamforestCaseStudy />} />
+          <Route
+            path="/casestudy/creamforest"
+            element={<CreamforestCaseStudy />}
+          />
           <Route path="/casestudy/virat" element={<ViratCaseStudy />} />
-          <Route path="/casestudy/sereneskin" element={<SereneSkinCaseStudy />} />
-          <Route path="/casestudy/bakersstreet/detail" element={<BakersCaseStudydetails2 />} />
-          <Route path="/casestudy/creamforest/detail" element={<CreamfCaseStudyDetail />} />
-          <Route path="/casestudy/virat/detail" element={<ViratCaseStudyDetail />} />
-          <Route path="/casestudy/sereneskin/detail" element={<SereneCaseStudyDetail />} />
+          <Route
+            path="/casestudy/sereneskin"
+            element={<SereneSkinCaseStudy />}
+          />
+          <Route
+            path="/casestudy/bakersstreet/detail"
+            element={<BakersCaseStudydetails2 />}
+          />
+          <Route
+            path="/casestudy/creamforest/detail"
+            element={<CreamfCaseStudyDetail />}
+          />
+          <Route
+            path="/casestudy/virat/detail"
+            element={<ViratCaseStudyDetail />}
+          />
+          <Route
+            path="/casestudy/sereneskin/detail"
+            element={<SereneCaseStudyDetail />}
+          />
           <Route path="*" element={<NotFound />} />
         </Routes>
         {isValidRoute && <Footer />}
-      </div> */}
+      </div>
     </>
   );
 }
