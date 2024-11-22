@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import "./LoknetaCaseStudy.modules.scss";
 
-import heroimg from "../../assets/lokneta/lokneta.png";
+// import heroimg from "../../assets/lokneta/lokneta.png";
 import Overviewimg from "../../assets/lokneta/lokneta1.png";
 import img from "../../assets/lokneta/lokneta2.png";
 import img1 from "../../assets/lokneta/lokneta3.png";
