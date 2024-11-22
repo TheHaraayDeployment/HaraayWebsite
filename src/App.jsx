@@ -37,7 +37,7 @@ import NotFound from "./pages/NotFound.jsx";
 import ScrollToTop from "./components/ScrollToTop";
 import Preloader from "./components/Preloader.jsx";
 import AkoyaCaseStudy from "./pages/CaseStudy/AkoyaCaseStudy.jsx";
-import LoknetaCaseStudy from "./pages/CaseStudy/LoknetaCaseStudy.jsx";
+// import LoknetaCaseStudy from "./pages/CaseStudy/LoknetaCaseStudy.jsx";
 import BoscheCaseStudy from "./pages/CaseStudy/BoscheCaseStudy.jsx";
 import Countdown from "./Countdown.jsx";
 
