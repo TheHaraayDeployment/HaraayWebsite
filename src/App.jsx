@@ -140,7 +140,7 @@ function App() {
           <Route path="/service3" element={<Service3 />} />
           <Route path="/service4" element={<Service4 />} />
           <Route path="/casestudy/akoya" element={<AkoyaCaseStudy />} />
-          <Route path="/casestudy/lokneta" element={<LoknetaCaseStudy />} />
+          {/* <Route path="/casestudy/lokneta" element={<LoknetaCaseStudy />} /> */}
           <Route path="/casestudy/bosche" element={<BoscheCaseStudy />} />
 
           <Route path="/casestudy/bakersstreet" element={<BakersCaseStudy />} />
