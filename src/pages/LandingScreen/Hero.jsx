@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Tilt from "react-parallax-tilt";
 import "../../styles/Hero.scss";
-import Projectimg1 from "../../assets/Akoyaheroimg.svg";
-import Projectimg2 from "../../assets/Bosch/Boschimg.png";
-import Projectimg3 from "../../assets/BMS/BMSimg.png";
+import Projectimg1 from "../../assets/Akoyaheroimg.webp";
+import Projectimg2 from "../../assets/Bosch/Boschimg.webp";
+import Projectimg3 from "../../assets/BMS/BMSimg.webp";
 import Projectimg4 from "../../assets/Lokneta/lokneta.webp";
-import Projectimg5 from "../../assets/Bakers/Bakers.png";
+import Projectimg5 from "../../assets/Bakers/Bakers.webp";
 const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
