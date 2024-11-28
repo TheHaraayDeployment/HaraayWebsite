@@ -440,7 +440,11 @@ $breakpoint-extra-large: 1200px;
   overflow: hidden;
   white-space: nowrap;
   padding-left: 1em;
-  position: relative; /* Allows positioning of the ::before element */
+  position: relative;
+  @include respond-to(small) {
+    padding-left: 0.7em;
+  }
+  /* Allows positioning of the ::before element */
 }
 
 /* Add "Active" label before the active link */
@@ -455,6 +459,19 @@ $breakpoint-extra-large: 1200px;
   margin-right: 10px;
   position: absolute;
   left: 0;
+
+  @include respond-to(small) {
+    content: "";
+    background-color: none;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    font-size: 0px; /* Adjust as needed */
+    margin-right: 0px;
+    position: absolute;
+    left: 0;
+  }
 }
 
 .navigation__link:not(.active) {

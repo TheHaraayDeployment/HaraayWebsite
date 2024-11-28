@@ -57,8 +57,35 @@ function Contact() {
             <div className={styles.contactform}>
               <h1 className={styles.headtxt}>Connect With Our Experts</h1>
               <div className={styles.form}>
-                <form>
+                <form onSubmit={handleSubmit}>
                   <div className={styles.forminputes}>
+                    <div className={styles.enquiryinput}>
+                      <label className={styles.servicebtn}>
+                        Service Type <span>*</span>{" "}
+                      </label>
+                      <input
+                        type="radio"
+                        name="serviceType"
+                        value="business"
+                        onChange={(e) => {
+                          handleRadioChange(e);
+                          handleChange(e);
+                        }}
+                        // checked={formData.serviceType === "business"}
+                      />
+                      <h5>Buisness</h5>
+                      <input
+                        type="radio"
+                        name="serviceType"
+                        value="job"
+                        // checked={formData.serviceType === "job"}
+                        onChange={(e) => {
+                          handleRadioChange(e);
+                          handleChange(e);
+                        }}
+                      />
+                      <h5>Job</h5>
+                    </div>
                     <div className={styles.labeldiv}>
                       {" "}
                       <label>

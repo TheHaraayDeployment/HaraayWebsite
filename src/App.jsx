@@ -178,6 +178,7 @@ function AppWrapper() {
       <App />
       {/* <Sugar background="#f7f7f7" animation="slide" /> */}
     </Router>
+    //{" "}
     // </React.Fragment>
   );
 }
