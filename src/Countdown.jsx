@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./styles.css"; // Import the CSS file
-import bgimg from "./img/hbg.svg"
+import bgimg from "../bannerimage.png";
 const Countdown = () => {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -33,36 +33,35 @@ const Countdown = () => {
 
   return (
     <div className="countdown-container">
-        <div className="background">
+      <div className="background">
         <img src={bgimg} alt="Background" className="background-image" />
-        </div>
-      <div className="content"> 
-      <div className="countdown-date">
-        <h3>28 Nov 2024</h3>
-        <p>10:00 AM</p>
       </div>
-      <div className="countdown-timer">
-        <div className="time-section">
-          <h1>{timeLeft.days.toString().padStart(2, "0")}</h1>
-          <p>Days</p>
+      <div className="content">
+        <div className="countdown-date">
+          <h3>28 Nov 2024</h3>
+          <p>10:00 AM</p>
         </div>
-        <span className="colon">:</span>
-        <div className="time-section">
-          <h1>{timeLeft.hours.toString().padStart(2, "0")}</h1>
-          <p>Hours</p>
+        <div className="countdown-timer">
+          <div className="time-section">
+            <h1>{timeLeft.days.toString().padStart(2, "0")}</h1>
+            <p>Days</p>
+          </div>
+          <span className="colon">:</span>
+          <div className="time-section">
+            <h1>{timeLeft.hours.toString().padStart(2, "0")}</h1>
+            <p>Hours</p>
+          </div>
+          <span className="colon">:</span>
+          <div className="time-section">
+            <h1>{timeLeft.minutes.toString().padStart(2, "0")}</h1>
+            <p>Minutes</p>
+          </div>
         </div>
-        <span className="colon">:</span>
-        <div className="time-section">
-          <h1>{timeLeft.minutes.toString().padStart(2, "0")}</h1>
-          <p>Minutes</p>
-        </div> 
-        
-      </div>
-      <div className="countdown-text">
-        <p>We are</p>
-        <h2>Rebranding</h2>
-        <p>Coming soon</p>
-      </div>
+        <div className="countdown-text">
+          <p>We are</p>
+          <h2>Rebranding</h2>
+          <p>Coming soon</p>
+        </div>
       </div>
     </div>
   );

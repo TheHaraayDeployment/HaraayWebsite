@@ -6,32 +6,36 @@ $breakpoint-extra-large: 1200px;
 
 @mixin respond-to($breakpoint) {
   @if $breakpoint == small {
-    @media (max-width: $breakpoint-small) { @content; }
+    @media (max-width: $breakpoint-small) {
+      @content;
+    }
   } @else if $breakpoint == medium {
-    @media (max-width: $breakpoint-medium) { @content; }
+    @media (max-width: $breakpoint-medium) {
+      @content;
+    }
   } @else if $breakpoint == large {
-    @media (max-width: $breakpoint-large) { @content; }
+    @media (max-width: $breakpoint-large) {
+      @content;
+    }
   }
 }
 //   @include respond-to(small) {
-//   code here 
+//   code here
 // }
 
 //   @include respond-to(medium) {
 // code here
 // }
 
-
 // ----------------------------------------------------------------------------------
 
-
-.AboutUspage{
+.AboutUspage {
   width: 100%;
 
   margin: 0;
   padding: 0;
-  
-  h1{
+
+  h1 {
     font-size: 96px;
     color: white;
     font-family: Etherel;
@@ -40,212 +44,204 @@ $breakpoint-extra-large: 1200px;
     @include respond-to(small) {
       font-size: 48px;
     }
-}
-
-h2{
-  font-size: 48px;
-  color: white;
-  font-family: Stara;
-  font-weight: 400;
-
-  @include respond-to(small) {
-    font-size: 24px;
   }
-}
 
-p{
-  font-size: 24px;
-  text-align: justify;
-  color: white;
- }
+  h2 {
+    font-size: 48px;
+    color: white;
+    font-family: Stara;
+    font-weight: 400;
+
+    @include respond-to(small) {
+      font-size: 24px;
+    }
+  }
+
+  p {
+    font-size: 24px;
+    text-align: justify;
+    color: white;
+  }
 }
 
 //Hero Section
-.HeroSection{
-width: 100vw;
-height: 100vh;
-
-@include respond-to(small) {
- padding: 0; 
-}
-
-.heroimg{
-width: 100%;
-  object-fit: cover; 
-  
-  @include respond-to(small) {
-    height: 100%;
-    width: 100%;
-object-fit: cover;
-
-   }
-   @include respond-to(medium) {
-    height: 100%;
-    width: 100%;
-object-fit: cover;
-   }
-}
-
-.herotext{
-  position: absolute;
-  font-size: 96px;
+.HeroSection {
+  width: 100vw;
+  height: 100vh;
 
   @include respond-to(small) {
-   
-    font-size: 48px;
+    padding: 0;
+  }
+
+  .heroimg {
+    width: 100%;
+    object-fit: cover;
+
+    @include respond-to(small) {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+    @include respond-to(medium) {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .herotext {
+    position: absolute;
+    font-size: 96px;
+
+    @include respond-to(small) {
+      font-size: 48px;
+    }
   }
 }
-}
-
 
 //About Section
 
-.AboutUsSection{
+.AboutUsSection {
   margin-top: 50px;
   width: 100%;
   position: relative;
   height: 50vh;
 
-
   padding: 2%;
 
-
   @include respond-to(small) {
-   margin-top: 0px;
-  //  padding: 0; 
+    margin-top: 0px;
+    //  padding: 0;
   }
-  .AboutSection{
-display: flex;
-flex: 1pf 2pf;
-flex-direction: row;
-width: 100%;
-height: 100%;
-
-
-  div{
-    padding: 2%;
- 
-    width: 50%;
-    height: auto;
-    margin: auto;
-    @include respond-to(small) {
-     width: 100%; 
-    }
-    
-    h1{
-      margin-bottom: 20px;
-    }
-   p{
+  .AboutSection {
     display: flex;
-    
-    font-size: 24px;
-    text-align: justify;
- 
+    flex: 1pf 2pf;
+    flex-direction: row;
+    width: 100%;
     height: 100%;
-    @include respond-to(small) {
-     
-      width: 90vw;
-      padding: 10px;
+
+    div {
+      padding: 2%;
+
+      width: 50%;
+      height: auto;
+      margin: auto;
+      display: flex; // Enable flexbox for alignment
+      flex-direction: column; // Stack child elements vertically
+      @include respond-to(small) {
+        width: 100%;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+        text-align: left;
+      }
+      p {
+        display: flex;
+
+        font-size: 24px;
+        text-align: justify;
+
+        height: 100%;
+        @include respond-to(small) {
+          width: 90vw;
+          padding: 10px;
+        }
+      }
+      a {
+        font-size: 32px;
+        font-weight: 600;
+        color: white;
+        text-decoration: none;
+        transition: background-color 0.3s ease-in-out;
+
+        // Ensure the <a> tag stays on the left
+        align-self: flex-start; // Aligns the <a> tag to the start of the flex container
+        margin-top: 20px; // Add some spacing from other elements if needed
+        display: block; // Ensure the <a> tag takes its full width by default
+        &:hover {
+          color: #e5348c;
+        }
+      }
+      .AboutSectionImg {
+        @include respond-to(small) {
+          display: none;
+        }
+      }
+      img {
+        width: 100%;
+        object-fit: cover;
+        height: 100%;
+        @include respond-to(small) {
+          display: none;
+        }
+      }
     }
- 
-    
-   }
-   a{
-    font-size: 32px;
-    font-weight: 600;
-    color: white;
-    text-decoration: none;
-    transition: background-color 0.3s ease-in-out;
-   align-items: flex-start;
-   text-align: left !important;
-   
-    &:hover{
-      color: #E5348C;
-    }
-   }
-.AboutSectionImg{
-  @include respond-to(small) {
-   display: none; 
   }
 }
-   img{
-    width: 100%;
-    object-fit: cover;
-    height: 100%;
-    @include respond-to(small) {
-      display: none; 
-     }
-  }
-  }
-}}
-
-
 
 //process section
-.ProcessSection{
-width: 100%;
+.ProcessSection {
+  width: 100%;
   // display: inline-flex;
   // flex-direction: row;
 
-
   @include respond-to(small) {
-  //  background-color: red; 
-  
-    width: 100%
-}
+    //  background-color: red;
+
+    width: 100%;
+  }
 }
 
-.processmaindiv{
+.processmaindiv {
   width: 100%;
   display: inline-flex;
   flex-direction: row;
   @include respond-to(small) {
-  flex-direction: column;  
-width: 100%;
-// background-color: #4b4b4b;
-}
+    flex-direction: column;
+    width: 100%;
+    // background-color: #4b4b4b;
+  }
 
-  .processtxt{
+  .processtxt {
     width: 50%;
     display: flex;
     flex-direction: column;
     margin-left: 5%;
 
-@include respond-to(small) {
- width: 100%; 
-margin-left: 0;
-}
-    h2{
-      font-size: 36px;
-margin-top: 50px;      
+    @include respond-to(small) {
+      width: 100%;
+      margin-left: 0;
     }
-    a{
+    h2 {
+      font-size: 36px;
+      margin-top: 50px;
+    }
+    a {
       font-size: 18px;
       width: 200px;
       font-weight: 600;
       color: white;
       text-decoration: none;
       text-align: center;
-      background-color: #E5348C;
-border-radius: 20px;
-padding: 5px 10px;
-margin-left: 40%;
+      background-color: #e5348c;
+      border-radius: 20px;
+      padding: 5px 10px;
+      margin-left: 40%;
 
-@include respond-to(small) {
- display: none; 
-}
+      @include respond-to(small) {
+        display: none;
+      }
     }
   }
- 
 }
 
-.ProcessHeading{
-  width:100%;
+.ProcessHeading {
+  width: 100%;
   display: block;
 }
 
 .processContainer {
-
   display: flex;
   flex-direction: column;
   position: relative;
@@ -254,16 +250,16 @@ margin-left: 40%;
   margin: 20px;
   // margin: auto;
   // margin-right: 5%;
- 
-@include respond-to(small) {
- width: 90%; 
-}  
+
+  @include respond-to(small) {
+    width: 90%;
+  }
 }
 
 .processStep {
-// width: 700px;
-// background-color: #4e3e3e;
-width: 100%;
+  // width: 700px;
+  // background-color: #4e3e3e;
+  width: 100%;
   display: flex;
   // align-items: center;
   position: relative;
@@ -284,8 +280,6 @@ width: 100%;
   &:nth-child(4) {
     animation-delay: 0.8s;
   }
-
-  
 }
 
 .circle {
@@ -300,9 +294,6 @@ width: 100%;
   justify-content: center;
   font-weight: bold;
   margin-right: 15px;
-    
-
-  
 }
 
 .content {
@@ -311,15 +302,14 @@ width: 100%;
     font-size: 1.2em;
     margin: 0;
     color: #ffffff;
- 
+
     text-align: left;
   }
-  
+
   p {
     margin: 5px 0 0;
     color: #a9a9a9;
     font-size: 0.95em;
-  
   }
 }
 
@@ -334,8 +324,6 @@ width: 100%;
   }
 }
 
-
-
 .OurTeams {
   padding: 40px 20px;
   // background-color: #1b1b1b;
@@ -343,15 +331,15 @@ width: 100%;
   text-align: center;
 
   @include respond-to(small) {
-   min-height: 50vh; 
-   margin-bottom: -50px;
+    min-height: 50vh;
+    margin-bottom: -50px;
   }
   h1 {
     font-size: 96px;
     margin-bottom: 20px;
 
     @include respond-to(small) {
-     font-size: 48px; 
+      font-size: 48px;
     }
   }
 
@@ -363,9 +351,7 @@ width: 100%;
     padding-bottom: 10px;
 
     @include respond-to(small) {
-     width: 90vw;    
-     
-  
+      width: 90vw;
     }
     .member {
       flex: 0 0 25%; // 4 items per row on desktop
@@ -378,8 +364,8 @@ width: 100%;
       scroll-snap-align: start;
 
       @include respond-to(small) {
-       max-width: 200px; 
-       }
+        max-width: 200px;
+      }
       &:last-child {
         margin-right: 0;
       }
@@ -409,7 +395,7 @@ width: 100%;
         font-size: 24px;
         color: #bbb;
         margin-top: 8px;
-     text-align: justify;
+        text-align: justify;
       }
     }
   }

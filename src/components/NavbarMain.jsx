@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom"; // Import NavLink
 import styles from "../styles/NavbarMain.module.scss"; // Import SCSS for styles
-import logo from "../assets/Hlogo.png";
+import logo from "../assets/Logo/LOGOcolor.svg";
+import whitelogo from "../assets/Logo/LOGOwhite.svg";
 import Icons from "../components/Icons";
 
 const NavbarMain = () => {
@@ -19,7 +20,12 @@ const NavbarMain = () => {
 
   return (
     <div className={styles.navigation}>
-      <img className={styles.logo} src={logo} alt="Hlogo" />
+      {/* Conditionally render the logo based on `isExpanded` */}
+      <img
+        className={styles.logo}
+        src={isExpanded ? whitelogo : logo}
+        alt="Logo"
+      />
       <input
         type="checkbox"
         className={styles.navigation__checkbox}
@@ -42,7 +48,9 @@ const NavbarMain = () => {
             <NavLink
               to="/"
               className={({ isActive }) =>
-                isActive ? `${styles.navigation__link} ${styles.active}` : styles.navigation__link
+                isActive
+                  ? `${styles.navigation__link} ${styles.active}`
+                  : styles.navigation__link
               }
               onClick={closeMenu}
             >
@@ -53,7 +61,9 @@ const NavbarMain = () => {
             <NavLink
               to="/works"
               className={({ isActive }) =>
-                isActive ? `${styles.navigation__link} ${styles.active}` : styles.navigation__link
+                isActive
+                  ? `${styles.navigation__link} ${styles.active}`
+                  : styles.navigation__link
               }
               onClick={closeMenu}
             >
@@ -64,7 +74,9 @@ const NavbarMain = () => {
             <NavLink
               to="/expertise"
               className={({ isActive }) =>
-                isActive ? `${styles.navigation__link} ${styles.active}` : styles.navigation__link
+                isActive
+                  ? `${styles.navigation__link} ${styles.active}`
+                  : styles.navigation__link
               }
               onClick={closeMenu}
             >
@@ -75,29 +87,35 @@ const NavbarMain = () => {
             <NavLink
               to="/about"
               className={({ isActive }) =>
-                isActive ? `${styles.navigation__link} ${styles.active}` : styles.navigation__link
+                isActive
+                  ? `${styles.navigation__link} ${styles.active}`
+                  : styles.navigation__link
               }
               onClick={closeMenu}
             >
               About Haraay
             </NavLink>
           </li>
-          <li className={styles.navigation__item}>
+          {/* <li className={styles.navigation__item}>
             <NavLink
               to="/blogs"
               className={({ isActive }) =>
-                isActive ? `${styles.navigation__link} ${styles.active}` : styles.navigation__link
+                isActive
+                  ? `${styles.navigation__link} ${styles.active}`
+                  : styles.navigation__link
               }
               onClick={closeMenu}
             >
               Blogs
             </NavLink>
-          </li>
+          </li> */}
           <li className={styles.navigation__item}>
             <NavLink
-              to="/contact"
+              to="/contact-us"
               className={({ isActive }) =>
-                isActive ? `${styles.navigation__link} ${styles.active}` : styles.navigation__link
+                isActive
+                  ? `${styles.navigation__link} ${styles.active}`
+                  : styles.navigation__link
               }
               onClick={closeMenu}
             >
@@ -121,6 +139,7 @@ const NavbarMain = () => {
             <Icons.Instagram className={styles.siconstyle} title="Home" />
             <Icons.Linkedin className={styles.siconstyle} title="Home" />
             <Icons.Facebook className={styles.siconstyle} title="Home" />
+            <Icons.FaBehanceSquare className={styles.siconstyle} title="Home" />
           </div>
         </div>
       </nav>

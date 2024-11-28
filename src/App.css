@@ -36,14 +36,8 @@ a:hover {
   text-decoration: underline;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-}
-
 .container {
   padding: 0 var(--spacing-md);
   /* max-width: 1200px; */
   margin: 0 auto;
 }
-

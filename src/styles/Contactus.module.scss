@@ -6,11 +6,17 @@ $breakpoint-extra-large: 1200px;
 
 @mixin respond-to($breakpoint) {
   @if $breakpoint == small {
-    @media (max-width: $breakpoint-small) { @content; }
+    @media (max-width: $breakpoint-small) {
+      @content;
+    }
   } @else if $breakpoint == medium {
-    @media (max-width: $breakpoint-medium) { @content; }
+    @media (max-width: $breakpoint-medium) {
+      @content;
+    }
   } @else if $breakpoint == large {
-    @media (max-width: $breakpoint-large) { @content; }
+    @media (max-width: $breakpoint-large) {
+      @content;
+    }
   }
 }
 //   @include respond-to(small) {
@@ -22,21 +28,20 @@ $breakpoint-extra-large: 1200px;
 // }
 // ----------------------------------------------------------------
 
-
 .contactpage {
   width: 100vw;
   height: auto;
   background-color: #1c1d21;
   // padding: 10px;
   @include respond-to(medium) {
-  width: 100vw!important;
-  padding: 0%!important;
+    width: 100vw !important;
+    padding: 0% !important;
   }
 }
 
 .Herosec {
   .Herodiv {
- height: auto;
+    height: auto;
     padding: 50px;
     // gap: 50px;
     width: 100%;
@@ -45,68 +50,64 @@ $breakpoint-extra-large: 1200px;
 
     @include respond-to(medium) {
       padding: 20px;
-    gap: 0px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1.1fr 2fr;
+      gap: 0px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1.1fr 2fr;
 
-    @include respond-to(small) {
-     padding: 0; 
-    }
+      @include respond-to(small) {
+        padding: 0;
       }
+    }
     .videodiv {
-
       video {
-       
         width: 100%;
-       
+
         border-radius: 30px;
         object-fit: cover;
         // height: 100%;
         @include respond-to(medium) {
-        height: 100%;
-          margin: auto 0 ; 
+          height: 100%;
+          margin: auto 0;
         }
       }
     }
     .contactformsec {
-    @include respond-to(small) {
-   margin-top: 0px;
-  //  width: auto;
-  //  padding: 0;
-  //  margin: 0;
-    
-  }
-    
+      @include respond-to(small) {
+        margin-top: 0px;
+        //  width: auto;
+        //  padding: 0;
+        //  margin: 0;
+      }
+
       .contactform {
         background-color: #aef4f4;
         width: 85%;
         color: #2b2322;
-      
+
         margin: auto;
         border-radius: 50px;
         border-bottom-left-radius: 60px;
         border-bottom-right-radius: 60px;
 
-          @include respond-to(small) {
-         width: 100%;
-         border-radius: 0;   margin: 0;
-         padding: 0;
+        @include respond-to(small) {
+          width: 100%;
+          border-radius: 0;
+          margin: 0;
+          padding: 0;
         }
 
         @include respond-to(medium) {
-         width: 95%; 
-         margin:0% 4%;
-
+          width: 95%;
+          margin: 0% 4%;
         }
         h1 {
           color: #2b2322;
           font-size: 40px;
           font-family: Stara;
           line-height: 70px;
-            @include respond-to(small) {
-           
-              font-size: 24px;
+          @include respond-to(small) {
+            font-size: 24px;
           }
         }
         .form {
@@ -118,11 +119,10 @@ $breakpoint-extra-large: 1200px;
           border-bottom-left-radius: 50px;
           border-bottom-right-radius: 50px;
           box-shadow: 0px 0px 20px 0px rgba(231, 231, 231, 0.1);
-            @include respond-to(small) {
-              border-bottom-left-radius: 0px;
-              border-bottom-right-radius: 0px;
-              box-shadow: none;
-             
+          @include respond-to(small) {
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+            box-shadow: none;
           }
           form {
             width: 100%;
@@ -130,24 +130,23 @@ $breakpoint-extra-large: 1200px;
             .forminputes {
               width: 100%;
               padding: 10px;
-              flex-direction: column; 
-              .labeldiv{
+              flex-direction: column;
+              .labeldiv {
                 position: relative;
                 margin: 0px;
                 width: 100%;
-                label{
-             margin: 0px;
-             padding: 0px;
+                label {
+                  margin: 0px;
+                  padding: 0px;
                   text-align: left;
-                  span{
+                  span {
                     color: red;
                   }
-
                 }
-               }
-              .descbox{
-                width: 100%
-                ; height: 100px;
+              }
+              .descbox {
+                width: 100%;
+                height: 100px;
                 border-radius: 10px;
                 font-size: 20px;
                 color: white;
@@ -158,12 +157,11 @@ $breakpoint-extra-large: 1200px;
                 font-size: 20px;
                 font-family: Stara;
                 color: #ffffff;
-               
-               
+
                 margin-bottom: 5px;
                 margin-left: 10px;
-                   }
-                  
+              }
+
               input {
                 padding: 10px;
                 width: 100%;
@@ -173,215 +171,197 @@ $breakpoint-extra-large: 1200px;
                 // border-bottom: 2px solid #c2c2c2;
                 background-color: #1c1d21;
                 color: #ffffff;
-              
+
                 font-size: 20px;
                 padding-left: 2%;
 
-                
                 ::placeholder {
                   color: #2f3031;
                   margin-left: 20%;
-               
                 }
               }
-              .enquiryinput{
+              .enquiryinput {
                 display: flex;
                 font-size: 20px;
                 color: white;
                 input[type="radio"] {
                   width: 20px; // Adjusted size for radio button
                   height: 20px;
-                  margin:  10px ;
-                
+                  margin: 10px;
+
                   border: 4px solid #000000;
-                  accent-color: #F8EF6E;
+                  accent-color: #f8ef6e;
                   // Apply checked styles
-                
                 }
-                
-                h5{
+
+                h5 {
                   font-size: 20px;
                   color: white;
                   margin: auto 10px auto 10px;
                 }
-               
               }
             }
           }
           .submitbtn {
             display: flex;
-            input{
-            background-color: #E5348C;
-            width: 330px;
-          height: 60px;
-        font-size: 20px;
-      color: white;    
-    margin-left: 5%;
-            font-size: 25px;
-            border-radius: 30px;
+            input {
+              background-color: #e5348c;
+              width: 330px;
+              height: 60px;
+              font-size: 20px;
+              color: white;
+              margin-left: 5%;
+              font-size: 25px;
+              border-radius: 30px;
             }
-  
-  }
+          }
         }
       }
     }
   }
 }
 
-
 // contact details
 
-.contactdetails{
+.contactdetails {
   width: 100%;
   min-height: 50vh;
   padding-left: 100px;
 
   @include respond-to(small) {
-  width: 100vw !important;
-  padding: 5%;
-  height: auto;
+    width: 100vw !important;
+    padding: 5%;
+    height: auto;
   }
 
   @include respond-to(medium) {
-    width:98% !important;
+    width: 98% !important;
     padding: 5% 4% 5% 4% !important;
     height: auto;
   }
-  .contactdetailsdiv{
+  .contactdetailsdiv {
     width: 100%;
-   padding: 0px !important;
+    padding: 0px !important;
     display: flex;
     justify-content: space-around;
-gap: 5%;
+    gap: 5%;
 
-@include respond-to(small) {
-  width: 100% !important;
-  display: inline-block;
-  }
-
-  @include respond-to(medium) {
-    width: 100% !important; 
-     display: inline-block;
-  }
-
-
-
-.leftdiv , .rightdiv{
- justify-content: center
- ;
- text-align: left; 
- height: 100%;align-items: flex-start;
- width: 100%;
-
- @include respond-to(medium) {
-  margin-top: 10vh;
- }
- div{
-  margin: 50px 0;
-
-  @include respond-to(small) {
-    margin: 20px 0px !important ;
-    width: 100%;
-    // overflow: hidden ;
+    @include respond-to(small) {
+      width: 100% !important;
+      display: inline-block;
     }
+
     @include respond-to(medium) {
-      margin: 20px 0px !important ;
-      width: 100%;
+      width: 100% !important;
+      display: inline-block;
     }
- }
-}
-    h1{
+
+    .leftdiv,
+    .rightdiv {
+      justify-content: center;
+      text-align: left;
+      height: 100%;
+      align-items: flex-start;
+      width: 100%;
+
+      @include respond-to(medium) {
+        margin-top: 10vh;
+      }
+      div {
+        margin: 50px 0;
+
+        @include respond-to(small) {
+          margin: 20px 0px !important ;
+          width: 100%;
+          // overflow: hidden ;
+        }
+        @include respond-to(medium) {
+          margin: 20px 0px !important ;
+          width: 100%;
+        }
+      }
+    }
+    h1 {
       color: white;
       font-size: 96px;
-    
+
       font-family: Etherel;
       font-weight: 800;
-      
+
       @include respond-to(small) {
         // font-size: 36px !important;
         font-size: 50px !important ;
         margin: 0px !important ;
         padding: 0px !important;
-        }
-      
+      }
     }
-    div{
+    div {
       height: 50px;
       color: white;
       margin: 10px 0px 10px 0px;
-      
-     
+
       @include respond-to(small) {
-      
-       margin: 70px 0px 0px !important;
+        margin: 70px 0px 0px !important;
       }
 
       @include respond-to(medium) {
         margin: 20px 0px 0px !important;
       }
 
-
-      p{
+      p {
         font-size: 24px;
-         
+
         @include respond-to(small) {
-         font-size: 20px; 
-         margin: 10px 0px 10px 0px !important ;
+          font-size: 20px;
+          margin: 10px 0px 10px 0px !important ;
         }
         @include respond-to(medium) {
-         font-size: 24px; 
-         margin: 10px 0px 0px 0px !important;
+          font-size: 24px;
+          margin: 10px 0px 0px 0px !important;
         }
-        
       }
     }
 
-    h4{
+    h4 {
       font-size: 32px;
       text-decoration: underline;
-      color: #F8EF6E;
+      color: #f8ef6e;
 
+      @include respond-to(small) {
+        font-size: 28px !important;
+        margin: -10px 0px 100px !important;
 
-        @include respond-to(small) {
-          font-size: 28px !important;
-          margin:-10px 0px 100px !important; 
-          
-          color: #F8EF6E;
+        color: #f8ef6e;
       }
 
       @include respond-to(medium) {
-       font-size: 32px; 
-       margin: -20px 0 0px 0px;
-       font-weight: 400;   color: #F8EF6E;
+        font-size: 32px;
+        margin: -20px 0 0px 0px;
+        font-weight: 400;
+        color: #f8ef6e;
       }
     }
-    .phoneno{
-        @include respond-to(small) {
-      font-size: 28px;
-      padding-top: 50px;
-       font-weight: 400;   color: #F8EF6E;
-   
+    .phoneno {
+      @include respond-to(small) {
+        font-size: 28px;
+        padding-top: 50px;
+        font-weight: 400;
+        color: #f8ef6e;
       }
       @include respond-to(medium) {
-        margin:30px 0px 0px !important; 
+        margin: 30px 0px 0px !important;
         font-weight: 400;
-        color: #F8EF6E;
+        color: #f8ef6e;
       }
     }
   }
 }
 
-
-
-// partners 
-
-
-
+// partners
 
 .partnerslogo {
   display: inline-flex;
   transform: rotate(-5deg);
-
 }
 .partnerstext {
   margin-top: 50px;
@@ -395,13 +375,12 @@ gap: 5%;
   position: relative;
 
   @include respond-to(small) {
-    width: 100vw!important;
-    height: auto!important;
-    margin-top: 0px!important;
+    width: 100vw !important;
+    height: auto !important;
+    margin-top: 0px !important;
 
-    h1{
+    h1 {
       font-size: 50px !important ;
-
     }
   }
   .partnrshead {
@@ -409,12 +388,12 @@ gap: 5%;
     position: absolute;
     left: 0;
     top: 10%;
-  @include respond-to(small) {
-    width: 100% !important ;
-    position: absolute;
-    left: 0;
-    top: 10%;
-}
+    @include respond-to(small) {
+      width: 100% !important ;
+      position: absolute;
+      left: 0;
+      top: 10%;
+    }
 
     h1 {
       font-size: 96px;
@@ -425,8 +404,7 @@ gap: 5%;
       text-align: left;
 
       @include respond-to(small) {
-       
-        margin-left:30px; 
+        margin-left: 30px;
       }
     }
     p {
@@ -437,12 +415,12 @@ gap: 5%;
       margin-left: 40px;
       color: white;
 
-        @include respond-to(small) {
-       font-size: 20px ;
-       width: 90vw;
-       padding: 3% 15% 0% 0% ;
-       text-align: left;
-       line-height: 30px;
+      @include respond-to(small) {
+        font-size: 20px;
+        width: 90vw;
+        padding: 3% 15% 0% 0%;
+        text-align: left;
+        line-height: 30px;
       }
     }
   }
@@ -477,16 +455,16 @@ gap: 5%;
   overflow: hidden; /* Hide the overflow */
   transform: rotate(-5deg);
   @include respond-to(small) {
-  width: 100vw;
-}
+    width: 100vw;
+  }
   .imagetrack2 {
     display: flex; /* Align images in a row */
     width: calc(6 * 100vw); /* 6 images */
     animation: slide2 120s linear infinite;
     // transform: translateX(300vw);
-    gap: 50px; 
-      @include respond-to(small) {
-        gap: 0px; 
+    gap: 50px;
+    @include respond-to(small) {
+      gap: 0px;
     }
     img {
       width: 400px; /* Set each image width to 100vw */
@@ -504,13 +482,11 @@ gap: 5%;
   }
 }
 
-
-
 .partnercontent {
   width: 100%;
   margin-top: 130px;
   @include respond-to(small) {
-   margin-top: 0; 
+    margin-top: 0;
   }
 }
 
@@ -520,11 +496,9 @@ gap: 5%;
   overflow: hidden; /* Hide the overflow */
   transform: rotate(-5deg);
 
-
-
   @include respond-to(small) {
- margin-top: 0px; 
-}
+    margin-top: 0px;
+  }
   .imagetrack {
     display: flex; /* Align images in a row */
     width: calc(6 * 100vw); /* 6 images */
@@ -534,8 +508,8 @@ gap: 5%;
       width: 200px; /* Set each image width to 100vw */
       flex-shrink: 0; /* Prevent images from shrinking */
 
-        @include respond-to(small) {
-       width: 100px; 
+      @include respond-to(small) {
+        width: 100px;
       }
     }
   }
@@ -550,15 +524,11 @@ gap: 5%;
   }
 }
 
+// Responsiveness
 
+@media (max-width: 576px) {
+  // Mobile devices
 
-
-// Responsiveness 
-
-
-
-@media (max-width: 576px) { // Mobile devices
-  
   // Hero Section
   .Herosec {
     .Herodiv {
@@ -592,6 +562,178 @@ gap: 5%;
 
       .headtxt {
         font-size: 155px;
+      }
+    }
+  }
+}
+
+// partners section
+
+.partnercontent {
+  // background-color: yellow;
+  width: 100%;
+  margin-top: -130px;
+  @include respond-to(small) {
+    margin-top: 0px;
+  }
+}
+.imageslider {
+  // margin-top: 150px;
+  width: 100vw; /* The visible area */
+  overflow: hidden; /* Hide the overflow */
+  transform: rotate(-5deg);
+  @include respond-to(small) {
+    margin-top: 70px;
+  }
+
+  .imagetrack {
+    display: flex; /* Align images in a row */
+    width: calc(6 * 100vw); /* 6 images */
+    animation: slide 30s linear infinite;
+
+    img {
+      margin: 10px;
+      width: 170px; /* Set each image width to 100vw */
+      flex-shrink: 0; /* Prevent images from shrinking */
+      border-radius: 50%;
+      // box-shadow: 0 0 0 5px black, 0 0 0 8px #e5348c;
+
+      // Define a color palette
+      $colors: (
+        black: #000000,
+        white: #ffffff,
+        pink: #e5348c,
+        blue: #142a36,
+        green: #f8ef6e,
+        sky: #aef4f4,
+      );
+
+      // Create color variations using nth-child
+      &:nth-child(4n + 1) {
+        box-shadow: 0 0 0 4px map-get($colors, green);
+      }
+
+      &:nth-child(4n + 2) {
+        box-shadow: 0 0 0 4px map-get($colors, white);
+      }
+
+      &:nth-child(4n + 3) {
+        box-shadow: 0 0 0 4px map-get($colors, pink);
+      }
+
+      &:nth-child(4n + 4) {
+        box-shadow: 0 0 0 4px map-get($colors, sky);
+      }
+
+      @include respond-to(small) {
+        width: 100px;
+      }
+    }
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translateX(0); /* Start from the first image */
+    }
+    100% {
+      transform: translateX(-100vw); /* Move one full image width to the left */
+    }
+  }
+}
+// text animation
+
+.imageslider2 {
+  // margin-top: 50px;
+  width: 100vw; /* The visible area */
+  overflow: hidden; /* Hide the overflow */
+  transform: rotate(-5deg);
+  @include respond-to(small) {
+    margin-top: 20px;
+  }
+  .imagetrack2 {
+    display: flex; /* Align images in a row */
+    width: calc(6 * 100vw); /* 6 images */
+    animation: slide2 120s linear infinite;
+    // transform: translateX(300vw);
+    gap: 50px;
+    img {
+      width: 400px; /* Set each image width to 100vw */
+      flex-shrink: 0; /* Prevent images from shrinking */
+      @include respond-to(small) {
+        width: 400px;
+      }
+    }
+  }
+
+  @keyframes slide2 {
+    0% {
+      transform: translateX(-600vw); /* Start from the first image */
+    }
+    100% {
+      transform: translateX(0vw); /* Move one full image width to the left */
+    }
+  }
+}
+
+.partnerslogo {
+  display: inline-flex;
+  transform: rotate(-5deg);
+}
+.partnerstext {
+  // background-color: #232429;
+  margin-top: 50px;
+  display: flex;
+  gap: 100px;
+  transform: rotate(-5deg);
+  @include respond-to(small) {
+    margin-top: 150px;
+  }
+}
+.partners {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  @include respond-to(small) {
+    width: 100%;
+    height: 50vh;
+    min-height: 70vh;
+  }
+  .partnrshead {
+    width: 50%;
+    position: absolute;
+    left: 0;
+    top: 10%;
+    // background-color: red;
+    @include respond-to(small) {
+      padding: 0;
+      width: 100%;
+    }
+    h1 {
+      font-size: 96px;
+      margin: 40px;
+      margin-bottom: 0px;
+      font-weight: 500;
+      font-family: Etherel;
+      text-align: left;
+      @include respond-to(small) {
+        padding: 0;
+        font-size: 48px;
+        font-weight: 900;
+        text-align: center;
+      }
+    }
+    p {
+      text-align: left;
+      font-size: 32px;
+      width: 40vw;
+      line-height: 36px;
+      margin-left: 40px;
+      @include respond-to(small) {
+        text-align: center;
+        font-size: 20px;
+        width: 100%;
+        line-height: 36px;
+        margin-left: 0px;
       }
     }
   }

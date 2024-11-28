@@ -5,19 +5,55 @@ import styles from "../styles/AboutUs.module.scss";
 import AboutSectionImg from "../assets/AboutUssubimg.svg";
 import FAQ from "../pages/FAQsection";
 import member1 from "../assets/team1.svg";
+import member2 from "../assets/team2.svg";
 
 export default function AboutUs() {
   const teamData = [
-    { name: ' Rajesh', jobTitle: 'Job Title', description: 'Lorem ipsum dolor sit amet, consecteturni', image: member1 },
-    { name: 'Full ram', jobTitle: 'Job Title', description: 'Lorem ipsum dolor sit amet, consectetur i', image: member1 },
-    { name: 'Full Name', jobTitle: 'Job Title', description: 'Lorem ipsum dolor sit amet, consectetur i', image: member1 },
-    { name: 'Full Name', jobTitle: 'Job Title', description: 'Lorem ipsum dolor sit amet, consectetur i', image: member1 },
-    { name: 'Full Name', jobTitle: 'Job Title', description: 'Lorem ipsum dolor sit amet, consectetur i', image: member1 },
-    { name: 'Full Name', jobTitle: 'Job Title', description: 'Lorem ipsum dolor sit amet, consectetur i', image: member1 },
-    { name: 'Full Name', jobTitle: 'Job Title', description: 'Lorem ipsum dolor sit amet, consectetur i', image: member1 },
+    {
+      name: "Samiksha Taru",
+      jobTitle: "CEO",
+      description: "Lorem ipsum dolor sit amet, consecteturni",
+      image: member2,
+      description: "Leading the team with strategic vision and innovation.",
+    },
+    {
+      name: "Jai",
+      jobTitle: "Graphics",
+      description: "Lorem ipsum dolor sit amet, consectetur i",
+      image: member2,
+      description: "Creating stunning visual designs and graphics.",
+    },
+    {
+      name: "Vinay",
+      jobTitle: "UI UX",
+      description: "Lorem ipsum dolor sit amet, consectetur i",
+      image: member1,
+      description: "Designing seamless user experiences and interfaces.",
+    },
+    {
+      name: "Tanuja",
+      jobTitle: "3D Modeling",
+      description: "Lorem ipsum dolor sit amet, consectetur i",
+      image: member2,
+      description: "Bringing ideas to life through 3D visualizations.",
+    },
+    {
+      name: "Akash Bamgude",
+      jobTitle: "Backend Developer",
+      description: "Lorem ipsum dolor sit amet, consectetur i",
+      image: member1,
+      description: "Building and managing robust backend systems.",
+    },
+    {
+      name: "Prajwal Thombare",
+      jobTitle: "Frontend Developer",
+      description: "Lorem ipsum dolor sit amet, consectetur i",
+      image: member1,
+      description: "Developing visually engaging and interactive interfaces.",
+    },
     // Add more team members as needed
   ];
- 
+
   return (
     <div className={styles.AboutUspage}>
       {/* Hero Section */}
@@ -54,7 +90,7 @@ export default function AboutUs() {
         <div className={styles.processmaindiv}>
           <div className={styles.processtxt}>
             <h2>Steps we follow for Products</h2>
-            <a href="#">Contact us ➡️</a>
+            <a href="#">Contact us ➔</a>
           </div>
           <div className={styles.processContainer}>
             <div className={styles.processStep}>
@@ -106,18 +142,18 @@ export default function AboutUs() {
         </div>
       </section>
       <section className={styles.OurTeams}>
-      <h1>Our Team</h1>
-      <div className={styles.teamdiv}>
-        {teamData.map((member, index) => (
-          <div key={index} className={styles.member}>
-            <img src={member.image} alt={member.name} />
-            <h3>{member.name}</h3>
-            <h4>{member.jobTitle}</h4>
-            <p>{member.description}</p>
-          </div>
-        ))}
-      </div>
-    </section>
+        <h1>Our Team</h1>
+        <div className={styles.teamdiv}>
+          {teamData.map((member, index) => (
+            <div key={index} className={styles.member}>
+              <img src={member.image} alt={member.name} />
+              <h3>{member.name}</h3>
+              <h4>{member.jobTitle}</h4>
+              <p>{member.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       <FAQ />
     </div>

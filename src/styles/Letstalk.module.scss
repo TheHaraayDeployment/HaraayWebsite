@@ -1,44 +1,98 @@
+// --------------------------RESPONSIVE ENV--------------------------------------
+$breakpoint-small: 480px;
+$breakpoint-medium: 840px;
+$breakpoint-large: 1024px;
+$breakpoint-extra-large: 1200px;
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == small {
+    @media (max-width: $breakpoint-small) {
+      @content;
+    }
+  } @else if $breakpoint == medium {
+    @media (max-width: $breakpoint-medium) {
+      @content;
+    }
+  } @else if $breakpoint == large {
+    @media (max-width: $breakpoint-large) {
+      @content;
+    }
+  }
+}
+.Letstalksec {
+  min-height: auto;
+  @include respond-to(small) {
+    max-height: 40vh !important;
+    text-align: left;
+    min-height: 40vh !important;
+  }
+}
 .Letstalk {
-    height: 80vh;
+  // background-color: red;
+  height: 80vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  /* Stack children vertically */
+  align-items: center;
+  /* Center horizontally */
+  justify-content: center;
+  /* Center vertically */
+
+  @include respond-to(small) {
+    padding: 0;
     width: 100vw;
-    display: flex;
-    flex-direction: column;
-    /* Stack children vertically */
-    align-items: center;
-    /* Center horizontally */
-    justify-content: center;
-    /* Center vertically */
+    max-height: 40vh !important;
+    text-align: left;
+    min-height: 40vh !important;
+  }
 
-    h1 {
-        width: 80%;
-        font-size: 80px;
-        text-align: center;
-
-        span {
-            text-decoration-line: underline;
-            font-style: italic;
-        }
+  h1 {
+    width: 80%;
+    font-size: 80px;
+    text-align: center;
+    @include respond-to(small) {
+      font-size: 40px;
+      text-align: center;
     }
 
-    div {
-        margin-top: 50px;
-        width: 80%;
-        text-align: center;
-
-        display: inline-flex;
-        gap: 5%;
-
-        h2 {
-            margin: auto;
-            text-align: center;
-            font-size: 40px;
-            color: #f8ef6ec9;
-            margin-bottom: 20px;
-
-            :hover {
-                transform: scale(1.1);
-                transition: transform 0.3s ease-in-out;
-            }
-        }
+    span {
+      text-decoration-line: underline;
+      font-style: italic;
+      @include respond-to(small) {
+        display: block;
+        // text-wrap: nowrap;
+        // font-size: 30px;
+      }
     }
+  }
+
+  div {
+    margin-top: 50px;
+    width: 80%;
+    text-align: center;
+
+    display: inline-flex;
+    gap: 5%;
+
+    @include respond-to(small) {
+      display: block;
+    }
+
+    h2 {
+      margin: auto;
+      text-align: center;
+      font-size: 40px;
+      color: #f8ef6ec9;
+      margin-bottom: 20px;
+      @include respond-to(small) {
+        font-size: 21px;
+      }
+
+      :hover {
+        transform: scale(1.1);
+        transition: transform 0.3s ease-in-out;
+      }
+    }
+  }
 }
