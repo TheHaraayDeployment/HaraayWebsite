@@ -173,12 +173,13 @@ function App() {
 
 function AppWrapper() {
   return (
-    <React.Fragment>
-      <Router>
-        <ScrollToTop />
-        <App /> <Sugar background="#f7f7f7" animation="slide" />
-      </Router>
-    </React.Fragment>
+    // <React.Fragment>
+    <Router>
+      <ScrollToTop />
+      <App />
+      {/* <Sugar background="#f7f7f7" animation="slide" /> */}
+    </Router>
+    // </React.Fragment>
   );
 }
 
