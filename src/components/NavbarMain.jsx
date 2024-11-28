@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom"; // Import NavLink
+import { Link, NavLink } from "react-router-dom"; // Import NavLink
 import styles from "../styles/NavbarMain.module.scss"; // Import SCSS for styles
 import logo from "../assets/Logo/LOGOcolor.svg";
 import whitelogo from "../assets/Logo/LOGOwhite.svg";
@@ -21,11 +21,13 @@ const NavbarMain = () => {
   return (
     <div className={styles.navigation}>
       {/* Conditionally render the logo based on `isExpanded` */}
-      <img
-        className={styles.logo}
-        src={isExpanded ? whitelogo : logo}
-        alt="Logo"
-      />
+      <Link to="/">
+        <img
+          className={styles.logo}
+          src={isExpanded ? whitelogo : logo}
+          alt="Logo"
+        />{" "}
+      </Link>
       <input
         type="checkbox"
         className={styles.navigation__checkbox}
@@ -136,10 +138,29 @@ const NavbarMain = () => {
             </h2>
           </div>
           <div className={styles.socialicons}>
-            <Icons.Instagram className={styles.siconstyle} title="Home" />
-            <Icons.Linkedin className={styles.siconstyle} title="Home" />
-            <Icons.Facebook className={styles.siconstyle} title="Home" />
-            <Icons.FaBehanceSquare className={styles.siconstyle} title="Home" />
+            <a
+              href="http://Instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {" "}
+              <Icons.Instagram
+                className={styles.siconstyle}
+                title="Instagram"
+              />
+            </a>
+            <a href="http://Linkdein.com/" target="_blank">
+              <Icons.Linkedin className={styles.siconstyle} title="Linkdein" />
+            </a>{" "}
+            <a href="http://facebook.com/" target="_blank">
+              <Icons.Facebook className={styles.siconstyle} title="Facebook" />{" "}
+            </a>{" "}
+            <a href="https://www.behance.net/helloharaaystudio" target="_blank">
+              <Icons.FaBehanceSquare
+                className={styles.siconstyle}
+                title="Behance"
+              />{" "}
+            </a>{" "}
           </div>
         </div>
       </nav>

@@ -31,12 +31,12 @@ const FAQ = () => {
       }
     });
   }, [openQuestion]);
-  
 
   const faqData = [
     {
       question: "Why go with Haraay?",
-      answer: "Being one of India's leading creative agencies, we are known for creative, disruptive, out-of-the-box and innovative work that breaks industry standards.",
+      answer:
+        "Being one of India's leading creative agencies, we are known for creative, disruptive, out-of-the-box and innovative work that breaks industry standards.",
     },
     {
       question: "What is creative design at Haraay?",
