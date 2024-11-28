@@ -1,30 +1,30 @@
 import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import styles from "../styles/Works.module.scss";
-import heroimg1 from "../assets/bakers_casestudy_details_overviewimg2.svg";
-import heroimg2 from "../assets/purus_casestudy_overview.svg";
-import heroimg6 from "../assets/purus_casestudy_hero.svg";
-import heroimg4 from "../assets/Serenecasepackaging1.svg";
-import heroimg5 from "../assets/SereneCasestudyPackaging.svg";
-import heroimg3 from "../assets/ViratCasestudyPackaging2.svg";
+import heroimg1 from "../assets/Akoya/AkoyaFullimg.png";
+import heroimg2 from "../assets/Bakers/Bakers.png";
+import heroimg3 from "../assets/purus_casestudy_hero.svg";
+import heroimg4 from "../assets/Serene/SerenHero.webp";
+import heroimg5 from "../assets/Virat/ViratHero.jpeg";
+// import heroimg3 from "../assets/ViratCasestudyPackaging2.svg";
 import Letstalk from "../components/Letstalk";
 
 // Example data for works (replace with your actual data)
 const worksData = [
-  { id: 1, title: "Purus", tag: "Branding", image: heroimg1 },
-  { id: 2, title: "Serene Skin", tag: "Branding", image: heroimg2 },
-  { id: 3, title: "Virat", tag: "Websites", image: heroimg6 },
-  { id: 4, title: "Akoya", tag: "Branding", image: heroimg4 },
-  { id: 5, title: "Cream Forest", tag: "Websites", image: heroimg5 },
-  { id: 6, title: "BMS", tag: "Websites", image: heroimg3 },
-  { id: 7, title: "Baker's Street", tag: "Branding", image: heroimg3 },
-  { id: 8, title: "Lok Neta", tag: "Websites", image: heroimg3 },
-  { id: 9, title: "Hathikari & Co", tag: "Websites", image: heroimg4 },
-  { id: 10, title: "Lok Neta", tag: "Websites", image: heroimg1 },
-  { id: 11, title: "Lok Neta", tag: "Websites", image: heroimg2 },
-  { id: 12, title: "Lok Neta", tag: "Websites", image: heroimg3 },
-  { id: 13, title: "Lok Neta", tag: "Websites", image: heroimg4 },
-  { id: 14, title: "Lok Neta", tag: "Websites", image: heroimg5 },
+  { id: 1, title: "Akoya", tag: "Branding", image: heroimg1 },
+  { id: 2, title: " Bakers Street", tag: "Branding", image: heroimg2 },
+  { id: 3, title: "Purus", tag: "Websites", image: heroimg3 },
+  { id: 4, title: "Serene Skin", tag: "Branding", image: heroimg4 },
+  { id: 5, title: "Virat", tag: "Websites", image: heroimg5 },
+  // { id: 6, title: "BMS", tag: "Websites", image: heroimg3 },
+  // { id: 7, title: "Baker's Street", tag: "Branding", image: heroimg3 },
+  // { id: 8, title: "Lok Neta", tag: "Websites", image: heroimg3 },
+  // { id: 9, title: "Hathikari & Co", tag: "Websites", image: heroimg4 },
+  // { id: 10, title: "Lok Neta", tag: "Websites", image: heroimg1 },
+  // { id: 11, title: "Lok Neta", tag: "Websites", image: heroimg2 },
+  // { id: 12, title: "Lok Neta", tag: "Websites", image: heroimg3 },
+  // { id: 13, title: "Lok Neta", tag: "Websites", image: heroimg4 },
+  // { id: 14, title: "Lok Neta", tag: "Websites", image: heroimg5 },
 ];
 
 // Filters
@@ -82,7 +82,7 @@ export default function Works() {
       <div className={styles.Header}>
         <div className={styles.headerText}>
           <h1>All Latest Works</h1>
-          <div className={styles.filterButtons}>
+          {/* <div className={styles.filterButtons}>
             {filters.map((filter, idx) => (
               <button
                 key={idx}
@@ -94,7 +94,7 @@ export default function Works() {
                 {filter}
               </button>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
 

@@ -141,7 +141,7 @@ export default function AboutUs() {
           </div>
         </div>
       </section>
-      <section className={styles.OurTeams}>
+      {/* <section className={styles.OurTeams}>
         <h1>Our Team</h1>
         <div className={styles.teamdiv}>
           {teamData.map((member, index) => (
@@ -153,7 +153,7 @@ export default function AboutUs() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       <FAQ />
     </div>

@@ -406,7 +406,7 @@ export default function LandingPage() {
           <div className="projectCards">
             <div className={styles.projectcardtxt}>
               <h1>Akoya</h1>
-              <h3>Branding | Website | Packaging</h3>
+              <h3>Branding & Packaging</h3>
             </div>
             <img
               className={styles.projectimg}
@@ -417,7 +417,7 @@ export default function LandingPage() {
           <div className="projectCards">
             <div className={styles.projectcardtxt}>
               <h1>Bosch Air Purifier</h1>
-              <h3>Branding | Website | Packaging</h3>
+              <h3>3D</h3>
             </div>
             <img
               className={styles.projectimg}
@@ -428,7 +428,7 @@ export default function LandingPage() {
           <div className="projectCards">
             <div className={styles.projectcardtxt}>
               <h1>BMS</h1>
-              <h3>Branding | Website | Packaging</h3>
+              <h3>Web Designing</h3>
             </div>
             <img
               className={styles.projectimg}
@@ -439,7 +439,7 @@ export default function LandingPage() {
           <div className="projectCards">
             <div className={styles.projectcardtxt}>
               <h1>Lokneta</h1>
-              <h3>Branding | Website | Packaging</h3>
+              <h3>Mobile App Designing</h3>
             </div>
             <img
               className={styles.projectimg}

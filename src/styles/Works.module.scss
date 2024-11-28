@@ -10,15 +10,11 @@ $breakpoint-extra-large: 1200px;
     @media (max-width: $breakpoint-small) {
       @content;
     }
-  }
-
-  @else if $breakpoint==medium {
+  } @else if $breakpoint==medium {
     @media (max-width: $breakpoint-medium) {
       @content;
     }
-  }
-
-  @else if $breakpoint==large {
+  } @else if $breakpoint==large {
     @media (max-width: $breakpoint-large) {
       @content;
     }
@@ -32,7 +28,7 @@ $breakpoint-extra-large: 1200px;
   padding-top: 50px;
 
   @include respond-to(small) {
-   margin-top: 50px; 
+    margin-top: 50px;
   }
 }
 
@@ -47,7 +43,6 @@ $breakpoint-extra-large: 1200px;
     font-size: 96px;
     font-weight: 500;
     font-family: Etherel;
- 
   }
 
   .filterButtons {
@@ -81,6 +76,8 @@ $breakpoint-extra-large: 1200px;
   margin-bottom: 20px;
 
   .workItem {
+    max-width: 420px;
+    max-height: 280px;
     position: relative;
     overflow: hidden;
     background-color: #222;
@@ -156,7 +153,6 @@ $breakpoint-extra-large: 1200px;
     grid-template-columns: 1fr;
   }
   .workImage {
-   
     height: 250px !important;
     display: block;
     transition: transform 0.3s;
