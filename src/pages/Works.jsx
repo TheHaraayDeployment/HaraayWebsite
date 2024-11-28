@@ -109,6 +109,7 @@ export default function Works() {
             ref={(el) => (imageRefs.current[idx] = el)} // Assign ref for GSAP
           >
             <img
+              draggable="false"
               src={work.image}
               alt={work.title}
               className={styles.workImage}

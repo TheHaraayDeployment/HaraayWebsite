@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../styles/Contactus.module.scss";
 import herovid from "../assets/contactherovid.mp4";
 import partnerimg1 from "../assets/partnerimg1.svg";
@@ -21,6 +21,87 @@ import OtherLOGO from "../assets/Logo/LOGO h.png";
 import shapee from "../assets/shape2.png";
 import { s } from "framer-motion/client";
 function Contact() {
+  //
+  //
+  const [labelText, setLabelText] = useState("Last Name");
+
+  const handleRadioChange = (event) => {
+    const selectedValue = event.target.value;
+    if (selectedValue === "business") {
+      setLabelText("Business Name");
+    } else if (selectedValue === "job") {
+      setLabelText("Last Name");
+    }
+  };
+  // Form api
+
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    mobileNumber: "",
+    emailAddress: "",
+    serviceType: "business", // default to business
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Your EmailJS service ID, template ID, and Public Key
+    const serviceId = "service_46bjn7n";
+    const templateId = "template_5ezxh0b";
+    const publicKey = "kur0xlk0tkiiMPcML";
+
+    // const serviceId = 'service_5diw67o';
+    // const templateId = 'template_anikidn';
+    // const publicKey = 'rDXD6lwaxGvPMjhl3';
+
+    const data = {
+      service_id: serviceId,
+      template_id: templateId,
+      user_id: publicKey,
+      template_params: {
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        // businessName: formData.serviceType === 'business' ? formData.businessName : '',
+        emailAddress: formData.emailAddress,
+        phoneNo: formData.mobileNumber,
+        type: formData.serviceType,
+        message: formData.message,
+      },
+    };
+
+    try {
+      const res = await axios.post(
+        "https://api.emailjs.com/api/v1.0/email/send",
+        data
+      );
+      console.log(res.data);
+      // Reset form after successful submission
+      setFormData({
+        firstName: "",
+        businessName: "",
+        lastName: "",
+        mobileNumber: "",
+        emailAddress: "",
+        serviceType: "business",
+        message: "",
+      });
+      alert("Message sent successfully!");
+    } catch (error) {
+      console.error(error);
+      alert("Failed to send message. Please try again.");
+    }
+  };
+  //form api ends
+
   // Partners Image
   const partnerImages = [
     AkoyaLOGO,
@@ -86,17 +167,21 @@ function Contact() {
                       />
                       <h5>Job</h5>
                     </div>
+
                     <div className={styles.labeldiv}>
                       {" "}
                       <label>
+                        {" "}
                         First Name <span>*</span>{" "}
                       </label>{" "}
                     </div>
                     <input
                       type="text"
                       required
+                      value={formData.firstName}
                       name="firstName"
                       placeholder="Ex:Dhawal Patel"
+                      onChange={handleChange}
                     />
                   </div>
                   <div className={styles.forminputes}>
@@ -104,14 +189,20 @@ function Contact() {
                     <div className={styles.labeldiv}>
                       {" "}
                       <label>
-                        Business Name <span>*</span>{" "}
+                        {labelText} <span>*</span>{" "}
                       </label>{" "}
                     </div>
                     <input
+                      onChange={handleChange}
                       type="text"
                       required
-                      name="businessName"
-                      placeholder="Ex : Dhawal Patel Tech"
+                      name="lastName"
+                      value={formData.lastName}
+                      placeholder={
+                        labelText === "Last Name"
+                          ? "Ex: Dhawal Patel"
+                          : "Ex: XYZ Pvt Ltd"
+                      }
                     />
                   </div>{" "}
                   <div className={styles.forminputes}>
@@ -123,10 +214,12 @@ function Contact() {
                     </div>
 
                     <input
+                      onChange={handleChange}
                       type="text"
                       required
                       name="mobileNumber"
                       placeholder="Ex: 8945488541"
+                      value={formData.mobileNumber}
                     />
                   </div>{" "}
                   <div className={styles.forminputes}>
@@ -138,32 +231,21 @@ function Contact() {
                     </div>
 
                     <input
+                      onChange={handleChange}
                       type="text"
                       required
                       name="emailAddress"
                       placeholder="dhawal@tech.com"
+                      value={formData.emailAddress}
                     />
                   </div>{" "}
                   <div className={styles.forminputes}>
-                    <div className={styles.labeldiv}>
-                      {" "}
-                      <label>
-                        Service Type <span>*</span>{" "}
-                      </label>{" "}
-                    </div>
-                    <div className={styles.enquiryinput}>
-                      <input type="radio" name="btype" value="Bussiness" />
-                      <h5>Buisness</h5>
-                      <input type="radio" name="btype" value="Job" />
-                      <h5>Job</h5>
-                    </div>
-                    {/* <input className={styles.descbox}  
-       rows="5" 
-        type="text" name="" placeholder="Write Description of Business or Job"></input> */}
+                    <div className={styles.labeldiv}> </div>
                     <textarea
                       placeholder="Type your message here"
                       className={styles.descbox}
-                      name="Text1"
+                      name="message"
+                      onChange={handleChange}
                       cols="40"
                       rows="5"
                     ></textarea>{" "}

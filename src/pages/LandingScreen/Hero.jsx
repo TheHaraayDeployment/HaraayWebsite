@@ -45,6 +45,7 @@ const HeroSection = () => {
               {/* Haraay */}
             </h1>
             <img
+              draggable="false"
               src={Projectimg1}
               alt="Image 1"
               //   className="w-1/3 transform translate-x-[-10%] translate-y-[5%]"
@@ -56,6 +57,7 @@ const HeroSection = () => {
               className="image1"
             />
             <img
+              draggable="false"
               src={Projectimg2}
               alt="Image 2"
               //   className="w-1/3 transform translate-x-[10%] translate-y-[-5%]"
@@ -67,6 +69,7 @@ const HeroSection = () => {
               className="image2"
             />
             <img
+              draggable="false"
               src={Projectimg4}
               alt="Image4"
               //   className="w-1/3 transform translate-x-[20%] translate-y-[10%]"
@@ -78,6 +81,7 @@ const HeroSection = () => {
               className="image4"
             />{" "}
             <img
+              draggable="false"
               data-aos="fade-down"
               src={Projectimg5}
               alt="Image5"
@@ -90,6 +94,7 @@ const HeroSection = () => {
               className="image5"
             />{" "}
             <img
+              draggable="false"
               src={Projectimg3}
               alt="Image3"
               //   className="w-1/3 transform translate-x-[20%] translate-y-[10%]"

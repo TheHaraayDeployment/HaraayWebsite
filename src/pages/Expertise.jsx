@@ -106,7 +106,7 @@ function Expertise() {
           </div>
         </div>
         <div className={styles.ServiceImage}>
-          <img src={ExaltedIdentity} alt="" />
+          <img draggable="false" src={ExaltedIdentity} alt="" />
         </div>
       </section>
 
@@ -149,7 +149,7 @@ function Expertise() {
           </div>
         </div>
         <div className={styles.ServiceImage}>
-          <img src={SensorialExpression} alt="" />
+          <img draggable="false" src={SensorialExpression} alt="" />
         </div>
       </section>
 
@@ -195,7 +195,7 @@ function Expertise() {
           </div>
         </div>
         <div className={styles.ServiceImage}>
-          <img src={Digital} alt="" />
+          <img draggable="false" src={Digital} alt="" />
         </div>
       </section>
 
@@ -234,7 +234,7 @@ function Expertise() {
           </div>
         </div>
         <div className={styles.ServiceImage}>
-          <img src={EngagementStrategy} alt="" />
+          <img draggable="false" src={EngagementStrategy} alt="" />
         </div>
       </section>
       <Letstalk />

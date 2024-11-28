@@ -361,11 +361,11 @@ export default function LandingPage() {
           {/* <h1>Haraay</h1> */}
 
           {/* <img className={styles.heroimg1} src={heroimg1} />
-          <img className={styles.heroimg2} src={heroimg2} />
-          <img className={styles.heroimg3} src={heroimg3} />
-          <img className={styles.heroimg4} src={heroimg4} />
-          <img className={styles.heroimg5} src={heroimg5} />
-          <img className={styles.heroimg6} src={heroimg6} /> */}
+         <img draggable="false" className={styles.heroimg2} src={heroimg2} />
+         <img draggable="false" className={styles.heroimg3} src={heroimg3} />
+         <img draggable="false" className={styles.heroimg4} src={heroimg4} />
+         <img draggable="false" className={styles.heroimg5} src={heroimg5} />
+         <img draggable="false" className={styles.heroimg6} src={heroimg6} /> */}
         </section>
         {/* <section className={styles.Herosec2}>
             <video autoPlay className="herosecvideo" muted src={herovid} />
@@ -409,6 +409,7 @@ export default function LandingPage() {
               <h3>Branding & Packaging</h3>
             </div>
             <img
+              draggable="false"
               className={styles.projectimg}
               src={Projectimg1}
               alt="Project Card"
@@ -420,6 +421,7 @@ export default function LandingPage() {
               <h3>3D</h3>
             </div>
             <img
+              draggable="false"
               className={styles.projectimg}
               src={Projectimg2}
               alt="Project Card"
@@ -431,6 +433,7 @@ export default function LandingPage() {
               <h3>Web Designing</h3>
             </div>
             <img
+              draggable="false"
               className={styles.projectimg}
               src={Projectimg3}
               alt="Project Card"
@@ -442,6 +445,7 @@ export default function LandingPage() {
               <h3>Mobile App Designing</h3>
             </div>
             <img
+              draggable="false"
               className={styles.projectimg}
               src={Projectimg4}
               alt="Project Card"
@@ -453,6 +457,7 @@ export default function LandingPage() {
               <h3>Branding | Website | Packaging</h3>
             </div>
             <img
+              draggable="false"
               className={styles.projectimg}
               src={Projectimg5}
               alt="Project Card"
@@ -473,6 +478,7 @@ export default function LandingPage() {
               <div className={styles.imagetrack}>
                 {repeatedImages.map((imgSrc, index) => (
                   <img
+                    draggable="false"
                     key={index}
                     src={imgSrc}
                     alt={`Partner ${(index % 4) + 1}`}
@@ -484,7 +490,12 @@ export default function LandingPage() {
             <div className={styles.imageslider2}>
               <div className={styles.imagetrack2}>
                 {partnertextImg.map((imgSrc, index) => (
-                  <img key={index} src={imgSrc} alt={`Partner ${index + 1}`} />
+                  <img
+                    draggable="false"
+                    key={index}
+                    src={imgSrc}
+                    alt={`Partner ${index + 1}`}
+                  />
                 ))}
               </div>{" "}
             </div>
@@ -496,7 +507,7 @@ export default function LandingPage() {
           <div className={styles.testimonialContainer}>
             <div data-aos="fade-left" className={styles.testimonialCard}>
               <div className={styles.profile}>
-                <img src={PurusLOGO} alt="Profile 1" />
+                <img draggable="false" src={PurusLOGO} alt="Profile 1" />
               </div>
               <div className={styles.content}>
                 <div className={styles.testname}>
@@ -518,7 +529,11 @@ export default function LandingPage() {
                   <div className={styles.rating}>
                     <span>5.0</span>
                     <div className={styles.stars}>⭐⭐⭐⭐⭐</div>
-                    <img src={googlelogo} alt="Google Rating" />
+                    <img
+                      draggable="false"
+                      src={googlelogo}
+                      alt="Google Rating"
+                    />
                   </div>
                 </div>
               </div>
@@ -529,7 +544,7 @@ export default function LandingPage() {
               className={styles.testimonialCard}
             >
               <div className={styles.profile}>
-                <img src={testprofile1} alt="Profile 1" />
+                <img draggable="false" src={testprofile1} alt="Profile 1" />
               </div>
               <div className={styles.content}>
                 <div className={styles.testname}>
@@ -551,7 +566,11 @@ export default function LandingPage() {
                   <div className={styles.rating}>
                     <span>5.0</span>
                     <div className={styles.stars}>⭐⭐⭐⭐⭐</div>
-                    <img src={googlelogo} alt="Google Rating" />
+                    <img
+                      draggable="false"
+                      src={googlelogo}
+                      alt="Google Rating"
+                    />
                   </div>
                 </div>
               </div>
@@ -562,7 +581,7 @@ export default function LandingPage() {
               className={styles.testimonialCard}
             >
               <div className={styles.profile}>
-                <img src={testprofile1} alt="Profile 1" />
+                <img draggable="false" src={testprofile1} alt="Profile 1" />
               </div>
               <div className={styles.content}>
                 <div className={styles.testname}>
@@ -582,7 +601,11 @@ export default function LandingPage() {
                   <div className={styles.rating}>
                     <span>5.0</span>
                     <div className={styles.stars}>⭐⭐⭐⭐⭐</div>
-                    <img src={googlelogo} alt="Google Rating" />
+                    <img
+                      draggable="false"
+                      src={googlelogo}
+                      alt="Google Rating"
+                    />
                   </div>
                 </div>
               </div>
@@ -593,7 +616,7 @@ export default function LandingPage() {
               className={styles.testimonialCard}
             >
               <div className={styles.profile}>
-                <img src={testprofile1} alt="Profile 1" />
+                <img draggable="false" src={testprofile1} alt="Profile 1" />
               </div>
               <div className={styles.content}>
                 <div className={styles.testname}>
@@ -612,7 +635,11 @@ export default function LandingPage() {
                   <div className={styles.rating}>
                     <span>5.0</span>
                     <div className={styles.stars}>⭐⭐⭐⭐⭐</div>
-                    <img src={googlelogo} alt="Google Rating" />
+                    <img
+                      draggable="false"
+                      src={googlelogo}
+                      alt="Google Rating"
+                    />
                   </div>
                 </div>
               </div>
@@ -627,7 +654,7 @@ export default function LandingPage() {
               data-aos="fade-left"
               className={styles.blogcard}
             >
-              <img src={Akoyaheroimg} />
+             <img draggable="false" src={Akoyaheroimg} />
               <div>
                 <h4>Brand Stratergy </h4>
                 <h4>Brand Persnality</h4>
@@ -647,7 +674,7 @@ export default function LandingPage() {
               data-aos="fade-left"
               className={styles.blogcard}
             >
-              <img src={Akoyaheroimg} />
+             <img draggable="false" src={Akoyaheroimg} />
               <div>
                 <h4>Brand Stratergy </h4>
                 <h4>Brand Persnality</h4>
@@ -667,7 +694,7 @@ export default function LandingPage() {
               data-aos="fade-left"
               className={styles.blogcard}
             >
-              <img src={Akoyaheroimg} />
+             <img draggable="false" src={Akoyaheroimg} />
               <div>
                 <h4>Brand Stratergy </h4>
                 <h4>Brand Persnality</h4>
@@ -690,7 +717,11 @@ export default function LandingPage() {
             <div className={styles.formimg}>
               {" "}
               <h1></h1>
-              <img src={shape1} className={styles.contactshape} />
+              <img
+                draggable="false"
+                src={shape1}
+                className={styles.contactshape}
+              />
             </div>
             <div className={styles.form}>
               <form onSubmit={handleSubmit}>
