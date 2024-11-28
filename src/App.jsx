@@ -132,12 +132,12 @@ function App() {
 
   return (
     <>
-      {/* {isNavigating && <Preloader trigger={isNavigating} />} */}
+      {isNavigating && <Preloader trigger={isNavigating} />}
 
       {/* Countdown component */}
-      <Countdown />
+      {/* <Countdown /> */}
       {/*  */}
-      {/* 
+
       <div className="App">
         {isValidRoute && <Navbar />}
         <Routes>
@@ -147,7 +147,6 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact-us" element={<Contact />} />
           <Route path="/expertise" element={<Expertise />} />
-      
           <Route path="/service1" element={<Service1 />} />
           <Route path="/service2" element={<Service2 />} />
           <Route path="/service3" element={<Service3 />} />
@@ -166,7 +165,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
         {isValidRoute && <Footer />}
-      </div> */}
+      </div>
     </>
   );
 }

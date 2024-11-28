@@ -850,10 +850,13 @@ section {
   img {
     position: absolute;
     left: -20%;
-    width: 800px;
+    width: 40vw;
     transition: all 0.3s ease;
     animation: hover-float 5s ease-in-out infinite alternate;
-
+    @include respond-to(small) {
+      padding: 0;
+      top: 0;
+    }
     :hover {
       transform: rotate(5deg) scale(1.05);
     }
@@ -978,4 +981,9 @@ section {
       border-radius: 30px;
     }
   }
+}
+
+Link {
+  text-decoration: none;
+  color: white;
 }

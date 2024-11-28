@@ -43,6 +43,7 @@ import { useInView } from "react-intersection-observer";
 import Letstalk from "../../components/Letstalk.jsx";
 import Icons from "../../components/Icons.jsx";
 // animation for
+import { Link } from "react-router-dom";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
@@ -384,8 +385,15 @@ export default function LandingPage() {
           <h2>Powering brands for a brave new world. </h2>
 
           <div data-aos="fade-up" className={styles.Subherotxtbtn}>
-            <button>Learn more About us</button>
-            <button>Discover our capabilities</button>
+            {" "}
+            <button>
+              {" "}
+              <Link to="/contact-us">Learn more About us </Link>
+            </button>{" "}
+            <button>
+              {" "}
+              <Link to="/expertise"> Discover our capabilities </Link>
+            </button>
           </div>
         </section>
         {/* recent work txt */}
