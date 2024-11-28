@@ -6,7 +6,7 @@ $desktop: 1200px;
   position: fixed;
   top: 0;
   width: 100vw;
-  background-color: #ffffffc4;
+  background-color: #ffffffc4; 
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   padding: var(--spacing-sm) 0;
   z-index: +1000;
@@ -73,7 +73,7 @@ $desktop: 1200px;
         transition-duration: 0.2s;
         padding: 6px 30px;
         text-wrap: nowrap;
-
+        background-color: red;
         &:hover {
           color: var(--white);
           background-color: var(--pink);

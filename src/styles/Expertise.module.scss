@@ -157,6 +157,7 @@ $breakpoint-extra-large: 1200px;
 
           @include respond-to(small) {
             justify-content: start;
+            text-align: left;
           }
 
           @include respond-to(medium) {

@@ -129,7 +129,6 @@ function Expertise() {
               <li>
                 Messaging <span>&#x2192;</span>
               </li>
-
               <li>
                 3D Animation & Rendering<span>&#x2192;</span>
               </li>
@@ -143,7 +142,10 @@ function Expertise() {
                 Photography<span>&#x2192;</span>
               </li>
               <li>
-                3D Visualization & AR/VR Solutions<span>&#x2192;</span>
+                3D Visualization <span>&#x2192;</span>
+              </li>{" "}
+              <li>
+                AR/VR Solutions <span>&#x2192;</span>
               </li>
             </ul>
           </div>

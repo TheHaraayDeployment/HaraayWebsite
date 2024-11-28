@@ -517,6 +517,7 @@ $breakpoint-extra-large: 1200px;
 .navigation__link {
   @include respond-to(small) {
     font-size: 48px !important;
+    line-height: 110%;
   }
 }
 .navigation__nav {
