@@ -18,7 +18,7 @@ import SamrudhaLOGO from "../assets/Logo/LOGO Samruddh.png";
 import SunLOGO from "../assets/Logo/LOGO Sun.png";
 import ViratLOGO from "../assets/Logo/LOGO Virat.png";
 import OtherLOGO from "../assets/Logo/LOGO h.png";
-
+import shapee from "../assets/shape2.png";
 import { s } from "framer-motion/client";
 function Contact() {
   // Partners Image
@@ -44,13 +44,14 @@ function Contact() {
       <section className={styles.Herosec}>
         <div className={styles.Herodiv}>
           <div className={styles.videodiv}>
-            <video
+            {/* <video
               src={herovid}
               width="515px"
               height="773px"
               muted
               autoPlay
-            ></video>
+            ></video> */}
+            <img src={shapee} className={styles.shape}></img>
           </div>
           <div className={styles.contactformsec}>
             <div className={styles.contactform}>

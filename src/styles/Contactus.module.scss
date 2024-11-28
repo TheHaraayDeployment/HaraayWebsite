@@ -38,7 +38,27 @@ $breakpoint-extra-large: 1200px;
     padding: 0% !important;
   }
 }
+.shape {
+  width: 500px;
+  position: absolute;
+  left: 0%;
+  transition: all 0.3s ease;
+  animation: hover-float 3s ease-in-out infinite alternate;
 
+  @include respond-to(small) {
+    display: none;
+  }
+}
+@keyframes hover-float {
+  0% {
+    transform: translateY(0);
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: translateY(-15px);
+    transform: rotate(5deg);
+  }
+}
 .Herosec {
   .Herodiv {
     height: auto;
