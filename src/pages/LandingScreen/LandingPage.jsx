@@ -13,11 +13,11 @@ import heroimg5 from "../../assets/SereneCasestudyPackaging.svg";
 import heroimg3 from "../../assets/ViratCasestudyPackaging2.svg";
 // projects
 import Akoyaheroimg from "../../assets/Akoyaheroimg.svg";
-import Projectimg1 from "../../assets/Akoyaheroimg.svg";
-import Projectimg2 from "../../assets/Bosch/Boschimg.png";
-import Projectimg3 from "../../assets/BMS/BMSimg.png";
+import Projectimg1 from "../../assets/Akoyaheroimg.webp";
+import Projectimg2 from "../../assets/Bosch/Boschimg.webp";
+import Projectimg3 from "../../assets/BMS/BMSimg.webp";
 import Projectimg4 from "../../assets/Lokneta/lokneta.webp";
-import Projectimg5 from "../../assets/Satvikraas/Satvikraas.png";
+import Projectimg5 from "../../assets/Satvikraas/Satvikraas.webp";
 
 import Purushero from "../../assets/purus.svg";
 

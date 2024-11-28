@@ -54,7 +54,7 @@ import Countdown from "./Countdown.jsx";
 function App() {
   const isNavigating = useNavigationEvent(); // Get navigation event status
   const location = useLocation();
-
+  const [isLoading, setIsLoading] = useState(true); // Initial loading state
   // Lenis smooth scrolling
   useEffect(() => {
     const lenis = new Lenis({
@@ -132,40 +132,38 @@ function App() {
 
   return (
     <>
-      {isNavigating && <Preloader trigger={isNavigating} />}
-
-      {/* Countdown component */}
-      {/* <Countdown /> */}
-      {/*  */}
-
-      <div className="App">
-        {isValidRoute && <Navbar />}
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/countdown" element={<Countdown />} />
-          <Route path="/works" element={<Works />} />
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/contact-us" element={<Contact />} />
-          <Route path="/expertise" element={<Expertise />} />
-          <Route path="/service1" element={<Service1 />} />
-          <Route path="/service2" element={<Service2 />} />
-          <Route path="/service3" element={<Service3 />} />
-          <Route path="/service4" element={<Service4 />} />
-          <Route
-            path="/casestudy/sereneskin"
-            element={<SereneSkinCaseStudy />}
-            ViratCaseStudy
-          />{" "}
-          <Route path="/casestudy/purus" element={<PurusCaseStudy />} />
-          <Route path="/casestudy/virat" element={<ViratCaseStudy />} />
-          BakersCaseStudy
-          <Route path="/casestudy/akoya" element={<AkoyaCaseStudy />} />
-          <Route path="/casestudy/bakers" element={<BakersCaseStudy />} />
-          <Route path="/casestudy/creamf" element={<CreamFCaseStudy />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        {isValidRoute && <Footer />}
-      </div>
+      {isLoading ? ( // Show Preloader if isLoading is true
+        <Preloader />
+      ) : (
+        <div className="App">
+          {isValidRoute && <Navbar />}
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/countdown" element={<Countdown />} />
+            <Route path="/works" element={<Works />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/contact-us" element={<Contact />} />
+            <Route path="/expertise" element={<Expertise />} />
+            <Route path="/service1" element={<Service1 />} />
+            <Route path="/service2" element={<Service2 />} />
+            <Route path="/service3" element={<Service3 />} />
+            <Route path="/service4" element={<Service4 />} />
+            <Route
+              path="/casestudy/sereneskin"
+              element={<SereneSkinCaseStudy />}
+              ViratCaseStudy
+            />{" "}
+            <Route path="/casestudy/purus" element={<PurusCaseStudy />} />
+            <Route path="/casestudy/virat" element={<ViratCaseStudy />} />
+            BakersCaseStudy
+            <Route path="/casestudy/akoya" element={<AkoyaCaseStudy />} />
+            <Route path="/casestudy/bakers" element={<BakersCaseStudy />} />
+            <Route path="/casestudy/creamf" element={<CreamFCaseStudy />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          {isValidRoute && <Footer />}
+        </div>
+      )}
     </>
   );
 }
@@ -176,10 +174,10 @@ function AppWrapper() {
     <Router>
       <ScrollToTop />
       <App />
-      {/* <Sugar background="#f7f7f7" animation="slide" /> */}
+      {/* <Sugar background="#f7f7f7" /> */}
     </Router>
-    //{" "}
-    // </React.Fragment>
+    // //{" "}
+    ///* </React.Fragment> */
   );
 }
 
