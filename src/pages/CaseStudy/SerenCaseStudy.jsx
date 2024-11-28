@@ -7,7 +7,7 @@ import styles from "./SereneCaseStudy.module.scss";
 import HeroImg from "../../assets/Serene/SerenHero.webp";
 import Img1 from "../../assets/Serene/Sereneimg1.webp";
 import Img2 from "../../assets/SereneCasestudyBranding.svg";
-import Img3 from "../../assets/Serene/SereneImg2.webp";
+import Img3 from "../../assets/Serene/SereneImg1.webp";
 import Img4 from "../../assets/Serene/Sereneimg3.webp";
 
 // Case Studies img
