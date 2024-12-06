@@ -766,7 +766,7 @@ export default function LandingPage() {
                     required
                     value={formData.firstName}
                     name="firstName"
-                    placeholder="Ex:Dhawal Patel"
+                    placeholder="Enter First name"
                     onChange={handleChange}
                   />
                 </div>
@@ -786,8 +786,8 @@ export default function LandingPage() {
                     value={formData.lastName}
                     placeholder={
                       labelText === "Last Name"
-                        ? "Ex: Dhawal Patel"
-                        : "Ex: XYZ Pvt Ltd"
+                        ? "Enter Last Name"
+                        : "Enter Company Name"
                     }
                   />
                 </div>{" "}
@@ -804,7 +804,7 @@ export default function LandingPage() {
                     type="text"
                     required
                     name="mobileNumber"
-                    placeholder="Ex: 8945488541"
+                    placeholder="Enter Phone "
                     value={formData.mobileNumber}
                   />
                 </div>{" "}
@@ -821,7 +821,7 @@ export default function LandingPage() {
                     type="text"
                     required
                     name="emailAddress"
-                    placeholder="dhawal@tech.com"
+                    placeholder="Enter Email"
                     value={formData.emailAddress}
                   />
                 </div>{" "}
