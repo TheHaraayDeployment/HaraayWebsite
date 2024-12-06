@@ -180,7 +180,7 @@ function Contact() {
                       required
                       value={formData.firstName}
                       name="firstName"
-                      placeholder="Ex:Dhawal Patel"
+                      placeholder="Enter First Name"
                       onChange={handleChange}
                     />
                   </div>
@@ -200,8 +200,8 @@ function Contact() {
                       value={formData.lastName}
                       placeholder={
                         labelText === "Last Name"
-                          ? "Ex: Dhawal Patel"
-                          : "Ex: XYZ Pvt Ltd"
+                          ? "Enter Last Name"
+                          : "Enter Company Name"
                       }
                     />
                   </div>{" "}
@@ -218,7 +218,7 @@ function Contact() {
                       type="text"
                       required
                       name="mobileNumber"
-                      placeholder="Ex: 8945488541"
+                      placeholder="Enter Phone"
                       value={formData.mobileNumber}
                     />
                   </div>{" "}
@@ -235,7 +235,7 @@ function Contact() {
                       type="text"
                       required
                       name="emailAddress"
-                      placeholder="dhawal@tech.com"
+                      placeholder="Enter Email"
                       value={formData.emailAddress}
                     />
                   </div>{" "}
