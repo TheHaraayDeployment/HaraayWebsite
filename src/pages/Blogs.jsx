@@ -1,35 +1,35 @@
 import React from 'react';
 import styles from '../styles/Blogs.module.scss';
-import aloya from '../assets/creamforest_casestudy_branding.svg'
+import aloya from '../assets/Akoya/AkoyaFullimg.png'
 import purus from '../assets/purus_casestudy_hero.svg'
 import heroimg from '../assets/bloghero.svg'
 import Letstalk from '../components/Letstalk';
+import { Link } from 'react-router-dom';
 const blogData = [
-  { id: 1, category: ['Branding', 'Websites'], image: aloya, heading: 'Heading of the blog card will go here' },
-  { id: 2, category: ['Websites'], image: purus, heading: 'Heading of the blog card will go here' },
-  { id: 3, category: ['Development'], image: aloya, heading: 'Heading of the blog card will go here' },
-  { id: 4, category: ['Branding'], image: purus, heading: 'Heading of the blog card will go here' },
-  { id: 5, category: ['Websites', 'Development'], image: aloya, heading: 'Heading of the blog card will go here' },
-  { id: 6, category: ['Branding', 'Development'], image: aloya, heading: 'Heading of the blog card will go here' },
+  { id: 1, category: ['Branding', 'Websites'], image: aloya, heading: '10 Rules for Great Branding & Design' , link: "/blogs/blog1"},
+ 
+  // { id: 3, category: ['Development'], image: aloya, heading: 'Heading of the blog card will go here' },
+  // { id: 4, category: ['Branding'], image: purus, heading: 'Heading of the blog card will go here' },
+  // { id: 5, category: ['Websites', 'Development'], image: aloya, heading: 'Heading of the blog card will go here' },
+  // { id: 6, category: ['Branding', 'Development'], image: aloya, heading: 'Heading of the blog card will go here' },
 ];
 
 export default function Blogs() {
   return (
     <div className={styles.blogpage}> 
         <div className={styles.heroSection}><img src={heroimg} alt="" /></div>
-        <div><h1 className={styles.heading}>Blogs</h1> </div>
+        <div className={styles.heading}><h1 >Articles</h1>
+        <h2>Our approach on Design</h2> </div>
       {/* Blog Cards Section */}
       <div className={styles.cardsSection}>
         
         {blogData.map((blog) => (
-          <div key={blog.id} className={styles.card}>
+         <Link to={blog.link}> <div key={blog.id} className={styles.card}>
             <img src={blog.image} alt="Blog" className={styles.cardImage} />
-            <div className={styles.cardCategory}>
-              {blog.category.join(' / ')} {/* Display multiple categories */}
-            </div>
+          
             <h3 className={styles.cardHeading}>{blog.heading}  <button className={styles.cardButton}>→</button></h3>
-           
-          </div>
+           <p> Jan 27 2025</p>
+          </div> </Link>
         ))}
 
         {/* Div with Text after 4 cards */}

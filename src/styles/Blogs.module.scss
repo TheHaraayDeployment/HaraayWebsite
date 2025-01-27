@@ -47,15 +47,21 @@ $desktop: 1200px;
   z-index: +1;
   div{
     display: block;
-    .heading{
-        font-size: 96px;
-        display: block;
-        margin: 50px auto;
-        margin-left: 5%;
-        font-family: Etherel;
+   
+  } .heading{
+   
+    display: block;
+    // margin: 50px auto;
+    // margin-left: 5%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-    }
-  }
+    h1{ font-size: 96px; font-family: Etherel;text-align: center;}
+h2{font-size: 48px; font-family: Stara; text-align: center; color: white; font-weight: 400;}
+
+}
 
   .heroSection{
     width: 100%;
@@ -72,35 +78,6 @@ $desktop: 1200px;
 }
 
 
-    .filterSection {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
-  
-      .filterButton {
-        padding: 0.5rem 1rem;
-        border: none;
-        border-radius: 20px;
-        background-color: #E5348C;
-        color: #fff;
-        font-weight: bold;
-        cursor: pointer;
-  
-        &:not(:first-child) {
-          background-color: #333;
-        }
-  
-        &:hover {
-          background-color: #E5348C;
-        }
-        &.active {
-            background-color: #E5348C; // Highlight active filter
-            color: #fff;
-          }
-       
-      }
-    }
     
     .cardsSection {  margin: 2rem;
       display: flex;
@@ -109,41 +86,32 @@ $desktop: 1200px;
       justify-content: center;   color: #fff;
 
       .card {
-        background-color: #1e1e1e;
-        border-radius: 10px;
-        overflow: hidden;
-        width: calc(50% - 1rem);
-        position: relative;
-  
+      background: #36363628;
+        height: 384px;  width: 640px; position: relative;
         .cardImage {
-          width: 100%;
+          width: 640px;
           height: auto;
-          display: block;
+          // display: block; 
+          height: 270px; object-fit: cover;
         }
   
-        .cardCategory {
-          position: absolute;
-          top: 10px;
-          left: 10px;
-          background-color: rgba(0, 0, 0, 0.7);
-          padding: 0.3rem 0.6rem;
-          font-size: 0.8rem;
-          border-radius: 5px;
-          opacity: 0;
-        }
+      
   
-        .cardHeading {
-          padding: 1rem;
-          font-size: 32px;   color: #fff;
+        .cardHeading { font-family: Stara;
+          // padding: 32px;
+          font-size: 32px;   color: #fff; font-weight: 400
         }
   
         .cardButton {
           background: none;
           border: none;
-          color: #E5348C;
-          font-size: 1.5rem;
+          background-color: #E5348C;
+          font-size: 1.7rem;
           cursor: pointer;
-          padding: 0.5rem 1rem;
+          align-items: center;
+          padding: 0.5rem 0.5rem; display: flex; justify-content: center;
+          border-radius: 50%;   position: absolute;
+          bottom: 10px; left: 10px;
         }
       }
   

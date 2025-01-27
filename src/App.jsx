@@ -22,6 +22,7 @@ import AboutUs from "./pages/AboutUs.jsx";
 import Contact from "./pages/Contact.jsx";
 import Expertise from "./pages/Expertise.jsx";
 import Blogs from "./pages/Blogs.jsx";
+import Blog01 from "./pages/blogs/Blog1.jsx";
 import Service1 from "./pages/Service1.jsx";
 import Service2 from "./pages/Service2.jsx";
 import Service3 from "./pages/Service3.jsx";
@@ -107,7 +108,8 @@ function App() {
     "/about",
     "/contact-us",
     "/expertise",
-
+    "/blogs",
+"/blogs/blog01",
     "/service1",
     "/service2",
     "/service3",
@@ -132,7 +134,7 @@ function App() {
 
   return (
     <>
-      {isNavigating && <Preloader trigger={isNavigating} />}
+      {/* {isNavigating && <Preloader trigger={isNavigating} />}  its transition  */}
 
       {/* Countdown component */}
       {/* <Countdown /> */}
@@ -142,9 +144,11 @@ function App() {
         {isValidRoute && <Navbar />}
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/countdown" element={<Countdown />} />
+        
           <Route path="/works" element={<Works />} />
-          <Route path="/about" element={<AboutUs />} />
+          <Route path="/about" element={<AboutUs />} />/
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blogs/blog01" element={<Blog01 />} />
           <Route path="/contact-us" element={<Contact />} />
           <Route path="/expertise" element={<Expertise />} />
           <Route path="/service1" element={<Service1 />} />
