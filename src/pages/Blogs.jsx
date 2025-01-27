@@ -6,7 +6,7 @@ import heroimg from '../assets/bloghero.svg'
 import Letstalk from '../components/Letstalk';
 import { Link } from 'react-router-dom';
 const blogData = [
-  { id: 1, category: ['Branding', 'Websites'], image: aloya, heading: '10 Rules for Great Branding & Design' , link: "/blogs/blog1"},
+  { id: 1, category: ['Branding', 'Websites'], image: aloya, heading: '10 Rules for Great Branding & Design' , link: "/blogs/blog01"},
  
   // { id: 3, category: ['Development'], image: aloya, heading: 'Heading of the blog card will go here' },
   // { id: 4, category: ['Branding'], image: purus, heading: 'Heading of the blog card will go here' },
@@ -28,7 +28,7 @@ export default function Blogs() {
             <img src={blog.image} alt="Blog" className={styles.cardImage} />
           
             <h3 className={styles.cardHeading}>{blog.heading}  <button className={styles.cardButton}>→</button></h3>
-           <p> Jan 27 2025</p>
+           <p className={styles.date}> Jan 27 2025</p>
           </div> </Link>
         ))}
 

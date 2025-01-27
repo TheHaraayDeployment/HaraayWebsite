@@ -1,55 +1,67 @@
 $mobile: 600px;
 $tablet: 1024px;
 $desktop: 1200px;
+// Breakpoints
+$breakpoint-mobile: 576px; // Small devices (phones)
+$breakpoint-tablet: 768px; // Medium devices (tablets)
+
+// Mixin for responsive media queries
+@mixin respond-to($device) {
+  @if $device==mobile {
+    @media (max-width: $breakpoint-mobile) {
+      @content;
+    }
+  }
+
+  @else if $device==tablet {
+    @media (max-width: $breakpoint-tablet) {
+      @content;
+    }
+  }
+}
+
 @media (min-width: 300px) {
   .btndiv {
-    width:100% !important;
+    width: 100% !important;
     height: 40% !important;
     margin-top: -10px;
     margin-bottom: 20px;
     // background-color: red;
     display: flex;
-    justify-content: center !important; /* Center horizontally */
-    align-items: center !important;    /* Center vertically */
+    justify-content: center !important;
+    /* Center horizontally */
+    align-items: center !important;
+    /* Center vertically */
 
     .teamButton {
-        margin-top: 1rem;
-        background-color: #2A2E3C;
-        color: #fff;
-        padding: 0.5rem 1.5rem;
-        border-radius: 20px;
-        cursor: pointer;
+      margin-top: 1rem;
+      background-color: #2A2E3C;
+      color: #fff;
+      padding: 0.5rem 1.5rem;
+      border-radius: 20px;
+      cursor: pointer;
 
-        &:hover {
-            background-color: #434757;
-        }
+      &:hover {
+        background-color: #434757;
+      }
     }
-}
-}
-
-
-@media (max-width: $mobile) {
-
-       
-  .heading {
-    // Styles for the h1 tag on mobile screens
-    font-size: 48px !important ;// Adjust the font size as needed
-    margin-left: 50%;
-    // You can add other responsive styles here
   }
-
 }
+
 
 .blogpage {
-    width: 100vw;
-    // padding: 2rem;
-    color: #ffffff;
+  width: 100vw;
+  // padding: 2rem;
+  color: #ffffff;
   z-index: +1;
-  div{
+
+  div {
     display: block;
-   
-  } .heading{
-   
+
+  }
+
+  .heading {
+
     display: block;
     // margin: 50px auto;
     // margin-left: 5%;
@@ -58,225 +70,303 @@ $desktop: 1200px;
     left: 50%;
     transform: translate(-50%, -50%);
 
-    h1{ font-size: 96px; font-family: Etherel;text-align: center;}
-h2{font-size: 48px; font-family: Stara; text-align: center; color: white; font-weight: 400;}
+    h1 {
+      font-size: 96px;
+      font-family: Etherel;
+      text-align: center;
 
-}
+      @include respond-to(mobile) {
+        font-size: 48px;
+      }
+    }
 
-  .heroSection{
+    h2 {
+      font-size: 48px;
+      font-family: Stara;
+      text-align: center;
+      color: white;
+      font-weight: 400; 
+       @include respond-to(mobile) { 
+      font-size: 24px; 
+      width: 100%;
+      }
+    }
+
+  }
+
+  .heroSection {
     width: 100%;
     height: 100vh;
     margin: 0px auto;
     padding: 0px;
-    img{
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%
+    }
+
+
+  }
+
+
+
+  .cardsSection {
+    margin: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    color: #fff;
+
+     @include respond-to(mobile) { 
+    margin: 10px 0;
+    }
+    .card {
+      background: #36363628;
+      height: 384px;
+      width: 640px;
+      position: relative;
+       @include respond-to(mobile) { 
+      width: 90vw !important; 
+      margin: auto; 
+      }
+
+      .cardImage {
+        width: 640px;
+        height: auto;
+        // display: block; 
+        height: 270px;
         object-fit: cover;
-        width: 100%; height: 100%
+         @include respond-to(mobile) { 
+        width: 100%;
+        }
+      }
+
+
+
+      .cardHeading {
+        font-family: Stara;
+        // padding: 32px; 
+        font-size: 32px;
+        color: #fff;
+        font-weight: 400;
+        padding-left: 15px;
+         @include respond-to(mobile) { 
+        font-size: 24px; 
+        line-height: 21px;
+        }
+      }
+
+      .cardButton {
+        background: none;
+        border: none;
+        background-color: #E5348C;
+        font-size: 24px;
+        cursor: pointer;
+        align-items: center;
+        height: 40px;
+        width: 40px;
+        display: flex;
+        justify-content: center;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+      }
+    }
+
+    .callToAction {
+      width: 100%;
+      background-color: #B8E7E7;
+      text-align: center;
+      padding: 2rem;
+      border-radius: 10px;
+      margin-top: 2rem;
+      display: flex;
+
+      p {
+        font-size: 48px;
+        color: #2B2322;
+
+        span {
+          color: #E5348C;
+          font-weight: bold;
+          cursor: pointer;
+        }
+      }
+
+      a {
+        display: block;
+        font-size: 32px;
+        font-family: Stara;
+        margin-top: 1rem;
+        color: #2B2322;
+        font-weight: bold;
+        text-align: left;
+      }
+
+      .btndiv {
+        width: 40%;
+        height: 100%;
+        // background-color: red;
+        display: flex;
+        justify-content: right;
+        /* Center horizontally */
+        align-items: center;
+        /* Center vertically */
+
+        .teamButton {
+          margin-top: 1rem;
+          background-color: #2A2E3C;
+          color: #fff;
+          padding: 0.5rem 1.5rem;
+          border-radius: 20px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #434757;
+          }
+        }
+      }
 
     }
 
-    
-}
+
+    @media (max-width: $mobile) {
 
 
-    
-    .cardsSection {  margin: 2rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;   color: #fff;
-
-      .card {
-      background: #36363628;
-        height: 384px;  width: 640px; position: relative;
-        .cardImage {
-          width: 640px;
-          height: auto;
-          // display: block; 
-          height: 270px; object-fit: cover;
-        }
-  
-      
-  
-        .cardHeading { font-family: Stara;
-          // padding: 32px;
-          font-size: 32px;   color: #fff; font-weight: 400
-        }
-  
-        .cardButton {
-          background: none;
-          border: none;
-          background-color: #E5348C;
-          font-size: 1.7rem;
-          cursor: pointer;
-          align-items: center;
-          padding: 0.5rem 0.5rem; display: flex; justify-content: center;
-          border-radius: 50%;   position: absolute;
-          bottom: 10px; left: 10px;
-        }
+      .heading {
+        // Styles for the h1 tag on mobile screens
+        font-size: 18px;
+        margin-left: 50%;
+        // You can add other responsive styles here
       }
-  
+
+
+
       .callToAction {
-        width: 100%;
-        background-color: #B8E7E7;
-        text-align: center;
-        padding: 2rem;
-        border-radius: 10px;
-        margin-top: 2rem;
-        display: flex;
-  
-        p {
-          font-size: 48px;
-            color: #2B2322;
-  
-          span {
-            color: #E5348C;
-            font-weight: bold;
-            cursor: pointer;
-          }
-        }
-  
-        a {
-          display: block;
-          font-size: 32px;
-          font-family: Stara;
-          margin-top: 1rem;
-          color: #2B2322;
-          font-weight: bold;
-          text-align: left;
-        }
-        .btndiv {
-          width: 40%;
-          height: 100%;
-          // background-color: red;
-          display: flex;
-          justify-content: right; /* Center horizontally */
-          align-items: center;    /* Center vertically */
-      
-          .teamButton {
-              margin-top: 1rem;
-              background-color: #2A2E3C;
-              color: #fff;
-              padding: 0.5rem 1.5rem;
-              border-radius: 20px;
-              cursor: pointer;
-      
-              &:hover {
-                  background-color: #434757;
-              }
-          }
-      }
-      
-      }
-
-
-      @media (max-width: $mobile) {
-
-       
-        .heading {
-          // Styles for the h1 tag on mobile screens
-          font-size: 18px;
-          margin-left: 50%;
-          // You can add other responsive styles here
-        }
-
-
-
-       .callToAction{
         display: block;
-       
+
         padding: 0px;
 
-        div{
-          p{
+        div {
+          p {
             font-size: 32px;
             color: #2B2322;
           }
-          a{
+
+          a {
             font-size: 20px;
             color: #2B2322;
             text-align: center;
             margin-top: 0px;
           }
+
           .btndiv {
             width: 40%;
             height: 100%;
             // background-color: red;
             display: flex;
-            justify-content: right; /* Center horizontally */
-            align-items: center;    /* Center vertically */
-        
-            .teamButton {
-                margin-top: 1rem;
-                background-color: #ffffff;
-                color: #fff;
-                padding: 0.5rem 1.5rem;
-                border-radius: 20px;
-                cursor: pointer;
-        
-                &:hover {
-                    background-color: #434757;
-                }
-            }
-        }
-        }
-       }
-     
-      
+            justify-content: right;
+            /* Center horizontally */
+            align-items: center;
+            /* Center vertically */
 
-      } // Tablet
-  
-      @media (max-width: $tablet) and (min-width: $mobile) {
-        height: auto;
-        margin-top: 50px;  .btndiv {
-          width: 40%;
-          height: 100%;
-          // background-color: red;
-          display: flex;
-          justify-content: right; /* Center horizontally */
-          align-items: center;    /* Center vertically */
-      
-          .teamButton {
+            .teamButton {
               margin-top: 1rem;
               background-color: #ffffff;
               color: #fff;
               padding: 0.5rem 1.5rem;
               border-radius: 20px;
               cursor: pointer;
-      
+
               &:hover {
-                  background-color: #434757;
+                background-color: #434757;
               }
+            }
           }
-      }
-      }
-  
-    }
-  
-    // Responsive Design
-    @media (max-width: 768px) {
-      .cardsSection {
-        .card {
-          width: 100%;
         }
       }
-  
+
+
+
     }
+
+    // Tablet
+
+    @media (max-width: $tablet) and (min-width: $mobile) {
+      height: auto;
+      margin-top: 50px;
+
+      .btndiv {
+        width: 40%;
+        height: 100%;
+        // background-color: red;
+        display: flex;
+        justify-content: right;
+        /* Center horizontally */
+        align-items: center;
+        /* Center vertically */
+
+        .teamButton {
+          margin-top: 1rem;
+          background-color: #ffffff;
+          color: #fff;
+          padding: 0.5rem 1.5rem;
+          border-radius: 20px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #434757;
+          }
+        }
+      }
+    }
+
   }
 
-
-
-
-
-    .heroSection{
+  // Responsive Design
+  @media (max-width: 768px) {
+    .cardsSection {
+      .card {
         width: 100%;
-        height: 100vh;
-        margin: 0px auto;
-        padding: 0px;
-        img{
-            object-fit: cover;
-
-        }
+      }
     }
 
+  }
+}
 
 
+
+
+
+.heroSection {
+  width: 100%;
+  height: 100vh;
+  margin: 0px auto;
+  padding: 0px;
+
+  img {
+    object-fit: cover;
+
+  }
+}
+
+
+
+.date {
+  text-align: right;
+  margin: 10px;
+  color: #FFF;
+
+  font-family: Stara;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  /* 24px */ @include respond-to(mobile) { 
+  font-size: 16px;
+  }
+
+}

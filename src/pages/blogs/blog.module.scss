@@ -89,10 +89,12 @@ section {
       justify-content: space-between;
       gap: 20px;
       background: #1C1D21;
- @include respond-to(mobile) { 
-padding: 10px; 
-flex-direction: column;
-}
+
+      @include respond-to(mobile) {
+        padding: 10px;
+        flex-direction: column;
+      }
+
       .leftdiv {
         height: 100%;
         width: 100%;
@@ -108,8 +110,10 @@ flex-direction: column;
           font-weight: 600;
           line-height: 150%;
           /* 48px */
-          text-align: left;  @include respond-to(mobile) { 
-          font-size: 24px;
+          text-align: left;
+
+          @include respond-to(mobile) {
+            font-size: 24px;
           }
         }
 
@@ -122,8 +126,10 @@ flex-direction: column;
           line-height: 150%;
           /* 36px */
           align-self: stretch;
-          text-align: justify;  @include respond-to(mobile) { 
-          font-size: 18px;
+          text-align: justify;
+
+          @include respond-to(mobile) {
+            font-size: 18px;
           }
         }
       }
@@ -144,41 +150,51 @@ flex-direction: column;
     max-width: 100%;
     height: 90vh;
     overflow-x: hidden;
-    
+
     padding: 0px 0 0 80px;
- @include respond-to(mobile) { 
-padding: 0 0 0 20px;
-}
-   
+
+    @include respond-to(mobile) {
+      padding: 0 0 0 20px;
+    }
+
 
     .CardssDiv {
       width: 100%;
       overflow-x: auto;
-height: 100%;
+      height: 100%;
+
       .cardsScroll {
         width: auto;
         overflow-x: scroll;
         display: flex;
-        flex-direction: row; 
-        gap: 30px; position: relative; height: 100%;
+        flex-direction: row;
+        gap: 30px;
+        position: relative;
+        height: 100%;
 
-        .cardDiv { 
-          position: relative; min-height: 100%; display: flex; align-items: center;
+        .cardDiv {
+          position: relative;
+          min-height: 100%;
+          display: flex;
+          align-items: center;
+
           .mainCard {
             display: flex;
             height: 100%;
             width: 638px;
-            padding: 26px; max-height: 300px;
+            padding: 26px;
+            max-height: 300px;
             flex-direction: column;
             align-items: flex-start;
             border-radius: 24px;
             background: #222327;
             gap: 10px;
 
- @include respond-to(mobile) { 
+            @include respond-to(mobile) {
 
-  width: 90vw;
-}
+              width: 90vw;
+            }
+
             h3 {
               color: #FFF;
               font-family: Stara;
@@ -186,9 +202,10 @@ height: 100%;
               font-style: normal;
               font-weight: 600;
               line-height: 150%;
-              /* 48px */ 
-               @include respond-to(mobile) { 
-              font-size:24px ;
+
+              /* 48px */
+              @include respond-to(mobile) {
+                font-size: 24px;
               }
             }
 
@@ -200,186 +217,293 @@ height: 100%;
               font-weight: 500;
               line-height: 150%;
               /* 36px */
-              text-align: justify;  @include respond-to(mobile) { 
-              font-size: 16px;
+              text-align: justify;
+
+              @include respond-to(mobile) {
+                font-size: 16px;
               }
             }
-          }  &:hover .hovercard {
+          }
+
+          &:hover .hovercard {
             opacity: 1;
             pointer-events: auto;
             // transform: translateY(0); /* Slide into view */
           }
-        }.hcard1{   opacity: 0;
+        }
+
+        .hcard1 {
+          opacity: 0;
           position: absolute;
           width: 100%;
-          z-index: +5; left: 5%;
-          bottom: 9%; width: 386.519px;
+          z-index: +5;
+          left: 5%;
+          bottom: 9%;
+          width: 386.519px;
           transform: rotate(-10.936deg);
-          .hovercardcontent{
-            position: relative;  @include respond-to(mobile) { 
-            width: 300px;
-            }
-p{color: #FFF;
-  font-family: Stara;
-  font-size: 18px;
-  font-style: italic;
-  font-weight: 500; text-align: justify;
-  line-height: 150%; /* 27px */
  @include respond-to(mobile) { 
-font-size: 14px;
+opacity: 1;
 }
-}
-            .svg1{
+          .hovercardcontent {
+            position: relative;
+
+            @include respond-to(mobile) {
+              width: 300px;
+            }
+
+            p {
+              color: #FFF;
+              font-family: Stara;
+              font-size: 18px;
+              font-style: italic;
+              font-weight: 500;
+              text-align: justify;
+              line-height: 150%;
+
+              /* 27px */
+              @include respond-to(mobile) {
+                font-size: 14px;
+              }
+            }
+
+            .svg1 {
               position: absolute;
               top: -60%;
-              @include respond-to(mobile) { 
+
+              @include respond-to(mobile) {
                 width: 20%;
-             }
-            }
-            .svg2{
-              position: absolute;
-              left: -10%;
-              top: -0%; width: 38.424px;
-              height: 70px; 
-               @include respond-to(mobile) { 
-                width: 30px; height: 30px;
-              }
-            }.svg3{
-              position: absolute;
-              right: -10%;
-              top: 0%; width: 125.5px;
-              height: 109px;
-              flex-shrink: 0; opacity: 40%;
-            }
-          }
-        }.hcard2{   opacity: 0;
-          position: absolute;
-          width: 100%;
-          z-index: +5; left: 25%;
-          top: 6%; width: 386.519px;
-          transform: rotate(-5.806deg);
-           @include respond-to(mobile) { 
-          width: 300px; left: 5%;
-          }
-          .hovercardcontent{
-            position: relative;
-p{color: #FFF;
-  font-family: Stara;
-  font-size: 18px;
-  font-style: italic;
-  font-weight: 500; text-align: justify;
-  line-height: 150%; /* 27px */  @include respond-to(mobile) { 
-    font-size: 14px;
-    }}
-            .svg1{
-              position: absolute;
-              bottom: -130%; left: 20%; 
-               @include respond-to(mobile) { 
-              width: 40%;
-              bottom: -80;
               }
             }
-            .svg2{
+
+            .svg2 {
               position: absolute;
               left: -10%;
-              top: -30%; width: 38.424px;
+              top: -0%;
+              width: 38.424px;
               height: 70px;
-               @include respond-to(mobile) { 
-              width: 20px;
+
+              @include respond-to(mobile) {
+                width: 30px;
+                height: 30px;
               }
-            }.svg3{
+            }
+
+            .svg3 {
               position: absolute;
               right: -10%;
-              top: 0%; width: 125.5px;
+              top: 0%;
+              width: 125.5px;
               height: 109px;
-              flex-shrink: 0; opacity: 100%;
+              flex-shrink: 0;
+              opacity: 40%;
             }
           }
-        }.hcard3{   opacity: 0;
+        }
+
+        .hcard2 {
+          opacity: 0;
           position: absolute;
           width: 100%;
-          z-index: +5; left: 25%;
-          bottom: 9%; width: 386.519px;
-          transform: rotate(-10.936deg);
-           @include respond-to(mobile) { 
-          left: 5%; width: 300px;
+          z-index: +5;
+          left: 25%;
+          top: 6%;
+          width: 386.519px;
+          transform: rotate(-5.806deg);
+          @include respond-to(mobile) { 
+            opacity: 1;
+            }
+          @include respond-to(mobile) {
+            width: 300px;
+            left: 5%;
           }
-          .hovercardcontent{
+
+          .hovercardcontent {
             position: relative;
-p{color: #FFF;
-  font-family: Stara;
-  font-size: 18px;
-  font-style: italic;
-  font-weight: 500; text-align: justify;
-  line-height: 150%; /* 27px */  @include respond-to(mobile) { 
-    font-size: 14px;
-   
-    }}
-            .svg1{
+
+            p {
+              color: #FFF;
+              font-family: Stara;
+              font-size: 18px;
+              font-style: italic;
+              font-weight: 500;
+              text-align: justify;
+              line-height: 150%;
+
+              /* 27px */
+              @include respond-to(mobile) {
+                font-size: 14px;
+              }
+            }
+
+            .svg1 {
+              position: absolute;
+              bottom: -130%;
+              left: 20%;
+
+              @include respond-to(mobile) {
+                width: 40%;
+                bottom: -80;
+              }
+            }
+
+            .svg2 {
+              position: absolute;
+              left: -10%;
+              top: -30%;
+              width: 38.424px;
+              height: 70px;
+
+              @include respond-to(mobile) {
+                width: 20px;
+              }
+            }
+
+            .svg3 {
+              position: absolute;
+              right: -10%;
+              top: 0%;
+              width: 125.5px;
+              height: 109px;
+              flex-shrink: 0;
+              opacity: 100%;
+            }
+          }
+        }
+
+        .hcard3 {
+          opacity: 0;
+          position: absolute;
+          width: 100%;
+          z-index: +5;
+          left: 25%;
+          bottom: 9%;
+          width: 386.519px;
+          transform: rotate(-10.936deg);
+
+          @include respond-to(mobile) {
+            left: 5%;
+            width: 300px; opacity: 1;
+          }
+
+          .hovercardcontent {
+            position: relative;
+
+            p {
+              color: #FFF;
+              font-family: Stara;
+              font-size: 18px;
+              font-style: italic;
+              font-weight: 500;
+              text-align: justify;
+              line-height: 150%;
+
+              /* 27px */
+              @include respond-to(mobile) {
+                font-size: 14px;
+
+              }
+            }
+
+            .svg1 {
               position: absolute;
               top: -130%;
               left: 30%;
-               @include respond-to(mobile) { 
-              top: -250%;
+
+              @include respond-to(mobile) {
+                top: -250%;
               }
             }
-            .svg2{
+
+            .svg2 {
               position: absolute;
               left: -10%;
-              top: -30%; width: 38.424px;
+              top: -30%;
+              width: 38.424px;
               height: 70px;
-               @include respond-to(mobile) { 
-              width: 20px; top: -10%;
+
+              @include respond-to(mobile) {
+                width: 20px;
+                top: -10%;
               }
-            }.svg3{
+            }
+
+            .svg3 {
               position: absolute;
               right: -10%;
-              top: 0%; width: 125.5px;
+              top: 0%;
+              width: 125.5px;
               height: 109px;
-              flex-shrink: 0; opacity: 40%;
+              flex-shrink: 0;
+              opacity: 40%;
             }
           }
-        }.hcard5{   opacity: 0;
+        }
+
+        .hcard5 {
+          opacity: 0;
           position: absolute;
           width: 100%;
-          z-index: +5; left: 25%;
-          bottom: 7%; width: 386.519px;
+          z-index: +5;
+          left: 25%;
+          bottom: 7%;
+          width: 386.519px;
           transform: rotate(-10.936deg);
-           @include respond-to(mobile) { 
-          width: 300px; left: 10%;
+
+          @include respond-to(mobile) {
+            width: 300px;
+            left: 10%; opacity: 1;
           }
-          .hovercardcontent{
+
+          .hovercardcontent {
             position: relative;
-p{color: #FFF;
-  font-family: Stara;
-  font-size: 18px;
-  font-style: italic;
-  font-weight: 500; text-align: justify;
-  line-height: 150%; /* 27px */  @include respond-to(mobile) { 
-    font-size: 14px; 
-    }}
-            .svg1{
-              position: absolute;
-              top: -80%;
-              left: 30%; 
-               @include respond-to(mobile) { 
-              width: 50px; height: 80px;
+
+            p {
+              color: #FFF;
+              font-family: Stara;
+              font-size: 18px;
+              font-style: italic;
+              font-weight: 500;
+              text-align: justify;
+              line-height: 150%;
+
+              /* 27px */
+              @include respond-to(mobile) {
+                font-size: 14px;
               }
             }
-            .svg2{
+
+            .svg1 {
+              position: absolute;
+              top: -80%;
+              left: 30%;
+
+              @include respond-to(mobile) {
+                width: 50px;
+                height: 80px;
+              }
+            }
+
+            .svg2 {
               position: absolute;
               left: -10%;
-              top: -30%; width: 38.424px;
-              height: 70px; 
-               @include respond-to(mobile) { 
-              top: 2%;width: 20px;
+              top: -30%;
+              width: 38.424px;
+              height: 70px;
+
+              @include respond-to(mobile) {
+                top: 2%;
+                width: 20px;
               }
-            }.svg3{
+            }
+
+            .svg3 {
               position: absolute;
               right: -10%;
-              top: 0%; width: 125.5px;
+              top: 0%;
+              width: 125.5px;
               height: 109px;
-              flex-shrink: 0; opacity: 40%;
+              flex-shrink: 0;
+              opacity: 40%;
             }
           }
         }
