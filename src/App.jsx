@@ -158,7 +158,7 @@ function App() {
           />{" "}
           <Route path="/casestudy/purus" element={<PurusCaseStudy />} />
           <Route path="/casestudy/virat" element={<ViratCaseStudy />} />
-          BakersCaseStudy
+         
           <Route path="/casestudy/akoya" element={<AkoyaCaseStudy />} />
           <Route path="/casestudy/bakers" element={<BakersCaseStudy />} />
           <Route path="/casestudy/creamf" element={<CreamFCaseStudy />} />
