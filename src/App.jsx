@@ -30,11 +30,11 @@ import Service4 from "./pages/Service4.jsx";
 
 // Case study AkoyaCaseStudy
 import SereneSkinCaseStudy from "./pages/CaseStudy/SerenCaseStudy.jsx";
-import PurusCaseStudy from "./pages/CaseStudy/PurusCaseStudy.jsx";
+// import PurusCaseStudy from "./pages/CaseStudy/PurusCaseStudy.jsx";
 import ViratCaseStudy from "./pages/CaseStudy/ViratCaseStudy.jsx";
-import AkoyaCaseStudy from "./pages/CaseStudy/AkoyaCaseStudy.jsx";
-import BakersCaseStudy from "./pages/CaseStudy/BakerCaseStudy.jsx";
-import CreamFCaseStudy from "./pages/CaseStudy/CreamFCaseStudy.jsx";
+import AkoyaCaseStudy from "./pages/CaseStudy/AkoyaCaseStudygood.jsx";
+import BakersCaseStudy from "./pages/CaseStudy/BakersCaseStudy.jsx";
+import CreamFCaseStudy from "./pages/CaseStudy/CreamFCaseStudygood.jsx";
 
 // import BakersCaseStudy from "./pages/BakersCaseStudy.jsx";
 // import CreamforestCaseStudy from "./pages/CreamforestCaseStudy.jsx";
@@ -134,7 +134,7 @@ function App() {
 
   return (
     <>
-      {/* {isNavigating && <Preloader trigger={isNavigating} />}  its transition  */}
+      {isNavigating && <Preloader trigger={isNavigating} />}  
 
       {/* Countdown component */}
       {/* <Countdown /> */}
@@ -160,7 +160,7 @@ function App() {
             element={<SereneSkinCaseStudy />}
             ViratCaseStudy
           />{" "}
-          <Route path="/casestudy/purus" element={<PurusCaseStudy />} />
+          
           <Route path="/casestudy/virat" element={<ViratCaseStudy />} />
          
           <Route path="/casestudy/akoya" element={<AkoyaCaseStudy />} />

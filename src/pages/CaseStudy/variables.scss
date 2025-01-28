@@ -1,0 +1,179 @@
+/* App.scss or App.css */
+
+@font-face {
+  font-family: "Stara";
+  src: url("../assets/fonts/Stara-Black.otf") format("opentype");
+  font-weight: 900;
+  /* Black */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Stara";
+  src: url("../assets/fonts/Stara-BlackItalic.otf") format("opentype");
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Stara";
+  src: url("../assets/fonts/Stara-Bold.otf") format("opentype");
+  font-weight: 700;
+  /* Bold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Stara";
+  src: url("../assets/fonts/Stara-Bold.otf") format("opentype");
+  font-weight: 100;
+  /* Bold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Stara";
+  src: url("../assets/fonts/Stara-Bold.otf") format("opentype");
+  font-weight: 200;
+  /* Bold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Stara";
+  src: url("../assets/fonts/Stara-Bold.otf") format("opentype");
+  font-weight: 300;
+  /* Bold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Stara";
+  src: url("../assets/fonts/Stara-BoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Stara";
+  src: url("../assets/fonts/Stara-ExtraBold.otf") format("opentype");
+  font-weight: 800;
+  /* ExtraBold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Stara";
+  src: url("../assets/fonts/Stara-ExtraBoldItalic.otf") format("opentype");
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Stara";
+  src: url("../assets/fonts/Stara-Medium.otf") format("opentype");
+  font-weight: 500;
+  /* Medium */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Stara";
+  src: url("../assets/fonts/Stara-MediumItalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Stara";
+  src: url("../assets/fonts/Stara-SemiBold.otf") format("opentype");
+  font-weight: 600;
+  /* SemiBold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Stara";
+  src: url("../assets/fonts/Stara-SemiBoldItalic.otf") format("opentype");
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Etherel";
+  src: url("../assets/fonts/EtherealDemoFont-Bold.otf") format("opentype");
+  font-weight: 800;
+  // font-style: italic;
+}
+
+@font-face {
+  font-family: "Etherel";
+  src: url("../assets/fonts/EtherealDemoFont-Medium.otf") format("opentype");
+  font-weight: 500;
+  // font-style: italic;
+}
+
+@font-face {
+  font-family: "Etherel";
+  src: url("../assets/fonts/EtherealDemoFont-Regular.otf") format("opentype");
+  font-weight: 300;
+  // font-style: italic;
+}
+
+:root {
+  --primary-color: #2b2322;
+  --secondary-color: #2b2322;
+  --text-color: #2b2322;
+  --font-stara: "Stara";
+  --medium: 500;
+  --bold: 700;
+  --black: 900;
+  --pink: #e5348c;
+  --white: #ffffff;
+  --black: #011351;
+
+  // Spacing
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+
+  // Breakpoints
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+
+  $mobile: 600px;
+  $tablet: 1024px;
+  $desktop: 1200px;
+}
+
+
+.iconstyle {
+  width: 20px;
+  height: auto;
+  margin: auto;
+  justify-content: center;
+  margin-right: 5px;
+
+  transform: translateY(20%);
+
+}
+
+
+.nodecorationLink {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  /* Separate transitions for color and scale */
+  transform-origin: center;
+  /* Keep scale centered */
+
+  &:hover {
+    color: #F8EF6E;
+    
+    /* 1.5 may be too large; adjust as needed */
+    text-decoration: none;
+    /* Ensure no underline on hover */
+  }
+}

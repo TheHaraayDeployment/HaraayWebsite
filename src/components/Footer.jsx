@@ -75,7 +75,7 @@ function Footer() {
             <h3>Follow Us</h3>
             <ul>
               <a
-                href="http://Instagram.com/"
+                href="https://www.instagram.com/haraay_studio/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="nodecorationLink"
@@ -88,7 +88,7 @@ function Footer() {
                 </li>
               </a>
               <a
-                href="http://Linkdein.com/"
+                href="https://www.linkedin.com/company/haraaydesignstudio/?viewAsMember=true"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="nodecorationLink"
@@ -101,7 +101,7 @@ function Footer() {
                 </li>
               </a>
               <a
-                href="http://facebook.com/"
+                href="https://www.facebook.com/Hugedesign.in"
                 target="_blank"
                 className="nodecorationLink"
               >
