@@ -8,10 +8,11 @@ import heroimg4 from "../assets/Serene/SerenHero.webp";
 import heroimg5 from "../assets/Virat/ViratHero.jpeg";
 // import heroimg3 from "../assets/ViratCasestudyPackaging2.svg";
 import Letstalk from "../components/Letstalk";
+import { Link } from "react-router-dom";
 
 // Example data for works (replace with your actual data)
 const worksData = [
-  { id: 1, title: "Akoya", tag: "Branding", image: heroimg1 },
+  { id: 1, title: "Akoya", tag: "Branding", image: heroimg1 , link:"/casestudy/akoya"},
   { id: 2, title: " Bakers Street", tag: "Branding", image: heroimg2 },
   { id: 3, title: "Purus", tag: "Websites", image: heroimg3 },
   { id: 4, title: "Serene Skin", tag: "Branding", image: heroimg4 },
@@ -101,7 +102,8 @@ export default function Works() {
       {/* Work Items Grid */}
       <div className={styles.workGrid}>
         {displayedWorks.map((work, idx) => (
-          <div
+        <Link to={work.link}>
+        <div
             key={work.id}
             className={`${styles.workItem} ${
               idx % 2 === 0 ? styles.fromLeft : styles.fromRight
@@ -115,7 +117,7 @@ export default function Works() {
               className={styles.workImage}
             />
             <div className={styles.workTitle}> {work.title} </div>
-          </div>
+          </div></Link>
         ))}
       </div>
 
