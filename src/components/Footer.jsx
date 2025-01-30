@@ -92,7 +92,7 @@ function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="nodecorationLink"
-              >
+              > 
                 {" "}
                 <li>
                   {" "}
@@ -134,12 +134,14 @@ function Footer() {
                 Right, near Royal Enfield, Bhusari Colony, Kothrud, Pune,
                 Maharashtra 411038
               </li>
+              <li className={styles.mlocc}>India</li>
               {/* <li>📧 hello@haraaydesignstudio.com</li> */}
             </ul>
           </div>
         </div>
       </div>{" "}
       <h1>Haraay Design Studio</h1>
+      <p>© 2025 Haraay. All rights reserved.</p>
     </div>
   );
 }

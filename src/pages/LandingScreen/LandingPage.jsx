@@ -161,100 +161,6 @@ export default function LandingPage() {
   }, []);
   // Gsap Cards Recent Works
 
-  // Ensure that ScrollTrigger recalculates positions after setup
-
-  // // for extracard
-  // useEffect(() => {
-  //   gsap.fromTo(
-  //     ".projectCards",
-  //     {
-  //       x: "100%", // Initial position based on index
-  //       rotateZ: 20,
-  //     },
-  //     {
-  //       x: "0%", // Final position
-  //       rotateZ: 0, // Final rotation
-  //       duration: 1.5, // Duration of animation
-  //       ease: "power2.out", // Ease for smooth animation
-  //       scrollTrigger: {
-  //         trigger: ".projectCards", // Ensure each card triggers its own animation
-  //         start: "top 80%",
-  //         end: "bottom 60%",
-
-  //         scrub: 1, // Smooth the animation as you scroll
-  //         markers: false, // Enable markers for debugging (can be removed later)
-  //         toggleActions: "play none none none", // Control animation actions (like 'play' on enter)
-  //       },
-  //     }
-  //   );
-  //   gsap.fromTo(
-  //     ".projectCards1",
-  //     {
-  //       x: "-100%", // Initial position based on index
-  //       rotateZ: -20,
-  //     },
-  //     {
-  //       x: "0%", // Final position
-  //       rotateZ: 0, // Final rotation
-  //       duration: 1.5, // Duration of animation
-  //       ease: "power2.out", // Ease for smooth animation
-  //       scrollTrigger: {
-  //         trigger: ".projectCards1", // Ensure each card triggers its own animation
-  //         start: "top 80%",
-  //         end: "bottom 60%",
-
-  //         scrub: 1, // Smooth the animation as you scroll
-  //         markers: false, // Enable markers for debugging (can be removed later)
-  //         toggleActions: "play none none none", // Control animation actions (like 'play' on enter)
-  //       },
-  //     }
-  //   );
-
-  //   gsap.fromTo(
-  //     ".projectCards2",
-  //     {
-  //       x: "100%", // Initial position based on index
-  //       rotateZ: 20,
-  //     },
-  //     {
-  //       x: "0%", // Final position
-  //       rotateZ: 0, // Final rotation
-  //       duration: 1.5, // Duration of animation
-  //       ease: "power2.out", // Ease for smooth animation
-  //       scrollTrigger: {
-  //         trigger: ".projectCards2", // Ensure each card triggers its own animation
-  //         start: "top 80%",
-  //         end: "bottom 60%",
-
-  //         scrub: 1, // Smooth the animation as you scroll
-  //         markers: false, // Enable markers for debugging (can be removed later)
-  //         toggleActions: "play none none none", // Control animation actions (like 'play' on enter)
-  //       },
-  //     }
-  //   );
-  //   gsap.fromTo(
-  //     ".projectCards3",
-  //     {
-  //       x: "-100%", // Initial position based on index
-  //       rotateZ: -20,
-  //     },
-  //     {
-  //       x: "0%", // Final position
-  //       rotateZ: 0, // Final rotation
-  //       duration: 1.5, // Duration of animation
-  //       ease: "power2.out", // Ease for smooth animation
-  //       scrollTrigger: {
-  //         trigger: ".projectCards3", // Ensure each card triggers its own animation
-  //         start: "top 80%",
-  //         end: "bottom 60%",
-
-  //         scrub: 1, // Smooth the animation as you scroll
-  //         markers: false, // Enable markers for debugging (can be removed later)
-  //         toggleActions: "play none none none", // Control animation actions (like 'play' on enter)
-  //       },
-  //     }
-  //   );
-  // }, []);
   useEffect(() => {
     const projectCards = document.querySelectorAll(".projectCards");
 
@@ -358,18 +264,9 @@ export default function LandingPage() {
       <div className={styles.allsection}>
         <section className={styles.Herosec}>
           <Hero></Hero>
-          {/* <h1>Haraay</h1> */}
-
-          {/* <img className={styles.heroimg1} src={heroimg1} />
-         <img draggable="false" className={styles.heroimg2} src={heroimg2} />
-         <img draggable="false" className={styles.heroimg3} src={heroimg3} />
-         <img draggable="false" className={styles.heroimg4} src={heroimg4} />
-         <img draggable="false" className={styles.heroimg5} src={heroimg5} />
-         <img draggable="false" className={styles.heroimg6} src={heroimg6} /> */}
+        
         </section>
-        {/* <section className={styles.Herosec2}>
-            <video autoPlay className="herosecvideo" muted src={herovid} />
-          </section> */}
+       
         <section className={styles.Subherosec}>
           <h1 className={styles.Subherotxt}>
             Turning your problems to Transformative designs!
@@ -388,7 +285,7 @@ export default function LandingPage() {
             {" "}
             <button>
               {" "}
-              <Link to="/contact-us">Learn more About us </Link>
+              <Link to="/about">Learn more About us </Link>
             </button>{" "}
             <button>
               {" "}
@@ -463,6 +360,8 @@ export default function LandingPage() {
               alt="Project Card"
             />
           </div>
+          <div className={styles.projcardsbtn}> <Link data-aos="fade-up"   to={"/works"}>
+            See More Works</Link></div>
         </section>
         <section data-aos="fade-up" className={styles.partners}>
           <div className={styles.partnrshead}>
@@ -524,8 +423,8 @@ export default function LandingPage() {
                   & success.
                 </p>
                 <div className={styles.caseStudy}>
-                  <p>Explore Case Study</p>
-                  <h4>Explore Case Study</h4>
+                  {/* <p>Explore Case Study</p>
+                  <h4>Explore Case Study</h4> */}
                   <div className={styles.rating}>
                     <span>5.0</span>
                     <div className={styles.stars}>⭐⭐⭐⭐⭐</div>
@@ -562,7 +461,7 @@ export default function LandingPage() {
                   captivates our audience.
                 </p>
                 <div className={styles.caseStudy}>
-                  <p>Explore Case Study</p> <h4>Explore Case Study</h4>
+                    {/* <p>Explore Case Study</p> <h4>Explore Case Study</h4> */} 
                   <div className={styles.rating}>
                     <span>5.0</span>
                     <div className={styles.stars}>⭐⭐⭐⭐⭐</div>
@@ -597,7 +496,7 @@ export default function LandingPage() {
                   the results!"
                 </p>
                 <div className={styles.caseStudy}>
-                  <p>Explore Case Study</p> <h4>Explore Case Study</h4>
+                    {/* <p>Explore Case Study</p> <h4>Explore Case Study</h4> */}
                   <div className={styles.rating}>
                     <span>5.0</span>
                     <div className={styles.stars}>⭐⭐⭐⭐⭐</div>
@@ -631,7 +530,7 @@ export default function LandingPage() {
                   recommend them to get your brand out there and running.
                 </p>
                 <div className={styles.caseStudy}>
-                  <p>Explore Case Study</p> <h4>Explore Case Study</h4>
+                    {/* <p>Explore Case Study</p> <h4>Explore Case Study</h4> */}
                   <div className={styles.rating}>
                     <span>5.0</span>
                     <div className={styles.stars}>⭐⭐⭐⭐⭐</div>
@@ -726,10 +625,11 @@ export default function LandingPage() {
             <div className={styles.form}>
               <form onSubmit={handleSubmit}>
                 <div className={styles.forminputes}>
-                  <div className={styles.enquiryinput}>
+                  <div className={`${styles.enquiryinput} ${styles.servicediv}`}>
                     <label className={styles.servicebtn}>
-                      Service Type <span>*</span>{" "}
+                    Enquiry Type <span>*</span>{" "}
                     </label>
+                    <div className={styles.serviceinput}>
                     <input
                       type="radio"
                       name="serviceType"
@@ -751,7 +651,7 @@ export default function LandingPage() {
                         handleChange(e);
                       }}
                     />
-                    <h5>Job</h5>
+                    <h5>Job</h5> </div>
                   </div>
 
                   <div className={styles.labeldiv}>

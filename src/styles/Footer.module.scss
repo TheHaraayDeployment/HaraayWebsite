@@ -9,11 +9,15 @@ $breakpoint-extra-large: 1200px;
     @media (max-width: $breakpoint-small) {
       @content;
     }
-  } @else if $breakpoint==medium {
+  }
+
+  @else if $breakpoint==medium {
     @media (max-width: $breakpoint-medium) {
       @content;
     }
-  } @else if $breakpoint==large {
+  }
+
+  @else if $breakpoint==large {
     @media (max-width: $breakpoint-large) {
       @content;
     }
@@ -22,14 +26,22 @@ $breakpoint-extra-large: 1200px;
 
 .footer {
   width: 100%;
-  padding-top: 100px;
+  padding-top: 50px;
   background-color: #121315;
   z-index: +100;
   pointer-events: fill;
 
   @include respond-to(small) {
     width: 100vw;
-    padding-top: 50px;
+    padding-top: 0px;
+  }
+
+  p {
+    font-size: 14px;
+    color: white;
+    text-align: center;
+  
+    padding-bottom: 10px;
   }
 
   h1 {
@@ -55,8 +67,8 @@ $breakpoint-extra-large: 1200px;
   }
 
   .footercont {
-    width: 80%;
-    margin-left: 10%;
+    width: 85%;
+    margin: 0 auto;
     background-color: #202127;
     padding: 40px 20px;
     color: #fff;
@@ -68,10 +80,11 @@ $breakpoint-extra-large: 1200px;
       margin-left: 10px;
       background-color: transparent;
     }
+
     @include respond-to(medium) {
-      width: 90%;
-      margin-left: 10px;
-      margin-left: 5%;
+      width: 100%;
+      // margin-left: 10px;
+      margin-left: 1%;
     }
 
     .footerContainer {
@@ -81,6 +94,7 @@ $breakpoint-extra-large: 1200px;
       max-width: 1200px;
       margin: 0 auto;
       flex-wrap: wrap;
+
       @include respond-to(medium) {
         padding-top: 50px;
       }
@@ -92,9 +106,10 @@ $breakpoint-extra-large: 1200px;
       text-align: center;
       position: relative;
       height: 200px;
+
       @include respond-to(small) {
         width: 100%;
-        margin: 40px 0 !important;
+        margin: 20px 0 !important;
       }
 
       h3 {
@@ -110,8 +125,9 @@ $breakpoint-extra-large: 1200px;
         left: -10px;
         // top: 10%;
         height: 100%;
+
         @include respond-to(small) {
-          font-size: 28px;
+          font-size: 24px;
         }
       }
 
@@ -125,7 +141,12 @@ $breakpoint-extra-large: 1200px;
 
         display: flex;
         flex-direction: column;
-        justify-content: center; /* Centers items vertically */
+        justify-content: center;
+
+        /* Centers items vertically */
+        @include respond-to(small) {
+          font-size: 16px ;
+        }
 
         li {
           margin-bottom: 12px;
@@ -173,14 +194,18 @@ $breakpoint-extra-large: 1200px;
       margin: 10px;
       text-align: center;
       position: relative;
-      text-align: left;
+
+      // text-align: left;
       @include respond-to(small) {
-        flex: 0 0 100%;
+        // flex: 0 0 100%;
+        margin-left: 20px;
       }
+
       @include respond-to(medium) {
         margin-top: 50px;
         margin-bottom: 50px;
       }
+
       h3 {
         font-size: 36px;
         color: #ffffff;
@@ -204,6 +229,7 @@ $breakpoint-extra-large: 1200px;
         margin-left: 0;
         text-align: center;
         position: relative;
+
         h3 {
           font-size: 26px;
         }
@@ -211,6 +237,11 @@ $breakpoint-extra-large: 1200px;
 
       ul {
         font-size: 16px;
+
+        @include respond-to(small) {
+          display: flex;
+          align-items: center;
+        }
 
         li {
           margin-bottom: 12px;
@@ -220,6 +251,21 @@ $breakpoint-extra-large: 1200px;
           &:first-of-type {
             display: block;
             margin-bottom: 12px;
+          }
+
+          &:first-child {
+            @include respond-to(small) {
+              display: none !important;
+            }
+          }
+        }
+
+        .mlocc {
+          display: none;
+
+          @include respond-to(small) {
+            display: block;
+
           }
         }
       }

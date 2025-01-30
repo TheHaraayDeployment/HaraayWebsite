@@ -186,7 +186,7 @@ section {
       color: white;
       background-color: transparent;
     }
-    button {
+    button { 
       &:first-child {
         margin: 20px;
         border-radius: 20px;
@@ -210,18 +210,23 @@ section {
         }
       }
       &:last-child {
-        // margin: 20px;
-
-        border: 1px solid transparent;
-        padding: 0em 1.2em;
+        // margin: 20px; 
+         background-color: transparent;border: none;
+         padding: 0em 1.2em;
+a{
+        
         font-size: 16px;
         font-weight: 500;
         font-family: inherit;
         color: #2b2322;
         cursor: pointer;
         transition: border-color 0.25s;
-        background-color: transparent;
-      }
+      
+      }&:hover {
+        transform: scale(1.0);
+        box-shadow: none
+
+    }}
     }
   }
 }
@@ -359,6 +364,28 @@ section {
   h1 {
     text-align: left;
   }
+  
+}
+.projcardsbtn{ margin-top: -50px; width: 100%; display: flex; justify-content: center;
+  a{
+    display: flex;
+height: 40px;
+width: 150px;
+padding: 8px 9.584px 8px 10px;
+justify-content: center;
+align-items: center;
+    cursor: pointer;border-radius: 30px;
+    background: var(--Colour-Theory-Primary-Colour-04, #E5348C);
+    transition: background-color 0.25s; border: none; color: #FFF;
+    font-family: Stara;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 24px */
+    &:hover {
+      background-color: #f377b5; text-decoration: none;
+    }
+  }
 }
 .projectimg {
   // background-color: red;
@@ -414,7 +441,7 @@ section {
   width: 100%;
   margin-top: 130px;
   @include respond-to(small) {
-    margin-top: 0px;
+    margin-top: 100px;
   }
 }
 .imageslider {
@@ -536,7 +563,7 @@ section {
   @include respond-to(small) {
     width: 100%;
     height: 50vh;
-    min-height: 70vh;
+    min-height: auto;
   }
   .partnrshead {
     width: 50%;
@@ -743,12 +770,12 @@ section {
           left: 60px;
           font-size: 20px;
         }
-        .rating {
+        .rating { 
           position: absolute;
           bottom: 10px;
-          right: 60px;
+          right: 35%;
           display: flex;
-          align-items: center;
+          align-items: center; 
           @include respond-to(small) {
             display: none;
           }
@@ -829,7 +856,8 @@ section {
     font-weight: 500;
     font-family: Etherel;
     @include respond-to(small) {
-      font-size: 48px;
+      font-size: 48px; 
+      margin-bottom: 0px;
     }
   }
 
@@ -842,20 +870,22 @@ section {
     grid-template-columns: 1.4fr 2fr;
     @include respond-to(small) {
       display: block;
-      padding: 0px;
+      padding: 0px; 
     }
   }
 }
 .formimg {
   img {
     position: absolute;
-    left: -20%;
-    width: 40vw;
+    left: -20%; top: 20%;
+    width: 52vw;
     transition: all 0.3s ease;
     animation: hover-float 5s ease-in-out infinite alternate;
     @include respond-to(small) {
       padding: 0;
-      top: 0;
+      top: 10%;
+      z-index: -1;
+      width: 100%; opacity: 80%;
     }
     :hover {
       transform: rotate(5deg) scale(1.05);
@@ -886,6 +916,9 @@ section {
   form {
     width: 100%;
     padding: 20px;
+     @include respond-to(small) { 
+    padding-top: 0;
+    }
     .forminputes {
       width: 100%;
       padding: 10px;
@@ -925,7 +958,10 @@ section {
       }
       .servicebtn {
         @include respond-to(small) {
-          display: none;
+          // display: none; 
+          display: block;
+          width: 100%;
+          
         }
       }
       input {
@@ -940,7 +976,7 @@ section {
 
         font-size: 20px;
         padding-left: 2%;
-
+        @include respond-to(small) {font-size: 16px;}
         ::placeholder {
           color: #2f3031;
           margin-left: 20%;
@@ -968,6 +1004,10 @@ section {
       }
     }
   }
+  .servicediv{
+    flex-direction: column ; text-align: left;
+  }
+  .serviceinput{flex-direction: row; display: flex; }
   .submitbtn {
     display: flex;
     input {
@@ -979,6 +1019,10 @@ section {
       margin-left: 5%;
       font-size: 25px;
       border-radius: 30px;
+       @include respond-to(small) { 
+      width: 100px; font-size: 16px; border: none;
+      height: 40px;
+      }
     }
   }
 }
