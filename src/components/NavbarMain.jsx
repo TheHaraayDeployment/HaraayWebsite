@@ -98,7 +98,19 @@ const NavbarMain = () => {
               About Haraay
             </NavLink>
           </li>
-          {/* <li className={styles.navigation__item}>
+          <li className={styles.navigation__item}>
+            <NavLink
+              to="/gallary"
+              className={({ isActive }) =>
+                isActive
+                  ? `${styles.navigation__link} ${styles.active}`
+                  : styles.navigation__link
+              }
+              onClick={closeMenu}
+            >
+              Gallary
+            </NavLink>
+          </li> <li className={styles.navigation__item}>
             <NavLink
               to="/blogs"
               className={({ isActive }) =>
@@ -108,9 +120,9 @@ const NavbarMain = () => {
               }
               onClick={closeMenu}
             >
-              Blogs
+              Articles
             </NavLink>
-          </li> */}
+          </li>
           <li className={styles.navigation__item}>
             <NavLink
               to="/contact-us"
@@ -126,6 +138,7 @@ const NavbarMain = () => {
           </li>
         </ul>
         <div className={styles.navsocial}>
+          <div >
           <div className={styles.navinforbox}>
             <Icons.TbMailFilled className={styles.iconstyle} title="Home" />
             <h2>hello@haraaydesignstudio.com</h2>
@@ -136,10 +149,11 @@ const NavbarMain = () => {
               Right, near Royal Enfield, Bhusari Colony, Kothrud, Pune,
               Maharashtra 411038
             </h2>
-          </div>
+          </div> 
+          </div> 
           <div className={styles.socialicons}>
             <a
-              href="http://Instagram.com/"
+              href="https://www.instagram.com/haraay_studio/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -149,10 +163,10 @@ const NavbarMain = () => {
                 title="Instagram"
               />
             </a>
-            <a href="http://Linkdein.com/" target="_blank">
+            <a href="https://www.linkedin.com/company/haraaydesignstudio/?viewAsMember=true" target="_blank">
               <Icons.Linkedin className={styles.siconstyle} title="Linkdein" />
             </a>{" "}
-            <a href="http://facebook.com/" target="_blank">
+            <a href="https://www.facebook.com/Hugedesign.in" target="_blank">
               <Icons.Facebook className={styles.siconstyle} title="Facebook" />{" "}
             </a>{" "}
             <a href="https://www.behance.net/helloharaaystudio" target="_blank">
