@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect , useRef } from "react";
 import { gsap } from "gsap";
 import axios from "axios";
 
@@ -259,6 +259,21 @@ export default function LandingPage() {
       alert("Failed to send message. Please try again.");
     }
   };
+
+  // testimonial btns 
+  const containerRef = useRef(null);
+
+  const scrollLeft = () => {
+    if (containerRef.current) {
+      containerRef.current.scrollBy({ left: -300, behavior: "smooth" });
+    }
+  };
+
+  const scrollRight = () => {
+    if (containerRef.current) {
+      containerRef.current.scrollBy({ left: 300, behavior: "smooth" });
+    }
+  };
   return (
     <div className={styles.Landingpage}>
       <div className={styles.allsection}>
@@ -403,7 +418,7 @@ export default function LandingPage() {
         <section data-aos="fade-up" className={styles.testimonial}>
           <h1>Testimonials</h1>
           <p>Why Everyone Loves Haraay</p>
-          <div className={styles.testimonialContainer}>
+          <div className={styles.testimonialContainer}  ref={containerRef}>
             <div data-aos="fade-left" className={styles.testimonialCard}>
               <div className={styles.profile}>
                 <img draggable="false" src={PurusLOGO} alt="Profile 1" />
@@ -543,7 +558,27 @@ export default function LandingPage() {
                 </div>
               </div>
             </div>
-          </div>
+          
+          </div>   <div className={styles.arrowbtns}>
+            <button
+        onClick={scrollLeft}
+        className="absolute left-0 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow-md hover:bg-gray-700"
+      >
+  <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none">
+<rect width="52" height="52" rx="26" fill="#E5348C"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M14 26L21.9103 18L23.1969 19.299L17.4782 25.0813L38 25.0813V26.9187L17.4782 26.9187L23.1969 32.6991L21.9103 34L14 26Z" fill="white" fill-opacity="0.6"/>
+</svg>
+      </button>
+      <button
+        onClick={scrollRight}
+        className="absolute right-0 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow-md hover:bg-gray-700"
+      >
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none">
+<rect width="52" height="52" rx="26" fill="#E5348C"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M38 26L30.0897 34L28.8031 32.701L34.5218 26.9187H14V25.0813H34.5218L28.8031 19.3009L30.0897 18L38 26Z" fill="white"/>
+</svg>
+      </button>
+            </div>
         </section>
         {/* <section data-aos="fade-up" className={styles.Blogsec}>
           <h1>Blogs </h1>

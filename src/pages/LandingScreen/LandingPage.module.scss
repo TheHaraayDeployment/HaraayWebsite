@@ -608,7 +608,7 @@ align-items: center;
 
 // testimonials
 .testimonial {
-  overflow: auto;
+  overflow: auto; position: relative;
   padding: 2rem;
   // background-color: #1a1a1a;
   color: #fff;
@@ -652,8 +652,8 @@ align-items: center;
     // cursor: grab;
     width: 100vw;
     overflow-x: scroll;
-    padding: 100px 50px;
-    // background-color: red;
+    padding: 100px 20px;
+    // background-color: red;11
 
     @include respond-to(small) {
       padding: 100px 0 0 0px;
@@ -1030,4 +1030,13 @@ align-items: center;
 Link {
   text-decoration: none;
   color: white;
+}
+.arrowbtns{gap: 20px;
+ 
+  button{
+    background-color: transparent;
+    border: none; margin: 15px;
+svg{   height: 40px; 
+  width: 40px;} 
+  }
 }
