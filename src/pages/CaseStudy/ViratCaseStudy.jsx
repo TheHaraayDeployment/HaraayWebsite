@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import styles from "./AkoyaCaseStudy.module.scss";
 
 import Akoyaherovid from "../../assets/Virat/ViratHero.jpeg";
-import AkoyaOverviewimg from "../../assets/virat/Viratimg1.webp";
+import AkoyaOverviewimg from "../../assets/virat/viratimgpc.jpg";
 import Akoyaconclusionimg from "../../assets/virat/Viratimg2.svg"; 
 import Akoyacon3 from "../../assets/virat/Viratimg3.webp";
 import Akoyacon4 from "../../assets/virat/Viratimg4.webp";
