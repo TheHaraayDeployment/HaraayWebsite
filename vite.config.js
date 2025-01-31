@@ -18,6 +18,12 @@ export default defineConfig({
   },
   server: {
     // Handles SPA fallback locally during development
-    historyApiFallback: true,
+    historyApiFallback: true, // Keep for local dev
+  },
+  // Ensure Vercel builds with the right settings
+  resolve: {
+    alias: {
+      '@': '/src',
+    },
   },
 })
