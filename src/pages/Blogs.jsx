@@ -2,7 +2,7 @@ import React from 'react';
 import styles from '../styles/Blogs.module.scss';
 import aloya from '../assets/Akoya/AkoyaFullimg.png'
 import purus from '../assets/purus_casestudy_hero.svg'
-import heroimg from '../assets/bloghero.svg'
+import heroimg from '../assets/blogherosec.png'
 import Letstalk from '../components/Letstalk';
 import { Link } from 'react-router-dom';
 const blogData = [
