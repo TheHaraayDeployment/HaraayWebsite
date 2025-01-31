@@ -6,7 +6,7 @@ import styles from "./AkoyaCaseStudy.module.scss";
 
 import Akoyaherovid from "../../assets/Virat/ViratHero.jpeg";
 import AkoyaOverviewimg from "./viratimgpc.jpg";
-import Akoyaconclusionimg from "../../assets/virat/Viratimg2.svg"; 
+import Akoyaconclusionimg from "./Viratimg2.svg"; 
 import Akoyacon3 from "../../assets/virat/Viratimg3.webp";
 import Akoyacon4 from "../../assets/virat/Viratimg4.webp";
 import Akoyaimg1 from "../../assets/Akoya/Akoyaimg1.png";
