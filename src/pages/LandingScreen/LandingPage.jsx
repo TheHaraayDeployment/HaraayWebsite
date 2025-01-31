@@ -15,7 +15,7 @@ import heroimg3 from "../../assets/ViratCasestudyPackaging2.svg";
 import Akoyaheroimg from "../../assets/Akoyaheroimg.svg";
 import Projectimg1 from "../../assets/Akoyaheroimg.webp";
 import Projectimg2 from "../../assets/Bosch/Boschimg.webp";
-import Projectimg3 from "../../assets/BMS/BMSimg.webp";
+import Projectimg3 from "../../assets/BMS/BMSimg.webp"; 
 import Projectimg4 from "../../assets/Lokneta/lokneta.webp";
 import Projectimg5 from "../../assets/Satvikraas/Satvikraas.webp";
 
