@@ -7,7 +7,7 @@ import styles from "./AkoyaCaseStudy.module.scss";
 import Akoyaherovid from "../../assets/Serene/Sereneimg1.webp";
 import AkoyaOverviewimg from "../../assets/Serene/sereneim2.jpg";
 import Akoyaconclusionimg from "../../assets/Serene/sereneim3.jpg"; 
-import Akoyacon3 from "../../assets/Serene/sereneimg2.webp";
+import Akoyacon3 from "./sereneimg2.webp";
 import Akoyacon4 from "../../assets/Serene/Sereneimg3.webp";
 import Akoyaimg1 from "../../assets/Akoya/Akoyaimg1.png";
 
