@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import styles from "../styles/Works.module.scss";
 import heroimg1 from "../assets/Akoya/AkoyaFullimg.png";
 import heroimg2 from "../assets/Bakers/Bakers.png";
-import heroimg3 from "../assets/purus_casestudy_hero.svg";
+import heroimg3 from "../assets/CreamForest/CreamFimg1.svg";
 import heroimg4 from "../assets/Serene/SerenHero.webp";
 import heroimg5 from "../assets/Virat/ViratHero.jpeg";
 // import heroimg3 from "../assets/ViratCasestudyPackaging2.svg";
@@ -13,10 +13,10 @@ import { Link } from "react-router-dom";
 // Example data for works (replace with your actual data)
 const worksData = [
   { id: 1, title: "Akoya", tag: "Branding", image: heroimg1 , link:"/casestudy/akoya"},
-  { id: 2, title: " Bakers Street", tag: "Branding", image: heroimg2 },
-  { id: 3, title: "Purus", tag: "Websites", image: heroimg3 },
-  { id: 4, title: "Serene Skin", tag: "Branding", image: heroimg4 },
-  { id: 5, title: "Virat", tag: "Websites", image: heroimg5 },
+  { id: 2, title: " Bakers Street", tag: "Branding", image: heroimg2 , link:"/casestudy/bakers"},
+  { id: 3, title: "Cream Forest", tag: "Websites", image: heroimg3 , link:"/casestudy/creamf"},
+  { id: 4, title: "Serene Skin", tag: "Branding", image: heroimg4 , link:"/casestudy/sereneskin"},
+  { id: 5, title: "Virat", tag: "Websites", image: heroimg5 , link:"/casestudy/virat"},
   // { id: 6, title: "BMS", tag: "Websites", image: heroimg3 },
   // { id: 7, title: "Baker's Street", tag: "Branding", image: heroimg3 },
   // { id: 8, title: "Lok Neta", tag: "Websites", image: heroimg3 },

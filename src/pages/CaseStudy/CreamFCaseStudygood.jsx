@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react"; // Add useRef and useEffect here
+import React, { useRef, useEffect , useState} from "react"; // Add useRef and useEffect here
 import { motion } from "framer-motion";
 
 import styles from "./AkoyaCaseStudy.module.scss";
@@ -8,11 +8,12 @@ import akoyahero from "../../assets/creamforestcase_heroimg.svg";
 import akoyaoverview from "../../assets/creamforest__casestudy_overview.svg";
 import akoyabranding from "../../assets/creamforest_casestudy_branding.svg";
 import akoyacolorpallet from "../../assets/bakers_casestudy_colorpallet.svg";
-import akoyapackaging from "../../assets/creamforest_casestudy_packaging.svg";
+import akoyapackaging from "../../assets/CreamForest/CreamFimg4.svg";
 import bakersstudiesimg1 from "../../assets/purus_casestudy_studiesimg1.svg";
 import bakersstudiesimg2 from "../../assets/purus_casestudy_studiesimg2.svg";
 import bakersstudiesimg3 from "../../assets/purus_casestudy_studiesimg3.svg";
-
+import iconarrow from "../../assets/iconarrow.png";
+import iconarrow2 from "../../assets/iconarrow2.png";
 const CreamforestCaseStudy = () => {
   const heroRef = useRef(null);
 
@@ -33,6 +34,14 @@ const CreamforestCaseStudy = () => {
       x: 0,
       transition: { delay: i * 0.3, duration: 0.8 }, // delay each card by 0.3s
     }),
+  };
+const [isVisible, setIsVisible] = useState(false);
+  const handleToggle = () => {
+    setIsVisible(!isVisible);
+  };
+  const [isVisible1, setIsVisible1] = useState(false);
+  const handleToggle1 = () => {
+    setIsVisible1(!isVisible1);
   };
 
   const cards = [
@@ -73,41 +82,26 @@ const CreamforestCaseStudy = () => {
         />
       </div>
       <div className={styles.akoyaherocontent}>
-        <h1>Akoya</h1>
-        <p>Brand Identity | Packaging | Storytelling</p>
+        <h1>Cream Forest</h1>
+        <p>Brand Identity | Packaging </p>
       </div>
     </div>
 
      <div className={styles.akoyacasecontainer}>
       <div className={styles.akoyacasesection}>
         <div className={styles.akoyacasetext}>
-          <h2>Background</h2>
+          <h2>Client Brief</h2>
          <div className={styles.rightbox}>
          <p>
-            Akoya, a small but visionary company, specializes in producing an entirely unique product organic bulldriven oil. This ancient method of oil extraction, using bulls to press oil from seeds, is deeply rooted in tradition, making it both environmentally sustainable and highly differentiated from conventional, mechanized methods.
-            {isVisible && (
-              <>
-                Akoya approached us with the challenge of not only branding their product but also designing packaging that reflects their ecofriendly, organic process while standing out in the premium organic oils market. Their goal was to communicate authenticity, sustainability, and purity, resonating with both healthconscious and environmentallyaware consumers.
-              </>
-            )}
-            <p className={styles.readmorebtn} onClick={handleToggle}>
-              {isVisible ? (
-                <>
-                  Read Less <img src={iconarrow} alt="Arrow Icon" />
-                </>
-              ) : (
-                <>
-                  Read More <img src={iconarrow2} alt="Arrow Icon" />
-                </>
-              )}
-            </p>
+         Cream Forest, an ice cream brand, envisioned a playful yet premium identity for their website and branding. They wanted the design to evoke the feeling of indulgence, freshness, and nature, aligning with their brand name.
+          
           </p>
          </div>
         </div>
         <div className={styles.akoyacasetext}>
-          <h2>Challenges</h2> <div className={styles.rightbox}>
+          <h2>Overview</h2> <div className={styles.rightbox}>
           <p>
-            To be frank there are many organic oils in the market withNiche Extraction Process: The bulldriven method of oil extraction. Akoya wanted to stand out from the market, while educating the audience via branding, with Balancing Tradition with Modern Appeal.
+          Creamforest is a company that is dedicated to the production and sales and milk-delivered products in this case developing a more natural ice cream focused on new consumer and personal care trends. we created a brand identity and packaging for them.
           </p>
         </div>
         </div>
@@ -128,20 +122,12 @@ const CreamforestCaseStudy = () => {
 
       <div className={styles.akoyacasebranding}>
         <div className={styles.akoyacasetext}>
-          <h2>Objectives</h2>  <div className={styles.rightbox}>
+          <h2>Branding</h2>  <div className={styles.rightbox}>
           <p>
-            Create a Strong Brand Identity that reflects the core values of Akoya: sustainability, organic purity, and the artisanal method of bulldriven oil extraction.
-          </p>
-        </div>
-        </div>
-        <div className={styles.akoyacasetext}>
-          <h3>Branding Identity Development</h3>
-          <div className={styles.rightbox}>
-          <p>
-            We started with indepth research into the history of bulldriven oil production, its environmental benefits, and Akoya’s mission. After several brainstorming sessions and consultations, we developed a brand concept centered around the following key pillars.
-            {isVisible1 && (
+          Our job consisted of creating a brand and its packaging for a product based an artisanal and more natural ice caring for our body as a container of life; this was transferred to the logo
+          {isVisible1 && (
               <>
-                The brand gets is strong, rich essence from its colour palette inspired by nature: Forest Green, Golden, brown beige, charcoal and light grey rousing the qualities of the brand True, Pure, Honest, Natural, Rich, Transparent to their consumers. Akoya is promoting richness in quality in a warmth and welcome way, to combine these two ends of akoya we have used Glysa and Chillax typeface in combination to meet the luxury and friendly qualities of the brand. The look and feel of the brand is authentic, natural, rich, in reference to their keywords that are Cultured, true, and pure. The brand presents itself as The SAGE one full of wisdom, with a will to share the truth with others around them, with a voice that’s welcoming, straight to point and Practical.
+             that consists of a very expensive and classic typeface after the packaging was made in the which we rainforce the concept with very striking flat colors with large texts, illustrations and abstract brush strokes in black have a powerful construct.
               </>
             )}
              <p className={styles.readmorebtn} onClick={handleToggle1}>
@@ -155,8 +141,10 @@ const CreamforestCaseStudy = () => {
                 </>
               )}
             </p>
-          </p>
+            </p>
         </div>
+      
+       
         </div>
         <img
           src={akoyabranding}
@@ -167,9 +155,10 @@ const CreamforestCaseStudy = () => {
 
       <div className={styles.akoyacasecolorpalette}>
         <div className={styles.akoyacasetext}>
-          <h2>Packaging & 3D Animation</h2>   <div className={styles.rightbox}>
+          <h2>Packaging</h2>   <div className={styles.rightbox}>
           <p>
-            Worked on 3d animations and render for 3d packaging & video for it. The packaging design is simple, elegant, and ecofriendly while communicating the traditional process behind the oil. With the art style of chitrakathi and illustrations, we worked on the label design. As with the chitrakathi art form, we were able to communicate with the audience very relatable form keeping the roots intact.
+          For the packaging we worked on abstract strokes as well as Illustration based artworks, according to the flavours of the ice cream. Keeping it artisanal and more natural look.
+
           </p>
           <div className={styles.packagingakoyadiv}>
             <div>
@@ -183,7 +172,7 @@ const CreamforestCaseStudy = () => {
           </div></div>
         </div>
         <img
-          src={Akoyaconclusionimg}
+          src={akoyapackaging}
           alt="Color Palette" 
         
           className={styles.akoyascaseapproachimage}

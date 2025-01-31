@@ -257,7 +257,10 @@ flex-direction: column; justify-content: left;
   object-fit: cover;
   height: 50vh;
 }
-
+.akoyascaseimages{ width: 100%;
+  box-sizing: border-box;
+  object-fit: cover;
+ }
 .akoyascaseapproachimage {
   width: 100%;
   box-sizing: border-box;

@@ -76,12 +76,12 @@ $breakpoint-extra-large: 1200px;
   margin-bottom: 20px;
 
   .workItem {
-    max-width: 420px;
-    max-height: 280px;
+    width: 420px;
+    height: 280px;
     position: relative;
     overflow: hidden;
     background-color: #222;
-    border-radius: 10px;
+    border-radius: 10px; margin: auto;
 
     .workImage {
       width: 100%;
