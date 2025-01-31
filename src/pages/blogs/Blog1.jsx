@@ -1,15 +1,15 @@
 import React from "react";
 import styles from "./blog.module.scss";
-import heroimg from "../../assets/blogs/blog1heroimg.jpg";
+import heroimg from "../../assets/blogs/bloghero.jpeg";
 import infoimg from "../../assets/blogs/blog1infoimg.png";
 
 export default function blog01() {
   return (
     <div className={styles.blogpage}>
-      <section className={styles.heroSection}>
+      <div className={styles.heroSection}>
         <img src={heroimg} alt="" />
         <h2>Blog 01</h2>
-      </section>
+      </div>
       <section className={styles.infoSection}>
         <div className={styles.infoDiv}>
           <div className={styles.leftdiv}>
