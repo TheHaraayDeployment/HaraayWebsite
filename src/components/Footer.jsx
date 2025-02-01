@@ -33,6 +33,12 @@ function Footer() {
                   {" "}
                   Blogs
                 </Link>
+              </li>   <li>
+                {" "}
+                <Link to="/faq" className="nodecorationLink">
+                  {" "}
+                  FAQ
+                </Link>
               </li>
               <li>
                 {" "}
