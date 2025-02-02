@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./blog.module.scss";
 import heroimg from "../../assets/blogs/bloghero.jpeg";
-import infoimg from "../../assets/blogs/blog1infoimg.png";
+import infoimg from "../../assets/blog1infoimg.png";
 
 export default function blog01() {
   return (
