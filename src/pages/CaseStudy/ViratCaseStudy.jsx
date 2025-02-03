@@ -11,9 +11,9 @@ import Akoyacon3 from "./Viratimg3.webp";
 import Akoyacon4 from "./Viratimg4.webp";
 import Akoyaimg1 from "../../assets/Akoya/Akoyaimg1.png";
 
-import akoyastudiesimg1 from "../../assets/purus_casestudy_studiesimg1.svg";
-import akoyastudiesimg2 from "../../assets/purus_casestudy_studiesimg2.svg";
-import akoyastudiesimg3 from "../../assets/purus_casestudy_studiesimg3.svg";
+import akoyastudiesimg1 from "../../assets/samrudhcaseimg.png";
+import akoyastudiesimg2 from "../../assets/Lokneta/lokneta.webp";
+import akoyastudiesimg3 from "../../assets/bms.png";
 import iconarrow from "../../assets/iconarrow.png";
 import iconarrow2 from "../../assets/iconarrow2.png";
 import { Link } from "react-router-dom";
@@ -40,8 +40,8 @@ const ViratCasestudy = () => {
   };
 
   const cards = [
-    { src: akoyastudiesimg1, title: "Serene Skin" },
-    { src: akoyastudiesimg2, title: "Baker's Street" },
+    { src: akoyastudiesimg1, title: "Samruddh bharat technologies" },
+    { src: akoyastudiesimg2, title: "Lok Neta" },
     { src: akoyastudiesimg3, title: "BMS" },
   ];
 
@@ -217,24 +217,24 @@ const ViratCasestudy = () => {
         </div>
       </div> 
 
-      {/* <div className={styles.akoyacasecasestudiescontainer}>
-        <div className={styles.akoyacasecasestudies}>
-          {cards.map((card, index) => (
-            <div key={index} className={styles.akoyacasecasestudy}>
-              <img
-                src={card.src}
-                alt={card.title}
-                className={styles.akoyacasecasestudyimage}
-              />
-              <p className={styles.akoyacasecasestudytitle}>{card.title}</p>
-            </div>
-          ))}
-        </div>
-        <button className={styles.akoyacasecasestudiesbutton}>
-          See All Case Studies
-          <span className={styles.akoyacasebuttonicon}></span>
-        </button>
-      </div> */}
+        <div className={styles.akoyacasecasestudiescontainer}>
+             <div className={styles.akoyacasecasestudies}>
+               {cards.map((card, index) => (
+                 <div key={index} className={styles.akoyacasecasestudy}>
+                   <img
+                     src={card.src}
+                     alt={card.title}
+                     className={styles.akoyacasecasestudyimage}
+                   />
+                   <p className={styles.akoyacasecasestudytitle}>{card.title}</p>
+                 </div>
+               ))}
+             </div>
+             <button className={styles.akoyacasecasestudiesbutton}>
+               See All Case Studies
+               <span className={styles.akoyacasebuttonicon}></span>
+             </button>
+           </div>
     </motion.div>
   );
 };

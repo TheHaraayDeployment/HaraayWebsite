@@ -9,9 +9,9 @@ import akoyaoverview from "../../assets/creamforest__casestudy_overview.svg";
 import akoyabranding from "../../assets/creamforest_casestudy_branding.svg";
 import akoyacolorpallet from "../../assets/bakers_casestudy_colorpallet.svg";
 import akoyapackaging from "../../assets/CreamForest/CreamFimg4.svg";
-import bakersstudiesimg1 from "../../assets/purus_casestudy_studiesimg1.svg";
-import bakersstudiesimg2 from "../../assets/purus_casestudy_studiesimg2.svg";
-import bakersstudiesimg3 from "../../assets/purus_casestudy_studiesimg3.svg";
+import bakersstudiesimg1 from "../../assets/Serene/SerenHero.webp";
+import bakersstudiesimg2 from "../../assets/Purus/Purusimghero.svg";
+import bakersstudiesimg3 from "../../assets/Akoya/AkoyaFullimg.png";
 import iconarrow from "../../assets/iconarrow.png";
 import iconarrow2 from "../../assets/iconarrow2.png";
 const CreamforestCaseStudy = () => {
@@ -39,15 +39,15 @@ const [isVisible, setIsVisible] = useState(false);
   const handleToggle = () => {
     setIsVisible(!isVisible);
   };
-  const [isVisible1, setIsVisible1] = useState(false);
+  const [isVisible1, setIsVisible1] = useState(false); 
   const handleToggle1 = () => {
     setIsVisible1(!isVisible1);
   };
 
   const cards = [
     { src: bakersstudiesimg1, title: "Serene Skin" },
-    { src: bakersstudiesimg2, title: "Baker's Street" },
-    { src: bakersstudiesimg3, title: "BMS" },
+    { src: bakersstudiesimg2, title: "Purus" },
+    { src: bakersstudiesimg3, title: "Akoya" },
   ];
 
   // useEffect(() => {
@@ -180,24 +180,24 @@ const [isVisible, setIsVisible] = useState(false);
       </div>
     </div> 
 
-    {/* <div className={styles.akoyacasecasestudiescontainer}>
-      <div className={styles.akoyacasecasestudies}>
-        {cards.map((card, index) => (
-          <div key={index} className={styles.akoyacasecasestudy}>
-            <img
-              src={card.src}
-              alt={card.title}
-              className={styles.akoyacasecasestudyimage}
-            />
-            <p className={styles.akoyacasecasestudytitle}>{card.title}</p>
-          </div>
-        ))}
+    <div className={styles.akoyacasecasestudiescontainer}>
+        <div className={styles.akoyacasecasestudies}>
+          {cards.map((card, index) => (
+            <div key={index} className={styles.akoyacasecasestudy}>
+              <img
+                src={card.src}
+                alt={card.title}
+                className={styles.akoyacasecasestudyimage}
+              />
+              <p className={styles.akoyacasecasestudytitle}>{card.title}</p>
+            </div>
+          ))}
+        </div>
+        <button className={styles.akoyacasecasestudiesbutton}>
+          See All Case Studies
+          <span className={styles.akoyacasebuttonicon}></span>
+        </button>
       </div>
-      <button className={styles.akoyacasecasestudiesbutton}>
-        See All Case Studies
-        <span className={styles.akoyacasebuttonicon}></span>
-      </button>
-    </div> */}
   </motion.div>
   )
 }

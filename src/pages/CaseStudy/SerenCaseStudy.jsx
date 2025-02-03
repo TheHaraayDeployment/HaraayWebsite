@@ -11,9 +11,9 @@ import Akoyacon3 from "./serenetextimg.jpg";
 import Akoyacon4 from "../../assets/Serene/Sereneimg3.webp";
 import Akoyaimg1 from "../../assets/Akoya/Akoyaimg1.png";
 
-import akoyastudiesimg1 from "../../assets/purus_casestudy_studiesimg1.svg";
-import akoyastudiesimg2 from "../../assets/purus_casestudy_studiesimg2.svg";
-import akoyastudiesimg3 from "../../assets/purus_casestudy_studiesimg3.svg";
+import akoyastudiesimg1 from "../../assets/Purus/Purusimghero.svg";
+import akoyastudiesimg2 from "../../assets/Akoya/AkoyaFullimg.png";
+import akoyastudiesimg3 from "../../assets/Virat/ViratHero.jpeg"
 import iconarrow from "../../assets/iconarrow.png";
 import iconarrow2 from "../../assets/iconarrow2.png";
 import { Link } from "react-router-dom";
@@ -40,9 +40,9 @@ const SereneCasestudy = () => {
   };
 
   const cards = [
-    { src: akoyastudiesimg1, title: "Serene Skin" },
-    { src: akoyastudiesimg2, title: "Baker's Street" },
-    { src: akoyastudiesimg3, title: "BMS" },
+    { src: akoyastudiesimg1, title: "purus" },
+    { src: akoyastudiesimg2, title: "Akoya" },
+    { src: akoyastudiesimg3, title: "Virat" },
   ];
 
   // useEffect(() => {
@@ -211,24 +211,24 @@ We wanted to make it a luxury and bold skincare brand that promotes diversity, i
         </div>
       </div> 
 
-      {/* <div className={styles.akoyacasecasestudiescontainer}>
-        <div className={styles.akoyacasecasestudies}>
-          {cards.map((card, index) => (
-            <div key={index} className={styles.akoyacasecasestudy}>
-              <img
-                src={card.src}
-                alt={card.title}
-                className={styles.akoyacasecasestudyimage}
-              />
-              <p className={styles.akoyacasecasestudytitle}>{card.title}</p>
-            </div>
-          ))}
-        </div>
-        <button className={styles.akoyacasecasestudiesbutton}>
-          See All Case Studies
-          <span className={styles.akoyacasebuttonicon}></span>
-        </button>
-      </div> */}
+      <div className={styles.akoyacasecasestudiescontainer}>
+           <div className={styles.akoyacasecasestudies}>
+             {cards.map((card, index) => (
+               <div key={index} className={styles.akoyacasecasestudy}>
+                 <img
+                   src={card.src}
+                   alt={card.title}
+                   className={styles.akoyacasecasestudyimage}
+                 />
+                 <p className={styles.akoyacasecasestudytitle}>{card.title}</p>
+               </div>
+             ))}
+           </div>
+           <button className={styles.akoyacasecasestudiesbutton}>
+             See All Case Studies
+             <span className={styles.akoyacasebuttonicon}></span>
+           </button>
+         </div>
     </motion.div>
   );
 };

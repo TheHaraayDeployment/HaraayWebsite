@@ -268,7 +268,7 @@ flex-direction: column; justify-content: left;
   height: 60vh;
   object-position: 10% 10%;
 }
-.bakerscaseimage{
+.akoyacasecaseimage{
   width: 100%;
   box-sizing: border-box;
   object-fit: cover;
@@ -276,4 +276,83 @@ flex-direction: column; justify-content: left;
 }
 img {
   width: 100px;
+}
+
+// last
+
+.akoyacasecasestudiescontainer {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.akoyacasecasestudies {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.akoyacasecasestudy {
+  width: 30%;
+  text-align: center;
+}
+
+.akoyacasecasestudyimage {
+  width: 100%;
+  max-width: 424px;
+  max-height: 280px;
+  // height: auto;
+  border-radius: 8px; object-fit: cover; object-position: 10% 10%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.akoyacasecasestudyimage:hover {
+  transform: scale(1.05);
+}
+
+.akoyacasecasestudytitle {
+  font-size: 1.2rem;
+  margin-top: 15px;
+  color: #333;
+   @include respond-to(mobile) { 
+  font-size: 14px;
+  }
+}
+
+.akoyacasecasestudiesbutton {
+  padding: 12px 40px;
+  font-size: 1.2rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s ease;
+   @include respond-to(mobile) { 
+  font-size: 16px;
+  }
+}
+
+.akoyacasecasestudiesbutton:hover {
+  background-color: #555;
+}
+
+.akoyacasebuttonicon {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .akoyacasecasecasestudies {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .akoyacasecasecasestudy {
+    width: 80%;
+    margin-bottom: 20px;
+    // background-color: aquamarine;
+  }
 }

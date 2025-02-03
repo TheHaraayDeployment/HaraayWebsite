@@ -9,8 +9,8 @@ import akoyaoverview from "../../assets/bakers_casestudy_overview.jpg";
 import akoyabranding from "../../assets/bakers_casestudy_branding.svg";
 import akoyacolorpallet from "../../assets/bakers_casestudy_colorpallet.svg";
 import akoyapackaging from "../../assets/bakers_casestudy_packaging.svg";
-import bakersstudiesimg1 from "../../assets/purus_casestudy_studiesimg1.svg";
-import bakersstudiesimg2 from "../../assets/purus_casestudy_studiesimg2.svg";
+import bakersstudiesimg1 from "../../assets/CreamForest/CreamFimg1.svg";
+import bakersstudiesimg2 from "../../assets/Akoya/AkoyaFullimg.png";
 import bakersstudiesimg3 from "../../assets/purus_casestudy_studiesimg3.svg";
 const BakersCaseStudy = () => {
   const heroRef = useRef(null);
@@ -35,9 +35,9 @@ const BakersCaseStudy = () => {
   };
 
   const cards = [
-    { src: bakersstudiesimg1, title: "Serene Skin" },
-    { src: bakersstudiesimg2, title: "Baker's Street" },
-    { src: bakersstudiesimg3, title: "BMS" },
+    { src: bakersstudiesimg1, title: "Cream Forest" },
+    { src: bakersstudiesimg2, title: "Akoya" },
+    { src: bakersstudiesimg3, title: "Serene Skin" },
   ];
 
   // useEffect(() => {
@@ -138,7 +138,24 @@ const BakersCaseStudy = () => {
         </div>
         <img src={akoyapackaging} alt="Packaging" className={styles.bakerscaseimage} />
       </div>
-    </div>
+    </div>   <div className={styles.akoyacasecasestudiescontainer}>
+            <div className={styles.akoyacasecasestudies}>
+              {cards.map((card, index) => (
+                <div key={index} className={styles.akoyacasecasestudy}>
+                  <img
+                    src={card.src}
+                    alt={card.title}
+                    className={styles.akoyacasecasestudyimage}
+                  />
+                  <p className={styles.akoyacasecasestudytitle}>{card.title}</p>
+                </div>
+              ))}
+            </div>
+            <button className={styles.akoyacasecasestudiesbutton}>
+              See All Case Studies
+              <span className={styles.akoyacasebuttonicon}></span>
+            </button>
+          </div>
   </motion.div>
   
   );

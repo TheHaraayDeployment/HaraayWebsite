@@ -9,9 +9,9 @@ import AkoyaOverviewimg from "../../assets/Akoya/Akoyaoverview.png";
 import Akoyaconclusionimg from "../../assets/Akoya/AkoyaFullimg.png";
 import Akoyaimg1 from "../../assets/Akoya/Akoyaimg1.png";
 
-import akoyastudiesimg1 from "../../assets/purus_casestudy_studiesimg1.svg";
-import akoyastudiesimg2 from "../../assets/purus_casestudy_studiesimg2.svg";
-import akoyastudiesimg3 from "../../assets/purus_casestudy_studiesimg3.svg";
+import akoyastudiesimg1 from "../../assets/bakerscard.png";
+import akoyastudiesimg2 from "../../assets/hyperioncard.jpeg";
+import akoyastudiesimg3 from "../../assets/satvikraascard.png";
 import iconarrow from "../../assets/iconarrow.png";
 import iconarrow2 from "../../assets/iconarrow2.png";
 import { Link } from "react-router-dom";
@@ -226,7 +226,7 @@ const AkoyaCasestudy = () => {
         </div>
       </div> 
 
-      {/* <div className={styles.akoyacasecasestudiescontainer}>
+      <div className={styles.akoyacasecasestudiescontainer}>
         <div className={styles.akoyacasecasestudies}>
           {cards.map((card, index) => (
             <div key={index} className={styles.akoyacasecasestudy}>
@@ -243,7 +243,7 @@ const AkoyaCasestudy = () => {
           See All Case Studies
           <span className={styles.akoyacasebuttonicon}></span>
         </button>
-      </div> */}
+      </div>
     </motion.div>
   );
 };
