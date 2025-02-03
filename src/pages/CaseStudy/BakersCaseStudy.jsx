@@ -93,7 +93,7 @@ const BakersCaseStudy = () => {
           </p>
         </div>
         </div>
-        <img src={akoyaoverview} alt="Overview" className={styles.bakerscaseimage} />
+        <img src={akoyaoverview} alt="Overview" className={styles.akoyascaseimage} />
       </div>
   
       {/* Branding Section */}
@@ -112,7 +112,7 @@ const BakersCaseStudy = () => {
           </p>
         </div>
         </div>
-        <img src={akoyabranding} alt="Branding" className={styles.bakerscaseimage} />
+        <img src={akoyabranding} alt="Branding" className={styles.akoyascaseimage} />
       </div>
   
       {/* Color Palette Section */}
@@ -124,7 +124,7 @@ const BakersCaseStudy = () => {
           </p>
         </div>
         </div>
-        <img src={akoyacolorpallet} alt="Color Palette" className={styles.bakerscaseimage} />
+        <img src={akoyacolorpallet} alt="Color Palette" className={styles.akoyascaseimage} />
       </div>
   
       {/* Packaging Section */}
@@ -136,7 +136,7 @@ const BakersCaseStudy = () => {
           </p>
         </div>
         </div>
-        <img src={akoyapackaging} alt="Packaging" className={styles.bakerscaseimage} />
+        <img src={akoyapackaging} alt="Packaging" className={styles.akoyascaseimage} />
       </div>
     </div>   <div className={styles.akoyacasecasestudiescontainer}>
             <div className={styles.akoyacasecasestudies}>
