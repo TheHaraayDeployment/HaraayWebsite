@@ -38,9 +38,9 @@ const AkoyaCasestudy = () => {
   };
 
   const cards = [
-    { src: akoyastudiesimg1, title: "Baker Street" },
+    { src: akoyastudiesimg3, title: "Satvik Raas"  },
     { src: akoyastudiesimg2, title: "Hyperion" },
-    { src: akoyastudiesimg3, title: "Satvik Raas" },
+    { src: akoyastudiesimg1, title:  "Baker Street"},
   ];
 
   // useEffect(() => {
