@@ -221,11 +221,11 @@ const AkoyaCasestudy = ({ setIsOpen }) => {
               className={styles.akoyascaseimagescroll}
             />   
             <button className={styles.leftcarrow} onClick={handlePrev1}><svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none">
-  <rect width="52" height="52" rx="26" fill="#E5348C" />
+  <rect width="52" height="52" rx="26" fill="grey" />
   <path fill-rule="evenodd" clip-rule="evenodd" d="M14 25.916L21.9103 18.0038L23.1969 19.2886L17.4782 25.0073L38 25.0073V26.8246L17.4782 26.8246L23.1969 32.5415L21.9103 33.8281L14 25.916Z" fill="white"/>
 </svg></button>
             <button className={styles.rightcarrow} onClick={handleNext1}><svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none">
-<rect width="52" height="52" rx="26" fill="#E5348C"/>
+<rect width="52" height="52" rx="26" fill="grey"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M38 25.9122L30.0897 33.8243L28.8031 32.5396L34.5218 26.8208H14V25.0036H34.5218L28.8031 19.2866L30.0897 18L38 25.9122Z" fill="white"/>
 </svg></button>
           </div>
