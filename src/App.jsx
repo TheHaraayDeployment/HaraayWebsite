@@ -133,6 +133,7 @@ function App() {
   ];
   const isValidRoute = validRoutes.includes(location.pathname);
   const showHeaderFooter = location.pathname !== "/404";
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
@@ -169,7 +170,8 @@ function App() {
           <Route path="/casestudy/akoya" element={<AkoyaCaseStudy />} />
           <Route path="/casestudy/bakers" element={<BakersCaseStudy />} />
           <Route path="/casestudy/creamf" element={<CreamFCaseStudy />} />
-          <Route path="*" element={<NotFound />} />
+          {/* <Route path="/casestudy/akoya1" element={<Akoyavideo />} /> */}
+          <Route path="*" element={<NotFound />} /> 
         </Routes>
         {isValidRoute && <Footer />}
       </div>

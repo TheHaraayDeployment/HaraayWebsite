@@ -10,20 +10,29 @@ import Akoyaconclusionimg from "../../assets/Akoya/AkoyaFullimg.png";
 import Akoyaimg1 from "../../assets/Akoya/Akoyaimg1.png";
 
 import akoyastudiesimg1 from "../../assets/bakerscard.png";
-import akoyastudiesimg2 from "../../assets/hyperioncard.jpeg";
+import akoyastudiesimg2 from "../../assets/hyperioncard.jpg";
 import akoyastudiesimg3 from "../../assets/satvikraascard.png";
 import iconarrow from "../../assets/iconarrow.png";
 import iconarrow2 from "../../assets/iconarrow2.png";
+import brandimg1 from "../../assets/Akoya/a1.png"
+import brandimg2 from "../../assets/Akoya/a2.png"
+import brandimg3 from "../../assets/Akoya/a3.png"
+import brandimg4 from "../../assets/Akoya/a4.png"
+import brandimg5 from "../../assets/Akoya/a5.png"
+import brandimg6 from "../../assets/Akoya/a6.png"
+
+import akk1 from "../../assets/Akoya/akk1.png"
+import akk2 from "../../assets/Akoya/akk2.png"
+import akk3 from "../../assets/Akoya/akk3.png"
 import { Link } from "react-router-dom";
 
-const AkoyaCasestudy = () => {
-  const heroRef = useRef(null);
 
-  const { ref, inView } = useInView({
-    triggerOnce: false,
-    threshold: 0.2,
-  });
+import CarouselPopup from "./CarouselPopup";
+const AkoyaCasestudy = ({ setIsOpen }) => {
+  
 
+
+  
   const variants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
@@ -39,27 +48,10 @@ const AkoyaCasestudy = () => {
 
   const cards = [
     { src: akoyastudiesimg3, title: "Satvik Raas"  },
-    { src: akoyastudiesimg2, title: "Hyperion" },
-    { src: akoyastudiesimg1, title:  "Baker Street"},
+   
+    { src: akoyastudiesimg1, title:  "Baker Street"},  { src: akoyastudiesimg2, title: "Coming soon" },
   ];
 
-  // useEffect(() => {
-  //   const heroElement = heroRef.current;
-  //   const observer = new IntersectionObserver(
-  //     ([entry]) => {
-  //       if (entry.isIntersecting) {
-  //         heroElement.style.position = "sticky";
-  //         heroElement.style.top = "000";
-  //       }
-  //     },
-  //     { threshold: 0.5 }
-  //   );
-  //   observer.observe(heroElement);
-
-  //   return () => {
-  //     observer.unobserve(heroElement);
-  //   };
-  // }, []);
 
   const [isVisible, setIsVisible] = useState(false);
   const handleToggle = () => {
@@ -71,10 +63,7 @@ const AkoyaCasestudy = () => {
   };
 
   const images = [
-    AkoyaOverviewimg,
-    Akoyaconclusionimg,
-    Akoyaimg1,
-    AkoyaOverviewimg,
+    brandimg1,brandimg2,brandimg3,brandimg4,brandimg5
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -89,6 +78,21 @@ const AkoyaCasestudy = () => {
     );
   };
 
+  const images1 = [
+    brandimg6,akk1,akk2,akk3,AkoyaOverviewimg
+  ];
+
+  const [currentIndex1, setCurrentIndex1] = useState(0);
+
+  const handleNext1 = () => {
+    setCurrentIndex1((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const handlePrev1 = () => {
+    setCurrentIndex1((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -97,7 +101,7 @@ const AkoyaCasestudy = () => {
       transition={{ duration: 0.6 }}
       className={styles.akoyacasestudy}
     >
-      <div className={styles.akoyahero} ref={heroRef}>
+      {/* <div className={styles.akoyahero} >
         <div className={styles.akoyaherobackground}>
           <video
             src={Akoyaherovid}
@@ -111,7 +115,7 @@ const AkoyaCasestudy = () => {
           <h1>Akoya</h1>
           <p>Brand Identity | Packaging | Storytelling</p>
         </div>
-      </div>
+      </div> */}
 
        <div className={styles.akoyacasecontainer}>
         <div className={styles.akoyacasesection}>
@@ -146,21 +150,33 @@ const AkoyaCasestudy = () => {
             </p>
           </div>
           </div>
-          {/* <div className={styles.carousel}>
+          <div className={styles.carousel}>
             <img
               src={images[currentIndex]}
               alt={`Slide ${currentIndex + 1}`}
               className={styles.akoyascaseimage}
-            />  
-          </div> */}
+            />   
+            <button className={styles.leftcarrow} onClick={handlePrev}><svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none">
+  <rect width="52" height="52" rx="26" fill="grey" />
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M14 25.916L21.9103 18.0038L23.1969 19.2886L17.4782 25.0073L38 25.0073V26.8246L17.4782 26.8246L23.1969 32.5415L21.9103 33.8281L14 25.916Z" fill="white"/>
+</svg></button>
+            <button className={styles.rightcarrow} onClick={handleNext}><svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none">
+<rect width="52" height="52" rx="26" fill="grey"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M38 25.9122L30.0897 33.8243L28.8031 32.5396L34.5218 26.8208H14V25.0036H34.5218L28.8031 19.2866L30.0897 18L38 25.9122Z" fill="white"/>
+</svg></button>
+          </div> 
           
-          <img
+           {/* <button className={styles.openButton} onClick={() => setIsOpen(true)}>
+        Open Carousel
+      </button> 
+   */}
+
+          {/* <img
               src={images[currentIndex]}
              
               className={styles.akoyascaseimage}
-            />
+            /> */} 
         </div>
-
         <div className={styles.akoyacasebranding}>
           <div className={styles.akoyacasetext}>
             <h2>Objectives</h2>  <div className={styles.rightbox}>
@@ -193,11 +209,26 @@ const AkoyaCasestudy = () => {
             </p>
           </div>
           </div>
-          <img
+          {/* <img
             src={Akoyaimg1}
             alt="Branding"
             className={styles.akoyascaseapproachimage}
-          />
+          /> */}
+           <div className={styles.carousel}>
+            <img
+              src={images1[currentIndex1]}
+              alt={`Slide ${currentIndex1 + 1}`}
+              className={styles.akoyascaseimagescroll}
+            />   
+            <button className={styles.leftcarrow} onClick={handlePrev1}><svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none">
+  <rect width="52" height="52" rx="26" fill="#E5348C" />
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M14 25.916L21.9103 18.0038L23.1969 19.2886L17.4782 25.0073L38 25.0073V26.8246L17.4782 26.8246L23.1969 32.5415L21.9103 33.8281L14 25.916Z" fill="white"/>
+</svg></button>
+            <button className={styles.rightcarrow} onClick={handleNext1}><svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none">
+<rect width="52" height="52" rx="26" fill="#E5348C"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M38 25.9122L30.0897 33.8243L28.8031 32.5396L34.5218 26.8208H14V25.0036H34.5218L28.8031 19.2866L30.0897 18L38 25.9122Z" fill="white"/>
+</svg></button>
+          </div>
         </div>
 
         <div className={styles.akoyacasecolorpalette}>
@@ -243,7 +274,8 @@ const AkoyaCasestudy = () => {
           See All Case Studies
           <span className={styles.akoyacasebuttonicon}></span>
         </button>
-      </div>
+        </div> 
+     
     </motion.div>
   );
 };

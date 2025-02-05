@@ -1,0 +1,110 @@
+// Popup Overlay - Full Screen & Always in Viewport
+.popupOverlay {
+  position: relative !important;  // Ensures it stays relative to the viewport
+  // inset: 0;  // Equivalent to top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+ width: 100%; top: 0;
+}
+
+// Popup Content
+.popupContent {
+  position: fixed;
+//   background: white; top
+top: 0;
+  padding: 20px; 
+  border-radius: 10px;
+  width: 100%;
+  max-width: 95%; 
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// Close Button
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: red;
+  color: white;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+// Open Button
+.openButton {
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+// Carousel Container
+.carousel {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  max-width: 90%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.carouselContainer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+}
+
+.carouselSlide {
+  position: absolute;
+  width: 60%;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  opacity: 0.5;
+  transform: scale(0.8);
+}
+
+.carouselSlide img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 2;
+}
+
+.prev {
+  transform: translateX(-100%) scale(0.8);
+}
+
+.next {
+  transform: translateX(100%) scale(0.8);
+}
+
+// Navigation Buttons
+.prevButton, .nextButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: black;
+  color: white;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 3;
+}
+
+.prevButton { left: 0; }
+.nextButton { right: 0; }

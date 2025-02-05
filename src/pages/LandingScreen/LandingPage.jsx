@@ -315,7 +315,7 @@ export default function LandingPage() {
           </div>
         </div>
         <section className={styles.worksec}>
-          <div className="projectCards">
+          <Link to={"/casestudy/akoya"} className="projectCards">
             <div className={styles.projectcardtxt}>
               <h1>Akoya</h1>
               <h3>Branding & Packaging</h3>
@@ -326,7 +326,7 @@ export default function LandingPage() {
               src={Projectimg1}
               alt="Project Card"
             />
-          </div>
+          </Link>
           <div className="projectCards">
             <div className={styles.projectcardtxt}>
               <h1>Bosch Air Purifier</h1>
