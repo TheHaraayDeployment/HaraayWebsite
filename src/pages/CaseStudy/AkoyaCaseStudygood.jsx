@@ -101,7 +101,7 @@ const AkoyaCasestudy = ({ setIsOpen }) => {
       transition={{ duration: 0.6 }}
       className={styles.akoyacasestudy}
     >
-      {/* <div className={styles.akoyahero} >
+      <div className={styles.akoyahero} >
         <div className={styles.akoyaherobackground}>
           <video
             src={Akoyaherovid}
@@ -115,7 +115,7 @@ const AkoyaCasestudy = ({ setIsOpen }) => {
           <h1>Akoya</h1>
           <p>Brand Identity | Packaging | Storytelling</p>
         </div>
-      </div> */}
+      </div>
 
        <div className={styles.akoyacasecontainer}>
         <div className={styles.akoyacasesection}>
