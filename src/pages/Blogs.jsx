@@ -2,7 +2,8 @@ import React from 'react';
 import styles from '../styles/Blogs.module.scss';
 import aloya from '../assets/Akoya/AkoyaFullimg.png'
 import purus from '../assets/purus_casestudy_hero.svg'
-import heroimg from '../assets/blogherosec.png'
+// import heroimg from '../assets/blogherosec.png'
+import heroimg from '../assets/slab.mp4'
 import Letstalk from '../components/Letstalk';
 import { Link } from 'react-router-dom';
 const blogData = [
@@ -17,7 +18,7 @@ const blogData = [
 export default function Blogs() {
   return (
     <div className={styles.blogpage}> 
-        <div className={styles.heroSection}><img src={heroimg} alt="" /></div>
+        <div className={styles.heroSection}><video loop autoPlay src={heroimg} alt="" /></div>
         <div className={styles.heading}><h1 >Articles</h1>
         <h2>Our approach on Design</h2> </div>
       {/* Blog Cards Section */}
