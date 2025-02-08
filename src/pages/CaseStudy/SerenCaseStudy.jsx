@@ -211,7 +211,9 @@ We wanted to make it a luxury and bold skincare brand that promotes diversity, i
         </div>
       </div> 
 
-      <div className={styles.akoyacasecasestudiescontainer}>
+      <div className={styles.akoyacasecasestudiescontainer}>     <h3 className={styles.casestudyhead}>See All Projects <svg xmlns="http://www.w3.org/2000/svg" width="58" height="34" viewBox="0 0 58 34" fill="none">
+        <path d="M38.6667 33.918C38.6667 32.1248 40.4381 29.4471 42.2313 27.1996C44.5368 24.2996 47.2918 21.7694 50.4503 19.8385C52.8187 18.3909 55.6897 17.0013 58 17.0013M58 17.0013C55.6897 17.0013 52.8163 15.6117 50.4503 14.1641C47.2918 12.2308 44.5368 9.70054 42.2313 6.80538C40.4381 4.55546 38.6667 1.87296 38.6667 0.0846243M58 17.0013L0 17.0013" stroke="#2B2322" stroke-width="4"/>
+      </svg></h3>
            <div className={styles.akoyacasecasestudies}>
              {cards.map((card, index) => (
                <div key={index} className={styles.akoyacasecasestudy}>

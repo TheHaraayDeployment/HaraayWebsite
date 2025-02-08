@@ -197,6 +197,7 @@ flex-direction: column; justify-content: left;
 
         .readmorebtn {
           display: flex;
+          text-decoration: underline; 
 
           img {
             width: 25px;
@@ -381,3 +382,19 @@ top: 40%; background-color: transparent; border: none;
 
 
 
+.casestudyhead{
+  font-size:32px ; 
+  font-family: Stara; text-align: left;
+  align-content: center;
+   @include respond-to(mobile) { 
+  font-size: 18px;
+  }
+  svg{
+    width:50px ;
+    height: 25px; margin: auto;
+     @include respond-to(mobile) { 
+    width: 25px;
+    height: 20px;
+    }
+  }
+}
