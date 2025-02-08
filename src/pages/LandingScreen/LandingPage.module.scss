@@ -279,7 +279,7 @@ a{
   background-color: #0a0b0c !important;
   @include respond-to(small) {
     width: 100vw !important;
-    height: 100vh;
+    height: 80vh;
     // position: fixed;
   }
 }
@@ -656,7 +656,8 @@ align-items: center;
     // background-color: red;11
 
     @include respond-to(small) {
-      padding: 100px 0 0 0px;
+      padding: 100px 0 0 0px ;
+      margin-left: 10%;
     }
   }
 
@@ -727,7 +728,7 @@ align-items: center;
         height: 55%;
         overflow: scroll;
         @include respond-to(small) {
-          font-size: 16px;
+          font-size: 16px !important; 
         }
       }
       .testrole {
@@ -747,8 +748,10 @@ align-items: center;
         font-size: 18px;
         padding-bottom: 20px;
         @include respond-to(small) {
+          margin:  1%;
           border-bottom: none;
-          padding-bottom: 5px;
+          padding-bottom: 5px; width: 98%;
+          // margin-left: 0;
         }
       }
       .caseStudy {

@@ -29,6 +29,7 @@ $breakpoint-extra-large: 1200px;
 
   @include respond-to(small) {
     margin-top: 50px;
+    padding: 0;
   }
 }
 
@@ -82,6 +83,9 @@ $breakpoint-extra-large: 1200px;
     overflow: hidden;
     background-color: #222;
     border-radius: 10px; margin: auto;
+     @include respond-to(small) { 
+    width: 95vw;
+    }
 
     .workImage {
       width: 100%;

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../styles/Blogs.module.scss';
-import aloya from '../assets/Akoya/AkoyaFullimg.png'
+import aloya from '../assets/blogs/bloghero.jpeg'
 import purus from '../assets/purus_casestudy_hero.svg'
 // import heroimg from '../assets/blogherosec.png'
 import heroimg from '../assets/slab.mp4'
