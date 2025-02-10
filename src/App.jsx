@@ -112,8 +112,8 @@ function App() {
     "/contact-us",
     "/expertise",
     "/blogs",
-"/blogs/blog01",
-"/blogs/blog02",
+    "/blogs/blog01",
+    "/blogs/blog02",
     "/service1",
     "/service2",
     "/service3",
@@ -139,7 +139,7 @@ function App() {
 
   return (
     <>
-      {isNavigating && <Preloader trigger={isNavigating} />}  
+      {isNavigating && <Preloader trigger={isNavigating} />}
 
       {/* Countdown component */}
       {/* <Countdown /> */}
@@ -149,7 +149,6 @@ function App() {
         {isValidRoute && <Navbar />}
         <Routes>
           <Route path="/" element={<LandingPage />} />
-        
           <Route path="/works" element={<Works />} />
           <Route path="/about" element={<AboutUs />} />/
           <Route path="/blogs" element={<Blogs />} />
@@ -167,14 +166,12 @@ function App() {
             element={<SereneSkinCaseStudy />}
             ViratCaseStudy
           />{" "}
-          
           <Route path="/casestudy/virat" element={<ViratCaseStudy />} />
-         
           <Route path="/casestudy/akoya" element={<AkoyaCaseStudy />} />
           <Route path="/casestudy/bakers" element={<BakersCaseStudy />} />
           <Route path="/casestudy/creamf" element={<CreamFCaseStudy />} />
           {/* <Route path="/casestudy/akoya1" element={<Akoyavideo />} /> */}
-          <Route path="*" element={<NotFound />} /> 
+          <Route path="*" element={<NotFound />} />
         </Routes>
         {isValidRoute && <Footer />}
       </div>

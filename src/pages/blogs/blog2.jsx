@@ -3,7 +3,7 @@ import styles from "./blog2.module.scss";
 import heroimg from "../../assets/blogs/blog2heroimg.jpg";
 import img2 from "../../assets/blogs/blog2sec2.png";
 import img3 from "../../assets/blogs/blog2img3.png";
-export default function blog2() {
+export default function Blog2() {
   const sliderRef = useRef(null);
   const sliderRef2 = useRef(null);
 
