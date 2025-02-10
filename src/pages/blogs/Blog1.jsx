@@ -8,7 +8,7 @@ export default function blog01() {
     <div className={styles.blogpage}>
       <div className={styles.heroSection}>
         <img src={heroimg} alt="" />
-        <h2>Blog 01</h2>
+        <h2></h2>
       </div>
       <section className={styles.infoSection}>
         <div className={styles.infoDiv}>
