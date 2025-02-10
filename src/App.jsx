@@ -23,6 +23,7 @@ import Contact from "./pages/Contact.jsx";
 import Expertise from "./pages/Expertise.jsx";
 import Blogs from "./pages/Blogs.jsx";
 import Blog01 from "./pages/blogs/Blog1.jsx";
+import Blog02 from "./pages/blogs/Blog2.jsx"
 import Service1 from "./pages/Service1.jsx";
 import Service2 from "./pages/Service2.jsx";
 import Service3 from "./pages/Service3.jsx";
@@ -112,6 +113,7 @@ function App() {
     "/expertise",
     "/blogs",
 "/blogs/blog01",
+"/blogs/blog02",
     "/service1",
     "/service2",
     "/service3",
@@ -152,6 +154,7 @@ function App() {
           <Route path="/about" element={<AboutUs />} />/
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blogs/blog01" element={<Blog01 />} />
+          <Route path="/blogs/blog02" element={<Blog02 />} />
           <Route path="/contact-us" element={<Contact />} />
           <Route path="/faq" element={<FaqPage />} />
           <Route path="/expertise" element={<Expertise />} />

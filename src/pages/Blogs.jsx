@@ -4,10 +4,12 @@ import aloya from '../assets/blogs/bloghero.jpeg'
 import purus from '../assets/purus_casestudy_hero.svg'
 // import heroimg from '../assets/blogherosec.png'
 import heroimg from '../assets/slab.mp4'
+import heroimg2 from "../assets/blogs/blog2heroimg.jpg";
 import Letstalk from '../components/Letstalk';
 import { Link } from 'react-router-dom';
 const blogData = [
-  { id: 1, category: ['Branding', 'Websites'], image: aloya, heading: '10 Rules for Great Branding & Design' , link: "/blogs/blog01"},
+  { id: 1, category: ['Branding', 'Websites'], image: aloya, heading: '10 Rules for Great Branding & Design' , link: "/blogs/blog01" , date: "Jan 27 2025"},
+  { id: 2, category: ['Branding', 'Websites'], image: heroimg2, heading: '6 Steps to Creating a Personal Style' , link: "/blogs/blog02" ,date: "Feb 10 2025"},
  
   // { id: 3, category: ['Development'], image: aloya, heading: 'Heading of the blog card will go here' },
   // { id: 4, category: ['Branding'], image: purus, heading: 'Heading of the blog card will go here' },
@@ -29,7 +31,7 @@ export default function Blogs() {
             <img src={blog.image} alt="Blog" className={styles.cardImage} />
           
             <h3 className={styles.cardHeading}>{blog.heading}  <button className={styles.cardButton}>→</button></h3>
-           <p className={styles.date}> Jan 27 2025</p>
+           <p className={styles.date}>{blog.date} </p>
           </div> </Link>
         ))}
 
