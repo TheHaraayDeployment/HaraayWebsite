@@ -50,9 +50,9 @@ import Preloader from "./components/Preloader.jsx";
 // import LoknetaCaseStudy from "./pages/CaseStudy/LoknetaCaseStudy.jsx";
 // import BoscheCaseStudy from "./pages/CaseStudy/BoscheCaseStudy.jsx";
 // import Purus from "./pages/CaseStudy/PurusCaseStudy.jsx";
-import Countdown from "./Countdown.jsx";
+
 import FaqPage from "./pages/FAQPage.jsx";
-import Blogz from "./pages/blogs/Blogz.jsx";
+import Blog2 from "./pages/blogs/Blog2.jsx";
 
 function App() {
   const isNavigating = useNavigationEvent(); // Get navigation event status
@@ -153,7 +153,7 @@ function App() {
           <Route path="/about" element={<AboutUs />} />/
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blogs/blog01" element={<Blog01 />} />
-          <Route path="/blogs/blog02" element={<Blogz/>} />
+          <Route path="/blogs/blog02" element={<Blog2/>} />
           <Route path="/contact-us" element={<Contact />} />
           <Route path="/faq" element={<FaqPage />} />
           <Route path="/expertise" element={<Expertise />} />
