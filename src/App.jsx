@@ -23,7 +23,7 @@ import Contact from "./pages/Contact.jsx";
 import Expertise from "./pages/Expertise.jsx";
 import Blogs from "./pages/Blogs.jsx";
 import Blog01 from "./pages/blogs/Blog1.jsx";
-import Blog02 from "./pages/blogs/Blog2.jsx"
+import Blog02 from "./pages/blogs/Blog2.jsx";
 import Service1 from "./pages/Service1.jsx";
 import Service2 from "./pages/Service2.jsx";
 import Service3 from "./pages/Service3.jsx";
