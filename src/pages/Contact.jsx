@@ -83,7 +83,7 @@ function Contact() {
         "https://api.emailjs.com/api/v1.0/email/send",
         data
       );
-      console.log(res.data);
+      // console.log(res.data);
       // Reset form after successful submission
       setFormData({
         firstName: "",
