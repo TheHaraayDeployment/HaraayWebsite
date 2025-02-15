@@ -35,6 +35,7 @@ import ViratCaseStudy from "./pages/CaseStudy/ViratCaseStudy.jsx";
 import AkoyaCaseStudy from "./pages/CaseStudy/AkoyaCaseStudygood.jsx";
 import BakersCaseStudy from "./pages/CaseStudy/BakersCaseStudy.jsx";
 import CreamFCaseStudy from "./pages/CaseStudy/CreamFCaseStudygood.jsx";
+import BoschCaseStudy from "./pages/CaseStudy/BoschCaseStudy.jsx";
 
 // import BakersCaseStudy from "./pages/BakersCaseStudy.jsx";
 // import CreamforestCaseStudy from "./pages/CreamforestCaseStudy.jsx";
@@ -170,6 +171,8 @@ function App() {
           <Route path="/casestudy/akoya" element={<AkoyaCaseStudy />} />
           <Route path="/casestudy/bakers" element={<BakersCaseStudy />} />
           <Route path="/casestudy/creamf" element={<CreamFCaseStudy />} />
+          <Route path="/casestudy/bosch" element={< BoschCaseStudy/>} />
+
           {/* <Route path="/casestudy/akoya1" element={<Akoyavideo />} /> */}
           <Route path="*" element={<NotFound />} />
         </Routes>
