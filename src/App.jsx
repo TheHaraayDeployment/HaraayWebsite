@@ -129,7 +129,7 @@ function App() {
     "/casestudy/virat/detail",
     "/casestudy/sereneskin/detail",
     "/casestudy/lokneta",
-    "/casestudy/bosche",
+    "/casestudy/bosch",
     "/casestudy/purus",
     "/casestudy/bakers",
     "/casestudy/creamf",
