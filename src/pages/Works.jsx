@@ -13,8 +13,8 @@ import { Link } from "react-router-dom";
 
 // Example data for works (replace with your actual data)
 const worksData = [
-  { id: 1, title: "Akoya", tag: "Branding", image: heroimg1 , link:"/casestudy/akoya"},
-  { id: 2, title: "Bosch", tag: "Branding", image: heroimg6 , link:"/casestudy/bosch"},
+  { id: 1, title: "Bosch", tag: "Branding", image: heroimg6 , link:"/casestudy/bosch"},
+  { id: 2, title: "Akoya", tag: "Branding", image: heroimg1 , link:"/casestudy/akoya"},
   { id: 2, title: " Bakers Street", tag: "Branding", image: heroimg2 , link:"/casestudy/bakers"},
   { id: 3, title: "Cream Forest", tag: "Websites", image: heroimg3 , link:"/casestudy/creamf"},
   { id: 4, title: "Serene Skin", tag: "Branding", image: heroimg4 , link:"/casestudy/sereneskin"},

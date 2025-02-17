@@ -62,9 +62,22 @@ object-fit: cover;}
         object-fit: cover; height: 100%;
         width: 100%;   clip-path: none;
         }
-      }
+      }.herovideo {
+        width: 100%;
+       
+        clip-path: inset(0 0 0 0);
+        height: 100%;
+        object-fit: cover;
+        
+        
+         @include respond-to(mobile) { 
+      
+        object-fit: cover; height: 100%;
+        width: 100%;   clip-path: none;
+        }
     }
 
+}
     .akoyaherocontent {
       position: absolute;
       top: 80%;

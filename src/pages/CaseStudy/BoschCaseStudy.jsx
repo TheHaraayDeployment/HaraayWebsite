@@ -83,7 +83,7 @@ const [currentIndex, setCurrentIndex] = useState(0);
       <div className={styles.akoyahero}>
         <div className={styles.akoyaherobackground}>
           {/* <Video src={akoyahero} alt="akoya Street Case Study" /> */}
-          <video loop src={akoyahero} autoPlay muted></video>
+          <video className={styles.herovideo} loop src={akoyahero} autoPlay muted></video>
         </div>
         <div className={styles.akoyaherocontent}>
           <h1>Bosche air purifire</h1>
