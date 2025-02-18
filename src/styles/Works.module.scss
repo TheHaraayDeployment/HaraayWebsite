@@ -94,9 +94,10 @@ $breakpoint-extra-large: 1200px;
       transition: transform 0.3s;
       object-fit: cover;
     }
-
+   
     .workTitle {
       position: absolute;
+    opacity: 0;
       bottom: 0;
       left: 0;
       right: 0;
@@ -104,8 +105,15 @@ $breakpoint-extra-large: 1200px;
       color: #fff;
       text-align: center;
       padding: 10px;
-    }
+      transition: opacity 0.3s ease-in-out;
 
+       @include respond-to(small) { 
+      opacity: 1;
+      }
+    }
+    &:hover .workTitle {
+     opacity: 1;
+    }
     &:hover .workImage {
       transform: scale(1.05);
     }

@@ -19,15 +19,7 @@ const worksData = [
   { id: 3, title: "Cream Forest", tag: "Websites", image: heroimg3 , link:"/casestudy/creamf"},
   { id: 4, title: "Serene Skin", tag: "Branding", image: heroimg4 , link:"/casestudy/sereneskin"},
   { id: 5, title: "Virat", tag: "Websites", image: heroimg5 , link:"/casestudy/virat"},
-  // { id: 6, title: "BMS", tag: "Websites", image: heroimg3 },
-  // { id: 7, title: "Baker's Street", tag: "Branding", image: heroimg3 },
-  // { id: 8, title: "Lok Neta", tag: "Websites", image: heroimg3 },
-  // { id: 9, title: "Hathikari & Co", tag: "Websites", image: heroimg4 },
-  // { id: 10, title: "Lok Neta", tag: "Websites", image: heroimg1 },
-  // { id: 11, title: "Lok Neta", tag: "Websites", image: heroimg2 },
-  // { id: 12, title: "Lok Neta", tag: "Websites", image: heroimg3 },
-  // { id: 13, title: "Lok Neta", tag: "Websites", image: heroimg4 },
-  // { id: 14, title: "Lok Neta", tag: "Websites", image: heroimg5 },
+
 ];
 
 // Filters
