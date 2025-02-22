@@ -279,7 +279,7 @@ a{
   background-color: #0a0b0c !important;
   @include respond-to(small) {
     width: 100vw !important;
-    height: 80vh;
+    height: 100vh;
 
     // position: fixed;
   }
