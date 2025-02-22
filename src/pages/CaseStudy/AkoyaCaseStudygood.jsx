@@ -14,7 +14,7 @@ import akoyastudiesimg2 from "../../assets/hyperioncard.jpg";
 import akoyastudiesimg3 from "../../assets/satvikraascard.png";
 import iconarrow from "../../assets/iconarrow.png";
 import iconarrow2 from "../../assets/iconarrow2.png";
-import brandimg1 from "../../assets/Akoya/a1.png"
+import brandimg1 from "../../assets/Akoya/a1.png" 
 import brandimg2 from "../../assets/Akoya/a2.png"
 import brandimg3 from "../../assets/Akoya/a3.png"
 import brandimg4 from "../../assets/Akoya/a4.png"
@@ -26,7 +26,7 @@ import akk2 from "../../assets/Akoya/akk2.png"
 import akk3 from "../../assets/Akoya/akk3.png"
 import { Link } from "react-router-dom";
 
-
+import ImageGallery from "../../components/ImageGallery";
 import CarouselPopup from "./CarouselPopup";
 const AkoyaCasestudy = ({ setIsOpen }) => {
   
@@ -93,6 +93,28 @@ const AkoyaCasestudy = ({ setIsOpen }) => {
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
   };
+
+  // full screen 
+    const [isFullscreen, setIsFullscreen] = useState(false);
+    const openFullscreen = () => {
+      setIsFullscreen(true);
+    };
+  
+    const closeFullscreen = () => {
+      setIsFullscreen(false);
+    };
+  
+    useEffect(() => {
+      if (isFullscreen) {
+        document.body.classList.add("no-scroll");
+      } else {
+        document.body.classList.remove("no-scroll");
+      }
+      return () => {
+        document.body.classList.remove("no-scroll");
+      };
+    }, [isFullscreen]);
+  
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -150,33 +172,10 @@ const AkoyaCasestudy = ({ setIsOpen }) => {
             </p>
           </div>
           </div>
-          <div className={styles.carousel}>
-            <img
-              src={images[currentIndex]}
-              alt={`Slide ${currentIndex + 1}`}
-              className={styles.akoyascaseimage}
-            />   
-            <button className={styles.leftcarrow} onClick={handlePrev}><svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none">
-  <rect width="52" height="52" rx="26" fill="grey" />
-  <path fill-rule="evenodd" clip-rule="evenodd" d="M14 25.916L21.9103 18.0038L23.1969 19.2886L17.4782 25.0073L38 25.0073V26.8246L17.4782 26.8246L23.1969 32.5415L21.9103 33.8281L14 25.916Z" fill="white"/>
-</svg></button>
-            <button className={styles.rightcarrow} onClick={handleNext}><svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none">
-<rect width="52" height="52" rx="26" fill="grey"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M38 25.9122L30.0897 33.8243L28.8031 32.5396L34.5218 26.8208H14V25.0036H34.5218L28.8031 19.2866L30.0897 18L38 25.9122Z" fill="white"/>
-</svg></button>
-          </div> 
-          
-           {/* <button className={styles.openButton} onClick={() => setIsOpen(true)}>
-        Open Carousel
-      </button> 
-   */}
-
-          {/* <img
-              src={images[currentIndex]}
-             
-              className={styles.akoyascaseimage}
-            /> */} 
-        </div>
+        
+             </div>
+             <ImageGallery images={images} id="carousel1" />
+     
         <div className={styles.akoyacasebranding}>
           <div className={styles.akoyacasetext}>
             <h2>Objectives</h2>  <div className={styles.rightbox}>
@@ -209,28 +208,11 @@ const AkoyaCasestudy = ({ setIsOpen }) => {
             </p>
           </div>
           </div>
-          {/* <img
-            src={Akoyaimg1}
-            alt="Branding"
-            className={styles.akoyascaseapproachimage}
-          /> */}
-           <div className={styles.carousel}>
-            <img
-              src={images1[currentIndex1]}
-              alt={`Slide ${currentIndex1 + 1}`}
-              className={styles.akoyascaseimagescroll}
-            />   
-            <button className={styles.leftcarrow} onClick={handlePrev1}><svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none">
-  <rect width="52" height="52" rx="26" fill="grey" />
-  <path fill-rule="evenodd" clip-rule="evenodd" d="M14 25.916L21.9103 18.0038L23.1969 19.2886L17.4782 25.0073L38 25.0073V26.8246L17.4782 26.8246L23.1969 32.5415L21.9103 33.8281L14 25.916Z" fill="white"/>
-</svg></button>
-            <button className={styles.rightcarrow} onClick={handleNext1}><svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none">
-<rect width="52" height="52" rx="26" fill="grey"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M38 25.9122L30.0897 33.8243L28.8031 32.5396L34.5218 26.8208H14V25.0036H34.5218L28.8031 19.2866L30.0897 18L38 25.9122Z" fill="white"/>
-</svg></button>
-          </div>
+       
+          
         </div>
-
+     
+                   <ImageGallery images={images1} id="carousel2" />
         <div className={styles.akoyacasecolorpalette}>
           <div className={styles.akoyacasetext}>
             <h2>Packaging & 3D Animation</h2>   <div className={styles.rightbox}>

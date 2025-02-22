@@ -1,19 +1,25 @@
-// NotFound.js
-import React from 'react';
-import Icons from '../components/Icons';
+import React, { useState, useEffect } from "react";
+import desktopImg from "../assets/errorpage.jpg"
+import mobileImg from "../assets/errorpagem.jpg";   // Mobile image
+import styles from "../styles/ErrorPage.module.scss";
+import { Link } from "react-router-dom";
+
 const NotFound = () => {
+  const [imgSrc, setImgSrc] = useState(window.innerWidth > 768 ? desktopImg : mobileImg);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setImgSrc(window.innerWidth > 768 ? desktopImg : mobileImg);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
-    <div style={{ textAlign: 'center', padding: '50px' }}>
-      <h1>404</h1>
-      <p>Page Not Found</p>
-      <Icons.Instagram  title="Home" />
-      <Icons.Facebook  title="Home" />
-      <Icons.Linkedin  title="Home" />
-      <Icons.InstagramSquare  title="Home" /> 
-      <Icons.FaLocationDot  title="Home" /> 
-      <Icons.BsArrowRight  title="Home" />  
-      <Icons.TbMailFilled  title="Home" />  
-      <Icons.BsArrowRightCircleFill  title="Home" />  
+    <div className={styles.errorPage}>
+      <img src={imgSrc} alt="Error Page" />
+      <Link className={styles.bthbtn} to="/"> Back to Home</Link>
     </div>
   );
 };

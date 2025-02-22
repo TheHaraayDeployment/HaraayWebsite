@@ -1,0 +1,13 @@
+/* PageTransition.css */
+.page-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+  
+  .page-content {
+    width: 100%;
+    min-height: 100vh;
+    background-color: white; /* Or your desired background color */
+  }

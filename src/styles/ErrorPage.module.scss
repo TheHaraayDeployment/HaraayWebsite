@@ -1,0 +1,68 @@
+// Breakpoints
+$breakpoint-mobile: 576px; // Small devices (phones)
+$breakpoint-tablet: 768px; // Medium devices (tablets)
+
+// Mixin for responsive media queries
+@mixin respond-to($device) {
+  @if $device==mobile {
+    @media (max-width: $breakpoint-mobile) {
+      @content;
+    }
+  }
+
+  @else if $device==tablet {
+    @media (max-width: $breakpoint-tablet) {
+      @content;
+    }
+  }
+}
+.errorPage {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      
+    }
+
+    .bthbtn {
+
+        display: flex;
+        padding: 10px 20px;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+        border-radius: 30px;
+        border: 1px solid var(--Colour-Theory-Primary-Colour-04, #E5348C);
+        background: var(--Colour-Theory-Primary-Colour-04, #E5348C);
+        box-shadow: 0px 4px 12px 3px rgba(4, 4, 4, 0.10);
+        color: #FFF;
+        text-align: center;
+        font-family: Stara;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%;
+        /* 36px */
+
+        position: absolute;
+        bottom: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+
+
+        @include respond-to(mobile) {
+            color: #FFF;
+            text-align: center;
+            font-family: Stara;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 150%; /* 27px */
+        }
+    }
+}

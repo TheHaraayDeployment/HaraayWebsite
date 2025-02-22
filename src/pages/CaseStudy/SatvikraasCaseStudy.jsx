@@ -1,21 +1,27 @@
 import React, { useEffect, useRef , useState } from "react";
 import { useInView } from "react-intersection-observer";
-
+import { FaStar } from "react-icons/fa";
 import { motion } from "framer-motion";
-import styles from "./AkoyaCaseStudy.module.scss";
+import styles from "./SatvikraasCaseStudy.module.scss";
 
-import akoyahero from "../../assets/Bosch/BoschHeroVid.mp4";
-import akoyaoverview from "../../assets/Bosch/sec2.jpg";
-import akoyaoverview1 from "../../assets/Bosch/sec22.jpg";
-import akoyabranding from "../../assets/Bosch/sec3.jpg";
-import akoyacolorpallet from "../../assets/bakers_casestudy_colorpallet.svg";
-import akoyapackaging from "../../assets/Bosch/sec4.jpg";
+import akoyahero from "../../assets/Satvikraas/satvikhero.jpg";
+import akoyaoverview1 from "../../assets/Bosch/sec2.jpg";
+import akoyaoverview from "../../assets/Satvikraas/challanges.png";
+import akoyabranding from "../../assets/Satvikraas/objectives.png";
+import akoyacolorpallet from "../../assets/Satvikraas/packaging.svg";
+import akoyapackaging from "../../assets/Satvikraas/website.svg";
 import bakersstudiesimg1 from "../../assets/Akoya/AkoyaFullimg.png";
 import bakersstudiesimg2 from "../../assets/Lokneta/lokneta.webp";
 import bakersstudiesimg3 from "../../assets/comingsooncard.png";
-const BakersCaseStudy = () => {
+const SatvikraasCaseStudy = () => {
   const heroRef = useRef(null);
-
+  const galleryStyle = {
+    backgroundColor: "#04050C",
+    color: "#fff", borderRadius: "60px",
+    padding: "2rem",
+    textAlign: "center",
+  
+  };
   const { ref, inView } = useInView({
     triggerOnce: true, // Reveal only once
     threshold: 0.2, // Percentage of the section visible before triggering
@@ -72,6 +78,29 @@ const [currentIndex, setCurrentIndex] = useState(0);
   //   };
   // }, []);
 
+
+
+  const reviews = [
+    {
+      id: 1,
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
+      name: "Shindey Thakur",
+      role: "Restaurant Owner",
+    },
+    {
+      id: 2,
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
+      name: "Shindey Thakur",
+      role: "Shop Keeper",
+    },
+    {
+      id: 3,
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
+      name: "Shindey Thakur",
+      role: "Restaurant Owner",
+    },
+  ];
+  
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -83,7 +112,7 @@ const [currentIndex, setCurrentIndex] = useState(0);
       <div className={styles.akoyahero}>
         <div className={styles.akoyaherobackground}>
           {/* <Video src={akoyahero} alt="akoya Street Case Study" /> */}
-          <video className={styles.herovideo} loop src={akoyahero} autoPlay muted></video>
+          <img className={styles.herovideo} loop src={akoyahero} autoPlay muted></img>
         </div>
         <div className={styles.akoyaherocontent}>
           <h1>Satvik Raas</h1>
@@ -163,13 +192,7 @@ const [currentIndex, setCurrentIndex] = useState(0);
             <h2>Objectives</h2>{" "}
             <div className={styles.rightbox}>
               <p>
-                High-Quality 3D Animation – Showcased the air purifier’s
-                filtration process, airflow dynamics, and real-life impact in an
-                engaging format.Photorealistic 3D Renders – Created stunning
-                visuals to highlight the product’s design and features.Immersive
-                Storytelling – Ensured the animations weren’t just technical but
-                also emotionally resonant, connecting with health-conscious
-                consumers.
+              Strong Market Presence – Satvikraas launched as a premium spice brand with a distinct identity.Increased Engagement – The 3D video helped in digital marketing, boosting customer interaction.Authenticity & Trust – Packaging and visuals reinforced the brand’s promise of 100% natural ingredients.
               </p>
             </div>
           </div>
@@ -180,34 +203,44 @@ const [currentIndex, setCurrentIndex] = useState(0);
           />
         </div>
 
-        {/* Color Palette Section */}
-        {/* <div className={`${styles.akoyacasesection}, ${styles.akoyacasecolorpalette}`}>
-        <div className={styles.akoyacasetext}>
-          <h2>Color Palette</h2> <div className={styles.rightbox}>
-          <p>
-          When it comes to the Bakery industry, the color palette chosen is distinctive because these colors are not very commonly used.The color palette is kept bold and fun-loving while remaining welcoming and disruptive in its own sense.
-          </p>
+        {/*Packaging & 3D Animation Section */}
+        <div style={{ backgroundColor: "#1C1D21" }} className={` ${styles.akoyacasesection} ${styles.akoyacasecolorpalette}, ${styles.satviksection}`}>
+
+      <div  style={galleryStyle} className={styles.akoyacasecontainer}>
+      <div className={styles.akoyacasetext}>
+          <h2 style={{ color: "#fff"}}>Packaging & 3D Animation</h2> <div className={styles.rightbox}>
+          <p style={{ color: "#fff"}}>
+          The Story Behind the Design :  When we took on Satvikraas, we knew we weren’t just designing spice packaging—we were shaping a brand’s identity in a crowded market. With so many spices lined up on shelves, how do you make one stand out? How do you create packaging that makes people stop, notice, and pick it up?
+
+Instead of guessing, we hit the ground. We walked into retail stores, studied shelves, observed customer behavior, and analyzed colors, layouts, and what makes a spice brand pop.
+
+What We Discovered :
+Most packaging blends in—bold wasn’t bold enough.Shelf positioning matters, but so does color psychology.Online visuals need a different approach than offline shelves.
+          </p >
+          <p style={{ color: "#fff"}}>On-Shelf Visibility – We designed with contrast, clarity, and hierarchy, ensuring Satvikraas packaging demanded attention on retail shelves.
+Authenticity Meets Modern Appeal – The design kept the Indian essence alive while feeling fresh and premium.
+Optimized for Online Presence – We ensured that the packaging looked just as compelling on e-commerce platforms as it did in stores.
+Consistency Across 8 Products – From Turmeric, Red Chili Powder, and Garam Masala to more blends, each pack had its own identity while staying cohesive with the brand.</p>
+<p style={{ color: "#fff"}}>The Impact :
+More Visibility, More Pickups – Satvikraas now stands out in retail stores.Stronger Online Presence – Clean, vibrant packaging makes it scroll-stopping.Trust Through Design – The natural, premium look reinforces the brand’s promise of purity.</p>
         </div>
         </div>
         <img src={akoyacolorpallet} alt="Color Palette" className={styles.akoyascaseimage} />
       </div>
-   */}
+      </div>
+  
         {/* Packaging Section */}
         <div
           className={`${styles.akoyacasesection} ${styles.akoyacasepackaging}`}
         >
           <div className={styles.akoyacasetext}>
-            <h2>Packaging & 3D Animation</h2>{" "}
+            <h2>Website </h2>{" "}
             <div className={styles.rightbox}>
               <p>
-                Enhanced Product Understanding : Customers could visually grasp
-                the benefits and technology behind Bosche Air Purifier.Increased
-                Engagement : The 3D video became a powerful asset for digital
-                marketing and promotions.Premium Brand Perception : The stunning
-                visuals positioned Bosche as an innovative and high-quality
-                brand in the air purification industry. Through cutting-edge 3D
-                animation and imagery, we didn’t just showcase a product—we
-                brought it to life. This is the power of visual storytelling.
+              ✅ On-Shelf Visibility – We designed with contrast, clarity, and hierarchy, ensuring Satvikraas packaging demanded attention on retail shelves. <br /> ✅ Authenticity Meets Modern Appeal – The design kept the Indian essence alive while feeling fresh and premium.<br />✅ Optimized for Online Presence – We ensured that the packaging looked just as compelling on e-commerce platforms as it did in stores.<br />✅ Consistency Across 8 Products – From Turmeric, Red Chili Powder, and Garam Masala to more blends, each pack had its own identity while staying cohesive with the brand.
+              <br />
+<strong>The Impact :</strong>
+More Visibility, More Pickups – Satvikraas now stands out in retail stores.Stronger Online Presence – Clean, vibrant packaging makes it scroll-stopping.Trust Through Design – The natural, premium look reinforces the brand’s promise of purity.
               </p>
             </div>
           </div>
@@ -218,6 +251,25 @@ const [currentIndex, setCurrentIndex] = useState(0);
           />
         </div>
       </div>{" "}
+      <div className={styles.reviewssec}>
+      <h2 className={styles.heading}>Feedback</h2>
+      <div className={styles.reviewsContainer}>
+        {reviews.map((review) => (
+          <div key={review.id} className={styles.reviewCard}>
+            <p className={styles.text}><strong>Lorem ipsum dolor</strong> {review.text}</p>
+           <div className={styles.bottomfeedback}>
+           <div className={styles.stars}>
+              {[...Array(5)].map((_, index) => (
+                <FaStar key={index} color="#FFD700" />
+              ))}
+            </div>
+            <div ><h4 className={styles.name}>{review.name}</h4>
+            <p className={styles.role}>{review.role}</p></div>
+           </div>
+          </div>
+        ))}
+      </div>
+    </div>
       <div className={styles.akoyacasecasestudiescontainer}>
         {" "}
         <h3 className={styles.casestudyhead}>
@@ -257,4 +309,4 @@ const [currentIndex, setCurrentIndex] = useState(0);
   );
 };
 
-export default BakersCaseStudy;
+export default SatvikraasCaseStudy;

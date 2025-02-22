@@ -280,6 +280,7 @@ a{
   @include respond-to(small) {
     width: 100vw !important;
     height: 80vh;
+
     // position: fixed;
   }
 }
@@ -336,7 +337,7 @@ a{
     box-sizing: border-box;
     overflow-x: hidden;
     // height: auto;
-    overflow-y: visible;
+    overflow-y: hidden;
     display: flex;
     flex-direction: column; // Stack children vertically
     // gap: 100px;

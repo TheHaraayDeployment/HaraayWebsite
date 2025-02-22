@@ -1,8 +1,8 @@
-import React, { useEffect, useRef , useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
 import { motion } from "framer-motion";
-import styles from "./AkoyaCaseStudy.module.scss";
+import styles from "./BoschCaseStudy.module.scss";
 
 import akoyahero from "../../assets/Bosch/BoschHeroVid.mp4";
 import akoyaoverview from "../../assets/Bosch/sec2.jpg";
@@ -13,6 +13,7 @@ import akoyapackaging from "../../assets/Bosch/sec4.jpg";
 import bakersstudiesimg1 from "../../assets/Akoya/AkoyaFullimg.png";
 import bakersstudiesimg2 from "../../assets/Lokneta/lokneta.webp";
 import bakersstudiesimg3 from "../../assets/comingsooncard.png";
+import ImageGallery from "../../components/ImageGallery";
 const BakersCaseStudy = () => {
   const heroRef = useRef(null);
 
@@ -34,6 +35,7 @@ const BakersCaseStudy = () => {
       transition: { delay: i * 0.3, duration: 0.8 }, // delay each card by 0.3s
     }),
   };
+  const [showGallery, setShowGallery] = useState(false);
 
   const cards = [
     { src: bakersstudiesimg1, title: "Akoya" },
@@ -44,16 +46,14 @@ const BakersCaseStudy = () => {
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
-const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
   };
-  const images = [akoyaoverview,akoyaoverview1
-   
-    ];
+  const images = [akoyaoverview, akoyaoverview1];
   // useEffect(() => {
   //   const heroElement = heroRef.current;
   //   const observer = new IntersectionObserver(
@@ -71,19 +71,38 @@ const [currentIndex, setCurrentIndex] = useState(0);
   //     observer.unobserve(heroElement);
   //   };
   // }, []);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const openFullscreen = () => {
+    setIsFullscreen(true);
+  };
+
+  const closeFullscreen = () => {
+    setIsFullscreen(false);
+  };
+
+  useEffect(() => {
+    if (isFullscreen) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+    return () => {
+      document.body.classList.remove("no-scroll");
+    };
+  }, [isFullscreen]);
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 20 }}
-      transition={{ duration: 0.6 }}
-      className={styles.akoyacasestudy}
-    >
+    <div className={styles.BoschCaseStudy}>
       <div className={styles.akoyahero}>
         <div className={styles.akoyaherobackground}>
           {/* <Video src={akoyahero} alt="akoya Street Case Study" /> */}
-          <video className={styles.herovideo} loop src={akoyahero} autoPlay muted></video>
+          <video
+            className={styles.herovideo}
+            loop
+            src={akoyahero}
+            autoPlay
+            muted
+          ></video>
         </div>
         <div className={styles.akoyaherocontent}>
           <h1>Bosche air purifire</h1>
@@ -126,49 +145,76 @@ const [currentIndex, setCurrentIndex] = useState(0);
               </p>
             </div>
           </div>
-          <div className={styles.carousel}>
-            <img
-              src={images[currentIndex]}
-              alt={`Slide ${currentIndex + 1}`}
-              className={styles.akoyascaseimage}
-            />
-            <button className={styles.leftcarrow} onClick={handlePrev}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="52"
-                height="52"
-                viewBox="0 0 52 52"
-                fill="none"
-              >
-                <rect width="52" height="52" rx="26" fill="grey" />
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M14 25.916L21.9103 18.0038L23.1969 19.2886L17.4782 25.0073L38 25.0073V26.8246L17.4782 26.8246L23.1969 32.5415L21.9103 33.8281L14 25.916Z"
-                  fill="white"
-                />
-              </svg>
-            </button>
-            <button className={styles.rightcarrow} onClick={handleNext}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="52"
-                height="52"
-                viewBox="0 0 52 52"
-                fill="none"
-              >
-                <rect width="52" height="52" rx="26" fill="grey" />
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M38 25.9122L30.0897 33.8243L28.8031 32.5396L34.5218 26.8208H14V25.0036H34.5218L28.8031 19.2866L30.0897 18L38 25.9122Z"
-                  fill="white"
-                />
-              </svg>
-            </button>
-          </div>
+          <div className={styles.carouselWrapper}>
+            {/* Main Carousel */}
+            <div className={styles.carousel}>
+              <img
+                src={images[currentIndex]}
+                alt={`Slide ${currentIndex + 1}`}
+                className={styles.akoyascaseimage}
+                onClick={openFullscreen} // Opens full-screen when clicked
+              />{" "}
+              <button className={styles.leftcarrow} onClick={openFullscreen}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="52"
+                  height="52"
+                  viewBox="0 0 52 52"
+                  fill="none"
+                >
+                  <rect width="52" height="52" rx="26" fill="grey" />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M14 25.916L21.9103 18.0038L23.1969 19.2886L17.4782 25.0073L38 25.0073V26.8246L17.4782 26.8246L23.1969 32.5415L21.9103 33.8281L14 25.916Z"
+                    fill="white"
+                  />
+                </svg>
+              </button>{" "}
+              <button className={styles.rightcarrow} onClick={openFullscreen}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="52"
+                  height="52"
+                  viewBox="0 0 52 52"
+                  fill="none"
+                >
+                  <rect width="52" height="52" rx="26" />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M38 25.9122L30.0897 33.8243L28.8031 32.5396L34.5218 26.8208H14V25.0036H34.5218L28.8031 19.2866L30.0897 18L38 25.9122Z"
+                    fill="white"
+                  />
+                </svg>
+              </button>
+              {/* <button className={styles.leftcarrow} onClick={openFullscreen}>◀</button> */}
+              {/* <button className={styles.rightcarrow}  onClick={openFullscreen}>▶</button> */}
+            </div>
 
-          {/* <img src={akoyaoverview} alt="Overview" className={styles.akoyascaseimage} /> */}
+            {/* Fullscreen Lightbox */}
+            {isFullscreen && (
+              <div className={styles.fullscreenOverlay}>
+                <button
+                  className={styles.closeButton}
+                  onClick={closeFullscreen}
+                >
+                  ✖
+                </button>
+                <img
+                  src={images[currentIndex]}
+                  className={styles.fullscreenImage}
+                  alt={`Slide ${currentIndex + 1}`}
+                />
+                <button className={styles.leftcarrow} onClick={handlePrev}>
+                  ◀
+                </button>
+                <button className={styles.rightcarrow} onClick={handleNext}>
+                  ▶
+                </button>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Branding Section */}
@@ -269,7 +315,7 @@ const [currentIndex, setCurrentIndex] = useState(0);
           <span className={styles.akoyacasebuttonicon}></span>
         </button>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

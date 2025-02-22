@@ -54,22 +54,22 @@ export default function Works() {
   };
 
   // GSAP reveal animation for images
-  useEffect(() => {
-    imageRefs.current.forEach((img, idx) => {
-      // const direction = idx % 2 === 0 ? -100 : 100; // Alternate left and right
-      gsap.fromTo(
-        img,
-        { x: -100, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 1.5,
-          delay: idx * 0.2,
-          ease: "power2.out",
-        }
-      );
-    });
-  }, [displayedWorks]); // Trigger animation on filter or pagination change
+  // useEffect(() => {
+  //   imageRefs.current.forEach((img, idx) => {
+  //     // const direction = idx % 2 === 0 ? -100 : 100; // Alternate left and right
+  //     gsap.fromTo(
+  //       img,
+  //       { x: -100, opacity: 0 },
+  //       {
+  //         x: 0,
+  //         opacity: 1,
+  //         duration: 1.5,
+  //         delay: idx * 0.2,
+  //         ease: "power2.out",
+  //       }
+  //     );
+  //   });
+  // }, [displayedWorks]); // Trigger animation on filter or pagination change
 
   return (
     <div className={styles.WorkMain}>

@@ -45,3 +45,7 @@ a:hover {
   /* max-width: 1200px; */
   margin: 0 auto;
 }
+button:focus {
+  outline: 2px solid transparent; /* Change to match your theme */
+  outline-offset: 2px;
+}
