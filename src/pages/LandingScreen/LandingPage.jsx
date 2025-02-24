@@ -327,7 +327,7 @@ export default function LandingPage() {
               alt="Project Card"
             />
           </Link>
-          <div className="projectCards">
+          <Link to={"/casestudy/bosch"} className="projectCards">
             <div className={styles.projectcardtxt}>
               <h1>Bosch Air Purifier</h1>
               <h3>3D</h3>
@@ -338,8 +338,8 @@ export default function LandingPage() {
               src={Projectimg2}
               alt="Project Card"
             />
-          </div>
-          <div className="projectCards">
+          </Link>
+          <div to={"/casestudy/akoya"} className="projectCards">
             <div className={styles.projectcardtxt}>
               <h1>BMS</h1>
               <h3>Web Designing</h3>
@@ -363,7 +363,7 @@ export default function LandingPage() {
               alt="Project Card"
             />
           </div>{" "}
-          <div className="projectCards">
+          <Link to={"/casestudy/satvik"} className="projectCards">
             <div className={styles.projectcardtxt}>
               <h1>SatvikRaas</h1>
               <h3>Branding | Website | Packaging</h3>
@@ -374,7 +374,7 @@ export default function LandingPage() {
               src={Projectimg5}
               alt="Project Card"
             />
-          </div>
+          </Link>
           <div className={styles.projcardsbtn}> <Link data-aos="fade-up"   to={"/works"}>
             See More Works</Link></div>
         </section>
@@ -566,7 +566,7 @@ export default function LandingPage() {
       >
   <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none">
 <rect width="52" height="52" rx="26" fill="#E5348C"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M14 26L21.9103 18L23.1969 19.299L17.4782 25.0813L38 25.0813V26.9187L17.4782 26.9187L23.1969 32.6991L21.9103 34L14 26Z" fill="white" fill-opacity="0.6"/>
+<path  d="M14 26L21.9103 18L23.1969 19.299L17.4782 25.0813L38 25.0813V26.9187L17.4782 26.9187L23.1969 32.6991L21.9103 34L14 26Z" fill="white" />
 </svg>
       </button>
       <button
@@ -575,7 +575,7 @@ export default function LandingPage() {
       >
       <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none">
 <rect width="52" height="52" rx="26" fill="#E5348C"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M38 26L30.0897 34L28.8031 32.701L34.5218 26.9187H14V25.0813H34.5218L28.8031 19.3009L30.0897 18L38 26Z" fill="white"/>
+<path  d="M38 26L30.0897 34L28.8031 32.701L34.5218 26.9187H14V25.0813H34.5218L28.8031 19.3009L30.0897 18L38 26Z" fill="white"/>
 </svg>
       </button>
             </div>

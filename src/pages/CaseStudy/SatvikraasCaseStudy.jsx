@@ -1,26 +1,46 @@
-import React, { useEffect, useRef , useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { FaStar } from "react-icons/fa";
 import { motion } from "framer-motion";
 import styles from "./SatvikraasCaseStudy.module.scss";
 
-import akoyahero from "../../assets/Satvikraas/satvikhero.jpg";
-import akoyaoverview1 from "../../assets/Bosch/sec2.jpg";
+import akoyahero from "../../assets/Satvikraas/satvikhero.mp4";
+
 import akoyaoverview from "../../assets/Satvikraas/challanges.png";
-import akoyabranding from "../../assets/Satvikraas/objectives.png";
+import akoyabranding from "../../assets/Satvikraas/Satvikraas.webp";
+import satvikraasimg3 from "../../assets/Satvikraas/satvikraasimg3.jpg";
 import akoyacolorpallet from "../../assets/Satvikraas/packaging.svg";
-import akoyapackaging from "../../assets/Satvikraas/website.svg";
+import akoyapackaging from "../../assets/Satvikraas/kitchen.png";
+import satvikimg4 from "../../assets/Satvikraas/satvikrassimg4.png";
+import satvikimg5 from "../../assets/Satvikraas/img5.png";
 import bakersstudiesimg1 from "../../assets/Akoya/AkoyaFullimg.png";
 import bakersstudiesimg2 from "../../assets/Lokneta/lokneta.webp";
 import bakersstudiesimg3 from "../../assets/comingsooncard.png";
+import { Link } from "react-router-dom";
+import ImageGallery from "../../components/ImageGallery"
+import VideoGallery from "../../components/VideoGallery"
+import vid1 from "../../assets/Satvikraas/vid1.mp4"
+import vid2 from "../../assets/Satvikraas/vid2.mp4"
 const SatvikraasCaseStudy = () => {
+const vid =[vid1, vid2];
+
+const imagesFullSize = [akoyabranding , akoyapackaging, satvikimg4 , satvikimg5];
+ const images = [
+  akoyaoverview,satvikraasimg3
+  ];
+  const images1 = [
+    akoyabranding,akoyabranding
+    ];
+    const images2 = [
+      satvikimg4 , satvikimg5
+      ];
   const heroRef = useRef(null);
   const galleryStyle = {
     backgroundColor: "#04050C",
-    color: "#fff", borderRadius: "60px",
+    color: "#fff",
+    borderRadius: "60px",
     padding: "2rem",
     textAlign: "center",
-  
   };
   const { ref, inView } = useInView({
     triggerOnce: true, // Reveal only once
@@ -40,6 +60,24 @@ const SatvikraasCaseStudy = () => {
       transition: { delay: i * 0.3, duration: 0.8 }, // delay each card by 0.3s
     }),
   };
+  const check = (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      viewBox="0 0 32 32"
+      fill="none"
+    >
+      <rect width="32" height="32" rx="16" fill="#04050C" />
+      <path
+        d="M9 18.5L12.5 22L23 11"
+        stroke="#25CD34"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
 
   const cards = [
     { src: bakersstudiesimg1, title: "Akoya" },
@@ -50,36 +88,18 @@ const SatvikraasCaseStudy = () => {
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
-const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
   };
-  const images = [akoyaoverview,akoyaoverview1
-   
-    ];
-  // useEffect(() => {
-  //   const heroElement = heroRef.current;
-  //   const observer = new IntersectionObserver(
-  //     ([entry]) => {
-  //       if (entry.isIntersecting) {
-  //         heroElement.style.position = "sticky";
-  //         heroElement.style.top = "000";
-  //       }
-  //     },
-  //     { threshold: 0.5 }
-  //   );
-  //   observer.observe(heroElement);
-
-  //   return () => {
-  //     observer.unobserve(heroElement);
-  //   };
-  // }, []);
-
-
-
+  
+  const [isVisible, setIsVisible] = useState(false);
+  const handleToggle = () => {
+    setIsVisible(!isVisible);
+  };
   const reviews = [
     {
       id: 1,
@@ -100,7 +120,7 @@ const [currentIndex, setCurrentIndex] = useState(0);
       role: "Restaurant Owner",
     },
   ];
-  
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -111,8 +131,14 @@ const [currentIndex, setCurrentIndex] = useState(0);
     >
       <div className={styles.akoyahero}>
         <div className={styles.akoyaherobackground}>
-          {/* <Video src={akoyahero} alt="akoya Street Case Study" /> */}
-          <img className={styles.herovideo} loop src={akoyahero} autoPlay muted></img>
+          <video
+            src={akoyahero}
+            autoPlay
+            loop
+            muted
+            alt="satvikraas Street Case Study"
+          />
+          {/* <img className={styles.herovideo} loop src={akoyahero} autoPlay muted></img> */}
         </div>
         <div className={styles.akoyaherocontent}>
           <h1>Satvik Raas</h1>
@@ -124,10 +150,20 @@ const [currentIndex, setCurrentIndex] = useState(0);
         {/* Overview Section */}
         <div className={styles.akoyacasesection}>
           <div className={styles.akoyacasetext}>
-            <h2>Project Overview</h2>{" "}
+            <h2 className={styles.nowrap}>Project Overview</h2>{" "}
             <div className={styles.rightbox}>
               <p>
-              Satvikraas is more than just a spice brand—it’s a celebration of authentic Indian flavors made with 100% natural ingredients. Haraay Design was entrusted with building this brand from the ground up, ensuring it captured the essence of purity, tradition, and quality. Our primary focus? Striking packaging design and immersive 3D animation that brought the brand to life.
+                Satvikraas is more than just a spice brand—it’s a celebration of
+                authentic Indian flavors made with{" "}
+                <strong> 100% natural ingredients.</strong> Haraay Design was
+                entrusted with building this brand from the ground up, ensuring
+                it captured the essence of purity, tradition, and quality. Our
+                primary focus?
+                <strong>
+                  {" "}
+                  Striking packaging design and immersive 3D animation
+                </strong>{" "}
+                that brought the brand to life.
               </p>
             </div>
           </div>
@@ -135,53 +171,19 @@ const [currentIndex, setCurrentIndex] = useState(0);
             <h2>Challenges</h2>{" "}
             <div className={styles.rightbox}>
               <p>
-              Creating a Unique Identity – The Indian spice market is highly competitive, requiring a distinct and memorable brand presence.Balancing Tradition with Modern Appeal – The packaging needed to reflect the brand’s authenticity while appealing to today’s consumers.Showcasing the Product through 3D Animation – Communicating the purity and richness of the spices in a visually engaging way.
+                <strong> Creating a Unique Identity</strong> – The Indian spice
+                market is highly competitive, requiring a distinct and memorable
+                brand presence. <br />{" "}
+                <strong>Balancing Tradition with Modern Appeal</strong> – The
+                packaging needed to reflect the brand’s authenticity while
+                appealing to today’s consumers. <br />
+                <strong>Showcasing the Product through 3D Animation</strong> –
+                Communicating the purity and richness of the spices in a
+                visually engaging way.
               </p>
             </div>
           </div>
-          <div className={styles.carousel}>
-            <img
-              src={images[currentIndex]}
-              alt={`Slide ${currentIndex + 1}`}
-              className={styles.akoyascaseimage}
-            />
-            <button className={styles.leftcarrow} onClick={handlePrev}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="52"
-                height="52"
-                viewBox="0 0 52 52"
-                fill="none"
-              >
-                <rect width="52" height="52" rx="26" fill="grey" />
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M14 25.916L21.9103 18.0038L23.1969 19.2886L17.4782 25.0073L38 25.0073V26.8246L17.4782 26.8246L23.1969 32.5415L21.9103 33.8281L14 25.916Z"
-                  fill="white"
-                />
-              </svg>
-            </button>
-            <button className={styles.rightcarrow} onClick={handleNext}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="52"
-                height="52"
-                viewBox="0 0 52 52"
-                fill="none"
-              >
-                <rect width="52" height="52" rx="26" fill="grey" />
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M38 25.9122L30.0897 33.8243L28.8031 32.5396L34.5218 26.8208H14V25.0036H34.5218L28.8031 19.2866L30.0897 18L38 25.9122Z"
-                  fill="white"
-                />
-              </svg>
-            </button>
-          </div>
-
-          {/* <img src={akoyaoverview} alt="Overview" className={styles.akoyascaseimage} /> */}
+         <ImageGallery  images={images} id={"carousel1"}/>
         </div>
 
         {/* Branding Section */}
@@ -192,43 +194,121 @@ const [currentIndex, setCurrentIndex] = useState(0);
             <h2>Objectives</h2>{" "}
             <div className={styles.rightbox}>
               <p>
-              Strong Market Presence – Satvikraas launched as a premium spice brand with a distinct identity.Increased Engagement – The 3D video helped in digital marketing, boosting customer interaction.Authenticity & Trust – Packaging and visuals reinforced the brand’s promise of 100% natural ingredients.
+                <strong>Strong Market Presence</strong> – Satvikraas launched as
+                a premium spice brand with a distinct identity. <br />
+                <strong>Increased Engagement</strong> – The 3D video helped in
+                digital marketing, boosting customer interaction. <br />
+                <strong>Authenticity & Trust</strong> – Packaging and visuals
+                reinforced the brand’s promise of 100% natural ingredients.
               </p>
             </div>
           </div>
-          <img
-            src={akoyabranding}
-            alt="Branding"
-            className={styles.akoyascaseimages}
-          />
+         
+          {/* <ImageGallery  images={vid} id={"carousel2"}/> */}
+          <VideoGallery images={vid} id={"carousel5"}/>
         </div>
 
         {/*Packaging & 3D Animation Section */}
-        <div style={{ backgroundColor: "#1C1D21" }} className={` ${styles.akoyacasesection} ${styles.akoyacasecolorpalette}, ${styles.satviksection}`}>
+        <div
+          style={{ backgroundColor: "#1C1D21" }}
+          className={` ${styles.akoyacasesection} ${styles.akoyacasecolorpalette}, ${styles.satviksection}`}
+        >
+          <div style={galleryStyle} className={styles.akoyacasecontainer}>
+            <div className={styles.akoyacasetext}>
+              <h2 style={{ color: "#fff" }}>Packaging & 3D Animation</h2>{" "}
+              <div className={styles.rightbox}>
+                <p style={{ color: "#fff" }}>
+                  <strong> The Story Behind the Design :</strong> When we took
+                  on Satvikraas, we knew we weren’t just designing spice
+                  packaging—we were shaping a brand’s identity in a crowded
+                  market. With so many spices lined up on shelves, how do you
+                  make one stand out? How do you create packaging that makes
+                  people stop, notice, and pick it up?
+                  <br /> <br />
+                  Instead of guessing,{" "}
+                  <strong>
+                    we hit the ground. We walked into retail stores, studied
+                    shelves, observed customer behavior, and analyzed colors,
+                    layouts, and what makes a spice brand pop.{" "}
+                  </strong>
+                </p>
+                {isVisible && (
+                  <> <br />
+                    <p style={{ color: "#fff" }}>
+                      {" "}
+                      <strong>What We Discovered :</strong> <br />
+                      Most packaging blends in—bold wasn’t bold enough. <br />{" "}
+                      Shelf positioning matters, but so does color psychology.{" "}
+                      <br />
+                      Online visuals need a different approach than offline
+                      shelves. <br />
+                      <br />
+                    </p>
 
-      <div  style={galleryStyle} className={styles.akoyacasecontainer}>
-      <div className={styles.akoyacasetext}>
-          <h2 style={{ color: "#fff"}}>Packaging & 3D Animation</h2> <div className={styles.rightbox}>
-          <p style={{ color: "#fff"}}>
-          The Story Behind the Design :  When we took on Satvikraas, we knew we weren’t just designing spice packaging—we were shaping a brand’s identity in a crowded market. With so many spices lined up on shelves, how do you make one stand out? How do you create packaging that makes people stop, notice, and pick it up?
+                    <ul className={styles.packaginglist}>
+                      <li>
+                        On-Shelf Visibility – We designed with contrast,
+                        clarity, and hierarchy, ensuring Satvikraas packaging
+                        demanded attention on retail shelves.
+                      </li>
+                      <li>
+                        Authenticity Meets Modern Appeal – The design kept the
+                        Indian essence alive while feeling fresh and premium.
+                      </li>
+                      <li>
+                        Optimized for Online Presence – We ensured that the
+                        packaging looked just as compelling on e-commerce
+                        platforms as it did in stores.
+                      </li>
+                      <li>
+                        Consistency Across 8 Products – From Turmeric, Red Chili
+                        Powder, and Garam Masala to more blends, each pack had
+                        its own identity while staying cohesive with the brand.
+                      </li>
+                    </ul>
 
-Instead of guessing, we hit the ground. We walked into retail stores, studied shelves, observed customer behavior, and analyzed colors, layouts, and what makes a spice brand pop.
-
-What We Discovered :
-Most packaging blends in—bold wasn’t bold enough.Shelf positioning matters, but so does color psychology.Online visuals need a different approach than offline shelves.
-          </p >
-          <p style={{ color: "#fff"}}>On-Shelf Visibility – We designed with contrast, clarity, and hierarchy, ensuring Satvikraas packaging demanded attention on retail shelves.
-Authenticity Meets Modern Appeal – The design kept the Indian essence alive while feeling fresh and premium.
-Optimized for Online Presence – We ensured that the packaging looked just as compelling on e-commerce platforms as it did in stores.
-Consistency Across 8 Products – From Turmeric, Red Chili Powder, and Garam Masala to more blends, each pack had its own identity while staying cohesive with the brand.</p>
-<p style={{ color: "#fff"}}>The Impact :
-More Visibility, More Pickups – Satvikraas now stands out in retail stores.Stronger Online Presence – Clean, vibrant packaging makes it scroll-stopping.Trust Through Design – The natural, premium look reinforces the brand’s promise of purity.</p>
+                    <p style={{ color: "#fff" }}>
+                      <strong> The Impact :</strong> <br /> More Visibility,
+                      More
+                      <strong> Pickups –</strong> Satvikraas now stands out in
+                      retail stores. <br />
+                      <strong>Stronger Online Presence –</strong> Clean, vibrant
+                      packaging makes it
+                      <strong> scroll-stopping.</strong> <br />
+                      <strong> Trust Through Design –</strong> The natural,
+                      premium look reinforces the brand’s promise of purity.
+                    </p>
+                  </>
+                )}
+                <p className={styles.readmorebtn} style={{ color: "#fff" }} onClick={handleToggle}>
+                  {isVisible ? (
+                    < >
+                      Read Less<svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+  <path d="M14.5917 6.90972L10.6743 3.00767L6.77223 6.92506" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M10.6815 3.79688L10.6815 9.27049C10.2904 14.7441 18.5008 9.2525 18.5008 13.5712L18.5009 20.9997" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                    </>
+                  ) : (
+                    <>
+                      Read More <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+  <path d="M10.672 17.0903L14.5894 20.9923L18.4914 17.0749" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M14.5822 20.2031L14.5822 14.7295C14.9733 9.2559 6.76289 14.7475 6.76289 10.4288L6.76272 3.00034" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                    </>
+                  )}
+                </p>
+                <br /> <br />
+              </div>
+            </div>
+            {/* <img
+              src={akoyacolorpallet}
+              alt="Color Palette"
+              className={styles.akoyascaseimages}
+            /> */}
+            <ImageGallery  images={imagesFullSize} id={"carousel4"}/>
+          </div>
         </div>
-        </div>
-        <img src={akoyacolorpallet} alt="Color Palette" className={styles.akoyascaseimage} />
-      </div>
-      </div>
-  
+
         {/* Packaging Section */}
         <div
           className={`${styles.akoyacasesection} ${styles.akoyacasepackaging}`}
@@ -237,39 +317,55 @@ More Visibility, More Pickups – Satvikraas now stands out in retail stores.Str
             <h2>Website </h2>{" "}
             <div className={styles.rightbox}>
               <p>
-              ✅ On-Shelf Visibility – We designed with contrast, clarity, and hierarchy, ensuring Satvikraas packaging demanded attention on retail shelves. <br /> ✅ Authenticity Meets Modern Appeal – The design kept the Indian essence alive while feeling fresh and premium.<br />✅ Optimized for Online Presence – We ensured that the packaging looked just as compelling on e-commerce platforms as it did in stores.<br />✅ Consistency Across 8 Products – From Turmeric, Red Chili Powder, and Garam Masala to more blends, each pack had its own identity while staying cohesive with the brand.
-              <br />
-<strong>The Impact :</strong>
-More Visibility, More Pickups – Satvikraas now stands out in retail stores.Stronger Online Presence – Clean, vibrant packaging makes it scroll-stopping.Trust Through Design – The natural, premium look reinforces the brand’s promise of purity.
+                ✅ On-Shelf Visibility – We designed with contrast, clarity, and
+                hierarchy, ensuring Satvikraas packaging demanded attention on
+                retail shelves. <br /> ✅ Authenticity Meets Modern Appeal – The
+                design kept the Indian essence alive while feeling fresh and
+                premium.
+                <br />✅ Optimized for Online Presence – We ensured that the
+                packaging looked just as compelling on e-commerce platforms as
+                it did in stores.
+                <br />✅ Consistency Across 8 Products – From Turmeric, Red
+                Chili Powder, and Garam Masala to more blends, each pack had its
+                own identity while staying cohesive with the brand.
+                <br />
+              </p>
+              <p>
+                {" "}
+                <strong>The Impact :</strong>
+                <br /> More Visibility, More Pickups – Satvikraas now stands out
+                in retail stores.Stronger Online Presence – Clean, vibrant
+                packaging makes it scroll-stopping.Trust Through Design – The
+                natural, premium look reinforces the brand’s promise of purity.
               </p>
             </div>
           </div>
-          <img
-            src={akoyapackaging}
-            alt="Packaging"
-            className={`${styles.akoyascaseimages} ,${styles.topview}`}
-          />
+       <ImageGallery  images={images2} id={"carousel3"}/>
         </div>
       </div>{" "}
-      <div className={styles.reviewssec}>
-      <h2 className={styles.heading}>Feedback</h2>
-      <div className={styles.reviewsContainer}>
-        {reviews.map((review) => (
-          <div key={review.id} className={styles.reviewCard}>
-            <p className={styles.text}><strong>Lorem ipsum dolor</strong> {review.text}</p>
-           <div className={styles.bottomfeedback}>
-           <div className={styles.stars}>
-              {[...Array(5)].map((_, index) => (
-                <FaStar key={index} color="#FFD700" />
-              ))}
+      {/* <div className={styles.reviewssec}>
+        <h2 className={styles.heading}>Feedback</h2>
+        <div className={styles.reviewsContainer}>
+          {reviews.map((review) => (
+            <div key={review.id} className={styles.reviewCard}>
+              <p className={styles.text}>
+                <strong>Lorem ipsum dolor</strong> {review.text}
+              </p>
+              <div className={styles.bottomfeedback}>
+                <div className={styles.stars}>
+                  {[...Array(5)].map((_, index) => (
+                    <FaStar key={index} color="#FFD700" />
+                  ))}
+                </div>
+                <div>
+                  <h4 className={styles.name}>{review.name}</h4>
+                  <p className={styles.role}>{review.role}</p>
+                </div>
+              </div>
             </div>
-            <div ><h4 className={styles.name}>{review.name}</h4>
-            <p className={styles.role}>{review.role}</p></div>
-           </div>
-          </div>
-        ))}
-      </div>
-    </div>
+          ))}
+        </div>
+      </div> */}
       <div className={styles.akoyacasecasestudiescontainer}>
         {" "}
         <h3 className={styles.casestudyhead}>
@@ -300,10 +396,10 @@ More Visibility, More Pickups – Satvikraas now stands out in retail stores.Str
             </div>
           ))}
         </div>
-        <button className={styles.akoyacasecasestudiesbutton}>
+        <Link to={"/works"} className={styles.akoyacasecasestudiesbutton}>
           See All Case Studies
           <span className={styles.akoyacasebuttonicon}></span>
-        </button>
+        </Link>
       </div>
     </motion.div>
   );

@@ -38,12 +38,24 @@ $breakpoint-tablet: 768px; // Medium devices (tablets)
     width: 100%;
     height: 600px;
     border-radius: 10px;
+    object-fit: cover;
+    object-position: 10% 10%;
     cursor: pointer;
      @include respond-to(mobile) { 
     height: 100%;
     width: 100%;
       object-fit: contain;
-    }
+    }}
+    video {
+      width: 100%;
+      height: 600px;
+      border-radius: 10px;
+      cursor: pointer;
+       @include respond-to(mobile) { 
+      height: 100%;
+      width: 100%;
+        object-fit: contain;
+      }
   }
 }
 

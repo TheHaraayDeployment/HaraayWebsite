@@ -41,7 +41,7 @@ import NotFound from "./pages/NotFound.jsx";
 import ScrollToTop from "./components/ScrollToTop";
 import Preloader from "./components/Preloader.jsx";
 import FaqPage from "./pages/FAQPage.jsx";
-// import SatvikraasCaseStudy from "./pages/CaseStudy/SatvikraasCaseStudy.jsx";
+import SatvikraasCaseStudy from "./pages/CaseStudy/SatvikraasCaseStudy.jsx";
 
 function App() {
   const isNavigating = useNavigationEvent(); // Get navigation event status
@@ -154,7 +154,7 @@ function App() {
           <Route path="/casestudy/bakers" element={<BakersCaseStudy />} />
           <Route path="/casestudy/creamf" element={<CreamFCaseStudy />} />
           <Route path="/casestudy/bosch" element={<BoschCaseStudy />} />
-          {/* <Route path="/casestudy/satvik" element={< SatvikraasCaseStudy/>} /> */}
+          <Route path="/casestudy/satvik" element={< SatvikraasCaseStudy/>} />
           {/* <Route path="/casestudy/akoya1" element={<Akoyavideo />} /> */}
           <Route path="*" element={<NotFound />} />
         </Routes>
