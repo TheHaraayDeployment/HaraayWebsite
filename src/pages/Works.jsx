@@ -7,12 +7,14 @@ import heroimg3 from "../assets/CreamForest/CreamFimg1.svg";
 import heroimg4 from "../assets/Serene/SerenHero.webp";
 import heroimg5 from "../assets/Virat/ViratHero.jpeg";
 import heroimg6 from "../assets/Bosch/hero.jpg";
+import heroimg7 from "../assets/Satvikraas/Satvikraas.webp";
 // import heroimg3 from "../assets/ViratCasestudyPackaging2.svg";
 import Letstalk from "../components/Letstalk";
 import { Link } from "react-router-dom";
 
 // Example data for works (replace with your actual data)
 const worksData = [
+  { id: 1, title: "SatvikRaas", tag: "Branding", image: heroimg7 , link:"/casestudy/satvik"},
   { id: 1, title: "Bosch", tag: "Branding", image: heroimg6 , link:"/casestudy/bosch"},
   { id: 2, title: "Akoya", tag: "Branding", image: heroimg1 , link:"/casestudy/akoya"},
   { id: 2, title: " Bakers Street", tag: "Branding", image: heroimg2 , link:"/casestudy/bakers"},
