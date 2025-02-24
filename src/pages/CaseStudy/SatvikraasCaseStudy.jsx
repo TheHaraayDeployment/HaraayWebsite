@@ -317,15 +317,15 @@ const imagesFullSize = [akoyabranding , akoyapackaging, satvikimg4 , satvikimg5]
             <h2>Website </h2>{" "}
             <div className={styles.rightbox}>
               <p>
-                ✅ On-Shelf Visibility – We designed with contrast, clarity, and
+                 On-Shelf Visibility – We designed with contrast, clarity, and
                 hierarchy, ensuring Satvikraas packaging demanded attention on
-                retail shelves. <br /> ✅ Authenticity Meets Modern Appeal – The
+                retail shelves. <br />  Authenticity Meets Modern Appeal – The
                 design kept the Indian essence alive while feeling fresh and
                 premium.
-                <br />✅ Optimized for Online Presence – We ensured that the
+                <br /> Optimized for Online Presence – We ensured that the
                 packaging looked just as compelling on e-commerce platforms as
                 it did in stores.
-                <br />✅ Consistency Across 8 Products – From Turmeric, Red
+                <br /> Consistency Across 8 Products – From Turmeric, Red
                 Chili Powder, and Garam Masala to more blends, each pack had its
                 own identity while staying cohesive with the brand.
                 <br />
