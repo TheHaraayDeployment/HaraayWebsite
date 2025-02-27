@@ -317,27 +317,9 @@ const imagesFullSize = [akoyabranding , akoyapackaging, satvikimg4 , satvikimg5]
             <h2>Website </h2>{" "}
             <div className={styles.rightbox}>
               <p>
-                 On-Shelf Visibility – We designed with contrast, clarity, and
-                hierarchy, ensuring Satvikraas packaging demanded attention on
-                retail shelves. <br />  Authenticity Meets Modern Appeal – The
-                design kept the Indian essence alive while feeling fresh and
-                premium.
-                <br /> Optimized for Online Presence – We ensured that the
-                packaging looked just as compelling on e-commerce platforms as
-                it did in stores.
-                <br /> Consistency Across 8 Products – From Turmeric, Red
-                Chili Powder, and Garam Masala to more blends, each pack had its
-                own identity while staying cohesive with the brand.
-                <br />
+              The Satvikraas website embodies our commitment to delivering authentic, natural Indian spices directly to your doorstep. Designed for a seamless shopping experience, our e-commerce platform features user-friendly navigation, detailed product descriptions, and secure payment options. Customers can explore the rich heritage of our spices through engaging content and high-quality images. Dive into the world of Satvikraas and discover the pure flavors of India with just a click. (<a href="www.satvikraas.com">www.satvikraas.com</a>)
               </p>
-              <p>
-                {" "}
-                <strong>The Impact :</strong>
-                <br /> More Visibility, More Pickups – Satvikraas now stands out
-                in retail stores.Stronger Online Presence – Clean, vibrant
-                packaging makes it scroll-stopping.Trust Through Design – The
-                natural, premium look reinforces the brand’s promise of purity.
-              </p>
+             
             </div>
           </div>
        <ImageGallery  images={images2} id={"carousel3"}/>

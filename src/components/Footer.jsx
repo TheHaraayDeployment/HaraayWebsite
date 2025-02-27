@@ -147,7 +147,7 @@ function Footer() {
         </div>
       </div>{" "}
       <h1>Haraay Design Studio</h1>
-      <p>© 2025 Haraay. All rights reserved.</p>
+      <p>© 2025 Haraay. Haraay Design Studio.LLP All rights reserved.</p>
     </div>
   );
 }
