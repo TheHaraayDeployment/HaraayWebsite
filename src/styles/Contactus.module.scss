@@ -252,6 +252,7 @@ $breakpoint-extra-large: 1200px;
     width: 100vw !important;
     padding: 5%;
     height: auto;
+    margin-top: 50px;
   }
 
   @include respond-to(medium) {
@@ -326,9 +327,13 @@ $breakpoint-extra-large: 1200px;
 
 // Contact Details
 .contactdetails{
-  display: flex;
+  display: flex; position: relative;
 width: 100%;
 padding: 60px 100px;
+ @include respond-to(small) { 
+width: 100%;
+padding: 10px;
+}
 .contactdetailsdiv{
   display: flex;
   flex-direction: column;
@@ -341,6 +346,10 @@ padding: 60px 100px;
     gap: 100px;
 justify-content: space-around;
 width: 100%;
+ @include respond-to(small) { 
+flex-direction: column;
+gap: 20px;
+}
     .infoCard{
       flex: 1;
 padding: 0;
@@ -387,9 +396,9 @@ span{
   align-items: flex-start;background: var(--Colour-Theory-Dark-Theme, #1C1D21); 
   gap: 10px;
 
-@include respond-to(mobile) { 
+@include respond-to(small) { 
   display: flex;
-  padding: 26px 12px;
+  padding: 26px 0px;
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
@@ -410,13 +419,13 @@ font-style: normal;
 font-weight: 500;
 line-height: 120%; /* 38.4px */  display: flex; flex-direction: row; justify-content: space-between;
 svg{min-width: 34px; align-items: center;}
-@include respond-to(mobile) { 
+@include respond-to(small) { 
   color: #FFF;
   font-family: Stara;
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
-  line-height: 120%; /* 24px */  padding: 0;
+
 }
 
 &:focus {
@@ -459,6 +468,10 @@ display: block;
   align-self: stretch;border-radius: 20px;
   border: 1px solid var(--Colour-Theory-Primary-Colour-04, #E5348C);
   background: #222327; margin-bottom: 20px;
+   @include respond-to(small) { 
+    padding: 7px 22px;
+    
+  }
 }
 .section{
   width: 100%;
@@ -503,4 +516,10 @@ span{
 .normal {
   transform: rotate(0deg);
   transition: transform 0.3s ease-in-out;
+}
+
+section{
+   @include respond-to(small) { 
+  height: auto;
+  }
 }
