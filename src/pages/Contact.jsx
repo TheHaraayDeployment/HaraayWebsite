@@ -1,30 +1,18 @@
 import React, { useState, useEffect } from "react";
 import styles from "../styles/Contactus.module.scss";
-import herovid from "../assets/contactherovid.mp4";
-import partnerimg1 from "../assets/partnerimg1.svg";
-import partnerimg2 from "../assets/partnerimg2.svg";
-import partnerimg3 from "../assets/partnerimg3.svg";
-import partnerimg4 from "../assets/partnerimg4.svg";
-import partnertxt from "../assets/partnertxt.svg";
-// logos
 
-import AkoyaLOGO from "../assets/Logo/LOGO Akoya.png";
-import BakersLOGO from "../assets/Logo/LOGO Bakers.png";
-import BoschLOGO from "../assets/Logo/LOGO Bosch.png";
-import EdynamicsLOGO from "../assets/Logo/LOGO Edynamics.png";
-import MittalLOGO from "../assets/Logo/LOGO Mittal.png";
-import PurusLOGO from "../assets/Logo/LOGO Purus.png";
-import SamrudhaLOGO from "../assets/Logo/LOGO Samruddh.png";
-import SunLOGO from "../assets/Logo/LOGO Sun.png";
-import ViratLOGO from "../assets/Logo/LOGO Virat.png";
-import OtherLOGO from "../assets/Logo/LOGO h.png";
+import {Link} from "react-router-dom"
+
 import shapee from "../assets/shape2.png";
 import { s } from "framer-motion/client";
 function Contact() {
   //
   //
   const [labelText, setLabelText] = useState("Last Name");
-
+const arrow = useState(`<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+  <path d="M20.3618 19.2754L24 15.6377L20.3618 11.9999" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M7 15.6858H12.0935C17.4252 15.6834 16.5471 15.6875 20.5659 15.6875H22.6596" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`);  
   const handleRadioChange = (event) => {
     const selectedValue = event.target.value;
     if (selectedValue === "business") {
@@ -101,25 +89,39 @@ function Contact() {
     }
   };
   //form api ends
-
-  // Partners Image
-  const partnerImages = [
-    AkoyaLOGO,
-    BakersLOGO,
-    BoschLOGO,
-    EdynamicsLOGO,
-    MittalLOGO,
-    PurusLOGO,
-    SamrudhaLOGO,
-    SunLOGO,
-    ViratLOGO,
-    OtherLOGO,
+   const [openIndex, setOpenIndex] = useState(null);
+  
+    const toggleDropdown = (index) => {
+      setOpenIndex(openIndex === index ? null : index);
+    };
+  const faqData = [
+    {
+      category: "Our Work",
+      items: [
+        {
+          question: "New Business",
+          answer:
+            "For new business inquiries, please email a detailed brief of your project to  ",
+        },
+        {
+          question: "Applying for Internships",
+          answer:
+            `We offer paid creative internships. Email us a link to your website at career@haraaydesignstudio.com. Please include the type of position you're applying for (Design, Production, Motion, etc.) in the subject of the email followed by “Intern Application." (Example: Production Intern Application)` ,
+        },
+        {
+          question:
+            "Applying for Positions",
+          answer:
+            "We are always on the lookout for talented creatives to join our team. Email us a link to your website to career@haraaydesignstudio.com. Please make the subject of the email: Job Application: Position Title (Designer, Producer, Animator, Photographer, etc.)",
+        },
+        {
+          question: "Student Questions",
+          answer:
+            "Unfortunately, we can’t respond to every single question emailed to us, as we receive a large volume of questions every day. We have answered a large section of answers on our website, please check it out!",
+        }
+      ],
+    },
   ];
-  const repeatedImages = Array(4).fill(partnerImages).flat(); // Repeat the array 4 times
-  // Partner image ends
-
-  const partnertextImg = Array(24).fill(partnertxt); // Create an array with 24 instances of 'partnertxt'
-
   return (
     <div className={styles.contactpage}>
       <section className={styles.Herosec}>
@@ -261,58 +263,115 @@ function Contact() {
       </section>
       <section className={styles.contactdetails}>
         <div className={styles.contactdetailsdiv}>
-          <div className={styles.leftdiv}>
-            <h1>Let's Talk</h1>
-            <div>
-              <p>Tell us about your next project.</p>
-            </div>
-            <h4>hello@haraaydesignstudio.com </h4>
+         <div className={styles.infocards}>
+          <div className={styles.infoCard}>
+            <h1>New Bussiness</h1>
+            <a  href="mailto:business@haraaydesignstudio.com">business@haraaydesignstudio.com <span><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+  <path d="M20.3618 19.2754L24 15.6377L20.3618 11.9999" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M7 15.6858H12.0935C17.4252 15.6834 16.5471 15.6875 20.5659 15.6875H22.6596" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></span></a>
           </div>
-
-          <div className={styles.rightdiv}>
-            <h1>Our Office</h1>
-            <div>
-              <p>
-                Right , Near Royal Enfield Bhusari colony, Kothrud, Pune,
-                Maharashtra 411038
-              </p>
-            </div>
-            <h4 className={styles.phoneno}> +91 7498376495 </h4>
+          <div className={styles.infoCard}>
+            <h1>Join Our Team</h1>
+            <a href="mailto:career@haraaydesignstudio.com">career@haraaydesignstudio.com <span><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+  <path d="M20.3618 19.2754L24 15.6377L20.3618 11.9999" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M7 15.6858H12.0935C17.4252 15.6834 16.5471 15.6875 20.5659 15.6875H22.6596" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></span></a>
           </div>
+          <div className={styles.infoCard}>
+            <h1>Other Inquiries</h1>
+            <a href="mailto:hello@haraaydesignstudio.com">hello@haraaydesignstudio.com <span><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+  <path d="M20.3618 19.2754L24 15.6377L20.3618 11.9999" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M7 15.6858H12.0935C17.4252 15.6834 16.5471 15.6875 20.5659 15.6875H22.6596" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></span></a>
+          </div>
+         </div> <div className={styles.infocards}>
+          <div className={styles.infoCard}>
+            <h1>Phone</h1>
+            <a href=""> +91 7498376495 <span><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+  <path d="M20.3618 19.2754L24 15.6377L20.3618 11.9999" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M7 15.6858H12.0935C17.4252 15.6834 16.5471 15.6875 20.5659 15.6875H22.6596" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></span></a>
+          </div>
+          <div className={styles.infoCard}>
+            <h1>Address</h1>
+            <p >Right , Near Royal Enfield Bhusari colony, Kothrud, Pune, Maharashtra 411038</p>
+          </div>
+          <div className={styles.infoCard}>
+            <h1>Office Hours</h1>
+            
+            <p>Mon – Sat / 9:30AM – 5:30PM</p>
+          </div>
+         </div>
         </div>
       </section>
-
-      <section className={styles.partners}>
-        <div className={styles.partnrshead}>
-          <h1>Our Partners</h1>
-          <p>
-            From champions to challengers, our clients have creative courage in
-            common.
-          </p>
-        </div>
-
-        <div data-aos="fade-up" className={styles.partnercontent}>
-          <div className={styles.imageslider}>
-            <div className={styles.imagetrack}>
-              {repeatedImages.map((imgSrc, index) => (
-                <img
-                  key={index}
-                  src={imgSrc}
-                  alt={`Partner ${(index % 4) + 1}`}
-                />
-              ))}
+<section className={styles.faqSection}>
+  <div className={styles.faqscontent}>
+          {/* Blog Cards Section */}
+          <h1 className={styles.faqheading}>FAQ</h1>
+          {faqData.map((section, sectionIdx) => (
+            <div key={sectionIdx} className={styles.section}>
+             
+              {section.items.map((item, index) => {
+                const uniqueIndex = `${sectionIdx}-${index}`;
+                return (
+                  <div
+                    key={uniqueIndex}
+                    className={`${styles.faqItem} ${
+                      openIndex === uniqueIndex ? styles.open : ""
+                    }`}
+                  >
+                    <button
+                      className={styles.question}
+                      onClick={() => toggleDropdown(uniqueIndex)}
+                    >
+                      {item.question}   <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="34"
+                      height="34"
+                      viewBox="0 0 34 34"
+                      fill="none"      className={openIndex === uniqueIndex ? styles.rotate : styles.normal}
+                    >
+                      <rect
+                        y="34"
+                        width="34"
+                        height="34"
+                        rx="17"
+                        transform="rotate(-90 0 34)"
+                        fill="#E5348C"
+                      />
+                      <path
+                        d="M10.0555 23.3546L16.8819 11.2196C16.9197 11.1529 16.9745 11.0975 17.0407 11.0589C17.1069 11.0203 17.1822 11 17.2588 11C17.3354 11 17.4107 11.0203 17.4769 11.0589C17.5431 11.0975 17.5978 11.1529 17.6356 11.2196L24.462 23.3546C24.5055 23.4324 24.5238 23.5217 24.5146 23.6104C24.5055 23.699 24.4692 23.7826 24.4108 23.8499C24.3523 23.9171 24.2746 23.9647 24.1881 23.9862C24.1016 24.0076 24.0106 24.0019 23.9275 23.9697L17.4156 21.4384C17.3147 21.3992 17.2029 21.3992 17.102 21.4384L10.59 23.9706C10.5068 24.0029 10.4157 24.0088 10.3291 23.9873C10.2424 23.9659 10.1645 23.9182 10.106 23.8507C10.0475 23.7833 10.0113 23.6995 10.0022 23.6107C9.99319 23.5219 10.0118 23.4325 10.0555 23.3546Z"
+                        fill="white"
+                        stroke="white"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    </button>{" "}
+                  
+                    <div
+                      className={styles.answer}
+                      style={{
+                        display: openIndex === uniqueIndex ? "block" : "none",
+                      }}
+                    >
+                      {item.answer}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-          </div>
-
-          <div className={styles.imageslider2}>
-            <div className={styles.imagetrack2}>
-              {partnertextImg.map((imgSrc, index) => (
-                <img key={index} src={imgSrc} alt={`Partner ${index + 1}`} />
-              ))}
-            </div>{" "}
-          </div>
+          ))}
+          
+          <Link to={"/faq"} className={styles.viewbtn}>View all FAQ’s <span><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+  <rect width="36" height="36" rx="18" fill="white"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M26.8359 17.5591L20.9032 23.4932L19.9382 22.5297L24.2273 18.2406H8.83594V16.8777H24.2273L19.9382 12.5899L20.9032 11.625L26.8359 17.5591Z" fill="#E5348C"/>
+</svg></span></Link>
         </div>
-      </section>
+</section>
+    
     </div>
   );
 }
