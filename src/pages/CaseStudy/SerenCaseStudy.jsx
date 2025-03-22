@@ -4,18 +4,23 @@ import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import styles from "./AkoyaCaseStudy.module.scss";
 
-import Akoyaherovid from "../../assets/Serene/Sereneimg1.webp";
+import Akoyaherovid from "../../assets/Serene/sereneSkinHero.jpg";
 import AkoyaOverviewimg from "../../assets/Serene/sereneim2.jpg";
 import Akoyaconclusionimg from "../../assets/Serene/sereneim3.jpg"; 
 import Akoyacon3 from "./serenetextimg.jpg";
 import Akoyacon4 from "../../assets/Serene/Sereneimg3.webp";
 import Akoyaimg1 from "../../assets/Akoya/Akoyaimg1.png";
-
+import ImageGallery from "../../components/ImageGallery"
 import akoyastudiesimg1 from "../../assets/Purus/Purusimghero.svg";
 import akoyastudiesimg2 from "../../assets/Akoya/AkoyaFullimg.png";
 import akoyastudiesimg3 from "../../assets/Virat/ViratHero.jpeg"
 import iconarrow from "../../assets/iconarrow.png";
 import iconarrow2 from "../../assets/iconarrow2.png";
+import newimg1 from "../../assets/Serene/SereneSkinnew1.jpg"
+import newimg2 from "../../assets/Serene/SereneSkinnew2.jpg"
+import newimg3 from "../../assets/Serene/SereneSkinnew3.jpg"
+import newimg4 from "../../assets/Serene/SereneSkinnew4.jpg"
+import newimg5 from "../../assets/Serene/SereneSkinnew5.jpg"
 import { Link } from "react-router-dom";
 
 const SereneCasestudy = () => {
@@ -73,12 +78,11 @@ const SereneCasestudy = () => {
   };
 
   const images = [
-    AkoyaOverviewimg,
-    Akoyaconclusionimg,
-    Akoyaimg1,
-    AkoyaOverviewimg,
+    newimg1 , Akoyaconclusionimg,  newimg2
   ];
-
+  const images2 = [
+    newimg3,  Akoyacon4 ,newimg4,newimg5
+  ];
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleNext = () => {
@@ -139,11 +143,12 @@ const SereneCasestudy = () => {
             />  
           </div> */}
           
-          <img
-              src={images[currentIndex]}
+       <img
+              src={AkoyaOverviewimg}
              
               className={styles.akoyascaseimage}
-            />
+            /> 
+          
         </div>
 
         <div className={styles.akoyacasebranding}>
@@ -173,11 +178,11 @@ We wanted to make it a luxury and bold skincare brand that promotes diversity, i
             </p>
           </div>
           </div>
-          <img
+          {/* <img
             src={ Akoyaconclusionimg}
             alt="Branding"
             className={styles.akoyascaseapproachimage}
-          />
+          /> */}  <ImageGallery  images={images} id={"carousel1"}/>
         </div>
 
         <div className={styles.akoyacasecolorpalette}>
@@ -202,13 +207,16 @@ We wanted to make it a luxury and bold skincare brand that promotes diversity, i
             </p>
            </div>
           </div>
-          <img
+          {/* <img
             src={Akoyacon4}
             alt="Color Palette" 
           
             className={styles.akoyascaseapproachimage}
-          />
+          />   */}
+           <ImageGallery  images={images2} id={"carousel2"}/>
         </div>
+
+     
       </div> 
 
       <div className={styles.akoyacasecasestudiescontainer}>     <h3 className={styles.casestudyhead}>See All Projects <svg xmlns="http://www.w3.org/2000/svg" width="58" height="34" viewBox="0 0 58 34" fill="none">

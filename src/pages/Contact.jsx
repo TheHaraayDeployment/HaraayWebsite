@@ -261,6 +261,7 @@ const arrow = useState(`<svg xmlns="http://www.w3.org/2000/svg" width="32" heigh
           </div>
         </div>
       </section>
+      
       <section className={styles.contactdetails}>
         <div className={styles.contactdetailsdiv}>
          <div className={styles.infocards}>
