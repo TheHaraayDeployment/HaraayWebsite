@@ -6,6 +6,7 @@ import AboutSectionImg from "../assets/AboutUssubimg.svg";
 import FAQ from "../pages/FAQsection";
 import member1 from "../assets/team1.svg";
 import member2 from "../assets/team2.svg";
+import SEO from "../Seo";
 
 export default function AboutUs() {
   const teamData = [
@@ -56,6 +57,12 @@ export default function AboutUs() {
 
   return (
     <div className={styles.AboutUspage}>
+      <SEO 
+    title="About Haraay – Pioneering Brand Consulting & Design"
+    description="Discover Haraay’s journey in transforming brands worldwide. Our expertise in consulting, design, and experiences sets global benchmarks."
+    keywords="brand consulting experts, branding specialists, global brand consulting, corporate branding solutions, digital brand strategy, creative branding agency"
+  />
+
       {/* Hero Section */}
       <section className={styles.HeroSection}>
         <img src={heroimg} alt="Hero" className={styles.heroimg} />

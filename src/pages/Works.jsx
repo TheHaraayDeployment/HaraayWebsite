@@ -11,6 +11,7 @@ import heroimg7 from "../assets/Satvikraas/Satvikraas.webp";
 // import heroimg3 from "../assets/ViratCasestudyPackaging2.svg";
 import Letstalk from "../components/Letstalk";
 import { Link } from "react-router-dom";
+import SEO from "../Seo";
 
 // Example data for works (replace with your actual data)
 const worksData = [
@@ -73,7 +74,12 @@ export default function Works() {
   //   });
   // }, [displayedWorks]); // Trigger animation on filter or pagination change
 
-  return (
+  return (<>  <SEO
+    title="Our Work – Global Brand Success Stories | Haraay"
+    description="See how Haraay has shaped global brands with innovative design and strategy. Explore our portfolio of premium brand transformations."
+    keywords="branding case studies, global brand success, premium brand transformations, corporate identity design, award-winning branding projects"
+  />
+
     <div className={styles.WorkMain}>
       {/* Header Section */}
       <div className={styles.Header}>
@@ -133,6 +139,6 @@ export default function Works() {
       </div>
 
       <Letstalk />
-    </div>
+    </div> </>
   );
 }

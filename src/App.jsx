@@ -1,5 +1,6 @@
 // src/App.js
 import React, { useEffect, useState } from "react";
+import { HelmetProvider } from 'react-helmet-async';
 import {
   BrowserRouter as Router,
   Route,
@@ -167,11 +168,11 @@ function App() {
 }
 
 function AppWrapper() {
-  return (
+  return ( <HelmetProvider>
     <Router>
       <ScrollToTop />
       <App />
-    </Router>
+    </Router></HelmetProvider>
   );
 }
 

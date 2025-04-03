@@ -8,6 +8,7 @@ import EngagementStrategy from "../assets/Engagement Strategy.gif";
 import SensorialExpression from "../assets/Sensorial Expression.gif";
 import ExaltedIdentity from "../assets/Exalted Identity.gif";
 import Letstalk from "../components/Letstalk";
+import SEO from "../Seo";
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -49,6 +50,12 @@ function Expertise() {
 
   return (
     <div className={styles.ExpertiseMain}>
+      <SEO
+    title="Branding, 3D & Design Expertise – Haraay"
+    description="Explore Haraay’s premium brand strategy, identity design, and digital experience services. We create world-class brand transformations."
+    keywords="brand strategy, identity design, 3D branding, digital experience design, brand transformation, premium branding services, creative brand development"
+  />
+
       {/* Hero Section */}
       <section className={styles.Herosec} ref={addToRefs}>
         <div className={styles.HeroContent}>

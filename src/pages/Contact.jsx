@@ -5,6 +5,7 @@ import {Link} from "react-router-dom"
 
 import shapee from "../assets/shape2.png";
 import { s } from "framer-motion/client";
+import SEO from "../Seo";
 function Contact() {
   //
   //
@@ -124,6 +125,13 @@ const arrow = useState(`<svg xmlns="http://www.w3.org/2000/svg" width="32" heigh
   ];
   return (
     <div className={styles.contactpage}>
+     <SEO 
+    title="Contact Haraay – Let’s Build Iconic Brands"
+    description="Ready to elevate your brand? Connect with Haraay, a global leader in branding and design. Let’s create something extraordinary."
+    keywords="contact branding agency, work with branding experts, brand consulting services, hire a brand strategy firm, luxury brand consultants"
+  />
+
+
       <section className={styles.Herosec}>
         <div className={styles.Herodiv}>
           <div className={styles.videodiv}>

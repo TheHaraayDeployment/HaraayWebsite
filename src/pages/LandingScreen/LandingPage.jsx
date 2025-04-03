@@ -46,6 +46,7 @@ import Icons from "../../components/Icons.jsx";
 import { Link } from "react-router-dom";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import SEO from "../../Seo.jsx";
 
 // Register the ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -274,8 +275,14 @@ export default function LandingPage() {
       containerRef.current.scrollBy({ left: 300, behavior: "smooth" });
     }
   };
-  return (
+  return (<><SEO 
+    title="Haraay - World-leading Brand Specialists | Consulting, Design & Experience"
+    description="Elevate your brand with Haraay, a global leader in branding, design, and strategy. We craft premium brand experiences that stand out."
+    keywords="branding agency, brand consulting, brand experience, global branding, premium brand design, corporate branding, brand transformation"
+  />
+
     <div className={styles.Landingpage}>
+
       <div className={styles.allsection}>
         <section className={styles.Herosec}>
           <Hero></Hero>
@@ -780,6 +787,6 @@ export default function LandingPage() {
         </section>{" "}
         <Letstalk data-aos="fade-up" />
       </div>
-    </div>
+    </div> </>
   );
 }
