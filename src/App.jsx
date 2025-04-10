@@ -20,7 +20,6 @@ import Works from "./pages/Works.jsx";
 import AboutUs from "./pages/AboutUs.jsx";
 import Contact from "./pages/Contact.jsx";
 import Expertise from "./pages/Expertise.jsx";
-
 // Blogs
 import Blogs from "./pages/Blogs.jsx";
 import Blog01 from "./pages/blogs/Blog1.jsx";
@@ -30,7 +29,6 @@ import Service1 from "./pages/Service1.jsx";
 import Service2 from "./pages/Service2.jsx";
 import Service3 from "./pages/Service3.jsx";
 import Service4 from "./pages/Service4.jsx";
-
 // Case study pages
 import SereneSkinCaseStudy from "./pages/CaseStudy/SerenCaseStudy.jsx";
 import ViratCaseStudy from "./pages/CaseStudy/ViratCaseStudy.jsx";
@@ -43,11 +41,9 @@ import ScrollToTop from "./components/ScrollToTop";
 import Preloader from "./components/Preloader.jsx";
 import FaqPage from "./pages/FAQPage.jsx";
 import SatvikraasCaseStudy from "./pages/CaseStudy/SatvikraasCaseStudy.jsx";
-
 function App() {
   const isNavigating = useNavigationEvent(); // Get navigation event status
   const location = useLocation();
-
   // Lenis smooth scrolling
   useEffect(() => {
     const lenis = new Lenis({
@@ -55,17 +51,14 @@ function App() {
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Customize easing
       smooth: true,
     });
-
     function raf(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
-
     requestAnimationFrame(raf);
     return () => lenis.destroy();
   }, []);
   // Lenis ends
-
   // Disable right-click ---------------------------------------------------------
   useEffect(() => {
     const disableRightClick = (e) => {
@@ -76,7 +69,6 @@ function App() {
       document.removeEventListener("contextmenu", disableRightClick);
     };
   }, []); // Disable right-click ends ----------------------------------------------
-
   // Disable inspect ----------------------------------------------------------------
   useEffect(() => {
     const disableInspectShortcuts = (e) => {
@@ -93,7 +85,6 @@ function App() {
       document.removeEventListener("keydown", disableInspectShortcuts);
     };
   }, []); // Disable inspect ends----------------------------------------------------------------
-
   // Validation pages (new pages add here )
   const validRoutes = [
     "/",
@@ -122,7 +113,6 @@ function App() {
     "/casestudy/satvik",
   ];
   const isValidRoute = validRoutes.includes(location.pathname);
-
   return (
     <>
       {/* Loading Screen */}
@@ -131,7 +121,6 @@ function App() {
       <PageTransition key={location.pathname}> */}
       <div className="App">
         {isValidRoute && <Navbar />}
-
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/works" element={<Works />} />
@@ -140,6 +129,7 @@ function App() {
           <Route path="/blogs/blog01" element={<Blog01 />} />
           <Route path="/blogs/blog02" element={<Blog2 />} />
           <Route path="/contact-us" element={<Contact />} />
+          <Route path="/career" element={<Contact />} />
           <Route path="/faq" element={<FaqPage />} />
           <Route path="/expertise" element={<Expertise />} />
           <Route path="/service1" element={<Service1 />} />
@@ -166,7 +156,6 @@ function App() {
     </>
   );
 }
-
 function AppWrapper() {
   return ( <HelmetProvider>
     <Router>
@@ -175,5 +164,4 @@ function AppWrapper() {
     </Router></HelmetProvider>
   );
 }
-
 export default AppWrapper;
