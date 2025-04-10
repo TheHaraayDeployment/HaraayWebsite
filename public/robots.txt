@@ -1,4 +1,6 @@
 User-agent: *
-Disallow: 
 Disallow: /cgi-bin/
-Sitemap: https://www.vfms.co.in/sitemap.xml
+Disallow: /error-page-back-to-home
+Disallow: /404
+Disallow: /error
+Sitemap: https://www.haraaydesignstudio.com/sitemap.xml
