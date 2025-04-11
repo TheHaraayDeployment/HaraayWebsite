@@ -1,9 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
-
 import { motion } from "framer-motion";
 import styles from "./AkoyaCaseStudy.module.scss";
-
 import Akoyaherovid from "../../assets/Serene/sereneSkinHero.jpg";
 import AkoyaOverviewimg from "../../assets/Serene/sereneim2.jpg";
 import Akoyaconclusionimg from "../../assets/Serene/sereneim3.jpg"; 
@@ -22,15 +20,12 @@ import newimg3 from "../../assets/Serene/SereneSkinnew3.jpg"
 import newimg4 from "../../assets/Serene/SereneSkinnew4.jpg"
 import newimg5 from "../../assets/Serene/SereneSkinnew5.jpg"
 import { Link } from "react-router-dom";
-
 const SereneCasestudy = () => {
   const heroRef = useRef(null);
-
   const { ref, inView } = useInView({
     triggerOnce: false,
     threshold: 0.2,
   });
-
   const variants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
@@ -43,13 +38,11 @@ const SereneCasestudy = () => {
       transition: { delay: i * 0.3, duration: 0.8 },
     }),
   };
-
   const cards = [
     { src: akoyastudiesimg1, title: "purus" },
     { src: akoyastudiesimg2, title: "Akoya" },
     { src: akoyastudiesimg3, title: "Virat" },
   ];
-
   // useEffect(() => {
   //   const heroElement = heroRef.current;
   //   const observer = new IntersectionObserver(
@@ -62,12 +55,10 @@ const SereneCasestudy = () => {
   //     { threshold: 0.5 }
   //   );
   //   observer.observe(heroElement);
-
   //   return () => {
   //     observer.unobserve(heroElement);
   //   };
   // }, []);
-
   const [isVisible, setIsVisible] = useState(false);
   const handleToggle = () => {
     setIsVisible(!isVisible);
@@ -76,7 +67,6 @@ const SereneCasestudy = () => {
   const handleToggle1 = () => {
     setIsVisible1(!isVisible1);
   };
-
   const images = [
     newimg1 , Akoyaconclusionimg,  newimg2
   ];
@@ -84,17 +74,14 @@ const SereneCasestudy = () => {
     newimg3,  Akoyacon4 ,newimg4,newimg5
   ];
   const [currentIndex, setCurrentIndex] = useState(0);
-
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
-
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
   };
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -102,12 +89,15 @@ const SereneCasestudy = () => {
       exit={{ opacity: 0, y: 20 }}
       transition={{ duration: 0.6 }}
       className={styles.akoyacasestudy}
-    >
+    ><SEO 
+    title="Seren Skin | Haraay"
+    description="Explore how Haraay crafted a bold yet elegant brand identity and packaging for Serene Skin — a natural, ethical skincare brand in India focused on self-love and sophistication."
+    keywords="Serene Skin, skincare branding India, bold skincare packaging, elegant brand identity, ethical skincare design, natural skincare products, Haraay Design Studio, self-love skincare brand, premium skincare branding"
+  />
       <div className={styles.akoyahero} ref={heroRef}>
         <div className={styles.akoyaherobackground}>
           <img
             src={Akoyaherovid}
-            
           />
         </div>
         <div className={styles.akoyaherocontent}>
@@ -115,7 +105,6 @@ const SereneCasestudy = () => {
           <p>Branding & Packaging</p>
         </div>
       </div>
-
        <div className={styles.akoyacasecontainer}>
         <div className={styles.akoyacasesection}>
           <div className={styles.akoyacasetext}>
@@ -123,8 +112,6 @@ const SereneCasestudy = () => {
            <div className={styles.rightbox}>
            <p>
            The client envisioned a bold yet elegant identity and packaging design that could effectively differentiate their product in a crowded marketplace. They emphasized the need for a design that exudes confidence and sophistication, appealing to their target audience's sense of quality and style.
-             
-              
             </p>
            </div>
           </div>
@@ -142,17 +129,12 @@ const SereneCasestudy = () => {
               className={styles.akoyascaseimage}
             />  
           </div> */}
-          
        <img
               src={AkoyaOverviewimg}
-             
               className={styles.akoyascaseimage}
             /> 
-          
         </div>
-
         <div className={styles.akoyacasebranding}>
-        
           <div className={styles.akoyacasetext}>
             <h3>Branding</h3>
             <div className={styles.rightbox}>
@@ -160,7 +142,6 @@ const SereneCasestudy = () => {
             Serene Skin is a brand that encourages people to feel confident and inspired; our objective was to design the brand's branding and packaging.
               {isVisible1 && (
                 <>
-                 
 We wanted to make it a luxury and bold skincare brand that promotes diversity, inclusivity, and self-care, a brand that may encourage a positive change in how people perceive their skin
                 </>
               )}
@@ -184,7 +165,6 @@ We wanted to make it a luxury and bold skincare brand that promotes diversity, i
             className={styles.akoyascaseapproachimage}
           /> */}  <ImageGallery  images={images} id={"carousel1"}/>
         </div>
-
         <div className={styles.akoyacasecolorpalette}>
           <div className={styles.akoyacasetext}>
             <h2>Color Palette</h2>   <div className={styles.rightbox}>
@@ -196,7 +176,6 @@ We wanted to make it a luxury and bold skincare brand that promotes diversity, i
           <img
             src={Akoyacon3}
             alt="Color Palette" 
-          
             className={styles.akoyascaseapproachimage}
           />
         </div>  <div className={styles.akoyacasecolorpalette}>
@@ -210,15 +189,11 @@ We wanted to make it a luxury and bold skincare brand that promotes diversity, i
           {/* <img
             src={Akoyacon4}
             alt="Color Palette" 
-          
             className={styles.akoyascaseapproachimage}
           />   */}
            <ImageGallery  images={images2} id={"carousel2"}/>
         </div>
-
-     
       </div> 
-
       <div className={styles.akoyacasecasestudiescontainer}>     <h3 className={styles.casestudyhead}>See All Projects <svg xmlns="http://www.w3.org/2000/svg" width="58" height="34" viewBox="0 0 58 34" fill="none">
         <path d="M38.6667 33.918C38.6667 32.1248 40.4381 29.4471 42.2313 27.1996C44.5368 24.2996 47.2918 21.7694 50.4503 19.8385C52.8187 18.3909 55.6897 17.0013 58 17.0013M58 17.0013C55.6897 17.0013 52.8163 15.6117 50.4503 14.1641C47.2918 12.2308 44.5368 9.70054 42.2313 6.80538C40.4381 4.55546 38.6667 1.87296 38.6667 0.0846243M58 17.0013L0 17.0013" stroke="#2B2322" stroke-width="4"/>
       </svg></h3>
@@ -242,5 +217,4 @@ We wanted to make it a luxury and bold skincare brand that promotes diversity, i
     </motion.div>
   );
 };
-
 export default SereneCasestudy;
