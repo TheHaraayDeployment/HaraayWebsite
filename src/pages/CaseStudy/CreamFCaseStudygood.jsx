@@ -12,6 +12,7 @@ import bakersstudiesimg2 from "../../assets/Purus/Purusimghero.svg";
 import bakersstudiesimg3 from "../../assets/Akoya/AkoyaFullimg.png";
 import iconarrow from "../../assets/iconarrow.png";
 import iconarrow2 from "../../assets/iconarrow2.png";
+import SEO from "../../Seo";
 const CreamforestCaseStudy = () => {
   const heroRef = useRef(null);
   const { ref, inView } = useInView({

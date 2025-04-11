@@ -19,6 +19,7 @@ import newimg2 from "../../assets/Serene/SereneSkinnew2.jpg"
 import newimg3 from "../../assets/Serene/SereneSkinnew3.jpg"
 import newimg4 from "../../assets/Serene/SereneSkinnew4.jpg"
 import newimg5 from "../../assets/Serene/SereneSkinnew5.jpg"
+import SEO from "../../Seo";
 import { Link } from "react-router-dom";
 const SereneCasestudy = () => {
   const heroRef = useRef(null);

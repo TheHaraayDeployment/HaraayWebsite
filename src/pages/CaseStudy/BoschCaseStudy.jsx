@@ -1,9 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
-
 import { motion } from "framer-motion";
 import styles from "./BoschCaseStudy.module.scss";
-
 import akoyahero from "../../assets/Bosch/BoschHeroVid.mp4";
 import akoyaoverview from "../../assets/Bosch/sec2.jpg";
 import akoyaoverview1 from "../../assets/Bosch/sec22.jpg";
@@ -14,14 +12,13 @@ import bakersstudiesimg1 from "../../assets/Akoya/AkoyaFullimg.png";
 import bakersstudiesimg2 from "../../assets/Lokneta/lokneta.webp";
 import bakersstudiesimg3 from "../../assets/comingsooncard.png";
 import ImageGallery from "../../components/ImageGallery";
+import SEO from "../../Seo";
 const BakersCaseStudy = () => {
   const heroRef = useRef(null);
-
   const { ref, inView } = useInView({
     triggerOnce: true, // Reveal only once
     threshold: 0.2, // Percentage of the section visible before triggering
   });
-
   // Motion variants for animation
   const variants = {
     hidden: { opacity: 0, y: 50 }, // Start state: hidden and shifted down
@@ -36,18 +33,15 @@ const BakersCaseStudy = () => {
     }),
   };
   const [showGallery, setShowGallery] = useState(false);
-
   const cards = [
     { src: bakersstudiesimg1, title: "Akoya" },
     { src: bakersstudiesimg2, title: "Lokneta" },
     { src: bakersstudiesimg3, title: "Coming Soon" },
   ];
-
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
   const [currentIndex, setCurrentIndex] = useState(0);
-
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
@@ -66,7 +60,6 @@ const BakersCaseStudy = () => {
   //     { threshold: 0.5 }
   //   );
   //   observer.observe(heroElement);
-
   //   return () => {
   //     observer.unobserve(heroElement);
   //   };
@@ -75,11 +68,9 @@ const BakersCaseStudy = () => {
   const openFullscreen = () => {
     setIsFullscreen(true);
   };
-
   const closeFullscreen = () => {
     setIsFullscreen(false);
   };
-
   useEffect(() => {
     if (isFullscreen) {
       document.body.classList.add("no-scroll");
@@ -90,9 +81,13 @@ const BakersCaseStudy = () => {
       document.body.classList.remove("no-scroll");
     };
   }, [isFullscreen]);
-
   return (
     <div className={styles.BoschCaseStudy}>
+       <SEO 
+    title="Bosche Air Purifier – 3D Animation & Visual | Haraay"
+    description="Haraay Design created premium 3D visuals for Bosche’s air purifier, showcasing sleek design, advanced filtration, and clean living in action."
+    keywords="Bosche Air Purifier, 3D product animation, air purifier visuals, clean air branding, product visualization, Haraay Design Studio"
+  />
       <div className={styles.akoyahero}>
         <div className={styles.akoyaherobackground}>
           {/* <Video src={akoyahero} alt="akoya Street Case Study" /> */}
@@ -191,7 +186,6 @@ const BakersCaseStudy = () => {
               {/* <button className={styles.leftcarrow} onClick={openFullscreen}>◀</button> */}
               {/* <button className={styles.rightcarrow}  onClick={openFullscreen}>▶</button> */}
             </div>
-
             {/* Fullscreen Lightbox */}
             {isFullscreen && (
               <div className={styles.fullscreenOverlay}>
@@ -216,7 +210,6 @@ const BakersCaseStudy = () => {
             )}
           </div>
         </div>
-
         {/* Branding Section */}
         <div
           className={`${styles.akoyacasesection}, ${styles.akoyacasebranding}`}
@@ -241,7 +234,6 @@ const BakersCaseStudy = () => {
             className={styles.akoyascaseimages}
           />
         </div>
-
         {/* Color Palette Section */}
         {/* <div className={`${styles.akoyacasesection}, ${styles.akoyacasecolorpalette}`}>
         <div className={styles.akoyacasetext}>
@@ -318,5 +310,4 @@ const BakersCaseStudy = () => {
     </div>
   );
 };
-
 export default BakersCaseStudy;
