@@ -73,7 +73,7 @@ const [isVisible, setIsVisible] = useState(false);
       <div className={styles.akoyaherobackground}>
         <img
           src={akoyahero}
-          alt="akoya Street Case Study"
+          alt="Cream Forest Case Study"
         />
       </div>
       <div className={styles.akoyaherocontent}>
