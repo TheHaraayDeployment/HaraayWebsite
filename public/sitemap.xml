@@ -1,109 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- 	created with www.mysitemapgenerator.com	 -->
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>https://www.haraaydesignstudio.com/</loc>
-<lastmod>2025-04-10T08:01:52+01:00</lastmod>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>https://www.haraaydesignstudio.com/works</loc>
-<lastmod>2025-04-10T08:01:52+01:00</lastmod>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>https://www.haraaydesignstudio.com/expertise</loc>
-<lastmod>2025-04-10T08:01:52+01:00</lastmod>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>https://www.haraaydesignstudio.com/about</loc>
-<lastmod>2025-04-10T08:01:52+01:00</lastmod>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>https://www.haraaydesignstudio.com/gallary</loc>
-<lastmod>2025-04-10T08:01:52+01:00</lastmod>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>https://www.haraaydesignstudio.com/blogs</loc>
-<lastmod>2025-04-10T08:01:52+01:00</lastmod>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>https://www.haraaydesignstudio.com/contact-us</loc>
-<lastmod>2025-04-10T08:01:52+01:00</lastmod>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>https://www.haraaydesignstudio.com/faq</loc>
-<lastmod>2025-04-10T08:01:52+01:00</lastmod>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>https://www.haraaydesignstudio.com/casestudy/akoya</loc>
-<lastmod>2025-04-10T08:01:52+01:00</lastmod>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://www.haraaydesignstudio.com/casestudy/bosch</loc>
-<lastmod>2025-04-10T08:01:52+01:00</lastmod>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://www.haraaydesignstudio.com/casestudy/satvik</loc>
-<lastmod>2025-04-10T08:01:52+01:00</lastmod>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://www.haraaydesignstudio.com/casestudy/bakers</loc>
-<lastmod>2025-04-10T08:01:52+01:00</lastmod>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://www.haraaydesignstudio.com/casestudy/creamf</loc>
-<lastmod>2025-04-10T08:01:52+01:00</lastmod>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://www.haraaydesignstudio.com/casestudy/sereneskin</loc>
-<lastmod>2025-04-10T08:01:52+01:00</lastmod>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://www.haraaydesignstudio.com/casestudy/virat</loc>
-<lastmod>2025-04-10T08:01:52+01:00</lastmod>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://www.haraaydesignstudio.com/blogs/blog01</loc>
-<lastmod>2025-04-10T08:01:52+01:00</lastmod>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://www.haraaydesignstudio.com/blogs/blog02</loc>
-<lastmod>2025-04-10T08:01:52+01:00</lastmod>
-<priority>0.8</priority>
-</url> <!-- 
-<url>
-<loc>https://www.haraaydesignstudio.com/service1</loc>
-<lastmod>2025-04-10T08:01:52+01:00</lastmod>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>https://www.haraaydesignstudio.com/service2</loc>
-<lastmod>2025-04-10T08:01:52+01:00</lastmod>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>https://www.haraaydesignstudio.com/service3</loc>
-<lastmod>2025-04-10T08:01:52+01:00</lastmod>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>https://www.haraaydesignstudio.com/service4</loc>
-<lastmod>2025-04-10T08:01:52+01:00</lastmod>
-<priority>1.0</priority>
-</url> -->
+  <url><loc>https://www.haraaydesignstudio.com/</loc></url>
+  <url><loc>https://www.haraaydesignstudio.com/works</loc></url>
+  <url><loc>https://www.haraaydesignstudio.com/faq</loc></url>
+  <url><loc>https://www.haraaydesignstudio.com/about</loc></url>
+  <url><loc>https://www.haraaydesignstudio.com/contact-us</loc></url>
+  <url><loc>https://www.haraaydesignstudio.com/expertise</loc></url>
+  <url><loc>https://www.haraaydesignstudio.com/blogs</loc></url>
+  <url><loc>https://www.haraaydesignstudio.com/blogs/blog01</loc></url>
+  <url><loc>https://www.haraaydesignstudio.com/blogs/blog02</loc></url>
+  <url><loc>https://www.haraaydesignstudio.com/casestudy/sereneskin</loc></url>
+  <url><loc>https://www.haraaydesignstudio.com/casestudy/virat</loc></url>
+  <url><loc>https://www.haraaydesignstudio.com/casestudy/akoya</loc></url>
+  <url><loc>https://www.haraaydesignstudio.com/casestudy/bakers</loc></url>
+  <url><loc>https://www.haraaydesignstudio.com/casestudy/creamf</loc></url>
+  <url><loc>https://www.haraaydesignstudio.com/casestudy/bosch</loc></url>
+  <url><loc>https://www.haraaydesignstudio.com/casestudy/satvik</loc></url>
 </urlset>
