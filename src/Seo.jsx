@@ -5,7 +5,7 @@ const SEO = ({ title, description, keywords }) => {
     <Helmet>
       <title>{title} | Haraay</title>
       <meta name="description" content={description} />
-      <meta name="keywords" content={keywords} />
+      <meta name="keywords" content={keywords} />   <meta name="robots" content="index, follow" />
     </Helmet>
   );
 };

@@ -61,14 +61,14 @@ const [isVisible, setIsVisible] = useState(false);
   //     observer.unobserve(heroElement);
   //   };
   // }, []);
-  return (
+  return (<> <SEO 
+    title="Cream Forest | Haraay" 
+    description="Discover how Haraay created a playful yet premium brand identity and website design for Cream Forest, a natural ice cream brand focused on indulgence, freshness, and sustainability."
+    keywords="Cream Forest, natural ice cream branding, ice cream brand design, premium ice cream packaging, playful brand identity, website design, Haraay Design Studio, sustainable branding, food packaging design, fresh brand identity"
+  />
     <motion.div
     className={styles.akoyacasestudy}
-  ><SEO 
-  title="Cream Forest | Haraay"
-  description="Discover how Haraay created a playful yet premium brand identity and website design for Cream Forest, a natural ice cream brand focused on indulgence, freshness, and sustainability."
-  keywords="Cream Forest, natural ice cream branding, ice cream brand design, premium ice cream packaging, playful brand identity, website design, Haraay Design Studio, sustainable branding, food packaging design, fresh brand identity"
-/>
+  >
     <div className={styles.akoyahero} ref={heroRef}>
       <div className={styles.akoyaherobackground}>
         <img
@@ -184,7 +184,7 @@ const [isVisible, setIsVisible] = useState(false);
           <span className={styles.akoyacasebuttonicon}></span>
         </button>
       </div>
-  </motion.div>
+  </motion.div> </>
   )
 }
 export default CreamforestCaseStudy
