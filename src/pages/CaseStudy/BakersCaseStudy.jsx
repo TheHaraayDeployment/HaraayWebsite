@@ -1,9 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
-
 import { motion } from "framer-motion";
 import styles from  "./AkoyaCaseStudy.module.scss";
-
 import akoyahero from "../../assets/bakers_casestudy_hero.jpg";
 import akoyaoverview from "../../assets/bakers_casestudy_overview.jpg";
 import akoyabranding from "../../assets/bakers_casestudy_branding.svg";
@@ -14,12 +12,10 @@ import bakersstudiesimg2 from "../../assets/Akoya/AkoyaFullimg.png";
 import bakersstudiesimg3 from "../../assets/purus_casestudy_studiesimg3.svg";
 const BakersCaseStudy = () => {
   const heroRef = useRef(null);
-
   const { ref, inView } = useInView({
     triggerOnce: true, // Reveal only once
     threshold: 0.2, // Percentage of the section visible before triggering
   });
-
   // Motion variants for animation
   const variants = {
     hidden: { opacity: 0, y: 50 }, // Start state: hidden and shifted down
@@ -33,13 +29,11 @@ const BakersCaseStudy = () => {
       transition: { delay: i * 0.3, duration: 0.8 }, // delay each card by 0.3s
     }),
   };
-
   const cards = [
     { src: bakersstudiesimg1, title: "Cream Forest" },
     { src: bakersstudiesimg2, title: "Akoya" },
     { src: bakersstudiesimg3, title: "Serene Skin" },
   ];
-
   // useEffect(() => {
   //   const heroElement = heroRef.current;
   //   const observer = new IntersectionObserver(
@@ -52,12 +46,10 @@ const BakersCaseStudy = () => {
   //     { threshold: 0.5 }
   //   );
   //   observer.observe(heroElement);
-
   //   return () => {
   //     observer.unobserve(heroElement);
   //   };
   // }, []);
-
   return (
     <motion.div
     initial={{ opacity: 0, y: 20 }}
@@ -68,14 +60,13 @@ const BakersCaseStudy = () => {
   >
     <div className={styles.akoyahero} >
       <div className={styles.akoyaherobackground}>
-        <img src={akoyahero} alt="akoya Street Case Study" />
+        <img src={akoyahero} alt="Bakers Street Case Study" />
       </div>
       <div className={styles.akoyaherocontent}>
         <h1>Baker’s Street</h1>
         <p>Brand Identity | Packaging</p>
       </div>
     </div>
-  
     <div className={styles.akoyacasecontainer}>
       {/* Overview Section */}
       <div className={styles.akoyacasesection}>
@@ -95,7 +86,6 @@ const BakersCaseStudy = () => {
         </div>
         <img src={akoyaoverview} alt="Overview" className={styles.akoyascaseimage} />
       </div>
-  
       {/* Branding Section */}
       <div className={`${styles.akoyacasesection}, ${styles.akoyacasebranding}`}>
         <div className={styles.akoyacasetext}>
@@ -114,7 +104,6 @@ const BakersCaseStudy = () => {
         </div>
         <img src={akoyabranding} alt="Branding" className={styles.akoyascaseimage} />
       </div>
-  
       {/* Color Palette Section */}
       <div className={`${styles.akoyacasesection}, ${styles.akoyacasecolorpalette}`}>
         <div className={styles.akoyacasetext}>
@@ -126,7 +115,6 @@ const BakersCaseStudy = () => {
         </div>
         <img src={akoyacolorpallet} alt="Color Palette" className={styles.akoyascaseimage} />
       </div>
-  
       {/* Packaging Section */}
       <div className={`${styles.akoyacasesection} ${styles.akoyacasepackaging}`}> 
         <div className={styles.akoyacasetext}>
@@ -159,8 +147,6 @@ const BakersCaseStudy = () => {
             </button>
           </div>
   </motion.div>
-  
   );
 };
-
 export default BakersCaseStudy;
