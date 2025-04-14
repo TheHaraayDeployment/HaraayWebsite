@@ -1,6 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>http://localhost:5173/</loc>
-  </url>
+  <url><loc>https://www.haraaydesignstudio.com/</loc></url>
+  <url><loc>https://www.haraaydesignstudio.com/works</loc></url>
+  <url><loc>https://www.haraaydesignstudio.com/faq</loc></url>
+  <url><loc>https://www.haraaydesignstudio.com/about</loc></url>
+  <url><loc>https://www.haraaydesignstudio.com/contact-us</loc></url>
+  <url><loc>https://www.haraaydesignstudio.com/expertise</loc></url>
+  <url><loc>https://www.haraaydesignstudio.com/blogs</loc></url>
+  <url><loc>https://www.haraaydesignstudio.com/blogs/blog01</loc></url>
+  <url><loc>https://www.haraaydesignstudio.com/blogs/blog02</loc></url>
+  <url><loc>https://www.haraaydesignstudio.com/casestudy/sereneskin</loc></url>
+  <url><loc>https://www.haraaydesignstudio.com/casestudy/virat</loc></url>
+  <url><loc>https://www.haraaydesignstudio.com/casestudy/akoya</loc></url>
+  <url><loc>https://www.haraaydesignstudio.com/casestudy/bakers</loc></url>
+  <url><loc>https://www.haraaydesignstudio.com/casestudy/creamf</loc></url>
+  <url><loc>https://www.haraaydesignstudio.com/casestudy/bosch</loc></url>
+  <url><loc>https://www.haraaydesignstudio.com/casestudy/satvik</loc></url>
 </urlset>
