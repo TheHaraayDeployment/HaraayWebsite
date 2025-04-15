@@ -10,6 +10,7 @@ import akoyapackaging from "../../assets/bakers_casestudy_packaging.svg";
 import bakersstudiesimg1 from "../../assets/CreamForest/CreamFimg1.svg";
 import bakersstudiesimg2 from "../../assets/Akoya/AkoyaFullimg.png";
 import bakersstudiesimg3 from "../../assets/purus_casestudy_studiesimg3.svg";
+import SEO from "../../Seo";
 const BakersCaseStudy = () => {
   const heroRef = useRef(null);
   const { ref, inView } = useInView({
@@ -57,7 +58,11 @@ const BakersCaseStudy = () => {
     exit={{ opacity: 0, y: 20 }}
     transition={{ duration: 0.6 }}
     className={styles.akoyacasestudy}
-  >
+  ><SEO 
+  title="Baker’s Street – Brand Identity & Packaging | Haraay"
+  description="Explore how Haraay Design crafted a warm, elegant, and visually rich brand identity and packaging for Baker’s Street, a bakery offering premium desserts to a modern audience."
+  keywords="Baker’s Street, bakery branding, premium dessert design, packaging design, elegant bakery website, Haraay Design Studio, bakery brand identity"
+/>
     <div className={styles.akoyahero} >
       <div className={styles.akoyaherobackground}>
         <img src={akoyahero} alt="Bakers Street Case Study" />
