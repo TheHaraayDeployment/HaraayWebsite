@@ -362,26 +362,26 @@
 // import React, { useState, useEffect, useRef } from "react";
 // import { useSprings, animated, useSpring } from "@react-spring/web";
 // import { useDrag } from "@use-gesture/react";
-import "../../styles/Hero.scss";
-// import Projectimg1 from "../../assets/Akoyaheroimg.webp";
-// import Projectimg2 from "../../assets/Bosch/Boschimg.webp";
-// import Projectimg3 from "../../assets/BMS/BMSimg.webp";
-// import Projectimg4 from "../../assets/Lokneta/lokneta.webp";
-// import Projectimg5 from "../../assets/Bakers/Bakers.webp";
-// import googlerank from "./images/googlerank.png"
-import txt from "./images/content.png"
-import bubble1 from "./images/bubble1.png"
-import bubble2 from "./images/bubble2.png"
-import bubble3 from "./images/bubble3.png"
-import bubble4 from "./images/bubble4.png"
-import bubble5 from "./images/bubble5.png"
-import bubble6 from "./images/bubble6.png"
-import bubble7 from "./images/bubble7.png"
-import bubble8 from "./images/bubble8.png"
-import bubble9 from "./images/bubble9.png"
-import bubble10 from "./images/bubble10.png"
-import bubble11 from "./images/bubble11.png"
-import bubble12 from "./images/bubble12.png"
+// import "../../styles/Hero.scss";
+// // import Projectimg1 from "../../assets/Akoyaheroimg.webp";
+// // import Projectimg2 from "../../assets/Bosch/Boschimg.webp";
+// // import Projectimg3 from "../../assets/BMS/BMSimg.webp";
+// // import Projectimg4 from "../../assets/Lokneta/lokneta.webp";
+// // import Projectimg5 from "../../assets/Bakers/Bakers.webp";
+// // import googlerank from "./images/googlerank.png"
+// import txt from "./images/content.png"
+// import bubble1 from "./images/bubble1.png"
+// import bubble2 from "./images/bubble2.png"
+// import bubble3 from "./images/bubble3.png"
+// import bubble4 from "./images/bubble4.png"
+// import bubble5 from "./images/bubble5.png"
+// import bubble6 from "./images/bubble6.png"
+// import bubble7 from "./images/bubble7.png"
+// import bubble8 from "./images/bubble8.png"
+// import bubble9 from "./images/bubble9.png"
+// import bubble10 from "./images/bubble10.png"
+// import bubble11 from "./images/bubble11.png"
+// import bubble12 from "./images/bubble12.png"
 
 
 // // Generate random size between 130 and 200 for each project
@@ -719,10 +719,475 @@ import bubble12 from "./images/bubble12.png"
 // export default HeroSection;
 
 
+// import React, { useState, useEffect, useRef } from "react";
+// import { useSprings, animated, useSpring } from "@react-spring/web";
+// import { useDrag } from "@use-gesture/react";
+// import { Link } from "react-router-dom";
+
+// import "../../styles/Hero.scss";
+
+// import bubble1 from "./images/bubble1.png"
+// import bubble2 from "./images/bubble2.png"
+// import bubble3 from "./images/bubble3.png"
+// import bubble4 from "./images/bubble4.png"
+// import bubble5 from "./images/bubble5.png"
+// import bubble6 from "./images/bubble6.png"
+// import bubble7 from "./images/bubble7.png"
+// import bubble8 from "./images/bubble8.png"
+// import bubble9 from "./images/bubble9.png"
+// import bubble10 from "./images/bubble10.png"
+// import bubble11 from "./images/bubble11.png"
+// import bubble12 from "./images/bubble12.png"
+
+// // Bubble configs based on screen size
+// const bubbleConfigs = {
+//   desktop: { count: 12, sizeRange: [130, 200] },
+//   tablet: { count: 9, sizeRange: [100, 160] },
+//   mobile: { count: 8, sizeRange: [80, 120] },
+// };
+
+// // Get screen size type
+// const getScreenSize = (width) => {
+//   if (width >= 1024) return 'desktop';
+//   if (width >= 768) return 'tablet';
+//   return 'mobile';
+// };
+
+// // Placeholder for bubble images (replace with your actual images)
+// const bubbleImages = [
+//   bubble1, bubble2, bubble3, bubble4, bubble5, bubble6, bubble7, bubble8, bubble9 ,bubble10,bubble11,bubble12
+// ];
+
+// // Shuffle array function to randomize fall order
+// const shuffleArray = (array) => {
+//   const newArray = [...array];
+//   for (let i = newArray.length - 1; i > 0; i--) {
+//     const j = Math.floor(Math.random() * (i + 1));
+//     [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+//   }
+//   return newArray;
+// };
+
+// // Function to generate bubbles
+// const generateBubbles = (count, sizeRange) => {
+//   const [minSize, maxSize] = sizeRange;
+//   const bubbles = [];
+
+//   for (let i = 0; i < count; i++) {
+//     const size = Math.floor(Math.random() * (maxSize - minSize + 1)) + minSize;
+//     const image = bubbleImages[i % bubbleImages.length];
+//     bubbles.push({ id: i, size, image });
+//   }
+
+//   return bubbles;
+// };
+
+// const BubbleAnimation = () => {
+//   const containerRef = useRef(null);
+//   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+//   const [isDragging, setIsDragging] = useState(false);
+//   const [isInitialAnimation, setIsInitialAnimation] = useState(true);
+//   const [startDelays, setStartDelays] = useState([]);
+
+//   // Get current screen size
+//   const [screenSize, setScreenSize] = useState('desktop');
+//   const [bubbles, setBubbles] = useState([]);
+
+//   // Physics constants
+//   const friction = 0.96;
+//   const elasticity = 0.8;
+//   const gravity = 0.35;
+
+//   // Update screen size and regenerate bubbles when window resizes
+//   useEffect(() => {
+//     const handleResize = () => {
+//       const newScreenSize = getScreenSize(window.innerWidth);
+//       if (newScreenSize !== screenSize) {
+//         setScreenSize(newScreenSize);
+//         const newBubbles = generateBubbles(
+//           bubbleConfigs[newScreenSize].count,
+//           bubbleConfigs[newScreenSize].sizeRange
+//         );
+//         setBubbles(newBubbles);
+
+//         // Reset positions when screen size changes
+//         setPositions(newBubbles.map((bubble) => ({
+//           x: 0,
+//           y: -300,
+//           vx: (Math.random() * 0.6) - 0.3,
+//           vy: 0,
+//           dragging: false,
+//           active: false,
+//           radius: bubble.size / 2,
+//         })));
+
+//         // Reset animation state
+//         setIsInitialAnimation(true);
+
+//         // Generate new delays
+//         const indices = Array.from({ length: newBubbles.length }, (_, i) => i);
+//         const shuffled = shuffleArray(indices);
+//         const delays = shuffled.map(() => Math.random() * 1000);
+//         setStartDelays(delays);
+//       }
+
+//       if (containerRef.current) {
+//         const width = containerRef.current.offsetWidth;
+//         const height = containerRef.current.offsetHeight;
+//         setDimensions({ width, height });
+//       }
+//     };
+
+//     // Initial setup
+//     const initialScreenSize = getScreenSize(window.innerWidth);
+//     setScreenSize(initialScreenSize);
+//     const initialBubbles = generateBubbles(
+//       bubbleConfigs[initialScreenSize].count,
+//       bubbleConfigs[initialScreenSize].sizeRange
+//     );
+//     setBubbles(initialBubbles);
+
+//     // Add resize listener
+//     window.addEventListener("resize", handleResize);
+//     handleResize();
+
+//     return () => window.removeEventListener("resize", handleResize);
+//   }, []);
+
+//   // Initialize positions when bubbles change
+//   const [positions, setPositions] = useState([]);
+
+//   useEffect(() => {
+//     if (bubbles.length > 0) {
+//       setPositions(bubbles.map((bubble) => ({
+//         x: 0,
+//         y: -300,
+//         vx: (Math.random() * 0.6) - 0.3,
+//         vy: 0,
+//         dragging: false,
+//         active: false,
+//         radius: bubble.size / 2,
+//       })));
+
+//       // Generate initial delays
+//       const indices = Array.from({ length: bubbles.length }, (_, i) => i);
+//       const shuffled = shuffleArray(indices);
+//       const delays = shuffled.map(() => Math.random() * 1000);
+//       setStartDelays(delays);
+//     }
+//   }, [bubbles]);
+
+//   // Update dimensions when component mounts or window resizes
+//   useEffect(() => {
+//     if (!containerRef.current) return;
+
+//     const updateDimensions = () => {
+//       const width = containerRef.current.offsetWidth;
+//       const height = containerRef.current.offsetHeight;
+//       setDimensions({ width, height });
+
+//       // Center circles horizontally on resize
+//       setPositions(prev =>
+//         prev.map((pos) => ({
+//           ...pos,
+//           x: width / 2 - pos.radius + (Math.random() * 100 - 50), // Center with slight random offset
+//         }))
+//       );
+//     };
+
+//     updateDimensions();
+//     window.addEventListener("resize", updateDimensions);
+//     return () => window.removeEventListener("resize", updateDimensions);
+//   }, []);
+
+//   // Activate bubbles one by one with delays
+//   useEffect(() => {
+//     if (startDelays.length === 0 || !isInitialAnimation || bubbles.length === 0) return;
+
+//     const timers = startDelays.map((delay, index) => {
+//       return setTimeout(() => {
+//         setPositions(prev => {
+//           if (index >= prev.length) return prev;
+
+//           const newPositions = [...prev];
+//           newPositions[index].active = true;
+//           newPositions[index].vy = 2 + Math.random() * 3; // Start with some downward velocity
+//           return newPositions;
+//         });
+//       }, delay);
+//     });
+
+//     // After all bubbles have started falling, disable initial animation mode
+//     const finalTimer = setTimeout(() => {
+//       setIsInitialAnimation(false);
+//     }, 4000);
+
+//     return () => {
+//       timers.forEach(timer => clearTimeout(timer));
+//       clearTimeout(finalTimer);
+//     };
+//   }, [startDelays, isInitialAnimation, bubbles]);
+
+//   // Physics simulation loop
+//   useEffect(() => {
+//     if (dimensions.width === 0 || positions.length === 0) return;
+
+//     let frameId;
+
+//     const updatePhysics = () => {
+//       setPositions(prev => {
+//         const newPositions = [...prev];
+
+//         // Update position and velocity for each bubble
+//         for (let i = 0; i < newPositions.length; i++) {
+//           // Skip physics for bubbles being dragged or not yet active
+//           if (newPositions[i].dragging || (!newPositions[i].active && isInitialAnimation)) continue;
+
+//           // Apply gravity and update position
+//           newPositions[i].vy += gravity;
+//           newPositions[i].x += newPositions[i].vx;
+//           newPositions[i].y += newPositions[i].vy;
+
+//           // Apply friction
+//           newPositions[i].vx *= friction;
+//           newPositions[i].vy *= friction;
+
+//           // Calculate boundaries based on this bubble's radius
+//           const radius = newPositions[i].radius;
+//           const maxX = dimensions.width - radius * 2;
+//           const maxY = dimensions.height - radius * 2;
+
+//           // Handle wall collisions
+//           if (newPositions[i].x > maxX) {
+//             newPositions[i].x = maxX;
+//             newPositions[i].vx *= -elasticity;
+//           } else if (newPositions[i].x < 0) {
+//             newPositions[i].x = 0;
+//             newPositions[i].vx *= -elasticity;
+//           }
+
+//           if (newPositions[i].y > maxY) {
+//             newPositions[i].y = maxY;
+//             newPositions[i].vy *= -elasticity;
+//           } else if (newPositions[i].y < 0) {
+//             newPositions[i].y = 0;
+//             newPositions[i].vy *= -elasticity;
+//           }
+
+//           // Check for collisions between bubbles
+//           for (let j = i + 1; j < newPositions.length; j++) {
+//             // Skip collision check if the other bubble is not active yet
+//             if (!newPositions[j].active && isInitialAnimation) continue;
+
+//             const dx = newPositions[i].x - newPositions[j].x;
+//             const dy = newPositions[i].y - newPositions[j].y;
+//             const distance = Math.sqrt(dx * dx + dy * dy);
+
+//             // Combined radius for collision detection
+//             const combinedRadius = newPositions[i].radius + newPositions[j].radius;
+
+//             if (distance < combinedRadius) {
+//               // Calculate collision response
+//               const angle = Math.atan2(dy, dx);
+//               const sin = Math.sin(angle);
+//               const cos = Math.cos(angle);
+
+//               // Rotate velocities to collision axis
+//               const vx1 = newPositions[i].vx * cos + newPositions[i].vy * sin;
+//               const vy1 = newPositions[i].vy * cos - newPositions[i].vx * sin;
+//               const vx2 = newPositions[j].vx * cos + newPositions[j].vy * sin;
+//               const vy2 = newPositions[j].vy * cos - newPositions[j].vx * sin;
+
+//               // Exchange velocities along collision axis
+//               const finalVx1 = vx2;
+//               const finalVx2 = vx1;
+
+//               // Rotate velocities back
+//               newPositions[i].vx = finalVx1 * cos - vy1 * sin;
+//               newPositions[i].vy = vy1 * cos + finalVx1 * sin;
+//               newPositions[j].vx = finalVx2 * cos - vy2 * sin;
+//               newPositions[j].vy = vy2 * cos + finalVx2 * sin;
+
+//               // Push bubbles apart to prevent overlap
+//               const overlap = combinedRadius - distance;
+//               const pushX = (overlap / 2) * cos;
+//               const pushY = (overlap / 2) * sin;
+
+//               if (!newPositions[i].dragging) {
+//                 newPositions[i].x += pushX;
+//                 newPositions[i].y += pushY;
+//               }
+//               if (!newPositions[j].dragging) {
+//                 newPositions[j].x -= pushX;
+//                 newPositions[j].y -= pushY;
+//               }
+//             }
+//           }
+//         }
+//         return newPositions;
+//       });
+
+//       frameId = requestAnimationFrame(updatePhysics);
+//     };
+
+//     frameId = requestAnimationFrame(updatePhysics);
+//     return () => cancelAnimationFrame(frameId);
+//   }, [dimensions, isDragging, isInitialAnimation, positions.length]);
+
+//   // Spring animations for smooth movement
+//   const springs = useSprings(
+//     positions.length,
+//     positions.map(({ x, y, dragging, active, radius }, i) => ({
+//       transform: `translate3d(${x}px, ${y}px, 0)`,
+//       opacity: active || !isInitialAnimation ? 1 : 0,
+//       width: `${radius * 2}px`,
+//       height: `${radius * 2}px`,
+//       config: dragging
+//         ? { mass: 1, tension: 500, friction: 10 } // Responsive when dragging
+//         : { mass: bubbles[i]?.size > 170 ? 2 : 1, tension: 180, friction: 24 }, // Smoother movement with size-based mass
+//     }))
+//   );
+
+//   // Drag handler
+//   const bind = useDrag(
+//     ({ args: [index], active, velocity: [vx, vy], first, last, xy }) => {
+//       if (isInitialAnimation) return; // Prevent dragging during initial animation
+
+//       if (first) {
+//         setIsDragging(true);
+//         setPositions(prev => {
+//           const updated = [...prev];
+//           updated[index].dragging = true;
+//           updated[index].vx = 0;
+//           updated[index].vy = 0;
+//           return updated;
+//         });
+//       }
+
+//       if (active) {
+//         setPositions(prev => {
+//           const updated = [...prev];
+//           const radius = updated[index].radius;
+//           const newX = xy[0] - radius;
+//           const newY = xy[1] - radius;
+
+//           // Keep within bounds
+//           const maxX = dimensions.width - radius * 2;
+//           const maxY = dimensions.height - radius * 2;
+
+//           updated[index].x = Math.max(0, Math.min(newX, maxX));
+//           updated[index].y = Math.max(0, Math.min(newY, maxY));
+//           return updated;
+//         });
+//       }
+
+//       if (last) {
+//         setIsDragging(false);
+//         setPositions(prev => {
+//           const updated = [...prev];
+//           updated[index].dragging = false;
+
+//           // Apply velocity from drag gesture - based on bubble size
+//           // Larger bubbles have more momentum
+//           const sizeMultiplier = bubbles[index]?.size / 100; // Adjust momentum based on size
+
+//           updated[index].vx = vx * 0.3 * sizeMultiplier;
+//           updated[index].vy = vy * 0.3 * sizeMultiplier;
+//           return updated;
+//         });
+//       }
+//     }
+//   );
+
+//   // Fade in animation for container
+//   const containerAnimation = useSpring({
+//     from: { opacity: 0 },
+//     to: { opacity: 1 },
+//     config: { duration: 800 },
+//   });
+
+//   return (
+//     <animated.div className="bubble-container "
+//       style={{
+//         ...containerAnimation,
+//         width: "100%",
+//         height: "100vh",
+//         position: "relative",
+//         overflow: "hidden",
+//         backgroundColor: "#f0f0f0"
+//       }}
+//     >
+//      <div className="contentTxt">
+//       <h1> Elevating brands through design precision and digital brilliance—Haraay, the choice of industry leaders.</h1>
+//       <p>Haraay Design Studio – Redefining digital excellence with be spoke design solutions that empower visionary brands to thrive</p>
+//       <div className="btnDiv"><Link to={"/works"} className="filledButton" >Explore Work</Link><Link className="emptyButton" to={"/expertise"}>See All Services</Link></div>
+//      </div>
+     
+//       {/* <img src={txt} alt="" className="txt" /> */}
+//       <div
+//         ref={containerRef}
+//         style={{
+//           width: "100%",
+//           height: "100%",
+//           position: "relative"
+//         }}
+//       >
+//         {springs.map((style, i) => (
+//           bubbles[i] && (
+//             <animated.div
+//               key={i}
+//               {...bind(i)}
+//               style={{
+//                 ...style,
+//                 position: "absolute",
+//                 backgroundImage: `url(${bubbles[i].image})`,
+//                 backgroundSize: "cover",
+//                 backgroundPosition: "center",
+//                 cursor: isInitialAnimation ? "default" : "grab",
+//                 borderRadius: "50%",
+//                 zIndex: positions[i]?.dragging ? 100 : 10,
+//                 filter: `brightness(${positions[i]?.dragging ? 1.1 : 1})`,
+//                 boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+//                 display: "flex",
+//                 alignItems: "center",
+//                 justifyContent: "center",
+//                 fontSize: "14px",
+//                 fontWeight: "bold",
+//                 color: "white",
+//                 textShadow: "1px 1px 2px rgba(0,0,0,0.5)"
+//               }}
+//             >
+//               {/* {i + 1} */}
+//             </animated.div>
+//           )
+//         ))}
+//       </div>
+//     </animated.div>
+//   );
+// };
+
+// export default BubbleAnimation;
+
 import React, { useState, useEffect, useRef } from "react";
 import { useSprings, animated, useSpring } from "@react-spring/web";
 import { useDrag } from "@use-gesture/react";
 import { Link } from "react-router-dom";
+
+import "../../styles/Hero.scss";
+
+import bubble1 from "./images/bubble1.png"
+import bubble2 from "./images/bubble2.png"
+import bubble3 from "./images/bubble3.png"
+import bubble4 from "./images/bubble4.png"
+import bubble5 from "./images/bubble5.png"
+import bubble6 from "./images/bubble6.png"
+import bubble7 from "./images/bubble7.png"
+import bubble8 from "./images/bubble8.png"
+import bubble9 from "./images/bubble9.png"
+import bubble10 from "./images/bubble10.png"
+import bubble11 from "./images/bubble11.png"
+import bubble12 from "./images/bubble12.png"
+
 // Bubble configs based on screen size
 const bubbleConfigs = {
   desktop: { count: 12, sizeRange: [130, 200] },
@@ -739,7 +1204,7 @@ const getScreenSize = (width) => {
 
 // Placeholder for bubble images (replace with your actual images)
 const bubbleImages = [
-  bubble1, bubble2, bubble3, bubble4, bubble5, bubble6, bubble7, bubble8, bubble9 ,bubble10,bubble11,bubble12
+  bubble1, bubble2, bubble3, bubble4, bubble5, bubble6, bubble7, bubble8, bubble9, bubble10, bubble11, bubble12
 ];
 
 // Shuffle array function to randomize fall order
@@ -772,6 +1237,7 @@ const BubbleAnimation = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [isInitialAnimation, setIsInitialAnimation] = useState(true);
   const [startDelays, setStartDelays] = useState([]);
+  const [showContent, setShowContent] = useState(false);
 
   // Get current screen size
   const [screenSize, setScreenSize] = useState('desktop');
@@ -794,24 +1260,29 @@ const BubbleAnimation = () => {
         );
         setBubbles(newBubbles);
 
-        // Reset positions when screen size changes
-        setPositions(newBubbles.map((bubble) => ({
-          x: 0,
-          y: -300,
-          vx: (Math.random() * 0.6) - 0.3,
-          vy: 0,
-          dragging: false,
-          active: false,
-          radius: bubble.size / 2,
-        })));
+        if (containerRef.current) {
+          const width = containerRef.current.offsetWidth;
+          // Reset positions when screen size changes - START FROM TOP CENTER
+          setPositions(newBubbles.map((bubble) => ({
+            x: width / 2 - bubble.size / 2, // Center horizontally
+            y: -bubble.size - Math.random() * 200, // Above the viewport with some variation
+            vx: (Math.random() * 0.4) - 0.2, // Slight horizontal variation
+            vy: 0,
+            dragging: false,
+            active: false,
+            radius: bubble.size / 2,
+          })));
+        }
 
         // Reset animation state
         setIsInitialAnimation(true);
+        setShowContent(false); // Hide content when screen size changes
 
         // Generate new delays
         const indices = Array.from({ length: newBubbles.length }, (_, i) => i);
         const shuffled = shuffleArray(indices);
-        const delays = shuffled.map(() => Math.random() * 1000);
+        // Faster animation - reduced delays
+        const delays = shuffled.map(() => Math.random() * 500);
         setStartDelays(delays);
       }
 
@@ -842,21 +1313,24 @@ const BubbleAnimation = () => {
   const [positions, setPositions] = useState([]);
 
   useEffect(() => {
-    if (bubbles.length > 0) {
+    if (bubbles.length > 0 && containerRef.current) {
+      const width = containerRef.current.offsetWidth;
+      
+      // Initialize bubbles at the top center
       setPositions(bubbles.map((bubble) => ({
-        x: 0,
-        y: -300,
-        vx: (Math.random() * 0.6) - 0.3,
+        x: width / 2 - bubble.size / 2, // Center horizontally
+        y: -bubble.size - Math.random() * 200, // Start above the viewport
+        vx: (Math.random() * 0.4) - 0.2, // Slight horizontal variation
         vy: 0,
         dragging: false,
         active: false,
         radius: bubble.size / 2,
       })));
 
-      // Generate initial delays
+      // Generate initial delays - FASTER ANIMATION
       const indices = Array.from({ length: bubbles.length }, (_, i) => i);
       const shuffled = shuffleArray(indices);
-      const delays = shuffled.map(() => Math.random() * 1000);
+      const delays = shuffled.map(() => Math.random() * 600); // Reduced delay for faster animation
       setStartDelays(delays);
     }
   }, [bubbles]);
@@ -870,19 +1344,27 @@ const BubbleAnimation = () => {
       const height = containerRef.current.offsetHeight;
       setDimensions({ width, height });
 
-      // Center circles horizontally on resize
-      setPositions(prev =>
-        prev.map((pos) => ({
-          ...pos,
-          x: width / 2 - pos.radius + (Math.random() * 100 - 50), // Center with slight random offset
-        }))
-      );
+      // Keep bubbles in top center on resize
+      if (!isInitialAnimation) {
+        setPositions(prev =>
+          prev.map((pos, i) => {
+            // Only reposition bubbles that are above the viewport
+            if (pos.y < -bubbles[i]?.size) {
+              return {
+                ...pos,
+                x: width / 2 - pos.radius, // Center
+              };
+            }
+            return pos;
+          })
+        );
+      }
     };
 
     updateDimensions();
     window.addEventListener("resize", updateDimensions);
     return () => window.removeEventListener("resize", updateDimensions);
-  }, []);
+  }, [isInitialAnimation, bubbles]);
 
   // Activate bubbles one by one with delays
   useEffect(() => {
@@ -895,16 +1377,24 @@ const BubbleAnimation = () => {
 
           const newPositions = [...prev];
           newPositions[index].active = true;
-          newPositions[index].vy = 2 + Math.random() * 3; // Start with some downward velocity
+          // Faster initial velocity for quicker movement
+          newPositions[index].vy = 3 + Math.random() * 3;
           return newPositions;
         });
       }, delay);
     });
 
     // After all bubbles have started falling, disable initial animation mode
+    // and show the content after a short delay
     const finalTimer = setTimeout(() => {
       setIsInitialAnimation(false);
-    }, 4000);
+      
+      // Show content with slight delay after bubbles have settled
+      setTimeout(() => {
+        setShowContent(true);
+      }, 800); // Delay before showing content
+      
+    }, 2500); // Reduced time for faster animation completion
 
     return () => {
       timers.forEach(timer => clearTimeout(timer));
@@ -1032,6 +1522,20 @@ const BubbleAnimation = () => {
     }))
   );
 
+  // Fade in animation for container
+  const containerAnimation = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    config: { duration: 800 },
+  });
+
+  // Content fade-in animation
+  const contentAnimation = useSpring({
+    opacity: showContent ? 1 : 0,
+    transform: showContent ? 'translateY(0px)' : 'translateY(20px)',
+    config: { tension: 280, friction: 24 },
+  });
+
   // Drag handler
   const bind = useDrag(
     ({ args: [index], active, velocity: [vx, vy], first, last, xy }) => {
@@ -1083,32 +1587,27 @@ const BubbleAnimation = () => {
     }
   );
 
-  // Fade in animation for container
-  const containerAnimation = useSpring({
-    from: { opacity: 0 },
-    to: { opacity: 1 },
-    config: { duration: 800 },
-  });
-
   return (
-    <animated.div className="bubble-container "
+    <animated.div className="bubble-container"
       style={{
         ...containerAnimation,
         width: "100%",
         height: "100vh",
         position: "relative",
         overflow: "hidden",
-        backgroundColor: "#f0f0f0"
+        background: "linear-gradient(135deg, #000000 0%, #000000 100%)"
       }}
     >
-     <div className="contentTxt">
-      <h1> Elevating brands through design precision and digital brilliance—Haraay, the choice of industry leaders.</h1>
-      <p>Haraay Design Studio – Redefining digital excellence with be spoke design solutions that empower visionary brands to thrive</p>
-      <div className="btnDiv"><Link to={"/works"} className="filledButton" >Explore Work</Link><Link className="emptyButton" to={"/expertise"}>See All Services</Link></div>
-     </div>
+      <animated.div className="contentTxt" style={contentAnimation}>
+        <h1>Elevating brands through design precision and digital brilliance—Haraay, the choice of industry leaders.</h1>
+        <p>Haraay Design Studio – Redefining digital excellence with bespoke design solutions that empower visionary brands to thrive</p>
+        <div className="btnDiv">
+          <Link to={"/works"} className="filledButton">Explore Work</Link>
+          <Link className="emptyButton" to={"/expertise"}>See All Services</Link>
+        </div>
+      </animated.div>
      
-      {/* <img src={txt} alt="" className="txt" /> */}
-      <div
+      <div className="bubblesMain"
         ref={containerRef}
         style={{
           width: "100%",
@@ -1140,8 +1639,9 @@ const BubbleAnimation = () => {
                 color: "white",
                 textShadow: "1px 1px 2px rgba(0,0,0,0.5)"
               }}
+              className="bubble"
             >
-              {/* {i + 1} */}
+              <div className="bubble-content"></div>
             </animated.div>
           )
         ))}

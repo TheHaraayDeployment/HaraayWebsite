@@ -3,11 +3,11 @@
   font-family: "Etherel";
   src: url("../assets/fonts/EtherealDemoFont-Medium.otf") format("opentype");
   font-weight: 500;
-  // font-style: italic;
 }
+
 .bubble-container {
   width: 100%;
-  z-index: +10;
+  z-index: 10;
   height: 100vh;
   position: relative;
   overflow: hidden;
@@ -114,115 +114,136 @@
   }
 }
 
-.txt{
-  width: 80%;
+.contentTxt {
+  z-index: 100;
+  width: 100%;
   position: absolute;
-  left: 50%;
-  transform: translate(-50%);
-  top: 10%;
+  top: 15%;
+  opacity: 0; /* Start with opacity 0 */
+  transform: translateY(20px); /* Start slightly below final position */
+  transition: opacity 1s ease, transform 1s ease; /* Add transition for smooth animation */
 }
 
-
-.contentTxt{
-  z-index: +100;
-  width: 100%;
-position: absolute;
-top: 15%;
-
-h1{
+.contentTxt h1 {
   width: 80%;
-  margin: auto; color: var(--Colour-Theory-White, #FFF);
+  margin: auto;
+  color: var(--Colour-Theory-White, #FFF);
   text-align: center;
   font-family: Etherel;
   font-size: 44px;
   font-style: normal;
   font-weight: 900;
   line-height: 150%; /* 66px */
+  
   @media (max-width: 767px) {
     width: 90%;
     font-size: 32px;
   }
+  
   @media (max-width: 400px) {
     font-size: 23px;
-    z-index: +50;
+    z-index: 50;
   }
 }
-  p{
-    color: var(--Colour-Theory-White, #FFF);
-text-align: center;
-font-family: Stara;
-font-size: 20px; text-align: center;
-font-style: normal; margin: auto;  max-width: 640px;
 
-font-weight: 500;
-// width: 0%;
-line-height: 150%; /* 30px */
-@media (max-width: 767px) {
-  width: 80%;
-  font-size: 23px;
-}
-@media (max-width: 400px) {
-  font-size: 14px;
-  margin-top: 16px;
-}
+.contentTxt p {
+  color: var(--Colour-Theory-White, #FFF);
+  text-align: center;
+  font-family: Stara;
+  font-size: 20px;
+  text-align: center;
+  font-style: normal;
+  margin: auto;
+  max-width: 640px;
+  font-weight: 500;
+  line-height: 150%; /* 30px */
   
+  @media (max-width: 767px) {
+    width: 80%;
+    font-size: 23px;
+  }
+  
+  @media (max-width: 400px) {
+    font-size: 14px;
+    margin-top: 16px;
+  }
 }
 
-.filledButton{
-  display: flex;
-padding: 10px 30px;
-justify-content: center;
-align-items: center;
-gap: 10px; border-radius: 30px;
-background: var(--Colour-Theory-Primary-Colour-04, #E5348C); color: var(--Colour-Theory-White, #FFF);
-font-family: Stara;
-font-size: 20px; width: fit-content;
-font-style: normal;
-font-weight: 700;
-line-height: 150%; /* 30px */
-@media (max-width: 767px) {
-  width: 90%;
-  font-size: 20px;
-  padding: 10px 5px;
-}
-@media (max-width: 400px) {
-  width: 90%;
-  font-size: 14px;
-  padding: 15px 5px;
-}
-  
-}
-.emptyButton{
-  color: var(--Colour-Theory-Primary-Colour-04, #E5348C);
-font-family: Stara;
-font-size: 20px;
-font-style: normal;
-font-weight: 700;
-line-height: 150%; /* 30px */ display: flex;
-padding: 10px 30px;
-justify-content: center;
-align-items: center;
-gap: 10px; border-radius: 30px;
-border: 1px solid var(--Colour-Theory-Primary-Colour-04, #E5348C); width: fit-content;
-@media (max-width: 767px) {
-  width: 90%;
-  font-size: 20px;
-  padding: 10px 5px;
-}
-@media (max-width: 400px) {
-  width: 90%;
-  font-size: 14px;
-  padding: 15px 5px;
-}
-  
-}
-.btnDiv{
+.btnDiv {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: 20px; gap: 20px;
+  margin: 20px;
+  gap: 20px;
+  
   @media (max-width: 767px) {
-    width: 80%; 
+    width: 80%;
+    margin: 20px auto;
   }
 }
+
+.filledButton {
+  display: flex;
+  padding: 10px 30px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 30px;
+  background: var(--Colour-Theory-Primary-Colour-04, #E5348C);
+  color: var(--Colour-Theory-White, #FFF);
+  font-family: Stara;
+  font-size: 20px;
+  width: fit-content;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 30px */
+  text-decoration: none;
+  
+  @media (max-width: 767px) {
+    width: 90%;
+    font-size: 20px;
+    padding: 10px 5px;
+  }
+  
+  @media (max-width: 400px) {
+    width: 90%;
+    font-size: 14px;
+    padding: 15px 5px;
+  }
+}
+
+.emptyButton {
+  color: var(--Colour-Theory-Primary-Colour-04, #E5348C);
+  font-family: Stara;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 30px */
+  display: flex;
+  padding: 10px 30px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 30px;
+  border: 1px solid var(--Colour-Theory-Primary-Colour-04, #E5348C);
+  width: fit-content;
+  text-decoration: none;
+  
+  @media (max-width: 767px) {
+    width: 90%;
+    font-size: 20px;
+    padding: 10px 5px;
+  }
+  
+  @media (max-width: 400px) {
+    width: 90%;
+    font-size: 14px;
+    padding: 15px 5px;
+  }
+}
+
+/* Animation classes for content */
+.contentTxt.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
