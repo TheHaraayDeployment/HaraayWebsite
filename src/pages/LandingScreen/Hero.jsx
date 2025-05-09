@@ -93,7 +93,7 @@ const HeroSection = () => {
               }}
               className="image5"
             />{" "}
-            <img
+            {/* <img
               draggable="false"
               src={Projectimg3}
               alt="Image3"
@@ -104,7 +104,7 @@ const HeroSection = () => {
                 }px)`,
               }}
               className="image3"
-            />{" "}
+            />{" "} */}
           </div>
         </Tilt>
       </div>
