@@ -1,119 +1,228 @@
-.hero-section {
-  background-color: #000;
-  height: 100vh;
-  width: 99%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-
-  .hero-content {
-    width: 100%;
-    position: relative;
-    height: 100vh;
-
-    .tilt-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
-      width: 100%;
-      height: 100vh;
-
-      .tilt-child {
-        height: 100vh;
-        h1 {
-          position: absolute;
-          left: 30%;
-          top: 40%;
-          z-index: 10;
-          // background-color: #000000;
-          font-size: 150px;
-          padding: 50px;
-          pointer-events: none;
-          color: #ffffff;
-          transform-style: preserve-3d;
-          perspective: 500px;
-          text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.1),
-            1px 1px 0 rgba(0, 0, 0, 0.8), 2px 2px 0 rgba(0, 0, 0, 0.6),
-            3px 3px 0 rgba(0, 0, 0, 0.4), 4px 4px 0 rgba(0, 0, 0, 0.2);
-          transform: translate3d(0, 0, 50px) rotateX(10deg) rotateY(-10deg);
-          transition: all 0.3s ease;
-
-          &:hover {
-            transform: translate3d(0, 0, 100px) rotateX(15deg) rotateY(-15deg);
-            text-shadow: -2px -2px 0 rgba(255, 255, 255, 0.2),
-              2px 2px 0 rgba(0, 0, 0, 1), 4px 4px 0 rgba(0, 0, 0, 0.8),
-              6px 6px 0 rgba(0, 0, 0, 0.6), 8px 8px 0 rgba(0, 0, 0, 0.4);
-          }
-
-          @media (max-width: 1200px) {
-            font-size: 100px;
-            left: 20%;
-            padding: 30px;
-          }
-
-          @media (max-width: 768px) {
-            font-size: 70px;
-            left: 10%;
-            padding: 20px;
-          }
-        }
-        img {
-          width: 500px;
-        }
-      }
-    }
-  }
-
-  @media (max-width: 768px) {
-    .hero-content {
-      .image-container {
-        height: 300px;
-      }
-    }
-  }
+/* BubbleAnimation.css */
+@font-face {
+  font-family: "Etherel";
+  src: url("../assets/fonts/EtherealDemoFont-Medium.otf") format("opentype");
+  font-weight: 500;
+  // font-style: italic;
 }
-
-// Image positioning mixins to reduce repetition
-@mixin image-base-styles {
-  height: 300px;
-  transform: translate(-10%, 5%);
-  transition: transform 0.5s ease;
-  position: absolute;
-  width: 35% !important;
-  object-fit: cover;
-  border-radius: 50px;
-}
-
-.image1 {
-  @include image-base-styles;
-  left: 0%;
-  top: 0%;
-  opacity: 100%;
-}
-
-.image2 {
-  @include image-base-styles;
-  left: 10%;
-  top: 70%;
-}
-
-.image3 {
-  @include image-base-styles;
-  left: 30%;
-  bottom: 40%;
+.bubble-container {
+  width: 100%;
   z-index: +10;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #000000 0%, #000000 100%);
+  font-family: 'Arial', sans-serif;
+
+  @media (max-width: 500px) {
+    height: 120vh;
+  }
 }
 
-.image4 {
-  @include image-base-styles;
-  right: 10%;
-  bottom: 5%;
+.bubble-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
-.image5 {
-  @include image-base-styles;
-  right: 10%;
-  top: -10%;
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  cursor: grab;
+  user-select: none;
+  transition: filter 0.2s ease;
+  will-change: transform, opacity, width, height;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bubble::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.bubble:hover {
+  filter: brightness(1.05);
+}
+
+.bubble:active {
+  cursor: grabbing;
+  filter: brightness(1.1);
+}
+
+.bubble.dragging {
+  z-index: 100;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.2);
+}
+
+.bubble-content {
+  position: relative;
+  z-index: 3;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 12px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 100%);
+}
+
+.bubble:hover .bubble-content {
+  opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1023px) {
+  .bubble::before {
+    box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.5);
+  }
+  
+  .bubble-content {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 767px) {
+  .bubble::before {
+    box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.5);
+  }
+  
+  .bubble-content {
+    font-size: 12px;
+    padding: 6px;
+  }
+}
+
+.txt{
+  width: 80%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: 10%;
+}
+
+
+.contentTxt{
+  z-index: +100;
+  width: 100%;
+position: absolute;
+top: 15%;
+
+h1{
+  width: 80%;
+  margin: auto; color: var(--Colour-Theory-White, #FFF);
+  text-align: center;
+  font-family: Etherel;
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 150%; /* 66px */
+  @media (max-width: 767px) {
+    width: 90%;
+    font-size: 32px;
+  }
+  @media (max-width: 400px) {
+    font-size: 23px;
+    z-index: +50;
+  }
+}
+  p{
+    color: var(--Colour-Theory-White, #FFF);
+text-align: center;
+font-family: Stara;
+font-size: 20px; text-align: center;
+font-style: normal; margin: auto;  max-width: 640px;
+
+font-weight: 500;
+// width: 0%;
+line-height: 150%; /* 30px */
+@media (max-width: 767px) {
+  width: 80%;
+  font-size: 23px;
+}
+@media (max-width: 400px) {
+  font-size: 14px;
+  margin-top: 16px;
+}
+  
+}
+
+.filledButton{
+  display: flex;
+padding: 10px 30px;
+justify-content: center;
+align-items: center;
+gap: 10px; border-radius: 30px;
+background: var(--Colour-Theory-Primary-Colour-04, #E5348C); color: var(--Colour-Theory-White, #FFF);
+font-family: Stara;
+font-size: 20px; width: fit-content;
+font-style: normal;
+font-weight: 700;
+line-height: 150%; /* 30px */
+@media (max-width: 767px) {
+  width: 90%;
+  font-size: 20px;
+  padding: 10px 5px;
+}
+@media (max-width: 400px) {
+  width: 90%;
+  font-size: 14px;
+  padding: 15px 5px;
+}
+  
+}
+.emptyButton{
+  color: var(--Colour-Theory-Primary-Colour-04, #E5348C);
+font-family: Stara;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: 150%; /* 30px */ display: flex;
+padding: 10px 30px;
+justify-content: center;
+align-items: center;
+gap: 10px; border-radius: 30px;
+border: 1px solid var(--Colour-Theory-Primary-Colour-04, #E5348C); width: fit-content;
+@media (max-width: 767px) {
+  width: 90%;
+  font-size: 20px;
+  padding: 10px 5px;
+}
+@media (max-width: 400px) {
+  width: 90%;
+  font-size: 14px;
+  padding: 15px 5px;
+}
+  
+}
+.btnDiv{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 20px; gap: 20px;
+  @media (max-width: 767px) {
+    width: 80%; 
+  }
+}
 }
