@@ -199,7 +199,7 @@ const SatvikraasCaseStudy = () => {
             </div>
             {/* <ImageGallery images={images} id={"carousel1"} /> */}
             <VideoGallery images={vid} id={"carousel5"} />
-            <video src={video} autoPlay muted ></video>
+            {/* <video src={video} autoPlay muted ></video> */}
           </div>
 
           {/* Branding Section */}
