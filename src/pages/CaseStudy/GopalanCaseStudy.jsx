@@ -3,7 +3,7 @@ import { useInView } from "react-intersection-observer";
 import { FaStar } from "react-icons/fa";
 import { motion } from "framer-motion";
 import styles from "./GopalanCaseStudy.module.scss";
-import video from "./gopalan1.mp4"
+import video from "../../assets/gopalan1.mp4"
 import akoyahero from "./gopalan2.jpg";
 import ClientReview from "../../components/ClientReview"
 import akoyaoverview from "./gopalan1.png";
@@ -27,7 +27,7 @@ import gopalanmobile from "./gopalan5.png"
 import gopalandesktop from "./gopalan6.png"
 import SEO from "../../Seo";
 const SatvikraasCaseStudy = () => {
-  const vid = [vid1, vid2];
+  const vid = [video];
 
   const imagesFullSize = [akoyabranding, akoyapackaging, satvikimg4, satvikimg5];
   const images = [
@@ -43,6 +43,7 @@ const SatvikraasCaseStudy = () => {
   const images3 = [
     satvikraasimg3
   ];
+
 
 
   const heroRef = useRef(null);
@@ -194,7 +195,8 @@ const SatvikraasCaseStudy = () => {
               </div>
             </div>
             {/* <ImageGallery images={images} id={"carousel1"} /> */}
-            <VideoGallery images={video} id={"carousel5"} />
+            {/* <VideoGallery images={vid} id={"carousel5"} /> */}
+            <video src={video} autoPlay muted ></video>
           </div>
 
           {/* Branding Section */}
