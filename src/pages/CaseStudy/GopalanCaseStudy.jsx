@@ -165,7 +165,10 @@ const SatvikraasCaseStudy = () => {
           <div className={styles.akoyaherocontent}>
             <h1>Gopalan Group</h1>
             <p>Website Design & development</p>
-            <p>gopalangroup.com</p>
+        <p onClick={() => window.open("https://gopalangroup.com", "_blank", "noopener,noreferrer")}
+  style={{ cursor: "pointer", display: "inline-flex", alignItems: "center", gap: "5px" }}>gopalangroup.com  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 20 20" fill="none">
+  <path d="M12 1H19V8M19 12.737V17.5C19 17.8978 18.842 18.2794 18.5607 18.5607C18.2794 18.842 17.8978 19 17.5 19H2.5C2.10218 19 1.72064 18.842 1.43934 18.5607C1.15804 18.2794 1 17.8978 1 17.5V2.5C1 2.10218 1.15804 1.72064 1.43934 1.43934C1.72064 1.15804 2.10218 1 2.5 1H7M10.9 9.1L18.55 1.45" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></p>
           </div>
         </div>
         <div className={styles.akoyacasecontainer}>
@@ -195,7 +198,7 @@ const SatvikraasCaseStudy = () => {
               </div>
             </div>
             {/* <ImageGallery images={images} id={"carousel1"} /> */}
-            {/* <VideoGallery images={vid} id={"carousel5"} /> */}
+            <VideoGallery images={vid} id={"carousel5"} />
             <video src={video} autoPlay muted ></video>
           </div>
 
