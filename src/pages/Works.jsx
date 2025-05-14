@@ -8,6 +8,7 @@ import heroimg4 from "../assets/Serene/SerenHero.webp";
 import heroimg5 from "../assets/Virat/ViratHero.jpeg";
 import heroimg6 from "../assets/Bosch/hero.jpg";
 import heroimg7 from "../assets/Satvikraas/Satvikraas.webp";
+import gopalanimg from "../assets/gopalan2.png"
 // import heroimg3 from "../assets/ViratCasestudyPackaging2.svg";
 import Letstalk from "../components/Letstalk";
 import { Link } from "react-router-dom";
@@ -15,6 +16,7 @@ import SEO from "../Seo";
 
 // Example data for works (replace with your actual data)
 const worksData = [
+  { id: 1, title: "Gopalan Group", tag: "Website Design & development", image: gopalanimg , link:"/casestudy/gopalan"},
   { id: 1, title: "SatvikRaas", tag: "Branding", image: heroimg7 , link:"/casestudy/satvik"},
   { id: 1, title: "Bosch", tag: "Branding", image: heroimg6 , link:"/casestudy/bosch"},
   { id: 2, title: "Akoya", tag: "Branding", image: heroimg1 , link:"/casestudy/akoya"},

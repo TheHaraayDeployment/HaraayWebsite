@@ -1167,7 +1167,6 @@
 // };
 
 // export default BubbleAnimation;
-
 import React, { useState, useEffect, useRef } from "react";
 import { useSprings, animated, useSpring } from "@react-spring/web";
 import { useDrag } from "@use-gesture/react";
@@ -1233,6 +1232,8 @@ const generateBubbles = (count, sizeRange) => {
 
 const BubbleAnimation = () => {
   const containerRef = useRef(null);
+  const initializedRef = useRef(false); // Track if animation has been initialized
+  const animationStartedRef = useRef(false); // Track if animation has started
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const [isInitialAnimation, setIsInitialAnimation] = useState(true);
@@ -1250,6 +1251,9 @@ const BubbleAnimation = () => {
 
   // Update screen size and regenerate bubbles when window resizes
   useEffect(() => {
+    // Skip initialization if already done (prevents restart on scroll)
+    if (initializedRef.current) return;
+    
     const handleResize = () => {
       const newScreenSize = getScreenSize(window.innerWidth);
       if (newScreenSize !== screenSize) {
@@ -1302,18 +1306,43 @@ const BubbleAnimation = () => {
     );
     setBubbles(initialBubbles);
 
-    // Add resize listener
-    window.addEventListener("resize", handleResize);
-    handleResize();
+    // Add resize listener - only for actual window resize, not scroll-triggered dimension changes
+    const debouncedResize = debounce(() => {
+      // Only handle significant size changes
+      const currentWidth = window.innerWidth;
+      const newScreenType = getScreenSize(currentWidth);
+      if (newScreenType !== screenSize) {
+        handleResize();
+      }
+    }, 250);
 
-    return () => window.removeEventListener("resize", handleResize);
+    window.addEventListener("resize", debouncedResize);
+    handleResize();
+    
+    // Mark as initialized
+    initializedRef.current = true;
+
+    return () => window.removeEventListener("resize", debouncedResize);
   }, []);
+
+  // Debounce function to prevent multiple resize triggers
+  function debounce(func, wait) {
+    let timeout;
+    return function() {
+      const context = this;
+      const args = arguments;
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        func.apply(context, args);
+      }, wait);
+    };
+  }
 
   // Initialize positions when bubbles change
   const [positions, setPositions] = useState([]);
 
   useEffect(() => {
-    if (bubbles.length > 0 && containerRef.current) {
+    if (bubbles.length > 0 && containerRef.current && !animationStartedRef.current) {
       const width = containerRef.current.offsetWidth;
       
       // Initialize bubbles at the top center
@@ -1332,6 +1361,9 @@ const BubbleAnimation = () => {
       const shuffled = shuffleArray(indices);
       const delays = shuffled.map(() => Math.random() * 600); // Reduced delay for faster animation
       setStartDelays(delays);
+      
+      // Mark animation as started
+      animationStartedRef.current = true;
     }
   }, [bubbles]);
 
@@ -1340,35 +1372,30 @@ const BubbleAnimation = () => {
     if (!containerRef.current) return;
 
     const updateDimensions = () => {
+      if (!containerRef.current) return; // Safety check
+      
       const width = containerRef.current.offsetWidth;
       const height = containerRef.current.offsetHeight;
-      setDimensions({ width, height });
-
-      // Keep bubbles in top center on resize
-      if (!isInitialAnimation) {
-        setPositions(prev =>
-          prev.map((pos, i) => {
-            // Only reposition bubbles that are above the viewport
-            if (pos.y < -bubbles[i]?.size) {
-              return {
-                ...pos,
-                x: width / 2 - pos.radius, // Center
-              };
-            }
-            return pos;
-          })
-        );
+      
+      // Only update dimensions if they've actually changed significantly
+      if (Math.abs(dimensions.width - width) > 10 || Math.abs(dimensions.height - height) > 10) {
+        setDimensions({ width, height });
       }
     };
 
+    // Initial update
     updateDimensions();
-    window.addEventListener("resize", updateDimensions);
-    return () => window.removeEventListener("resize", updateDimensions);
-  }, [isInitialAnimation, bubbles]);
+    
+    // Only listen for actual resize events, not scroll-triggered ones
+    const debouncedUpdate = debounce(updateDimensions, 250);
+    window.addEventListener("resize", debouncedUpdate);
+    
+    return () => window.removeEventListener("resize", debouncedUpdate);
+  }, []);
 
-  // Activate bubbles one by one with delays
+  // Activate bubbles one by one with delays - only run once
   useEffect(() => {
-    if (startDelays.length === 0 || !isInitialAnimation || bubbles.length === 0) return;
+    if (startDelays.length === 0 || !isInitialAnimation || bubbles.length === 0 || !animationStartedRef.current) return;
 
     const timers = startDelays.map((delay, index) => {
       return setTimeout(() => {
@@ -1392,9 +1419,9 @@ const BubbleAnimation = () => {
       // Show content with slight delay after bubbles have settled
       setTimeout(() => {
         setShowContent(true);
-      }, 800); // Delay before showing content
+      }, 100); // Delay before showing content
       
-    }, 2500); // Reduced time for faster animation completion
+    }, 1500); // Reduced time for faster animation completion
 
     return () => {
       timers.forEach(timer => clearTimeout(timer));
@@ -1407,8 +1434,20 @@ const BubbleAnimation = () => {
     if (dimensions.width === 0 || positions.length === 0) return;
 
     let frameId;
+    let lastTimestamp = 0;
+    const targetFps = 60;
+    const frameInterval = 1000 / targetFps;
 
-    const updatePhysics = () => {
+    const updatePhysics = (timestamp) => {
+      // Throttle animation frame updates to target FPS
+      const elapsed = timestamp - lastTimestamp;
+      if (elapsed < frameInterval) {
+        frameId = requestAnimationFrame(updatePhysics);
+        return;
+      }
+      
+      lastTimestamp = timestamp;
+      
       setPositions(prev => {
         const newPositions = [...prev];
 

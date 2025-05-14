@@ -213,12 +213,12 @@
 }
 
 .emptyButton {
-  color: var(--Colour-Theory-Primary-Colour-04, #E5348C);
+  color: var(--Colour-Theory-Primary-Colour-04, #ffffff);
   font-family: Stara;
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
-  line-height: 150%; /* 30px */
+  line-height: 150%; /* 30px */ 
   display: flex;
   padding: 10px 30px;
   justify-content: center;

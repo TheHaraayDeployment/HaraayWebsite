@@ -36,6 +36,7 @@ import AkoyaCaseStudy from "./pages/CaseStudy/AkoyaCaseStudygood.jsx";
 import BakersCaseStudy from "./pages/CaseStudy/BakersCaseStudy.jsx";
 import CreamFCaseStudy from "./pages/CaseStudy/CreamFCaseStudygood.jsx";
 import BoschCaseStudy from "./pages/CaseStudy/BoschCaseStudy.jsx";
+import Gopalan from "./pages/CaseStudy/GopalanCaseStudy.jsx";
 import NotFound from "./pages/NotFound.jsx";
 import ScrollToTop from "./components/ScrollToTop";
 import Preloader from "./components/Preloader.jsx";
@@ -111,6 +112,7 @@ function App() {
     "/casestudy/bakers",
     "/casestudy/creamf",
     "/casestudy/satvik",
+    "/casestudy/gopalan",
   ];
   const isValidRoute = validRoutes.includes(location.pathname);
   return (
@@ -146,6 +148,7 @@ function App() {
           <Route path="/casestudy/creamf" element={<CreamFCaseStudy />} />
           <Route path="/casestudy/bosch" element={<BoschCaseStudy />} />
           <Route path="/casestudy/satvik" element={< SatvikraasCaseStudy/>} />
+          <Route path="/casestudy/gopalan" element={<Gopalan/>} />
           {/* <Route path="/casestudy/akoya1" element={<Akoyavideo />} /> */}
           <Route path="*" element={<NotFound />} />
         </Routes>
