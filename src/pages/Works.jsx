@@ -8,7 +8,7 @@ import heroimg4 from "../assets/Serene/SerenHero.webp";
 import heroimg5 from "../assets/Virat/ViratHero.jpeg";
 import heroimg6 from "../assets/Bosch/hero.jpg";
 import heroimg7 from "../assets/Satvikraas/Satvikraas.webp";
-import gopalanimg from "../assets/gopalan2.png"
+import gopalanimg from "../assets/gopalan2.jpg"
 // import heroimg3 from "../assets/ViratCasestudyPackaging2.svg";
 import Letstalk from "../components/Letstalk";
 import { Link } from "react-router-dom";

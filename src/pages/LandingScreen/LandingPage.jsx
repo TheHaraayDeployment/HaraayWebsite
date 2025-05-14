@@ -18,7 +18,7 @@ import Projectimg2 from "../../assets/Bosch/Boschimg.webp";
 import Projectimg3 from "../../assets/BMS/BMSimg.webp"; 
 import Projectimg4 from "../../assets/Lokneta/lokneta.webp";
 import Projectimg5 from "../../assets/Satvikraas/Satvikraas.webp";
-
+import gopalanimg from "../../assets/gopalan2.jpg"
 import Purushero from "../../assets/purus.svg";
 
 import AkoyaLOGO from "../../assets/Logo/LOGO Akoya.png";
@@ -322,15 +322,15 @@ export default function LandingPage() {
           </div>
         </div>
         <section className={styles.worksec}>
-          <Link to={"/casestudy/akoya"} className="projectCards">
+          <Link to={"/casestudy/gopalan"} className="projectCards">
             <div className={styles.projectcardtxt}>
-              <h1>Akoya</h1>
-              <h3>Branding & Packaging</h3>
+              <h1>Gopalan Group</h1>
+              <h3>Website Design & development</h3>
             </div>
             <img
               draggable="false"
               className={styles.projectimg}
-              src={Projectimg1}
+              src={gopalanimg}
               alt="Project Card"
             />
           </Link>
