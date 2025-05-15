@@ -459,7 +459,7 @@ align-items: center;
     width: calc(6 * 100vw); /* 6 images */
     animation: slide 30s linear infinite;
 
-    img {
+    .partnerimage {
       margin: 10px;
       width: 170px; /* Set each image width to 100vw */
       flex-shrink: 0; /* Prevent images from shrinking */

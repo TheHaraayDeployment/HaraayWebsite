@@ -398,7 +398,7 @@ export default function LandingPage() {
             <div className={styles.imageslider}>
               <div className={styles.imagetrack}>
                 {repeatedImages.map((imgSrc, index) => (
-                  <img
+                  <img className={styles.partnerimage}
                     draggable="false"
                     key={index}
                     src={imgSrc}
