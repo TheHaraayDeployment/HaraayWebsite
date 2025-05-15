@@ -21,6 +21,8 @@ import ImageGallery from "../../components/ImageGallery"
 import VideoGallery from "../../components/VideoGallery"
 import vid1 from "../../assets/Satvikraas/vid1.mp4"
 import vid2 from "../../assets/Satvikraas/vid2.mp4"
+import iconarrow2 from "../../assets/iconarrow2.png";
+import iconarrow from "../../assets/iconarrow.png";
 
 
 import gopalanmobile from "./gopalan5.png"
@@ -112,6 +114,7 @@ const SatvikraasCaseStudy = () => {
   const handleToggle = () => {
     setIsVisible(!isVisible);
   };
+  
   const reviews = [
     {
       id: 1,
@@ -214,6 +217,10 @@ const SatvikraasCaseStudy = () => {
                 </p>
                 <p> 2. Design & User Experience : Our design team developed a clean, responsive, and immersive UI tailored for different audience segments — home buyers, investors, corporate clients, and retail partners.
                 </p>
+
+                 {isVisible && (
+                                <>
+                            
                 <div className={styles.highlightCard}>
                   <p>  Key UI/UX Highlights:</p>
                   <ul className={styles.customlist}> <li>
@@ -235,7 +242,18 @@ const SatvikraasCaseStudy = () => {
 
                   </ul>
 
-                </div>
+                </div>         </>
+                              )}
+                              <p className={styles.readmorebtn} onClick={handleToggle}>
+                                {isVisible ? (
+                                  <>
+                                    Read Less <img src={iconarrow} alt="Arrow Icon" />
+                                  </>
+                                ) : (
+                                  <>
+                                    Read More <img src={iconarrow2} alt="Arrow Icon" />
+                                  </>
+                                )}</p>
               </div>
             </div>
 
