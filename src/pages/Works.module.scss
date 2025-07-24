@@ -1,0 +1,751 @@
+
+// Variables
+$primary-color: #ff4081;
+$dark-bg: #1a1a1a;
+$card-bg: #2a2a2a;
+$text-primary: #ffffff;
+$text-secondary: #b0b0b0;
+$text-muted: #808080;
+$border-radius: 16px;
+$transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+$shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin container-padding {
+  padding: 0 24px;
+  
+  @media (max-width: 768px) {
+    padding: 0 16px;
+  }
+}
+
+// Base styles
+.portfolio {
+  background: $dark-bg; background: var(--Colour-Theory-Dark-Theme, #1C1D21);
+  color: $text-primary;
+  min-height: 100vh;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  @include container-padding;
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  @media (max-width: 768px) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+// Header styles
+.header {
+  text-align: center;
+  // margin-bottom: 60px;
+  padding: 50px;
+
+  @media (max-width: 768px) {
+   padding: 5px;
+    padding-top: 50px;
+    margin-bottom: 40px;
+
+  }
+}
+
+.title {
+color: #FFF;
+font-family: Etherel;
+font-size: 96px;
+font-style: normal;
+font-weight: 700;
+// line-height: 150%; /* 144px */
+  text-align: left;
+  @media (max-width: 768px) {
+    margin-bottom: 16px; font-size: 36px;
+font-style: normal;
+  }
+}
+
+.subtitle {
+color: var(--Colour-Theory-White, #FFF);
+font-family: Stara;
+font-size: 32px;
+font-style: normal;
+font-weight: 500;
+// line-height: 150%; /* 48px */
+  text-align: left;
+  @media (max-width: 768px) {
+    // line-height: 1.6;
+    font-size: 24px;
+    line-height: 120%;
+    text-align: justify;
+  }
+}
+
+// Filter section
+.filterSection {
+  @include flex-between;
+  margin-bottom: 48px;
+  gap: 24px;
+  flex-wrap: wrap;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: 32px;
+  }
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  
+  @media (max-width: 1024px) {
+    justify-content: center;
+  }
+
+  @media (max-width: 768px) {
+    gap: 6px;
+  }
+}
+
+.categoryBtn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0);
+  color: $text-secondary;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: $transition;
+  white-space: nowrap; color: #FFF;
+font-family: Stara;
+outline: none;
+font-size: 18px;
+font-style: normal;
+font-weight: 500;
+line-height: 150%; /* 27px */ border-radius: 40px;
+background: #2A2E3C;
+  
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    color: $text-primary;
+    transform: translateY(-2px);
+  }
+  
+  &.active {
+    background: $primary-color;
+    border-color: $primary-color;
+    color: white;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 64, 129, 0.4);
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 10px 18px;
+   font-size: 14px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}
+
+.viewOptions {
+  display: flex;
+  gap: 8px;
+  display: none;
+  @media (max-width: 1024px) {
+    justify-content: center;
+  }
+}
+
+.viewBtn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: $text-secondary;
+  padding: 12px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: $transition;
+  @include flex-center;
+  gap: 8px;
+  
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    color: $text-primary;
+  }
+  
+  &.active {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: $text-primary;
+  }
+
+  @media (max-width: 768px) {
+    padding: 10px 14px;
+  }
+}
+
+.stackIcon,
+.gridIcon {
+  font-size: 16px;
+}
+
+// Projects grid
+.projectsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 60px;
+
+  @media (max-width: 768px) {
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+}
+
+// Row layouts for different sizes
+.rowFull {
+  display: flex;
+  width: 100%;
+  margin-bottom: 24px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 16px;
+  }
+}
+
+.rowHalf {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+
+  @media (max-width: 1024px) {
+    gap: 16px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+}
+
+.rowSmall {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+
+  @media (max-width: 1200px) {
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 1024px) {
+    gap: 16px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+}
+
+// Card base styles
+%card-base {
+  border-radius: $border-radius;
+  overflow: hidden;
+  cursor: pointer;
+  transition: $transition;
+  // background: $card-bg;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease forwards;
+  
+  &:hover {
+    // transform: translateY(-8px);
+    // box-shadow: $shadow;
+    
+    img {
+      // transform: scale(1.05);
+    }
+  }
+}
+
+// Full size card - Takes entire row
+.cardFull {
+  @extend %card-base;
+  width: 100%;
+  display: flex;
+  min-height: 400px;
+  flex-direction: column;
+  
+  @media (max-width: 1024px) {
+    min-height: 350px;
+  }
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    min-height: auto;
+  }
+  
+  .imageContainer {
+    width: 100%;
+    
+    @media (max-width: 768px) {
+      width: 100%;
+    height: 300px;
+img{ object-position: 50% 50%;}
+    }
+  }
+  
+  .cardInfo {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 14px 32px;
+    background-color: transparent !important;
+    @media (max-width: 768px) {
+      width: 100%;
+      padding: 5px;
+      flex-direction: column;
+     
+    }
+  }
+}
+
+// Half size cards - 2 per row
+.cardHalf {
+  @extend %card-base;
+  width: calc(50% - 12px);
+  display: flex;
+  flex-direction: column;
+  min-height: 380px;
+  
+  @media (max-width: 768px) {
+    width: 100%;
+    min-height: 350px;
+  }
+  
+  .imageContainer {
+    height: 60%;
+    
+    @media (max-width: 768px) {
+      height: 200px;
+    }
+  }
+  
+  .cardInfo {
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px;
+    
+    @media (max-width: 768px) {
+      padding: 5px;
+      height: auto;
+      flex: 1;
+    }
+  }
+}
+
+// Small size cards - 3 per row
+.cardSmall {
+  @extend %card-base;
+  width: calc(33.333% - 16px);
+  display: flex;
+  flex-direction: column;
+  min-height: 350px;
+  
+  @media (max-width: 1200px) {
+    width: calc(50% - 12px);
+  }
+  
+  @media (max-width: 768px) {
+    width: 100%;
+    min-height: 320px;
+  }
+  
+  .imageContainer {
+    height: 55%;
+    
+    @media (max-width: 768px) {
+      height: 180px;
+    }
+  }
+  
+  .cardInfo {
+    // height: 45%;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    
+    @media (max-width: 768px) {
+      padding: 16px;
+      height: auto;
+      flex: 1;
+    }
+  }
+}
+
+// Image container
+.imageContainer {
+  position: relative;
+  overflow: hidden;
+  // background: $card-bg;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 30px;
+  }
+}
+
+// Card info section
+.cardInfo {
+  // background: $card-bg;
+  color: $text-primary;
+}
+
+.cardLeft {
+  flex: 1;
+  // max-width: 60%;
+}
+
+.cardRight {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end; // ✅ Aligns items to right
+  gap: 8px;
+  color: #C8C8C8;
+  font-family: Stara;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 21px */
+  margin-top: auto; // ✅ Push to bottom if needed
+  margin-right: auto; // ✅ Aligns self to right of flex parent
+
+  @media (max-width: 768px) {
+    margin-top: 12px;
+    gap: 6px;
+    justify-content: flex-start;
+  }
+}
+
+.cardTitle {
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  color: $text-primary;
+  // line-height: 1.2;
+  
+  color: #FFF;
+font-family: Stara;
+font-size: 24px;
+font-style: normal;
+font-weight: 500;
+margin: 0;
+// line-height: 150%; /* 36px */
+  .cardFull & {
+ font-size: 24px;
+    // margin-bottom: 16px;
+  }
+}
+
+.cardDescription {
+ color: #C8C8C8;
+font-family: Stara;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: 150%; /* 21px */
+  text-align: justify;
+  .cardFull & {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
+
+.serviceTag {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0);
+  color: $text-primary;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: $transition;
+  color: #C8C8C8;
+font-family: Stara;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: 150%; /* 21px */
+  &:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  @media (max-width: 768px) {
+    padding: 4px 10px;
+    font-size: 11px;
+  }
+}
+
+// No results state
+.noResults {
+  text-align: center;
+  padding: 80px 20px;
+  color: $text-secondary;
+  
+  p {
+    font-size: 1.125rem;
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    padding: 60px 20px;
+    
+    p {
+      font-size: 1rem;
+    }
+  }
+}
+
+// Animation keyframes
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Staggered animation delays
+.cardFull {
+  animation-delay: 0.1s;
+  .cardLeft {
+  flex: 1;
+  max-width: 80%;
+    @media (max-width: 768px) {
+      max-width: 100%;
+    }
+}
+
+  .cardRight {
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end; // ✅ Aligns items to right
+  gap: 8px;
+  color: #C8C8C8;
+  font-family: Stara;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 21px */
+ margin: auto;
+ margin-right: 10px;
+  @media (max-width: 768px) {
+    margin-top: 12px;
+    gap: 6px;
+    margin: 0;
+    margin-right: auto;
+    margin-top: 15px;
+  }
+}
+}
+
+.rowHalf {
+  .cardHalf:nth-child(1) { animation-delay: 0.2s; }
+  .cardHalf:nth-child(2) { animation-delay: 0.3s; }
+}
+
+.rowSmall {
+  .cardSmall:nth-child(1) { animation-delay: 0.4s; }
+  .cardSmall:nth-child(2) { animation-delay: 0.5s; }
+  .cardSmall:nth-child(3) { animation-delay: 0.6s; }
+}
+
+// Pagination
+.pagination {
+  @include flex-between;
+  margin-top: 40px;
+  gap: 20px;
+  flex-wrap: wrap;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+}
+
+.paginationText {
+  color: $text-muted;
+  font-size: 14px;
+  
+  @media (max-width: 768px) {
+    order: 2;
+  }
+}
+
+.paginationControls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  
+  @media (max-width: 768px) {
+    order: 1;
+    justify-content: center;
+  }
+
+  @media (max-width: 480px) {
+    gap: 4px;
+  }
+}
+
+.paginationBtn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: $text-secondary;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: $transition;
+  @include flex-center;
+  font-size: 14px;
+  
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    color: $text-primary;
+    transform: translateY(-2px);
+  }
+  
+  &.active {
+    background: $primary-color;
+    border-color: $primary-color;
+    color: white;
+    
+    &:hover {
+      box-shadow: 0 4px 15px rgba(255, 64, 129, 0.4);
+    }
+  }
+
+  @media (max-width: 480px) {
+    width: 36px;
+    height: 36px;
+    font-size: 13px;
+  }
+}
+
+// Animation delays for staggered entrance
+.projectCard {
+  &:nth-child(1) { transition-delay: 0.1s; }
+  &:nth-child(2) { transition-delay: 0.2s; }
+  &:nth-child(3) { transition-delay: 0.3s; }
+  &:nth-child(4) { transition-delay: 0.4s; }
+  &:nth-child(5) { transition-delay: 0.5s; }
+  &:nth-child(6) { transition-delay: 0.6s; }
+}
+
+// Loading states and performance optimizations
+.projectImage {
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.projectCard {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+// Focus states for accessibility
+.categoryBtn:focus,
+.viewBtn:focus,
+.paginationBtn:focus,
+.projectCard:focus {
+  outline: 2px solid $primary-color;
+  outline-offset: 2px;
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  .categoryBtn,
+  .viewBtn,
+  .paginationBtn {
+    border-width: 2px;
+  }
+  
+  .overlay {
+    background: rgba(0, 0, 0, 0.9);
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  .projectCard,
+  .projectImage,
+  .categoryBtn,
+  .viewBtn,
+  .paginationBtn {
+    transition: none;
+  }
+  
+  .projectCard.visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+// Print styles
+@media print {
+  .filterSection,
+  .pagination {
+    display: none;
+  }
+  
+  .projectCard {
+    break-inside: avoid;
+    opacity: 1;
+    transform: none;
+  }
+}

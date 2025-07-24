@@ -1,146 +1,313 @@
-import React, { useState, useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import styles from "../styles/Works.module.scss";
-import heroimg1 from "../assets/Akoya/AkoyaFullimg.png";
-import heroimg2 from "../assets/Bakers/Bakers.png";
-import heroimg3 from "../assets/CreamForest/CreamFimg1.svg";
-import heroimg4 from "../assets/Serene/SerenHero.webp";
-import heroimg5 from "../assets/Virat/ViratHero.jpeg";
-import heroimg6 from "../assets/Bosch/hero.jpg";
-import heroimg7 from "../assets/Satvikraas/Satvikraas.webp";
-import gopalanimg from "../assets/gopalan2.jpg"
-// import heroimg3 from "../assets/ViratCasestudyPackaging2.svg";
-import Letstalk from "../components/Letstalk";
-import { Link } from "react-router-dom";
-import SEO from "../Seo";
+import React, { useState, useEffect } from 'react';
+import styles from './Works.module.scss';
+import boschCard from "./WorksPageImages/BoschCard.svg"
+import akoya from "./WorksPageImages/akoya.svg"
+import BakersStreet from "./WorksPageImages/BakersStreet.svg"
+import creamForest from "./WorksPageImages/creamForest.svg"
+import Gopalan from "./WorksPageImages/Gopalan.svg"
+import HaraayProjectManagement from "./WorksPageImages/HaraayProjectManagement.svg"
+import satvik from "./WorksPageImages/satvik.svg"
+import Sereneskin from "./WorksPageImages/Sereneskin.svg"
+import virat from "./WorksPageImages/virat.svg"
 
-// Example data for works (replace with your actual data)
-const worksData = [
-  { id: 1, title: "Gopalan Group", tag: "Website Design & development", image: gopalanimg , link:"/casestudy/gopalan"},
-  { id: 1, title: "SatvikRaas", tag: "Branding", image: heroimg7 , link:"/casestudy/satvik"},
-  { id: 1, title: "Bosch", tag: "Branding", image: heroimg6 , link:"/casestudy/bosch"},
-  { id: 2, title: "Akoya", tag: "Branding", image: heroimg1 , link:"/casestudy/akoya"},
-  { id: 2, title: " Bakers Street", tag: "Branding", image: heroimg2 , link:"/casestudy/bakers"},
-  { id: 3, title: "Cream Forest", tag: "Websites", image: heroimg3 , link:"/casestudy/creamf"},
-  { id: 4, title: "Serene Skin", tag: "Branding", image: heroimg4 , link:"/casestudy/sereneskin"},
-  { id: 5, title: "Virat", tag: "Websites", image: heroimg5 , link:"/casestudy/virat"},
-
+// Sample project data
+const projectsData = [
+  // {
+  //   id: 1,
+  //   title: "Tool",
+  //   description: "Tool is a fun and friendly toothpaste brand made for kids with epic teeth. Colourful and playful branding style, premium packaging",
+  //   priority: "small",
+  //   tags: ["Branding", "Packaging", "3D Design"],
+  //   image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=800&h=600&fit=crop",
+  //   link: "/casestudy/tool"
+  // },
+  // {
+  //   id: 2,
+  //   title: "Link Neta",
+  //   description: "Mobile application designed to bridge the gap between the people of Goa and the City's offices, providing a streamlined accessible platform for civic engagement.",
+  //   priority: "small",
+  //   tags: ["Branding", "UI/UX", "3D Design"],
+  //   image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop",
+  //   link: "/casestudy/linkneta"
+  // },
+  // {
+  //   id: 3,
+  //   title: "NECC",
+  //   description: "Branding for the NECC Women's Tennis event was executed, covering visual identity, signage, and promotional materials. The design captured the spirit of the sport.",
+  //   priority: "small",
+  //   tags: ["Branding"],
+  //   image: "https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=800&h=600&fit=crop",
+  //   link: "/casestudy/necc"
+  // },
+  {
+    id: 4,
+    title: "Bosch",
+    description: "A 3D animation was created for the Bosch air purifier to visually demonstrate its internal components and air flow mechanism. This helped the consumers to functionality and purification process in a clear and engaging way.",
+    priority: "high",
+    tags: ["3D Animation"],
+    image: boschCard,
+    link: "/casestudy/bosch"
+  },
+  {
+    id: 5,
+    title: "Haraay's Project Management",
+    description: "The application is designed to streamline how teams and track work updates efficiently. It streamlines workflow.",
+    priority: "low",
+    tags: ["UI/UX", "3D Design"],
+    image: HaraayProjectManagement,
+    link: "/casestudy/project-management"
+  },
+  {
+    id: 6,
+    title: "Gopalan Group",
+    description: "Gopalan Real Estate project was a beacon of trust and innovation in the real estate sector. That's why deserving.",
+    priority: "low",
+    tags: ["UI/UX", "3D Design", "Motion"],
+    image: Gopalan,
+    link: "/casestudy/gopalan"
+  },
+  {
+    id: 7,
+    title: "Baker's street",
+    description: "Baker's street is a new and old shop bakery point which provides heavenly experience of true taste premium.",
+    priority: "low",
+    tags: ["Branding Identity", "3D Design", "Packaging"],
+    image: BakersStreet,
+    link: "/casestudy/bakers-street"
+  },
+  {
+    id: 8,
+    title: "Satvik raas",
+    description: "Satvik Raas Spices, we developed a visual identity, along with nutrition graphics and 3D video animations that tells the brand story in the end showcases to traditional essence in a modern, engaging format.",
+    priority: "medium",
+    tags: ["Branding", "Packaging", "UI/UX", "3D Design", "Motion Graphics"],
+    image: satvik,
+    link: "/casestudy/satvik-raas"
+  },
+  {
+    id: 9,
+    title: "Akoya",
+    description: "Akoya is a traditional brand from scratch that connects with cultural roots. Ensure cohesive storytelling by a packaging that reflects the brand and resonates with the target audience.",
+    priority: "medium",
+    tags: ["Branding", "Packaging", "Illustration", "3D Animation", "Motion Graphics"],
+    image: akoya,
+    link: "/casestudy/akoya"
+  },
+  {
+    id: 10,
+    title: "Virat",
+    description: "Virat Shipping facility management services provider, specializing in regulatory compliance that maintains a bold, modern and distinctive brand identity.",
+    priority: "low",
+    tags: ["Branding", "UI/UX", "3D Design"],
+    image: virat,
+    link: "/casestudy/virat"
+  },
+  {
+    id: 11,
+    title: "Serene Skin",
+    description: "Serene Skin nurtures brand truths that encourages self-confidence between users towards their skincare. Sustainable themselves from other skincare firms by providing new.",
+    priority: "low",
+    tags: ["Branding Identity", "Packaging", "3D Design"],
+    image: Sereneskin,
+    link: "/casestudy/serene-skin"
+  },
+  {
+    id: 12,
+    title: "Creams Forest",
+    description: "Creams Forest is a natural ice cream brand the branding communicates the fresh taste by connecting nature with indulgence in every scoop.",
+    priority: "low",
+    tags: ["Branding Identity", "Packaging"],
+    image: creamForest,
+    link: "/casestudy/creams-forest"
+  }
+];const categories = [
+  "All Works",
+  "Branding",
+  "Websites",
+  "3D Animation",
+  "Web application",
+  "Mobile application",
+  "Packaging"
 ];
 
-// Filters
-const filters = ["All Works", "Branding", "Websites"];
+const Portfolio = () => {
+  const [activeCategory, setActiveCategory] = useState("All Works");
+  const [filteredProjects, setFilteredProjects] = useState(projectsData);
+  const [visibleCards, setVisibleCards] = useState([]);
 
-export default function Works() {
-  const [activeFilter, setActiveFilter] = useState("All Works");
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 9;
-  const imageRefs = useRef([]);
+  useEffect(() => {
+    if (activeCategory === "All Works") {
+      setFilteredProjects(projectsData);
+    } else {
+      const filtered = projectsData.filter(project =>
+        project.tags.some(tag =>
+          tag.toLowerCase().includes(activeCategory.toLowerCase())
+        )
+      );
+      setFilteredProjects(filtered);
+    }
+  }, [activeCategory]);
 
-  // Filter and paginate the works
-  const filteredWorks =
-    activeFilter === "All Works"
-      ? worksData
-      : worksData.filter((work) => work.tag === activeFilter);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const cardId = entry.target.getAttribute('data-card-id');
+            setVisibleCards(prev => [...new Set([...prev, cardId])]);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
 
-  const totalPages = Math.ceil(filteredWorks.length / itemsPerPage);
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const displayedWorks = filteredWorks.slice(
-    startIndex,
-    startIndex + itemsPerPage
-  );
+    const cards = document.querySelectorAll(`.${styles.projectCard}`);
+    cards.forEach(card => observer.observe(card));
 
-  const handleFilterClick = (filter) => {
-    setActiveFilter(filter);
-    setCurrentPage(1); // Reset to first page when filter changes
+    return () => observer.disconnect();
+  }, [filteredProjects]);
+
+  const handleProjectClick = (link) => {
+    window.location.href = link;
   };
 
-  const handlePageClick = (pageNum) => {
-    setCurrentPage(pageNum);
-  };
+  const renderProjectsInSequence = () => {
+    const rows = [];
+    let currentRow = [];
+    let currentLimit = 0;
 
-  // GSAP reveal animation for images
-  // useEffect(() => {
-  //   imageRefs.current.forEach((img, idx) => {
-  //     // const direction = idx % 2 === 0 ? -100 : 100; // Alternate left and right
-  //     gsap.fromTo(
-  //       img,
-  //       { x: -100, opacity: 0 },
-  //       {
-  //         x: 0,
-  //         opacity: 1,
-  //         duration: 1.5,
-  //         delay: idx * 0.2,
-  //         ease: "power2.out",
-  //       }
-  //     );
-  //   });
-  // }, [displayedWorks]); // Trigger animation on filter or pagination change
+    filteredProjects.forEach((project) => {
+      const limit =
+        project.priority === 'high' ? 1 :
+        project.priority === 'medium' ? 2 : 3;
 
-  return (<>  <SEO
-    title="Our Work – Global Brand Success Stories | Haraay"
-    description="See how Haraay has shaped global brands with innovative design and strategy. Explore our portfolio of premium brand transformations."
-    keywords="branding case studies, global brand success, premium brand transformations, corporate identity design, award-winning branding projects"
-  />
+      if (
+        currentRow.length === 0 ||
+        (currentRow.length < currentLimit && limit === currentLimit)
+      ) {
+        currentRow.push(project);
+        currentLimit = limit;
+      } else {
+        rows.push(currentRow);
+        currentRow = [project];
+        currentLimit = limit;
+      }
+    });
 
-    <div className={styles.WorkMain}>
-      {/* Header Section */}
-      <div className={styles.Header}>
-        <div className={styles.headerText}>
-          <h1>All Latest Works</h1>
-          {/* <div className={styles.filterButtons}>
-            {filters.map((filter, idx) => (
-              <button
-                key={idx}
-                className={`${styles.filterButton} ${
-                  activeFilter === filter ? styles.active : ""
-                }`}
-                onClick={() => handleFilterClick(filter)}
+    if (currentRow.length > 0) {
+      rows.push(currentRow);
+    }
+
+    return rows.map((row, rowIndex) => {
+      const priority = row[0].priority;
+      const rowClass =
+        priority === 'high' ? styles.rowFull :
+        priority === 'medium' ? styles.rowHalf :
+        styles.rowSmall;
+
+      return (
+        <div key={rowIndex} className={rowClass}>
+          {row.map((project, index) => {
+            const cardClass =
+              project.priority === 'high' ? styles.cardFull :
+              project.priority === 'medium' ? styles.cardHalf :
+              styles.cardSmall;
+
+            return (
+              <div
+                key={project.id}
+                className={`${styles.projectCard} ${cardClass}`}
+                data-card-id={project.id}
+                onClick={() => handleProjectClick(project.link)}
               >
-                {filter}
+                <div className={styles.imageContainer}>
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className={styles.projectImage}
+                  />
+                </div>
+                <div className={styles.cardInfo}>
+                  <div className={styles.cardLeft}>
+                    <h2 className={styles.cardTitle}>{project.title}</h2>
+                    <p className={styles.cardDescription}>{project.description}</p>
+                  </div>
+                  <div className={styles.cardRight}>
+                    {project.tags.map((tag, i) => (
+                      <span key={i} className={styles.serviceTag}>
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      );
+    });
+  };
+
+  return (
+    <div className={styles.portfolio}>
+      <div className={styles.container}>
+        <div className={styles.header}>
+          <h1 className={styles.title}>Haraay</h1>
+          <p className={styles.subtitle}>
+            We craft bold, functional, and tech-driven design experiences that bring clarity,
+            beauty, and unity across every brand touchpoint.
+          </p>
+        </div>
+
+        <div className={styles.filterSection}>
+          <div className={styles.categories}>
+            {categories.map((category) => (
+              <button
+                key={category}
+                className={`${styles.categoryBtn} ${activeCategory === category ? styles.active : ''}`}
+                onClick={() => setActiveCategory(category)}
+              >
+                {category}
               </button>
             ))}
-          </div> */}
+          </div>
+
+          <div className={styles.viewOptions}>
+            <button className={`${styles.viewBtn} ${styles.active}`}>
+              <span className={styles.stackIcon}>⊞</span> Stack
+            </button>
+            <button className={styles.viewBtn}>
+              <span className={styles.gridIcon}>⊡</span> Grid
+            </button>
+          </div>
+        </div>
+
+        <div className={styles.projectsGrid}>
+          {filteredProjects.length > 0 ? (
+            renderProjectsInSequence()
+          ) : (
+            <div className={styles.noResults}>
+              <p>No projects found for "{activeCategory}" category.</p>
+            </div>
+          )}
+        </div>
+
+        <div className={styles.pagination}>
+          <span className={styles.paginationText}>
+            Showing {filteredProjects.length} records out of {projectsData.length} records
+          </span>
+          <div className={styles.paginationControls}>
+            <button className={styles.paginationBtn}>‹‹</button>
+            <button className={`${styles.paginationBtn} ${styles.active}`}>1</button>
+            <button className={styles.paginationBtn}>2</button>
+            <button className={styles.paginationBtn}>...</button>
+            <button className={styles.paginationBtn}>6</button>
+            <button className={styles.paginationBtn}>››</button>
+          </div>
         </div>
       </div>
-
-      {/* Work Items Grid */}
-      <div className={styles.workGrid}>
-        {displayedWorks.map((work, idx) => (
-        <Link to={work.link}>
-        <div
-            key={work.id}
-            className={`${styles.workItem} ${
-              idx % 2 === 0 ? styles.fromLeft : styles.fromRight
-            }`}
-            ref={(el) => (imageRefs.current[idx] = el)} // Assign ref for GSAP
-          >
-            <img
-              draggable="false"
-              src={work.image}
-              alt={work.title}
-              className={styles.workImage}
-            />
-            <div className={styles.workTitle}> {work.title} </div>
-          </div></Link>
-        ))}
-      </div>
-
-      {/* Pagination */}
-      <div className={styles.pagination}>
-        {Array.from({ length: totalPages }, (_, index) => (
-          <button
-            key={index}
-            className={`${styles.pageButton} ${
-              currentPage === index + 1 ? styles.activePage : ""
-            }`}
-            onClick={() => handlePageClick(index + 1)}
-          >
-            {index + 1}
-          </button>
-        ))}
-      </div>
-
-      <Letstalk />
-    </div> </>
+    </div>
   );
-}
+};
+
+export default Portfolio;
