@@ -73,7 +73,7 @@ const projectsData = [
     priority: "low",
     tags: ["Branding Identity", "3D Design", "Packaging"],
     image: BakersStreet,
-    link: "/casestudy/bakers-street"
+    link: "/casestudy/bakers"
   },
   {
     id: 8,
@@ -82,7 +82,7 @@ const projectsData = [
     priority: "medium",
     tags: ["Branding", "Packaging", "UI/UX", "3D Design", "Motion Graphics"],
     image: satvik,
-    link: "/casestudy/satvik-raas"
+    link: "/casestudy/satvik"
   },
   {
     id: 9,
@@ -109,7 +109,7 @@ const projectsData = [
     priority: "low",
     tags: ["Branding Identity", "Packaging", "3D Design"],
     image: Sereneskin,
-    link: "/casestudy/serene-skin"
+    link: "/casestudy/sereneskin"
   },
   {
     id: 12,
@@ -118,7 +118,7 @@ const projectsData = [
     priority: "low",
     tags: ["Branding Identity", "Packaging"],
     image: creamForest,
-    link: "/casestudy/creams-forest"
+    link: "/casestudy/creamf"
   }
 ];const categories = [
   "All Works",
