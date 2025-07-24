@@ -17,7 +17,7 @@ const projectsData = [
   //   title: "Tool",
   //   description: "Tool is a fun and friendly toothpaste brand made for kids with epic teeth. Colourful and playful branding style, premium packaging",
   //   priority: "small",
-  //   tags: ["Branding", "Packaging", "3D Design"],
+  //   tags: ["Branding", "Packaging", "3D Animation"],
   //   image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=800&h=600&fit=crop",
   //   link: "/casestudy/tool"
   // },
@@ -26,7 +26,7 @@ const projectsData = [
   //   title: "Link Neta",
   //   description: "Mobile application designed to bridge the gap between the people of Goa and the City's offices, providing a streamlined accessible platform for civic engagement.",
   //   priority: "small",
-  //   tags: ["Branding", "UI/UX", "3D Design"],
+  //   tags: ["Branding", "UI/UX", "3D Animation"],
   //   image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop",
   //   link: "/casestudy/linkneta"
   // },
@@ -53,7 +53,7 @@ const projectsData = [
     title: "Haraay's Project Management",
     description: "The application is designed to streamline how teams and track work updates efficiently. It streamlines workflow.",
     priority: "low",
-    tags: ["UI/UX", "3D Design"],
+    tags: ["UI/UX", "3D Animation"],
     image: HaraayProjectManagement,
     link: "/works"
   },
@@ -62,7 +62,7 @@ const projectsData = [
     title: "Gopalan Group",
     description: "Gopalan Real Estate project was a beacon of trust and innovation in the real estate sector. That's why deserving.",
     priority: "low",
-    tags: ["UI/UX", "3D Design", "Motion"],
+    tags: ["UI/UX", "3D Animation", "Motion Graphics"],
     image: Gopalan,
     link: "/casestudy/gopalan"
   },
@@ -71,7 +71,7 @@ const projectsData = [
     title: "Baker's street",
     description: "Baker's street is a new and old shop bakery point which provides heavenly experience of true taste premium.",
     priority: "low",
-    tags: ["Branding Identity", "3D Design", "Packaging"],
+    tags: ["Branding", "3D Animation", "Packaging"],
     image: BakersStreet,
     link: "/casestudy/bakers"
   },
@@ -80,7 +80,7 @@ const projectsData = [
     title: "Satvik raas",
     description: "Satvik Raas Spices, we developed a visual identity, along with nutrition graphics and 3D video animations that tells the brand story in the end showcases to traditional essence in a modern, engaging format.",
     priority: "medium",
-    tags: ["Branding", "Packaging", "UI/UX", "3D Design", "Motion Graphics"],
+    tags: ["Branding", "Packaging", "UI/UX", "3D Animation", "Motion Graphics"],
     image: satvik,
     link: "/casestudy/satvik"
   },
@@ -98,7 +98,7 @@ const projectsData = [
     title: "Virat",
     description: "Virat Shipping facility management services provider, specializing in regulatory compliance that maintains a bold, modern and distinctive brand identity.",
     priority: "low",
-    tags: ["Branding", "UI/UX", "3D Design"],
+    tags: ["Branding", "UI/UX", "3D Animation"],
     image: virat,
     link: "/casestudy/virat"
   },
@@ -107,7 +107,7 @@ const projectsData = [
     title: "Serene Skin",
     description: "Serene Skin nurtures brand truths that encourages self-confidence between users towards their skincare. Sustainable themselves from other skincare firms by providing new.",
     priority: "low",
-    tags: ["Branding Identity", "Packaging", "3D Design"],
+    tags: ["Branding", "Packaging", "3D Animation"],
     image: Sereneskin,
     link: "/casestudy/sereneskin"
   },
@@ -116,7 +116,7 @@ const projectsData = [
     title: "Creams Forest",
     description: "Creams Forest is a natural ice cream brand the branding communicates the fresh taste by connecting nature with indulgence in every scoop.",
     priority: "low",
-    tags: ["Branding Identity", "Packaging"],
+    tags: ["Branding", "Packaging"],
     image: creamForest,
     link: "/casestudy/creamf"
   }
@@ -126,8 +126,8 @@ const projectsData = [
   "Websites",
   "3D Animation",
   "Web application",
-  "Mobile application",
-  "Packaging"
+ "Motion Graphics",
+  "Packaging" ,"UI/UX"
 ];
 
 const Portfolio = () => {
