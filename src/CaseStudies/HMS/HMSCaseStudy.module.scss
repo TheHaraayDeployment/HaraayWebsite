@@ -1074,3 +1074,73 @@ img {
   z-index: 1000;
   transition: width 0.1s ease-out;
 }
+// FIXED Mobile Carousel Wrapper - Add this to your main SCSS file
+.mobileCarouselWrapper {
+  width: 100%;
+  padding: 20px;
+  opacity: 0;
+  transform: translate3d(0, 30px, 0);
+  transition: all 0.6s var(--transition-smooth);
+  
+  // CRITICAL: Remove contain property on mobile - it breaks scrolling
+  @media (max-width: 768px) {
+    // Don't use contain on mobile as it breaks scrolling
+    // contain: layout style paint; // <- REMOVE THIS
+    
+    padding: 15px;
+    display: block;
+    position: relative;
+    
+    // Allow normal scrolling behavior
+    overflow: visible;
+    -webkit-overflow-scrolling: touch;
+    
+    // Don't restrict touch actions - allow vertical scroll
+    touch-action: manipulation;
+    
+    // Ensure proper z-index layering
+    z-index: 1;
+  }
+
+  &.sectionVisible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  // Hide on desktop
+  @media (min-width: 769px) {
+    display: none;
+  }
+  
+  // Extra small mobile devices
+  @media (max-width: 480px) {
+    padding: 10px;
+  }
+}
+
+// Also fix your main page container
+.caseStudyMainPage {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  
+  // CRITICAL: Don't use contain on mobile
+  @media (min-width: 769px) {
+    contain: layout style paint;
+  }
+  
+  // Enhanced mobile scrolling
+  @media (max-width: 768px) {
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+    
+    // Allow all touch gestures including vertical scroll
+    touch-action: manipulation;
+    overscroll-behavior: contain;
+    
+    // Don't use contain on mobile
+    contain: none;
+  }
+}

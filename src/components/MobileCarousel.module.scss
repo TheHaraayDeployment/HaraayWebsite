@@ -1,3 +1,284 @@
+// .mobileCarousel {
+//   display: none;
+  
+//   @media (max-width: 768px) {
+//     display: block;
+//     width: 100%;
+//     padding: 20px 15px;
+//     // Optimize rendering
+//     will-change: transform;
+//     contain: layout style paint;
+//   }
+// }
+
+// .carouselContainer {
+//   position: relative;
+//   width: 100%;
+//   background: #f8f9fa;
+//   border-radius: 12px;
+//   overflow: hidden;
+//   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+//   // Performance optimizations
+//   transform: translateZ(0); // Creates new layer
+//   backface-visibility: hidden;
+//   -webkit-backface-visibility: hidden;
+//   // Smooth touch interactions
+//   touch-action: pan-x pinch-zoom;
+// }
+
+// .imageWrapper {
+//   position: relative;
+//   width: 100%;
+//   min-height: 200px;
+//   overflow: hidden;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   // Performance optimizations
+//   will-change: transform;
+//   contain: layout style paint;
+// }
+
+// .carouselImage {
+//   width: 100%;
+//   height: auto;
+//   max-width: 100%;
+//   object-fit: contain;
+//   object-position: center;
+//   display: block;
+//   // Smooth transitions with GPU acceleration
+//   transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+//   transform: translateZ(0);
+//   backface-visibility: hidden;
+//   -webkit-backface-visibility: hidden;
+//   // Optimize image rendering
+//   image-rendering: optimizeQuality;
+//   -webkit-image-smoothing: true;
+//   image-smoothing: smooth;
+// }
+
+// // Navigation buttons with smooth interactions
+// .navButton {
+//   position: absolute;
+//   top: 50%;
+//   transform: translateY(-50%) translateZ(0);
+//   background: rgba(255, 255, 255, 0.9);
+//   border: none;
+//   border-radius: 50%;
+//   width: 40px;
+//   height: 40px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   cursor: pointer;
+//   z-index: 2;
+//   // Smooth transitions with hardware acceleration
+//   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+//   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+//   // Performance optimizations
+//   will-change: transform, background-color;
+//   backface-visibility: hidden;
+//   -webkit-backface-visibility: hidden;
+//   // Prevent text selection
+//   user-select: none;
+//   -webkit-user-select: none;
+//   // Smooth touch
+//   -webkit-tap-highlight-color: transparent;
+
+//   &:hover:not(:disabled) {
+//     background: rgba(255, 255, 255, 1);
+//     transform: translateY(-50%) scale(1.05) translateZ(0);
+//   }
+
+//   &:active:not(:disabled) {
+//     transform: translateY(-50%) scale(0.95) translateZ(0);
+//     transition-duration: 0.1s;
+//   }
+
+//   &:disabled {
+//     opacity: 0.5;
+//     cursor: not-allowed;
+//   }
+
+//   svg {
+//     color: #333;
+//     // Prevent svg lag
+//     transform: translateZ(0);
+//   }
+// }
+
+// .prevButton {
+//   left: 15px;
+// }
+
+// .nextButton {
+//   right: 15px;
+// }
+
+// // Smooth dots with optimized rendering
+// .dotsContainer {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   gap: 8px;
+//   padding: 15px 20px;
+//   background: linear-gradient(to top, rgba(0, 0, 0, 0.1), transparent);
+//   // Performance
+//   will-change: transform;
+//   contain: layout style paint;
+// }
+
+// .dot {
+//   width: 8px;
+//   height: 8px;
+//   border-radius: 50%;
+//   border: none;
+//   background: rgba(255, 255, 255, 0.5);
+//   cursor: pointer;
+//   // Smooth dot transitions
+//   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+//   // Performance optimizations
+//   transform: translateZ(0);
+//   backface-visibility: hidden;
+//   -webkit-backface-visibility: hidden;
+//   will-change: transform, background-color;
+//   // Touch optimization
+//   -webkit-tap-highlight-color: transparent;
+//   user-select: none;
+//   -webkit-user-select: none;
+
+//   &.activeDot {
+//     background: #fff;
+//     transform: scale(1.2) translateZ(0);
+//     box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+//   }
+
+//   &:hover:not(:disabled) {
+//     background: rgba(255, 255, 255, 0.8);
+//     transform: scale(1.1) translateZ(0);
+//   }
+
+//   &:disabled {
+//     opacity: 0.5;
+//     cursor: not-allowed;
+//   }
+// }
+
+// // Optimized counter
+// .counter {
+//   position: absolute;
+//   top: 15px;
+//   right: 15px;
+//   background: rgba(0, 0, 0, 0.7);
+//   color: white;
+//   padding: 5px 10px;
+//   border-radius: 15px;
+//   font-size: 12px;
+//   font-weight: 500;
+//   z-index: 2;
+//   // Performance
+//   transform: translateZ(0);
+//   backface-visibility: hidden;
+//   -webkit-backface-visibility: hidden;
+//   // Prevent text selection
+//   user-select: none;
+//   -webkit-user-select: none;
+// }
+
+// // Responsive optimizations
+// @media (max-width: 480px) {
+//   .mobileCarousel {
+//     padding: 15px 10px;
+//   }
+
+//   .imageWrapper {
+//     min-height: 150px;
+//   }
+
+//   .navButton {
+//     width: 35px;
+//     height: 35px;
+    
+//     svg {
+//       width: 16px;
+//       height: 16px;
+//     }
+//   }
+
+//   .prevButton {
+//     left: 10px;
+//   }
+
+//   .nextButton {
+//     right: 10px;
+//   }
+
+//   .counter {
+//     top: 10px;
+//     right: 10px;
+//     font-size: 11px;
+//     padding: 4px 8px;
+//   }
+
+//   .dot {
+//     width: 6px;
+//     height: 6px;
+//   }
+// }
+
+// // Smooth fade animation with GPU acceleration
+// @keyframes fadeIn {
+//   from {
+//     opacity: 0;
+//     transform: translateZ(0);
+//   }
+//   to {
+//     opacity: 1;
+//     transform: translateZ(0);
+//   }
+// }
+
+// .carouselImage {
+//   animation: fadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+// }
+
+// // Preload optimization for better performance
+// .carouselContainer::before {
+//   content: '';
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   pointer-events: none;
+//   transform: translateZ(0);
+// }
+
+// // Disable text selection and improve touch
+// .mobileCarousel * {
+//   -webkit-tap-highlight-color: transparent;
+//   -webkit-touch-callout: none;
+//   -webkit-user-select: none;
+//   -khtml-user-select: none;
+//   -moz-user-select: none;
+//   -ms-user-select: none;
+//   user-select: none;
+// }
+
+// // Smooth scrolling for the entire carousel
+// .mobileCarousel {
+//   -webkit-overflow-scrolling: touch;
+//   scroll-behavior: smooth;
+// }
+
+// // High DPI display optimizations
+// @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+//   .carouselImage {
+//     image-rendering: -webkit-optimize-contrast;
+//     image-rendering: crisp-edges;
+//   }
+// }
+
 .mobileCarousel {
   display: none;
   
@@ -5,9 +286,13 @@
     display: block;
     width: 100%;
     padding: 20px 15px;
-    // Optimize rendering
-    will-change: transform;
-    contain: layout style paint;
+    
+    // CRITICAL: Remove contain property on mobile - it breaks scrolling!
+    // contain: layout style paint; // <- This breaks mobile scrolling
+    
+    // Allow normal scrolling behavior
+    position: relative;
+    overflow: visible;
   }
 }
 
@@ -18,12 +303,14 @@
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  // Performance optimizations
-  transform: translateZ(0); // Creates new layer
+  
+  // CRITICAL: Fix touch-action to allow vertical scrolling
+  touch-action: manipulation; // Allow all touch gestures including vertical scroll
+  
+  // Keep only essential performance optimizations
+  transform: translateZ(0);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  // Smooth touch interactions
-  touch-action: pan-x pinch-zoom;
 }
 
 .imageWrapper {
@@ -34,9 +321,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  // Performance optimizations
-  will-change: transform;
-  contain: layout style paint;
+  
+  // CRITICAL: Remove contain property that breaks scrolling
+  // contain: layout style paint; // <- This also breaks scrolling
 }
 
 .carouselImage {
@@ -46,22 +333,24 @@
   object-fit: contain;
   object-position: center;
   display: block;
-  // Smooth transitions with GPU acceleration
+  
+  // Keep smooth transitions but allow scrolling
   transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateZ(0);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  
   // Optimize image rendering
   image-rendering: optimizeQuality;
   -webkit-image-smoothing: true;
   image-smoothing: smooth;
 }
 
-// Navigation buttons with smooth interactions
+// Navigation buttons - fixed positioning issues
 .navButton {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%) translateZ(0);
+  transform: translateY(-50%);
   background: rgba(255, 255, 255, 0.9);
   border: none;
   border-radius: 50%;
@@ -72,26 +361,29 @@
   justify-content: center;
   cursor: pointer;
   z-index: 2;
-  // Smooth transitions with hardware acceleration
+  
+  // Smooth transitions but don't interfere with page scrolling
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  // Performance optimizations
-  will-change: transform, background-color;
+  
+  // Performance optimizations that don't break scrolling
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  
   // Prevent text selection
   user-select: none;
   -webkit-user-select: none;
-  // Smooth touch
+  
+  // Better touch interaction
   -webkit-tap-highlight-color: transparent;
 
   &:hover:not(:disabled) {
     background: rgba(255, 255, 255, 1);
-    transform: translateY(-50%) scale(1.05) translateZ(0);
+    transform: translateY(-50%) scale(1.05);
   }
 
   &:active:not(:disabled) {
-    transform: translateY(-50%) scale(0.95) translateZ(0);
+    transform: translateY(-50%) scale(0.95);
     transition-duration: 0.1s;
   }
 
@@ -115,7 +407,7 @@
   right: 15px;
 }
 
-// Smooth dots with optimized rendering
+// Dots container - remove problematic contain
 .dotsContainer {
   display: flex;
   justify-content: center;
@@ -123,9 +415,9 @@
   gap: 8px;
   padding: 15px 20px;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.1), transparent);
-  // Performance
-  will-change: transform;
-  contain: layout style paint;
+  
+  // CRITICAL: Remove contain property
+  // contain: layout style paint; // <- This breaks scrolling
 }
 
 .dot {
@@ -135,13 +427,15 @@
   border: none;
   background: rgba(255, 255, 255, 0.5);
   cursor: pointer;
+  
   // Smooth dot transitions
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  // Performance optimizations
+  
+  // Performance optimizations that don't break scrolling
   transform: translateZ(0);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  will-change: transform, background-color;
+  
   // Touch optimization
   -webkit-tap-highlight-color: transparent;
   user-select: none;
@@ -164,7 +458,7 @@
   }
 }
 
-// Optimized counter
+// Counter positioning
 .counter {
   position: absolute;
   top: 15px;
@@ -176,10 +470,12 @@
   font-size: 12px;
   font-weight: 500;
   z-index: 2;
+  
   // Performance
   transform: translateZ(0);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  
   // Prevent text selection
   user-select: none;
   -webkit-user-select: none;
@@ -226,7 +522,7 @@
   }
 }
 
-// Smooth fade animation with GPU acceleration
+// Smooth fade animation
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -242,19 +538,7 @@
   animation: fadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-// Preload optimization for better performance
-.carouselContainer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  transform: translateZ(0);
-}
-
-// Disable text selection and improve touch
+// CRITICAL: Only disable text selection, don't restrict touch actions
 .mobileCarousel * {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
@@ -265,10 +549,17 @@
   user-select: none;
 }
 
-// Smooth scrolling for the entire carousel
+// CRITICAL: Ensure proper mobile scrolling
 .mobileCarousel {
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
+  
+  // Allow normal page scrolling through the carousel
+  pointer-events: auto;
+  
+  // Don't interfere with page scroll
+  position: relative;
+  z-index: 1;
 }
 
 // High DPI display optimizations
