@@ -2,15 +2,15 @@ import React, { useEffect, useState, useCallback, useRef } from "react";
 import styles from "./HMSCaseStudy.module.scss";
 import HeroImg from "./HMSHero.jpg";
 import sec2Left from "./sec2left.jpg";
-import sec2Middle from "./sec2middle.jpg";
-import sec2Right from "./sec2Right.jpg";
+import sec2Middle from "./Sec2middle.jpg";
+import sec2Right from "./Sec2Right.jpg";
 import sec3UpLeft from "./Sec3UpLeft.svg";
 import sec3UpRight from "./Sec3UpRight.svg";
 import sec3DownLeft from "./Sec3DownLeft.svg";
 import sec3DownRight from "./Sec3DownRight.svg";
-import sec4UpLeft from "./Sec4UpLeft.svg";
-import sec4UpRight from "./Sec4UpRight.svg";
-import sec4Down from "./Sec4Down.svg";
+import sec4UpLeft from "./sec4UpLeft.svg";
+import sec4UpRight from "./sec4UpRight.svg";
+import sec4Down from "./sec4Down.svg";
 import MobileCarousel from "../../components/MobileCarousel";
 
 export default function HMS() {
