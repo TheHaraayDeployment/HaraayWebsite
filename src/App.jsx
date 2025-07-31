@@ -42,6 +42,8 @@ import ScrollToTop from "./components/ScrollToTop";
 import Preloader from "./components/Preloader.jsx";
 import FaqPage from "./pages/FAQPage.jsx";
 import SatvikraasCaseStudy from "./pages/CaseStudy/SatvikraasCaseStudy.jsx";
+import Tooth from "./CaseStudies/Tooth/ToothCaseStudy.jsx";
+import HMS from "./CaseStudies/HMS/HMSCaseStudy.jsx";
 function App() {
   const isNavigating = useNavigationEvent(); // Get navigation event status
   const location = useLocation();
@@ -113,6 +115,8 @@ function App() {
     "/casestudy/creamf",
     "/casestudy/satvik",
     "/casestudy/gopalan",
+    "/casestudy/tooth",
+    "/casestudy/hms",
   ];
   const isValidRoute = validRoutes.includes(location.pathname);
   return (
@@ -149,6 +153,8 @@ function App() {
           <Route path="/casestudy/bosch" element={<BoschCaseStudy />} />
           <Route path="/casestudy/satvik" element={< SatvikraasCaseStudy/>} />
           <Route path="/casestudy/gopalan" element={<Gopalan/>} />
+          <Route path="/casestudy/tooth" element={<Tooth/>} />
+          <Route path="/casestudy/hms" element={<HMS/>} />
           {/* <Route path="/casestudy/akoya1" element={<Akoyavideo />} /> */}
           <Route path="*" element={<NotFound />} />
         </Routes>
