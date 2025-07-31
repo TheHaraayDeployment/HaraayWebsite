@@ -55,7 +55,7 @@ const projectsData = [
     priority: "low",
     tags: ["UI/UX", "3D Animation"],
     image: HaraayProjectManagement,
-    link: "/hms"
+    link: "/casestudy/hms"
   },
   {
     id: 6,
