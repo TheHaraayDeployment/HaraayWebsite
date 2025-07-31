@@ -722,9 +722,7 @@ line-height: 150%; /* 27px */
       .textContent {
         p,
         span {
-          font-size: 15px;
-          text-align: left;
-          line-height: 140%;
+           font-size: 16px; text-align: justify;
         }
       }
     }
@@ -738,9 +736,9 @@ line-height: 150%; /* 27px */
     }
 
     .rightSide .textContent {
-      p,
+      p, strong,
       span {
-        font-size: 14px;
+        font-size: 16px; text-align: justify !important;
       }
     }
   }
