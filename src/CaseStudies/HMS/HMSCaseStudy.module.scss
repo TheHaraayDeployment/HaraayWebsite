@@ -18,6 +18,7 @@
   contain: layout style paint;
   // will-change: background-color;
   overflow-x: hidden;
+  overflow-y: auto;
 
   // &.loaded {
   //   background-color: var(--background-light);
@@ -1024,18 +1025,18 @@ img {
 }
 
 // GPU acceleration for key elements
-.caseStudyMainPage,
-.HeroSection,
-.textSection,
-.imageSection,
-.imageSection2,
-.imageSection3,
-.imageSection4,
-.imageSection5 {
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-}
+// .caseStudyMainPage,
+// .HeroSection,
+// .textSection,
+// .imageSection,
+// .imageSection2,
+// .imageSection3,
+// .imageSection4,
+// .imageSection5 {
+//   transform: translateZ(0);
+//   backface-visibility: hidden;
+//   -webkit-backface-visibility: hidden;
+// }
 
 // Loading states and micro-interactions
 .imageWrapper {
@@ -1062,18 +1063,18 @@ img {
   }
 }
 
-// Scroll indicator (optional)
-.caseStudyMainPage::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: var(--scroll-progress, 0%);
-  height: 3px;
-  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-  z-index: 1000;
-  transition: width 0.1s ease-out;
-}
+// // Scroll indicator (optional)
+// .caseStudyMainPage::after {
+//   content: "";
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: var(--scroll-progress, 0%);
+//   height: 3px;
+//   background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+//   z-index: 1000;
+//   transition: width 0.1s ease-out;
+// }
 // FIXED Mobile Carousel Wrapper - Add this to your main SCSS file
 .mobileCarouselWrapper {
   width: 100%;
@@ -1118,29 +1119,3 @@ img {
   }
 }
 
-// Also fix your main page container
-.caseStudyMainPage {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  background-color: #ffffff;
-  overflow-x: hidden;
-  
-  // CRITICAL: Don't use contain on mobile
-  @media (min-width: 769px) {
-    contain: layout style paint;
-  }
-  
-  // Enhanced mobile scrolling
-  @media (max-width: 768px) {
-    -webkit-overflow-scrolling: touch;
-    overflow-scrolling: touch;
-    
-    // Allow all touch gestures including vertical scroll
-    touch-action: manipulation;
-    overscroll-behavior: contain;
-    
-    // Don't use contain on mobile
-    contain: none;
-  }
-}
