@@ -14,7 +14,7 @@ import Sec2Mid3 from "./Sec2Mid3.png";
 import sec2Left from "./sec2left.jpg";
 import Sec3Full from "./Sec3Full.png";
 import sec2Right from "./Sec2Right.jpg";
-import sec41 from "./Sec4Up.png";
+import sec41 from "./Sec4up.png";
 import sec42 from "./Sec42.png";
 import sec43 from "./Sec42.png";
 import sec44 from "./Sec44.png";
