@@ -6,7 +6,7 @@ import sec3UpRight from "./Sec3right.jpg";
 
 import Sec2Full from "./sec2Full.png";
 import sec2Left from "./sec2left.jpg";
-import Sec3Full from "./sec3Full.png";
+import Sec3Full from "./Sec3Full.png";
 import sec2Right from "./Sec2Right.jpg";
 import sec41 from "./Sec4Up.png"
 import sec42 from "./Sec42.png"
