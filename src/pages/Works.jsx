@@ -315,7 +315,7 @@
 
 // export default Portfolio;
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,useRef } from 'react';
 import styles from './Works.module.scss';
 import boschCard from "./WorksPageImages/BoschCard.svg"
 import akoya from "./WorksPageImages/akoya.svg"
@@ -324,7 +324,7 @@ import creamForest from "./WorksPageImages/creamForest.svg"
 import Gopalan from "./WorksPageImages/Gopalan.svg"
 import HaraayProjectManagement from "./WorksPageImages/HaraayProjectManagement.svg"
 import satvik from "./WorksPageImages/satvik.svg"
-import Sereneskin from "./WorksPageImages/Sereneskin.svg"
+import Sereneskin from "./WorksPageImages/Sereneskin.png"
 import virat from "./WorksPageImages/virat.svg"
 import lokneta from "./WorksPageImages/lokneta.png"
 import toot from "./WorksPageImages/toot.png"
@@ -381,7 +381,7 @@ const projectsData = [
     title: "Haraay's Project Management",
     description: "The application is designed to streamline how teams and track work updates efficiently. It streamlines workflow.",
     priority: "low",
-    tags: ["UI/UX", "3D Animation"],
+    tags: ["Web application"],
     image: HaraayProjectManagement,
     mediaType: "image",
     link: "/casestudy/hms"
@@ -391,7 +391,7 @@ const projectsData = [
     title: "Gopalan Group",
     description: "Gopalan Real Estate project was a beacon of trust and innovation in the real estate sector. That's why deserving.",
     priority: "low",
-    tags: ["UI/UX", "3D Animation", "Motion Graphics"],
+    tags: ["UI/UX", "3D Animation", "Motion Graphics","Websites"],
     image: Gopalan,
     mediaType: "image",
     link: "/casestudy/gopalan"
@@ -411,7 +411,7 @@ const projectsData = [
     title: "Satvik raas",
     description: "Satvik Raas Spices, we developed a visual identity, along with nutrition graphics and 3D video animations that tells the brand story in the end showcases to traditional essence in a modern, engaging format.",
     priority: "medium",
-    tags: ["Branding", "Packaging", "UI/UX", "3D Animation", "Motion Graphics"],
+    tags: ["Branding", "Packaging", "UI/UX", "3D Animation", "Motion Graphics","Websites"],
     image: satvik,
     mediaType: "image",
     link: "/casestudy/satvik"
@@ -431,7 +431,7 @@ const projectsData = [
     title: "Virat",
     description: "Virat Shipping facility management services provider, specializing in regulatory compliance that maintains a bold, modern and distinctive brand identity.",
     priority: "low",
-    tags: ["Branding", "UI/UX", "3D Animation"],
+    tags: ["Branding", "UI/UX", "3D Animation","Websites"],
     image: virat,
     mediaType: "image",
     link: "/casestudy/virat"
@@ -473,7 +473,7 @@ const Portfolio = () => {
   const [activeCategory, setActiveCategory] = useState("All Works");
   const [filteredProjects, setFilteredProjects] = useState(projectsData);
   const [visibleCards, setVisibleCards] = useState([]);
-
+const videoRefs = useRef({}); // Store refs for all videos
   useEffect(() => {
     if (activeCategory === "All Works") {
       setFilteredProjects(projectsData);
@@ -487,56 +487,52 @@ const Portfolio = () => {
     }
   }, [activeCategory]);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const cardId = entry.target.getAttribute('data-card-id');
-            setVisibleCards(prev => [...new Set([...prev, cardId])]);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
+useEffect(() => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const cardId = entry.target.getAttribute("data-card-id");
+      const videoElement = videoRefs.current[cardId];
+      if (videoElement) {
+        if (entry.isIntersecting && videoElement.paused) {
+          videoElement.play().catch(console.error);
+        } else if (!entry.isIntersecting && !videoElement.paused) {
+          videoElement.pause();
+        }
+      }
+    });
+  }, { threshold: 0.1 });
 
-    const cards = document.querySelectorAll(`.${styles.projectCard}`);
-    cards.forEach(card => observer.observe(card));
+  const cards = document.querySelectorAll(`.${styles.projectCard}`);
+  cards.forEach((card) => observer.observe(card));
 
-    return () => observer.disconnect();
-  }, [filteredProjects]);
+  return () => observer.disconnect();
+}, [filteredProjects]);
 
   const handleProjectClick = (link) => {
     window.location.href = link;
   };
 
   // Media component to render either image or video
-  const MediaComponent = ({ project }) => {
-    if (project.mediaType === "video") {
-      return (
-        <video
-          src={project.image}
-          className={styles.projectVideo}
-          autoPlay
-          muted
-          loop
-          playsInline
-          onError={(e) => {
-            console.error(`Video failed to load: ${project.image}`);
-            // Fallback to a placeholder or static image if video fails
-          }}
-        />
-      );
-    } else {
-      return (
-        <img
-          src={project.image}
-          alt={project.title}
-          className={styles.projectImage}
-        />
-      );
-    }
-  };
+const MediaComponent = ({ project }) => {
+  if (project.mediaType === "video") {
+    return (
+      <video
+        ref={(el) => {
+          if (el) videoRefs.current[project.id] = el;
+        }}
+        src={project.image}
+        className={styles.projectVideo}
+        autoPlay
+        muted
+        loop
+        playsInline
+        onError={(e) => console.error(`Video failed to load: ${project.image}`)}
+      />
+    );
+  } else {
+    return <img src={project.image} alt={project.title} className={styles.projectImage} />;
+  }
+};
 
   const renderProjectsInSequence = () => {
     const rows = [];
@@ -655,7 +651,7 @@ const Portfolio = () => {
           )}
         </div>
 
-        <div className={styles.pagination}>
+        {/* <div className={styles.pagination}>
           <span className={styles.paginationText}>
             Showing {filteredProjects.length} records out of {projectsData.length} records
           </span>
@@ -667,7 +663,7 @@ const Portfolio = () => {
             <button className={styles.paginationBtn}>6</button>
             <button className={styles.paginationBtn}>››</button>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

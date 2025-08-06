@@ -137,8 +137,8 @@ function Footer() {
             <ul>
               <li>
                 <Icons.FaLocationDot className="iconstyle" title="location" />
-                Right, near Royal Enfield, Bhusari Colony, Kothrud, Pune,
-                Maharashtra 411038
+                Pune,
+                Maharashtra <br /> &nbsp;&nbsp; &nbsp; 411038
               </li>
               <li className={styles.mlocc}>India</li>
               {/* <li>📧 hello@haraaydesignstudio.com</li> */}

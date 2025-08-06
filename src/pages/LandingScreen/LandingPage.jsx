@@ -15,7 +15,7 @@ import heroimg3 from "../../assets/ViratCasestudyPackaging2.svg";
 import Akoyaheroimg from "../../assets/Akoyaheroimg.svg";
 import Projectimg1 from "../../assets/Akoyaheroimg.webp";
 import Projectimg2 from "../../assets/Bosch/Boschimg.webp";
-import Projectimg3 from "../../assets/BMS/BMSimg.webp"; 
+import Projectimg3 from "../../assets/NECC.jpg"; 
 import Projectimg4 from "../../assets/Lokneta/lokneta.webp";
 import Projectimg5 from "../../assets/Satvikraas/Satvikraas.webp";
 import gopalanimg from "../../assets/gopalan2.jpg"
@@ -348,8 +348,8 @@ export default function LandingPage() {
           </Link>
           <div to={"/casestudy/akoya"} className="projectCards">
             <div className={styles.projectcardtxt}>
-              <h1>BMS</h1>
-              <h3>Web Designing</h3>
+              <h1>NECC</h1>
+              <h3>Branding </h3>
             </div>
             <img
               draggable="false"

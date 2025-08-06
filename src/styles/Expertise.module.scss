@@ -283,7 +283,7 @@ $breakpoint-extra-large: 1200px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("../assets/ExpertiseHero.svg") no-repeat center/cover;
+  background: url("../assets/ExpertiseHero.jpg") no-repeat center/cover;
   @include respond-to(small) {
     height: 100vh;
   }

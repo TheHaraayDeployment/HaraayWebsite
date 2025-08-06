@@ -139,21 +139,21 @@ const NavbarMain = () => {
         </ul>
         <div className={styles.navsocial}>
           <div >
-          <div className={styles.navinforbox}>
+          {/* <div className={styles.navinforbox}>
             <Icons.TbMailFilled className={styles.iconstyle} title="Home" />
             <h2>hello@haraaydesignstudio.com</h2>
-          </div>
-          <div className={styles.navinforbox}>
+          </div> */}
+          {/* <div className={styles.navinforbox}>
             <Icons.FaLocationDot className={styles.iconstyle} title="Home" />
             <h2>
               Right, near Royal Enfield, Bhusari Colony, Kothrud, Pune,
               Maharashtra 411038
             </h2>
-          </div> 
+          </div>  */}
           </div> 
           <div className={styles.socialicons}>
             <a
-              href="https://www.instagram.com/haraay_studio/"
+              href="https://www.instagram.com/theharaay_studio/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -166,7 +166,7 @@ const NavbarMain = () => {
             <a href="https://www.linkedin.com/company/haraaydesignstudio/?viewAsMember=true" target="_blank">
               <Icons.Linkedin className={styles.siconstyle} title="Linkdein" />
             </a>{" "}
-            <a href="https://www.facebook.com/Hugedesign.in" target="_blank">
+            <a href="https://www.facebook.com/61573938452721" target="_blank">
               <Icons.Facebook className={styles.siconstyle} title="Facebook" />{" "}
             </a>{" "}
             <a href="https://www.behance.net/helloharaaystudio" target="_blank">

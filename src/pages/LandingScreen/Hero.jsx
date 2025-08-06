@@ -1186,6 +1186,7 @@ import bubble9 from "./images/bubble9.png"
 import bubble10 from "./images/bubble10.png"
 import bubble11 from "./images/bubble11.png"
 import bubble12 from "./images/bubble12.png"
+import CraftDropdown from "./Craft";
 
 // Bubble configs based on screen size
 const bubbleConfigs = {
@@ -1641,8 +1642,9 @@ const BubbleAnimation = () => {
         <h1>Elevating brands through design precision and digital brilliance—Haraay, the choice of industry leaders.</h1>
         <p>Haraay Design Studio – Redefining digital excellence with bespoke design solutions that empower visionary brands to thrive</p>
         <div className="btnDiv">
-          <Link to={"/works"} className="filledButton">Explore Work</Link>
-          <Link className="emptyButton" to={"/expertise"}>See All Services</Link>
+          {/* <Link to={"/works"} className="filledButton">Explore Work</Link> */}
+          {/* <Link className="emptyButton" to={"/expertise"}>See All Services</Link> */}
+         
         </div>
       </animated.div>
      

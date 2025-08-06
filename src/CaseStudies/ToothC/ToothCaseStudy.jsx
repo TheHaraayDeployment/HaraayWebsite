@@ -24,9 +24,9 @@ import MobileCarousel from "../../components/MobileCarousel";
 import iconarrow from "../../assets/iconarrow.png";
 import iconarrow2 from "../../assets/iconarrow2.png";
 import SimilarProjectsCards from "../../components/SeeMoreProjects";
-import case1 from "./case1.png";
+import case1 from "./case1.jpg";
 import case2 from "./case2.png";
-import case3 from "./case3.png";
+import case3 from "./case3.jpg";
 import sec3up from "./Sec3up.jpg";
 import sec3down from "./Sec3down.jpg";
 export default function HMS() {
@@ -47,18 +47,18 @@ export default function HMS() {
   const demoCards = [
     {
       image: case1,
-      text: "Akoya",
-      link: "https://example.com/akoya",
+      text: "Purus",
+      link: "#",
     },
     {
       image: case2,
-      text: "Amcho Dotor",
-      link: "https://example.com/amcho-dotor",
+      text: "Akoya",
+      link: "/casestudy/akoya",
     },
     {
       image: case3,
-      text: "Coming Soon",
-      link: "https://example.com/coming-soon",
+      text: "Necc",
+      link: "/casestudy/necc",
     },
   ];
 
