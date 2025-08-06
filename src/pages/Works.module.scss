@@ -447,7 +447,7 @@ img{ object-position: 50% 50%;}
 .cardRight {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end; // ✅ Aligns items to right
+  // justify-content: flex-end; // ✅ Aligns items to right
   gap: 8px;
   color: #C8C8C8;
   font-family: Stara;
