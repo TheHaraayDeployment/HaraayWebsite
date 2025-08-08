@@ -23,8 +23,8 @@ import sec6Full from "./sec6Full.jpg";
 import sec3DownLeft from "./Sec3DownLeft.svg";
 import sec3DownRight from "./Sec3DownRight.svg";
 
-import sec51 from "./sec5left.jpg";
-import sec52 from "./sec5right.jpg";
+import sec51 from "./Sec5left.jpg";
+import sec52 from "./Sec5right.jpg";
 // import sec43 from "./Sec43.jpg";
 // import sec44 from "./Sec4Down.jpg";
 import sec5Full from "./Sec5Full.jpg";

@@ -1,5 +1,5 @@
 import React from "react";
-import heroimg from "../assets/aboutushero.svg";
+import heroimg from "../assets/aboutushero.jpg";
 import teamimg from "../assets/team1.svg";
 import styles from "../styles/AboutUs.module.scss";
 import AboutSectionImg from "../assets/AboutUssubimg.svg";
