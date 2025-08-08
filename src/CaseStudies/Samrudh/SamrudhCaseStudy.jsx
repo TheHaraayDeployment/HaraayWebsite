@@ -9,9 +9,9 @@ import sec2Right from "./Sec2Right.jpg";
 
 // import Sec3Full from "./Sec3Full.jpg";
 
-import Sec31 from "./Sec31.jpg"
-import Sec32 from "./Sec32.jpg"
-import Sec33 from "./Sec33.jpg"
+import Sec31 from "./sec31.jpg"
+import Sec32 from "./sec32.jpg"
+import Sec33 from "./sec33.jpg"
 
 
 
