@@ -12,6 +12,11 @@ import virat from "./WorksPageImages/virat.svg"
 import lokneta from "./WorksPageImages/lokneta.png"
 import toot from "./WorksPageImages/toot.png"
 import necc from "./WorksPageImages/necc.jpg"
+import hylete from "./WorksPageImages/hylete.jpg"
+import samrudh from "./WorksPageImages/samrudh.jpg"
+import bms from "./WorksPageImages/bms.jpg"
+import purus from "./WorksPageImages/purus.jpg"
+import alankar from "./WorksPageImages/alanakr.jpg"
 
 // Add your video files here
 import boschVideo from  "./WorksPageImages/Bosch.mp4"// Add your Bosch video path
@@ -21,13 +26,50 @@ import akoyaVideo from "./WorksPageImages/akoya.mp4" // Add your Akoya video pat
 const projectsData = [
   {
     id: 1,
-    title: "Toot",
-    description: "Tool is a fun and friendly toothpaste brand made for kids with epic teeth. Colourful and playful branding style, premium packaging",
+    title: "Hylete",
+    description: "Hylete is an international sports event company that operates at intersection of performance, innovation, and community.",
     priority: "small",
-    tags: ["Branding", "Packaging", "3D Animation"],
-    image: toot,
+    tags: ["Branding"],
+    image: hylete,
     mediaType: "image",
-    link: "/casestudy/toot"
+    link: "/casestudy/hylete"
+  },{
+    id: 1,
+    title: "Samruddh Bharat Technologies",
+    description: "Empowering citizens with digital literacy and skills, promoting digital inclusion, and advancing the adoption.",
+    priority: "small",
+    tags: ["Branding", "App Development", "UI/UX"],
+    image: samrudh,
+    mediaType: "image",
+    link: "#"
+  },{
+    id: 1,
+    title: "BMS",
+    description: "Business Management System (BMS) Web Application for a Real Estate Company",
+    priority: "small",
+    tags: ["UI/UX", "Web Application", "3D Animation"],
+    image: bms,
+    mediaType: "image",
+    link: "/casestudy/bms"
+  },
+ {
+    id: 2,
+    title: "Puru’s",
+    description: "Puru’s Enterprises specializes in business consulting and sustainable lifestyle  products. As a solutions-based firm, they are dedicated to creating a brighter  future by inspiring individuals.",
+    priority: "medium",
+    tags: ["Branding", "3D Character Design", "Packaging"],
+    image: purus,
+    mediaType: "image",
+    link: "#"
+  },  {
+    id: 2,
+    title: "Alankar",
+    description: "We combine creative thinking with cutting-edge technology to ensure your brand stands out—on paper, in-store, and everywhere in between.",
+    priority: "medium",
+    tags: ["App Development", "Branding", "UI/UX"],
+    image: alankar,
+    mediaType: "image",
+    link:  "/casestudy/alanakr"
   },
   {
     id: 2,
@@ -38,7 +80,16 @@ const projectsData = [
     image: lokneta,
     mediaType: "image",
     link: "#"
-  },
+  },  {
+    id: 1,
+    title: "Toot",
+    description: "Tool is a fun and friendly toothpaste brand made for kids with epic teeth. Colourful and playful branding style, premium packaging",
+    priority: "small",
+    tags: ["Branding", "Packaging", "3D Animation"],
+    image: toot,
+    mediaType: "image",
+    link: "/casestudy/toot"
+  }, 
   {
     id: 3,
     title: "NECC",

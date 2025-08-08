@@ -1,6 +1,6 @@
 // src/App.js
 import React, { useEffect, useState } from "react";
-import { HelmetProvider } from 'react-helmet-async';
+import { HelmetProvider } from "react-helmet-async";
 import {
   BrowserRouter as Router,
   Route,
@@ -11,7 +11,7 @@ import "./App.css";
 import Lenis from "@studio-freight/lenis";
 import useNavigationEvent from "./components/useNavigationEvent.jsx";
 import { AnimatePresence } from "framer-motion";
-import  PageTransition  from "./pages/Pagetransition/PageTransition.jsx";
+import PageTransition from "./pages/Pagetransition/PageTransition.jsx";
 // Main Pages
 import Navbar from "./components/NavbarMain.jsx";
 import Footer from "./components/Footer.jsx";
@@ -45,6 +45,10 @@ import SatvikraasCaseStudy from "./pages/CaseStudy/SatvikraasCaseStudy.jsx";
 import Tooth from "./CaseStudies/ToothC/ToothCaseStudy.jsx";
 import HMS from "./CaseStudies/HMS/HMSCaseStudy.jsx";
 import NECC from "./CaseStudies/NECC/NECC.jsx";
+import BMS from "./CaseStudies/BMS/BMSCaseStudy.jsx";
+import Alanakr from "./CaseStudies/Alankar/AlankarCaseStudy.jsx";
+import Lokneta from "./CaseStudies/Lokneta/Lokneta.jsx";
+import Hylete from "./CaseStudies/Hylete/HyleteCaseStudy.jsx";
 function App() {
   const isNavigating = useNavigationEvent(); // Get navigation event status
   const location = useLocation();
@@ -119,6 +123,10 @@ function App() {
     "/casestudy/tooth",
     "/casestudy/hms",
     "/casestudy/necc",
+    "/casestudy/bms",
+    "/casestudy/alanakr",
+    "/casestudy/lokneta",
+    "/casestudy/hylete",
   ];
   const isValidRoute = validRoutes.includes(location.pathname);
   return (
@@ -153,27 +161,33 @@ function App() {
           <Route path="/casestudy/bakers" element={<BakersCaseStudy />} />
           <Route path="/casestudy/creamf" element={<CreamFCaseStudy />} />
           <Route path="/casestudy/bosch" element={<BoschCaseStudy />} />
-          <Route path="/casestudy/satvik" element={< SatvikraasCaseStudy/>} />
-          <Route path="/casestudy/gopalan" element={<Gopalan/>} />
-          <Route path="/casestudy/toot" element={<Tooth/>} />
-          <Route path="/casestudy/hms" element={<HMS/>} />
-          <Route path="/casestudy/necc" element={<NECC/>} />
+          <Route path="/casestudy/satvik" element={<SatvikraasCaseStudy />} />
+          <Route path="/casestudy/gopalan" element={<Gopalan />} />
+          <Route path="/casestudy/toot" element={<Tooth />} />
+          <Route path="/casestudy/hms" element={<HMS />} />
+          <Route path="/casestudy/necc" element={<NECC />} />
+          <Route path="/casestudy/bms" element={<BMS />} />
+          <Route path="/casestudy/alanakr" element={<Alanakr />} />
+          <Route path="/casestudy/lokneta" element={<Lokneta />} />
+          <Route path="/casestudy/Hylete" element={<Hylete />} />
           {/* <Route path="/casestudy/akoya1" element={<Akoyavideo />} /> */}
           <Route path="*" element={<NotFound />} />
         </Routes>
         {isValidRoute && <Footer />}
-      </div>  
-       {/* </PageTransition>
+      </div>
+      {/* </PageTransition>
       </AnimatePresence> */}
     </>
   );
 }
 function AppWrapper() {
-  return ( <HelmetProvider>
-    <Router>
-      <ScrollToTop />
-      <App />
-    </Router></HelmetProvider>
+  return (
+    <HelmetProvider>
+      <Router>
+        <ScrollToTop />
+        <App />
+      </Router>
+    </HelmetProvider>
   );
 }
 export default AppWrapper;
