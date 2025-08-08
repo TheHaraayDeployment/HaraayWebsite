@@ -475,7 +475,7 @@ Read less
       >
         <MobileCarousel images={sec4Images} />
       </div>
-      <div className={styles.testimonialSection}>
+      {/* <div className={styles.testimonialSection}>
         <h2 className={styles.title}>Client Testimonial</h2>
         <p className={styles.text}>
           We wanted to break the mold of clinical, dull packaging — <br />
@@ -492,7 +492,7 @@ Read less
             <p className={styles.role}>Founders</p>
           </div>
         </div>
-      </div>
+      </div> */}
       <SimilarProjectsCards
         title="Similar Projects"
         seeAllLink="https://example.com/all-projects"
