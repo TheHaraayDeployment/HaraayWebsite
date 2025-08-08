@@ -4,21 +4,21 @@ import HeroImg from "./HMSHero.jpg";
 
 import Sec2Full from "./sec2Full.jpg";
 import sec2Left from "./sec2left.jpg";
-import sec2Middle from "./sec2middle.jpg";
+// import sec2Middle from "./sec2middle.jpg";
 import sec2Right from "./Sec2Right.jpg";
 
 import Sec3Full from "./Sec3Full.jpg";
 
-import sec3Left from "./sec3left.jpg";
+import sec3Left from "./Sec3left.jpg";
 
-import sec3Right from "./Sec3Right.jpg";
+import sec3Right from "./Sec3right.jpg";
 
 import sec41 from "./Sec41.jpg";
 import sec42 from "./Sec42.jpg";
 import sec43 from "./Sec43.jpg";
 // import sec44 from "./Sec4Down.jpg";
 import sec4Full from "./Sec4Full.jpg";
-import sec6Full from "./Sec6Full.jpg";
+import sec6Full from "./sec6Full.jpg";
 
 import sec3DownLeft from "./Sec3DownLeft.svg";
 import sec3DownRight from "./Sec3DownRight.svg";
