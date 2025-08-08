@@ -4,7 +4,7 @@ import HeroImg from "./HMSHero.jpg";
 
 import Sec2Full from "./sec2Full.jpg";
 import sec2Left from "./sec2left.jpg";
-import sec2Middle from "./sec2middle.jpg";
+import sec2Middle from "./Sec2middle.jpg";
 import sec2Right from "./Sec2Right.jpg";
 
 // import Sec3Full from "./Sec3Full.jpg";
