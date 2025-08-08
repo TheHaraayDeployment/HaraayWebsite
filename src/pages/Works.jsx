@@ -250,7 +250,7 @@ const projectsData = [
     tags: ["Branding", "UI/UX", "3D Animation"],
     image: lokneta,
     mediaType: "image",
-    link: "#"
+    link: "/casestudy/lokneta"
   },
   {
     id: 7,
