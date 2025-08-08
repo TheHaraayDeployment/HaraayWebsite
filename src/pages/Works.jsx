@@ -23,6 +23,174 @@ import boschVideo from  "./WorksPageImages/Bosch.mp4"// Add your Bosch video pat
 import akoyaVideo from "./WorksPageImages/akoya.mp4" // Add your Akoya video path
 
 // Updated project data with video support
+// const projectsData = [
+//   {
+//     id: 1,
+//     title: "Hylete",
+//     description: "Hylete is an international sports event company that operates at intersection of performance, innovation, and community.",
+//     priority: "small",
+//     tags: ["Branding"],
+//     image: hylete,
+//     mediaType: "image",
+//     link: "/casestudy/hylete"
+//   },{
+//     id: 1,
+//     title: "Samruddh Bharat Technologies",
+//     description: "Empowering citizens with digital literacy and skills, promoting digital inclusion, and advancing the adoption.",
+//     priority: "small",
+//     tags: ["Branding", "App Development", "UI/UX"],
+//     image: samrudh,
+//     mediaType: "image",
+//     link: "/casestudy/samrudh"
+//   },{
+//     id: 1,
+//     title: "BMS",
+//     description: "Business Management System (BMS) Web Application for a Real Estate Company",
+//     priority: "small",
+//     tags: ["UI/UX", "Web Application", "3D Animation"],
+//     image: bms,
+//     mediaType: "image",
+//     link: "/casestudy/bms"
+//   },
+//  {
+//     id: 2,
+//     title: "Puru’s",
+//     description: "Puru’s Enterprises specializes in business consulting and sustainable lifestyle  products. As a solutions-based firm, they are dedicated to creating a brighter  future by inspiring individuals.",
+//     priority: "medium",
+//     tags: ["Branding", "3D Character Design", "Packaging"],
+//     image: purus,
+//     mediaType: "image",
+//     link: "#"
+//   },  {
+//     id: 2,
+//     title: "Alankar",
+//     description: "We combine creative thinking with cutting-edge technology to ensure your brand stands out—on paper, in-store, and everywhere in between.",
+//     priority: "medium",
+//     tags: ["App Development", "Branding", "UI/UX"],
+//     image: alankar,
+//     mediaType: "image",
+//     link:  "/casestudy/alanakr"
+//   },
+//   {
+//     id: 2,
+//     title: "Lok Neta",
+//     description: "Mobile application designed to bridge the gap between the people of Goa and the City's offices, providing a streamlined accessible platform for civic engagement.",
+//     priority: "small",
+//     tags: ["Branding", "UI/UX", "3D Animation"],
+//     image: lokneta,
+//     mediaType: "image",
+//     link: "#"
+//   },  {
+//     id: 1,
+//     title: "Toot",
+//     description: "Tool is a fun and friendly toothpaste brand made for kids with epic teeth. Colourful and playful branding style, premium packaging",
+//     priority: "small",
+//     tags: ["Branding", "Packaging", "3D Animation"],
+//     image: toot,
+//     mediaType: "image",
+//     link: "/casestudy/toot"
+//   }, 
+//   {
+//     id: 3,
+//     title: "NECC",
+//     description: "Branding for the NECC Women's Tennis event was executed, covering visual identity, signage, and promotional materials. The design captured the spirit of the sport.",
+//     priority: "small",
+//     tags: ["Branding"],
+//     image: necc,
+//     mediaType: "image",
+//     link: "/casestudy/necc"
+//   },
+//   {
+//     id: 4,
+//     title: "Bosch",
+//     description: "A 3D animation was created for the Bosch air purifier to visually demonstrate its internal components and air flow mechanism. This helped the consumers to functionality and purification process in a clear and engaging way.",
+//     priority: "high",
+//     tags: ["3D Animation"],
+//     image: boschVideo, // Video instead of image
+//     mediaType: "video",
+//     link: "/casestudy/bosch"
+//   },
+//   {
+//     id: 5,
+//     title: "Haraay's Project Management",
+//     description: "The application is designed to streamline how teams and track work updates efficiently. It streamlines workflow.",
+//     priority: "low",
+//     tags: ["Web application"],
+//     image: HaraayProjectManagement,
+//     mediaType: "image",
+//     link: "/casestudy/hms"
+//   },
+//   {
+//     id: 6,
+//     title: "Gopalan Group",
+//     description: "Gopalan Real Estate project was a beacon of trust and innovation in the real estate sector. That's why deserving.",
+//     priority: "low",
+//     tags: ["UI/UX", "3D Animation", "Motion Graphics","Websites"],
+//     image: Gopalan,
+//     mediaType: "image",
+//     link: "/casestudy/gopalan"
+//   },
+//   {
+//     id: 7,
+//     title: "Baker's street",
+//     description: "Baker's street is a new and old shop bakery point which provides heavenly experience of true taste premium.",
+//     priority: "low",
+//     tags: ["Branding", "3D Animation", "Packaging"],
+//     image: BakersStreet,
+//     mediaType: "image",
+//     link: "/casestudy/bakers"
+//   },
+//   {
+//     id: 8,
+//     title: "Satvik raas",
+//     description: "Satvik Raas Spices, we developed a visual identity, along with nutrition graphics and 3D video animations that tells the brand story in the end showcases to traditional essence in a modern, engaging format.",
+//     priority: "medium",
+//     tags: ["Branding", "Packaging", "UI/UX", "3D Animation", "Motion Graphics","Websites"],
+//     image: satvik,
+//     mediaType: "image",
+//     link: "/casestudy/satvik"
+//   },
+//   {
+//     id: 9,
+//     title: "Akoya",
+//     description: "Akoya is a traditional brand from scratch that connects with cultural roots. Ensure cohesive storytelling by a packaging that reflects the brand and resonates with the target audience.",
+//     priority: "medium",
+//     tags: ["Branding", "Packaging", "Illustration", "3D Animation", "Motion Graphics"],
+//     image: akoyaVideo, // Video instead of image
+//     mediaType: "video",
+//     link: "/casestudy/akoya"
+//   },
+//   {
+//     id: 10,
+//     title: "Virat",
+//     description: "Virat Shipping facility management services provider, specializing in regulatory compliance that maintains a bold, modern and distinctive brand identity.",
+//     priority: "low",
+//     tags: ["Branding", "UI/UX", "3D Animation","Websites"],
+//     image: virat,
+//     mediaType: "image",
+//     link: "/casestudy/virat"
+//   },
+//   {
+//     id: 11,
+//     title: "Serene Skin",
+//     description: "Serene Skin nurtures brand truths that encourages self-confidence between users towards their skincare. Sustainable themselves from other skincare firms by providing new.",
+//     priority: "low",
+//     tags: ["Branding", "Packaging", "3D Animation"],
+//     image: Sereneskin,
+//     mediaType: "image",
+//     link: "/casestudy/sereneskin"
+//   },
+//   {
+//     id: 12,
+//     title: "Creams Forest",
+//     description: "Creams Forest is a natural ice cream brand the branding communicates the fresh taste by connecting nature with indulgence in every scoop.",
+//     priority: "low",
+//     tags: ["Branding", "Packaging"],
+//     image: creamForest,
+//     mediaType: "image",
+//     link: "/casestudy/creamf"
+//   }
+// ];
 const projectsData = [
   {
     id: 1,
@@ -33,8 +201,9 @@ const projectsData = [
     image: hylete,
     mediaType: "image",
     link: "/casestudy/hylete"
-  },{
-    id: 1,
+  },
+  {
+    id: 2,
     title: "Samruddh Bharat Technologies",
     description: "Empowering citizens with digital literacy and skills, promoting digital inclusion, and advancing the adoption.",
     priority: "small",
@@ -42,8 +211,9 @@ const projectsData = [
     image: samrudh,
     mediaType: "image",
     link: "/casestudy/samrudh"
-  },{
-    id: 1,
+  },
+  {
+    id: 3,
     title: "BMS",
     description: "Business Management System (BMS) Web Application for a Real Estate Company",
     priority: "small",
@@ -52,27 +222,28 @@ const projectsData = [
     mediaType: "image",
     link: "/casestudy/bms"
   },
- {
-    id: 2,
+  {
+    id: 4,
     title: "Puru’s",
-    description: "Puru’s Enterprises specializes in business consulting and sustainable lifestyle  products. As a solutions-based firm, they are dedicated to creating a brighter  future by inspiring individuals.",
+    description: "Puru’s Enterprises specializes in business consulting and sustainable lifestyle products. As a solutions-based firm, they are dedicated to creating a brighter future by inspiring individuals.",
     priority: "medium",
     tags: ["Branding", "3D Character Design", "Packaging"],
     image: purus,
     mediaType: "image",
     link: "#"
-  },  {
-    id: 2,
+  },
+  {
+    id: 5,
     title: "Alankar",
     description: "We combine creative thinking with cutting-edge technology to ensure your brand stands out—on paper, in-store, and everywhere in between.",
     priority: "medium",
     tags: ["App Development", "Branding", "UI/UX"],
     image: alankar,
     mediaType: "image",
-    link:  "/casestudy/alanakr"
+    link: "/casestudy/alanakr"
   },
   {
-    id: 2,
+    id: 6,
     title: "Lok Neta",
     description: "Mobile application designed to bridge the gap between the people of Goa and the City's offices, providing a streamlined accessible platform for civic engagement.",
     priority: "small",
@@ -80,8 +251,9 @@ const projectsData = [
     image: lokneta,
     mediaType: "image",
     link: "#"
-  },  {
-    id: 1,
+  },
+  {
+    id: 7,
     title: "Toot",
     description: "Tool is a fun and friendly toothpaste brand made for kids with epic teeth. Colourful and playful branding style, premium packaging",
     priority: "small",
@@ -89,9 +261,9 @@ const projectsData = [
     image: toot,
     mediaType: "image",
     link: "/casestudy/toot"
-  }, 
+  },
   {
-    id: 3,
+    id: 8,
     title: "NECC",
     description: "Branding for the NECC Women's Tennis event was executed, covering visual identity, signage, and promotional materials. The design captured the spirit of the sport.",
     priority: "small",
@@ -101,17 +273,17 @@ const projectsData = [
     link: "/casestudy/necc"
   },
   {
-    id: 4,
+    id: 9,
     title: "Bosch",
     description: "A 3D animation was created for the Bosch air purifier to visually demonstrate its internal components and air flow mechanism. This helped the consumers to functionality and purification process in a clear and engaging way.",
     priority: "high",
     tags: ["3D Animation"],
-    image: boschVideo, // Video instead of image
+    image: boschVideo,
     mediaType: "video",
     link: "/casestudy/bosch"
   },
   {
-    id: 5,
+    id: 10,
     title: "Haraay's Project Management",
     description: "The application is designed to streamline how teams and track work updates efficiently. It streamlines workflow.",
     priority: "low",
@@ -121,17 +293,17 @@ const projectsData = [
     link: "/casestudy/hms"
   },
   {
-    id: 6,
+    id: 11,
     title: "Gopalan Group",
     description: "Gopalan Real Estate project was a beacon of trust and innovation in the real estate sector. That's why deserving.",
     priority: "low",
-    tags: ["UI/UX", "3D Animation", "Motion Graphics","Websites"],
+    tags: ["UI/UX", "3D Animation", "Motion Graphics", "Websites"],
     image: Gopalan,
     mediaType: "image",
     link: "/casestudy/gopalan"
   },
   {
-    id: 7,
+    id: 12,
     title: "Baker's street",
     description: "Baker's street is a new and old shop bakery point which provides heavenly experience of true taste premium.",
     priority: "low",
@@ -141,37 +313,37 @@ const projectsData = [
     link: "/casestudy/bakers"
   },
   {
-    id: 8,
+    id: 13,
     title: "Satvik raas",
     description: "Satvik Raas Spices, we developed a visual identity, along with nutrition graphics and 3D video animations that tells the brand story in the end showcases to traditional essence in a modern, engaging format.",
     priority: "medium",
-    tags: ["Branding", "Packaging", "UI/UX", "3D Animation", "Motion Graphics","Websites"],
+    tags: ["Branding", "Packaging", "UI/UX", "3D Animation", "Motion Graphics", "Websites"],
     image: satvik,
     mediaType: "image",
     link: "/casestudy/satvik"
   },
   {
-    id: 9,
+    id: 14,
     title: "Akoya",
     description: "Akoya is a traditional brand from scratch that connects with cultural roots. Ensure cohesive storytelling by a packaging that reflects the brand and resonates with the target audience.",
     priority: "medium",
     tags: ["Branding", "Packaging", "Illustration", "3D Animation", "Motion Graphics"],
-    image: akoyaVideo, // Video instead of image
+    image: akoyaVideo,
     mediaType: "video",
     link: "/casestudy/akoya"
   },
   {
-    id: 10,
+    id: 15,
     title: "Virat",
     description: "Virat Shipping facility management services provider, specializing in regulatory compliance that maintains a bold, modern and distinctive brand identity.",
     priority: "low",
-    tags: ["Branding", "UI/UX", "3D Animation","Websites"],
+    tags: ["Branding", "UI/UX", "3D Animation", "Websites"],
     image: virat,
     mediaType: "image",
     link: "/casestudy/virat"
   },
   {
-    id: 11,
+    id: 16,
     title: "Serene Skin",
     description: "Serene Skin nurtures brand truths that encourages self-confidence between users towards their skincare. Sustainable themselves from other skincare firms by providing new.",
     priority: "low",
@@ -181,7 +353,7 @@ const projectsData = [
     link: "/casestudy/sereneskin"
   },
   {
-    id: 12,
+    id: 17,
     title: "Creams Forest",
     description: "Creams Forest is a natural ice cream brand the branding communicates the fresh taste by connecting nature with indulgence in every scoop.",
     priority: "low",
