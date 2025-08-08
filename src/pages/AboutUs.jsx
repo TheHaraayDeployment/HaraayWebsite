@@ -9,51 +9,51 @@ import member2 from "../assets/team2.svg";
 import SEO from "../Seo";
 
 export default function AboutUs() {
-  const teamData = [
-    {
-      name: "Samiksha Taru",
-      jobTitle: "CEO",
-      description: "Lorem ipsum dolor sit amet, consecteturni",
-      image: member2,
-      description: "Leading the team with strategic vision and innovation.",
-    },
-    {
-      name: "Jai",
-      jobTitle: "Graphics",
-      description: "Lorem ipsum dolor sit amet, consectetur i",
-      image: member2,
-      description: "Creating stunning visual designs and graphics.",
-    },
-    {
-      name: "Vinay",
-      jobTitle: "UI UX",
-      description: "Lorem ipsum dolor sit amet, consectetur i",
-      image: member1,
-      description: "Designing seamless user experiences and interfaces.",
-    },
-    {
-      name: "Tanuja",
-      jobTitle: "3D Modeling",
-      description: "Lorem ipsum dolor sit amet, consectetur i",
-      image: member2,
-      description: "Bringing ideas to life through 3D visualizations.",
-    },
-    {
-      name: "Akash Bamgude",
-      jobTitle: "Backend Developer",
-      description: "Lorem ipsum dolor sit amet, consectetur i",
-      image: member1,
-      description: "Building and managing robust backend systems.",
-    },
-    {
-      name: "Prajwal Thombare",
-      jobTitle: "Frontend Developer",
-      description: "Lorem ipsum dolor sit amet, consectetur i",
-      image: member1,
-      description: "Developing visually engaging and interactive interfaces.",
-    },
-    // Add more team members as needed
-  ];
+  // const teamData = [
+  //   {
+  //     name: "Samiksha Taru",
+  //     jobTitle: "CEO",
+  //     description: "Lorem ipsum dolor sit amet, consecteturni",
+  //     image: member2,
+  //     description: "Leading the team with strategic vision and innovation.",
+  //   },
+  //   {
+  //     name: "Jai",
+  //     jobTitle: "Graphics",
+  //     description: "Lorem ipsum dolor sit amet, consectetur i",
+  //     image: member2,
+  //     description: "Creating stunning visual designs and graphics.",
+  //   },
+  //   {
+  //     name: "Vinay",
+  //     jobTitle: "UI UX",
+  //     description: "Lorem ipsum dolor sit amet, consectetur i",
+  //     image: member1,
+  //     description: "Designing seamless user experiences and interfaces.",
+  //   },
+  //   {
+  //     name: "Tanuja",
+  //     jobTitle: "3D Modeling",
+  //     description: "Lorem ipsum dolor sit amet, consectetur i",
+  //     image: member2,
+  //     description: "Bringing ideas to life through 3D visualizations.",
+  //   },
+  //   {
+  //     name: "Akash Bamgude",
+  //     jobTitle: "Backend Developer",
+  //     description: "Lorem ipsum dolor sit amet, consectetur i",
+  //     image: member1,
+  //     description: "Building and managing robust backend systems.",
+  //   },
+  //   {
+  //     name: "Prajwal Thombare",
+  //     jobTitle: "Frontend Developer",
+  //     description: "Lorem ipsum dolor sit amet, consectetur i",
+  //     image: member1,
+  //     description: "Developing visually engaging and interactive interfaces.",
+  //   },
+  //   // Add more team members as needed
+  // ];
 
   return (
     <div className={styles.AboutUspage}>
