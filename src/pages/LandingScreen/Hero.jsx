@@ -1644,8 +1644,8 @@ const BubbleAnimation = () => {
         <div className="btnDiv">
           {/* <Link to={"/works"} className="filledButton">Explore Work</Link> */}
           {/* <Link className="emptyButton" to={"/expertise"}>See All Services</Link> */}
-         
         </div>
+         <div className="craftSec"> <CraftDropdown/> </div>
       </animated.div>
      
       <div className="bubblesMain"

@@ -187,7 +187,7 @@ export default function HMS() {
             }`}
           >
             <p className={styles.serviceTag}>
-              Event Branding, Environmental Graphics, Print & Digital
+              Event Branding, Environmental Graphics, Print & Digital <br />
               Communication, Social Media, Award Collaterals, Photo Booth
             </p>
             <span className={styles.serviceAccent}>
