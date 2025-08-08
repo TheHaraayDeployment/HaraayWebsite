@@ -49,6 +49,7 @@ import BMS from "./CaseStudies/BMS/BMSCaseStudy.jsx";
 import Alanakr from "./CaseStudies/Alankar/AlankarCaseStudy.jsx";
 import Lokneta from "./CaseStudies/Lokneta/Lokneta.jsx";
 import Hylete from "./CaseStudies/Hylete/HyleteCaseStudy.jsx";
+import Samrudh from "./CaseStudies/Samrudh/SamrudhCaseStudy.jsx";
 function App() {
   const isNavigating = useNavigationEvent(); // Get navigation event status
   const location = useLocation();
@@ -127,6 +128,7 @@ function App() {
     "/casestudy/alanakr",
     "/casestudy/lokneta",
     "/casestudy/hylete",
+    "/casestudy/samrudh",
   ];
   const isValidRoute = validRoutes.includes(location.pathname);
   return (
@@ -170,6 +172,7 @@ function App() {
           <Route path="/casestudy/alanakr" element={<Alanakr />} />
           <Route path="/casestudy/lokneta" element={<Lokneta />} />
           <Route path="/casestudy/Hylete" element={<Hylete />} />
+          <Route path="/casestudy/samrudh" element={<Samrudh />} />
           {/* <Route path="/casestudy/akoya1" element={<Akoyavideo />} /> */}
           <Route path="*" element={<NotFound />} />
         </Routes>

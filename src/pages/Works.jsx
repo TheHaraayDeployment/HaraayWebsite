@@ -41,7 +41,7 @@ const projectsData = [
     tags: ["Branding", "App Development", "UI/UX"],
     image: samrudh,
     mediaType: "image",
-    link: "#"
+    link: "/casestudy/samrudh"
   },{
     id: 1,
     title: "BMS",

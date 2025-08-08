@@ -7,12 +7,13 @@ import sec2Left from "./sec2left.jpg";
 import sec2Middle from "./sec2middle.jpg";
 import sec2Right from "./Sec2Right.jpg";
 
-import Sec3Full from "./Sec3Full.jpg";
+// import Sec3Full from "./Sec3Full.jpg";
 
-import Sec3UpLeft from "./Sec3UpLeft.jpg"
-import Sec3UpRight from "./Sec3UpRight.jpg"
-import Sec3DownLeft from "./Sec3Downleft.jpg"
-import Sec3DownRight from "./Sec3DownRight.jpg"
+import Sec31 from "./Sec31.jpg"
+import Sec32 from "./Sec32.jpg"
+import Sec33 from "./Sec33.jpg"
+
+
 
 
 
@@ -88,7 +89,7 @@ export default function HMS() {
 
   // Define image arrays for mobile carousels
   const sec2Images = [sec2Left, sec2Middle, sec2Right];
-  const sec3UpImages = [Sec3DownLeft,Sec3DownRight , Sec3UpLeft,Sec3UpRight];
+  const sec3UpImages = [Sec31,Sec32 , Sec33];
   const sec3DownImages = [sec3DownLeft, sec3DownRight];
   const sec4Images = [sec41, sec42, sec43];
   const [expanded, setExpanded] = useState(false);
@@ -329,8 +330,7 @@ Create a cohesive, bold, and empowering brand identity system that could carry a
            <div className={styles.rightSide}>
              <div className={styles.textContent}>
                <p>
-                 We built the entire brand identity with movement, energy, and
-                 elegance at its core.
+              We built the entire brand identity with movement, energy, and elegance at its core.
                </p>
                <div className={styles.approachCards}>
                  <div className={styles.aCard}>
@@ -393,7 +393,9 @@ Create a cohesive, bold, and empowering brand identity system that could carry a
         }`}
         data-section="images3down"
       >
-        <img src={Sec3Full} className={styles.imageFullScreen} alt="" />
+        <img src={Sec31} className={styles.imageFullScreen} alt="" />
+        <img src={Sec32} className={styles.imageFullScreen} alt="" />
+        <img src={Sec33} className={styles.imageFullScreen} alt="" />
       </div>
 
       {/* Key Features Section */}
@@ -448,82 +450,7 @@ Create a cohesive, bold, and empowering brand identity system that could carry a
         </div>
       </div> */}
 
-      <div
-        className={`${styles.textSection} ${
-          isElementVisible("challenges") ? styles.sectionVisible : ""
-        }`}
-        data-section="challenges"
-      >
-        <div className={styles.leftSide}>
-          <h2 className={styles.sectionHeader}>
-         UI/UX Design
-          </h2>
-          <div className={styles.sectionAccent}></div>
-        </div>
-        <div className={styles.rightSide}>
-          <div className={styles.textContent}>
-            <div className={styles.challengeItem}>
-              <p className={styles.challengeTitle}>
-              
-              </p>
-            </div>{" "}
-            <br />
-            <div className={styles.challengeItem}>
-              <p className={styles.challengeTitle}>
-                {/* Packaging Design: */}
-                <span>
-               Given the complexity of the application, we focused on creating an intuitive user interface that would allow various stakeholders to easily navigate the system. The design featured:
-<br /> Dashboard with Key Metrics: The main dashboard displayed key performance indicators (KPIs) such as total sales, properties under management, open leads, and financial reports. 
-<br />Role-Based Access: We incorporated different user roles (administrators, property managers, sales agents) with tailored permissions and views to ensure that each user had access to the relevant features.
-<br />Responsive Design: The application was designed to be fully responsive, allowing users to access the system from any device, including tablets and smartphones. With monochromatic color scheme, keeping it light & fresh over all.
-<br />The successful development and implementation of the BMS have positioned the client to scale their operations seamlessly, making this solution a critical asset in their continued growth in the real estate industry.
-Read less
-                </span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* Results & Impact Section */}
-
-      {/* Section 4 Upper Images - Desktop only */}
-      <div
-        className={`${styles.imageSection3} ${
-          isElementVisible("images3down") ? styles.sectionVisible : ""
-        }`}
-        data-section="images3down"
-      >
-        {/* <img src={sec41} className={styles.imageFullScreen} alt="" /> */}
-        <img src={sec4Full} className={styles.imageFullScreen} alt="" />
-      </div>
-
-      {/* Section 4 Mobile Carousel */}
-      <div
-        className={`${styles.mobileCarouselWrapper} ${
-          isElementVisible("carousel4") ? styles.sectionVisible : ""
-        }`}
-        data-section="carousel4"
-      >
-        <MobileCarousel images={sec4Images} />
-      </div>
-      <div className={styles.testimonialSection}>
-        <h2 className={styles.title}>Client Testimonial</h2>
-        <p className={styles.text}>
-          We wanted to break the mold of clinical, dull packaging — <br />
-          Haraay made our brand POP with personality.”
-        </p>
-        <div className={styles.downContent}>
-          <div className={styles.stars}>
-            {[...Array(5)].map((_, index) => (
-              <FaStar key={index} className={styles.star} />
-            ))}
-          </div>
-          <div className={styles.authorInfo}>
-            <strong className={styles.name}>Toot</strong>
-            <p className={styles.role}>Founders</p>
-          </div>
-        </div>
-      </div>
+    
       <SimilarProjectsCards
         title="Similar Projects"
         seeAllLink="https://example.com/all-projects"
