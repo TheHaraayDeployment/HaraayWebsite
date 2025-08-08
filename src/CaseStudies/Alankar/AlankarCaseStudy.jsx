@@ -11,7 +11,7 @@ import Sec3Full from "./Sec3Full.jpg";
 
 import Sec3UpLeft from "./Sec3UpLeft.jpg";
 import Sec3UpRight from "./Sec3UpRight.jpg";
-import Sec3DownLeft from "./Sec3Downleft.jpg";
+import Sec3DownLeft from "./Sec3DownLeft.jpg";
 import Sec3DownRight from "./Sec3DownRight.jpg";
 
 import sec41 from "./Sec4UpLeft.jpg";
