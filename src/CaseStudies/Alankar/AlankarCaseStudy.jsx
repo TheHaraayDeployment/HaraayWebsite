@@ -2,6 +2,10 @@ import React, { useEffect, useState, useCallback, useRef } from "react";
 import styles from "./AlankarCaseStudy.module.scss";
 import HeroImg from "./HMSHero.jpg";
 
+import heroVideo1 from "./Alankar_dashboard.mp4"; // Replace with your actual video paths
+import heroVideo2 from "./Alankar_Video.mp4";
+
+
 import Sec2Full from "./sec2Full.jpg";
 import sec2Left from "./sec2left.jpg";
 import sec2Middle from "./Sec2middle.jpg";
@@ -14,10 +18,10 @@ import Sec3UpRight from "./Sec3UpRight.jpg";
 import Sec3DownLeft from "./Sec3DownLeft.jpg";
 import Sec3DownRight from "./Sec3DownRight.jpg";
 
-import sec41 from "./Sec4UpLeft.jpg";
-import sec42 from "./Sec4UpRight.jpg";
-import sec43 from "./Sec4Down.jpg";
-import sec44 from "./Sec4Down.jpg";
+import Sec4Img1 from "./Sec4Img1.jpg"
+import Sec4Img2 from "./Sec4Img2.jpg"
+import Sec4Img3 from "./Sec4Img3.jpg"
+import Sec4Img4 from "./Sec4Img4.jpg"
 
 // import sec44 from "./Sec4Down.jpg";
 import sec4Full from "./Sec4Full.jpg";
@@ -30,6 +34,7 @@ import SimilarProjectsCards from "../../components/SeeMoreProjects";
 import case1 from "./case1.jpg";
 import case2 from "./case2.jpg";
 import case3 from "./case3.jpg";
+import HeroCarousel from "../HeroCarousel";
 
 export default function HMS() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -81,14 +86,31 @@ export default function HMS() {
       link: "#",
     },
   ];
-
+const carouselItems = [
+    {
+      type: 'video',
+      src: heroVideo1,
+      alt: 'Hero Video 1'
+    },
+    {
+      type: 'video', 
+      src: heroVideo2,
+      alt: 'Hero Video 2'
+    },
+    {
+      type: 'image',
+      src: HeroImg,
+      alt: 'HMS Project Management Interface'
+    }
+  ];
   // Define image arrays for mobile carousels
   const sec2Images = [sec2Left, sec2Middle, sec2Right];
   const sec3UpImages = [Sec3DownLeft, Sec3DownRight, Sec3UpLeft, Sec3UpRight];
-  const sec3DownImages = [sec3DownLeft, sec3DownRight];
+  const SecImages3 = [Sec4Img1, Sec4Img2,Sec4Img3,Sec4Img4];
   const sec4Images = [sec4Full];
   const [expanded, setExpanded] = useState(false);
   const [expanded1, setExpanded1] = useState(false);
+  
   // Persistent intersection observer callback
   const handleIntersection = useCallback(
     (entries) => {
@@ -191,20 +213,7 @@ export default function HMS() {
             </span>
           </div>
         </div>
-        <div
-          className={`${styles.heroImg} ${
-            isLoaded ? styles.heroImgVisible : ""
-          }`}
-        >
-          <div className={styles.heroImageContainer}>
-            <img
-              src={HeroImg}
-              alt="HMS Project Management Interface"
-              loading="eager"
-            />
-            <div className={styles.heroImageOverlay}></div>
-          </div>
-        </div>
+    <HeroCarousel items={carouselItems} isLoaded={isLoaded} />
       </div>
 
       {/* Overview Section */}
@@ -453,6 +462,8 @@ export default function HMS() {
         data-section="images3down"
       >
         {/* <img src={sec41} className={styles.imageFullScreen} alt="" /> */}
+        <img src={Sec4Img1} className={styles.imageFullScreen} alt="" />
+        <img src={Sec4Img2} className={styles.imageFullScreen} alt="" />
         <img src={sec4Full} className={styles.imageFullScreen} alt="" />
       </div>
 
@@ -463,7 +474,7 @@ export default function HMS() {
         }`}
         data-section="carousel4"
       >
-        <MobileCarousel images={sec4Images} />
+        <MobileCarousel images={SecImages3} />
       </div>
       {/* <div className={styles.testimonialSection}>
         <h2 className={styles.title}>Client Testimonial</h2>

@@ -2,30 +2,24 @@ import React, { useEffect, useState, useCallback, useRef } from "react";
 import styles from "./BMSCaseStudy.module.scss";
 import HeroImg from "./HMSHero.jpg";
 
-import Sec2Full from "./sec2Full.jpg";
-import sec2Left from "./sec2left.jpg";
-import sec2Middle from "./Sec2middle.jpg";
-import sec2Right from "./Sec2Right.jpg";
+import Sec2Full from "./Sec2Full.jpg";
+import Sec2Img1 from "./Sec2Img1.jpg"
+import Sec2Img2 from "./Sec2Img2.jpg"
+import Sec2Img3 from "./Sec2Img3.jpg"
 
 import Sec3Full from "./Sec3Full.jpg";
+import Sec3Img1 from "./Sec3Img1.jpg"
+import Sec3Img2 from "./Sec3Img2.jpg"
+import Sec3Img3 from "./Sec3Img3.jpg"
+import Sec3Img4 from "./Sec3Img4.jpg"
 
-import Sec3UpLeft from "./Sec3UpLeft.jpg"
-import Sec3UpRight from "./Sec3UpRight.jpg"
-import Sec3DownLeft from "./Sec3DownLeft.jpg"
-import Sec3DownRight from "./Sec3DownRight.jpg"
+import Sec4Full1 from "./Sec4Full1.jpg";
+import Sec4Full2 from "./Sec4Full2.jpg";
+import Sec4Img1 from "./Sec4Img1.jpg"
+import Sec4Img2 from "./Sec4Img2.jpg"
+import Sec4Img3 from "./Sec4Img3.jpg"
+import Sec4Img4 from "./Sec4Img4.jpg"
 
-
-
-
-
-import sec41 from "./Sec4UpLeft.jpg";
-import sec42 from "./Sec4UpRight.jpg"
-import sec43 from "./Sec4Down.jpg";
-// import sec44 from "./Sec4Down.jpg";
-import sec4Full from "./Sec4Full.jpg";
-
-import sec3DownLeft from "./Sec3DownLeft.svg";
-import sec3DownRight from "./Sec3DownRight.svg";
 
 import MobileCarousel from "../../components/MobileCarousel";
 import iconarrow from "../../assets/iconarrow.png";
@@ -71,27 +65,31 @@ export default function HMS() {
   const demoCards = [
     {
       image: case1,
-      text: "Purus",
-      link: "#",
+      text: "Haraay Project Management",
+      link: "/casestudy/hms",
     },
     {
       image: case2,
-      text: "Akoya",
-      link: "/casestudy/akoya",
+      text: "Alankar Imprinters",
+      link: "/casestudy/alanakr",
     },
     {
       image: case3,
-      text: "Necc",
-      link: "/casestudy/necc",
+      text: "Goa Job Portal",
+      link: "#",
     },
   ];
 
   // Define image arrays for mobile carousels
-  const sec2Images = [sec2Left, sec2Middle, sec2Right];
-  const sec3UpImages = [Sec3DownLeft,Sec3DownRight , Sec3UpLeft,Sec3UpRight];
-  const sec3DownImages = [sec3DownLeft, sec3DownRight];
-  const sec4Images = [sec41, sec42, sec43];
+  const sec2Images = [Sec2Img1, Sec2Img2, Sec2Img3];
+  const sec3Images = [Sec3Img1,Sec3Img2,Sec3Img3,Sec3Img4];
+  const sec4Images = [Sec4Img1, Sec4Img2,Sec4Img3,Sec4Img4];
   const [expanded, setExpanded] = useState(false);
+
+  const handleToggle = () => {
+    setExpanded((prev) => !prev);
+  };
+
   const [expanded1, setExpanded1] = useState(false);
   // Persistent intersection observer callback
   const handleIntersection = useCallback(
@@ -188,7 +186,7 @@ export default function HMS() {
               isLoaded ? styles.servicesVisible : ""
             }`}
           >
-            <p className={styles.serviceTag}>Branding & Packaging</p>
+            <p className={styles.serviceTag}>UI/UX Designing</p>
             <span className={styles.serviceAccent}>
               {" "}
               {/* Kid’s Oral Care | FMCG */}
@@ -352,7 +350,7 @@ export default function HMS() {
         }`}
         data-section="carousel3up"
       >
-        <MobileCarousel images={sec3UpImages} />
+        <MobileCarousel images={sec3Images} />
       </div>
 
       {/* Section 3 Images - Desktop only */}
@@ -431,25 +429,52 @@ export default function HMS() {
         </div>
         <div className={styles.rightSide}>
           <div className={styles.textContent}>
-            <div className={styles.challengeItem}>
-              <p className={styles.challengeTitle}>
-              
-              </p>
-            </div>{" "}
-            <br />
-            <div className={styles.challengeItem}>
-              <p className={styles.challengeTitle}>
-                {/* Packaging Design: */}
-                <span>
-               Given the complexity of the application, we focused on creating an intuitive user interface that would allow various stakeholders to easily navigate the system. The design featured:
-<br /> Dashboard with Key Metrics: The main dashboard displayed key performance indicators (KPIs) such as total sales, properties under management, open leads, and financial reports. 
-<br />Role-Based Access: We incorporated different user roles (administrators, property managers, sales agents) with tailored permissions and views to ensure that each user had access to the relevant features.
-<br />Responsive Design: The application was designed to be fully responsive, allowing users to access the system from any device, including tablets and smartphones. With monochromatic color scheme, keeping it light & fresh over all.
-<br />The successful development and implementation of the BMS have positioned the client to scale their operations seamlessly, making this solution a critical asset in their continued growth in the real estate industry.
-Read less
-                </span>
-              </p>
-            </div>
+            
+           
+            <div className={styles.challengeItem}>    <p className={styles.challengeTitle}>
+        <span>
+         Given the complexity of the application, we focused on creating an intuitive user interface that would allow various stakeholders to easily navigate the system. The design featured:
+Dashboard with Key Metrics: The main dashboard displayed key performance indicators (KPIs) such as total sales, properties under management, open leads, and financial reports. 
+          {expanded && (
+            <>
+              {" "}
+              <br />
+              The design featured:
+        
+              Role-Based Access: We incorporated different user roles
+              (administrators, property managers, sales agents) with tailored
+              permissions and views to ensure that each user had access to the
+              relevant features.
+              <br />
+              Responsive Design: The application was designed to be fully
+              responsive, allowing users to access the system from any device,
+              including tablets and smartphones. With monochromatic color
+              scheme, keeping it light & fresh overall.
+              <br />
+              The successful development and implementation of the BMS have
+              positioned the client to scale their operations seamlessly, making
+              this solution a critical asset in their continued growth in the
+              real estate industry.
+            </>
+          )}
+        </span>
+
+        {/* Inline Read More / Less toggle */}
+        <span className={styles.readmorebtn} onClick={handleToggle}>
+          {expanded ? (
+            <>
+              {"  "} {"  "}
+              Read Less <img src={iconarrow} alt="Arrow Up Icon" />
+            </>
+          ) : (
+            <>
+              {" "}
+              Read More <img src={iconarrow2} alt="Arrow Down Icon" />
+            </>
+          )}
+        </span>
+      </p>
+    </div>
           </div>
         </div>
       </div>
@@ -463,7 +488,8 @@ Read less
         data-section="images3down"
       >
         {/* <img src={sec41} className={styles.imageFullScreen} alt="" /> */}
-        <img src={sec4Full} className={styles.imageFullScreen} alt="" />
+        <img src={Sec4Full1} className={styles.imageFullScreen} alt="" />
+        <img src={Sec4Full2} className={styles.imageFullScreen} alt="" />
       </div>
 
       {/* Section 4 Mobile Carousel */}

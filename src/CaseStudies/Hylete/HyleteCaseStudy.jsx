@@ -1,33 +1,36 @@
 import React, { useEffect, useState, useCallback, useRef } from "react";
 import styles from "./HyleteCaseStudy.module.scss";
 import HeroImg from "./HMSHero.jpg";
-
+// Sec 2
 import Sec2Full from "./sec2Full.jpg";
-import sec2Left from "./sec2left.jpg";
-// import sec2Middle from "./sec2middle.jpg";
-import sec2Right from "./Sec2Right.jpg";
-
+import Sec2Img1 from "./Sec2Img1.jpg";
+import Sec2Img2 from "./Sec2Img2.jpg";
+import Sec2Img3 from "./Sec2Img3.jpg";
+// Sec 3
 import Sec3Full from "./Sec3Full.jpg";
+import Sec3Img1 from "./Sec3Img1.jpg";
+import Sec3Img2 from "./Sec3Img2.jpg";
+import Sec3Img3 from "./Sec3Img3.jpg";
+import Sec3Img4 from "./Sec3Img4.jpg";
 
-import sec3Left from "./Sec3left.jpg";
-
-import sec3Right from "./Sec3right.jpg";
-
+// Sec 4
 import sec41 from "./Sec41.jpg";
 import sec42 from "./Sec42.jpg";
 import sec43 from "./Sec43.jpg";
-// import sec44 from "./Sec4Down.jpg";
+
 import sec4Full from "./Sec4Full.jpg";
-import sec6Full from "./sec6Full.jpg";
 
-import sec3DownLeft from "./Sec3DownLeft.svg";
-import sec3DownRight from "./Sec3DownRight.svg";
-
-import sec51 from "./Sec5left.jpg";
-import sec52 from "./Sec5right.jpg";
-// import sec43 from "./Sec43.jpg";
-// import sec44 from "./Sec4Down.jpg";
 import sec5Full from "./Sec5Full.jpg";
+import Sec5Img1 from "./Sec5Img1.jpg";
+import Sec5Img2 from "./Sec5Img2.jpg";
+import Sec5Img3 from "./Sec5Img3.jpg";
+import Sec5Img4 from "./Sec5Img4.jpg";
+
+import sec6Full from "./Sec6Full.jpg";
+import Sec6Img1 from "./Sec6Img1.jpg";
+import Sec6Img2 from "./Sec6Img2.jpg";
+import Sec6Img3 from "./Sec6Img3.jpg";
+import Sec6Img4 from "./Sec6Img4.jpg";
 
 import MobileCarousel from "../../components/MobileCarousel";
 import iconarrow from "../../assets/iconarrow.png";
@@ -73,28 +76,28 @@ export default function HMS() {
   const demoCards = [
     {
       image: case1,
-      text: "Purus",
-      link: "#",
+      text: "NECC",
+      link: "/casestudy/necc",
     },
     {
       image: case2,
-      text: "Akoya",
-      link: "/casestudy/akoya",
+      text: "Mittal",
+      link: "#",
     },
     {
       image: case3,
-      text: "Necc",
-      link: "/casestudy/necc",
+      text: "Pawpet",
+      link: "#",
     },
   ];
 
   // Define image arrays for mobile carousels
-  const sec2Images = [sec2Left, sec2Right];
-  const sec3UpImages = [sec3Left, sec3Right];
-  const sec3DownImages = [sec3DownLeft, sec3DownRight];
+  const sec2Images = [Sec2Img1, Sec2Img2, Sec2Img3];
+  const sec3UpImages = [Sec3Img1, Sec3Img2, Sec3Img3, Sec3Img4];
+
   const sec4Images = [sec41, sec42, sec43];
-  const sec5Images = [sec51, sec52];
-  const sec6Images = [sec6Full];
+  const sec5Images = [Sec5Img1, Sec5Img2, Sec5Img3, Sec5Img4];
+  const sec6Images = [Sec6Img1, Sec6Img2, Sec6Img3, Sec6Img4];
   const [expanded, setExpanded] = useState(false);
   const [expanded1, setExpanded1] = useState(false);
   // Persistent intersection observer callback
@@ -192,7 +195,7 @@ export default function HMS() {
               isLoaded ? styles.servicesVisible : ""
             }`}
           >
-            <p className={styles.serviceTag}>Branding & Packaging</p>
+            <p className={styles.serviceTag}> Brand Identity, Event Branding</p>
             <span className={styles.serviceAccent}>
               {" "}
               {/* Kid’s Oral Care | FMCG */}
@@ -431,10 +434,6 @@ export default function HMS() {
         <div className={styles.rightSide}>
           <div className={styles.textContent}>
             <div className={styles.challengeItem}>
-              <p className={styles.challengeTitle}></p>
-            </div>{" "}
-            <br />
-            <div className={styles.challengeItem}>
               <p className={styles.challengeTitle}>
                 {/* Packaging Design: */}
                 <span>
@@ -492,10 +491,6 @@ export default function HMS() {
         </div>
         <div className={styles.rightSide}>
           <div className={styles.textContent}>
-            <div className={styles.challengeItem}>
-              <p className={styles.challengeTitle}></p>
-            </div>{" "}
-            <br />
             <div className={styles.challengeItem}>
               <p className={styles.challengeTitle}>
                 {/* Packaging Design: */}
@@ -563,19 +558,22 @@ export default function HMS() {
         </div>
         <div className={styles.rightSide}>
           <div className={styles.textContent}>
-            <div className={styles.challengeItem}>
-              <p className={styles.challengeTitle}></p>
-            </div>{" "}
-            <br />
+            
+          
             <div className={styles.challengeItem}>
               <p className={styles.challengeTitle}>
                 {/* Packaging Design: */}
                 <span>
-                  <b> After the launch, Hylete saw:</b> <br /><br />
-                  Increased sponsor interest due to a more professional visual <br />
-                  identityBetter recall at sports expos and athlete<br />
-                  meet-upsStrong early engagement on Instagram with branded<br />
-                  event highlightsSeamless implementation of event assets across<br />
+                  <b> After the launch, Hylete saw:</b> <br />
+               
+                  Increased sponsor interest due to a more professional visual{" "}
+                  
+                  identityBetter recall at sports expos and athlete
+             
+                  meet-upsStrong early engagement on Instagram with branded
+            
+                  event highlightsSeamless implementation of event assets across
+              
                   multiple cities
                 </span>
               </p>
@@ -583,8 +581,7 @@ export default function HMS() {
           </div>
         </div>
       </div>
- 
- 
+
       <div
         className={`${styles.imageSection3} ${
           isElementVisible("images3down") ? styles.sectionVisible : ""
@@ -602,7 +599,7 @@ export default function HMS() {
         }`}
         data-section="carousel4"
       >
-        <MobileCarousel images={sec4Images} />
+        <MobileCarousel images={sec6Images} />
       </div>
 
       {/* <div className={styles.testimonialSection}>

@@ -9,18 +9,12 @@ import sec2Right from "./Sec2Right.jpg";
 
 // import Sec3Full from "./Sec3Full.jpg";
 
-import Sec31 from "./sec31.jpg"
-import Sec32 from "./sec32.jpg"
-import Sec33 from "./sec33.jpg"
-
-
-
-
-
-
+import Sec31 from "./sec31.jpg";
+import Sec32 from "./sec32.jpg";
+import Sec33 from "./sec33.jpg";
 
 import sec41 from "./Sec4UpLeft.jpg";
-import sec42 from "./Sec4UpRight.jpg"
+import sec42 from "./Sec4UpRight.jpg";
 import sec43 from "./Sec4Down.jpg";
 // import sec44 from "./Sec4Down.jpg";
 import sec4Full from "./Sec4Full.jpg";
@@ -72,24 +66,24 @@ export default function HMS() {
   const demoCards = [
     {
       image: case1,
-      text: "Purus",
-      link: "#",
+      text: "Gopalan group",
+      link: "/casestudy/gopalan",
     },
     {
       image: case2,
-      text: "Akoya",
-      link: "/casestudy/akoya",
+      text: "virat",
+      link: "/casestudy/virat",
     },
     {
       image: case3,
-      text: "Necc",
-      link: "/casestudy/necc",
+      text: "Samruddhbharat Technologies",
+      link: "/casestudy/samrudh",
     },
   ];
 
   // Define image arrays for mobile carousels
   const sec2Images = [sec2Left, sec2Middle, sec2Right];
-  const sec3UpImages = [Sec31,Sec32 , Sec33];
+  const sec3UpImages = [Sec31, Sec32, Sec33];
   const sec3DownImages = [sec3DownLeft, sec3DownRight];
   const sec4Images = [sec41, sec42, sec43];
   const [expanded, setExpanded] = useState(false);
@@ -189,7 +183,10 @@ export default function HMS() {
               isLoaded ? styles.servicesVisible : ""
             }`}
           >
-            <p className={styles.serviceTag}>Event Branding, Environmental Graphics, Print & Digital Communication, Social Media, Award Collaterals, Photo Booth</p>
+            <p className={styles.serviceTag}>
+              {/* Event Branding, Environmental Graphics, Print & Digital
+              Communication, Social Media, Award Collaterals, Photo Booth */}
+            </p>
             <span className={styles.serviceAccent}>
               {" "}
               {/* Kid’s Oral Care | FMCG */}
@@ -226,9 +223,14 @@ export default function HMS() {
         <div className={styles.rightSide}>
           <div className={styles.textContent}>
             <p>
-         The NECC Women’s Tennis Tournament isn’t just a competition — it’s a celebration of athletic excellence, ambition, and fearless spirit. With a legacy rooted in empowering women through sports, the 2025 edition aimed to deliver an unforgettable visual and emotional experience.
-Our task at Haraay Design Studio:
-Create a cohesive, bold, and empowering brand identity system that could carry across stadiums, screens, signage, and souvenirs — and elevate the tournament’s growing national presence.
+              The NECC Women’s Tennis Tournament isn’t just a competition — it’s
+              a celebration of athletic excellence, ambition, and fearless
+              spirit. With a legacy rooted in empowering women through sports,
+              the 2025 edition aimed to deliver an unforgettable visual and
+              emotional experience. Our task at Haraay Design Studio: Create a
+              cohesive, bold, and empowering brand identity system that could
+              carry across stadiums, screens, signage, and souvenirs — and
+              elevate the tournament’s growing national presence.
             </p>
           </div>
         </div>
@@ -316,64 +318,79 @@ Create a cohesive, bold, and empowering brand identity system that could carry a
 
       {/* Our Approach Section */}
       <div
-           className={`${styles.textSection} ${
-             isElementVisible("overview") ? styles.sectionVisible : ""
-           }`}
-           data-section="overview"
-         >
-           <div className={styles.leftSide}>
-             <h2 className={styles.sectionHeader}>
-               Our Creative <br /> Approach
-             </h2>
-             <div className={styles.sectionAccent}></div>
-           </div>
-           <div className={styles.rightSide}>
-             <div className={styles.textContent}>
-               <p>
-              We built the entire brand identity with movement, energy, and elegance at its core.
-               </p>
-               <div className={styles.approachCards}>
-                 <div className={styles.aCard}>
-                   <span> Core Brand System:</span>A striking wordmark +
-                   W-symbol representing strength and motion <br /> Vibrant gradients and
-                   athletic typography<br />A consistent brand language across
-                   billboards, banners, backdrops, and court-side graphics
-                 </div>
-                    {expanded && (
-               <>
-     <div className={styles.aCard}>
-                   <span>    Environmental Design:</span>
-              
-   Entrance archways, directional signage, stadium hoardings, and media backdrops<br />Court-side banners and stands designed for visual impact on-ground and on-screen<br />Branded press zones, player waiting lounges, and VIP areas
-                 </div>
-                   <div className={styles.aCard}>
-                   <span> Award & Collateral Design:</span>
-   Custom certificates, badges, and award packaging<br />On-brand merchandise & athlete kits<br />Instagram-worthy Photo Booths for fan engagement and brand recall
-                 </div>
-                   <div className={styles.aCard}>
-                 The 2025 edition of the NECC Women’s Tennis Tournament saw a record uptick in fan engagement, media coverage, and sponsor visibility. The branding gave the event a world-class visual identity that matched the talent and energy on court.
-                 </div>
-   
-   </>
-               )}{" "}
-               <span
-                 className={styles.readmorebtn}
-                 onClick={() => setExpanded(!expanded)}
-               >
-                 {expanded ? (
-                   <>
-                     Read Less <img src={iconarrow} alt="Arrow Icon" />
-                   </>
-                 ) : (
-                   <>
-                     Read More <img src={iconarrow2} alt="Arrow Icon" />
-                   </>
-                 )}
-               </span>
-               </div>
-             </div>
-           </div>
-         </div>
+        className={`${styles.textSection} ${
+          isElementVisible("overview") ? styles.sectionVisible : ""
+        }`}
+        data-section="overview"
+      >
+        <div className={styles.leftSide}>
+          <h2 className={styles.sectionHeader}>
+            Our Creative <br /> Approach
+          </h2>
+          <div className={styles.sectionAccent}></div>
+        </div>
+        <div className={styles.rightSide}>
+          <div className={styles.textContent}>
+            <p>
+              We built the entire brand identity with movement, energy, and
+              elegance at its core.
+            </p>
+            <div className={styles.approachCards}>
+              <div className={styles.aCard}>
+                <span> Core Brand System:</span>A striking wordmark + W-symbol
+                representing strength and motion <br /> Vibrant gradients and
+                athletic typography
+                <br />A consistent brand language across billboards, banners,
+                backdrops, and court-side graphics
+              </div>
+              {expanded && (
+                <>
+                  <div className={styles.aCard}>
+                    <span> Environmental Design:</span>
+                    Entrance archways, directional signage, stadium hoardings,
+                    and media backdrops
+                    <br />
+                    Court-side banners and stands designed for visual impact
+                    on-ground and on-screen
+                    <br />
+                    Branded press zones, player waiting lounges, and VIP areas
+                  </div>
+                  <div className={styles.aCard}>
+                    <span> Award & Collateral Design:</span>
+                    Custom certificates, badges, and award packaging
+                    <br />
+                    On-brand merchandise & athlete kits
+                    <br />
+                    Instagram-worthy Photo Booths for fan engagement and brand
+                    recall
+                  </div>
+                  <div className={styles.aCard}>
+                    The 2025 edition of the NECC Women’s Tennis Tournament saw a
+                    record uptick in fan engagement, media coverage, and sponsor
+                    visibility. The branding gave the event a world-class visual
+                    identity that matched the talent and energy on court.
+                  </div>
+                </>
+              )}{" "}
+              <span
+                className={styles.readmorebtn}
+                onClick={() => setExpanded(!expanded)}
+              >
+                {expanded ? (
+                  <>
+                    Read Less <img src={iconarrow} alt="Arrow Icon" />
+                  </>
+                ) : (
+                  <>
+                    Read More <img src={iconarrow2} alt="Arrow Icon" />
+                  </>
+                )}
+              </span>
+            </div>
+          </div>
+        </div>
+        
+      </div>
       {/* Section 3 Upper Images - Desktop only */}
 
       {/* Section 3  Mobile Carousel */}
@@ -450,7 +467,6 @@ Create a cohesive, bold, and empowering brand identity system that could carry a
         </div>
       </div> */}
 
-    
       <SimilarProjectsCards
         title="Similar Projects"
         seeAllLink="https://example.com/all-projects"

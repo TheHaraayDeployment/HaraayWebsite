@@ -50,6 +50,7 @@ import Alanakr from "./CaseStudies/Alankar/AlankarCaseStudy.jsx";
 import Lokneta from "./CaseStudies/Lokneta/Lokneta.jsx";
 import Hylete from "./CaseStudies/Hylete/HyleteCaseStudy.jsx";
 import Samrudh from "./CaseStudies/Samrudh/SamrudhCaseStudy.jsx";
+import Purus from "./CaseStudies/Purus/Purus.jsx";
 function App() {
   const isNavigating = useNavigationEvent(); // Get navigation event status
   const location = useLocation();
@@ -129,6 +130,8 @@ function App() {
     "/casestudy/lokneta",
     "/casestudy/hylete",
     "/casestudy/samrudh",
+    "/casestudy/purus",
+    "/casestudy/toot",
   ];
   const isValidRoute = validRoutes.includes(location.pathname);
   return (
@@ -173,6 +176,7 @@ function App() {
           <Route path="/casestudy/lokneta" element={<Lokneta />} />
           <Route path="/casestudy/Hylete" element={<Hylete />} />
           <Route path="/casestudy/samrudh" element={<Samrudh />} />
+          <Route path="/casestudy/purus" element={<Purus />} />
           {/* <Route path="/casestudy/akoya1" element={<Akoyavideo />} /> */}
           <Route path="*" element={<NotFound />} />
         </Routes>

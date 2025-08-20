@@ -12,8 +12,9 @@ import sec41 from "./Sec4up.png"
 import sec42 from "./Sec42.png"
 import sec43 from "./Sec42.png"
 import sec44 from "./Sec44.png"
+import Sec4Img4 from "./Sec44.jpg"
 import sec4Full from "./Sec4down.png"
-
+import video from "./TOOTH.mp4"
 
 import sec3DownLeft from "./Sec3DownLeft.svg";
 import sec3DownRight from "./Sec3DownRight.svg";
@@ -66,7 +67,7 @@ export default function HMS() {
   const sec2Images = [sec2Left, sec2Right];
   const sec3UpImages = [sec3UpLeft, sec3UpRight];
   const sec3DownImages = [sec3DownLeft, sec3DownRight];
-  const sec4Images = [sec41,sec42,sec43,sec44];
+  const sec4Images = [sec41,sec44];
   const [expanded, setExpanded] = useState(false);
   const [expanded1, setExpanded1] = useState(false);
   // Persistent intersection observer callback
@@ -427,7 +428,17 @@ export default function HMS() {
       </div>
       {/* Results & Impact Section */}
     
-
+    <div className={styles.LastSeccontainer}>
+  <video
+    src={video}
+    autoPlay
+    muted
+    loop
+    playsInline
+    className={styles.video}
+  />
+  <img src={Sec4Img4} alt="Example" className={styles.image} />
+</div>
       {/* Section 4 Upper Images - Desktop only */}
     <div
         className={`${styles.imageSection3} ${
@@ -435,8 +446,8 @@ export default function HMS() {
         }`}
         data-section="images3down"
       >
+        {/* <img src={sec4Full} className={styles.imageFullScreen} alt="" /> */}
         <img src={sec41} className={styles.imageFullScreen} alt="" />
-        <img src={sec4Full} className={styles.imageFullScreen} alt="" />
       </div>
 
       {/* Section 4 Mobile Carousel */}

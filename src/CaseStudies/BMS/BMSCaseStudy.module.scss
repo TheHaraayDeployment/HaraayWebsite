@@ -1151,3 +1151,25 @@ font-style: normal;
 font-weight: 500;
 line-height: 150%; /* 24px */
 }
+ 
+
+.readmorebtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #0073e6;
+  cursor: pointer;
+  margin-left: 6px;
+
+  img {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

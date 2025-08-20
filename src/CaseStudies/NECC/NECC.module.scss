@@ -1182,3 +1182,68 @@ font-style: normal;
 font-weight: 500;
 line-height: 150%; /* 24px */
 }
+
+.LastSeccontainer {
+  display: flex;
+  align-items: stretch; // equal height on desktop
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px 70px;
+background-color: transparent;
+
+/* Both take flexible space */
+.video,
+.image {
+  flex: 1 1 50%;
+  border-radius: 10px;
+  object-fit: cover;
+  max-width: 100%;
+}
+
+/* Image wider proportion */
+.image {
+  width: 70%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Video fixed aspect ratio (phone-style) */
+.video {
+  max-width: 388px; // restrict width
+  aspect-ratio: 9 / 16; // keeps tall video ratio responsive
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+}
+/* Mobile / tablet responsive */
+@media (max-width: 1024px) {
+  .LastSeccontainer {
+    padding: 20px 40px;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .LastSeccontainer {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .video,
+  .image {
+    flex: 1 1 100%;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .video {
+    aspect-ratio: 9 / 16; // still maintains phone look
+    max-width: 100%;
+  }
+}
