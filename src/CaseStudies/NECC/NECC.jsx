@@ -11,7 +11,7 @@ import Sec2Mid1 from "./Sec2Mid1.png";
 import Sec2Mid2 from "./Sec2Mid2.png";
 import Sec2Mid3 from "./Sec2Mid3.png";
 import video from "./NECC.mp4"
-import img from "./img.jpg"
+import img from "./Img.jpg"
 import sec2Left from "./sec2left.jpg";
 import Sec3Full from "./Sec3Full.png";
 import sec2Right from "./Sec2Right.jpg";
