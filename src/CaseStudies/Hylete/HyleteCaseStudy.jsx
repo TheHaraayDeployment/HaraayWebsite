@@ -26,7 +26,7 @@ import Sec5Img2 from "./Sec5Img2.jpg";
 import Sec5Img3 from "./Sec5Img3.jpg";
 import Sec5Img4 from "./Sec5Img4.jpg";
 
-import sec6Full from "./Sec6Full.jpg";
+import sec6Full from "./sec6Full.jpg"
 import Sec6Img1 from "./Sec6Img1.jpg";
 import Sec6Img2 from "./Sec6Img2.jpg";
 import Sec6Img3 from "./Sec6Img3.jpg";
