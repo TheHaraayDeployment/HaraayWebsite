@@ -2,7 +2,7 @@ import React, { useEffect, useState, useCallback, useRef } from "react";
 import styles from "./BMSCaseStudy.module.scss";
 import HeroImg from "./HMSHero.jpg";
 
-import Sec2Full from "./Sec2Full.jpg";
+import Sec2Full from "./Sec2Full.jpg"
 import Sec2Img1 from "./Sec2Img1.jpg"
 import Sec2Img2 from "./Sec2Img2.jpg"
 import Sec2Img3 from "./Sec2Img3.jpg"
