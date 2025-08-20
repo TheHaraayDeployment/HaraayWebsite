@@ -230,7 +230,7 @@ const projectsData = [
     tags: ["Branding", "3D Character Design", "Packaging"],
     image: purus,
     mediaType: "image",
-    link: "#"
+  link: "/casestudy/purus"
   },
   {
     id: 5,
