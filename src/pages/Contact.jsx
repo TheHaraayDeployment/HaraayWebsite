@@ -6,6 +6,7 @@ import {Link} from "react-router-dom"
 import shapee from "../assets/shape2.png";
 import { s } from "framer-motion/client";
 import SEO from "../Seo";
+import axios from "axios";
 function Contact() {
   //
   //
