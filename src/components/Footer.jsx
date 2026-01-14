@@ -33,7 +33,8 @@ function Footer() {
                   {" "}
                   Blogs
                 </Link>
-              </li>   <li>
+              </li>{" "}
+              <li>
                 {" "}
                 <Link to="/faq" className="nodecorationLink">
                   {" "}
@@ -98,7 +99,7 @@ function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="nodecorationLink"
-              > 
+              >
                 {" "}
                 <li>
                   {" "}
@@ -137,8 +138,7 @@ function Footer() {
             <ul>
               <li>
                 <Icons.FaLocationDot className="iconstyle" title="location" />
-                Pune,
-                Maharashtra <br /> &nbsp;&nbsp; &nbsp; 411038
+                Pune, Maharashtra <br /> &nbsp;&nbsp; &nbsp; 411038
               </li>
               <li className={styles.mlocc}>India</li>
               {/* <li>📧 hello@haraaydesignstudio.com</li> */}
@@ -147,7 +147,10 @@ function Footer() {
         </div>
       </div>{" "}
       <h1>Haraay Design Studio</h1>
-      <p>© 2025 Haraay. Haraay Design Studio.LLP All rights reserved.</p>
+      <p>
+        © {new Date().getFullYear()} Haraay. Haraay Design Studio LLP. All
+        rights reserved.
+      </p>
     </div>
   );
 }

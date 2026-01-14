@@ -1,4 +1,4 @@
-import React, { useState, useEffect , useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import axios from "axios";
 
@@ -15,10 +15,10 @@ import heroimg3 from "../../assets/ViratCasestudyPackaging2.svg";
 import Akoyaheroimg from "../../assets/Akoyaheroimg.svg";
 import Projectimg1 from "../../assets/Akoyaheroimg.webp";
 import Projectimg2 from "../../assets/Bosch/Boschimg.webp";
-import Projectimg3 from "../../assets/NECC.jpg"; 
+import Projectimg3 from "../../assets/NECC.jpg";
 import Projectimg4 from "../../assets/Lokneta/lokneta.webp";
 import Projectimg5 from "../../assets/Satvikraas/Satvikraas.webp";
-import gopalanimg from "../../assets/gopalan2.jpg"
+import gopalanimg from "../../assets/gopalan2.jpg";
 import Purushero from "../../assets/purus.svg";
 
 import AkoyaLOGO from "../../assets/Logo/LOGO Akoya.png";
@@ -261,7 +261,7 @@ export default function LandingPage() {
     }
   };
 
-  // testimonial btns 
+  // testimonial btns
   const containerRef = useRef(null);
 
   const scrollLeft = () => {
@@ -275,319 +275,341 @@ export default function LandingPage() {
       containerRef.current.scrollBy({ left: 300, behavior: "smooth" });
     }
   };
-  return (<><SEO 
-    title="Haraay - World-leading Brand Specialists | Consulting, Design & Experience"
-    description="Elevate your brand with Haraay, a global leader in branding, design, and strategy. We craft premium brand experiences that stand out."
-    keywords="branding agency, brand consulting, brand experience, global branding, premium brand design, corporate branding, brand transformation"
-  />
+  return (
+    <>
+      <SEO
+        title="Haraay - World-leading Brand Specialists | Consulting, Design & Experience"
+        description="Elevate your brand with Haraay, a global leader in branding, design, and strategy. We craft premium brand experiences that stand out."
+        keywords="branding agency, brand consulting, brand experience, global branding, premium brand design, corporate branding, brand transformation"
+      />
+      <div className={styles.Landingpage}>
+        <div className={styles.allsection}>
+          <section className={styles.Herosec}>
+            <Hero></Hero>
+          </section>
+          <section className={styles.Subherosec}>
+            <h1 className={styles.Subherotxt}>
+              Turning your problems to Transformative designs!
+            </h1>
+          </section>
+          <section
+            data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom"
+            className={styles.Wearesec}
+          >
+            <h2>We are </h2>
+            <h1>Global Design Consultancy</h1>
+            <h2>Powering brands for a brave new world. </h2>
 
-    <div className={styles.Landingpage}>
-
-      <div className={styles.allsection}>
-        <section className={styles.Herosec}>
-          <Hero></Hero>
-        
-        </section>
-       
-        <section className={styles.Subherosec}>
-          <h1 className={styles.Subherotxt}>
-            Turning your problems to Transformative designs!
-          </h1>
-        </section>
-        <section
-          data-aos="fade-up"
-          data-aos-anchor-placement="top-bottom"
-          className={styles.Wearesec}
-        >
-          <h2>We are </h2>
-          <h1>Global Design Consultancy</h1>
-          <h2>Powering brands for a brave new world. </h2>
-
-          <div data-aos="fade-up" className={styles.Subherotxtbtn}>
-            {" "}
-            <button>
+            <div data-aos="fade-up" className={styles.Subherotxtbtn}>
               {" "}
-              <Link to="/about">Learn more About us </Link>
-            </button>{" "}
-            <button>
+              <button>
+                {" "}
+                <Link to="/about">Learn more About us </Link>
+              </button>{" "}
+              <button>
+                {" "}
+                <Link to="/expertise"> Discover our capabilities </Link>
+              </button>
+            </div>
+          </section>
+          {/* recent work txt */}
+          <div data-aos="fade-up" className={styles.stickyparent}>
+            <div className={styles.sticky}>
+              <div className={styles.scrollsection}></div>
+            </div>
+          </div>
+          <section className={styles.worksec}>
+            <Link to={"/casestudy/gopalan"} className="projectCards">
+              <div className={styles.projectcardtxt}>
+                <h1>Gopalan Group</h1>
+                <h3>Website Design & development</h3>
+              </div>
+              <img
+                draggable="false"
+                className={styles.projectimg}
+                src={gopalanimg}
+                alt="Project Card"
+              />
+            </Link>
+            <Link to={"/casestudy/bosch"} className="projectCards">
+              <div className={styles.projectcardtxt}>
+                <h1>Bosch Air Purifier</h1>
+                <h3>3D</h3>
+              </div>
+              <img
+                draggable="false"
+                className={styles.projectimg}
+                src={Projectimg2}
+                alt="Project Card"
+              />
+            </Link>
+            <div to={"/casestudy/akoya"} className="projectCards">
+              <div className={styles.projectcardtxt}>
+                <h1>NECC</h1>
+                <h3>Branding </h3>
+              </div>
+              <img
+                draggable="false"
+                className={styles.projectimg}
+                src={Projectimg3}
+                alt="Project Card"
+              />
+            </div>
+            <div className="projectCards">
+              <div className={styles.projectcardtxt}>
+                <h1>AMCHO DOTOR</h1>
+                <h3>Mobile App Designing</h3>
+              </div>
+              <img
+                draggable="false"
+                className={styles.projectimg}
+                src={Projectimg4}
+                alt="Project Card"
+              />
+            </div>{" "}
+            <Link to={"/casestudy/satvik"} className="projectCards">
+              <div className={styles.projectcardtxt}>
+                <h1>SatvikRaas</h1>
+                <h3>Branding | Website | Packaging</h3>
+              </div>
+              <img
+                draggable="false"
+                className={styles.projectimg}
+                src={Projectimg5}
+                alt="Project Card"
+              />
+            </Link>
+            <div className={styles.projcardsbtn}>
               {" "}
-              <Link to="/expertise"> Discover our capabilities </Link>
-            </button>
-          </div>
-        </section>
-        {/* recent work txt */}
-        <div data-aos="fade-up" className={styles.stickyparent}>
-          <div className={styles.sticky}>
-            <div className={styles.scrollsection}></div>
-          </div>
-        </div>
-        <section className={styles.worksec}>
-          <Link to={"/casestudy/gopalan"} className="projectCards">
-            <div className={styles.projectcardtxt}>
-              <h1>Gopalan Group</h1>
-              <h3>Website Design & development</h3>
+              <Link data-aos="fade-up" to={"/works"}>
+                See More Works
+              </Link>
             </div>
-            <img
-              draggable="false"
-              className={styles.projectimg}
-              src={gopalanimg}
-              alt="Project Card"
-            />
-          </Link>
-          <Link to={"/casestudy/bosch"} className="projectCards">
-            <div className={styles.projectcardtxt}>
-              <h1>Bosch Air Purifier</h1>
-              <h3>3D</h3>
-            </div>
-            <img
-              draggable="false"
-              className={styles.projectimg}
-              src={Projectimg2}
-              alt="Project Card"
-            />
-          </Link>
-          <div to={"/casestudy/akoya"} className="projectCards">
-            <div className={styles.projectcardtxt}>
-              <h1>NECC</h1>
-              <h3>Branding </h3>
-            </div>
-            <img
-              draggable="false"
-              className={styles.projectimg}
-              src={Projectimg3}
-              alt="Project Card"
-            />
-          </div>
-          <div className="projectCards">
-            <div className={styles.projectcardtxt}>
-              <h1>Lokneta</h1>
-              <h3>Mobile App Designing</h3>
-            </div>
-            <img
-              draggable="false"
-              className={styles.projectimg}
-              src={Projectimg4}
-              alt="Project Card"
-            />
-          </div>{" "}
-          <Link to={"/casestudy/satvik"} className="projectCards">
-            <div className={styles.projectcardtxt}>
-              <h1>SatvikRaas</h1>
-              <h3>Branding | Website | Packaging</h3>
-            </div>
-            <img
-              draggable="false"
-              className={styles.projectimg}
-              src={Projectimg5}
-              alt="Project Card"
-            />
-          </Link>
-          <div className={styles.projcardsbtn}> <Link data-aos="fade-up"   to={"/works"}>
-            See More Works</Link></div>
-        </section>
-        <section data-aos="fade-up" className={styles.partners}>
-          <div className={styles.partnrshead}>
-            <h1>Our Partners</h1>
-            <p>
-              From champions to challengers, our clients have creative courage
-              in common.
-            </p>
-          </div>
-
-          <div data-aos="fade-up" className={styles.partnercontent}>
-            <div className={styles.imageslider}>
-              <div className={styles.imagetrack}>
-                {repeatedImages.map((imgSrc, index) => (
-                  <img className={styles.partnerimage}
-                    draggable="false"
-                    key={index}
-                    src={imgSrc}
-                    alt={`Partner ${(index % 4) + 1}`}
-                  />
-                ))}
-              </div>
+          </section>
+          <section data-aos="fade-up" className={styles.partners}>
+            <div className={styles.partnrshead}>
+              <h1>Our Partners</h1>
+              <p>
+                From champions to challengers, our clients have creative courage
+                in common.
+              </p>
             </div>
 
-            <div className={styles.imageslider2}>
-              <div className={styles.imagetrack2}>
-                {partnertextImg.map((imgSrc, index) => (
-                  <img
-                    draggable="false"
-                    key={index}
-                    src={imgSrc}
-                    alt={`Partner ${index + 1}`}
-                  />
-                ))}
-              </div>{" "}
-            </div>
-          </div>
-        </section>
-        <section data-aos="fade-up" className={styles.testimonial}>
-          <h1>Testimonials</h1>
-          <p>Why Everyone Loves Haraay</p>
-          <div className={styles.testimonialContainer}  ref={containerRef}>
-            <div data-aos="fade-left" className={styles.testimonialCard}>
-              <div className={styles.profile}>
-                <img draggable="false" src={PurusLOGO} alt="Profile 1" />
-              </div>
-              <div className={styles.content}>
-                <div className={styles.testname}>
-                  {" "}
-                  <h3>Puru’s Enterprise</h3>
-                  <p className={styles.testrole}>founder & ceo</p>
+            <div data-aos="fade-up" className={styles.partnercontent}>
+              <div className={styles.imageslider}>
+                <div className={styles.imagetrack}>
+                  {repeatedImages.map((imgSrc, index) => (
+                    <img
+                      className={styles.partnerimage}
+                      draggable="false"
+                      key={index}
+                      src={imgSrc}
+                      alt={`Partner ${(index % 4) + 1}`}
+                    />
+                  ))}
                 </div>
-                <p className={styles.review}>
-                  Puru's association with Haraay has been wonderful &
-                  fulfilling. The project scope was brand Identity, website &
-                  packaging design. Haraay overexceeded our expectations and
-                  ensure we got what we were looking from a qualitative agency.
-                  We express our gratitude and wish Haraay sustainability growth
-                  & success.
-                </p>
-                <div className={styles.caseStudy}>
-                  {/* <p>Explore Case Study</p>
+              </div>
+
+              <div className={styles.imageslider2}>
+                <div className={styles.imagetrack2}>
+                  {partnertextImg.map((imgSrc, index) => (
+                    <img
+                      draggable="false"
+                      key={index}
+                      src={imgSrc}
+                      alt={`Partner ${index + 1}`}
+                    />
+                  ))}
+                </div>{" "}
+              </div>
+            </div>
+          </section>
+          <section data-aos="fade-up" className={styles.testimonial}>
+            <h1>Testimonials</h1>
+            <p>Why Everyone Loves Haraay</p>
+            <div className={styles.testimonialContainer} ref={containerRef}>
+              <div data-aos="fade-left" className={styles.testimonialCard}>
+                <div className={styles.profile}>
+                  <img draggable="false" src={PurusLOGO} alt="Profile 1" />
+                </div>
+                <div className={styles.content}>
+                  <div className={styles.testname}>
+                    {" "}
+                    <h3>Puru’s Enterprise</h3>
+                    <p className={styles.testrole}>founder & ceo</p>
+                  </div>
+                  <p className={styles.review}>
+                    Puru's association with Haraay has been wonderful &
+                    fulfilling. The project scope was brand Identity, website &
+                    packaging design. Haraay overexceeded our expectations and
+                    ensure we got what we were looking from a qualitative
+                    agency. We express our gratitude and wish Haraay
+                    sustainability growth & success.
+                  </p>
+                  <div className={styles.caseStudy}>
+                    {/* <p>Explore Case Study</p>
                   <h4>Explore Case Study</h4> */}
-                  <div className={styles.rating}>
-                    <span>5.0</span>
-                    <div className={styles.stars}>⭐⭐⭐⭐⭐</div>
-                    <img
-                      draggable="false"
-                      src={googlelogo}
-                      alt="Google Rating"
-                    />
+                    <div className={styles.rating}>
+                      <span>5.0</span>
+                      <div className={styles.stars}>⭐⭐⭐⭐⭐</div>
+                      <img
+                        draggable="false"
+                        src={googlelogo}
+                        alt="Google Rating"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div
-              data-aos="fade-left"
-              data-aos-delay="300"
-              className={styles.testimonialCard}
-            >
-              <div className={styles.profile}>
-                <img draggable="false" src={testprofile1} alt="Profile 1" />
-              </div>
-              <div className={styles.content}>
-                <div className={styles.testname}>
-                  {" "}
-                  <h3>Mr. Arvind </h3>
-                  <p className={styles.testrole}>MD & CEO</p>
+              <div
+                data-aos="fade-left"
+                data-aos-delay="300"
+                className={styles.testimonialCard}
+              >
+                <div className={styles.profile}>
+                  <img draggable="false" src={testprofile1} alt="Profile 1" />
                 </div>
-                <p className={styles.review}>
-                  What truly sets them apart is their ability to weave
-                  innovation into every element — our new website not only looks
-                  incredible, but it also functions flawlessly, making user
-                  experience effortless and intuitive. The 3D animations they
-                  crafted are immersive and elevate our digital presence to
-                  another level, bringing our products to life in a way that
-                  captivates our audience.
-                </p>
-                <div className={styles.caseStudy}>
-                    {/* <p>Explore Case Study</p> <h4>Explore Case Study</h4> */} 
-                  <div className={styles.rating}>
-                    <span>5.0</span>
-                    <div className={styles.stars}>⭐⭐⭐⭐⭐</div>
-                    <img
-                      draggable="false"
-                      src={googlelogo}
-                      alt="Google Rating"
-                    />
+                <div className={styles.content}>
+                  <div className={styles.testname}>
+                    {" "}
+                    <h3>Mr. Arvind </h3>
+                    <p className={styles.testrole}>MD & CEO</p>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div
-              data-aos="fade-left"
-              data-aos-delay="600"
-              className={styles.testimonialCard}
-            >
-              <div className={styles.profile}>
-                <img draggable="false" src={testprofile1} alt="Profile 1" />
-              </div>
-              <div className={styles.content}>
-                <div className={styles.testname}>
-                  {" "}
-                  <h3>Mr. Mohit</h3>
-                  <p className={styles.testrole}>Product manager</p>
-                </div>
-                <p className={styles.review}>
-                  If you're looking for a team that’s not only experts in their
-                  field but also genuinely passionate about your brand's
-                  success, look no further. Haraay Studio has helped us stand
-                  out in a crowded market, and we couldn't be more thrilled with
-                  the results!"
-                </p>
-                <div className={styles.caseStudy}>
+                  <p className={styles.review}>
+                    What truly sets them apart is their ability to weave
+                    innovation into every element — our new website not only
+                    looks incredible, but it also functions flawlessly, making
+                    user experience effortless and intuitive. The 3D animations
+                    they crafted are immersive and elevate our digital presence
+                    to another level, bringing our products to life in a way
+                    that captivates our audience.
+                  </p>
+                  <div className={styles.caseStudy}>
                     {/* <p>Explore Case Study</p> <h4>Explore Case Study</h4> */}
-                  <div className={styles.rating}>
-                    <span>5.0</span>
-                    <div className={styles.stars}>⭐⭐⭐⭐⭐</div>
-                    <img
-                      draggable="false"
-                      src={googlelogo}
-                      alt="Google Rating"
-                    />
+                    <div className={styles.rating}>
+                      <span>5.0</span>
+                      <div className={styles.stars}>⭐⭐⭐⭐⭐</div>
+                      <img
+                        draggable="false"
+                        src={googlelogo}
+                        alt="Google Rating"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                data-aos="fade-left"
+                data-aos-delay="600"
+                className={styles.testimonialCard}
+              >
+                <div className={styles.profile}>
+                  <img draggable="false" src={testprofile1} alt="Profile 1" />
+                </div>
+                <div className={styles.content}>
+                  <div className={styles.testname}>
+                    {" "}
+                    <h3>Mr. Mohit</h3>
+                    <p className={styles.testrole}>Product manager</p>
+                  </div>
+                  <p className={styles.review}>
+                    If you're looking for a team that’s not only experts in
+                    their field but also genuinely passionate about your brand's
+                    success, look no further. Haraay Studio has helped us stand
+                    out in a crowded market, and we couldn't be more thrilled
+                    with the results!"
+                  </p>
+                  <div className={styles.caseStudy}>
+                    {/* <p>Explore Case Study</p> <h4>Explore Case Study</h4> */}
+                    <div className={styles.rating}>
+                      <span>5.0</span>
+                      <div className={styles.stars}>⭐⭐⭐⭐⭐</div>
+                      <img
+                        draggable="false"
+                        src={googlelogo}
+                        alt="Google Rating"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>{" "}
+              <div
+                data-aos="fade-left"
+                data-aos-delay="900"
+                className={styles.testimonialCard}
+              >
+                <div className={styles.profile}>
+                  <img draggable="false" src={testprofile1} alt="Profile 1" />
+                </div>
+                <div className={styles.content}>
+                  <div className={styles.testname}>
+                    {" "}
+                    <h3>Shirishti </h3>
+                    <p>Head of Digital Transformation</p>
+                  </div>
+                  <p className={styles.review}>
+                    We hired Haraay Design Studios to create a new brand
+                    identity and social media presence. We are delighted with
+                    the service and the brilliant work done by Haraay Design
+                    Studios. I would recommend them to get your brand out there
+                    and running.
+                  </p>
+                  <div className={styles.caseStudy}>
+                    {/* <p>Explore Case Study</p> <h4>Explore Case Study</h4> */}
+                    <div className={styles.rating}>
+                      <span>5.0</span>
+                      <div className={styles.stars}>⭐⭐⭐⭐⭐</div>
+                      <img
+                        draggable="false"
+                        src={googlelogo}
+                        alt="Google Rating"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>{" "}
-            <div
-              data-aos="fade-left"
-              data-aos-delay="900"
-              className={styles.testimonialCard}
-            >
-              <div className={styles.profile}>
-                <img draggable="false" src={testprofile1} alt="Profile 1" />
-              </div>
-              <div className={styles.content}>
-                <div className={styles.testname}>
-                  {" "}
-                  <h3>Shirishti </h3>
-                  <p>Head of Digital Transformation</p>
-                </div>
-                <p className={styles.review}>
-                  We hired Haraay Design Studios to create a new brand identity
-                  and social media presence. We are delighted with the service
-                  and the brilliant work done by Haraay Design Studios. I would
-                  recommend them to get your brand out there and running.
-                </p>
-                <div className={styles.caseStudy}>
-                    {/* <p>Explore Case Study</p> <h4>Explore Case Study</h4> */}
-                  <div className={styles.rating}>
-                    <span>5.0</span>
-                    <div className={styles.stars}>⭐⭐⭐⭐⭐</div>
-                    <img
-                      draggable="false"
-                      src={googlelogo}
-                      alt="Google Rating"
-                    />
-                  </div>
-                </div>
-              </div>
+            <div className={styles.arrowbtns}>
+              <button
+                onClick={scrollLeft}
+                className="absolute left-0 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow-md hover:bg-gray-700"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="52"
+                  height="52"
+                  viewBox="0 0 52 52"
+                  fill="none"
+                >
+                  <rect width="52" height="52" rx="26" fill="#E5348C" />
+                  <path
+                    d="M14 26L21.9103 18L23.1969 19.299L17.4782 25.0813L38 25.0813V26.9187L17.4782 26.9187L23.1969 32.6991L21.9103 34L14 26Z"
+                    fill="white"
+                  />
+                </svg>
+              </button>
+              <button
+                onClick={scrollRight}
+                className="absolute right-0 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow-md hover:bg-gray-700"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="52"
+                  height="52"
+                  viewBox="0 0 52 52"
+                  fill="none"
+                >
+                  <rect width="52" height="52" rx="26" fill="#E5348C" />
+                  <path
+                    d="M38 26L30.0897 34L28.8031 32.701L34.5218 26.9187H14V25.0813H34.5218L28.8031 19.3009L30.0897 18L38 26Z"
+                    fill="white"
+                  />
+                </svg>
+              </button>
             </div>
-          
-          </div>   <div className={styles.arrowbtns}>
-            <button
-        onClick={scrollLeft}
-        className="absolute left-0 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow-md hover:bg-gray-700"
-      >
-  <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none">
-<rect width="52" height="52" rx="26" fill="#E5348C"/>
-<path  d="M14 26L21.9103 18L23.1969 19.299L17.4782 25.0813L38 25.0813V26.9187L17.4782 26.9187L23.1969 32.6991L21.9103 34L14 26Z" fill="white" />
-</svg>
-      </button>
-      <button
-        onClick={scrollRight}
-        className="absolute right-0 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow-md hover:bg-gray-700"
-      >
-      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none">
-<rect width="52" height="52" rx="26" fill="#E5348C"/>
-<path  d="M38 26L30.0897 34L28.8031 32.701L34.5218 26.9187H14V25.0813H34.5218L28.8031 19.3009L30.0897 18L38 26Z" fill="white"/>
-</svg>
-      </button>
-            </div>
-        </section>
-        {/* <section data-aos="fade-up" className={styles.Blogsec}>
+          </section>
+          {/* <section data-aos="fade-up" className={styles.Blogsec}>
           <h1>Blogs </h1>
           <div className={styles.blogcards}>
             <div
@@ -652,141 +674,145 @@ export default function LandingPage() {
             </div>
           </div>
         </section> */}
-        <section data-aos="fade-up" className={styles.Getintouch}>
-          <h1>Get in Touch</h1>
-          <div className={styles.getcard}>
-            <div className={styles.formimg}>
-              {" "}
-              <h1></h1>
-              <img
-                draggable="false"
-                src={shape1}
-                className={styles.contactshape}
-              />
-            </div>
-            <div className={styles.form}>
-              <form onSubmit={handleSubmit}>
-                <div className={styles.forminputes}>
-                  <div className={`${styles.enquiryinput} ${styles.servicediv}`}>
-                    <label className={styles.servicebtn}>
-                    Enquiry Type <span>*</span>{" "}
-                    </label>
-                    <div className={styles.serviceinput}>
-                    <input
-                      type="radio"
-                      name="serviceType"
-                      value="business"
-                      onChange={(e) => {
-                        handleRadioChange(e);
-                        handleChange(e);
-                      }}
-                      // checked={formData.serviceType === "business"}
-                    />
-                    <h5>Buisness</h5>
-                    <input
-                      type="radio"
-                      name="serviceType"
-                      value="job"
-                      // checked={formData.serviceType === "job"}
-                      onChange={(e) => {
-                        handleRadioChange(e);
-                        handleChange(e);
-                      }}
-                    />
-                    <h5>Job</h5> </div>
-                  </div>
+          <section data-aos="fade-up" className={styles.Getintouch}>
+            <h1>Get in Touch</h1>
+            <div className={styles.getcard}>
+              <div className={styles.formimg}>
+                {" "}
+                <h1></h1>
+                <img
+                  draggable="false"
+                  src={shape1}
+                  className={styles.contactshape}
+                />
+              </div>
+              <div className={styles.form}>
+                <form onSubmit={handleSubmit}>
+                  <div className={styles.forminputes}>
+                    <div
+                      className={`${styles.enquiryinput} ${styles.servicediv}`}
+                    >
+                      <label className={styles.servicebtn}>
+                        Enquiry Type <span>*</span>{" "}
+                      </label>
+                      <div className={styles.serviceinput}>
+                        <input
+                          type="radio"
+                          name="serviceType"
+                          value="business"
+                          onChange={(e) => {
+                            handleRadioChange(e);
+                            handleChange(e);
+                          }}
+                          // checked={formData.serviceType === "business"}
+                        />
+                        <h5>Buisness</h5>
+                        <input
+                          type="radio"
+                          name="serviceType"
+                          value="job"
+                          // checked={formData.serviceType === "job"}
+                          onChange={(e) => {
+                            handleRadioChange(e);
+                            handleChange(e);
+                          }}
+                        />
+                        <h5>Job</h5>{" "}
+                      </div>
+                    </div>
 
-                  <div className={styles.labeldiv}>
-                    {" "}
-                    <label>
+                    <div className={styles.labeldiv}>
                       {" "}
-                      First Name <span>*</span>{" "}
-                    </label>{" "}
+                      <label>
+                        {" "}
+                        First Name <span>*</span>{" "}
+                      </label>{" "}
+                    </div>
+                    <input
+                      type="text"
+                      required
+                      value={formData.firstName}
+                      name="firstName"
+                      placeholder="Enter First name"
+                      onChange={handleChange}
+                    />
                   </div>
-                  <input
-                    type="text"
-                    required
-                    value={formData.firstName}
-                    name="firstName"
-                    placeholder="Enter First name"
-                    onChange={handleChange}
-                  />
-                </div>
-                <div className={styles.forminputes}>
-                  {" "}
-                  <div className={styles.labeldiv}>
+                  <div className={styles.forminputes}>
                     {" "}
-                    <label>
-                      {labelText} <span>*</span>{" "}
-                    </label>{" "}
-                  </div>
-                  <input
-                    onChange={handleChange}
-                    type="text"
-                    required
-                    name="lastName"
-                    value={formData.lastName}
-                    placeholder={
-                      labelText === "Last Name"
-                        ? "Enter Last Name"
-                        : "Enter Company Name"
-                    }
-                  />
-                </div>{" "}
-                <div className={styles.forminputes}>
-                  <div className={styles.labeldiv}>
-                    {" "}
-                    <label>
-                      Mobile Number <span>*</span>{" "}
-                    </label>{" "}
-                  </div>
+                    <div className={styles.labeldiv}>
+                      {" "}
+                      <label>
+                        {labelText} <span>*</span>{" "}
+                      </label>{" "}
+                    </div>
+                    <input
+                      onChange={handleChange}
+                      type="text"
+                      required
+                      name="lastName"
+                      value={formData.lastName}
+                      placeholder={
+                        labelText === "Last Name"
+                          ? "Enter Last Name"
+                          : "Enter Company Name"
+                      }
+                    />
+                  </div>{" "}
+                  <div className={styles.forminputes}>
+                    <div className={styles.labeldiv}>
+                      {" "}
+                      <label>
+                        Mobile Number <span>*</span>{" "}
+                      </label>{" "}
+                    </div>
 
-                  <input
-                    onChange={handleChange}
-                    type="text"
-                    required
-                    name="mobileNumber"
-                    placeholder="Enter Phone "
-                    value={formData.mobileNumber}
-                  />
-                </div>{" "}
-                <div className={styles.forminputes}>
-                  <div className={styles.labeldiv}>
-                    {" "}
-                    <label>
-                      E-Mail Address <span>*</span>{" "}
-                    </label>{" "}
-                  </div>
+                    <input
+                      onChange={handleChange}
+                      type="text"
+                      required
+                      name="mobileNumber"
+                      placeholder="Enter Phone "
+                      value={formData.mobileNumber}
+                    />
+                  </div>{" "}
+                  <div className={styles.forminputes}>
+                    <div className={styles.labeldiv}>
+                      {" "}
+                      <label>
+                        E-Mail Address <span>*</span>{" "}
+                      </label>{" "}
+                    </div>
 
-                  <input
-                    onChange={handleChange}
-                    type="text"
-                    required
-                    name="emailAddress"
-                    placeholder="Enter Email"
-                    value={formData.emailAddress}
-                  />
-                </div>{" "}
-                <div className={styles.forminputes}>
-                  <div className={styles.labeldiv}> </div>
-                  <textarea
-                    placeholder="Type your message here"
-                    className={styles.descbox}
-                    name="message"
-                    onChange={handleChange}
-                    cols="40"
-                    rows="5"
-                  ></textarea>{" "}
-                </div>
-                <div className={styles.submitbtn}>
-                  <input type="submit" value="Submit" />
-                </div>
-              </form>
+                    <input
+                      onChange={handleChange}
+                      type="text"
+                      required
+                      name="emailAddress"
+                      placeholder="Enter Email"
+                      value={formData.emailAddress}
+                    />
+                  </div>{" "}
+                  <div className={styles.forminputes}>
+                    <div className={styles.labeldiv}> </div>
+                    <textarea
+                      placeholder="Type your message here"
+                      className={styles.descbox}
+                      name="message"
+                      onChange={handleChange}
+                      cols="40"
+                      rows="5"
+                    ></textarea>{" "}
+                  </div>
+                  <div className={styles.submitbtn}>
+                    <input type="submit" value="Submit" />
+                  </div>
+                </form>
+              </div>
             </div>
-          </div>
-        </section>{" "}
-        <Letstalk data-aos="fade-up" />
-      </div>
-    </div> </>
+          </section>{" "}
+          <Letstalk data-aos="fade-up" />
+        </div>
+      </div>{" "}
+    </>
   );
 }

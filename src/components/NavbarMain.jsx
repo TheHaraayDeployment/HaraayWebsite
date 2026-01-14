@@ -98,7 +98,7 @@ const NavbarMain = () => {
               About Haraay
             </NavLink>
           </li>
-          <li className={styles.navigation__item}>
+          {/* <li className={styles.navigation__item}>
             <NavLink
               to="/gallary"
               className={({ isActive }) =>
@@ -110,7 +110,8 @@ const NavbarMain = () => {
             >
               Gallary
             </NavLink>
-          </li> <li className={styles.navigation__item}>
+          </li>  */}
+          <li className={styles.navigation__item}>
             <NavLink
               to="/blogs"
               className={({ isActive }) =>
@@ -138,19 +139,19 @@ const NavbarMain = () => {
           </li>
         </ul>
         <div className={styles.navsocial}>
-          <div >
-          {/* <div className={styles.navinforbox}>
+          <div>
+            {/* <div className={styles.navinforbox}>
             <Icons.TbMailFilled className={styles.iconstyle} title="Home" />
             <h2>hello@haraaydesignstudio.com</h2>
           </div> */}
-          {/* <div className={styles.navinforbox}>
+            {/* <div className={styles.navinforbox}>
             <Icons.FaLocationDot className={styles.iconstyle} title="Home" />
             <h2>
               Right, near Royal Enfield, Bhusari Colony, Kothrud, Pune,
               Maharashtra 411038
             </h2>
           </div>  */}
-          </div> 
+          </div>
           <div className={styles.socialicons}>
             <a
               href="https://www.instagram.com/theharaay_studio/"
@@ -163,7 +164,10 @@ const NavbarMain = () => {
                 title="Instagram"
               />
             </a>
-            <a href="https://www.linkedin.com/company/haraaydesignstudio/?viewAsMember=true" target="_blank">
+            <a
+              href="https://www.linkedin.com/company/haraaydesignstudio/?viewAsMember=true"
+              target="_blank"
+            >
               <Icons.Linkedin className={styles.siconstyle} title="Linkdein" />
             </a>{" "}
             <a href="https://www.facebook.com/61573938452721" target="_blank">

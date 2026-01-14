@@ -9,16 +9,13 @@ import sec2Right from "./Sec2Right.jpg";
 
 import Sec3Full from "./Sec3Full.jpg";
 
-
 // import sec44 from "./Sec4Down.jpg";
 import sec4Full from "./Sec4Full.jpg";
-
 
 import Sec5Full from "./sec5Full.jpg";
 import sec5Left from "./sec5left.jpg";
 import sec5Middle from "./Sec5middle.jpg";
 import sec5Right from "./Sec5Right.jpg";
-
 
 import sec3DownLeft from "./Sec3DownLeft.svg";
 import sec3DownRight from "./Sec3DownRight.svg";
@@ -366,7 +363,7 @@ export default function HMS() {
       </div>
 
       {/* Key Features Section */}
-     
+
       <div
         className={`${styles.textSection} ${
           isElementVisible("challenges") ? styles.sectionVisible : ""
@@ -440,11 +437,11 @@ export default function HMS() {
               <p className={styles.challengeTitle}>
                 {/* Packaging Design: */}
                 <span>
-                  The result of this vision was **Lok Neta**, a mobile
+                  The result of this vision was AMCHO DOTOR, a mobile
                   application designed to bridge the gap between the people of
                   Goa and the CM’s office, providing a streamlined, accessible
                   platform for civic engagement. We were tasked with developing
-                  the Lok Neta app, which would be both intuitive and secure,
+                  the AMCHO DOTOR app, which would be both intuitive and secure,
                   ensuring ease of use for all citizens, from tech-savvy users
                   to those less familiar with digital platforms.{" "}
                 </span>
@@ -453,7 +450,7 @@ export default function HMS() {
           </div>
         </div>
       </div>
-         <div
+      <div
         className={`${styles.imageSection3} ${
           isElementVisible("images3up") ? styles.sectionVisible : ""
         }`}
