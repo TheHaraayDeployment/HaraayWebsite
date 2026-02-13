@@ -43,7 +43,7 @@ function Expertise() {
             scrub: 0.5, // Smoothly link animation progress to scroll position
             toggleActions: "play none none none", // Animation only plays once
           },
-        }
+        },
       );
     });
   }, []);
@@ -51,10 +51,10 @@ function Expertise() {
   return (
     <div className={styles.ExpertiseMain}>
       <SEO
-    title="Branding, 3D & Design Expertise – Haraay"
-    description="Explore Haraay’s premium brand strategy, identity design, and digital experience services. We create world-class brand transformations."
-    keywords="brand strategy, identity design, 3D branding, digital experience design, brand transformation, premium branding services, creative brand development"
-  />
+        title="Branding, 3D & Design Expertise – Haraay"
+        description="Explore Haraay’s premium brand strategy, identity design, and digital experience services. We create world-class brand transformations."
+        keywords="brand strategy, identity design, 3D branding, digital experience design, brand transformation, premium branding services, creative brand development"
+      />
 
       {/* Hero Section */}
       <section className={styles.Herosec} ref={addToRefs}>
@@ -81,7 +81,7 @@ function Expertise() {
             carefully craft a compelling brand is always aligned with your
             vision & remembered as distinct.
           </p>
-          <div className={styles.Capabilities}>
+          {/* <div className={styles.Capabilities}>
             <ul>
               <li>
                 Purpose & Value <span>&#x2192;</span>
@@ -110,6 +110,58 @@ function Expertise() {
                 Brand Personality, Purpose & Values<span>&#x2192;</span>
               </li>
             </ul>
+          </div> */}
+          <div className={styles.Capabilities}>
+            <ul>
+              <li>
+                Brand Naming <span>&#x2192;</span>
+              </li>
+              <li>
+                Brand Development & Rebranding <span>&#x2192;</span>
+              </li>
+              <li>
+                Brand Strategy <span>&#x2192;</span>
+              </li>
+              <li>
+                Brand Positioning <span>&#x2192;</span>
+              </li>
+              <li>
+                Purpose & Value <span>&#x2192;</span>
+              </li>
+              <li>
+                Brand Personality <span>&#x2192;</span>
+              </li>
+              <li>
+                Tone of Voice <span>&#x2192;</span>
+              </li>
+              <li>
+                Messaging <span>&#x2192;</span>
+              </li>
+            </ul>
+
+            <ul>
+              <li>
+                Logo Design <span>&#x2192;</span>
+              </li>
+              <li>
+                Logo & ID Systems <span>&#x2192;</span>
+              </li>
+              <li>
+                Brand Style Guides <span>&#x2192;</span>
+              </li>
+              <li>
+                Iconography <span>&#x2192;</span>
+              </li>
+              <li>
+                Collateral, Print & Packaging <span>&#x2192;</span>
+              </li>
+              <li>
+                Environmental Design <span>&#x2192;</span>
+              </li>
+              <li>
+                Brand Awareness <span>&#x2192;</span>
+              </li>
+            </ul>
           </div>
         </div>
         <div className={styles.ServiceImage}>
@@ -117,65 +169,21 @@ function Expertise() {
         </div>
       </section>
 
-      {/* Service 2 - Engagement Strategy (Right Aligned) */}
+      {/* Service 3 - Exalted Identity (Left Aligned) */}
       <section
         className={`${styles.ServiceSection} ${styles.rightAlign}`}
         ref={addToRefs}
       >
         <div className={styles.ServiceContent}>
-          <h2>Sensorial Expression</h2>
+          <h2>Digital Developement</h2>
           <p>
-            We create dynamic 3D Animation with motion graphics, with product
-            modelling and visualisation done in stunning in 3D /VFX Span across
-            3D Content animation. 3D modelling, visualisation and AR/VR
-            solutions that eliminate the boundaries between reality and
-            imagination.
+            The digital developement encompasses every interaction a user has
+            with a brand or product through digital channels. This includes
+            websites, web & mobile apps, and social media / online advertising.
+            In today's word increasingly digital world, it is more important
+            than ever.
           </p>
-          <div className={styles.Capabilitiesright}>
-            <ul>
-              <li>
-                Messaging <span>&#x2192;</span>
-              </li>
-              <li>
-                3D Animation & Rendering<span>&#x2192;</span>
-              </li>
-              <li>
-                Motion Graphics<span>&#x2192;</span>
-              </li>
-              <li>
-                Films<span>&#x2192;</span>
-              </li>
-              <li>
-                Photography<span>&#x2192;</span>
-              </li>
-              <li>
-                3D Visualization <span>&#x2192;</span>
-              </li>{" "}
-              <li>
-                AR/VR Solutions <span>&#x2192;</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className={styles.ServiceImage}>
-          <img draggable="false" src={SensorialExpression} alt="" />
-        </div>
-      </section>
-
-      {/* Service 3 - Exalted Identity (Left Aligned) */}
-      <section
-        className={`${styles.ServiceSection} ${styles.leftAlign}`}
-        ref={addToRefs}
-      >
-        <div className={styles.ServiceContent}>
-          <h2>Digital Experience</h2>
-          <p>
-            The digital experience encompasses every interaction a user has with
-            a brand or product through digital channels. This includes websites,
-            web & mobile apps, and social media / online advertising. In today's
-            word increasingly digital world, it is more important than ever.
-          </p>
-          <div className={styles.Capabilities}>
+          {/* <div className={styles.Capabilities}>
             <ul>
               <li>
                 Naming <span>&#x2192;</span>
@@ -201,10 +209,125 @@ function Expertise() {
                 Website Design & Development<span>&#x2192;</span>
               </li>
             </ul>
+          </div> */}
+          <div className={`${styles.Capabilitiesright} ${styles.twocol}`}>
+            <ul>
+              <li>
+                UX/UI Design <span>&#x2192;</span>
+              </li>
+              <li>
+                Information Architecture <span>&#x2192;</span>
+              </li>
+              <li>
+                Wireframing <span>&#x2192;</span>
+              </li>
+              <li>
+                Prototypes <span>&#x2192;</span>
+              </li>
+            </ul>
+
+            <ul>
+              <li>
+                Design System <span>&#x2192;</span>
+              </li>
+              <li>
+                Web Applications <span>&#x2192;</span>
+              </li>
+              <li>
+                iOS & Android Applications <span>&#x2192;</span>
+              </li>
+              <li>
+                E-commerce Solutions <span>&#x2192;</span>
+              </li>
+              <li>
+                Website Design & Development <span>&#x2192;</span>
+              </li>
+            </ul>
           </div>
         </div>
         <div className={styles.ServiceImage}>
           <img draggable="false" src={Digital} alt="" />
+        </div>
+      </section>
+      {/* Service 2 - Engagement Strategy (Right Aligned) */}
+      <section
+        className={`${styles.ServiceSection} ${styles.leftAlign}`}
+        ref={addToRefs}
+      >
+        <div className={styles.ServiceContent}>
+          <h2>Sensorial Expression</h2>
+          <p>
+            We create dynamic 3D Animation with motion graphics, with product
+            modelling and visualisation done in stunning in 3D /VFX Span across
+            3D Content animation. 3D modelling, visualisation and AR/VR
+            solutions that eliminate the boundaries between reality and
+            imagination.
+          </p>
+          {/* <div className={styles.Capabilitiesright}>
+            <ul>
+              <li>
+                Messaging <span>&#x2192;</span>
+              </li>
+              <li>
+                3D Animation & Rendering<span>&#x2192;</span>
+              </li>
+              <li>
+                Motion Graphics<span>&#x2192;</span>
+              </li>
+              <li>
+                Films<span>&#x2192;</span>
+              </li>
+              <li>
+                Photography<span>&#x2192;</span>
+              </li>
+              <li>
+                3D Visualization <span>&#x2192;</span>
+              </li>{" "}
+              <li>
+                AR/VR Solutions <span>&#x2192;</span>
+              </li>
+            </ul>
+          </div> */}
+          <div className={styles.Capabilities}>
+            <ul>
+              <li>
+                3D Animation & Rendering <span>&#x2192;</span>
+              </li>
+              <li>
+                3D Modelling <span>&#x2192;</span>
+              </li>
+              <li>
+                3D Character Design <span>&#x2192;</span>
+              </li>
+              <li>
+                Industrial Design <span>&#x2192;</span>
+              </li>
+              <li>
+                3D Product Design <span>&#x2192;</span>
+              </li>
+            </ul>
+
+            <ul>
+              <li>
+                Motion Graphics <span>&#x2192;</span>
+              </li>
+              <li>
+                Films <span>&#x2192;</span>
+              </li>
+              <li>
+                Photography <span>&#x2192;</span>
+              </li>
+              <li>
+                3D Visualization <span>&#x2192;</span>
+              </li>
+              <li>
+                AR/VR Solutions <span>&#x2192;</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className={styles.ServiceImage}>
+          <img draggable="false" src={SensorialExpression} alt="" />
         </div>
       </section>
 

@@ -183,6 +183,17 @@ $breakpoint-extra-large: 1200px;
         }
       }
     }
+    .twocol {
+      justify-content: flex-end;
+      display: flex;
+      flex-direction: row;
+      gap: 100px;
+      @include respond-to(small) {
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+      }
+    }
   }
   .ServiceImage {
     flex: 1;

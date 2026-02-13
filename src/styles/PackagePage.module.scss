@@ -1,0 +1,228 @@
+// Import Google Fonts - Clean Sans Serif
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+// --------------------------RESPONSIVE --------------------------------------
+$breakpoint-small: 480px;
+$breakpoint-medium: 840px;
+$breakpoint-large: 1024px;
+$breakpoint-extra-large: 1200px;
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint==small {
+    @media (max-width: $breakpoint-small) {
+      @content;
+    }
+  } @else if $breakpoint==medium {
+    @media (max-width: $breakpoint-medium) {
+      @content;
+    }
+  } @else if $breakpoint==large {
+    @media (max-width: $breakpoint-large) {
+      @content;
+    }
+  }
+}
+
+.packagepage {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #1c1d21;
+  padding-top: 50px;
+}
+
+// testimonials
+.testimonial {
+  overflow: auto;
+  position: relative;
+  padding: 2rem;
+  // background-color: #1a1a1a;
+  color: #fff;
+  text-align: center;
+  @include respond-to(small) {
+    min-height: 60vh;
+    padding: 0px;
+    overflow: hidden;
+  }
+
+  h1 {
+    // font-size: 3rem;
+    text-align: left;
+    font-size: 96px;
+    margin: 40px 0 0 0;
+    font-weight: 500;
+    font-family: Etherel;
+    @include respond-to(small) {
+      font-size: 48px;
+      font-weight: 900;
+    }
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    font-size: 32px;
+    width: 40vw;
+    line-height: 36px;
+    @include respond-to(small) {
+      font-size: 20px;
+      width: 100%;
+    }
+  }
+
+  .testimonialContainer {
+    display: flex;
+    position: relative;
+    gap: 2rem;
+    // overflow-x: hidden; // Prevent overflowing
+    // cursor: grab;
+    width: 100vw;
+    overflow-x: scroll;
+    padding: 100px 20px;
+    // background-color: red;11
+
+    @include respond-to(small) {
+      padding: 100px 0 0 0px;
+      // margin-left: 10%;
+    }
+  }
+
+  .testimonialCard {
+    position: relative;
+    width: 644px;
+    height: 298px;
+    min-width: 644px;
+    min-height: 300px;
+
+    border: 2px solid white;
+    border-radius: 50px;
+
+    @include respond-to(small) {
+      width: 304px;
+      height: 298px;
+      min-width: 314px;
+      min-height: 300px;
+    }
+    .profile {
+      img {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: -50px;
+        z-index: +10;
+        left: 10%;
+        border: 2px solid white;
+        background-color: black;
+        object-fit: cover;
+        padding: 10px;
+      }
+    }
+
+    .content {
+      .testname {
+        position: absolute;
+        // background-color: #b8e7e7;
+        width: 50%;
+        margin-left: 32%;
+        @include respond-to(small) {
+          width: 100%;
+          margin-left: 20%;
+        }
+      }
+      h3 {
+        font-size: 20px;
+        margin: 0.5rem 0 0 0;
+        color: white;
+        text-align: left;
+        @include respond-to(small) {
+          text-align: right;
+          font-size: 18px;
+          width: 70%;
+          // background-color: red;
+          margin: 30px 0 0 0;
+        }
+      }
+
+      p {
+        font-size: 18px;
+        color: #ffffff;
+        text-align: left;
+        // margin-top: -10px;
+        line-height: 22px;
+        font-family: Stara;
+        height: 55%;
+        overflow: scroll;
+        @include respond-to(small) {
+          font-size: 16px !important;
+        }
+      }
+      .testrole {
+        @include respond-to(small) {
+          // display: none;
+          text-align: right;
+          width: 60%;
+        }
+      }
+      .review {
+        position: absolute;
+        bottom: 20px; /* Adjust the value as needed */
+        border-bottom: 2px solid white;
+        width: 80%;
+        margin-left: 10%;
+        text-align: justify;
+        font-size: 18px;
+        padding-bottom: 20px;
+        @include respond-to(small) {
+          margin: 1%;
+          border-bottom: none;
+          padding-bottom: 5px;
+          width: 98%;
+          // margin-left: 0;
+        }
+      }
+      .caseStudy {
+        // position: absolute;
+        // top: 80%;
+        // display: flex;
+        // justify-content: space-between;
+        // align-items: end;
+        // background-color: #b8e7e7;
+        width: 90%;
+        // display: none;
+
+        p {
+          opacity: 0;
+        }
+        h4 {
+          position: absolute;
+          bottom: 10px;
+          left: 60px;
+          font-size: 20px;
+        }
+        .rating {
+          position: absolute;
+          bottom: 10px;
+          right: 35%;
+          display: flex;
+          align-items: center;
+          @include respond-to(small) {
+            display: none;
+          }
+
+          span {
+            margin-right: 0.5rem;
+          }
+
+          .stars {
+            color: #ffd700; // Gold stars
+          }
+
+          img {
+            width: 20px;
+            margin-left: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}

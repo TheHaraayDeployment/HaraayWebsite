@@ -29,6 +29,7 @@ import Service1 from "./pages/Service1.jsx";
 import Service2 from "./pages/Service2.jsx";
 import Service3 from "./pages/Service3.jsx";
 import Service4 from "./pages/Service4.jsx";
+import PackagePage from "./pages/PackagePage.jsx";
 // Case study pages
 import SereneSkinCaseStudy from "./pages/CaseStudy/SerenCaseStudy.jsx";
 import ViratCaseStudy from "./pages/CaseStudy/ViratCaseStudy.jsx";
@@ -51,6 +52,7 @@ import Lokneta from "./CaseStudies/Lokneta/Lokneta.jsx";
 import Hylete from "./CaseStudies/Hylete/HyleteCaseStudy.jsx";
 import Samrudh from "./CaseStudies/Samrudh/SamrudhCaseStudy.jsx";
 import Purus from "./CaseStudies/Purus/Purus.jsx";
+import Nexora from "./CaseStudies/Nexora/NexoraCaseStudy.jsx";
 function App() {
   const isNavigating = useNavigationEvent(); // Get navigation event status
   const location = useLocation();
@@ -132,6 +134,8 @@ function App() {
     "/casestudy/samrudh",
     "/casestudy/purus",
     "/casestudy/toot",
+    "/casestudy/nexora",
+    "/package",
   ];
   const isValidRoute = validRoutes.includes(location.pathname);
   return (
@@ -153,6 +157,7 @@ function App() {
           <Route path="/career" element={<Contact />} />
           <Route path="/faq" element={<FaqPage />} />
           <Route path="/expertise" element={<Expertise />} />
+          <Route path="/package" element={<PackagePage />} />
           {/* <Route path="/service1" element={<Service1 />} />
           <Route path="/service2" element={<Service2 />} />
           <Route path="/service3" element={<Service3 />} />
@@ -177,6 +182,7 @@ function App() {
           <Route path="/casestudy/Hylete" element={<Hylete />} />
           <Route path="/casestudy/samrudh" element={<Samrudh />} />
           <Route path="/casestudy/purus" element={<Purus />} />
+          <Route path="/casestudy/nexora" element={<Nexora />} />
           {/* <Route path="/casestudy/akoya1" element={<Akoyavideo />} /> */}
           <Route path="*" element={<NotFound />} />
         </Routes>
