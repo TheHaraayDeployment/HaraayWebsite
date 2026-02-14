@@ -237,17 +237,17 @@ const projectsData = [
     mediaType: "image",
     link: "/casestudy/hylete",
   },
-  {
-    id: 2,
-    title: "Samruddh Bharat Technologies",
-    description:
-      "Empowering citizens with digital literacy and skills, promoting digital inclusion, and advancing the adoption.",
-    priority: "small",
-    tags: ["Branding", "App Development", "UI/UX"],
-    image: samrudh,
-    mediaType: "image",
-    link: "/casestudy/samrudh",
-  },
+  // {
+  //   id: 2,
+  //   title: "Samruddh Bharat Technologies",
+  //   description:
+  //     "Empowering citizens with digital literacy and skills, promoting digital inclusion, and advancing the adoption.",
+  //   priority: "small",
+  //   tags: ["Branding", "App Development", "UI/UX"],
+  //   image: samrudh,
+  //   mediaType: "image",
+  //   link: "/casestudy/samrudh",
+  // },
   {
     id: 3,
     title: "BMS",
