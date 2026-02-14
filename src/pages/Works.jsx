@@ -203,17 +203,17 @@ const projectsData = [
   //   mediaType: "image",
   //   link: "/casestudy/",
   // },
-  {
-    id: 12,
-    title: "SDIG",
-    description:
-      "Hylete is an international sports event company that operates at intersection of performance, innovation, and community.",
-    priority: "small",
-    tags: ["Branding"],
-    image: hylete,
-    mediaType: "image",
-    link: "/casestudy/",
-  },
+  // {
+  //   id: 12,
+  //   title: "SDIG",
+  //   description:
+  //     "Hylete is an international sports event company that operates at intersection of performance, innovation, and community.",
+  //   priority: "small",
+  //   tags: ["Branding"],
+  //   image: hylete,
+  //   mediaType: "image",
+  //   link: "/casestudy/",
+  // },
   {
     id: 13,
     title: "Nexora",
