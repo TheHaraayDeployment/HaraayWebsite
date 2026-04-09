@@ -51,9 +51,11 @@ function Expertise() {
   return (
     <div className={styles.ExpertiseMain}>
       <SEO
-        title="Branding, 3D & Design Expertise – Haraay"
-        description="Explore Haraay’s premium brand strategy, identity design, and digital experience services. We create world-class brand transformations."
-        keywords="brand strategy, identity design, 3D branding, digital experience design, brand transformation, premium branding services, creative brand development"
+        title="Design Services — Branding, Web & 3D | Haraay Design Studio"
+        description="Haraay offers premium brand identity design, website development, UI/UX, 3D visualisation, packaging, and motion design. Full-service creative studio based in Pune, India.
+
+"
+        keywords="brand identity design India, web design agency Pune, 3D product visualisation, packaging design India, UI UX design agency, branding services"
       />
 
       {/* Hero Section */}

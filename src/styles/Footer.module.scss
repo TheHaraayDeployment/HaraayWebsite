@@ -9,15 +9,11 @@ $breakpoint-extra-large: 1200px;
     @media (max-width: $breakpoint-small) {
       @content;
     }
-  }
-
-  @else if $breakpoint==medium {
+  } @else if $breakpoint==medium {
     @media (max-width: $breakpoint-medium) {
       @content;
     }
-  }
-
-  @else if $breakpoint==large {
+  } @else if $breakpoint==large {
     @media (max-width: $breakpoint-large) {
       @content;
     }
@@ -40,7 +36,7 @@ $breakpoint-extra-large: 1200px;
     font-size: 14px;
     color: white;
     text-align: center;
-  
+
     padding-bottom: 10px;
   }
 
@@ -79,6 +75,7 @@ $breakpoint-extra-large: 1200px;
       width: 100%;
       margin-left: 10px;
       background-color: transparent;
+      padding-top: 0;
     }
 
     @include respond-to(medium) {
@@ -145,7 +142,7 @@ $breakpoint-extra-large: 1200px;
 
         /* Centers items vertically */
         @include respond-to(small) {
-          font-size: 16px ;
+          font-size: 16px;
         }
 
         li {
@@ -265,7 +262,6 @@ $breakpoint-extra-large: 1200px;
 
           @include respond-to(small) {
             display: block;
-
           }
         }
       }

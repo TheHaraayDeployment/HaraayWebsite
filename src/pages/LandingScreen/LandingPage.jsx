@@ -47,6 +47,8 @@ import { Link } from "react-router-dom";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import SEO from "../../Seo.jsx";
+import ImageCarousel from "./ImageCarousel.jsx";
+import WhatWeDo from "./WhatWeDo.jsx";
 
 // Register the ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -111,12 +113,12 @@ export default function LandingPage() {
     const texts = ["Recent", "work"];
     const stickySection = document.querySelector(`.${styles.sticky}`);
     const scrollSection = stickySection.querySelector(
-      `.${styles.scrollsection}`
+      `.${styles.scrollsection}`,
     );
 
     let textToShow = texts.join(" ");
     const existingTextElement = scrollSection.querySelector(
-      `.${styles.dynamicP}`
+      `.${styles.dynamicP}`,
     );
     if (existingTextElement) {
       existingTextElement.innerText = textToShow;
@@ -157,7 +159,7 @@ export default function LandingPage() {
           scrub: 1,
           markers: false, // Set to true for debugging
         },
-      }
+      },
     );
   }, []);
   // Gsap Cards Recent Works
@@ -186,7 +188,7 @@ export default function LandingPage() {
             markers: false, // Debug markers (set true for debugging)
             toggleActions: "play none none none",
           },
-        }
+        },
       );
     });
   }, []);
@@ -241,7 +243,7 @@ export default function LandingPage() {
     try {
       const res = await axios.post(
         "https://api.emailjs.com/api/v1.0/email/send",
-        data
+        data,
       );
       console.log(res.data);
       // Reset form after successful submission
@@ -278,15 +280,21 @@ export default function LandingPage() {
   return (
     <>
       <SEO
-        title="Haraay - World-leading Brand Specialists | Consulting, Design & Experience"
-        description="Elevate your brand with Haraay, a global leader in branding, design, and strategy. We craft premium brand experiences that stand out."
-        keywords="branding agency, brand consulting, brand experience, global branding, premium brand design, corporate branding, brand transformation"
+        title="Haraay Design Studio — Brand Identity, Web & 3D Design Agency | Pune
+
+"
+        description="Haraay is a full-service design studio in Pune specialising in brand identity, web & technology, and 3D design. Subscription-based creative partnerships for ambitious brands worldwide."
+        keywords="design agency Pune, branding agency India, brand identity design, 3D design studio, web design agency India, subscription design service
+
+"
       />
       <div className={styles.Landingpage}>
         <div className={styles.allsection}>
           <section className={styles.Herosec}>
             <Hero></Hero>
           </section>
+          <ImageCarousel />
+          <WhatWeDo />
           <section className={styles.Subherosec}>
             <h1 className={styles.Subherotxt}>
               Turning your problems to Transformative designs!
@@ -484,6 +492,107 @@ export default function LandingPage() {
                     they crafted are immersive and elevate our digital presence
                     to another level, bringing our products to life in a way
                     that captivates our audience.
+                  </p>
+                  <div className={styles.caseStudy}>
+                    {/* <p>Explore Case Study</p> <h4>Explore Case Study</h4> */}
+                    <div className={styles.rating}>
+                      <span>5.0</span>
+                      <div className={styles.stars}>⭐⭐⭐⭐⭐</div>
+                      <img
+                        draggable="false"
+                        src={googlelogo}
+                        alt="Google Rating"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                data-aos="fade-left"
+                data-aos-delay="300"
+                className={styles.testimonialCard}
+              >
+                <div className={styles.profile}>
+                  <img draggable="false" src={testprofile1} alt="Profile 1" />
+                </div>
+                <div className={styles.content}>
+                  <div className={styles.testname}>
+                    {" "}
+                    <h3>Manufacturing client</h3>
+                    <p className={styles.testrole}> Clutch.co</p>
+                  </div>
+                  <p className={styles.review}>
+                    Their work is of world-class quality. Any MNC company should
+                    hire them. Their work speaks for itself.
+                  </p>
+                  <div className={styles.caseStudy}>
+                    {/* <p>Explore Case Study</p> <h4>Explore Case Study</h4> */}
+                    <div className={styles.rating}>
+                      <span>5.0</span>
+                      <div className={styles.stars}>⭐⭐⭐⭐⭐</div>
+                      <img
+                        draggable="false"
+                        src={googlelogo}
+                        alt="Google Rating"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>{" "}
+              <div
+                data-aos="fade-left"
+                data-aos-delay="300"
+                className={styles.testimonialCard}
+              >
+                <div className={styles.profile}>
+                  <img draggable="false" src={testprofile1} alt="Profile 1" />
+                </div>
+                <div className={styles.content}>
+                  <div className={styles.testname}>
+                    {" "}
+                    <h3>Shan K. </h3>
+                    <p className={styles.testrole}>
+                      {" "}
+                      Brand Identity & Packaging client
+                    </p>
+                  </div>
+                  <p className={styles.review}>
+                    Haraay overexceeded our expectations and ensured we got what
+                    we were looking for from a qualitative agency.
+                  </p>
+                  <div className={styles.caseStudy}>
+                    {/* <p>Explore Case Study</p> <h4>Explore Case Study</h4> */}
+                    <div className={styles.rating}>
+                      <span>5.0</span>
+                      <div className={styles.stars}>⭐⭐⭐⭐⭐</div>
+                      <img
+                        draggable="false"
+                        src={googlelogo}
+                        alt="Google Rating"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>{" "}
+              <div
+                data-aos="fade-left"
+                data-aos-delay="300"
+                className={styles.testimonialCard}
+              >
+                <div className={styles.profile}>
+                  <img draggable="false" src={testprofile1} alt="Profile 1" />
+                </div>
+                <div className={styles.content}>
+                  <div className={styles.testname}>
+                    {" "}
+                    <h3> verified client </h3>
+                    {/* <p className={styles.testrole}></p> */}
+                  </div>
+                  <p className={styles.review}>
+                    I had the pleasure of working with Haraay and I can
+                    confidently say their approach to design is nothing short of
+                    exceptional — creativity, professionalism, and attention to
+                    detail at every stage.
                   </p>
                   <div className={styles.caseStudy}>
                     {/* <p>Explore Case Study</p> <h4>Explore Case Study</h4> */}

@@ -15,25 +15,22 @@ function Service1() {
 
   // Define your tabs and content here
   const tabs = [
-    "Socials",
-    "Consumer Journey Mapping",
-    "Communication Strategy",
-    "Brand & Portfolio Architecture:",
+    "Purpose & Value",
+    "Positioning",
+    "Brand Personality",
+    "Tone of Voice",
   ];
 
   const infoContent = {
-    "Socials":
-      " We help you build a powerful, authentic presence across social platforms, aligning your message with your brand’s values and audience expectations."
-,
-    "Consumer Journey Mapping":
+    "Purpose & Value":
+      " At Haraay Design Studio, we have a team of experienced professionals who specialize in creating digital products that transform businesses. We understand the importance of delivering results quickly and cost-effectively. Every project we work on gets designed to help our clients become more efficient and competitive. Our experience across multiple industries (including Fintech, Healthcare, Beauty, Transportation, and others) helps us understand and tackle your business needs.",
+    Positioning:
       "By understanding and designing every step of the consumer journey, we create interactions that enhance engagement, loyalty, and satisfaction.",
-    "Communication Strategy":
-    "We develop a clear communication strategy that aligns with your brand’s personality, ensuring every message resonates with your audience and builds trust.",
-     "Brand & Portfolio Architecture:":
-     "For brands with multiple products or services, we create a cohesive brand architecture and portfolio that highlights each element while maintaining a unified brand identity.",
-     "Drive Memory":
-     "Creates memorable experiences through storytelling and sensory triggers, embedding the brand in consumer memory.",
-   };
+    "Brand Personality":
+      "We develop a clear communication strategy that aligns with your brand’s personality, ensuring every message resonates with your audience and builds trust.",
+    "Tone of Voice":
+      "Creates memorable experiences through storytelling and sensory triggers, embedding the brand in consumer memory.",
+  };
   const steps = [
     {
       number: "01",
@@ -82,7 +79,7 @@ function Service1() {
         y: 0,
         duration: 1,
         ease: "power2.out",
-      }
+      },
     );
   }, [activeTab]);
 
@@ -104,7 +101,7 @@ function Service1() {
             scrub: 1,
             toggleActions: "play none none none",
           },
-        }
+        },
       );
     });
   }, []);
@@ -140,39 +137,44 @@ function Service1() {
         <div className={styles.Herotxt}>
           {/* Left side */}
           <div className={styles.HeroContent}>
-            <h1>The Engagement Strategy</h1>
+            <h1>Branding & Brand Strategy</h1>
           </div>
 
           {/* Right side */}
           <div className={styles.HeroContent}>
-            <h2>Heading will go Here</h2>
+            <h2> Strategic Branding & Corporate Identity Design.</h2>
             <p>
-            Convincing consumers, users, investors, or future employees to trust you can be challenging. They have other commitments, established habits, and limited time. That’s why creating a strong, cohesive brand is about more than just aesthetics—it requires a strategic foundation to connect, convince, and create lasting impact. A carefully crafted brand strategy unites your message and empowers your brand to shine.
-The Engagement Strategy is a structured approach designed to foster deep connections between brands and consumers. By mapping the consumer journey, refining communication, structuring brand and portfolio architecture, and driving memory, this strategy ensures brands resonate, engage, and build loyalty at every interaction.
-
+              Transforming businesses into beloved brands through strategy,
+              story, and distinct visual systems.
+            </p>
+            <p>
+              At Haraay Design Studio, we believe a brand is more than a logo—it
+              is a promise delivered. Our team of experienced brand strategists
+              and designers specialize in creating distinct identities that
+              transform businesses into market leaders. Whether you are a
+              Pune-based startup or a global enterprise, we build brands that
+              drive memory, value, and customer loyalty
             </p>
           </div>
         </div>
-
       </section>
       {/* Info Section */}
       <section className={styles.InfoSection}>
         <div className={styles.Tabs}>
           <h5>Approach</h5>
-          <div className={styles.btndiv}> 
-          {tabs.map((tab) => (
-            
-            <button
-              key={tab}
-              className={`${styles.TabButton} ${
-                activeTab === tab ? styles.active : ""
-              }`}
-              onClick={() => setActiveTab(tab)} // Manual tab switch
-            >
-              {tab}
-            </button> 
-          
-          ))}   </div>
+          <div className={styles.btndiv}>
+            {tabs.map((tab) => (
+              <button
+                key={tab}
+                className={`${styles.TabButton} ${
+                  activeTab === tab ? styles.active : ""
+                }`}
+                onClick={() => setActiveTab(tab)} // Manual tab switch
+              >
+                {tab}
+              </button>
+            ))}{" "}
+          </div>
         </div>
 
         <div
@@ -216,7 +218,7 @@ The Engagement Strategy is a structured approach designed to foster deep connect
           <button className={styles.ctaButton}>Talk to Our Team →</button>
         </div>
       </section>
-<Letstalk/>
+      {/* <Letstalk /> */}
     </div>
   );
 }

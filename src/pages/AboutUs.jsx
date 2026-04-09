@@ -57,11 +57,13 @@ export default function AboutUs() {
 
   return (
     <div className={styles.AboutUspage}>
-      <SEO 
-    title="About Haraay – Pioneering Brand Consulting & Design"
-    description="Discover Haraay’s journey in transforming brands worldwide. Our expertise in consulting, design, and experiences sets global benchmarks."
-    keywords="brand consulting experts, branding specialists, global brand consulting, corporate branding solutions, digital brand strategy, creative branding agency"
-  />
+      <SEO
+        title="About Haraay Design Studio — Brand & 3D Design Agency, Pune India"
+        description="Founded by Samiksha Taru, Haraay Design Studio is a premium creative studio in Pune, India — specialising in brand identity, web design, and 3D visualisation for ambitious brands globally.
+
+"
+        keywords="about Haraay Design Studio, design agency Pune, Samiksha Taru designer, branding studio India, creative agency Pune"
+      />
 
       {/* Hero Section */}
       <section className={styles.HeroSection}>

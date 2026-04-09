@@ -21,6 +21,7 @@ import nexora from "./WorksPageImages/Nexora.jpg";
 // Add your video files here
 import boschVideo from "./WorksPageImages/Bosch.mp4"; // Add your Bosch video path
 import akoyaVideo from "./WorksPageImages/akoya.mp4"; // Add your Akoya video path
+import SEO from "../Seo";
 
 // Updated project data with video support
 // const projectsData = [
@@ -595,6 +596,13 @@ const Portfolio = () => {
 
   return (
     <div className={styles.portfolio}>
+      <SEO
+        title="Our Work – Global Brand Success Stories | Haraay"
+        description="Explore Haraay Design Studio's portfolio — brand identities, websites, 3D visualisations, and packaging design for brands across India and internationally."
+        keywords="design portfolio India, branding portfolio Pune, brand identity examples, 3D design portfolio, packaging design portfolio India
+
+"
+      />
       <div className={styles.container}>
         <div className={styles.header}>
           <h1 className={styles.title}>Haraay</h1>

@@ -17,7 +17,8 @@ import Navbar from "./components/NavbarMain.jsx";
 import Footer from "./components/Footer.jsx";
 import LandingPage from "./pages/LandingScreen/LandingPage.jsx";
 import Works from "./pages/Works.jsx";
-import AboutUs from "./pages/AboutUs.jsx";
+// import AboutUs from "./pages/AboutUs.jsx";
+import AboutUs from "./pages/ComingSoon.jsx";
 import Contact from "./pages/Contact.jsx";
 import Expertise from "./pages/Expertise.jsx";
 // Blogs
@@ -108,7 +109,7 @@ function App() {
     "/blogs",
     "/blogs/blog01",
     "/blogs/blog02",
-    // "/service1",
+    "/service1",
     // "/service2",
     // "/service3",
     // "/service4",
@@ -158,8 +159,8 @@ function App() {
           <Route path="/faq" element={<FaqPage />} />
           <Route path="/expertise" element={<Expertise />} />
           <Route path="/package" element={<PackagePage />} />
-          {/* <Route path="/service1" element={<Service1 />} />
-          <Route path="/service2" element={<Service2 />} />
+          <Route path="/service1" element={<Service1 />} />
+          {/* <Route path="/service2" element={<Service2 />} />
           <Route path="/service3" element={<Service3 />} />
           <Route path="/service4" element={<Service4 />} /> */}
           <Route

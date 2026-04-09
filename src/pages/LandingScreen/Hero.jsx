@@ -69,7 +69,7 @@
 // //   const gravity = 0.35;
 
 // //   // Initialize positions with all cards at top center, but with random delays
-// //   const [positions, setPositions] = useState(() => 
+// //   const [positions, setPositions] = useState(() =>
 // //     projects.map((project, i) => ({
 // //       x: 0, // Will be centered later when dimensions are known
 // //       y: -300, // Start above the viewport
@@ -104,7 +104,7 @@
 // //       setDimensions({ width, height });
 
 // //       // Center circles horizontally on resize
-// //       setPositions(prev => 
+// //       setPositions(prev =>
 // //         prev.map((pos, idx) => ({
 // //           ...pos,
 // //           x: width / 2 - pos.radius + (Math.random() * 100 - 50), // Center with slight random offset
@@ -327,7 +327,7 @@
 
 // //   return (
 // //     <animated.div className="hero-section" style={containerAnimation}>
-// //       <div className="content"> 
+// //       <div className="content">
 // //         {/* <img src={googlerank} className="googlerank" alt="" /> */}
 // //         <img src={content} className="contenttxt" alt="" />
 // //       </div>
@@ -383,7 +383,6 @@
 // import bubble11 from "./images/bubble11.png"
 // import bubble12 from "./images/bubble12.png"
 
-
 // // Generate random size between 130 and 200 for each project
 // const generateRandomSize = () => Math.floor(Math.random() * 71) + 130; // 130 to 200
 
@@ -428,7 +427,7 @@
 //   const gravity = 0.35;
 
 //   // Initialize positions with all cards at top center, but with random delays
-//   const [positions, setPositions] = useState(() => 
+//   const [positions, setPositions] = useState(() =>
 //     projects.map((project, i) => ({
 //       x: 0, // Will be centered later when dimensions are known
 //       y: -300, // Start above the viewport
@@ -463,7 +462,7 @@
 //       setDimensions({ width, height });
 
 //       // Center circles horizontally on resize
-//       setPositions(prev => 
+//       setPositions(prev =>
 //         prev.map((pos, idx) => ({
 //           ...pos,
 //           x: width / 2 - pos.radius + (Math.random() * 100 - 50), // Center with slight random offset
@@ -686,7 +685,7 @@
 
 //   return (
 //     <animated.div className="hero-section" style={containerAnimation}>
-//       <div className="content"> 
+//       <div className="content">
 //         {/* <img src={googlerank} className="googlerank" alt="" /> */}
 //         <img src={content} className="contenttxt" alt="" />
 //       </div>
@@ -717,7 +716,6 @@
 // };
 
 // export default HeroSection;
-
 
 // import React, { useState, useEffect, useRef } from "react";
 // import { useSprings, animated, useSpring } from "@react-spring/web";
@@ -1122,7 +1120,7 @@
 //       <p>Haraay Design Studio – Redefining digital excellence with be spoke design solutions that empower visionary brands to thrive</p>
 //       <div className="btnDiv"><Link to={"/works"} className="filledButton" >Explore Work</Link><Link className="emptyButton" to={"/expertise"}>See All Services</Link></div>
 //      </div>
-     
+
 //       {/* <img src={txt} alt="" className="txt" /> */}
 //       <div
 //         ref={containerRef}
@@ -1174,18 +1172,18 @@ import { Link } from "react-router-dom";
 
 import "../../styles/Hero.scss";
 
-import bubble1 from "./images/bubble1.png"
-import bubble2 from "./images/bubble2.png"
-import bubble3 from "./images/bubble3.png"
-import bubble4 from "./images/bubble4.png"
-import bubble5 from "./images/bubble5.png"
-import bubble6 from "./images/bubble6.png"
-import bubble7 from "./images/bubble7.png"
-import bubble8 from "./images/bubble8.png"
-import bubble9 from "./images/bubble9.png"
-import bubble10 from "./images/bubble10.png"
-import bubble11 from "./images/bubble11.png"
-import bubble12 from "./images/bubble12.png"
+import bubble1 from "./images/bubble1.png";
+import bubble2 from "./images/bubble2.png";
+import bubble3 from "./images/bubble3.png";
+import bubble4 from "./images/bubble4.png";
+import bubble5 from "./images/bubble5.png";
+import bubble6 from "./images/bubble6.png";
+import bubble7 from "./images/bubble7.png";
+import bubble8 from "./images/bubble8.png";
+import bubble9 from "./images/bubble9.png";
+import bubble10 from "./images/bubble10.png";
+import bubble11 from "./images/bubble11.png";
+import bubble12 from "./images/bubble12.png";
 import CraftDropdown from "./Craft";
 
 // Bubble configs based on screen size
@@ -1197,14 +1195,25 @@ const bubbleConfigs = {
 
 // Get screen size type
 const getScreenSize = (width) => {
-  if (width >= 1024) return 'desktop';
-  if (width >= 768) return 'tablet';
-  return 'mobile';
+  if (width >= 1024) return "desktop";
+  if (width >= 768) return "tablet";
+  return "mobile";
 };
 
 // Placeholder for bubble images (replace with your actual images)
 const bubbleImages = [
-  bubble1, bubble2, bubble3, bubble4, bubble5, bubble6, bubble7, bubble8, bubble9, bubble10, bubble11, bubble12
+  bubble1,
+  bubble2,
+  bubble3,
+  bubble4,
+  bubble5,
+  bubble6,
+  bubble7,
+  bubble8,
+  bubble9,
+  bubble10,
+  bubble11,
+  bubble12,
 ];
 
 // Shuffle array function to randomize fall order
@@ -1242,7 +1251,7 @@ const BubbleAnimation = () => {
   const [showContent, setShowContent] = useState(false);
 
   // Get current screen size
-  const [screenSize, setScreenSize] = useState('desktop');
+  const [screenSize, setScreenSize] = useState("desktop");
   const [bubbles, setBubbles] = useState([]);
 
   // Physics constants
@@ -1254,29 +1263,31 @@ const BubbleAnimation = () => {
   useEffect(() => {
     // Skip initialization if already done (prevents restart on scroll)
     if (initializedRef.current) return;
-    
+
     const handleResize = () => {
       const newScreenSize = getScreenSize(window.innerWidth);
       if (newScreenSize !== screenSize) {
         setScreenSize(newScreenSize);
         const newBubbles = generateBubbles(
           bubbleConfigs[newScreenSize].count,
-          bubbleConfigs[newScreenSize].sizeRange
+          bubbleConfigs[newScreenSize].sizeRange,
         );
         setBubbles(newBubbles);
 
         if (containerRef.current) {
           const width = containerRef.current.offsetWidth;
           // Reset positions when screen size changes - START FROM TOP CENTER
-          setPositions(newBubbles.map((bubble) => ({
-            x: width / 2 - bubble.size / 2, // Center horizontally
-            y: -bubble.size - Math.random() * 200, // Above the viewport with some variation
-            vx: (Math.random() * 0.4) - 0.2, // Slight horizontal variation
-            vy: 0,
-            dragging: false,
-            active: false,
-            radius: bubble.size / 2,
-          })));
+          setPositions(
+            newBubbles.map((bubble) => ({
+              x: width / 2 - bubble.size / 2, // Center horizontally
+              y: -bubble.size - Math.random() * 200, // Above the viewport with some variation
+              vx: Math.random() * 0.4 - 0.2, // Slight horizontal variation
+              vy: 0,
+              dragging: false,
+              active: false,
+              radius: bubble.size / 2,
+            })),
+          );
         }
 
         // Reset animation state
@@ -1303,7 +1314,7 @@ const BubbleAnimation = () => {
     setScreenSize(initialScreenSize);
     const initialBubbles = generateBubbles(
       bubbleConfigs[initialScreenSize].count,
-      bubbleConfigs[initialScreenSize].sizeRange
+      bubbleConfigs[initialScreenSize].sizeRange,
     );
     setBubbles(initialBubbles);
 
@@ -1319,7 +1330,7 @@ const BubbleAnimation = () => {
 
     window.addEventListener("resize", debouncedResize);
     handleResize();
-    
+
     // Mark as initialized
     initializedRef.current = true;
 
@@ -1329,7 +1340,7 @@ const BubbleAnimation = () => {
   // Debounce function to prevent multiple resize triggers
   function debounce(func, wait) {
     let timeout;
-    return function() {
+    return function () {
       const context = this;
       const args = arguments;
       clearTimeout(timeout);
@@ -1343,26 +1354,32 @@ const BubbleAnimation = () => {
   const [positions, setPositions] = useState([]);
 
   useEffect(() => {
-    if (bubbles.length > 0 && containerRef.current && !animationStartedRef.current) {
+    if (
+      bubbles.length > 0 &&
+      containerRef.current &&
+      !animationStartedRef.current
+    ) {
       const width = containerRef.current.offsetWidth;
-      
+
       // Initialize bubbles at the top center
-      setPositions(bubbles.map((bubble) => ({
-        x: width / 2 - bubble.size / 2, // Center horizontally
-        y: -bubble.size - Math.random() * 200, // Start above the viewport
-        vx: (Math.random() * 0.4) - 0.2, // Slight horizontal variation
-        vy: 0,
-        dragging: false,
-        active: false,
-        radius: bubble.size / 2,
-      })));
+      setPositions(
+        bubbles.map((bubble) => ({
+          x: width / 2 - bubble.size / 2, // Center horizontally
+          y: -bubble.size - Math.random() * 200, // Start above the viewport
+          vx: Math.random() * 0.4 - 0.2, // Slight horizontal variation
+          vy: 0,
+          dragging: false,
+          active: false,
+          radius: bubble.size / 2,
+        })),
+      );
 
       // Generate initial delays - FASTER ANIMATION
       const indices = Array.from({ length: bubbles.length }, (_, i) => i);
       const shuffled = shuffleArray(indices);
       const delays = shuffled.map(() => Math.random() * 600); // Reduced delay for faster animation
       setStartDelays(delays);
-      
+
       // Mark animation as started
       animationStartedRef.current = true;
     }
@@ -1374,33 +1391,42 @@ const BubbleAnimation = () => {
 
     const updateDimensions = () => {
       if (!containerRef.current) return; // Safety check
-      
+
       const width = containerRef.current.offsetWidth;
       const height = containerRef.current.offsetHeight;
-      
+
       // Only update dimensions if they've actually changed significantly
-      if (Math.abs(dimensions.width - width) > 10 || Math.abs(dimensions.height - height) > 10) {
+      if (
+        Math.abs(dimensions.width - width) > 10 ||
+        Math.abs(dimensions.height - height) > 10
+      ) {
         setDimensions({ width, height });
       }
     };
 
     // Initial update
     updateDimensions();
-    
+
     // Only listen for actual resize events, not scroll-triggered ones
     const debouncedUpdate = debounce(updateDimensions, 250);
     window.addEventListener("resize", debouncedUpdate);
-    
+
     return () => window.removeEventListener("resize", debouncedUpdate);
   }, []);
 
   // Activate bubbles one by one with delays - only run once
   useEffect(() => {
-    if (startDelays.length === 0 || !isInitialAnimation || bubbles.length === 0 || !animationStartedRef.current) return;
+    if (
+      startDelays.length === 0 ||
+      !isInitialAnimation ||
+      bubbles.length === 0 ||
+      !animationStartedRef.current
+    )
+      return;
 
     const timers = startDelays.map((delay, index) => {
       return setTimeout(() => {
-        setPositions(prev => {
+        setPositions((prev) => {
           if (index >= prev.length) return prev;
 
           const newPositions = [...prev];
@@ -1416,16 +1442,15 @@ const BubbleAnimation = () => {
     // and show the content after a short delay
     const finalTimer = setTimeout(() => {
       setIsInitialAnimation(false);
-      
+
       // Show content with slight delay after bubbles have settled
       setTimeout(() => {
         setShowContent(true);
       }, 100); // Delay before showing content
-      
     }, 1500); // Reduced time for faster animation completion
 
     return () => {
-      timers.forEach(timer => clearTimeout(timer));
+      timers.forEach((timer) => clearTimeout(timer));
       clearTimeout(finalTimer);
     };
   }, [startDelays, isInitialAnimation, bubbles]);
@@ -1446,16 +1471,20 @@ const BubbleAnimation = () => {
         frameId = requestAnimationFrame(updatePhysics);
         return;
       }
-      
+
       lastTimestamp = timestamp;
-      
-      setPositions(prev => {
+
+      setPositions((prev) => {
         const newPositions = [...prev];
 
         // Update position and velocity for each bubble
         for (let i = 0; i < newPositions.length; i++) {
           // Skip physics for bubbles being dragged or not yet active
-          if (newPositions[i].dragging || (!newPositions[i].active && isInitialAnimation)) continue;
+          if (
+            newPositions[i].dragging ||
+            (!newPositions[i].active && isInitialAnimation)
+          )
+            continue;
 
           // Apply gravity and update position
           newPositions[i].vy += gravity;
@@ -1498,7 +1527,8 @@ const BubbleAnimation = () => {
             const distance = Math.sqrt(dx * dx + dy * dy);
 
             // Combined radius for collision detection
-            const combinedRadius = newPositions[i].radius + newPositions[j].radius;
+            const combinedRadius =
+              newPositions[i].radius + newPositions[j].radius;
 
             if (distance < combinedRadius) {
               // Calculate collision response
@@ -1559,7 +1589,7 @@ const BubbleAnimation = () => {
       config: dragging
         ? { mass: 1, tension: 500, friction: 10 } // Responsive when dragging
         : { mass: bubbles[i]?.size > 170 ? 2 : 1, tension: 180, friction: 24 }, // Smoother movement with size-based mass
-    }))
+    })),
   );
 
   // Fade in animation for container
@@ -1572,7 +1602,7 @@ const BubbleAnimation = () => {
   // Content fade-in animation
   const contentAnimation = useSpring({
     opacity: showContent ? 1 : 0,
-    transform: showContent ? 'translateY(0px)' : 'translateY(20px)',
+    transform: showContent ? "translateY(0px)" : "translateY(20px)",
     config: { tension: 280, friction: 24 },
   });
 
@@ -1583,7 +1613,7 @@ const BubbleAnimation = () => {
 
       if (first) {
         setIsDragging(true);
-        setPositions(prev => {
+        setPositions((prev) => {
           const updated = [...prev];
           updated[index].dragging = true;
           updated[index].vx = 0;
@@ -1593,7 +1623,7 @@ const BubbleAnimation = () => {
       }
 
       if (active) {
-        setPositions(prev => {
+        setPositions((prev) => {
           const updated = [...prev];
           const radius = updated[index].radius;
           const newX = xy[0] - radius;
@@ -1611,7 +1641,7 @@ const BubbleAnimation = () => {
 
       if (last) {
         setIsDragging(false);
-        setPositions(prev => {
+        setPositions((prev) => {
           const updated = [...prev];
           updated[index].dragging = false;
 
@@ -1624,68 +1654,82 @@ const BubbleAnimation = () => {
           return updated;
         });
       }
-    }
+    },
   );
 
   return (
-    <animated.div className="bubble-container"
+    <animated.div
+      className="bubble-container"
       style={{
         ...containerAnimation,
         width: "100%",
         height: "100vh",
         position: "relative",
         overflow: "hidden",
-        background: "linear-gradient(135deg, #000000 0%, #000000 100%)"
+        background: "linear-gradient(135deg, #000000 0%, #000000 100%)",
       }}
     >
       <animated.div className="contentTxt" style={contentAnimation}>
-        <h1>Elevating brands through design precision and digital brilliance—Haraay, the choice of industry leaders.</h1>
-        <p>Haraay Design Studio – Redefining digital excellence with bespoke design solutions that empower visionary brands to thrive</p>
-        <div className="btnDiv">
-          {/* <Link to={"/works"} className="filledButton">Explore Work</Link> */}
-          {/* <Link className="emptyButton" to={"/expertise"}>See All Services</Link> */}
+        <h1>
+          Elevating brands through design precision and digital
+          brilliance—Haraay, the choice of industry leaders.
+        </h1>
+        {/* <p>Haraay Design Studio – Redefining digital excellence with bespoke design solutions that empower visionary brands to thrive</p> */}
+
+        <div className="craftSec">
+          {" "}
+          <CraftDropdown />{" "}
         </div>
-         <div className="craftSec"> <CraftDropdown/> </div>
+        <div className="btnDiv">
+          <Link className="emptyButton" to={"/contact-us"}>
+            Start a Project
+          </Link>
+          <Link to={"/works"} className="filledButton">
+            Explore Work
+          </Link>
+        </div>
       </animated.div>
-     
-      <div className="bubblesMain"
+
+      <div
+        className="bubblesMain"
         ref={containerRef}
         style={{
           width: "100%",
           height: "100%",
-          position: "relative"
+          position: "relative",
         }}
       >
-        {springs.map((style, i) => (
-          bubbles[i] && (
-            <animated.div
-              key={i}
-              {...bind(i)}
-              style={{
-                ...style,
-                position: "absolute",
-                backgroundImage: `url(${bubbles[i].image})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                cursor: isInitialAnimation ? "default" : "grab",
-                borderRadius: "50%",
-                zIndex: positions[i]?.dragging ? 100 : 10,
-                filter: `brightness(${positions[i]?.dragging ? 1.1 : 1})`,
-                boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "14px",
-                fontWeight: "bold",
-                color: "white",
-                textShadow: "1px 1px 2px rgba(0,0,0,0.5)"
-              }}
-              className="bubble"
-            >
-              <div className="bubble-content"></div>
-            </animated.div>
-          )
-        ))}
+        {springs.map(
+          (style, i) =>
+            bubbles[i] && (
+              <animated.div
+                key={i}
+                {...bind(i)}
+                style={{
+                  ...style,
+                  position: "absolute",
+                  backgroundImage: `url(${bubbles[i].image})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  cursor: isInitialAnimation ? "default" : "grab",
+                  borderRadius: "50%",
+                  zIndex: positions[i]?.dragging ? 100 : 10,
+                  filter: `brightness(${positions[i]?.dragging ? 1.1 : 1})`,
+                  boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: "14px",
+                  fontWeight: "bold",
+                  color: "white",
+                  textShadow: "1px 1px 2px rgba(0,0,0,0.5)",
+                }}
+                className="bubble"
+              >
+                <div className="bubble-content"></div>
+              </animated.div>
+            ),
+        )}
       </div>
     </animated.div>
   );

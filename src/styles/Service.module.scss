@@ -2,9 +2,6 @@ $mobile: 600px;
 $tablet: 1024px;
 $desktop: 1200px;
 
-
-
-
 .Servicepage {
   width: 100vw;
   display: flex;
@@ -15,10 +12,10 @@ $desktop: 1200px;
 .Herotxt {
   display: flex;
   width: 100%;
-  
 }
 /* Hero Section */
 .HeroSection {
+  margin-top: 80px;
   min-height: auto;
   padding: 10px;
   .HeroSection {
@@ -42,14 +39,14 @@ $desktop: 1200px;
   }
 
   .HeroContent h1 {
-    font-size: 96px;
+    font-size: 64px;
     font-family: Etherel;
     margin-bottom: 10px;
     text-align: left;
     margin-left: 150px;
   }
   .HeroContent h2 {
-    font-size: 40px;
+    font-size: 24px;
     font-family: Stara;
     margin-bottom: 10px;
     text-align: left;
@@ -57,7 +54,7 @@ $desktop: 1200px;
   }
 
   .HeroContent p {
-    font-size: 24px;
+    font-size: 16px;
     font-family: Stara;
     line-height: 1.6;
     margin-top: 10px;
@@ -69,7 +66,6 @@ $desktop: 1200px;
   @media (max-width: 768px) {
     .HeroSection {
       flex-direction: column;
-    
     }
 
     .HeroContent {
@@ -86,30 +82,25 @@ $desktop: 1200px;
 
     .HeroContent p {
       font-size: 18px !important;
-      text-align: justify !important;;
+      text-align: justify !important;
     }
   }
 
   /* Responsive adjustments for mobile */
   @media (max-width: 480px) {
-
     .HeroSection {
-    //  margin: 10px !important;
+      //  margin: 10px !important;
     }
     .HeroContent h1 {
       font-size: 48px;
       width: 50%;
       // background-color: red;
       margin: 0;
-
     }
 
     .HeroContent p {
       font-size: 0.8rem;
     }
-
-
-    
   }
 }
 
@@ -131,7 +122,7 @@ $desktop: 1200px;
     align-self: flex-start;
     margin-left: 5%;
     h5 {
-      font-size: 27px;
+      font-size: 20px;
       font-family: Stara;
       text-align: left;
       margin-bottom: 20px;
@@ -139,29 +130,31 @@ $desktop: 1200px;
     .btndiv {
       display: flex;
       flex-direction: column;
-      
-    .TabButton {
-      width: 270px;
-      font-size: 24px;
-      padding: 0.5rem 1rem 0.5rem 2rem;
-      margin: 0.5rem 0;
-      background: none;
-      // border: 1px solid #fff;
-      cursor: pointer;
-      text-align: left;
-      transition: all 0.3s ease;
-      //   padding-left: 5px;
 
-      &:hover {
-        background-color: #fff;
-        color: #131313;
-      }
+      .TabButton {
+        width: 270px;
+        font-size: 24px;
+        padding: 0.5rem 1rem 0.5rem 2rem;
+        margin: 0.5rem 0;
+        background: none;
+        // border: 1px solid #fff;
+        cursor: pointer;
+        text-align: left;
+        transition: all 0.3s ease;
+        //   padding-left: 5px;
+        border: none;
 
-      &.active {
-        background-color: #fff;
-        color: #131313;
+        &:hover {
+          background-color: #fff;
+          color: #131313;
+        }
+
+        &.active {
+          background-color: #ffe7f3;
+          color: #131313;
+        }
       }
-    } }
+    }
   }
 
   .InfoContent {
@@ -187,17 +180,17 @@ $desktop: 1200px;
   }
 
   @media (max-width: 768px) {
-   
     .InfoSection {
-  flex-direction: column;
-}
+      flex-direction: column;
+    }
     .Tabs {
-      margin-bottom: 2rem;  flex-direction: column;
-     
+      margin-bottom: 2rem;
+      flex-direction: column;
+
       .TabButton {
         margin: 0 0.5rem;
         display: flex;
-        justify-content: center; 
+        justify-content: center;
       }
     }
 
@@ -206,7 +199,6 @@ $desktop: 1200px;
       text-align: center;
     }
   }
-
 }
 @media (max-width: 480px) {
   .InfoSection {
@@ -215,7 +207,7 @@ $desktop: 1200px;
 
   .Tabs {
     display: flex;
-  
+
     align-items: center;
 
     h5 {
@@ -240,23 +232,27 @@ $desktop: 1200px;
     }
   }
 
-
-
   .InfoContent {
-  width: 100% !important;  margin-left: 0 !important;  padding: 0 0px;  text-align: left !important;  
+    width: 100% !important;
+    margin-left: 0 !important;
+    padding: 0 0px;
+    text-align: left !important;
 
     h2 {
       font-size: 18px !important;
     }
 
     p {
-      font-size: 18px !important;  text-align: left !important;  width: 100% !important;  margin: 0 !important;  padding: 0 !important;  line-height: 1.5 !important;  text-align: justify !important;
+      font-size: 18px !important;
+      text-align: left !important;
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      line-height: 1.5 !important;
+      text-align: justify !important;
     }
   }
 }
-
-
-
 
 .Howworks {
   width: 100vw !important;
@@ -347,7 +343,8 @@ $desktop: 1200px;
           color: #f8ef6e;
           margin-right: 50px;
         }
-        h3 { margin-right: 50px;
+        h3 {
+          margin-right: 50px;
           font-size: 40px;
         }
       }
@@ -374,7 +371,6 @@ $desktop: 1200px;
 @media (max-width: 768px) {
   .Howworks {
     .stepsdiv {
-
       .progresscircle {
         position: absolute;
         // top: 0;
@@ -392,10 +388,10 @@ $desktop: 1200px;
       }
 
       .stepItem {
-        left: 0% !important; 
+        left: 0% !important;
         padding: 20px;
         text-align: center;
-        
+
         h2 {
           font-size: 24px !important;
           color: #ff4081;
@@ -414,22 +410,22 @@ $desktop: 1200px;
           font-size: 24px;
           color: #ccc;
           margin-top: 10px;
-          width:80vw;
+          width: 80vw;
           line-height: 25px;
-         
         }
-    
+
         &:nth-child(odd),
         &:nth-child(even) {
           text-align: left;
-      margin-left: 0px;
-      h2 {
-        color: #f8ef6e;   text-align: left;
-      }
-      h3 {
-        font-size: 40px;   text-align: left;
-      } 
-
+          margin-left: 0px;
+          h2 {
+            color: #f8ef6e;
+            text-align: left;
+          }
+          h3 {
+            font-size: 40px;
+            text-align: left;
+          }
         }
       }
     }
@@ -520,10 +516,6 @@ $desktop: 1200px;
   }
 }
 
-
-
-
-
 @media (max-width: 480px) {
   .Herotxt {
     display: block !important;
@@ -588,5 +580,4 @@ $desktop: 1200px;
       }
     }
   }
-
 }

@@ -1,0 +1,228 @@
+// ============================================
+// COMING SOON PAGE - MINIMAL CSS MODULE SCSS
+// Theme: Black + Pink (#ff4081)
+// ============================================
+
+// ============ SCSS Variables ============
+$primary-color: #ff4081;
+$bg-color: #000000;
+$text-primary: #ffffff;
+$text-secondary: #b0b0b0;
+$transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+// ============ Keyframe Animations ============
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLineRight {
+  from {
+    opacity: 0;
+    width: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    width: 60px;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ============ Main Container ============
+.comingSoonContainer {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $bg-color;
+  overflow: hidden;
+  padding: 40px 20px;
+}
+
+// ============ Content Wrapper ============
+.contentWrapper {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 900px;
+}
+
+// ============ Main Content ============
+.mainContent {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+}
+
+// ============ Heading Section ============
+.headingSection {
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+
+.mainTitle {
+  font-size: clamp(1rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -2px;
+  text-transform: lowercase;
+  color: $text-primary;
+  margin-bottom: 20px;
+}
+
+.typingText {
+  background: linear-gradient(135deg, $primary-color 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: fadeInText 0.8s ease-out forwards;
+}
+
+.cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1em;
+  background-color: $primary-color;
+  margin-left: 5px;
+  animation: blink 1s ease-in-out infinite;
+}
+
+// ============ Subheading Section ============
+.subheadingSection {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.subtitle {
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  font-weight: 300;
+  color: $text-secondary;
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+  animation: slideInLeft 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.accentLine {
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, $primary-color, transparent);
+  border-radius: 2px;
+  animation: slideInLineRight 0.8s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+// ============ Description Section ============
+.descriptionSection {
+  margin-bottom: 50px;
+}
+
+.descriptionText {
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  color: $text-secondary;
+  line-height: 1.8;
+  max-width: 600px;
+  animation: fadeInUp 0.8s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+// ============ Responsive Design ============
+@media (max-width: 768px) {
+  .comingSoonContainer {
+    min-height: auto;
+    padding: 40px 20px;
+  }
+
+  .mainTitle {
+    font-size: clamp(1.8rem, 6vw, 3rem);
+    letter-spacing: -1px;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .descriptionText {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .comingSoonContainer {
+    padding: 30px 16px;
+    margin-top: 100px;
+  }
+
+  .mainTitle {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    margin-bottom: 15px;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .accentLine {
+    width: 50px;
+  }
+
+  .descriptionText {
+    font-size: 0.95rem;
+  }
+}
+
+// ============ Accessibility ============
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
