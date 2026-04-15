@@ -26,7 +26,7 @@ import Blogs from "./pages/blogs/Blogs.jsx";
 import Blog01 from "./pages/blogs/Blog1.jsx";
 import Blog2 from "./pages/blogs/Blog2.jsx";
 import Blog3 from "./pages/blogs/Blog3.jsx";
-import Blog4 from "./pages/blogs/Blog4.jsx";
+import Blog4 from "./pages/blogs/blog4.jsx";
 // Services
 import Service1 from "./pages/Service1.jsx";
 import Service2 from "./pages/Service2.jsx";
