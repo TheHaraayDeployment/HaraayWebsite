@@ -1,0 +1,247 @@
+.HeroSection {
+  display: flex;
+  padding-bottom: 42px;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background: transparent;
+  padding: 20px 70px;
+  width: 100%;
+  padding-top: 100px;
+  contain: layout style paint;
+  transform: translateZ(0);
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--primary-color),
+      transparent
+    );
+    opacity: 0;
+    transition: opacity 1s var(--transition-smooth) 1.5s;
+  }
+
+  &.heroLoaded {
+    background: var(--background-light);
+    transition: background 0.6s var(--transition-smooth);
+
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  .headerBox {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+    transition: all 0.8s var(--transition-smooth);
+
+    &.headerVisible {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      transition-delay: 0.3s;
+    }
+
+    .title {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      opacity: 0;
+      transform: translate3d(0, 20px, 0);
+      transition: all 0.6s var(--transition-smooth);
+      position: relative;
+
+      &.titleVisible {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        transition-delay: 0.6s;
+      }
+
+      .mainTitle {
+        color: rgb(0, 0, 0);
+        font-family: Stara;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%;
+        cursor: default;
+        transition: all 0.3s var(--transition-smooth);
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          width: 0;
+          height: 3px;
+          background: linear-gradient(
+            90deg,
+            var(--primary-color),
+            var(--accent-color)
+          );
+          transition: width 0.8s var(--transition-smooth);
+        }
+      }
+
+      .titleAccent {
+        color: rgb(0, 0, 0);
+        font-family: Stara;
+        font-size: 18px;
+        font-style: normal;
+        display: flex;
+        height: fit-content;
+        padding-right: 0px;
+        margin-top: auto;
+        font-weight: 500;
+      }
+    }
+
+    .services {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      opacity: 0;
+      transform: translate3d(0, 10px, 0);
+      transition: all 0.6s var(--transition-smooth);
+
+      &.servicesVisible {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        transition-delay: 0.9s;
+      }
+
+      .serviceTag {
+        color: rgb(0, 0, 0);
+        font-family: Stara;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        border-radius: 20px;
+        transition: all 0.3s var(--transition-smooth);
+        cursor: default;
+
+        &:hover {
+          background: rgba(43, 35, 34, 0.1);
+          transform: translateY(-1px);
+        }
+      }
+
+      .serviceAccent {
+        color: var(--accent-color);
+        height: fit-content;
+        font-family: Stara;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        margin: 0;
+      }
+    }
+  }
+
+  .heroImg {
+    margin: 0;
+    width: 100%;
+    opacity: 0;
+    transform: translate3d(0, 40px, 0) scale(0.98);
+    transition: all 1s var(--transition-smooth);
+
+    &.heroImgVisible {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale(1);
+      transition-delay: 1.2s;
+    }
+
+    .heroImageContainer {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.5s var(--transition-smooth);
+
+      img,
+      video {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.5s var(--transition-smooth);
+      }
+
+      .heroImageOverlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, rgba(43, 35, 34, 0.1), transparent);
+        opacity: 0;
+        transition: opacity 0.3s var(--transition-smooth);
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    padding: 20px 40px;
+    padding-top: 80px;
+
+    .headerBox .title {
+      .mainTitle {
+        font-size: 40px;
+      }
+      .titleAccent {
+        padding-right: 80px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 15px 20px;
+    padding-top: 60px;
+    gap: 15px;
+
+    .headerBox {
+      .title {
+        flex-direction: column;
+        gap: 10px;
+
+        .mainTitle {
+          font-size: 28px;
+          line-height: 140%;
+        }
+        .titleAccent {
+          padding-right: 0;
+          font-size: 14px;
+          margin-top: 0;
+        }
+      }
+      .services {
+        flex-direction: column;
+        gap: 5px;
+
+        .serviceTag {
+          font-size: 14px;
+          padding: 6px 12px;
+        }
+        .serviceAccent {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .headerBox .title .mainTitle {
+      font-size: 24px;
+    }
+  }
+}

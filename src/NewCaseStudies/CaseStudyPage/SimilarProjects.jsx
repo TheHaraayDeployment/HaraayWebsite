@@ -1,0 +1,74 @@
+import { Link } from "react-router-dom";
+import styles from "./SimilarProjects.module.scss";
+import { similarProjectsList } from "../data/similarProjectsList";
+
+export default function SimilarProjects({
+  slugs = [],
+  title = "Similar Projects",
+  seeAllText = "See All Projects",
+  seeAllLink = "/works",
+}) {
+  const cards = slugs.map((slug) => similarProjectsList[slug]).filter(Boolean);
+
+  if (cards.length === 0) return null;
+
+  const handleCardClick = (link) => {
+    if (link && link !== "#") {
+      window.open(link, "_self");
+    }
+  };
+
+  return (
+    <div className={styles.container}>
+      <div className={styles.header}>
+        <h2 className={styles.title}>{title}</h2>
+        <Link to={seeAllLink} className={styles.seeAll}>
+          {seeAllText}
+          <span className={styles.arrow}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="23"
+              height="24"
+              viewBox="0 0 40 24"
+              fill="none"
+            >
+              <path
+                d="M26.856 23.5C26.856 22.281 28.0602 20.4607 29.2792 18.9329C30.8465 16.9614 32.7194 15.2414 34.8666 13.9287C36.4766 12.9446 38.4283 12 39.9989 12M39.9989 12C38.4283 12 36.4749 11.0554 34.8666 10.0713C32.7194 8.757 30.8465 7.03693 29.2792 5.06879C28.0602 3.53929 26.856 1.71571 26.856 0.499999M39.9989 12L0.570313 12"
+                stroke="#2B2322"
+                strokeWidth="4"
+              />
+            </svg>
+          </span>
+        </Link>
+      </div>
+
+      <div className={styles.cardsGrid}>
+        {cards.map((card, index) => (
+          <div
+            key={index}
+            className={styles.card}
+            onClick={() => handleCardClick(card.link)}
+          >
+            <div className={styles.imageWrapper}>
+              <img
+                src={card.image}
+                alt={card.name}
+                className={styles.cardImage}
+                onError={(e) => {
+                  e.target.src =
+                    "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjBmMGYwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIE5vdCBGb3VuZDwvdGV4dD48L3N2Zz4=";
+                }}
+              />
+            </div>
+            <div className={styles.cardContent}>
+              <h3 className={styles.cardTitle}>{card.name}</h3>
+              {card.description && (
+                <p className={styles.cardDescription}>{card.description}</p>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}

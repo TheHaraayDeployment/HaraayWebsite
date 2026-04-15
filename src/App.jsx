@@ -17,14 +17,16 @@ import Navbar from "./components/NavbarMain.jsx";
 import Footer from "./components/Footer.jsx";
 import LandingPage from "./pages/LandingScreen/LandingPage.jsx";
 import Works from "./pages/Works.jsx";
-// import AboutUs from "./pages/AboutUs.jsx";
-import AboutUs from "./pages/ComingSoon.jsx";
+import AboutUs from "./pages/AboutUs.jsx";
+// import AboutUs from "./pages/ComingSoon.jsx";
 import Contact from "./pages/Contact.jsx";
 import Expertise from "./pages/Expertise.jsx";
 // Blogs
-import Blogs from "./pages/Blogs.jsx";
+import Blogs from "./pages/blogs/Blogs.jsx";
 import Blog01 from "./pages/blogs/Blog1.jsx";
 import Blog2 from "./pages/blogs/Blog2.jsx";
+import Blog3 from "./pages/blogs/Blog3.jsx";
+import Blog4 from "./pages/blogs/Blog4.jsx";
 // Services
 import Service1 from "./pages/Service1.jsx";
 import Service2 from "./pages/Service2.jsx";
@@ -54,6 +56,11 @@ import Hylete from "./CaseStudies/Hylete/HyleteCaseStudy.jsx";
 import Samrudh from "./CaseStudies/Samrudh/SamrudhCaseStudy.jsx";
 import Purus from "./CaseStudies/Purus/Purus.jsx";
 import Nexora from "./CaseStudies/Nexora/NexoraCaseStudy.jsx";
+
+// New Case Study
+import CaseStudyPage from "./NewCaseStudies/CaseStudyPage/CaseStudyPage.jsx";
+// Intelligence page
+import Intelligence from "./pages/Intelligence.jsx";
 function App() {
   const isNavigating = useNavigationEvent(); // Get navigation event status
   const location = useLocation();
@@ -109,6 +116,8 @@ function App() {
     "/blogs",
     "/blogs/blog01",
     "/blogs/blog02",
+    "/blogs/blog03",
+    "/blogs/blog04",
     "/service1",
     // "/service2",
     // "/service3",
@@ -136,9 +145,29 @@ function App() {
     "/casestudy/purus",
     "/casestudy/toot",
     "/casestudy/nexora",
+    "/intelligence",
     "/package",
+    "/work/nexora",
+    "/work/hylete",
+    "/work/bms",
+    "/work/purus",
+    "/work/alankar",
+    "/work/lokNeta",
+    "/work/toot",
+    "/work/necc",
+    "/work/bosch",
+    "/work/hms",
+    "/work/gopalanGroup",
+    "/work/bakersStreet",
+    "/work/satvikRaas",
+    "/work/akoya",
+    "/work/virat",
+    "/work/sereneSkin",
+    "/work/creamsForest",
+    "/work/samruddhaBharat",
   ];
   const isValidRoute = validRoutes.includes(location.pathname);
+
   return (
     <>
       {/* Loading Screen */}
@@ -154,10 +183,13 @@ function App() {
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blogs/blog01" element={<Blog01 />} />
           <Route path="/blogs/blog02" element={<Blog2 />} />
+          <Route path="/blogs/blog03" element={<Blog3 />} />
+          <Route path="/blogs/blog04" element={<Blog4 />} />
           <Route path="/contact-us" element={<Contact />} />
           <Route path="/career" element={<Contact />} />
           <Route path="/faq" element={<FaqPage />} />
           <Route path="/expertise" element={<Expertise />} />
+          <Route path="/intelligence" element={<Intelligence />} />
           <Route path="/package" element={<PackagePage />} />
           <Route path="/service1" element={<Service1 />} />
           {/* <Route path="/service2" element={<Service2 />} />
@@ -184,6 +216,8 @@ function App() {
           <Route path="/casestudy/samrudh" element={<Samrudh />} />
           <Route path="/casestudy/purus" element={<Purus />} />
           <Route path="/casestudy/nexora" element={<Nexora />} />
+          {/* New Case Study */}
+          <Route path="/work/:slug" element={<CaseStudyPage />} />
           {/* <Route path="/casestudy/akoya1" element={<Akoyavideo />} /> */}
           <Route path="*" element={<NotFound />} />
         </Routes>

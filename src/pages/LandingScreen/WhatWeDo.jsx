@@ -2,9 +2,11 @@ import React, { useEffect } from "react";
 import styles from "./WhatWeDo.module.scss";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import icon1 from "../../assets/motionIcon.png";
-import icon2 from "../../assets/websiteIcon.png";
-import icon3 from "../../assets/brandIcon.png";
+
+import icon3 from "../../assets/Exalted Identity.gif";
+
+import icon1 from "../../assets/Sensorial Expression.gif";
+import icon2 from "../../assets/Digital Experience.gif";
 export default function WhatWeDo() {
   useEffect(() => {
     Aos.init({ duration: 1500, once: false });

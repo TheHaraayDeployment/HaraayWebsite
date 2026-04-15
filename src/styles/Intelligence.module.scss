@@ -1,0 +1,1247 @@
+// // ─── Breakpoints ─────────────────────────────────────────────────────────────
+// $breakpoint-small: 480px;
+// $breakpoint-medium: 840px;
+// $breakpoint-large: 1024px;
+// $breakpoint-extra-large: 1200px;
+
+// @mixin respond-to($breakpoint) {
+//   @if $breakpoint == small {
+//     @media (max-width: $breakpoint-small) {
+//       @content;
+//     }
+//   } @else if $breakpoint == medium {
+//     @media (max-width: $breakpoint-medium) {
+//       @content;
+//     }
+//   } @else if $breakpoint == large {
+//     @media (max-width: $breakpoint-large) {
+//       @content;
+//     }
+//   }
+// }
+
+// // ─── Tokens ──────────────────────────────────────────────────────────────────
+// $bg: #0f0f0f;
+// $text: #ffffff;
+// $text-muted: #a0a0a0;
+// $accent-pink: #e5348c;
+
+// $ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+// // ─── Reveal Animation ────────────────────────────────────────────────────────
+// .reveal {
+//   opacity: 0;
+//   transform: translateY(30px);
+//   transition:
+//     opacity 0.9s $ease,
+//     transform 0.9s $ease;
+//   will-change: opacity, transform;
+// }
+
+// .revealed {
+//   opacity: 1;
+//   transform: translateY(0);
+// }
+
+// // ─── Page Root ───────────────────────────────────────────────────────────────
+// .intelligencePage {
+//   width: 100%;
+//   background-color: $bg;
+//   color: $text;
+//   padding: 0;
+//   margin: 0;
+//   overflow-x: hidden;
+// }
+
+// section {
+//   min-height: auto;
+//   align-items: start;
+// }
+
+// // ─── HERO ────────────────────────────────────────────────────────────────────
+// .hero {
+//   width: 100%;
+//   padding: 140px 80px 60px 80px;
+//   box-sizing: border-box;
+//   align-items: start;
+
+//   @include respond-to(medium) {
+//     padding: 110px 40px 40px 40px;
+//   }
+
+//   @include respond-to(small) {
+//     padding: 100px 20px 30px 20px;
+//   }
+// }
+
+// .heroLabel {
+//   font-size: 56px;
+//   color: $text;
+//   margin: 0 0 18px 0;
+//   font-weight: 400;
+//   text-align: left;
+//   line-height: 100%;
+//   font-family: stara;
+
+//   @include respond-to(medium) {
+//     font-size: 40px;
+//   }
+
+//   @include respond-to(small) {
+//     font-size: 30px;
+//   }
+// }
+
+// .heroTitle {
+//   max-width: 90%;
+//   font-size: 56px;
+//   font-weight: 400;
+//   line-height: 1.15;
+//   color: $text;
+//   margin: 0 0 40px 0;
+//   text-align: left;
+//   font-family: Etherel;
+
+//   @include respond-to(medium) {
+//     font-size: 40px;
+//     margin-bottom: 30px;
+//   }
+
+//   @include respond-to(small) {
+//     font-size: 28px;
+//     margin-bottom: 24px;
+//     max-width: 100%;
+//   }
+// }
+
+// .ctaBtn {
+//   background: $accent-pink;
+//   border: none;
+//   border-radius: 30px;
+//   color: #ffffff;
+//   padding: 12px 24px;
+//   font-size: 14px;
+//   font-weight: 500;
+//   cursor: pointer;
+//   display: inline-flex;
+//   align-items: center;
+//   gap: 14px;
+//   transition:
+//     background 0.3s $ease,
+//     transform 0.3s $ease;
+//   margin-bottom: 60px;
+
+//   &:hover {
+//     background: darken(#e5348c, 6%);
+//     transform: translateY(-2px);
+//   }
+
+//   @include respond-to(small) {
+//     font-size: 13px;
+//     padding: 10px 20px;
+//     margin-bottom: 40px;
+//   }
+// }
+
+// .ctaArrow {
+//   display: inline-flex;
+//   align-items: center;
+//   justify-content: center;
+//   width: 24px;
+//   height: 24px;
+//   border-radius: 50%;
+//   background: #ffffff;
+//   color: $accent-pink;
+//   font-size: 13px;
+//   font-weight: 600;
+// }
+
+// .heroImgWrap {
+//   width: 100%;
+//   border-radius: 14px;
+//   overflow: hidden;
+//   background-color: #ffffff;
+//   margin-top: 20px;
+// }
+
+// .heroImg {
+//   width: 100%;
+//   height: auto;
+//   min-height: 480px;
+//   object-fit: cover;
+//   display: block;
+
+//   @include respond-to(medium) {
+//     min-height: 360px;
+//   }
+
+//   @include respond-to(small) {
+//     min-height: 240px;
+//   }
+// }
+
+// // ─── INTRO ───────────────────────────────────────────────────────────────────
+// .intro {
+//   padding: 80px 80px 60px 80px;
+//   box-sizing: border-box;
+//   text-align: left;
+
+//   @include respond-to(medium) {
+//     padding: 60px 40px 40px 40px;
+//   }
+
+//   @include respond-to(small) {
+//     padding: 50px 20px 30px 20px;
+//   }
+// }
+
+// .introHeadlineWrap {
+//   margin-bottom: 50px;
+
+//   @include respond-to(medium) {
+//     margin-bottom: 30px;
+//   }
+
+//   @include respond-to(small) {
+//     margin-bottom: 24px;
+//   }
+// }
+
+// .introHeadline {
+//   font-size: 48px;
+//   font-weight: 400;
+//   line-height: 1.2;
+//   color: $text;
+//   font-family: Etherel;
+//   margin: 0;
+//   max-width: 90%;
+//   text-align: left;
+
+//   @include respond-to(medium) {
+//     font-size: 34px;
+//     br {
+//       display: none;
+//     }
+//   }
+
+//   @include respond-to(small) {
+//     font-size: 26px;
+//     max-width: 100%;
+//   }
+// }
+
+// .introGrid {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr;
+//   gap: 60px;
+//   align-items: start;
+
+//   @include respond-to(medium) {
+//     grid-template-columns: 1fr;
+//     gap: 32px;
+//   }
+// }
+
+// .introSpacer {
+//   @include respond-to(medium) {
+//     display: none;
+//   }
+// }
+
+// .introBody {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 20px;
+//   max-width: 480px;
+
+//   p {
+//     font-size: 16px;
+//     line-height: 1.65;
+//     color: #c8c8c8;
+//     margin: 0;
+
+//     @include respond-to(small) {
+//       font-size: 14px;
+//     }
+//   }
+// }
+
+// // ─── MIDDLE IMAGE ────────────────────────────────────────────────────────────
+// .middleSection {
+//   padding: 40px 80px 60px 80px;
+//   box-sizing: border-box;
+
+//   @include respond-to(medium) {
+//     padding: 30px 40px 50px 40px;
+//   }
+
+//   @include respond-to(small) {
+//     padding: 20px 20px 40px 20px;
+//   }
+// }
+
+// .middleImgWrap {
+//   width: 100%;
+//   border-radius: 14px;
+//   overflow: hidden;
+//   background-color: #ffffff;
+// }
+
+// .middleImg {
+//   width: 100%;
+//   height: auto;
+//   min-height: 520px;
+//   object-fit: cover;
+//   display: block;
+
+//   @include respond-to(medium) {
+//     min-height: 400px;
+//   }
+
+//   @include respond-to(small) {
+//     min-height: 280px;
+//   }
+// }
+
+// // ─── STREAMS ─────────────────────────────────────────────────────────────────
+// .streamsSection {
+//   padding: 60px 80px 140px 80px;
+//   box-sizing: border-box;
+
+//   @include respond-to(medium) {
+//     padding: 40px 40px 100px 40px;
+//   }
+
+//   @include respond-to(small) {
+//     padding: 30px 20px 80px 20px;
+//   }
+// }
+
+// .streamsEyebrow {
+//   font-size: 16px;
+//   color: $text-muted;
+//   margin: 0 0 16px 0;
+//   font-weight: 400;
+//   text-align: left;
+
+//   @include respond-to(small) {
+//     font-size: 14px;
+//   }
+// }
+
+// .streamsHeadline {
+//   font-size: 40px;
+//   font-weight: 400;
+//   line-height: 1.25;
+//   color: $text;
+//   font-family: Etherel;
+//   margin: 0 0 60px 0;
+//   max-width: 85%;
+//   text-align: left;
+
+//   @include respond-to(medium) {
+//     font-size: 30px;
+//     margin-bottom: 40px;
+//     max-width: 100%;
+//   }
+
+//   @include respond-to(small) {
+//     font-size: 24px;
+//     margin-bottom: 32px;
+//   }
+// }
+
+// .streamsGrid {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr;
+//   gap: 60px;
+//   align-items: start;
+
+//   @include respond-to(medium) {
+//     grid-template-columns: 1fr;
+//     gap: 32px;
+//   }
+// }
+
+// .streamsSpacer {
+//   @include respond-to(medium) {
+//     display: none;
+//   }
+// }
+
+// .streamsBody {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 32px;
+//   max-width: 480px;
+// }
+
+// .streamItem {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 8px;
+// }
+
+// .streamTitle {
+//   font-size: 16px;
+//   font-weight: 700;
+//   color: $text;
+//   margin: 0;
+//   letter-spacing: 0;
+
+//   @include respond-to(small) {
+//     font-size: 15px;
+//   }
+// }
+
+// .streamDesc {
+//   font-size: 15px;
+//   line-height: 1.65;
+//   color: #c8c8c8;
+//   margin: 0;
+
+//   @include respond-to(small) {
+//     font-size: 14px;
+//   }
+// }
+
+// ─── Breakpoints ─────────────────────────────────────────────────────────────
+$breakpoint-small: 480px;
+$breakpoint-medium: 840px;
+$breakpoint-large: 1024px;
+$breakpoint-extra-large: 1200px;
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == small {
+    @media (max-width: $breakpoint-small) {
+      @content;
+    }
+  } @else if $breakpoint == medium {
+    @media (max-width: $breakpoint-medium) {
+      @content;
+    }
+  } @else if $breakpoint == large {
+    @media (max-width: $breakpoint-large) {
+      @content;
+    }
+  }
+}
+
+// ─── Tokens ──────────────────────────────────────────────────────────────────
+$bg: #0f0f0f;
+$text: #ffffff;
+$text-muted: #a0a0a0;
+$accent-pink: #e5348c;
+
+$ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+// ─── Reveal Animation ────────────────────────────────────────────────────────
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.9s $ease,
+    transform 0.9s $ease;
+  will-change: opacity, transform;
+}
+
+.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+// ─── Page Root ───────────────────────────────────────────────────────────────
+.intelligencePage {
+  width: 100%;
+  background-color: $bg;
+  color: $text;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+section {
+  min-height: auto;
+  align-items: start;
+  text-align: left;
+}
+
+// ─── HERO ────────────────────────────────────────────────────────────────────
+.hero {
+  width: 100%;
+  padding: 140px 80px 60px 80px;
+  box-sizing: border-box;
+  align-items: start;
+
+  @include respond-to(medium) {
+    padding: 110px 40px 40px 40px;
+  }
+
+  @include respond-to(small) {
+    padding: 100px 20px 30px 20px;
+  }
+}
+
+.heroLabel {
+  font-size: 56px;
+  color: $text;
+  margin: 0 0 10px 0;
+  font-weight: 400;
+  text-align: left;
+  line-height: 100%;
+  font-family: stara;
+
+  @include respond-to(medium) {
+    font-size: 40px;
+  }
+
+  @include respond-to(small) {
+    font-size: 30px;
+  }
+}
+
+.heroTitle {
+  max-width: 95%;
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 1.15;
+  color: $text;
+  margin: 0 0 40px 0;
+  text-align: left;
+  font-family: Etherel;
+
+  @include respond-to(medium) {
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
+
+  @include respond-to(small) {
+    font-size: 28px;
+    margin-bottom: 24px;
+    max-width: 100%;
+  }
+}
+
+.ctaBtn {
+  background: $accent-pink;
+  border: none;
+  border-radius: 30px;
+  color: #ffffff;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  transition:
+    background 0.3s $ease,
+    transform 0.3s $ease;
+  margin-bottom: 60px;
+  margin-right: auto;
+  text-align: left !important;
+  &:hover {
+    background: darken(#e5348c, 6%);
+    transform: translateY(-2px);
+  }
+
+  @include respond-to(small) {
+    font-size: 13px;
+    padding: 10px 20px;
+    margin-bottom: 40px;
+  }
+}
+
+.ctaArrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: $accent-pink;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.heroImgWrap {
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  background-color: #ffffff;
+  margin-top: 20px;
+}
+
+.heroImg {
+  width: 100%;
+  height: auto;
+  min-height: 480px;
+  object-fit: cover;
+  display: block;
+
+  @include respond-to(medium) {
+    min-height: 360px;
+  }
+
+  @include respond-to(small) {
+    min-height: 240px;
+  }
+}
+
+// ─── INTRO ───────────────────────────────────────────────────────────────────
+.intro {
+  padding: 80px 80px 60px 80px;
+  box-sizing: border-box;
+  text-align: left;
+  width: 100%;
+
+  @include respond-to(medium) {
+    padding: 60px 40px 40px 40px;
+  }
+
+  @include respond-to(small) {
+    padding: 50px 20px 30px 20px;
+  }
+}
+
+.introHeadlineWrap {
+  margin-bottom: 50px;
+
+  @include respond-to(medium) {
+    margin-bottom: 30px;
+  }
+
+  @include respond-to(small) {
+    margin-bottom: 24px;
+  }
+}
+
+.introHeadline {
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: $text;
+  font-family: Etherel;
+  margin: 0;
+  // max-width: 90%;
+  text-align: left;
+
+  @include respond-to(medium) {
+    font-size: 34px;
+    br {
+      display: none;
+    }
+  }
+
+  @include respond-to(small) {
+    font-size: 26px;
+    max-width: 100%;
+  }
+}
+
+.introGrid {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: 60px;
+  align-items: start;
+  width: 100%;
+  @include respond-to(medium) {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.introSpacer {
+  @include respond-to(medium) {
+    display: none;
+  }
+}
+
+.introBody {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  // max-width: 480px;
+
+  p {
+    font-size: 20px;
+    line-height: 1.65;
+    color: #c8c8c8;
+    margin: 0;
+
+    @include respond-to(small) {
+      font-size: 14px;
+    }
+  }
+}
+
+// ─── MIDDLE IMAGE ────────────────────────────────────────────────────────────
+.middleSection {
+  padding: 40px 80px 60px 80px;
+  box-sizing: border-box;
+
+  @include respond-to(medium) {
+    padding: 30px 40px 50px 40px;
+  }
+
+  @include respond-to(small) {
+    padding: 20px 20px 40px 20px;
+  }
+}
+
+.middleImgWrap {
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.middleImg {
+  width: 100%;
+  height: auto;
+  min-height: 520px;
+  object-fit: cover;
+  display: block;
+
+  @include respond-to(medium) {
+    min-height: 400px;
+  }
+
+  @include respond-to(small) {
+    min-height: 280px;
+  }
+}
+
+// ─── STREAMS ─────────────────────────────────────────────────────────────────
+.streamsSection {
+  padding: 60px 80px 140px 80px;
+  box-sizing: border-box;
+
+  @include respond-to(medium) {
+    padding: 40px 40px 100px 40px;
+  }
+
+  @include respond-to(small) {
+    padding: 30px 20px 80px 20px;
+  }
+}
+
+.streamsEyebrow {
+  font-size: 16px;
+  color: $text-muted;
+  margin: 0 0 16px 0;
+  font-weight: 400;
+  text-align: left;
+
+  @include respond-to(small) {
+    font-size: 14px;
+  }
+}
+
+.streamsHeadline {
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.25;
+  color: $text;
+  font-family: Etherel;
+  margin: 0 0 60px 0;
+  max-width: 85%;
+  text-align: left;
+
+  @include respond-to(medium) {
+    font-size: 30px;
+    margin-bottom: 40px;
+    max-width: 100%;
+  }
+
+  @include respond-to(small) {
+    font-size: 24px;
+    margin-bottom: 32px;
+  }
+}
+
+.streamsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+
+  @include respond-to(medium) {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.streamsSpacer {
+  @include respond-to(medium) {
+    display: none;
+  }
+}
+
+.streamsBody {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 480px;
+}
+
+.streamItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.streamTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: $text;
+  margin: 0;
+  letter-spacing: 0;
+
+  @include respond-to(small) {
+    font-size: 15px;
+  }
+}
+
+.streamDesc {
+  font-size: 15px;
+  line-height: 1.65;
+  color: #c8c8c8;
+  margin: 0;
+
+  @include respond-to(small) {
+    font-size: 14px;
+  }
+}
+// ─── FAQ ─────────────────────────────────────────────────────────────────────
+.faqSection {
+  padding: 80px 80px 140px 80px;
+  box-sizing: border-box;
+
+  @include respond-to(medium) {
+    padding: 60px 40px 100px 40px;
+  }
+
+  @include respond-to(small) {
+    padding: 50px 20px 80px 20px;
+  }
+}
+
+.faqHeader {
+  text-align: center;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-items: center;
+  width: 100%;
+  @include respond-to(small) {
+    margin-bottom: 40px;
+  }
+}
+
+.faqHeadline {
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 1.25;
+  color: $text;
+  font-family: Etherel;
+  margin: 0 0 20px 0;
+  max-width: 900px;
+
+  @include respond-to(medium) {
+    font-size: 32px;
+    br {
+      display: none;
+    }
+  }
+
+  @include respond-to(small) {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+}
+
+.faqSubtitle {
+  font-size: 18px;
+  color: $text-muted;
+  margin: 0 0 50px 0;
+  font-weight: 400;
+
+  @include respond-to(small) {
+    font-size: 14px;
+    margin-bottom: 32px;
+  }
+}
+
+.faqLabel {
+  font-size: 88px;
+  font-family: Etherel;
+  font-weight: 400;
+  color: $text;
+  margin: 0;
+  line-height: 1;
+  letter-spacing: 0.02em;
+
+  @include respond-to(medium) {
+    font-size: 64px;
+  }
+
+  @include respond-to(small) {
+    font-size: 48px;
+  }
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+
+  @include respond-to(small) {
+    gap: 12px;
+  }
+}
+
+// ─── Reveal wrapper — transform lives ONLY here, never on .faqItem ──────────
+.faqItemReveal {
+  // After reveal completes, stop reserving a compositing layer so children
+  // (the arrow) can own their own GPU layer cleanly.
+  &.revealed {
+    will-change: auto;
+  }
+}
+
+// ─── The actual FAQ card — NO transform, NO will-change ─────────────────────
+.faqItem {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 16px;
+  padding: 24px 28px;
+  background-color: transparent;
+  transition:
+    border-color 0.3s $ease,
+    background-color 0.3s $ease;
+
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  @include respond-to(small) {
+    padding: 18px 20px;
+    border-radius: 14px;
+  }
+}
+
+.faqItemOpen {
+  border-color: rgba(255, 255, 255, 0.3);
+
+  .faqAnswerWrap {
+    max-height: 800px;
+    opacity: 1;
+    margin-top: 18px;
+  }
+
+  .faqToggle svg {
+    transform: rotate(0deg);
+  }
+}
+
+// ─── Question row ────────────────────────────────────────────────────────────
+.faqQuestion {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  text-align: left;
+  color: $text;
+  font-family: inherit;
+}
+
+.faqQuestionText {
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: $text;
+  flex: 1;
+
+  @include respond-to(medium) {
+    font-size: 17px;
+  }
+
+  @include respond-to(small) {
+    font-size: 15px;
+  }
+}
+
+// ─── Toggle pill — STATIC, never animates. Only the SVG inside rotates ──────
+.faqToggle {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  min-height: 36px;
+  border-radius: 50%;
+  background: $accent-pink;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s $ease;
+  // No transform, no will-change on the pill itself
+
+  &:hover {
+    background: darken(#e5348c, 6%);
+  }
+
+  @include respond-to(small) {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+  }
+
+  svg {
+    display: block;
+    pointer-events: none;
+    // Closed state — arrow points down
+    transform: rotate(180deg);
+    transition: transform 0.4s $ease;
+    transform-origin: 50% 50%;
+    // Lock SVG to its own layer for clean GPU rotation
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+}
+
+// ─── Answer container ───────────────────────────────────────────────────────
+.faqAnswerWrap {
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.45s $ease,
+    opacity 0.3s $ease,
+    margin-top 0.4s $ease;
+}
+
+.faqAnswerInner {
+  padding: 0;
+}
+
+.faqAnswer {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #c8c8c8;
+  margin: 0;
+
+  @include respond-to(small) {
+    font-size: 13.5px;
+  }
+}
+
+// ─── CTA ─────────────────────────────────────────────────────────────────────
+.faqCtaWrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+
+  @include respond-to(small) {
+    margin-top: 36px;
+  }
+}
+
+.faqCtaBtn {
+  background: $accent-pink;
+  border: none;
+  border-radius: 30px;
+  color: #ffffff;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  transition:
+    background 0.3s $ease,
+    transform 0.3s $ease;
+  text-align: center;
+  &:hover {
+    background: darken(#e5348c, 6%);
+    transform: translateY(-2px);
+  }
+
+  @include respond-to(small) {
+    font-size: 13px;
+    padding: 10px 20px;
+  }
+}
+// ─── STACKED ANIMATION CARDS ─────────────────────────────────────────────────
+.animationCards {
+  width: 100%;
+  background-color: $bg;
+  padding: 60px 40px;
+  box-sizing: border-box;
+  // Section is exactly viewport-sized so pin sits cleanly
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  @include respond-to(medium) {
+    padding: 40px 24px;
+  }
+
+  @include respond-to(small) {
+    padding: 30px 16px;
+  }
+
+  // Stage holds all cards stacked at the same position
+  .cardsStage {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    height: 75vh;
+    max-height: 620px;
+
+    @include respond-to(medium) {
+      height: auto;
+      min-height: 480px;
+    }
+
+    @include respond-to(small) {
+      min-height: 420px;
+    }
+  }
+
+  .card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 18px;
+    padding: 60px 70px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+    will-change: transform;
+    transform-origin: center top;
+    box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.18);
+    overflow: hidden;
+
+    @include respond-to(medium) {
+      padding: 44px 36px;
+      border-radius: 16px;
+    }
+
+    @include respond-to(small) {
+      padding: 28px 22px;
+      border-radius: 14px;
+    }
+  }
+
+  .cardInner {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 60px;
+    align-items: flex-start;
+    overflow-y: auto;
+
+    @include respond-to(medium) {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+  }
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .cardPhase {
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+    letter-spacing: 0.02em;
+
+    @include respond-to(small) {
+      font-size: 13px;
+    }
+  }
+
+  .cardTitle {
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0;
+    letter-spacing: -0.01em;
+    font-family: Etherel;
+
+    @include respond-to(medium) {
+      font-size: 28px;
+    }
+
+    @include respond-to(small) {
+      font-size: 24px;
+    }
+  }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .cardDescription {
+    font-size: 15px;
+    line-height: 1.65;
+    margin: 0;
+    opacity: 0.88;
+    max-width: 480px;
+
+    @include respond-to(small) {
+      font-size: 14px;
+    }
+  }
+
+  .cardServiceList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    li {
+      font-size: 14px;
+      line-height: 1.5;
+      padding-left: 18px;
+      position: relative;
+      opacity: 0.92;
+
+      &::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      @include respond-to(small) {
+        font-size: 13px;
+      }
+    }
+  }
+}

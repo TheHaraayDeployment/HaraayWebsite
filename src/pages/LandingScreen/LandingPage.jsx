@@ -19,6 +19,8 @@ import Projectimg3 from "../../assets/NECC.jpg";
 import Projectimg4 from "../../assets/Lokneta/lokneta.webp";
 import Projectimg5 from "../../assets/Satvikraas/Satvikraas.webp";
 import gopalanimg from "../../assets/gopalan2.jpg";
+import sdigimg from "../../assets/SdigCardImg.png";
+import yoboimg from "../../assets/yoboCardImg.png";
 import Purushero from "../../assets/purus.svg";
 
 import AkoyaLOGO from "../../assets/Logo/LOGO Akoya.png";
@@ -37,7 +39,7 @@ import partnertxt from "../../assets/partnertxt.svg";
 import googlelogo from "../../assets/googlelogo.svg";
 import testprofile1 from "../../assets/profile.jpeg";
 import purusprofile from "../../assets/puruslogo.png";
-
+import Partners from "./Partners.jsx";
 import scissor from "../../assets/scissor.svg";
 import { useInView } from "react-intersection-observer";
 import Letstalk from "../../components/Letstalk.jsx";
@@ -330,13 +332,13 @@ export default function LandingPage() {
           <section className={styles.worksec}>
             <Link to={"/casestudy/gopalan"} className="projectCards">
               <div className={styles.projectcardtxt}>
-                <h1>Gopalan Group</h1>
-                <h3>Website Design & development</h3>
+                <h1>SDIG</h1>
+                {/* <h3>Website Design & development</h3> */}
               </div>
               <img
                 draggable="false"
                 className={styles.projectimg}
-                src={gopalanimg}
+                src={sdigimg}
                 alt="Project Card"
               />
             </Link>
@@ -354,13 +356,13 @@ export default function LandingPage() {
             </Link>
             <div to={"/casestudy/akoya"} className="projectCards">
               <div className={styles.projectcardtxt}>
-                <h1>NECC</h1>
-                <h3>Branding </h3>
+                <h1>YOBO</h1>
+                {/* <h3>Branding </h3> */}
               </div>
               <img
                 draggable="false"
                 className={styles.projectimg}
-                src={Projectimg3}
+                src={yoboimg}
                 alt="Project Card"
               />
             </div>
@@ -376,7 +378,7 @@ export default function LandingPage() {
                 alt="Project Card"
               />
             </div>{" "}
-            <Link to={"/casestudy/satvik"} className="projectCards">
+            {/* <Link to={"/casestudy/satvik"} className="projectCards">
               <div className={styles.projectcardtxt}>
                 <h1>SatvikRaas</h1>
                 <h3>Branding | Website | Packaging</h3>
@@ -387,7 +389,7 @@ export default function LandingPage() {
                 src={Projectimg5}
                 alt="Project Card"
               />
-            </Link>
+            </Link> */}
             <div className={styles.projcardsbtn}>
               {" "}
               <Link data-aos="fade-up" to={"/works"}>
@@ -395,7 +397,7 @@ export default function LandingPage() {
               </Link>
             </div>
           </section>
-          <section data-aos="fade-up" className={styles.partners}>
+          {/* <section data-aos="fade-up" className={styles.partners}>
             <div className={styles.partnrshead}>
               <h1>Our Partners</h1>
               <p>
@@ -432,7 +434,8 @@ export default function LandingPage() {
                 </div>{" "}
               </div>
             </div>
-          </section>
+          </section> */}
+          {/* <Partners /> */}
           <section data-aos="fade-up" className={styles.testimonial}>
             <h1>Testimonials</h1>
             <p>Why Everyone Loves Haraay</p>

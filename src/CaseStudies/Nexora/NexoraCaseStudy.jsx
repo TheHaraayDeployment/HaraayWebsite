@@ -187,7 +187,9 @@ export default function HMS() {
             className={`${styles.title} ${isLoaded ? styles.titleVisible : ""}`}
           >
             <h2 className={styles.mainTitle}>Nexora </h2>
-            <span className={styles.titleAccent}>Industry :</span>
+            <span className={styles.titleAccent}>
+              Industry : Biotechnology | R&D | Scientific Innovation{" "}
+            </span>
           </div>
           <div
             className={`${styles.services} ${
@@ -200,7 +202,7 @@ export default function HMS() {
             </p>
             <span className={styles.serviceAccent}>
               {" "}
-              Biotechnology | R&D | Scientific Innovation
+              Designing at the Intersection of Science and the Future
             </span>
           </div>
         </div>

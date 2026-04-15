@@ -1,4 +1,426 @@
-//  --------------------------RESPONSIVE ENV--------------------------------------
+// //  --------------------------RESPONSIVE ENV--------------------------------------
+// $breakpoint-small: 480px;
+// $breakpoint-medium: 840px;
+// $breakpoint-large: 1024px;
+// $breakpoint-extra-large: 1200px;
+
+// @mixin respond-to($breakpoint) {
+//   @if $breakpoint == small {
+//     @media (max-width: $breakpoint-small) {
+//       @content;
+//     }
+//   } @else if $breakpoint == medium {
+//     @media (max-width: $breakpoint-medium) {
+//       @content;
+//     }
+//   } @else if $breakpoint == large {
+//     @media (max-width: $breakpoint-large) {
+//       @content;
+//     }
+//   }
+// }
+// //   @include respond-to(small) {
+// //   code here
+// // }
+
+// //   @include respond-to(medium) {
+// // code here
+// // }
+
+// // ----------------------------------------------------------------------------------
+
+// .AboutUspage {
+//   width: 100%;
+
+//   margin: 0;
+//   padding: 0;
+
+//   h1 {
+//     font-size: 96px;
+//     color: white;
+//     font-family: Etherel;
+//     font-weight: 600;
+
+//     @include respond-to(small) {
+//       font-size: 48px;
+//     }
+//   }
+
+//   h2 {
+//     font-size: 48px;
+//     color: white;
+//     font-family: Stara;
+//     font-weight: 400;
+
+//     @include respond-to(small) {
+//       font-size: 24px;
+//     }
+//   }
+
+//   p {
+//     font-size: 24px;
+//     text-align: justify;
+//     color: white;
+//   }
+// }
+
+// //Hero Section
+// .HeroSection {
+//   width: 100vw;
+//   height: 100vh;
+
+//   @include respond-to(small) {
+//     padding: 0;
+//   }
+
+//   .heroimg {
+//     width: 100%;
+//     object-fit: cover;
+
+//     @include respond-to(small) {
+//       height: 100%;
+//       width: 100%;
+//       object-fit: cover;
+//     }
+//     @include respond-to(medium) {
+//       height: 100%;
+//       width: 100%;
+//       object-fit: cover;
+//     }
+//   }
+
+//   .herotext {
+//     position: absolute;
+//     font-size: 96px;
+
+//     @include respond-to(small) {
+//       font-size: 48px;
+//     }
+//   }
+// }
+
+// //About Section
+
+// .AboutUsSection {
+//   margin-top: 50px;
+//   width: 100%;
+//   position: relative;
+//   height: 50vh;
+
+//   padding: 2%;
+
+//   @include respond-to(small) {
+//     margin-top: 0px;
+//     //  padding: 0;
+//   }
+//   .AboutSection {
+//     display: flex;
+//     flex: 1pf 2pf;
+//     flex-direction: row;
+//     width: 100%;
+//     height: 100%;
+
+//     div {
+//       padding: 2%;
+
+//       width: 50%;
+//       height: auto;
+//       margin: auto;
+//       display: flex; // Enable flexbox for alignment
+//       flex-direction: column; // Stack child elements vertically
+//       @include respond-to(small) {
+//         width: 100%;
+//       }
+
+//       h1 {
+//         margin-bottom: 20px;
+//         text-align: left;
+//       }
+//       p {
+//         display: flex;
+
+//         font-size: 24px;
+//         text-align: justify;
+
+//         height: 100%;
+//         @include respond-to(small) {
+//           width: 90vw;
+//           padding: 10px;
+//         }
+//       }
+//       a {
+//         font-size: 32px;
+//         font-weight: 600;
+//         color: white;
+//         text-decoration: none;
+//         transition: background-color 0.3s ease-in-out;
+
+//         // Ensure the <a> tag stays on the left
+//         align-self: flex-start; // Aligns the <a> tag to the start of the flex container
+//         margin-top: 20px; // Add some spacing from other elements if needed
+//         display: block; // Ensure the <a> tag takes its full width by default
+//         &:hover {
+//           color: #e5348c;
+//         }
+//       }
+//       .AboutSectionImg {
+//         @include respond-to(small) {
+//           display: none;
+//         }
+//       }
+//       img {
+//         width: 100%;
+//         object-fit: cover;
+//         height: 100%;
+//         @include respond-to(small) {
+//           display: none;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// //process section
+// .ProcessSection {
+//   width: 100%;
+//   // display: inline-flex;
+//   // flex-direction: row;
+
+//   @include respond-to(small) {
+//     //  background-color: red;
+
+//     width: 100%;
+//   }
+// }
+
+// .processmaindiv {
+//   width: 100%;
+//   display: inline-flex;
+//   flex-direction: row;
+//   @include respond-to(small) {
+//     flex-direction: column;
+//     width: 100%;
+//     // background-color: #4b4b4b;
+//   }
+
+//   .processtxt {
+//     width: 50%;
+//     display: flex;
+//     flex-direction: column;
+//     margin-left: 5%;
+
+//     @include respond-to(small) {
+//       width: 100%;
+//       margin-left: 0;
+//     }
+//     h2 {
+//       font-size: 36px;
+//       margin-top: 50px;
+//     }
+//     a {
+//       font-size: 18px;
+//       width: 200px;
+//       font-weight: 600;
+//       color: white;
+//       text-decoration: none;
+//       text-align: center;
+//       background-color: #e5348c;
+//       border-radius: 20px;
+//       padding: 5px 10px;
+//       margin-left: 40%;
+
+//       @include respond-to(small) {
+//         display: none;
+//       }
+//     }
+//   }
+// }
+
+// .ProcessHeading {
+//   width: 100%;
+//   display: block;
+// }
+
+// .processContainer {
+//   display: flex;
+//   flex-direction: column;
+//   position: relative;
+//   // background-color: red;
+//   width: 40%;
+//   margin: 20px;
+//   // margin: auto;
+//   // margin-right: 5%;
+
+//   @include respond-to(small) {
+//     width: 90%;
+//   }
+// }
+
+// .processStep {
+//   // width: 700px;
+//   // background-color: #4e3e3e;
+//   width: 100%;
+//   display: flex;
+//   // align-items: center;
+//   position: relative;
+//   padding: 20px 0;
+//   // opacity: 0;
+//   transform: translateX(-20px);
+//   animation: fadeInSlide 0.5s ease forwards;
+//   // margin: auto;
+//   &:nth-child(1) {
+//     animation-delay: 0.2s;
+//   }
+//   &:nth-child(2) {
+//     animation-delay: 0.4s;
+//   }
+//   &:nth-child(3) {
+//     animation-delay: 0.6s;
+//   }
+//   &:nth-child(4) {
+//     animation-delay: 0.8s;
+//   }
+// }
+
+// .circle {
+//   width: 30px !important;
+//   min-width: 40px;
+//   height: 40px !important;
+//   border-radius: 50%;
+//   background-color: #4b4b4b;
+//   color: #fff;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   font-weight: bold;
+//   margin-right: 15px;
+// }
+
+// .content {
+//   // background-color: red;
+//   h3 {
+//     font-size: 1.2em;
+//     margin: 0;
+//     color: #ffffff;
+
+//     text-align: left;
+//   }
+
+//   p {
+//     margin: 5px 0 0;
+//     color: #a9a9a9;
+//     font-size: 0.95em;
+//   }
+// }
+
+// @keyframes fadeInSlide {
+//   0% {
+//     opacity: 0;
+//     transform: translateX(-20px);
+//   }
+//   100% {
+//     opacity: 1;
+//     transform: translateX(0);
+//   }
+// }
+
+// .OurTeams {
+//   padding: 40px 20px;
+//   // background-color: #1b1b1b;
+//   color: #fff;
+//   text-align: center;
+
+//   @include respond-to(small) {
+//     min-height: 50vh;
+//     margin-bottom: -50px;
+//   }
+//   h1 {
+//     font-size: 96px;
+//     margin-bottom: 20px;
+
+//     @include respond-to(small) {
+//       font-size: 48px;
+//     }
+//   }
+
+//   .teamdiv {
+//     display: flex;
+//     overflow-x: auto;
+//     scroll-snap-type: x mandatory;
+//     gap: 16px;
+//     padding-bottom: 10px;
+
+//     @include respond-to(small) {
+//       width: 90vw;
+//     }
+//     .member {
+//       flex: 0 0 25%; // 4 items per row on desktop
+//       max-width: 300px;
+//       padding: 0px;
+//       // background: #333;
+//       margin-right: 16px;
+//       border-radius: 8px;
+//       text-align: center;
+//       scroll-snap-align: start;
+
+//       @include respond-to(small) {
+//         max-width: 200px;
+//       }
+//       &:last-child {
+//         margin-right: 0;
+//       }
+
+//       img {
+//         width: 100%;
+//         height: auto;
+//         // border-radius: 50%;
+//         margin-bottom: 10px;
+//       }
+
+//       h3 {
+//         font-size: 32px;
+//         font-weight: bold;
+//         margin-top: 10px;
+//         color: white;
+//         text-align: left;
+//       }
+
+//       h4 {
+//         font-size: 20px;
+//         text-align: left;
+//         color: #aaa;
+//       }
+
+//       p {
+//         font-size: 24px;
+//         color: #bbb;
+//         margin-top: 8px;
+//         text-align: justify;
+//       }
+//     }
+//   }
+
+//   // Responsive adjustments
+//   @media (max-width: 1200px) {
+//     .teamdiv .member {
+//       flex: 0 0 33.33%; // 3 items per row on large tablets
+//     }
+//   }
+
+//   @media (max-width: 768px) {
+//     .teamdiv .member {
+//       flex: 0 0 50%; // 2 items per row on small tablets
+//     }
+//   }
+
+//   @media (max-width: 480px) {
+//     .teamdiv .member {
+//       flex: 0 0 100%; // 1 item per row on mobile
+//     }
+//   }
+// }
+
+// ─── Breakpoints ─────────────────────────────────────────────────────────────
 $breakpoint-small: 480px;
 $breakpoint-medium: 840px;
 $breakpoint-large: 1024px;
@@ -19,403 +441,716 @@ $breakpoint-extra-large: 1200px;
     }
   }
 }
-//   @include respond-to(small) {
-//   code here
-// }
 
-//   @include respond-to(medium) {
-// code here
-// }
+// ─── Tokens ──────────────────────────────────────────────────────────────────
+$bg: #0f0f0f;
+$text: #ffffff;
+$text-muted: #a0a0a0;
+$card-bg: #1a1a1a;
+$card-border: rgba(255, 255, 255, 0.08);
+$yellow: #f3e67a;
+$yellow-dark: #d4c558;
+$accent: #e5348c;
 
-// ----------------------------------------------------------------------------------
-
-.AboutUspage {
+$ease: cubic-bezier(0.16, 1, 0.3, 1);
+section {
+  min-height: auto;
+  align-items: start;
+}
+// ─── Page Root ───────────────────────────────────────────────────────────────
+.aboutPage {
   width: 100%;
-
-  margin: 0;
+  background-color: $bg;
+  color: $text;
+  // font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   padding: 0;
-
-  h1 {
-    font-size: 96px;
-    color: white;
-    font-family: Etherel;
-    font-weight: 600;
-
-    @include respond-to(small) {
-      font-size: 48px;
-    }
-  }
-
-  h2 {
-    font-size: 48px;
-    color: white;
-    font-family: Stara;
-    font-weight: 400;
-
-    @include respond-to(small) {
-      font-size: 24px;
-    }
-  }
-
-  p {
-    font-size: 24px;
-    text-align: justify;
-    color: white;
-  }
+  margin: 0;
+  overflow-x: hidden;
 }
 
-//Hero Section
-.HeroSection {
-  width: 100vw;
-  height: 100vh;
+// ─── HERO ────────────────────────────────────────────────────────────────────
+.hero {
+  width: 100%;
+  padding: 140px 80px 60px 80px;
+  box-sizing: border-box;
+  align-items: start;
+
+  @include respond-to(medium) {
+    padding: 110px 40px 40px 40px;
+  }
 
   @include respond-to(small) {
-    padding: 0;
-  }
-
-  .heroimg {
-    width: 100%;
-    object-fit: cover;
-
-    @include respond-to(small) {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-    }
-    @include respond-to(medium) {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-    }
-  }
-
-  .herotext {
-    position: absolute;
-    font-size: 96px;
-
-    @include respond-to(small) {
-      font-size: 48px;
-    }
+    padding: 100px 20px 30px 20px;
   }
 }
 
-//About Section
+.heroLabel {
+  font-size: 56px;
+  color: $text;
+  margin: 0 0 18px 0;
+  font-weight: 400;
+  text-align: left;
+  line-height: 100%;
+  font-family: stara;
+}
 
-.AboutUsSection {
-  margin-top: 50px;
-  width: 100%;
-  position: relative;
-  height: 50vh;
-
-  padding: 2%;
+.heroTitle {
+  max-width: 90%;
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 1.15;
+  color: $text;
+  margin: 0 0 30px 0;
+  text-align: left;
+  // letter-spacing: -0.01em;
+  font-family: Etherel;
+  @include respond-to(medium) {
+    font-size: 40px;
+    margin-bottom: 40px;
+  }
 
   @include respond-to(small) {
-    margin-top: 0px;
-    //  padding: 0;
-  }
-  .AboutSection {
-    display: flex;
-    flex: 1pf 2pf;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-
-    div {
-      padding: 2%;
-
-      width: 50%;
-      height: auto;
-      margin: auto;
-      display: flex; // Enable flexbox for alignment
-      flex-direction: column; // Stack child elements vertically
-      @include respond-to(small) {
-        width: 100%;
-      }
-
-      h1 {
-        margin-bottom: 20px;
-        text-align: left;
-      }
-      p {
-        display: flex;
-
-        font-size: 24px;
-        text-align: justify;
-
-        height: 100%;
-        @include respond-to(small) {
-          width: 90vw;
-          padding: 10px;
-        }
-      }
-      a {
-        font-size: 32px;
-        font-weight: 600;
-        color: white;
-        text-decoration: none;
-        transition: background-color 0.3s ease-in-out;
-
-        // Ensure the <a> tag stays on the left
-        align-self: flex-start; // Aligns the <a> tag to the start of the flex container
-        margin-top: 20px; // Add some spacing from other elements if needed
-        display: block; // Ensure the <a> tag takes its full width by default
-        &:hover {
-          color: #e5348c;
-        }
-      }
-      .AboutSectionImg {
-        @include respond-to(small) {
-          display: none;
-        }
-      }
-      img {
-        width: 100%;
-        object-fit: cover;
-        height: 100%;
-        @include respond-to(small) {
-          display: none;
-        }
-      }
+    font-size: 30px;
+    margin-bottom: 30px;
+    br {
+      display: none;
     }
   }
 }
 
-//process section
-.ProcessSection {
+.heroImgWrap {
   width: 100%;
-  // display: inline-flex;
-  // flex-direction: row;
-
-  @include respond-to(small) {
-    //  background-color: red;
-
-    width: 100%;
-  }
+  // max-height: 520px;
+  overflow: hidden;
 }
 
-.processmaindiv {
+.heroImg {
   width: 100%;
-  display: inline-flex;
-  flex-direction: row;
-  @include respond-to(small) {
-    flex-direction: column;
-    width: 100%;
-    // background-color: #4b4b4b;
-  }
-
-  .processtxt {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    margin-left: 5%;
-
-    @include respond-to(small) {
-      width: 100%;
-      margin-left: 0;
-    }
-    h2 {
-      font-size: 36px;
-      margin-top: 50px;
-    }
-    a {
-      font-size: 18px;
-      width: 200px;
-      font-weight: 600;
-      color: white;
-      text-decoration: none;
-      text-align: center;
-      background-color: #e5348c;
-      border-radius: 20px;
-      padding: 5px 10px;
-      margin-left: 40%;
-
-      @include respond-to(small) {
-        display: none;
-      }
-    }
-  }
-}
-
-.ProcessHeading {
-  width: 100%;
+  height: 100%;
+  object-fit: contain;
   display: block;
 }
 
-.processContainer {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  // background-color: red;
-  width: 40%;
-  margin: 20px;
-  // margin: auto;
-  // margin-right: 5%;
+// ─── INTRO ───────────────────────────────────────────────────────────────────
+.intro {
+  padding: 40px 80px 60px 80px;
+  box-sizing: border-box;
+  text-align: left;
+
+  @include respond-to(medium) {
+    padding: 60px 40px 40px 40px;
+  }
 
   @include respond-to(small) {
-    width: 90%;
+    padding: 50px 20px 30px 20px;
   }
 }
 
-.processStep {
-  // width: 700px;
-  // background-color: #4e3e3e;
-  width: 100%;
+.introEyebrow {
+  font-size: 16px;
+  font-weight: 500;
+  color: $text-muted;
+  line-height: 100%;
+  text-transform: uppercase;
+  margin: 0 0 0px 0;
+  text-align: left;
+}
+
+.introGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  align-items: start;
+
+  @include respond-to(medium) {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.introHeadline {
+  font-size: 32px;
+  font-weight: lighter;
+  line-height: 1.3;
+  color: $text;
+  font-family: stara;
+  margin: 0;
+  // letter-spacing: -0.01em;
+  max-width: 70%;
+  @include respond-to(medium) {
+    font-size: 26px;
+  }
+
+  @include respond-to(small) {
+    font-size: 22px;
+    max-width: 100%;
+  }
+}
+
+.introBody {
   display: flex;
-  // align-items: center;
-  position: relative;
-  padding: 20px 0;
-  // opacity: 0;
-  transform: translateX(-20px);
-  animation: fadeInSlide 0.5s ease forwards;
-  // margin: auto;
-  &:nth-child(1) {
-    animation-delay: 0.2s;
-  }
-  &:nth-child(2) {
-    animation-delay: 0.4s;
-  }
-  &:nth-child(3) {
-    animation-delay: 0.6s;
-  }
-  &:nth-child(4) {
-    animation-delay: 0.8s;
+  flex-direction: column;
+  gap: 18px;
+  align-items: end;
+  p {
+    max-width: 50%;
+    margin-left: 0;
+    font-size: 20px;
+    // line-height: 1.7;
+    color: #c8c8c8;
+    @include respond-to(small) {
+      max-width: 100%;
+    }
   }
 }
 
-.circle {
-  width: 30px !important;
-  min-width: 40px;
-  height: 40px !important;
+// ─── ADVISORY CARD ───────────────────────────────────────────────────────────
+.advisorySection {
+  padding: 40px 80px 80px 80px;
+
+  @include respond-to(medium) {
+    padding: 20px 40px 60px 40px;
+  }
+
+  @include respond-to(small) {
+    padding: 20px 20px 50px 20px;
+  }
+}
+
+.advisoryCard {
+  background: $yellow;
+  color: #1a1a1a;
+  border-radius: 24px;
+  padding: 50px 60px;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 60px;
+  align-items: start;
+
+  @include respond-to(medium) {
+    padding: 40px 36px;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  @include respond-to(small) {
+    padding: 32px 24px;
+    border-radius: 18px;
+  }
+}
+
+.advisoryLeft {
+  position: relative;
+}
+
+.advisoryLabel {
+  font-size: 14px;
+  color: #555;
+  margin: 0 0 14px 0;
+  font-weight: 400;
+}
+
+.advisoryTitle {
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #1a1a1a;
+  margin: 0 0 30px 0;
+  letter-spacing: -0.01em;
+
+  @include respond-to(small) {
+    font-size: 26px;
+  }
+}
+
+.advisoryArrow {
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background-color: #4b4b4b;
-  color: #fff;
+  background: #1a1a1a;
+  color: $yellow;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
-  margin-right: 15px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.3s $ease;
+
+  &:hover {
+    transform: translateX(4px);
+  }
+}
+
+.advisoryRight {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.advisoryDesc {
+  font-size: 15px;
+  line-height: 1.65;
+  color: #2a2a2a;
+  margin: 0;
+}
+
+.advisoryList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  li {
+    font-size: 15px;
+    color: #1a1a1a;
+    padding-left: 18px;
+    position: relative;
+
+    &::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  .highlight {
+    color: $accent;
+    font-weight: 500;
+  }
+}
+
+// ─── AWARDS ──────────────────────────────────────────────────────────────────
+.awardsSection {
+  padding: 80px 80px 100px 80px;
+
+  @include respond-to(medium) {
+    padding: 60px 40px 80px 40px;
+  }
+
+  @include respond-to(small) {
+    padding: 50px 20px 60px 20px;
+  }
+}
+
+.awardsTitle {
+  font-size: 56px;
+  font-weight: 400;
+  color: $text;
+  margin: 0 0 0px 0;
+  // letter-spacing: -0.01em;
+  margin-bottom: 0;
+  line-height: 110%;
+  @include respond-to(medium) {
+    font-size: 42px;
+  }
+
+  @include respond-to(small) {
+    font-size: 34px;
+  }
+}
+
+.awardsSubtitle {
+  font-size: 32px;
+  color: $text-muted;
+  margin: 0 0 30px 0;
+  max-width: 43vw;
+  text-align: left;
+
+  @include respond-to(small) {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+}
+
+.awardsList {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.awardRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  transition: padding 0.3s $ease;
+
+  // &:hover {
+  //   padding-left: 12px;
+  // }
+
+  &:first-child {
+    // border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+}
+
+.awardName {
+  font-size: 36px;
+  font-weight: 00;
+  color: $text;
+  font-family: stara;
+
+  @include respond-to(small) {
+    font-size: 20px;
+  }
+}
+
+.awardYear {
+  font-size: 20px;
+  color: $text-muted;
+
+  @include respond-to(small) {
+    font-size: 16px;
+  }
+}
+
+// ─── AI BANNER ───────────────────────────────────────────────────────────────
+.aiBanner {
+  padding: 30px 80px;
+  text-align: center;
+
+  @include respond-to(medium) {
+    padding: 70px 40px;
+  }
+
+  @include respond-to(small) {
+    padding: 60px 20px;
+  }
+}
+
+.aiBannerTitle {
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: $text;
+  margin: 0 0 40px 0;
+  letter-spacing: -0.01em;
+  margin: auto;
+  font-family: Etherel;
+  @include respond-to(medium) {
+    font-size: 30px;
+  }
+
+  @include respond-to(small) {
+    font-size: 24px;
+    br {
+      display: none;
+    }
+  }
+}
+
+.aiBannerBtn {
+  background: #ffffff;
+  // border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 30px;
+  color: black;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  transition:
+    background 0.3s $ease,
+    transform 0.3s $ease;
+  margin: auto;
+  margin-top: 50px;
+  &:hover {
+    background: #eae9e9;
+    transform: translateY(-2px);
+    border: none;
+  }
+
+  .arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: $yellow;
+    color: #1a1a1a;
+    font-size: 12px;
+    font-weight: 600;
+  }
+}
+
+// ─── TECH PROVIDERS ──────────────────────────────────────────────────────────
+.techSection {
+  padding: 60px 80px 100px 80px;
+
+  @include respond-to(medium) {
+    padding: 40px 40px 80px 40px;
+  }
+
+  @include respond-to(small) {
+    padding: 30px 20px 60px 20px;
+  }
+}
+
+.techEyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  color: $text-muted;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 20px 0;
+}
+
+.techTitle {
+  font-size: 40px;
+  font-weight: 400;
+  color: $text;
+  margin: 0 0 40px 0;
+  // letter-spacing: -0.01em;
+  line-height: 1.1;
+  text-align: left;
+
+  @include respond-to(medium) {
+    font-size: 28px;
+    margin-bottom: 50px;
+  }
+
+  @include respond-to(small) {
+    font-size: 24px;
+    margin-bottom: 40px;
+    br {
+      display: none;
+    }
+  }
+}
+
+.techGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px 60px;
+
+  @include respond-to(medium) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 30px;
+  }
+
+  @include respond-to(small) {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+.techCard {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.techName {
+  font-size: 35px;
+  font-weight: 500;
+  color: rgb(231, 228, 228);
+  margin: 0;
+  letter-spacing: -0.01em;
+  text-align: left;
+
+  @include respond-to(medium) {
+    font-size: 28px;
+  }
+
+  @include respond-to(small) {
+    font-size: 24px;
+  }
+}
+
+.techDesc {
+  font-size: 16px;
+  line-height: 1.65;
+  color: $text-muted;
+  text-align: justify;
+  margin: 0;
+
+  @include respond-to(medium) {
+    font-size: 14px;
+  }
+
+  @include respond-to(small) {
+    font-size: 12px;
+  }
+}
+
+// ─── OUTRO ───────────────────────────────────────────────────────────────────
+.outro {
+  padding: 80px 80px 120px 80px;
+  text-align: center;
+
+  @include respond-to(medium) {
+    padding: 60px 40px 90px 40px;
+  }
+
+  @include respond-to(small) {
+    padding: 50px 20px 70px 20px;
+  }
+}
+
+.outroText {
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 1.35;
+  color: $text;
+  margin: 0;
+  letter-spacing: -0.01em;
+  margin: auto;
+
+  @include respond-to(medium) {
+    font-size: 26px;
+  }
+
+  @include respond-to(small) {
+    font-size: 22px;
+    br {
+      display: none;
+    }
+  }
+}
+// ─── PROJECT SHOWCASE (inside outro) ─────────────────────────────────────────
+.showcase {
+  width: 100%;
+  margin-top: 70px;
+
+  @include respond-to(medium) {
+    margin-top: 50px;
+  }
+
+  @include respond-to(small) {
+    margin-top: 40px;
+  }
+}
+
+.grid {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  text-align: left;
+
+  @include respond-to(medium) {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &:hover {
+    transform: translateY(-4px);
+
+    .imageWrap img {
+      transform: scale(1.04);
+    }
+
+    .projectTitle {
+      color: #ffffff;
+    }
+  }
+}
+
+.imageWrap {
+  width: 100%;
+  // height: 280px;
+  border-radius: 14px !important;
+  overflow: hidden;
+  // background-color: #0f0f0f;
+  margin-bottom: 22px;
+
+  img {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 14px;
+    // height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @include respond-to(medium) {
+    height: 260px;
+  }
+
+  @include respond-to(small) {
+    height: 220px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+  }
 }
 
 .content {
-  // background-color: red;
-  h3 {
-    font-size: 1.2em;
-    margin: 0;
-    color: #ffffff;
-
-    text-align: left;
-  }
-
-  p {
-    margin: 5px 0 0;
-    color: #a9a9a9;
-    font-size: 0.95em;
-  }
+  display: flex;
+  flex-direction: column;
+  padding: 0 4px;
 }
 
-@keyframes fadeInSlide {
-  0% {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.OurTeams {
-  padding: 40px 20px;
-  // background-color: #1b1b1b;
-  color: #fff;
-  text-align: center;
+.projectTitle {
+  font-size: 24px;
+  font-weight: 500;
+  color: #f0f0f0;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.01em;
+  transition: color 0.3s ease;
 
   @include respond-to(small) {
-    min-height: 50vh;
-    margin-bottom: -50px;
+    font-size: 19px;
   }
-  h1 {
-    font-size: 96px;
-    margin-bottom: 20px;
+}
 
-    @include respond-to(small) {
-      font-size: 48px;
-    }
+.projectDescription {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #a0a0a0;
+  margin: 0 0 20px 0;
+  max-width: 520px;
+
+  @include respond-to(small) {
+    font-size: 13px;
   }
+}
 
-  .teamdiv {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 16px;
-    padding-bottom: 10px;
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
 
-    @include respond-to(small) {
-      width: 90vw;
-    }
-    .member {
-      flex: 0 0 25%; // 4 items per row on desktop
-      max-width: 300px;
-      padding: 0px;
-      // background: #333;
-      margin-right: 16px;
-      border-radius: 8px;
-      text-align: center;
-      scroll-snap-align: start;
+.tag {
+  display: inline-block;
+  padding: 6px 14px;
+  background-color: #ffffff2b;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 20px;
+  font-size: 12px;
+  color: #ffffff;
+  white-space: nowrap;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
 
-      @include respond-to(small) {
-        max-width: 200px;
-      }
-      &:last-child {
-        margin-right: 0;
-      }
-
-      img {
-        width: 100%;
-        height: auto;
-        // border-radius: 50%;
-        margin-bottom: 10px;
-      }
-
-      h3 {
-        font-size: 32px;
-        font-weight: bold;
-        margin-top: 10px;
-        color: white;
-        text-align: left;
-      }
-
-      h4 {
-        font-size: 20px;
-        text-align: left;
-        color: #aaa;
-      }
-
-      p {
-        font-size: 24px;
-        color: #bbb;
-        margin-top: 8px;
-        text-align: justify;
-      }
-    }
+  &:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.3);
   }
 
-  // Responsive adjustments
-  @media (max-width: 1200px) {
-    .teamdiv .member {
-      flex: 0 0 33.33%; // 3 items per row on large tablets
-    }
-  }
-
-  @media (max-width: 768px) {
-    .teamdiv .member {
-      flex: 0 0 50%; // 2 items per row on small tablets
-    }
-  }
-
-  @media (max-width: 480px) {
-    .teamdiv .member {
-      flex: 0 0 100%; // 1 item per row on mobile
-    }
+  @include respond-to(small) {
+    font-size: 11.5px;
+    padding: 5px 12px;
   }
 }
