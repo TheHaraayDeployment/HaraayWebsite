@@ -307,7 +307,7 @@ export default function LandingPage() {
             data-aos-anchor-placement="top-bottom"
             className={styles.Wearesec}
           >
-            <h2>We are </h2>
+            <h2>We are</h2>
             <h1>Global Design Consultancy</h1>
             <h2>Powering brands for a brave new world. </h2>
 
@@ -816,7 +816,7 @@ export default function LandingPage() {
                             handleRadioChange(e);
                             handleChange(e);
                           }}
-                          // checked={formData.serviceType === "business"}
+                        // checked={formData.serviceType === "business"}
                         />
                         <h5>Buisness</h5>
                         <input

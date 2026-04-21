@@ -5,20 +5,25 @@ $breakpoint-large: 1024px;
 $breakpoint-extra-large: 1200px;
 
 @mixin respond-to($breakpoint) {
-  @if $breakpoint == small {
+  @if $breakpoint ==small {
     @media (max-width: $breakpoint-small) {
       @content;
     }
-  } @else if $breakpoint == medium {
+  }
+
+  @else if $breakpoint ==medium {
     @media (max-width: $breakpoint-medium) {
       @content;
     }
-  } @else if $breakpoint == large {
+  }
+
+  @else if $breakpoint ==large {
     @media (max-width: $breakpoint-large) {
       @content;
     }
   }
 }
+
 //   @include respond-to(small) {
 //   padding: 8px 16px;
 // }
@@ -31,10 +36,13 @@ $breakpoint-extra-large: 1200px;
 body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-  width: 100vw; /* Limit width to the viewport */
+  overflow-x: hidden;
+  /* Prevent horizontal scrolling */
+  width: 100vw;
+  /* Limit width to the viewport */
   background-color: #0a0b0c !important;
 }
+
 .Landingpage {
   // width: 100vw;
   width: 100%;
@@ -51,10 +59,12 @@ body {
   @include respond-to(small) {
     width: 100vw;
   }
+
   @include respond-to(medium) {
     width: 100vw;
   }
 }
+
 section {
   min-height: 100vh;
   width: 100vw;
@@ -64,10 +74,12 @@ section {
   align-items: center;
   justify-content: center;
   text-align: center;
+
   @include respond-to(small) {
     width: 100vw;
     height: 90dvh;
   }
+
   // border-bottom: 1px solid #eaeaea;
 }
 
@@ -75,6 +87,7 @@ section {
   min-height: 30vh;
   height: 30vh;
   width: 100vw;
+
   @include respond-to(small) {
     // width: 100%;
     width: 100vw;
@@ -92,12 +105,14 @@ section {
     }
   }
 }
+
 .Herosec2 {
   width: 100%;
   height: 100vh;
   overflow: hidden;
   position: relative;
 }
+
 .herosecvideo {
   object-fit: cover;
   border-radius: 100px;
@@ -111,6 +126,7 @@ section {
   top: 0%;
   left: 50%;
 }
+
 .heroimg2 {
   position: absolute;
   width: 400px;
@@ -143,6 +159,7 @@ section {
   bottom: 5%;
   left: 5%;
 }
+
 .heroimg6 {
   position: absolute;
   width: 300px;
@@ -150,6 +167,7 @@ section {
   top: 10%;
   left: 10%;
 }
+
 // img {
 //   transition: all 200ms;
 //   object-fit: cover;
@@ -158,34 +176,46 @@ section {
   background-color: #b8e7e7;
   min-height: 20vh;
   width: 100%;
+
   @include respond-to(small) {
     width: 100vw;
     height: 50vh;
+    text-align: center;
     overflow: hidden;
+    gap: 0px;
+
   }
 
   h1 {
     font-size: 96px;
     color: #e5348c;
+
     @include respond-to(small) {
       font-size: 36px;
+      text-align: center;
     }
   }
+
   h2 {
     font-size: 48px;
     font-weight: 400;
+
     @include respond-to(small) {
       font-size: 34px;
-      margin-top: 10px;
+      text-align: center;
       line-height: 40px;
+      margin: 0 auto 0;
+      margin-top: 0px;
     }
   }
+
   .Subherotxtbtn {
     :second-child {
       background-color: #e5348c;
       color: white;
       background-color: transparent;
     }
+
     button {
       &:first-child {
         margin: 20px;
@@ -201,6 +231,7 @@ section {
         cursor: pointer;
         transition: border-color 0.25s;
       }
+
       &:hover {
         transform: scale(1.05);
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -209,11 +240,13 @@ section {
           left: 100%;
         }
       }
+
       &:last-child {
         // margin: 20px;
         background-color: transparent;
         border: none;
         padding: 0em 1.2em;
+
         a {
           font-size: 16px;
           font-weight: 500;
@@ -222,6 +255,7 @@ section {
           cursor: pointer;
           transition: border-color 0.25s;
         }
+
         &:hover {
           transform: scale(1);
           box-shadow: none;
@@ -238,11 +272,13 @@ section {
   z-index: +10;
 
   background-color: rgb(75, 75, 75);
+
   .recentworkheaddiv {
     width: 150vw;
     height: 70%;
     position: absolute;
     top: 0;
+
     .rcwtxt {
       width: 100%;
       height: 50%;
@@ -253,6 +289,7 @@ section {
       }
     }
   }
+
   h6 {
     font-size: 64px;
     position: absolute;
@@ -260,6 +297,7 @@ section {
     top: 30%;
     z-index: +15;
   }
+
   .Recentprojects {
     padding-top: 100px;
     position: relative;
@@ -277,6 +315,7 @@ section {
   height: 200vh;
   width: 100%;
   background-color: #0a0b0c !important;
+
   @include respond-to(small) {
     width: 100vw !important;
     height: 100vh;
@@ -284,16 +323,19 @@ section {
     // position: fixed;
   }
 }
+
 .sticky {
   overflow: hidden;
   top: 0;
   position: sticky;
   top: 0;
   height: 50vh;
+
   @include respond-to(small) {
     height: 35vh;
   }
 }
+
 .scrollsection {
   overflow-x: auto;
   position: absolute;
@@ -305,10 +347,12 @@ section {
   /* justify-content: space-between; */
   align-items: center;
   padding: 0 5vw;
+
   @include respond-to(small) {
     // width: 100vw;
   }
 }
+
 .dynamicP {
   color: #ffffff;
   text-wrap: nowrap;
@@ -317,10 +361,12 @@ section {
   font-weight: bolder;
   line-height: normal;
   padding-left: 30%;
+
   @include respond-to(small) {
     font-size: 64px;
   }
 }
+
 //
 
 .worksec {
@@ -362,15 +408,18 @@ section {
     height: 500px;
     object-fit: cover;
   }
+
   h1 {
     text-align: left;
   }
 }
+
 .projcardsbtn {
   margin-top: -50px;
   width: 100%;
   display: flex;
   justify-content: center;
+
   a {
     display: flex;
     height: 40px;
@@ -388,25 +437,30 @@ section {
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
-    line-height: 150%; /* 24px */
+    line-height: 150%;
+
+    /* 24px */
     &:hover {
       background-color: #f377b5;
       text-decoration: none;
     }
   }
 }
+
 .projectimg {
   // background-color: red;
   width: 80vw;
   height: 90vh;
   object-fit: cover;
   border-radius: 100px;
+
   @include respond-to(small) {
     width: 90vw;
     height: 30vh;
     border-radius: 50px;
   }
 }
+
 .projectcardtxt {
   // background-color: red;
   width: 100%;
@@ -414,6 +468,7 @@ section {
   margin: auto;
   flex-wrap: wrap;
   justify-content: space-between;
+
   @include respond-to(small) {
     flex-wrap: wrap;
     flex-direction: column;
@@ -422,6 +477,7 @@ section {
   h1 {
     padding-left: 8%;
     text-align: left;
+
     @include respond-to(small) {
       padding: 0;
       text-align: left;
@@ -429,11 +485,13 @@ section {
       font-size: 30px;
     }
   }
+
   h3 {
     text-align: right;
     color: white;
     margin: auto 0;
     padding-right: 8%;
+
     @include respond-to(small) {
       text-align: left;
       color: white;
@@ -444,19 +502,25 @@ section {
     }
   }
 }
+
 .partnercontent {
   // background-color: yellow;
   width: 100%;
   margin-top: 130px;
+
   @include respond-to(small) {
     margin-top: 100px;
   }
 }
+
 .imageslider {
   margin-top: 150px;
-  width: 100vw; /* The visible area */
-  overflow: hidden; /* Hide the overflow */
+  width: 100vw;
+  /* The visible area */
+  overflow: hidden;
+  /* Hide the overflow */
   transform: rotate(-5deg);
+
   @include respond-to(small) {
     margin-top: 70px;
   }
@@ -524,62 +588,82 @@ section {
       border: 4px solid transparent;
 
       // Border color variations
-      $colors: (#f8ef6e, #ffffff, #e5348c, #aef4f4);
+      $colors: (
+        #f8ef6e,
+        #ffffff,
+        #e5348c,
+        #aef4f4
+      );
 
-      @for $i from 1 through 4 {
-        &:nth-child(4n + #{$i}) {
-          border-color: nth($colors, $i);
-        }
-      }
-
-      @media (max-width: 768px) {
-        width: 20vw;
-      }
-
-      @media (max-width: 480px) {
-        width: 25vw;
+    @for $i from 1 through 4 {
+      &:nth-child(4n + #{$i}) {
+        border-color: nth($colors, $i);
       }
     }
-  }
 
-  // Animation for sliding
-  @keyframes slide {
-    0% {
-      transform: translateX(0);
+    @media (max-width: 768px) {
+      width: 20vw;
     }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
 
-  @keyframes slide {
-    0% {
-      transform: translateX(0); /* Start from the first image */
-    }
-    100% {
-      transform: translateX(-100vw); /* Move one full image width to the left */
+    @media (max-width: 480px) {
+      width: 25vw;
     }
   }
 }
+
+// Animation for sliding
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+    /* Start from the first image */
+  }
+
+  100% {
+    transform: translateX(-100vw);
+    /* Move one full image width to the left */
+  }
+}
+}
+
 // text animation
 
 .imageslider2 {
   margin-top: 50px;
-  width: 100vw; /* The visible area */
-  overflow: hidden; /* Hide the overflow */
+  width: 100vw;
+  /* The visible area */
+  overflow: hidden;
+  /* Hide the overflow */
   transform: rotate(-5deg);
+
   @include respond-to(small) {
     margin-top: 20px;
   }
+
   .imagetrack2 {
-    display: flex; /* Align images in a row */
-    width: calc(6 * 100vw); /* 6 images */
+    display: flex;
+    /* Align images in a row */
+    width: calc(6 * 100vw);
+    /* 6 images */
     animation: slide2 120s linear infinite;
     // transform: translateX(300vw);
     gap: 50px;
+
     img {
-      width: 400px; /* Set each image width to 100vw */
-      flex-shrink: 0; /* Prevent images from shrinking */
+      width: 400px;
+      /* Set each image width to 100vw */
+      flex-shrink: 0;
+
+      /* Prevent images from shrinking */
       @include respond-to(small) {
         width: 400px;
       }
@@ -588,10 +672,13 @@ section {
 
   @keyframes slide2 {
     0% {
-      transform: translateX(-600vw); /* Start from the first image */
+      transform: translateX(-600vw);
+      /* Start from the first image */
     }
+
     100% {
-      transform: translateX(0vw); /* Move one full image width to the left */
+      transform: translateX(0vw);
+      /* Move one full image width to the left */
     }
   }
 }
@@ -600,35 +687,42 @@ section {
   display: inline-flex;
   transform: rotate(-5deg);
 }
+
 .partnerstext {
   // background-color: #232429;
   margin-top: 50px;
   display: flex;
   gap: 100px;
   transform: rotate(-5deg);
+
   @include respond-to(small) {
     margin-top: 150px;
   }
 }
+
 .partners {
   width: 100%;
   height: 100vh;
   position: relative;
+
   @include respond-to(small) {
     width: 100%;
     height: 50vh;
     min-height: auto;
   }
+
   .partnrshead {
     width: 50%;
     position: absolute;
     left: 0;
     top: 10%;
+
     // background-color: red;
     @include respond-to(small) {
       padding: 0;
       width: 100%;
     }
+
     h1 {
       font-size: 96px;
       margin: 40px;
@@ -636,6 +730,7 @@ section {
       font-weight: 500;
       font-family: Etherel;
       text-align: left;
+
       @include respond-to(small) {
         padding: 0;
         font-size: 48px;
@@ -643,12 +738,14 @@ section {
         text-align: center;
       }
     }
+
     p {
       text-align: left;
       font-size: 32px;
       width: 40vw;
       line-height: 36px;
       margin-left: 40px;
+
       @include respond-to(small) {
         text-align: center;
         font-size: 20px;
@@ -668,6 +765,7 @@ section {
   // background-color: #1a1a1a;
   color: #fff;
   text-align: center;
+
   @include respond-to(small) {
     min-height: 60vh;
     padding: 0px;
@@ -681,6 +779,7 @@ section {
     margin: 40px 0 0 0;
     font-weight: 500;
     font-family: Etherel;
+
     @include respond-to(small) {
       font-size: 48px;
       font-weight: 900;
@@ -693,6 +792,7 @@ section {
     font-size: 32px;
     width: 40vw;
     line-height: 36px;
+
     @include respond-to(small) {
       font-size: 20px;
       width: 100%;
@@ -732,6 +832,7 @@ section {
       min-width: 314px;
       min-height: 300px;
     }
+
     .profile {
       img {
         border-radius: 50%;
@@ -754,16 +855,19 @@ section {
         // background-color: #b8e7e7;
         width: 50%;
         margin-left: 32%;
+
         @include respond-to(small) {
           width: 100%;
           margin-left: 20%;
         }
       }
+
       h3 {
         font-size: 20px;
         margin: 0.5rem 0 0 0;
         color: white;
         text-align: left;
+
         @include respond-to(small) {
           text-align: right;
           font-size: 18px;
@@ -782,10 +886,12 @@ section {
         font-family: Stara;
         height: 55%;
         overflow: scroll;
+
         @include respond-to(small) {
           font-size: 16px !important;
         }
       }
+
       .testrole {
         @include respond-to(small) {
           // display: none;
@@ -793,15 +899,18 @@ section {
           width: 60%;
         }
       }
+
       .review {
         position: absolute;
-        bottom: 20px; /* Adjust the value as needed */
+        bottom: 20px;
+        /* Adjust the value as needed */
         border-bottom: 2px solid white;
         width: 80%;
         margin-left: 10%;
         text-align: justify;
         font-size: 18px;
         padding-bottom: 20px;
+
         @include respond-to(small) {
           margin: 1%;
           border-bottom: none;
@@ -810,6 +919,7 @@ section {
           // margin-left: 0;
         }
       }
+
       .caseStudy {
         // position: absolute;
         // top: 80%;
@@ -823,18 +933,21 @@ section {
         p {
           opacity: 0;
         }
+
         h4 {
           position: absolute;
           bottom: 10px;
           left: 60px;
           font-size: 20px;
         }
+
         .rating {
           position: absolute;
           bottom: 10px;
           right: 35%;
           display: flex;
           align-items: center;
+
           @include respond-to(small) {
             display: none;
           }
@@ -861,24 +974,30 @@ section {
 
 .Blogsec {
   width: 100%;
+
   h1 {
     font-size: 96px;
     margin: 40px;
     font-weight: 500;
     font-family: Etherel;
   }
+
   .blogcards {
     display: inline-flex;
     gap: 50px;
+
     .blogcard {
       width: 400px;
+
       img {
         width: 100%;
         object-fit: cover;
       }
+
       div {
         display: inline-flex;
         gap: 5px;
+
         h4 {
           margin-top: 10px;
           margin-bottom: 10px;
@@ -890,10 +1009,12 @@ section {
           // text-align: justify;
         }
       }
+
       p {
         text-align: left;
         // padding: 10px;
       }
+
       button {
         padding: 0px 0px;
         text-align: center;
@@ -909,11 +1030,13 @@ section {
 .Getintouch {
   width: 100%;
   height: auto;
+
   h1 {
     font-size: 96px;
     margin: 40px;
     font-weight: 500;
     font-family: Etherel;
+
     @include respond-to(small) {
       font-size: 48px;
       margin-bottom: 0px;
@@ -927,12 +1050,14 @@ section {
     width: 100%;
     display: grid;
     grid-template-columns: 1.4fr 2fr;
+
     @include respond-to(small) {
       display: block;
       padding: 0px;
     }
   }
 }
+
 .formimg {
   img {
     position: absolute;
@@ -941,6 +1066,7 @@ section {
     width: 52vw;
     transition: all 0.3s ease;
     animation: hover-float 5s ease-in-out infinite alternate;
+
     @include respond-to(small) {
       padding: 0;
       top: 10%;
@@ -948,21 +1074,25 @@ section {
       width: 100%;
       opacity: 80%;
     }
+
     :hover {
       transform: rotate(5deg) scale(1.05);
     }
   }
+
   @keyframes hover-float {
     0% {
       transform: translateY(0);
       transform: rotate(0deg);
     }
+
     100% {
       transform: translateY(-15px);
       transform: rotate(5deg);
     }
   }
 }
+
 // form
 
 .form {
@@ -974,16 +1104,20 @@ section {
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
   border: none;
+
   form {
     width: 100%;
     padding: 20px;
+
     @include respond-to(small) {
       padding-top: 0;
     }
+
     .forminputes {
       width: 100%;
       padding: 10px;
       flex-direction: column;
+
       .labeldiv {
         position: relative;
         margin: 0px;
@@ -991,15 +1125,18 @@ section {
         // background-color: RED;
         text-align: left;
         margin-left: 10px;
+
         label {
           margin: 0px;
           padding: 0px;
           text-align: left;
+
           span {
             color: red;
           }
         }
       }
+
       .descbox {
         width: 100%;
         height: 100px;
@@ -1008,6 +1145,7 @@ section {
         color: white;
         padding: 10px;
       }
+
       :first-child {
         display: inline-flex;
         font-size: 20px;
@@ -1017,6 +1155,7 @@ section {
         margin-bottom: 5px;
         margin-left: 10px;
       }
+
       .servicebtn {
         @include respond-to(small) {
           // display: none;
@@ -1024,6 +1163,7 @@ section {
           width: 100%;
         }
       }
+
       input {
         padding: 10px;
         width: 100%;
@@ -1036,18 +1176,22 @@ section {
 
         font-size: 20px;
         padding-left: 2%;
+
         @include respond-to(small) {
           font-size: 16px;
         }
+
         ::placeholder {
           color: #2f3031;
           margin-left: 20%;
         }
       }
+
       .enquiryinput {
         display: flex;
         font-size: 20px;
         color: white;
+
         input[type="radio"] {
           width: 20px; // Adjusted size for radio button
           height: 20px;
@@ -1066,16 +1210,20 @@ section {
       }
     }
   }
+
   .servicediv {
     flex-direction: column;
     text-align: left;
   }
+
   .serviceinput {
     flex-direction: row;
     display: flex;
   }
+
   .submitbtn {
     display: flex;
+
     input {
       background-color: #e5348c;
       width: 330px;
@@ -1085,6 +1233,7 @@ section {
       margin-left: 5%;
       font-size: 25px;
       border-radius: 30px;
+
       @include respond-to(small) {
         width: 100px;
         font-size: 16px;
@@ -1099,6 +1248,7 @@ Link {
   text-decoration: none;
   color: white;
 }
+
 .arrowbtns {
   gap: 20px;
 
@@ -1106,6 +1256,7 @@ Link {
     background-color: transparent;
     border: none;
     margin: 15px;
+
     svg {
       height: 40px;
       width: 40px;
