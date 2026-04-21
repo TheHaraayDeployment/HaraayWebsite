@@ -1,12 +1,12 @@
-// Import the unified responsive system.
-// Any file that @imports _variables automatically gets all
-// breakpoints, mixins, spacing vars, and helpers.
-@import 'responsive';
+// // Import the unified responsive system.
+// // Any file that @imports _variables automatically gets all
+// // breakpoints, mixins, spacing vars, and helpers.
+// @import 'responsive';
 
-// ── Legacy breakpoint vars (kept for backward-compat) ──
-// These now point to the canonical values in _responsive.scss
-// so old code continues to work without changes.
-$breakpoint-small:       $bp-sm;   // 480px
-$breakpoint-medium:      $bp-md;   // 768px
-$breakpoint-large:       $bp-lg;   // 1024px
-$breakpoint-extra-large: $bp-xl;   // 1200px
+// // ── Legacy breakpoint vars (kept for backward-compat) ──
+// // These now point to the canonical values in _responsive.scss
+// // so old code continues to work without changes.
+// $breakpoint-small:       $bp-sm;   // 480px
+// $breakpoint-medium:      $bp-md;   // 768px
+// $breakpoint-large:       $bp-lg;   // 1024px
+// $breakpoint-extra-large: $bp-xl;   // 1200px

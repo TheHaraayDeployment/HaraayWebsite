@@ -1,0 +1,683 @@
+// ============================================================
+// responsive.scss — GLOBAL RESPONSIVE SYSTEM
+// HaraayWebsite
+//
+// Built from a full codebase scan of 57 SCSS modules.
+// Unifies 6 competing breakpoint systems into one source of truth.
+// Extends coverage to 1366 / 1440 / 1920 / 2560 (previously missing).
+//
+// ─── SETUP ──────────────────────────────────────────────────
+//   @use 'path/to/styles/responsive' as r;   ← preferred (Dart Sass)
+//   @import 'path/to/styles/responsive';     ← CSS Modules / legacy
+//
+// ─── CORE USAGE ─────────────────────────────────────────────
+//   @include r.down(tablet)             { ... }  // ≤ 768px
+//   @include r.up(laptop)               { ... }  // ≥ 1366px
+//   @include r.between(mobile, tablet)  { ... }  // 480px – 768px
+//
+// ─── HELPERS ────────────────────────────────────────────────
+//   @include r.container;                         // 1200px centred
+//   @include r.container-wide;                    // 1600px centred
+//   @include r.fluid-type(96px, 36px);            // clamp() scale
+//   @include r.grid(3, 30px);                     // responsive grid
+//   @include r.flex-row-to-col(24px, tablet);     // stacks on tablet
+//   @include r.hide-below(tablet);                // visibility
+//
+// NOTE: This file uses @use 'sass:math' (Dart Sass standard).
+//   If you are on LibSass or get conflicts via @import,
+//   replace math.div($a, $b) with ($a / $b) throughout.
+// ============================================================
+
+@use 'sass:math';
+
+
+// ═══════════════════════════════════════════════════════════════════
+// 1. BREAKPOINTS
+//    Device coverage: 320 / 360 / 375 / 390 / 430 / 480 / 640
+//                     768 / 1024 / 1366 / 1440 / 1536 / 1920 / 2560+
+// ═══════════════════════════════════════════════════════════════════
+
+$mobile-sm: 320px; // iPhone SE, very small phones
+$mobile: 480px; // small phones (unified from 400 / 480 / 600 in codebase)
+$mobile-lg: 640px; // large phones, small phablets
+$tablet: 768px; // portrait tablet, landscape phone
+$tablet-lg: 1024px; // landscape tablet, small laptop
+$laptop: 1366px; // common laptop resolution
+$desktop: 1440px; // standard desktop
+$desktop-lg: 1920px; // full-HD monitor
+$ultrawide: 2560px; // 2K / ultrawide
+
+// Keyed map — powers down() / up() / between()
+$breakpoint-map: (
+  "mobile-sm": $mobile-sm,
+  "mobile": $mobile,
+  "mobile-lg": $mobile-lg,
+  "tablet": $tablet,
+  "tablet-lg": $tablet-lg,
+  "laptop": $laptop,
+  "desktop": $desktop,
+  "desktop-lg": $desktop-lg,
+  "ultrawide": $ultrawide,
+);
+
+
+// ═══════════════════════════════════════════════════════════════════
+// 2. HELPER FUNCTIONS
+// ═══════════════════════════════════════════════════════════════════
+
+// Removes the unit from a px/rem/% value so it can be used in arithmetic.
+@function strip-unit($value) {
+  @return math.div($value, $value * 0 + 1);
+}
+
+// Returns the px value for a named breakpoint key.
+@function bp($name) {
+  @if map-has-key($breakpoint-map, $name) {
+    @return map-get($breakpoint-map, $name);
+  }
+
+  @warn "Unknown breakpoint `#{$name}`. Available: #{map-keys($breakpoint-map)}";
+  @return null;
+}
+
+// Resolves either a named key ("tablet") or a raw px value (768px).
+@function resolve-bp($size) {
+  @return if(type-of($size)=='number', $size, bp($size));
+}
+
+
+// ═══════════════════════════════════════════════════════════════════
+// 3. CORE MEDIA QUERY MIXINS
+// ═══════════════════════════════════════════════════════════════════
+
+// down($size) — desktop-first: styles apply AT AND BELOW $size.
+//
+//   @include r.down(tablet) { color: red; }
+//   → @media (max-width: 768px) { color: red; }
+//
+//   Accepts named keys OR raw px values:
+//   @include r.down(tablet)   { ... }
+//   @include r.down(768px)    { ... }  ← same result
+@mixin down($size) {
+  $value: resolve-bp($size);
+
+  @if $value {
+    @media (max-width: $value) {
+      @content;
+    }
+  }
+}
+
+// up($size) — mobile-first: styles apply AT AND ABOVE $size.
+//
+//   @include r.up(laptop) { font-size: 20px; }
+//   → @media (min-width: 1366px) { font-size: 20px; }
+@mixin up($size) {
+  $value: resolve-bp($size);
+
+  @if $value {
+    @media (min-width: $value) {
+      @content;
+    }
+  }
+}
+
+// between($min, $max) — styles apply BETWEEN two breakpoints (inclusive).
+//
+//   @include r.between(mobile, tablet) { padding: 30px; }
+//   → @media (min-width: 480px) and (max-width: 768px) { ... }
+@mixin between($min, $max) {
+  $min-val: resolve-bp($min);
+  $max-val: resolve-bp($max);
+
+  @if $min-val and $max-val {
+    @media (min-width: $min-val) and (max-width: $max-val) {
+      @content;
+    }
+  }
+}
+
+
+// ═══════════════════════════════════════════════════════════════════
+// 4. SHORTHAND MIXINS — named per breakpoint tier
+//    These are the fastest way to write responsive styles.
+// ═══════════════════════════════════════════════════════════════════
+//
+//   @include r.on-mobile-sm  { ... }   // ≤ 320px  — iPhone SE
+//   @include r.on-mobile     { ... }   // ≤ 480px  — small phones
+//   @include r.on-mobile-lg  { ... }   // ≤ 640px  — large phones
+//   @include r.on-tablet     { ... }   // ≤ 768px  — portrait tablet
+//   @include r.on-tablet-lg  { ... }   // ≤ 1024px — landscape tablet
+//   @include r.on-laptop     { ... }   // ≤ 1366px — laptop
+//   @include r.on-desktop    { ... }   // ≥ 1440px — desktop (min-width)
+//   @include r.on-desktop-lg { ... }   // ≥ 1920px — full-HD (min-width)
+//   @include r.on-ultrawide  { ... }   // ≥ 2560px — ultrawide (min-width)
+
+@mixin on-mobile-sm {
+  @include down(mobile-sm) {
+    @content;
+  }
+}
+
+@mixin on-mobile {
+  @include down(mobile) {
+    @content;
+  }
+}
+
+@mixin on-mobile-lg {
+  @include down(mobile-lg) {
+    @content;
+  }
+}
+
+@mixin on-tablet {
+  @include down(tablet) {
+    @content;
+  }
+}
+
+@mixin on-tablet-lg {
+  @include down(tablet-lg) {
+    @content;
+  }
+}
+
+@mixin on-laptop {
+  @include down(laptop) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @include up(desktop) {
+    @content;
+  }
+}
+
+@mixin on-desktop-lg {
+  @include up(desktop-lg) {
+    @content;
+  }
+}
+
+@mixin on-ultrawide {
+  @include up(ultrawide) {
+    @content;
+  }
+}
+
+// Semantic aliases — read like plain English in component files.
+@mixin phone {
+  @include down(mobile) {
+    @content;
+  }
+}
+
+// ≤ 480px
+@mixin phablet {
+  @include down(mobile-lg) {
+    @content;
+  }
+}
+
+// ≤ 640px
+@mixin tablet-down {
+  @include down(tablet) {
+    @content;
+  }
+}
+
+// ≤ 768px
+@mixin tablet-up {
+  @include up(tablet) {
+    @content;
+  }
+}
+
+// ≥ 768px
+@mixin laptop-down {
+  @include down(laptop) {
+    @content;
+  }
+}
+
+// ≤ 1366px
+@mixin desktop-only {
+  @include up(laptop) {
+    @content;
+  }
+}
+
+// ≥ 1366px
+@mixin large-screen {
+  @include up(desktop-lg) {
+    @content;
+  }
+}
+
+// ≥ 1920px
+
+
+// ═══════════════════════════════════════════════════════════════════
+// 5. FLUID TYPOGRAPHY SYSTEM
+//    Derived from actual font sizes found across the project:
+//    96px display hero → 36px mobile
+//    64px section h1   → 32px mobile
+//    All values clamp() — smooth, zero-breakpoint scaling.
+//
+//    Scale reference (from codebase scan):
+//      Display: 96px   → projects/partners/testimonial hero titles
+//      H1:      64px   → service hero, landing sections
+//      H2:      56px   → about hero, awards title
+//      H3:      40px   → tech title, step h3
+//      H4:      32px   → intro headline, AI banner
+//      H5:      24px   → footer headings, advisory title
+//      H6:      20px   → project title, dropdown links
+//      Body-lg: 20px   → hero paragraph, nav links
+//      Body:    18px   → step descriptions, card body
+//      Body-sm: 16px   → footer list, labels
+//      Caption: 14px   → badge text, copyright
+// ═══════════════════════════════════════════════════════════════════
+
+// fluid-type($max-size, $min-size, [$max-vw], [$min-vw])
+// Generates a CSS clamp() that scales linearly between the two viewport widths.
+//
+//   @include r.fluid-type(96px, 36px);
+//   → font-size: clamp(36px, 6px + 6.25vw, 96px);
+//
+//   Custom range example (scale relative to laptop → mobile):
+//   @include r.fluid-type(48px, 24px, r.$laptop, r.$mobile);
+@mixin fluid-type($max-size, $min-size, $max-vw: $desktop, $min-vw: $mobile) {
+  $max-u: strip-unit($max-size);
+  $min-u: strip-unit($min-size);
+  $max-vw-u: strip-unit($max-vw);
+  $min-vw-u: strip-unit($min-vw);
+  $slope: math.div($max-u - $min-u, $max-vw-u - $min-vw-u);
+  $intercept: $min-u - ($slope * $min-vw-u);
+
+  font-size: clamp(#{$min-size},
+    #{$intercept}px + #{$slope * 100}vw,
+    #{$max-size});
+}
+
+// fluid-value($max, $min) — returns a clamp() value usable in any property.
+// Example: padding: r.fluid-value(80px, 20px);
+@function fluid-value($max-size, $min-size, $max-vw: $desktop, $min-vw: $mobile) {
+  $max-u: strip-unit($max-size);
+  $min-u: strip-unit($min-size);
+  $max-vw-u: strip-unit($max-vw);
+  $min-vw-u: strip-unit($min-vw);
+  $slope: math.div($max-u - $min-u, $max-vw-u - $min-vw-u);
+  $intercept: $min-u - ($slope * $min-vw-u);
+
+  @return clamp(#{$min-size}, #{$intercept}px + #{$slope * 100}vw, #{$max-size});
+}
+
+// ─── Predefined Type Scale ────────────────────────────────────────
+// Apply directly in component selectors:
+//   h1 { @include r.type-display; }
+//   p  { @include r.type-body; }
+
+@mixin type-display {
+  @include fluid-type(96px, 36px);
+}
+
+// 96→36 | hero titles
+@mixin type-h1 {
+  @include fluid-type(64px, 32px);
+}
+
+// 64→32 | service h1
+@mixin type-h2 {
+  @include fluid-type(56px, 28px);
+}
+
+// 56→28 | about hero
+@mixin type-h3 {
+  @include fluid-type(40px, 22px);
+}
+
+// 40→22 | tech / step
+@mixin type-h4 {
+  @include fluid-type(32px, 20px);
+}
+
+// 32→20 | intro / AI
+@mixin type-h5 {
+  @include fluid-type(24px, 18px);
+}
+
+// 24→18 | footer heads
+@mixin type-h6 {
+  @include fluid-type(20px, 16px);
+}
+
+// 20→16 | project title
+@mixin type-body-lg {
+  @include fluid-type(20px, 16px);
+}
+
+// 20→16 | hero paragraph
+@mixin type-body {
+  @include fluid-type(18px, 14px);
+}
+
+// 18→14 | body copy
+@mixin type-body-sm {
+  @include fluid-type(16px, 13px);
+}
+
+// 16→13 | footer list
+@mixin type-caption {
+  @include fluid-type(14px, 11px);
+}
+
+// 14→11 | badge / copyright
+
+
+// ═══════════════════════════════════════════════════════════════════
+// 6. SPACING SYSTEM
+//    Fixed scale matches project's $spacing-* variable pattern.
+//    Fluid values cover section-level padding (20px mobile → 80px desktop).
+// ═══════════════════════════════════════════════════════════════════
+
+// ─── Fixed Scale ──────────────────────────────────────────────────
+$space-2xs: 2px;
+$space-xs: 4px;
+$space-sm: 8px;
+$space-md: 16px;
+$space-lg: 24px;
+$space-xl: 40px;
+$space-2xl: 60px;
+$space-3xl: 80px;
+$space-4xl: 120px;
+
+// ─── Fluid Spacing ────────────────────────────────────────────────
+// Section-level padding: 20px on mobile → 80px on desktop.
+// Derived from the dominant pattern across all page components.
+$section-pad-v: fluid-value(80px, 20px); // vertical (top/bottom)
+$section-pad-h: fluid-value(80px, 20px); // horizontal (sides)
+
+// Inner block padding: 16px → 48px (matches existing clamp in container mixin)
+$block-pad-h: clamp(16px, 3vw, 48px);
+
+// ─── Section Spacing Mixin ────────────────────────────────────────
+// Applies fluid vertical and/or horizontal padding to a section.
+//
+//   @include r.section-spacing;           // top + bottom
+//   @include r.section-spacing(v);        // vertical only
+//   @include r.section-spacing(h);        // horizontal only
+//   @include r.section-spacing(top);      // top only
+//   @include r.section-spacing(bottom);   // bottom only
+@mixin section-spacing($direction: both) {
+  @if $direction ==both or $direction ==v {
+    padding-top: $section-pad-v;
+    padding-bottom: $section-pad-v;
+  }
+
+  @if $direction ==both or $direction ==h {
+    padding-left: $section-pad-h;
+    padding-right: $section-pad-h;
+  }
+
+  @if $direction ==top {
+    padding-top: $section-pad-v;
+  }
+
+  @if $direction ==bottom {
+    padding-bottom: $section-pad-v;
+  }
+}
+
+
+// ═══════════════════════════════════════════════════════════════════
+// 7. CONTAINER SYSTEM
+//    Max-widths cover all tiers: content (1200px) → large (1600px).
+//    Horizontal padding is fluid so content never touches the edge.
+// ═══════════════════════════════════════════════════════════════════
+
+// Container max-width tokens
+$container-sm: 540px; // constrained content on small screens
+$container-md: 720px; // tablet content width
+$container-lg: 1200px; // project standard (used in Navbar, Footer, etc.)
+$container-xl: 1400px; // wide layout
+$container-2xl: 1600px; // desktop-lg sections (awards, showcase grids)
+$container-full: 100%;
+
+// container($max) — centred block with fluid side padding.
+//
+//   @include r.container;           // 1200px (project default)
+//   @include r.container(1400px);   // custom width
+//   @include r.container(r.$container-2xl);
+@mixin container($max: $container-lg) {
+  width: 100%;
+  // max-width: $max;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(20px, 5vw, 80px);
+  padding-right: clamp(20px, 5vw, 80px);
+
+  @include down(tablet) {
+    padding-left: clamp(16px, 4vw, 40px);
+    padding-right: clamp(16px, 4vw, 40px);
+  }
+
+  @include down(mobile) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+// container-wide — for showcase grids and desktop-lg hero sections.
+//   @include r.container-wide;
+@mixin container-wide($max: $container-2xl) {
+  // @include container($max);
+}
+
+// container-full — edge-to-edge section (backgrounds, hero layers).
+//   @include r.container-full;
+@mixin container-full {
+  width: 100%;
+  max-width: 100%;
+  padding-left: clamp(20px, 5vw, 80px);
+  padding-right: clamp(20px, 5vw, 80px);
+}
+
+
+// ═══════════════════════════════════════════════════════════════════
+// 8. GRID & LAYOUT UTILITIES
+//    Patterns from project: 3→2→1 col, fixed asymmetric, auto-fit cards.
+// ═══════════════════════════════════════════════════════════════════
+
+// grid($cols, $gap) — standard equal-column responsive grid.
+// Auto-collapses: N cols → 2 cols on tablet → 1 col on mobile-lg.
+//
+//   @include r.grid(3, 30px);   // 3 cols desktop, 2 tablet, 1 mobile
+//   @include r.grid(4, 24px);   // 4 cols desktop, 2 tablet, 1 mobile
+@mixin grid($cols: 3, $gap: 30px) {
+  $tablet-cols: if($cols > 2, 2, $cols);
+
+  display: grid;
+  grid-template-columns: repeat($cols, 1fr);
+  gap: $gap;
+
+  @include down(tablet) {
+    grid-template-columns: repeat($tablet-cols, 1fr);
+    gap: clamp(20px, 3vw, $gap);
+  }
+
+  @include down(mobile-lg) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// grid-auto($min, $gap) — auto-fit grid: columns fill available space.
+// Cards never go below $min wide; above $min they fill equally.
+// Eliminates one-orphan rows automatically.
+//
+//   @include r.grid-auto(280px);        // cards min 280px wide
+//   @include r.grid-auto(300px, 32px);  // custom gap
+@mixin grid-auto($min: 280px, $gap: 24px) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(#{$min}, 100%), 1fr));
+  gap: $gap;
+}
+
+// grid-fixed($template, $gap) — custom column layout that collapses to 1 col on tablet.
+// Used for asymmetric layouts like the Get in Touch form (2fr 1fr) and advisory card (1fr 1.4fr).
+//
+//   @include r.grid-fixed('1fr 1.4fr');     // advisory card layout
+//   @include r.grid-fixed('2fr 1fr', 40px); // form layout
+@mixin grid-fixed($template, $gap: 30px) {
+  display: grid;
+  grid-template-columns: #{$template};
+  gap: $gap;
+
+  @include down(tablet) {
+    grid-template-columns: 1fr;
+    gap: clamp(20px, 3vw, $gap);
+  }
+}
+
+// ─── Flex Utilities ───────────────────────────────────────────────
+
+// flex-center — centers children on both axes.
+//   @include r.flex-center;
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// flex-between — distributes children with space-between.
+//   @include r.flex-between;
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// flex-col($gap) — vertical stack.
+//   @include r.flex-col(20px);
+@mixin flex-col($gap: 0) {
+  display: flex;
+  flex-direction: column;
+
+  @if $gap !=0 {
+    gap: $gap;
+  }
+}
+
+// flex-row-to-col($gap, $bp) — horizontal row that stacks vertically below $bp.
+// Matches the dominant pattern in Hero, Service, About layouts.
+//
+//   @include r.flex-row-to-col(24px, tablet);   // stacks at ≤ 768px
+//   @include r.flex-row-to-col(40px, tablet-lg); // stacks at ≤ 1024px
+@mixin flex-row-to-col($gap: 0px, $bp: tablet) {
+  display: flex;
+  flex-direction: row;
+
+  @if $gap !=0 {
+    gap: $gap;
+  }
+
+  @include down($bp) {
+    flex-direction: column;
+  }
+}
+
+// flex-wrap-row($gap) — wrapping flex row for card/tag lists.
+//   @include r.flex-wrap-row(16px);
+@mixin flex-wrap-row($gap: 16px) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $gap;
+}
+
+
+// ═══════════════════════════════════════════════════════════════════
+// 9. VISIBILITY UTILITIES
+//    Based on nav, footer, and hero hide/show patterns in the project.
+//    Uses display:none / display:revert for clean overrides.
+// ═══════════════════════════════════════════════════════════════════
+
+// hide-below($bp) — hidden on viewports BELOW the breakpoint.
+//   @include r.hide-below(tablet);   // invisible on ≤ 768px
+@mixin hide-below($bp) {
+  @include down($bp) {
+    display: none !important;
+  }
+}
+
+// hide-above($bp) — hidden on viewports ABOVE the breakpoint.
+//   @include r.hide-above(tablet);   // invisible on ≥ 768px
+@mixin hide-above($bp) {
+  @include up($bp) {
+    display: none !important;
+  }
+}
+
+// show-only-below($bp, $display) — element only visible below $bp.
+//   @include r.show-only-below(tablet);
+//   @include r.show-only-below(laptop, flex);   // custom display type
+@mixin show-only-below($bp, $display: block) {
+  display: none;
+
+  @include down($bp) {
+    display: $display !important;
+  }
+}
+
+// show-only-above($bp, $display) — element only visible above $bp.
+//   @include r.show-only-above(laptop);
+//   @include r.show-only-above(desktop, flex);
+@mixin show-only-above($bp, $display: block) {
+  display: none;
+
+  @include up($bp) {
+    display: $display !important;
+  }
+}
+
+// show-between($min, $max, $display) — element visible only within a range.
+//   @include r.show-between(mobile, tablet);
+//   @include r.show-between(tablet, laptop, flex);
+@mixin show-between($min, $max, $display: block) {
+  display: none;
+
+  @include between($min, $max) {
+    display: $display !important;
+  }
+}
+
+// ─── Semantic shortcuts (most common use cases) ───────────────────
+@mixin hide-on-mobile {
+  @include hide-below(tablet);
+}
+
+// ≤ 768px
+@mixin hide-on-desktop {
+  @include hide-above(laptop);
+}
+
+// ≥ 1366px
+@mixin show-on-mobile {
+  @include show-only-below(tablet);
+}
+
+@mixin show-on-desktop {
+  @include show-only-above(laptop);
+}
+
+
+// ═══════════════════════════════════════════════════════════════════
+// 10. DEVICE COVERAGE MAP (reference only — not compiled)
+//
+//   MOBILE        320 / 360 / 375 / 390 / 430px   → $mobile-sm + $mobile
+//   PHABLET       480 / 640px                      → $mobile + $mobile-lg
+//   TABLET        768 / 1024px                     → $tablet + $tablet-lg
+//   LAPTOP        1366 / 1440px                    → $laptop + $desktop
+//   DESKTOP HD    1536 / 1920px                    → $desktop + $desktop-lg
+//   ULTRAWIDE     2560px+                          → $ultrawide
+// ═══════════════════════════════════════════════════════════════════

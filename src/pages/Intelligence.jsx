@@ -129,66 +129,36 @@ export default function IntelligencePage() {
     return () => observer.disconnect();
   }, []);
 
-  // GSAP stacked-cards animation (same logic as CardAnimation.jsx)
-  // GSAP stacked-cards animation — pin whole section, animate cards inside
+  // GSAP stacked-cards animation (matching CardAnimation.jsx logic)
   useEffect(() => {
     const cards = phaseCardsRef.current;
+    if (cards.length === 0) return;
 
-    const section = animationSectionRef.current;
-    if (!section || cards.length === 0) return;
+    const triggers = [];
 
-    // Set initial state — first card visible, rest below viewport
-    gsap.set(cards[0], { yPercent: 0, scale: 1, opacity: 1 });
-    cards.slice(1).forEach((card) => {
-      gsap.set(card, { yPercent: 100, scale: 1, opacity: 1 });
-    });
+    cards.forEach((card, index) => {
+      // Each card stops at: 20px * its position in the stack
+      const topOffset = STACK_OFFSET * index;
 
-    // Build timeline that runs while section is pinned
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: section,
-        start: "top 15%", // pin starts when section top hits 15% from viewport top
-        end: () => `+=${(cards.length - 1) * window.innerHeight}`, // duration = (n-1) full screens
+      const trigger = ScrollTrigger.create({
+        trigger: card,
+        start: `top ${topOffset}px`,
+        endTrigger: cards[cards.length - 1],
+        end: `top ${STACK_OFFSET * (cards.length - 1)}px`,
         pin: true,
-        scrub: 1, // smooth scrub
-        anticipatePin: 1,
-        invalidateOnRefresh: true,
-      },
+        pinSpacing: false,
+        scrub: false, // pin only, no scrubbing — gives clean "stop" feel
+      });
+
+      triggers.push(trigger);
     });
 
-    // Animate each subsequent card sliding up over the previous + slight scale on the one being covered
-    cards.forEach((card, i) => {
-      if (i === 0) return;
-
-      // Slide current card into view
-      tl.to(
-        card,
-        {
-          yPercent: i * 2, // small stack offset (2% per card)
-          ease: "none",
-          duration: 1,
-        },
-        i - 1,
-      );
-
-      // Scale down the previous card slightly so it feels stacked underneath
-      tl.to(
-        cards[i - 1],
-        {
-          scale: 1 - i * 0.03,
-          ease: "none",
-          duration: 1,
-        },
-        i - 1,
-      );
-    });
-
+    // Refresh on resize for accuracy
     const handleResize = () => ScrollTrigger.refresh();
     window.addEventListener("resize", handleResize);
 
     return () => {
-      tl.scrollTrigger?.kill();
-      tl.kill();
+      triggers.forEach((t) => t.kill());
       window.removeEventListener("resize", handleResize);
     };
   }, []);
@@ -310,47 +280,45 @@ export default function IntelligencePage() {
       {/* ─── STACKED ANIMATION CARDS ─── */}
       {/* ─── STACKED ANIMATION CARDS ─── */}
       <section ref={animationSectionRef} className={styles.animationCards}>
-        <div className={styles.cardsStage}>
-          {phaseCardsData.map((card, index) => (
-            <div
-              key={card.id}
-              ref={addToPhaseCardsRef}
-              className={styles.card}
-              style={{
-                backgroundColor: card.bgColor,
-                color: card.textColor,
-                zIndex: index + 1,
-              }}
-            >
-              <div className={styles.cardInner}>
-                <div className={styles.left}>
-                  <p
-                    className={styles.cardPhase}
-                    style={{ color: card.textColor, opacity: 0.7 }}
-                  >
-                    {card.phase}
-                  </p>
-                  <h2
-                    className={styles.cardTitle}
-                    style={{ color: card.textColor }}
-                  >
-                    {card.title}
-                  </h2>
-                </div>
-                <div className={styles.right}>
-                  {card.description && (
-                    <p className={styles.cardDescription}>{card.description}</p>
-                  )}
-                  <ul className={styles.cardServiceList}>
-                    {card.services.map((service, i) => (
-                      <li key={i}>{service}</li>
-                    ))}
-                  </ul>
-                </div>
+        {phaseCardsData.map((card, index) => (
+          <div
+            key={card.id}
+            ref={addToPhaseCardsRef}
+            className={styles.card}
+            style={{
+              backgroundColor: card.bgColor,
+              color: card.textColor,
+              zIndex: index + 1,
+            }}
+          >
+            <div className={styles.cardInner}>
+              <div className={styles.left}>
+                <p
+                  className={styles.cardPhase}
+                  style={{ color: card.textColor, opacity: 0.7 }}
+                >
+                  {card.phase}
+                </p>
+                <h2
+                  className={styles.cardTitle}
+                  style={{ color: card.textColor }}
+                >
+                  {card.title}
+                </h2>
+              </div>
+              <div className={styles.right}>
+                {card.description && (
+                  <p className={styles.cardDescription}>{card.description}</p>
+                )}
+                <ul className={styles.cardServiceList}>
+                  {card.services.map((service, i) => (
+                    <li key={i}>{service}</li>
+                  ))}
+                </ul>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </section>
 
       {/* ─── FAQ ─── */}
@@ -378,9 +346,8 @@ export default function IntelligencePage() {
                 style={{ transitionDelay: `${i * 0.08}s` }}
               >
                 <div
-                  className={`${styles.faqItem} ${
-                    isOpen ? styles.faqItemOpen : ""
-                  }`}
+                  className={`${styles.faqItem} ${isOpen ? styles.faqItemOpen : ""
+                    }`}
                 >
                   <button
                     type="button"

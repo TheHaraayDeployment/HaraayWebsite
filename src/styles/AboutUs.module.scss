@@ -427,15 +427,19 @@ $breakpoint-large: 1024px;
 $breakpoint-extra-large: 1200px;
 
 @mixin respond-to($breakpoint) {
-  @if $breakpoint == small {
+  @if $breakpoint ==small {
     @media (max-width: $breakpoint-small) {
       @content;
     }
-  } @else if $breakpoint == medium {
+  }
+
+  @else if $breakpoint ==medium {
     @media (max-width: $breakpoint-medium) {
       @content;
     }
-  } @else if $breakpoint == large {
+  }
+
+  @else if $breakpoint ==large {
     @media (max-width: $breakpoint-large) {
       @content;
     }
@@ -453,10 +457,12 @@ $yellow-dark: #d4c558;
 $accent: #e5348c;
 
 $ease: cubic-bezier(0.16, 1, 0.3, 1);
+
 section {
   min-height: auto;
   align-items: start;
 }
+
 // ─── Page Root ───────────────────────────────────────────────────────────────
 .aboutPage {
   width: 100%;
@@ -476,11 +482,11 @@ section {
   align-items: start;
 
   @include respond-to(medium) {
-    padding: 110px 40px 40px 40px;
+    padding: 110px 40px 0px 40px;
   }
 
   @include respond-to(small) {
-    padding: 100px 20px 30px 20px;
+    padding: 100px 20px 0px 20px;
   }
 }
 
@@ -492,6 +498,14 @@ section {
   text-align: left;
   line-height: 100%;
   font-family: stara;
+
+  @include r.down(tablet) {
+    font-style: 32px;
+  }
+
+  @include r.down(mobile) {
+    font-size: 28px;
+  }
 }
 
 .heroTitle {
@@ -504,6 +518,7 @@ section {
   text-align: left;
   // letter-spacing: -0.01em;
   font-family: Etherel;
+
   @include respond-to(medium) {
     font-size: 40px;
     margin-bottom: 40px;
@@ -512,6 +527,8 @@ section {
   @include respond-to(small) {
     font-size: 30px;
     margin-bottom: 30px;
+    max-width: 100%;
+
     br {
       display: none;
     }
@@ -577,6 +594,7 @@ section {
   margin: 0;
   // letter-spacing: -0.01em;
   max-width: 70%;
+
   @include respond-to(medium) {
     font-size: 26px;
   }
@@ -592,12 +610,14 @@ section {
   flex-direction: column;
   gap: 18px;
   align-items: end;
+
   p {
     max-width: 50%;
     margin-left: 0;
     font-size: 20px;
     // line-height: 1.7;
     color: #c8c8c8;
+
     @include respond-to(small) {
       max-width: 100%;
     }
@@ -743,6 +763,7 @@ section {
   // letter-spacing: -0.01em;
   margin-bottom: 0;
   line-height: 110%;
+
   @include respond-to(medium) {
     font-size: 42px;
   }
@@ -831,12 +852,14 @@ section {
   letter-spacing: -0.01em;
   margin: auto;
   font-family: Etherel;
+
   @include respond-to(medium) {
     font-size: 30px;
   }
 
   @include respond-to(small) {
     font-size: 24px;
+
     br {
       display: none;
     }
@@ -860,6 +883,7 @@ section {
     transform 0.3s $ease;
   margin: auto;
   margin-top: 50px;
+
   &:hover {
     background: #eae9e9;
     transform: translateY(-2px);
@@ -919,6 +943,7 @@ section {
   @include respond-to(small) {
     font-size: 24px;
     margin-bottom: 40px;
+
     br {
       display: none;
     }
@@ -1009,11 +1034,13 @@ section {
 
   @include respond-to(small) {
     font-size: 22px;
+
     br {
       display: none;
     }
   }
 }
+
 // ─── PROJECT SHOWCASE (inside outro) ─────────────────────────────────────────
 .showcase {
   width: 100%;

@@ -10,20 +10,25 @@ $breakpoint-extra-large: 1200px;
     @media (max-width: $breakpoint-small) {
       @content;
     }
-  } @else if $breakpoint==medium {
+  }
+
+  @else if $breakpoint==medium {
     @media (max-width: $breakpoint-medium) {
       @content;
     }
-  } @else if $breakpoint==large {
+  }
+
+  @else if $breakpoint==large {
     @media (max-width: $breakpoint-large) {
       @content;
     }
   }
 }
+
 .WorkMain {
   padding: 20px;
   width: 100vw;
-  //   max-width: 1200px
+  max-width: 100vw !important;
   margin: 0 auto;
   padding-top: 50px;
 
@@ -82,9 +87,11 @@ $breakpoint-extra-large: 1200px;
     position: relative;
     overflow: hidden;
     background-color: #222;
-    border-radius: 10px; margin: auto;
-     @include respond-to(small) { 
-    width: 95vw;
+    border-radius: 10px;
+    margin: auto;
+
+    @include respond-to(small) {
+      width: 95vw;
     }
 
     .workImage {
@@ -94,10 +101,10 @@ $breakpoint-extra-large: 1200px;
       transition: transform 0.3s;
       object-fit: cover;
     }
-   
+
     .workTitle {
       position: absolute;
-    opacity: 0;
+      opacity: 0;
       bottom: 0;
       left: 0;
       right: 0;
@@ -107,13 +114,15 @@ $breakpoint-extra-large: 1200px;
       padding: 10px;
       transition: opacity 0.3s ease-in-out;
 
-       @include respond-to(small) { 
-      opacity: 1;
+      @include respond-to(small) {
+        opacity: 1;
       }
     }
+
     &:hover .workTitle {
-     opacity: 1;
+      opacity: 1;
     }
+
     &:hover .workImage {
       transform: scale(1.05);
     }
@@ -164,12 +173,14 @@ $breakpoint-extra-large: 1200px;
   .workGrid {
     grid-template-columns: 1fr;
   }
+
   .workImage {
     height: 250px !important;
     display: block;
     transition: transform 0.3s;
     object-fit: cover;
   }
+
   .Header h1 {
     font-size: 40px;
   }

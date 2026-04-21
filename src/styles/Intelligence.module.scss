@@ -412,15 +412,19 @@ $breakpoint-large: 1024px;
 $breakpoint-extra-large: 1200px;
 
 @mixin respond-to($breakpoint) {
-  @if $breakpoint == small {
+  @if $breakpoint ==small {
     @media (max-width: $breakpoint-small) {
       @content;
     }
-  } @else if $breakpoint == medium {
+  }
+
+  @else if $breakpoint ==medium {
     @media (max-width: $breakpoint-medium) {
       @content;
     }
-  } @else if $breakpoint == large {
+  }
+
+  @else if $breakpoint ==large {
     @media (max-width: $breakpoint-large) {
       @content;
     }
@@ -478,7 +482,7 @@ section {
   }
 
   @include respond-to(small) {
-    padding: 100px 20px 30px 20px;
+    padding: 100px 20px 20px 20px;
   }
 }
 
@@ -540,6 +544,7 @@ section {
   margin-bottom: 60px;
   margin-right: auto;
   text-align: left !important;
+
   &:hover {
     background: darken(#e5348c, 6%);
     transform: translateY(-2px);
@@ -548,7 +553,7 @@ section {
   @include respond-to(small) {
     font-size: 13px;
     padding: 10px 20px;
-    margin-bottom: 40px;
+    margin-bottom: 4px;
   }
 }
 
@@ -601,7 +606,7 @@ section {
   }
 
   @include respond-to(small) {
-    padding: 50px 20px 30px 20px;
+    padding: 20px 20px 20px 20px;
   }
 }
 
@@ -613,7 +618,7 @@ section {
   }
 
   @include respond-to(small) {
-    margin-bottom: 24px;
+    margin-bottom: 16px;
   }
 }
 
@@ -629,6 +634,7 @@ section {
 
   @include respond-to(medium) {
     font-size: 34px;
+
     br {
       display: none;
     }
@@ -646,9 +652,14 @@ section {
   gap: 60px;
   align-items: start;
   width: 100%;
+
   @include respond-to(medium) {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+
+  @include respond-to(small) {
+    gap: 20px;
   }
 }
 
@@ -663,6 +674,10 @@ section {
   flex-direction: column;
   gap: 20px;
   // max-width: 480px;
+
+  @include respond-to(small) {
+    gap: 16px;
+  }
 
   p {
     font-size: 20px;
@@ -686,7 +701,7 @@ section {
   }
 
   @include respond-to(small) {
-    padding: 20px 20px 40px 20px;
+    padding: 0px 20px 0px 20px;
   }
 }
 
@@ -723,7 +738,7 @@ section {
   }
 
   @include respond-to(small) {
-    padding: 30px 20px 80px 20px;
+    padding: 20px 20px 30px 20px;
   }
 }
 
@@ -757,7 +772,7 @@ section {
 
   @include respond-to(small) {
     font-size: 24px;
-    margin-bottom: 32px;
+    margin-bottom: 20px;
   }
 }
 
@@ -770,6 +785,10 @@ section {
   @include respond-to(medium) {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+
+  @include respond-to(small) {
+    gap: 20px;
   }
 }
 
@@ -784,6 +803,10 @@ section {
   flex-direction: column;
   gap: 32px;
   max-width: 480px;
+
+  @include respond-to(small) {
+    gap: 20px;
+  }
 }
 
 .streamItem {
@@ -814,6 +837,7 @@ section {
     font-size: 14px;
   }
 }
+
 // ─── FAQ ─────────────────────────────────────────────────────────────────────
 .faqSection {
   padding: 80px 80px 140px 80px;
@@ -824,7 +848,7 @@ section {
   }
 
   @include respond-to(small) {
-    padding: 50px 20px 80px 20px;
+    padding: 30px 20px 80px 20px;
   }
 }
 
@@ -836,8 +860,9 @@ section {
   align-items: center;
   align-items: center;
   width: 100%;
+
   @include respond-to(small) {
-    margin-bottom: 40px;
+    margin-bottom: 24px;
   }
 }
 
@@ -852,6 +877,7 @@ section {
 
   @include respond-to(medium) {
     font-size: 32px;
+
     br {
       display: none;
     }
@@ -871,7 +897,7 @@ section {
 
   @include respond-to(small) {
     font-size: 14px;
-    margin-bottom: 32px;
+    margin-bottom: 20px;
   }
 }
 
@@ -907,6 +933,7 @@ section {
 
 // ─── Reveal wrapper — transform lives ONLY here, never on .faqItem ──────────
 .faqItemReveal {
+
   // After reveal completes, stop reserving a compositing layer so children
   // (the arrow) can own their own GPU layer cleanly.
   &.revealed {
@@ -1051,9 +1078,13 @@ section {
   display: flex;
   justify-content: center;
   margin-top: 50px;
+  justify-content: center;
+  width: 100%;
 
   @include respond-to(small) {
     margin-top: 36px;
+    align-items: center;
+
   }
 }
 
@@ -1073,6 +1104,8 @@ section {
     background 0.3s $ease,
     transform 0.3s $ease;
   text-align: center;
+  margin: auto;
+
   &:hover {
     background: darken(#e5348c, 6%);
     transform: translateY(-2px);
@@ -1083,80 +1116,62 @@ section {
     padding: 10px 20px;
   }
 }
+
 // ─── STACKED ANIMATION CARDS ─────────────────────────────────────────────────
 .animationCards {
   width: 100%;
-  background-color: $bg;
-  padding: 60px 40px;
+  background-color: transparent;
+  padding: 80px 40px;
   box-sizing: border-box;
-  // Section is exactly viewport-sized so pin sits cleanly
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
 
   @include respond-to(medium) {
-    padding: 40px 24px;
+    padding: 60px 20px;
   }
 
   @include respond-to(small) {
-    padding: 30px 16px;
+    padding: 40px 14px;
   }
 
-  // Stage holds all cards stacked at the same position
-  .cardsStage {
-    position: relative;
-    width: 100%;
-    max-width: 1100px;
-    height: 75vh;
-    max-height: 620px;
 
-    @include respond-to(medium) {
-      height: auto;
-      min-height: 480px;
-    }
-
-    @include respond-to(small) {
-      min-height: 420px;
-    }
-  }
 
   .card {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
+    max-width: 1100px;
+    margin: 0 auto 30px auto;
     border-radius: 18px;
     padding: 60px 70px;
     box-sizing: border-box;
+    min-height: 420px;
     display: flex;
     align-items: flex-start;
     will-change: transform;
     transform-origin: center top;
     box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.18);
-    overflow: hidden;
 
     @include respond-to(medium) {
       padding: 44px 36px;
+      min-height: auto;
+      margin-bottom: 24px;
       border-radius: 16px;
     }
 
     @include respond-to(small) {
-      padding: 28px 22px;
+      padding: 32px 22px;
       border-radius: 14px;
+      margin-bottom: 20px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 
   .cardInner {
     width: 100%;
-    height: 100%;
     display: grid;
     grid-template-columns: 1fr 1.4fr;
     gap: 60px;
     align-items: flex-start;
-    overflow-y: auto;
 
     @include respond-to(medium) {
       grid-template-columns: 1fr;

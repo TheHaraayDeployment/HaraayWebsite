@@ -1692,11 +1692,13 @@ $bp-large: 1024px;
     @content;
   }
 }
+
 @mixin md {
   @media (max-width: $bp-medium) {
     @content;
   }
 }
+
 @mixin lg {
   @media (max-width: $bp-large) {
     @content;
@@ -1731,9 +1733,11 @@ $ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
     opacity: 0;
     transform: translateY(12px);
   }
+
   65% {
     opacity: 1;
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -1746,6 +1750,7 @@ $ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
     transform: scaleY(0.96);
     transform-origin: top center;
   }
+
   100% {
     opacity: 1;
     transform: scaleY(1);
@@ -1759,6 +1764,7 @@ $ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
     transform: scaleY(0.96);
     transform-origin: bottom center;
   }
+
   100% {
     opacity: 1;
     transform: scaleY(1);
@@ -1771,6 +1777,7 @@ $ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
     opacity: 0;
     transform: translateY(5px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -1787,7 +1794,7 @@ $ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1000;
   pointer-events: none;
 
-  > * {
+  >* {
     pointer-events: all;
   }
 }
@@ -1938,6 +1945,7 @@ $ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
     .inlineLinks {
       display: none;
     }
+
     .dropdownContent {
       display: flex;
     }
@@ -1977,7 +1985,8 @@ $ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
   @include sm {
     bottom: 16px;
     height: 52px;
-    max-width: calc(100vw - 24px);
+    max-width: calc(100vw - 10px);
+    width: 90%;
 
     &.open {
       bottom: 16px;
@@ -1986,6 +1995,7 @@ $ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
     }
   }
 }
+
 // ─── Inline Links (closed) ───────────────────────────────────────────────────
 .inlineLinks {
   display: flex;
@@ -2034,7 +2044,7 @@ $ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 
   @include sm {
     padding: 8px 12px;
-    font-size: 12.5px;
+    font-size: 14px;
   }
 }
 
@@ -2182,9 +2192,11 @@ $ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
       top: 50%;
       transform: translateY(-50%) rotate(45deg);
     }
+
     &:nth-child(2) {
       opacity: 0;
     }
+
     &:nth-child(3) {
       top: 50%;
       bottom: auto;
@@ -2231,6 +2243,7 @@ $ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
     background: $hover-bg;
+
     .hamIconCross span {
       background: rgba(255, 255, 255, 0.78);
     }
