@@ -14,13 +14,14 @@ $accent-pink: #e5348c;
 }
 
 .container {
-  width: 85%;          // Matches desktop layout width of stacking cards
-  max-width: 1400px;
+  width: 90%;          // Matches desktop layout width of stacking cards
+  max-width: 1500px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
+  grid-template-columns:  1.2fr 1fr;
   gap: clamp(40px, 5vw, 90px);
   align-items: center;
+  // background-color: red;
 }
 
 .imageWrapper {

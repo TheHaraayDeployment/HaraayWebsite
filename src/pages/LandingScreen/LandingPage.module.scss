@@ -330,9 +330,9 @@ section {
 
 // recent work
 .stickyparent {
-  height: 200vh;
+  height: 150vh;
   width: 100%;
-  background-color: #0a0b0c !important;
+  background-color: #0f6bc7 !important;
 
   @include respond-to(small) {
     width: 100vw !important;
@@ -374,11 +374,19 @@ section {
 .dynamicP {
   color: #ffffff;
   text-wrap: nowrap;
-  font-size: 320px;
+  font-size: clamp(120px, 16vw, 250px);
   font-style: normal;
   font-weight: bolder;
   line-height: normal;
   padding-left: 30%;
+
+  @include respond-to(large) {
+    font-size: clamp(100px, 14vw, 160px);
+  }
+
+  @include respond-to(medium) {
+    font-size: clamp(80px, 12vw, 120px);
+  }
 
   @include respond-to(small) {
     font-size: 64px;
@@ -394,12 +402,12 @@ section {
   flex-direction: column; // Stack children vertically
   align-items: center;    // Center cards horizontally
   gap: 100px;
-  padding-top: 200px;
+  padding-top: 150px;
   overflow-x: hidden;     // Prevent horizontal scroll from GSAP initial card positions
 
   @include respond-to(medium) {
     gap: 60px;
-    padding-top: 100px;
+    padding-top: 40px;
   }
 
   @include respond-to(small) {
@@ -409,8 +417,8 @@ section {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    padding-top: 50px;
-    margin-top: 100px;
+    padding-top: 20px;
+    margin-top: 40px;
   }
 }
 
