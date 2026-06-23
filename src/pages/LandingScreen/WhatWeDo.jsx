@@ -23,7 +23,7 @@ export default function WhatWeDo() {
     {
       id: 2,
       icon: icon2,
-      title: "Web & Technology",
+      title: "Digital Development",
       description:
         "Strategy-led websites, UI/UX design, and frontend development. We design digital experiences that are architecturally sound, visually precise, and built to convert.",
     },

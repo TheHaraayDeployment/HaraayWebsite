@@ -1,153 +1,3 @@
-// @import '../styles/responsive';
-
-// // ─── WRAPPER ──────────────────────────────────────────────────
-// // No special height trick needed — sticky cards sit naturally
-// // in the flow and accumulate as the user scrolls.
-// .stackWrapper {
-//   width: 100%;
-//   display: flex;
-//   flex-direction: column;
-//   // Bottom padding = last card's sticky-top offset so the last
-//   // card has room to scroll fully into view before the section ends
-//   padding-bottom: 120px;
-
-//   @include sm { padding-bottom: 80px; }
-// }
-
-// // ─── CARD ─────────────────────────────────────────────────────
-// .card {
-//   // CSS sticky — this is the core of the stacking effect.
-//   // Each card's `top` value is set inline: 80 + index×20 px
-//   position: sticky;
-
-//   width: calc(100% - 80px);
-//   max-width: 1100px;
-//   margin: 0 auto;
-//   margin-bottom: 0;           // no gap — cards stack directly
-
-//   border-radius: 20px;
-//   padding: 56px 64px;
-//   min-height: 400px;
-//   box-sizing: border-box;
-
-//   // Scale animates via GSAP inline — origin at top so the card
-//   // appears to shrink "into" the stack as the next one covers it
-//   transform-origin: top center;
-//   will-change: transform;
-
-//   // Smooth shadow that makes the stack feel 3-D
-//   box-shadow:
-//     0 4px 24px rgba(0, 0, 0, 0.18),
-//     0 12px 48px rgba(0, 0, 0, 0.14);
-
-//   // Internal transition for any CSS-only hover effects
-//   transition: box-shadow 0.3s ease;
-
-//   @include lg { padding: 48px 52px; }
-//   @include md { padding: 36px 28px; width: calc(100% - 32px); min-height: auto; border-radius: 16px; }
-//   @include sm { padding: 28px 20px; width: calc(100% - 20px); border-radius: 14px; }
-// }
-
-// // ─── DIM OVERLAY ─────────────────────────────────────────────
-// // A semi-transparent layer GSAP ramps up via the CSS variable
-// // --overlay (0 → 0.35) as this card gets covered by the next.
-// .cardOverlay {
-//   position: absolute;
-//   inset: 0;
-//   border-radius: inherit;
-//   background: #000000;
-//   opacity: var(--overlay, 0);
-//   pointer-events: none;
-//   z-index: 2;
-//   transition: none;           // GSAP owns this, no CSS transition
-// }
-
-// // ─── INNER GRID ───────────────────────────────────────────────
-// .cardInner {
-//   position: relative;
-//   z-index: 3;                 // above overlay
-//   width: 100%;
-//   display: grid;
-//   grid-template-columns: 1fr 1.5fr;
-//   gap: 64px;
-//   align-items: flex-start;
-
-//   @include lg { gap: 48px; }
-//   @include md { grid-template-columns: 1fr; gap: 28px; }
-//   @include sm { gap: 20px; }
-// }
-
-// // ─── LEFT COLUMN ─────────────────────────────────────────────
-// .left {
-//   display: flex;
-//   flex-direction: column;
-//   gap: 16px;
-// }
-
-// .cardNumber {
-//   font-family: 'Stara', sans-serif;
-//   font-size: 13px;
-//   font-weight: 500;
-//   letter-spacing: 0.12em;
-//   opacity: 0.45;
-//   display: block;
-// }
-
-// .title {
-//   font-family: 'Etherel', sans-serif;
-//   font-size: clamp(26px, 3vw, 40px);
-//   font-weight: 800;
-//   line-height: 1.12;
-//   margin: 0;
-
-//   @include sm { font-size: 24px; }
-// }
-
-// // ─── RIGHT COLUMN ─────────────────────────────────────────────
-// .right {
-//   display: flex;
-//   flex-direction: column;
-//   gap: 28px;
-//   padding-top: 4px;           // optical alignment with title cap-height
-
-//   @include sm { padding-top: 0; gap: 20px; }
-// }
-
-// .description {
-//   font-family: 'Stara', sans-serif;
-//   font-size: clamp(14px, 1.2vw, 17px);
-//   line-height: 1.75;
-//   margin: 0;
-//   opacity: 0.80;
-//   max-width: 520px;
-
-//   @include sm { font-size: 14px; }
-// }
-
-// // ─── SERVICE LIST ─────────────────────────────────────────────
-// .serviceList {
-//   list-style: none;
-//   padding: 0;
-//   margin: 0;
-//   display: flex;
-//   flex-direction: column;
-//   gap: 0;
-
-//   li {
-//     font-family: 'Stara', sans-serif;
-//     font-size: clamp(13px, 1vw, 15px);
-//     line-height: 1.55;
-//     padding: 10px 0;
-//     opacity: 0.82;
-//     // Neutral semi-transparent divider — readable on both light & dark cards
-//     border-bottom: 1px solid rgba(128, 128, 128, 0.22);
-
-//     &:last-child  { border-bottom: none; padding-bottom: 0; }
-//     &:first-child { padding-top: 0; }
-
-//     @include sm { font-size: 13px; padding: 8px 0; }
-//   }
-// }
 // ─── Breakpoints ─────────────────────────────────────────────────────────────
 $bp-small: 480px;
 $bp-medium: 840px;
@@ -173,45 +23,51 @@ $bp-large: 1024px;
 .stackWrapper {
   width: 100%;
   background-color: transparent;
-  padding: 80px 40px;
+  padding: 80px 0 160px 0; // Extra bottom padding allows the last card to stick and remain readable
   box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
 
   @include md {
-    padding: 60px 20px;
+    padding: 60px 0 120px 0;
   }
 
   @include sm {
-    padding: 40px 14px;
+    padding: 40px 0 80px 0;
   }
 }
 
 // ─── Card ────────────────────────────────────────────────────────────────────
 .card {
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto 30px auto;
-  border-radius: 18px;
-  padding: 60px 70px;
+  width: 85%;          // 85% of screen for desktop
+  max-width: 1400px;   // Larger max-width to allow growth on ultra-wide screens
+  margin: 0 auto 50px auto;
+  border-radius: 28px;
+  padding: 70px 80px;
   box-sizing: border-box;
-  min-height: 420px;
+  min-height: 520px;
   display: flex;
   align-items: flex-start;
   will-change: transform;
   transform-origin: center top;
-  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 -8px 35px rgba(0, 0, 0, 0.16);
 
   @include md {
-    padding: 44px 36px;
+    width: 90%;
+    padding: 50px 40px;
     min-height: auto;
-    margin-bottom: 24px;
-    border-radius: 16px;
+    margin-bottom: 35px;
+    border-radius: 20px;
   }
 
   @include sm {
-    padding: 32px 22px;
-    border-radius: 14px;
-    margin-bottom: 20px;
+    width: 95%;        // 95% of screen for mobile
+    padding: 36px 24px;
+    border-radius: 16px;
+    margin-bottom: 28px;
   }
 
   &:last-child {
@@ -222,13 +78,13 @@ $bp-large: 1024px;
 .cardInner {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
+  grid-template-columns: 1fr 1.3fr;
   gap: 60px;
   align-items: flex-start;
 
   @include md {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 32px;
   }
 }
 
@@ -238,37 +94,38 @@ $bp-large: 1024px;
 }
 
 .title {
-  font-size: 34px;
+  font-size: clamp(38px, 4.2vw, 68px); // Significantly larger and responsive heading
   font-weight: 800;
-  line-height: 1.2;
+  line-height: 1.15;
   margin: 0;
-  letter-spacing: -0.01em;
-  font-family: Stara;
+  letter-spacing: -0.02em;
+  font-family: Stara, sans-serif;
 
   @include md {
-    font-size: 28px;
+    font-size: clamp(30px, 4.5vw, 42px);
   }
 
   @include sm {
-    font-size: 24px;
+    font-size: clamp(26px, 6vw, 32px);
   }
 }
 
 .right {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 32px;
 }
 
 .description {
-  font-size: 15px;
+  font-size: clamp(18px, 1.6vw, 24px); // Significantly larger and responsive paragraph
   line-height: 1.65;
   margin: 0;
   opacity: 0.88;
-  max-width: 480px;
+  max-width: 680px; // Wider max-width to look great with larger text
 
   @include sm {
-    font-size: 14px;
+    font-size: 16px;
+    line-height: 1.55;
   }
 }
 
@@ -278,12 +135,12 @@ $bp-large: 1024px;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 14px;
 
   li {
-    font-size: 14px;
+    font-size: clamp(15px, 1.3vw, 20px); // Larger list items
     line-height: 1.5;
-    padding-left: 18px;
+    padding-left: 24px;
     position: relative;
     opacity: 0.92;
 
@@ -295,7 +152,8 @@ $bp-large: 1024px;
     }
 
     @include sm {
-      font-size: 13px;
+      font-size: 14px;
+      padding-left: 20px;
     }
   }
 }

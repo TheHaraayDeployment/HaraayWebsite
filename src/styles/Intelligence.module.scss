@@ -461,7 +461,7 @@ $ease: cubic-bezier(0.16, 1, 0.3, 1);
   color: $text;
   padding: 0;
   margin: 0;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 section {
@@ -1121,44 +1121,48 @@ section {
 .animationCards {
   width: 100%;
   background-color: transparent;
-  padding: 80px 40px;
+  padding: 80px 0 160px 0; // Extra bottom padding for completeness of scroll
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
 
   @include respond-to(medium) {
-    padding: 60px 20px;
+    padding: 60px 0 120px 0;
   }
 
   @include respond-to(small) {
-    padding: 40px 14px;
+    padding: 40px 0 80px 0;
   }
 
-
-
   .card {
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto 30px auto;
-    border-radius: 18px;
-    padding: 60px 70px;
+    width: 85%;          // 85% of screen for desktop
+    max-width: 1400px;   // Larger max-width to allow growth on ultra-wide screens
+    margin: 0 auto 50px auto;
+    border-radius: 28px;
+    padding: 70px 80px;
     box-sizing: border-box;
-    min-height: 420px;
+    min-height: 520px;
     display: flex;
     align-items: flex-start;
     will-change: transform;
     transform-origin: center top;
-    box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 -8px 35px rgba(0, 0, 0, 0.16);
 
     @include respond-to(medium) {
-      padding: 44px 36px;
+      width: 90%;
+      padding: 50px 40px;
       min-height: auto;
-      margin-bottom: 24px;
-      border-radius: 16px;
+      margin-bottom: 35px;
+      border-radius: 20px;
     }
 
     @include respond-to(small) {
-      padding: 32px 22px;
-      border-radius: 14px;
-      margin-bottom: 20px;
+      width: 95%;        // 95% of screen for mobile
+      padding: 36px 24px;
+      border-radius: 16px;
+      margin-bottom: 28px;
     }
 
     &:last-child {
@@ -1169,13 +1173,13 @@ section {
   .cardInner {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1.4fr;
+    grid-template-columns: 1fr 1.3fr;
     gap: 60px;
     align-items: flex-start;
 
     @include respond-to(medium) {
       grid-template-columns: 1fr;
-      gap: 24px;
+      gap: 32px;
     }
   }
 
@@ -1187,10 +1191,12 @@ section {
   }
 
   .cardPhase {
-    font-size: 14px;
-    font-weight: 400;
+    font-size: clamp(14px, 1.1vw, 18px); // Responsive phase label
+    font-weight: 500;
     margin: 0;
     letter-spacing: 0.02em;
+    text-transform: uppercase;
+    opacity: 0.7;
 
     @include respond-to(small) {
       font-size: 13px;
@@ -1198,37 +1204,38 @@ section {
   }
 
   .cardTitle {
-    font-size: 34px;
-    font-weight: 500;
-    line-height: 1.2;
+    font-size: clamp(38px, 4.2vw, 68px); // Significantly larger and responsive heading
+    font-weight: 800;
+    line-height: 1.15;
     margin: 0;
-    letter-spacing: -0.01em;
-    font-family: Etherel;
+    letter-spacing: -0.02em;
+    font-family: Etherel, sans-serif;
 
     @include respond-to(medium) {
-      font-size: 28px;
+      font-size: clamp(30px, 4.5vw, 42px);
     }
 
     @include respond-to(small) {
-      font-size: 24px;
+      font-size: clamp(26px, 6vw, 32px);
     }
   }
 
   .right {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 32px;
   }
 
   .cardDescription {
-    font-size: 15px;
+    font-size: clamp(18px, 1.6vw, 24px); // Significantly larger and responsive paragraph
     line-height: 1.65;
     margin: 0;
     opacity: 0.88;
-    max-width: 480px;
+    max-width: 680px; // Wider max-width to look great with larger text
 
     @include respond-to(small) {
-      font-size: 14px;
+      font-size: 16px;
+      line-height: 1.55;
     }
   }
 
@@ -1238,12 +1245,12 @@ section {
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 14px;
 
     li {
-      font-size: 14px;
+      font-size: clamp(15px, 1.3vw, 20px); // Larger list items
       line-height: 1.5;
-      padding-left: 18px;
+      padding-left: 24px;
       position: relative;
       opacity: 0.92;
 
@@ -1255,7 +1262,8 @@ section {
       }
 
       @include respond-to(small) {
-        font-size: 13px;
+        font-size: 14px;
+        padding-left: 20px;
       }
     }
   }

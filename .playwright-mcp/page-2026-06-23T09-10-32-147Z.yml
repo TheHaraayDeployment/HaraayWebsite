@@ -1,0 +1,294 @@
+- generic [ref=e3]:
+  - generic:
+    - link "Haraay Logo" [ref=e4] [cursor=pointer]:
+      - /url: /
+      - img "Haraay Logo" [ref=e5]
+    - generic [ref=e7]:
+      - link "Home" [ref=e8] [cursor=pointer]:
+        - /url: /
+      - link "Work" [ref=e9] [cursor=pointer]:
+        - /url: /works
+      - link "About" [ref=e10] [cursor=pointer]:
+        - /url: /about
+      - link "Intelligence" [ref=e11] [cursor=pointer]:
+        - /url: /intelligence
+      - button "Open menu" [ref=e12] [cursor=pointer]
+    - link "Contact" [ref=e17] [cursor=pointer]:
+      - /url: /contact-us
+  - generic [ref=e19]:
+    - generic [ref=e22]:
+      - heading "Elevating brands through design precision and digital brilliance—Haraay, the choice of industry leaders." [level=1] [ref=e23]
+      - generic [ref=e26]:
+        - generic [ref=e27]: We Craft
+        - generic [ref=e28] [cursor=pointer]:
+          - generic [ref=e29]: Everything
+          - img [ref=e30]
+        - generic [ref=e32]: Tailored for
+        - generic [ref=e33] [cursor=pointer]:
+          - generic [ref=e34]: Everyone
+          - img [ref=e35]
+      - generic [ref=e37]:
+        - link "Start a Project" [ref=e38] [cursor=pointer]:
+          - /url: /contact-us
+        - link "Explore Work" [ref=e39] [cursor=pointer]:
+          - /url: /works
+    - generic [ref=e42]:
+      - generic [ref=e47]:
+        - button [ref=e48] [cursor=pointer]
+        - button [ref=e49] [cursor=pointer]
+        - button [ref=e50] [cursor=pointer]
+        - button [ref=e51] [cursor=pointer]
+        - button [ref=e52] [cursor=pointer]
+      - generic [ref=e53]:
+        - heading "Reimagining Everyday" [level=2] [ref=e54]
+        - paragraph [ref=e55]: Haraay is a full-service design studio. We work at the intersection of brand identity, digital experience, and three-dimensional craft creating visual systems that don't just look extraordinary, but perform.
+        - paragraph [ref=e56]: From a foundational identity to a full digital presence, we partner with brands at every stage building systems designed to scale, designed to last, and designed to win.
+        - generic [ref=e57]:
+          - button "Explore Work" [ref=e58] [cursor=pointer]
+          - button "About Us" [ref=e59] [cursor=pointer]
+    - generic [ref=e61]:
+      - generic [ref=e62]:
+        - heading "What we do" [level=2] [ref=e63]
+        - paragraph [ref=e64]: Three disciplines. One studio. Every engagement.
+      - generic [ref=e65]:
+        - generic [ref=e66]:
+          - heading "Brand Identity" [level=3] [ref=e69]
+          - paragraph [ref=e70]: Logo systems, visual language, typography, colour, brand guidelines, packaging, and marketing collateral. We build identities that hold their weight across every touchpoint— from a business card to a billboard.
+        - generic [ref=e71]:
+          - heading "Web & Technology" [level=3] [ref=e74]
+          - paragraph [ref=e75]: Strategy-led websites, UI/UX design, and frontend development. We design digital experiences that are architecturally sound, visually precise, and built to convert.
+        - generic [ref=e76]:
+          - heading "3D & Motion" [level=3] [ref=e79]
+          - paragraph [ref=e80]: Product visualisation, brand films, architectural renders, and motion design. When a static image is not enough, we build the dimension.
+    - heading "Turning your problems to Transformative designs!" [level=1] [ref=e82]
+    - generic [ref=e83]:
+      - heading "We are" [level=2] [ref=e84]
+      - heading "Global Design Consultancy" [level=1] [ref=e85]
+      - heading "Powering brands for a brave new world." [level=2] [ref=e86]
+      - generic [ref=e87]:
+        - button "Learn more About us" [ref=e88] [cursor=pointer]:
+          - link "Learn more About us" [ref=e89]:
+            - /url: /about
+        - button "Discover our capabilities" [ref=e90] [cursor=pointer]:
+          - link "Discover our capabilities" [ref=e91]:
+            - /url: /expertise
+    - paragraph [ref=e95]: Recent work
+    - generic [ref=e96]:
+      - link "SDIG Project Card" [ref=e97] [cursor=pointer]:
+        - /url: /casestudy/gopalan
+        - heading "SDIG" [level=1] [ref=e99]
+        - img "Project Card" [ref=e100]
+      - link "Bosch Air Purifier 3D Project Card" [ref=e101] [cursor=pointer]:
+        - /url: /casestudy/bosch
+        - generic [ref=e102]:
+          - heading "Bosch Air Purifier" [level=1] [ref=e103]
+          - heading "3D" [level=3] [ref=e104]
+        - img "Project Card" [ref=e105]
+      - generic [ref=e106]:
+        - heading "YOBO" [level=1] [ref=e108]
+        - img "Project Card" [ref=e109]
+      - generic [ref=e110]:
+        - generic [ref=e111]:
+          - heading "AMCHO DOTOR" [level=1] [ref=e112]
+          - heading "Mobile App Designing" [level=3] [ref=e113]
+        - img "Project Card" [ref=e114]
+      - link "See More Works" [ref=e116] [cursor=pointer]:
+        - /url: /works
+    - generic [ref=e117]:
+      - heading "Testimonials" [level=1] [ref=e118]
+      - paragraph [ref=e119]: Why Everyone Loves Haraay
+      - generic [ref=e120]:
+        - generic [ref=e121]:
+          - img "Profile 1" [ref=e122]
+          - generic:
+            - generic [ref=e123]:
+              - heading "Puru’s Enterprise" [level=3] [ref=e124]
+              - paragraph [ref=e125]: founder & ceo
+            - paragraph [ref=e126]: Puru's association with Haraay has been wonderful & fulfilling. The project scope was brand Identity, website & packaging design. Haraay overexceeded our expectations and ensure we got what we were looking from a qualitative agency. We express our gratitude and wish Haraay sustainability growth & success.
+            - generic [ref=e127]:
+              - generic [ref=e128]: "5.0"
+              - generic [ref=e129]: ⭐⭐⭐⭐⭐
+              - img "Google Rating" [ref=e130]
+        - generic [ref=e131]:
+          - img "Profile 1" [ref=e132]
+          - generic:
+            - generic [ref=e133]:
+              - heading "Mr. Arvind" [level=3] [ref=e134]
+              - paragraph [ref=e135]: MD & CEO
+            - paragraph [ref=e136]: What truly sets them apart is their ability to weave innovation into every element — our new website not only looks incredible, but it also functions flawlessly, making user experience effortless and intuitive. The 3D animations they crafted are immersive and elevate our digital presence to another level, bringing our products to life in a way that captivates our audience.
+            - generic [ref=e137]:
+              - generic [ref=e138]: "5.0"
+              - generic [ref=e139]: ⭐⭐⭐⭐⭐
+              - img "Google Rating" [ref=e140]
+        - generic [ref=e141]:
+          - img "Profile 1" [ref=e142]
+          - generic:
+            - generic [ref=e143]:
+              - heading "Manufacturing client" [level=3] [ref=e144]
+              - paragraph [ref=e145]: Clutch.co
+            - paragraph [ref=e146]: Their work is of world-class quality. Any MNC company should hire them. Their work speaks for itself.
+            - generic [ref=e147]:
+              - generic [ref=e148]: "5.0"
+              - generic [ref=e149]: ⭐⭐⭐⭐⭐
+              - img "Google Rating" [ref=e150]
+        - generic [ref=e151]:
+          - img "Profile 1" [ref=e152]
+          - generic:
+            - generic [ref=e153]:
+              - heading "Shan K." [level=3] [ref=e154]
+              - paragraph [ref=e155]: Brand Identity & Packaging client
+            - paragraph [ref=e156]: Haraay overexceeded our expectations and ensured we got what we were looking for from a qualitative agency.
+            - generic [ref=e157]:
+              - generic [ref=e158]: "5.0"
+              - generic [ref=e159]: ⭐⭐⭐⭐⭐
+              - img "Google Rating" [ref=e160]
+        - generic [ref=e161]:
+          - img "Profile 1" [ref=e162]
+          - generic:
+            - heading "verified client" [level=3] [ref=e164]
+            - paragraph [ref=e165]: I had the pleasure of working with Haraay and I can confidently say their approach to design is nothing short of exceptional — creativity, professionalism, and attention to detail at every stage.
+            - generic [ref=e166]:
+              - generic [ref=e167]: "5.0"
+              - generic [ref=e168]: ⭐⭐⭐⭐⭐
+              - img "Google Rating" [ref=e169]
+        - generic [ref=e170]:
+          - img "Profile 1" [ref=e171]
+          - generic:
+            - generic [ref=e172]:
+              - heading "Mr. Mohit" [level=3] [ref=e173]
+              - paragraph [ref=e174]: Product manager
+            - paragraph [ref=e175]: If you're looking for a team that’s not only experts in their field but also genuinely passionate about your brand's success, look no further. Haraay Studio has helped us stand out in a crowded market, and we couldn't be more thrilled with the results!"
+            - generic [ref=e176]:
+              - generic [ref=e177]: "5.0"
+              - generic [ref=e178]: ⭐⭐⭐⭐⭐
+              - img "Google Rating" [ref=e179]
+        - generic [ref=e180]:
+          - img "Profile 1" [ref=e181]
+          - generic:
+            - generic [ref=e182]:
+              - heading "Shirishti" [level=3] [ref=e183]
+              - paragraph [ref=e184]: Head of Digital Transformation
+            - paragraph [ref=e185]: We hired Haraay Design Studios to create a new brand identity and social media presence. We are delighted with the service and the brilliant work done by Haraay Design Studios. I would recommend them to get your brand out there and running.
+            - generic [ref=e186]:
+              - generic [ref=e187]: "5.0"
+              - generic [ref=e188]: ⭐⭐⭐⭐⭐
+              - img "Google Rating" [ref=e189]
+      - generic [ref=e190]:
+        - button [ref=e191]:
+          - img [ref=e192]
+        - button [ref=e195]:
+          - img [ref=e196]
+    - generic [ref=e199]:
+      - heading "Get in Touch" [level=1] [ref=e200]
+      - generic [ref=e201]:
+        - generic [ref=e202]:
+          - heading [level=1]
+          - img [ref=e203]
+        - generic [ref=e205]:
+          - generic [ref=e206]:
+            - generic [ref=e207]:
+              - generic [ref=e208]:
+                - text: Enquiry Type
+                - generic [ref=e209]: "*"
+              - generic [ref=e210]:
+                - radio [ref=e211]
+                - heading "Buisness" [level=5] [ref=e212]
+                - radio [ref=e213]
+                - heading "Job" [level=5] [ref=e214]
+            - generic [ref=e216]:
+              - text: First Name
+              - generic [ref=e217]: "*"
+            - textbox "Enter First name" [ref=e218]
+          - generic [ref=e219]:
+            - generic [ref=e221]:
+              - text: Last Name
+              - generic [ref=e222]: "*"
+            - textbox "Enter Last Name" [ref=e223]
+          - generic [ref=e224]:
+            - generic [ref=e226]:
+              - text: Mobile Number
+              - generic [ref=e227]: "*"
+            - textbox "Enter Phone" [ref=e228]:
+              - /placeholder: "Enter Phone "
+          - generic [ref=e229]:
+            - generic [ref=e231]:
+              - text: E-Mail Address
+              - generic [ref=e232]: "*"
+            - textbox "Enter Email" [ref=e233]
+          - textbox "Type your message here" [ref=e235]
+          - button "Submit" [ref=e237]
+    - generic [ref=e239]:
+      - heading "YOU HAVE A BEAUTIFUL PROJECT? LET'S TALK ABOUT IT *" [level=1] [ref=e240]
+      - generic [ref=e241]:
+        - heading "hello@haraaydesignstudio.com" [level=2] [ref=e242]
+        - heading "+91 7498376495" [level=2] [ref=e243]
+  - generic [ref=e244]:
+    - generic [ref=e246]:
+      - generic [ref=e247]:
+        - heading "Explore" [level=3] [ref=e248]
+        - list [ref=e249]:
+          - listitem [ref=e250]:
+            - link "Works" [ref=e251] [cursor=pointer]:
+              - /url: /works
+          - listitem [ref=e252]:
+            - link "Expertise" [ref=e253] [cursor=pointer]:
+              - /url: /expertise
+          - listitem [ref=e254]:
+            - link "About Us" [ref=e255] [cursor=pointer]:
+              - /url: /about
+          - listitem [ref=e256]:
+            - link "Blogs" [ref=e257] [cursor=pointer]:
+              - /url: /blogs
+          - listitem [ref=e258]:
+            - link "FAQ" [ref=e259] [cursor=pointer]:
+              - /url: /faq
+          - listitem [ref=e260]:
+            - link "Contact Us" [ref=e261] [cursor=pointer]:
+              - /url: /contact-us
+      - generic [ref=e262]:
+        - heading "Services" [level=3] [ref=e263]
+        - list [ref=e264]:
+          - listitem [ref=e265]:
+            - link "Exalted identity" [ref=e266] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e267]:
+            - link "Sensorial Expression" [ref=e268] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e269]:
+            - link "Digital Experience" [ref=e270] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e271]:
+            - link "Engagement Strategy" [ref=e272] [cursor=pointer]:
+              - /url: /
+      - generic [ref=e273]:
+        - heading "Follow Us" [level=3] [ref=e274]
+        - list [ref=e275]:
+          - link "HomeInstagram" [ref=e276] [cursor=pointer]:
+            - /url: https://www.instagram.com/haraay_studio/
+            - listitem [ref=e277]:
+              - img "Home" [ref=e278]
+              - text: Instagram
+          - link "HomeLinkedIn" [ref=e280] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/haraaydesignstudio/?viewAsMember=true
+            - listitem [ref=e281]:
+              - img "Home" [ref=e282]
+              - text: LinkedIn
+          - link "HomeFacebook" [ref=e284] [cursor=pointer]:
+            - /url: https://www.facebook.com/Hugedesign.in
+            - listitem [ref=e285]:
+              - img "Home" [ref=e286]
+              - text: Facebook
+          - link "HomeBehance" [ref=e288] [cursor=pointer]:
+            - /url: https://www.behance.net/helloharaaystudio
+            - listitem [ref=e289]:
+              - img "Home" [ref=e290]
+              - text: Behance
+      - generic [ref=e292]:
+        - heading "Locations" [level=3] [ref=e293]
+        - list [ref=e294]:
+          - listitem [ref=e295]:
+            - img "location" [ref=e296]
+            - text: Pune, Maharashtra
+            - text: "411038"
+    - heading "Haraay Design Studio" [level=1] [ref=e298]
+    - paragraph [ref=e299]: © 2026 Haraay. Haraay Design Studio LLP. All rights reserved.

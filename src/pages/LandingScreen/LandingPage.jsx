@@ -328,9 +328,8 @@ export default function LandingPage() {
             <div className={styles.sticky}>
               <div className={styles.scrollsection}></div>
             </div>
-          </div>
-          <section className={styles.worksec}>
-            <Link to={"/casestudy/gopalan"} className="projectCards">
+          </div>          <section className={styles.worksec}>
+            <Link to={"/casestudy/gopalan"} className={`${styles.projectCards} projectCards`}>
               <div className={styles.projectcardtxt}>
                 <h1>SDIG</h1>
                 {/* <h3>Website Design & development</h3> */}
@@ -342,7 +341,7 @@ export default function LandingPage() {
                 alt="Project Card"
               />
             </Link>
-            <Link to={"/casestudy/bosch"} className="projectCards">
+            <Link to={"/casestudy/bosch"} className={`${styles.projectCards} projectCards`}>
               <div className={styles.projectcardtxt}>
                 <h1>Bosch Air Purifier</h1>
                 <h3>3D</h3>
@@ -354,7 +353,7 @@ export default function LandingPage() {
                 alt="Project Card"
               />
             </Link>
-            <div to={"/casestudy/akoya"} className="projectCards">
+            <div to={"/casestudy/akoya"} className={`${styles.projectCards} projectCards`}>
               <div className={styles.projectcardtxt}>
                 <h1>YOBO</h1>
                 {/* <h3>Branding </h3> */}
@@ -366,7 +365,7 @@ export default function LandingPage() {
                 alt="Project Card"
               />
             </div>
-            <div className="projectCards">
+            <div className={`${styles.projectCards} projectCards`}>
               <div className={styles.projectcardtxt}>
                 <h1>AMCHO DOTOR</h1>
                 <h3>Mobile App Designing</h3>
@@ -436,7 +435,7 @@ export default function LandingPage() {
             </div>
           </section> */}
           {/* <Partners /> */}
-          <section data-aos="fade-up" className={styles.testimonial}>
+           <section data-aos="fade-up" className={styles.testimonial}>
             <h1>Testimonials</h1>
             <p>Why Everyone Loves Haraay</p>
             <div className={styles.testimonialContainer} ref={containerRef}>
@@ -459,8 +458,7 @@ export default function LandingPage() {
                     sustainability growth & success.
                   </p>
                   <div className={styles.caseStudy}>
-                    {/* <p>Explore Case Study</p>
-                  <h4>Explore Case Study</h4> */}
+                 
                     <div className={styles.rating}>
                       <span>5.0</span>
                       <div className={styles.stars}>⭐⭐⭐⭐⭐</div>
@@ -497,7 +495,7 @@ export default function LandingPage() {
                     that captivates our audience.
                   </p>
                   <div className={styles.caseStudy}>
-                    {/* <p>Explore Case Study</p> <h4>Explore Case Study</h4> */}
+                  
                     <div className={styles.rating}>
                       <span>5.0</span>
                       <div className={styles.stars}>⭐⭐⭐⭐⭐</div>
@@ -529,7 +527,7 @@ export default function LandingPage() {
                     hire them. Their work speaks for itself.
                   </p>
                   <div className={styles.caseStudy}>
-                    {/* <p>Explore Case Study</p> <h4>Explore Case Study</h4> */}
+                   
                     <div className={styles.rating}>
                       <span>5.0</span>
                       <div className={styles.stars}>⭐⭐⭐⭐⭐</div>
@@ -564,7 +562,7 @@ export default function LandingPage() {
                     we were looking for from a qualitative agency.
                   </p>
                   <div className={styles.caseStudy}>
-                    {/* <p>Explore Case Study</p> <h4>Explore Case Study</h4> */}
+               
                     <div className={styles.rating}>
                       <span>5.0</span>
                       <div className={styles.stars}>⭐⭐⭐⭐⭐</div>
@@ -589,7 +587,7 @@ export default function LandingPage() {
                   <div className={styles.testname}>
                     {" "}
                     <h3> verified client </h3>
-                    {/* <p className={styles.testrole}></p> */}
+              
                   </div>
                   <p className={styles.review}>
                     I had the pleasure of working with Haraay and I can
@@ -598,7 +596,7 @@ export default function LandingPage() {
                     detail at every stage.
                   </p>
                   <div className={styles.caseStudy}>
-                    {/* <p>Explore Case Study</p> <h4>Explore Case Study</h4> */}
+                 
                     <div className={styles.rating}>
                       <span>5.0</span>
                       <div className={styles.stars}>⭐⭐⭐⭐⭐</div>
@@ -633,7 +631,7 @@ export default function LandingPage() {
                     with the results!"
                   </p>
                   <div className={styles.caseStudy}>
-                    {/* <p>Explore Case Study</p> <h4>Explore Case Study</h4> */}
+                  
                     <div className={styles.rating}>
                       <span>5.0</span>
                       <div className={styles.stars}>⭐⭐⭐⭐⭐</div>
@@ -668,7 +666,7 @@ export default function LandingPage() {
                     and running.
                   </p>
                   <div className={styles.caseStudy}>
-                    {/* <p>Explore Case Study</p> <h4>Explore Case Study</h4> */}
+                
                     <div className={styles.rating}>
                       <span>5.0</span>
                       <div className={styles.stars}>⭐⭐⭐⭐⭐</div>
@@ -720,7 +718,7 @@ export default function LandingPage() {
                 </svg>
               </button>
             </div>
-          </section>
+          </section> 
           {/* <section data-aos="fade-up" className={styles.Blogsec}>
           <h1>Blogs </h1>
           <div className={styles.blogcards}>

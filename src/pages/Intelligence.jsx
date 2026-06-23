@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "../styles/Intelligence.module.scss";
@@ -131,35 +132,38 @@ export default function IntelligencePage() {
 
   // GSAP stacked-cards animation (matching CardAnimation.jsx logic)
   useEffect(() => {
-    const cards = phaseCardsRef.current;
+    const cards = phaseCardsRef.current.filter(Boolean);
     if (cards.length === 0) return;
 
     const triggers = [];
 
     cards.forEach((card, index) => {
-      // Each card stops at: 20px * its position in the stack
-      const topOffset = STACK_OFFSET * index;
+      if (index === cards.length - 1) return; // Last card stays fully visible
 
-      const trigger = ScrollTrigger.create({
-        trigger: card,
-        start: `top ${topOffset}px`,
-        endTrigger: cards[cards.length - 1],
-        end: `top ${STACK_OFFSET * (cards.length - 1)}px`,
-        pin: true,
-        pinSpacing: false,
-        scrub: false, // pin only, no scrubbing — gives clean "stop" feel
+      const nextCard = cards[index + 1];
+
+      // Smooth scale effect as next card covers this one
+      const trigger = gsap.to(card, {
+        scale: 0.93,
+        ease: "power1.out",
+        scrollTrigger: {
+          trigger: nextCard,
+          start: "top 95%", // starts when next card enters from bottom
+          end: "top 12%",   // ends when next card reaches its sticky position
+          scrub: true,
+        },
       });
 
       triggers.push(trigger);
     });
 
-    // Refresh on resize for accuracy
-    const handleResize = () => ScrollTrigger.refresh();
-    window.addEventListener("resize", handleResize);
+    ScrollTrigger.refresh();
 
     return () => {
-      triggers.forEach((t) => t.kill());
-      window.removeEventListener("resize", handleResize);
+      triggers.forEach((t) => {
+        if (t.scrollTrigger) t.scrollTrigger.kill();
+        t.kill();
+      });
     };
   }, []);
 
@@ -179,10 +183,10 @@ export default function IntelligencePage() {
             AI-powered brand design for founders and ambitious brands
           </h1>
 
-          <button className={styles.ctaBtn}>
+          <Link to="/contact-us" className={styles.ctaBtn}>
             Let's discuss what's possible
             <span className={styles.ctaArrow}>→</span>
-          </button>
+          </Link>
         </div>
 
         <div
@@ -289,6 +293,8 @@ export default function IntelligencePage() {
               backgroundColor: card.bgColor,
               color: card.textColor,
               zIndex: index + 1,
+              position: "sticky",
+              top: `${90 + index * 30}px`, // Stack offset top
             }}
           >
             <div className={styles.cardInner}>

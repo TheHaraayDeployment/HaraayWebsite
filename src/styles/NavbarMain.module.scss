@@ -1802,25 +1802,15 @@ $ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 // ─── Logo ────────────────────────────────────────────────────────────────────
 .logoLink {
   position: fixed;
-  top: 14px;
-  left: 20px;
+  top: clamp(12px, 1.5vw, 24px); // Flexible top offset
+  left: clamp(14px, 2vw, 32px);  // Flexible left offset
   z-index: 1100;
   display: block;
-
-  @include md {
-    top: 14px;
-    left: 18px;
-  }
-
-  @include sm {
-    top: 12px;
-    left: 14px;
-  }
 }
 
 .logo {
-  width: 56px;
-  height: 56px;
+  width: clamp(40px, 3.5vw, 60px);   // Fluid logo width
+  height: clamp(40px, 3.5vw, 60px);  // Fluid logo height
   object-fit: contain;
   display: block;
   transition: transform 0.4s $ease-smooth;
@@ -1828,24 +1818,13 @@ $ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
     transform: scale(1.04);
   }
-
-  @include md {
-    width: 50px;
-    height: 50px;
-  }
-
-  @include sm {
-    width: 44px;
-    height: 44px;
-  }
 }
 
 // ─── Contact Button ──────────────────────────────────────────────────────────
 .contactBtn {
   position: fixed;
-  top: 18px;
-  right: 20px;
-  z-index: 1100;
+  top: clamp(14px, 1.5vw, 28px);   // Flexible top offset matching pill top
+  right: clamp(14px, 2vw, 32px);   // Flexible right offset
 
   // Glass effect
   background: $contact-bg-hover;
@@ -1855,9 +1834,9 @@ $ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
   border: 0.5px solid rgba(255, 255, 255, 0.12);
   border-radius: 30px;
   color: $text-primary;
-  font-size: 14px;
-  font-weight: 400;
-  padding: 11px 22px;
+  font-size: clamp(12px, 0.9vw, 15px);  // Responsive text size
+  font-weight: 500;
+  padding: clamp(8px, 0.8vw, 13px) clamp(16px, 1.4vw, 26px); // Responsive padding
   cursor: pointer;
   text-decoration: none;
   transition:
@@ -1873,26 +1852,12 @@ $ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
     color: #fff;
     border-color: rgba(255, 255, 255, 0.18);
   }
-
-  @include md {
-    top: 16px;
-    right: 18px;
-    font-size: 13px;
-    padding: 10px 20px;
-  }
-
-  @include sm {
-    top: 14px;
-    right: 14px;
-    font-size: 12.5px;
-    padding: 9px 18px;
-  }
 }
 
 // ─── Center Pill ─────────────────────────────────────────────────────────────
 .centerPill {
   position: fixed;
-  top: 18px;
+  top: clamp(14px, 1.5vw, 28px);   // Flexible top offset
   left: 50%;
   transform: translateX(-50%);
   z-index: 1050;
@@ -1909,9 +1874,9 @@ $ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
     inset 0 1px 0 rgba(255, 255, 255, 0.04);
 
   // Closed
-  height: 50px;
+  height: clamp(46px, 3.2vw, 54px);  // Fluid pill height
   width: auto;
-  max-width: 540px;
+  max-width: 580px;
   min-width: 200px;
 
   display: flex;
@@ -1933,7 +1898,7 @@ $ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
   // Open — card expands DOWNWARD from top (desktop + laptops)
   &.open {
     border-radius: 20px;
-    width: 420px;
+    width: clamp(320px, 25vw, 440px); // Responsive open width
     height: auto;
     min-width: 320px;
     flex-direction: column;
@@ -2007,9 +1972,9 @@ $ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .pillLink {
-  padding: 7px 14px;
-  font-size: 13.5px;
-  font-weight: 400;
+  padding: clamp(6px, 0.6vw, 10px) clamp(10px, 1vw, 18px); // Responsive pill padding
+  font-size: clamp(12.5px, 0.9vw, 15px);                  // Responsive pill font size
+  font-weight: 500;
   color: rgba(255, 255, 255, 0.65);
   border-radius: 12px;
   cursor: pointer;
@@ -2044,7 +2009,7 @@ $ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 
   @include sm {
     padding: 8px 12px;
-    font-size: 14px;
+    font-size: 13.5px;
   }
 }
 

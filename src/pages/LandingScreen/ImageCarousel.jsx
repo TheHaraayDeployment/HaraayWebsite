@@ -290,7 +290,7 @@ export default function ImageCarousel() {
 
         {/* Right Content */}
         <div className={styles.contentWrapper}>
-          <h2 className={styles.title}>Haraay Design Studio</h2>
+          <h2 className={styles.title}>Reimagining Everyday</h2>
 
           <p className={styles.description}>
             Haraay is a full-service design studio. We work at the intersection
@@ -305,12 +305,20 @@ export default function ImageCarousel() {
             designed to last, and designed to win.
           </p>
 
-          <button
-            className={styles.ctaButton}
-            onClick={() => navigate("/works")}
-          >
-            Explore More
-          </button>
+          <div className={styles.ctaGroup}>
+            <button
+              className={styles.ctaButton}
+              onClick={() => navigate("/works")}
+            >
+              Explore Work
+            </button>
+            <button
+              className={styles.ctaButtonOutline}
+              onClick={() => navigate("/about")}
+            >
+              About Us
+            </button>
+          </div>
           {/* Counter */}
           {/* <div className={styles.slideCounter}>
             <span className={styles.current}>
