@@ -99,6 +99,10 @@ section {
     font-size: 96px;
     text-wrap: nowrap;
 
+    @include respond-to(medium) {
+      font-size: 56px;
+    }
+
     @include respond-to(small) {
       font-size: 48px;
       text-wrap: nowrap;

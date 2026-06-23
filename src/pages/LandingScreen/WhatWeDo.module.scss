@@ -152,10 +152,17 @@
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 769px) and (max-width: 1024px) {
   .servicesGrid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 30px;
+    justify-content: center;
+  }
+
+  .serviceCard:nth-child(3) {
+    grid-column: 1 / -1;
+    max-width: 50%;
+    margin: 0 auto;
   }
 }
 
@@ -273,10 +280,10 @@
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 769px) and (max-width: 1024px) {
   .icon {
-    width: 200px;
-    height: 200px;
+    width: 140px;
+    height: 140px;
   }
 
   .icon img {
@@ -368,9 +375,9 @@
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 769px) and (max-width: 1024px) {
   .serviceDescription {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.6;
     padding: 0 10px;
   }

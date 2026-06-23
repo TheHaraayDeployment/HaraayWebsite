@@ -680,13 +680,17 @@ section {
   }
 
   p {
-    font-size: 20px;
+    font-size: 23px;
     line-height: 1.65;
     color: #c8c8c8;
     margin: 0;
 
+    @include respond-to(medium) {
+      font-size: 18px;
+    }
+
     @include respond-to(small) {
-      font-size: 14px;
+      font-size: 15px;
     }
   }
 }
@@ -828,10 +832,14 @@ section {
 }
 
 .streamDesc {
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.65;
   color: #c8c8c8;
   margin: 0;
+
+  @include respond-to(medium) {
+    font-size: 15px;
+  }
 
   @include respond-to(small) {
     font-size: 14px;
