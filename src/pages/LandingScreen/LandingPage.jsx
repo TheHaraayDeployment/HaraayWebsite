@@ -187,7 +187,7 @@ export default function LandingPage() {
             start: "top 90%",
             end: "bottom 30%",
             scrub: 0.6,
-            markers: true, // Debug markers (set true for debugging)
+            markers: false, // Debug markers (set true for debugging)
             toggleActions: "play none none none",
           },
         },
