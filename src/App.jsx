@@ -9,7 +9,11 @@ import {
 } from "react-router-dom";
 import "./App.css";
 import Lenis from "@studio-freight/lenis";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import useNavigationEvent from "./components/useNavigationEvent.jsx";
+
+gsap.registerPlugin(ScrollTrigger);
 import { AnimatePresence } from "framer-motion";
 import PageTransition from "./pages/Pagetransition/PageTransition.jsx";
 // Main Pages
@@ -64,19 +68,32 @@ import Intelligence from "./pages/Intelligence.jsx";
 function App() {
   const isNavigating = useNavigationEvent(); // Get navigation event status
   const location = useLocation();
-  // Lenis smooth scrolling
+  // Lenis smooth scrolling — synced with GSAP ScrollTrigger so that every
+  // scrub/pin animation reads the same smoothed scroll position Lenis renders.
+  // Without this sync, ScrollTrigger reads the raw native scroll while Lenis
+  // eases the visual scroll, causing scrubbed animations (e.g. stacked cards)
+  // to lag, flicker and feel broken.
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Customize easing
       smooth: true,
     });
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-    return () => lenis.destroy();
+
+    // Update ScrollTrigger on every Lenis scroll frame.
+    lenis.on("scroll", ScrollTrigger.update);
+
+    // Drive Lenis from GSAP's ticker (single RAF loop, gsap expects seconds).
+    const raf = (time) => {
+      lenis.raf(time * 1000);
+    };
+    gsap.ticker.add(raf);
+    gsap.ticker.lagSmoothing(0);
+
+    return () => {
+      gsap.ticker.remove(raf);
+      lenis.destroy();
+    };
   }, []);
   // Lenis ends
   // Disable right-click ---------------------------------------------------------

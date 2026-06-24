@@ -1,9 +1,6 @@
-import React, { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React from "react";
+import StackedCards from "./StackedCards";
 import styles from "./Cardsanimation.module.scss";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const cardsData = [
   {
@@ -83,99 +80,35 @@ const cardsData = [
 ];
 
 const StackCards = () => {
-  const containerRef = useRef(null);
-  const cardsRef = useRef([]);
-
-  useEffect(() => {
-    const cards = cardsRef.current.filter(Boolean);
-    const mm = gsap.matchMedia();
-
-    mm.add(
-      {
-        isMobile: "(max-width: 840px)",
-        isDesktop: "(min-width: 841px)",
-      },
-      (context) => {
-        const { isMobile } = context.conditions;
-        const triggers = [];
-
-        cards.forEach((card, index) => {
-          if (index === cards.length - 1) return; // Last card stays fully visible
-
-          const nextCard = cards[index + 1];
-
-          // Smooth scale effect as next card covers this one
-          const trigger = gsap.to(card, {
-            scale: 0.93,
-            ease: "power1.out",
-            scrollTrigger: {
-              trigger: nextCard,
-              // On smaller screens cards are shorter, so widen the window
-              // a bit so the previous card visibly settles before the next
-              // one locks into its stacked position, instead of overlapping too fast.
-              start: isMobile ? "top 90%" : "top 95%",
-              end: isMobile ? "top 25%" : "top 12%",
-              scrub: true,
-            },
-          });
-
-          triggers.push(trigger);
-        });
-
-        ScrollTrigger.refresh();
-
-        return () => {
-          triggers.forEach((t) => {
-            if (t.scrollTrigger) t.scrollTrigger.kill();
-            t.kill();
-          });
-        };
-      },
-    );
-
-    return () => mm.revert();
-  }, []);
-
   return (
-    <div ref={containerRef} className={styles.stackWrapper}>
-      {cardsData.map((card, index) => (
-        <div
-          key={card.id}
-          ref={(el) => (cardsRef.current[index] = el)}
-          className={styles.card}
-          style={{
-            backgroundColor: card.bgColor,
-            color: card.textColor,
-            zIndex: index + 1, // Layer cards sequentially
-            position: "sticky",
-            top: `${90 + index * 30}px`, // Stack offset top
-          }}
-        >
-          <div className={styles.cardInner}>
-            <div className={styles.left}>
-              <h2
-                className={styles.title}
-                style={{
-                  color: card.textColor,
-                }}
-              >
-                {card.title}
-              </h2>
-            </div>
-            <div className={styles.right}>
-              {card.description && (
-                <p className={styles.description}>{card.description}</p>
-              )}
-              <ul className={styles.serviceList}>
-                {card.services.map((service, i) => (
-                  <li key={i}>{service}</li>
-                ))}
-              </ul>
-            </div>
+    <StackedCards
+      cards={cardsData}
+      sectionClassName={styles.stackWrapper}
+      cardClassName={styles.card}
+      getCardStyle={(card) => ({
+        backgroundColor: card.bgColor,
+        color: card.textColor,
+      })}
+      renderCard={(card) => (
+        <div className={styles.cardInner}>
+          <div className={styles.left}>
+            <h2 className={styles.title} style={{ color: card.textColor }}>
+              {card.title}
+            </h2>
+          </div>
+          <div className={styles.right}>
+            {card.description && (
+              <p className={styles.description}>{card.description}</p>
+            )}
+            <ul className={styles.serviceList}>
+              {card.services.map((service, i) => (
+                <li key={i}>{service}</li>
+              ))}
+            </ul>
           </div>
         </div>
-      ))}
-    </div>
+      )}
+    />
   );
 };
 

@@ -14,6 +14,9 @@
 }
 
 html {
+  /* The document scroller. Keeping horizontal overflow hidden here blocks
+     sideways scroll WITHOUT breaking position: sticky, because <html> is the
+     scroll container that sticky elements already reference. */
   overflow-x: hidden;
   width: 100%;
 }
@@ -24,7 +27,12 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  overflow-x: hidden;
+  /* IMPORTANT: do NOT set overflow-x: hidden on <body>.
+     Per the CSS spec, overflow-x: hidden forces overflow-y to compute to
+     `auto`, turning <body> into a nested vertical scroll container. That makes
+     position: sticky resolve against <body> (full page height, never scrolls)
+     instead of the viewport, so sticky cards never stick. <html> above already
+     prevents horizontal scrolling. */
   width: 100%;
 }
 

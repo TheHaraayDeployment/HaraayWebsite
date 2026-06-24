@@ -36,8 +36,12 @@ $breakpoint-extra-large: 1200px;
 body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
-  /* Prevent horizontal scrolling */
+  /* Use `clip` (not `hidden`) to prevent horizontal scroll. `hidden` forces
+     overflow-y to compute to `auto`, turning <body> into a scroll container,
+     which breaks position: sticky everywhere (this is a global rule — bare
+     `body{}` in a CSS Module is NOT scoped). `clip` blocks sideways scroll
+     without creating a scroll container, so sticky keeps working. */
+  overflow-x: clip;
   width: 100vw;
   /* Limit width to the viewport */
   background-color: #0a0b0c !important;

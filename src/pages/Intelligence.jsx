@@ -1,13 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "../styles/Intelligence.module.scss";
 import heroImg from "../assets/Intelligence/hero.jpg";
 import middleImg from "../assets/Intelligence/middle.jpg";
 import SEO from "../Seo";
-
-gsap.registerPlugin(ScrollTrigger);
+import StackedCards from "../components/StackedCards";
 
 const faqItems = [
   {
@@ -81,26 +78,14 @@ const phaseCardsData = [
   },
 ];
 
-const STACK_OFFSET = 20;
-
 export default function IntelligencePage() {
   const revealRefs = useRef([]);
   revealRefs.current = [];
   const [openIndex, setOpenIndex] = useState(0);
-  const animationSectionRef = useRef(null);
-  // Refs for stacked cards
-  const phaseCardsRef = useRef([]);
-  phaseCardsRef.current = [];
 
   const addToRefs = (el) => {
     if (el && !revealRefs.current.includes(el)) {
       revealRefs.current.push(el);
-    }
-  };
-
-  const addToPhaseCardsRef = (el) => {
-    if (el && !phaseCardsRef.current.includes(el)) {
-      phaseCardsRef.current.push(el);
     }
   };
 
@@ -128,43 +113,6 @@ export default function IntelligencePage() {
     revealRefs.current.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
-  }, []);
-
-  // GSAP stacked-cards animation (matching CardAnimation.jsx logic)
-  useEffect(() => {
-    const cards = phaseCardsRef.current.filter(Boolean);
-    if (cards.length === 0) return;
-
-    const triggers = [];
-
-    cards.forEach((card, index) => {
-      if (index === cards.length - 1) return; // Last card stays fully visible
-
-      const nextCard = cards[index + 1];
-
-      // Smooth scale effect as next card covers this one
-      const trigger = gsap.to(card, {
-        scale: 0.93,
-        ease: "power1.out",
-        scrollTrigger: {
-          trigger: nextCard,
-          start: "top 95%", // starts when next card enters from bottom
-          end: "top 12%",   // ends when next card reaches its sticky position
-          scrub: true,
-        },
-      });
-
-      triggers.push(trigger);
-    });
-
-    ScrollTrigger.refresh();
-
-    return () => {
-      triggers.forEach((t) => {
-        if (t.scrollTrigger) t.scrollTrigger.kill();
-        t.kill();
-      });
-    };
   }, []);
 
   return (
@@ -282,50 +230,40 @@ export default function IntelligencePage() {
       </section>
 
       {/* ─── STACKED ANIMATION CARDS ─── */}
-      {/* ─── STACKED ANIMATION CARDS ─── */}
-      <section ref={animationSectionRef} className={styles.animationCards}>
-        {phaseCardsData.map((card, index) => (
-          <div
-            key={card.id}
-            ref={addToPhaseCardsRef}
-            className={styles.card}
-            style={{
-              backgroundColor: card.bgColor,
-              color: card.textColor,
-              zIndex: index + 1,
-              position: "sticky",
-              top: `${90 + index * 30}px`, // Stack offset top
-            }}
-          >
-            <div className={styles.cardInner}>
-              <div className={styles.left}>
-                <p
-                  className={styles.cardPhase}
-                  style={{ color: card.textColor, opacity: 0.7 }}
-                >
-                  {card.phase}
-                </p>
-                <h2
-                  className={styles.cardTitle}
-                  style={{ color: card.textColor }}
-                >
-                  {card.title}
-                </h2>
-              </div>
-              <div className={styles.right}>
-                {card.description && (
-                  <p className={styles.cardDescription}>{card.description}</p>
-                )}
-                <ul className={styles.cardServiceList}>
-                  {card.services.map((service, i) => (
-                    <li key={i}>{service}</li>
-                  ))}
-                </ul>
-              </div>
+      <StackedCards
+        cards={phaseCardsData}
+        sectionClassName={styles.animationCards}
+        cardClassName={styles.card}
+        getCardStyle={(card) => ({
+          backgroundColor: card.bgColor,
+          color: card.textColor,
+        })}
+        renderCard={(card) => (
+          <div className={styles.cardInner}>
+            <div className={styles.left}>
+              <p
+                className={styles.cardPhase}
+                style={{ color: card.textColor, opacity: 0.7 }}
+              >
+                {card.phase}
+              </p>
+              <h2 className={styles.cardTitle} style={{ color: card.textColor }}>
+                {card.title}
+              </h2>
+            </div>
+            <div className={styles.right}>
+              {card.description && (
+                <p className={styles.cardDescription}>{card.description}</p>
+              )}
+              <ul className={styles.cardServiceList}>
+                {card.services.map((service, i) => (
+                  <li key={i}>{service}</li>
+                ))}
+              </ul>
             </div>
           </div>
-        ))}
-      </section>
+        )}
+      />
 
       {/* ─── FAQ ─── */}
       <section className={styles.faqSection}>

@@ -1129,7 +1129,7 @@ section {
 .animationCards {
   width: 100%;
   background-color: transparent;
-  padding: 80px 0 160px 0; // Extra bottom padding for completeness of scroll
+  padding: 80px 0 160px 0; // Bottom room so the final stacked card stays readable
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -1173,9 +1173,11 @@ section {
       margin-bottom: 28px;
     }
 
-    &:last-child {
-      margin-bottom: 0;
-    }
+    // NOTE: do NOT zero the last card's bottom margin. position: sticky's
+    // bottom clamp subtracts each card's own margin-bottom, so a different
+    // last-card margin makes the cards release unevenly at the end of the
+    // section (the first cards collapse together / drop behind). Keeping the
+    // margin equal on every card makes the whole stack release as one deck.
   }
 
   .cardInner {

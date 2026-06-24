@@ -1,0 +1,20 @@
+// ─── Shared structural layer for sticky stacked cards ────────────────────────
+// Positioning is done with CSS `position: sticky` + `top` offsets applied
+// inline by the StackedCards component. This file deliberately adds NO
+// overflow, transform, filter, or perspective on the section — any of those on
+// an ancestor would break `position: sticky` for the cards. Visual styling
+// (size, colour, radius, typography) stays in each page's own module.
+
+.section {
+  width: 100%;
+  // No overflow / transform here — would break child sticky positioning.
+}
+
+.cardBase {
+  // The card is the sticky element itself, so transform/opacity changes on it
+  // (the premium GSAP recede enhancement) are safe and only affect its own
+  // rendering — never the sticky `top` positioning.
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
