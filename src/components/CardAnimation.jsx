@@ -88,36 +88,52 @@ const StackCards = () => {
 
   useEffect(() => {
     const cards = cardsRef.current.filter(Boolean);
-    const triggers = [];
+    const mm = gsap.matchMedia();
 
-    cards.forEach((card, index) => {
-      if (index === cards.length - 1) return; // Last card stays fully visible
+    mm.add(
+      {
+        isMobile: "(max-width: 840px)",
+        isDesktop: "(min-width: 841px)",
+      },
+      (context) => {
+        const { isMobile } = context.conditions;
+        const triggers = [];
 
-      const nextCard = cards[index + 1];
+        cards.forEach((card, index) => {
+          if (index === cards.length - 1) return; // Last card stays fully visible
 
-      // Smooth scale effect as next card covers this one
-      const trigger = gsap.to(card, {
-        scale: 0.93,
-        ease: "power1.out",
-        scrollTrigger: {
-          trigger: nextCard,
-          start: "top 95%", // starts when next card enters from bottom
-          end: "top 12%",   // ends when next card reaches its sticky position
-          scrub: true,
-        },
-      });
+          const nextCard = cards[index + 1];
 
-      triggers.push(trigger);
-    });
+          // Smooth scale effect as next card covers this one
+          const trigger = gsap.to(card, {
+            scale: 0.93,
+            ease: "power1.out",
+            scrollTrigger: {
+              trigger: nextCard,
+              // On smaller screens cards are shorter, so widen the window
+              // a bit so the previous card visibly settles before the next
+              // one locks into its stacked position, instead of overlapping too fast.
+              start: isMobile ? "top 90%" : "top 95%",
+              end: isMobile ? "top 25%" : "top 12%",
+              scrub: true,
+            },
+          });
 
-    ScrollTrigger.refresh();
+          triggers.push(trigger);
+        });
 
-    return () => {
-      triggers.forEach((t) => {
-        if (t.scrollTrigger) t.scrollTrigger.kill();
-        t.kill();
-      });
-    };
+        ScrollTrigger.refresh();
+
+        return () => {
+          triggers.forEach((t) => {
+            if (t.scrollTrigger) t.scrollTrigger.kill();
+            t.kill();
+          });
+        };
+      },
+    );
+
+    return () => mm.revert();
   }, []);
 
   return (

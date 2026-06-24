@@ -58,7 +58,7 @@ $bp-large: 1024px;
   @include md {
     width: 90%;
     padding: 50px 40px;
-    min-height: auto;
+    min-height: 460px;
     margin-bottom: 35px;
     border-radius: 20px;
   }
@@ -66,6 +66,7 @@ $bp-large: 1024px;
   @include sm {
     width: 95%;        // 95% of screen for mobile
     padding: 36px 24px;
+    min-height: 380px;
     border-radius: 16px;
     margin-bottom: 28px;
   }

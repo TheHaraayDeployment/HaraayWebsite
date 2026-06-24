@@ -835,6 +835,10 @@ section {
   color: #fff;
   text-align: center;
 
+  @include respond-to(large) {
+    padding: 1rem;
+  }
+
   @include respond-to(small) {
     min-height: 60vh;
     padding: 0px;
@@ -849,6 +853,10 @@ section {
     font-weight: 500;
     font-family: Etherel;
 
+    @include respond-to(large) {
+      font-size: 56px;
+    }
+
     @include respond-to(small) {
       font-size: 48px;
       font-weight: 900;
@@ -861,6 +869,12 @@ section {
     font-size: 32px;
     width: 40vw;
     line-height: 36px;
+
+    @include respond-to(large) {
+      font-size: 22px;
+      width: 70vw;
+      line-height: 28px;
+    }
 
     @include respond-to(small) {
       font-size: 20px;
@@ -879,6 +893,11 @@ section {
     padding: 100px 20px;
     // background-color: red;11
 
+    @include respond-to(large) {
+      gap: 1.2rem;
+      padding: 60px 16px;
+    }
+
     @include respond-to(small) {
       padding: 100px 0 0 0px;
       // margin-left: 10%;
@@ -894,6 +913,14 @@ section {
 
     border: 2px solid white;
     border-radius: 50px;
+
+    @include respond-to(large) {
+      width: 420px;
+      height: 280px;
+      min-width: 420px;
+      min-height: 280px;
+      border-radius: 36px;
+    }
 
     @include respond-to(small) {
       width: 304px;
@@ -915,6 +942,12 @@ section {
         background-color: black;
         object-fit: cover;
         padding: 10px;
+
+        @include respond-to(large) {
+          width: 80px;
+          height: 80px;
+          top: -40px;
+        }
       }
     }
 
@@ -937,6 +970,10 @@ section {
         color: white;
         text-align: left;
 
+        @include respond-to(large) {
+          font-size: 17px;
+        }
+
         @include respond-to(small) {
           text-align: right;
           font-size: 18px;
@@ -955,6 +992,11 @@ section {
         font-family: Stara;
         height: 55%;
         overflow: scroll;
+
+        @include respond-to(large) {
+          font-size: 15px;
+          line-height: 19px;
+        }
 
         @include respond-to(small) {
           font-size: 16px !important;
@@ -979,6 +1021,12 @@ section {
         text-align: justify;
         font-size: 18px;
         padding-bottom: 20px;
+
+        @include respond-to(large) {
+          font-size: 15px;
+          width: 85%;
+          margin-left: 7.5%;
+        }
 
         @include respond-to(small) {
           margin: 1%;
@@ -1008,6 +1056,11 @@ section {
           bottom: 10px;
           left: 60px;
           font-size: 20px;
+
+          @include respond-to(large) {
+            font-size: 16px;
+            left: 45px;
+          }
         }
 
         .rating {
@@ -1106,6 +1159,11 @@ section {
     font-weight: 500;
     font-family: Etherel;
 
+    @include respond-to(large) {
+      font-size: 60px;
+      margin: 30px;
+    }
+
     @include respond-to(small) {
       font-size: 48px;
       margin-bottom: 0px;
@@ -1119,6 +1177,11 @@ section {
     width: 100%;
     display: grid;
     grid-template-columns: 1.4fr 2fr;
+
+    @include respond-to(large) {
+      display: block;
+      padding: 20px;
+    }
 
     @include respond-to(small) {
       display: block;
@@ -1135,6 +1198,14 @@ section {
     width: 52vw;
     transition: all 0.3s ease;
     animation: hover-float 5s ease-in-out infinite alternate;
+
+    @include respond-to(large) {
+      left: 0;
+      top: 5%;
+      z-index: -1;
+      width: 100%;
+      opacity: 70%;
+    }
 
     @include respond-to(small) {
       padding: 0;
