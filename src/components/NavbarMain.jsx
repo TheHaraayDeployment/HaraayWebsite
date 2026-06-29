@@ -239,6 +239,7 @@ const NavbarMain = () => {
   // All nav links shown in the expanded dropdown card
   const allNavLinks = [
     { to: "/works", label: "Work" },
+    { to: "/expertise", label: "Expertise" },
     { to: "/intelligence", label: "Intelligence" },
     { to: "/about", label: "About" },
     { to: "/blogs", label: "Articles" },
