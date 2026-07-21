@@ -434,7 +434,7 @@ export default function LandingPage() {
               </div>
             </div>
           </section> */}
-          {/* <Partners /> */}
+           <Partners />
            <section data-aos="fade-up" className={styles.testimonial}>
             <h1>Testimonials</h1>
             <p>Why Everyone Loves Haraay</p>

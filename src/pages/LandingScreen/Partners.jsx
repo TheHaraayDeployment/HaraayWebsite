@@ -24,6 +24,7 @@ const partnerImages = [
   { logo: SunLOGO, name: "Sun" },
   { logo: ViratLOGO, name: "Virat" },
   { logo: OtherLOGO, name: "Other" },
+   
 ];
 
 const Partners = () => {

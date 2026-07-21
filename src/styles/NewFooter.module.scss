@@ -1,0 +1,389 @@
+// NewFooter.module.scss
+
+$breakpoint-wide: 1600px;
+$breakpoint-desktop-sm: 1200px;
+$breakpoint-tablet: 1024px;
+$breakpoint-mobile: 768px;
+$breakpoint-small-mobile: 480px;
+
+$pink-color: #e5348c;
+$bg-color: #1C1D21;
+$text-white: #ffffff;
+$text-gray: #8a8a93;
+$hover-yellow: #F8EF6E;
+
+.footerContainer {
+  background-color: $bg-color;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 80px 5vw 40px 5vw;
+  color: $text-white;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+  position: relative;
+  z-index: 100;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 40px 20px 100px 20px;
+  }
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(30px, 5vw, 100px);
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+
+  @media (max-width: $breakpoint-tablet) {
+    gap: 30px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+  }
+}
+
+// Left side: menu and socials
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+
+  @media (max-width: $breakpoint-mobile) {
+    order: 2; // Menu goes after email section in mobile
+  }
+}
+
+.menuSection {
+  display: flex;
+  gap: clamp(20px, 4vw, 60px);
+
+  @media (max-width: $breakpoint-mobile) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+}
+
+.menuCol {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @media (max-width: $breakpoint-desktop-sm) {
+    gap: 18px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    gap: 16px;
+  }
+}
+
+.menuLinkWrapper {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    .menuText {
+      color: $hover-yellow;
+    }
+  }
+}
+
+.menuText {
+  font-family: "Stara", "Inter", sans-serif;
+  font-size: clamp(20px, 2.2vw, 32px);
+  font-weight: 800;
+  color: $text-white;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+  line-height: 1.1;
+  letter-spacing: 0.06em;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 20px;
+  }
+
+  @media (max-width: $breakpoint-small-mobile) {
+    font-size: 16px;
+  }
+}
+
+.menuLabel {
+  font-size: 11px;
+  font-weight: 500;
+  color: $text-gray;
+  margin-left: 8px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  align-self: flex-start;
+  margin-top: 4px;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 9px;
+    margin-left: 6px;
+  }
+}
+
+.mobileHidden {
+  @media (max-width: $breakpoint-mobile) {
+    display: none !important;
+  }
+}
+
+.socialsBlock {
+  margin-top: 60px;
+
+  @media (max-width: $breakpoint-mobile) {
+    margin-top: 24px;
+  }
+
+  .dots {
+    color: $text-gray;
+    font-size: 24px;
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .iconsRow {
+    display: flex;
+    gap: 12px;
+  }
+
+  .socialIconLink {
+    display: inline-block;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    text-decoration: none;
+
+    &:hover {
+      transform: translateY(-3px);
+      opacity: 0.9;
+    }
+  }
+
+  .socialIconImg {
+    width: 32px;
+    height: 32px;
+    display: block;
+    object-fit: contain;
+    border-radius: 6px;
+  }
+}
+
+// Right side: email, phone, copyright
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  min-width: 0;
+  width: 100%;
+
+  @media (max-width: $breakpoint-mobile) {
+    order: 1; // Email block goes to the top in mobile
+  }
+}
+
+.emailSection {
+  text-decoration: none;
+  color: $text-white;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 0;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    .arrowButton {
+      transform: scale(1.05) translate(2px, -2px);
+    }
+    .emailAddress {
+      color: $hover-yellow;
+    }
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    margin-bottom: 10px;
+  }
+}
+
+.emailTopRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+}
+
+.helloText {
+  font-size: clamp(32px, 5vw, 76px);
+  font-weight: 500;
+  line-height: 1.1;
+  color: $text-white;
+  margin: 0;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: clamp(28px, 8vw, 48px);
+  }
+}
+
+.arrowButton {
+  width: 90px;
+  height: 50px;
+  background-color: $pink-color;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $text-white;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+
+  @media (max-width: $breakpoint-desktop-sm) {
+    width: 70px;
+    height: 44px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    width: 60px;
+    height: 38px;
+  }
+
+  @media (max-width: $breakpoint-small-mobile) {
+    width: 50px;
+    height: 34px;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+    stroke-width: 2.5px;
+
+    @media (max-width: $breakpoint-desktop-sm) {
+      width: 20px;
+      height: 20px;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      width: 18px;
+      height: 18px;
+    }
+
+    @media (max-width: $breakpoint-small-mobile) {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+.emailAddress {
+  font-size: clamp(18px, 3.4vw, 72px);
+  font-weight: 500;
+  line-height: 1.15;
+  color: $text-white;
+  margin: 0;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+  max-width: 100%;
+
+  @media (max-width: $breakpoint-desktop-sm) {
+    font-size: clamp(16px, 3vw, 44px);
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    font-size: clamp(16px, 2.8vw, 34px);
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: clamp(16px, 6.2vw, 32px);
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+}
+
+.phoneBlock {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 25px;
+  color: $text-white;
+  font-size: 24px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $hover-yellow;
+  }
+
+  @media (max-width: $breakpoint-desktop-sm) {
+    font-size: 20px;
+    margin-top: 18px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    display: none; // Hidden on mobile as per design
+  }
+
+  .phoneIcon {
+    color: $pink-color;
+    display: flex;
+    align-items: center;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+
+      @media (max-width: $breakpoint-desktop-sm) {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+
+// Bottom row / copyright
+.bottomRow {
+  width: 100%;
+  max-width: 1600px;
+  margin: 40px auto 0 auto;
+  border-top: 1px solid rgba(255, 255, 255, 0);
+  padding-top: 0;
+
+  @media (max-width: $breakpoint-mobile) {
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 24px;
+    padding-top: 20px;
+  }
+}
+
+.copyrightText {
+  font-size: 13px;
+  color: $text-gray;
+  margin: 0;
+  line-height: 1.5;
+
+  @media (min-width: 769px) {
+    text-align: right;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    text-align: left;
+    font-size: 12px;
+  }
+}
+
+

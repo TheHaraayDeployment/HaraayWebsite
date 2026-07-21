@@ -18,7 +18,7 @@ import { AnimatePresence } from "framer-motion";
 import PageTransition from "./pages/Pagetransition/PageTransition.jsx";
 // Main Pages
 import Navbar from "./components/NavbarMain.jsx";
-import Footer from "./components/Footer.jsx";
+import NewFooter from "./components/NewFooter.jsx";
 import LandingPage from "./pages/LandingScreen/LandingPage.jsx";
 import Works from "./pages/Works.jsx";
 import AboutUs from "./pages/AboutUs.jsx";
@@ -238,7 +238,7 @@ function App() {
           {/* <Route path="/casestudy/akoya1" element={<Akoyavideo />} /> */}
           <Route path="*" element={<NotFound />} />
         </Routes>
-        {isValidRoute && <Footer />}
+        {isValidRoute && <NewFooter />}
       </div>
       {/* </PageTransition>
       </AnimatePresence> */}
