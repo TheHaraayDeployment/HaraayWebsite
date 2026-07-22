@@ -1,91 +1,76 @@
-import React, { useState, useRef, useEffect } from "react";
-import gsap from "gsap";
+import React, { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import styles from "../styles/FAQsection.module.scss";
 
-const FAQ = () => {
+const defaultFaqData = [
+  {
+    question: "Why go with Haraay?",
+    answer:
+      "Being one of India's leading creative agencies, we are known for creative, disruptive, out-of-the-box and innovative work that breaks industry standards.",
+  },
+  {
+    question: "What is creative design at Haraay?",
+    answer: "At Haraay Design Studio, we...",
+  },
+  {
+    question: "What kind of clients do we work with?",
+    answer: "We work with a range of clients...",
+  },
+];
+
+const FAQ = ({ title = "FAQ", faqData = defaultFaqData }) => {
   const [openQuestion, setOpenQuestion] = useState(null);
-  const answerRefs = useRef([]);
 
   const toggleFAQ = (index) => {
-    setOpenQuestion(openQuestion === index ? null : index);
+    setOpenQuestion((prev) => (prev === index ? null : index));
   };
-
-  useEffect(() => {
-    answerRefs.current.forEach((answer, index) => {
-      if (openQuestion === index) {
-        gsap.to(answer, {
-          height: "auto",
-          duration: 0.4,
-          ease: "power2.out", // Smooth easing
-          paddingTop: "1rem", // Adjust padding for a balanced look
-          paddingBottom: "1rem",
-        });
-      } else {
-        gsap.to(answer, {
-          height: 0,
-          duration: 0.3,
-          ease: "power2.inOut", // Smooth in-out transition
-          paddingTop: 0,
-          paddingBottom: 0,
-        });
-      }
-    });
-  }, [openQuestion]);
-
-  const faqData = [
-    {
-      question: "Why go with Haraay?",
-      answer:
-        "Being one of India's leading creative agencies, we are known for creative, disruptive, out-of-the-box and innovative work that breaks industry standards.",
-    },
-    {
-      question: "What is creative design at Haraay?",
-      answer: "At Haraay Design Studio, we...",
-    },
-    {
-      question: "What kind of clients do we work with?",
-      answer: "We work with a range of clients...",
-    },
-  ];
 
   return (
     <section className={styles.FAQ}>
-      <h2 className={styles.SectionTitle}>FAQ</h2>
+      <h2 className={styles.SectionTitle}>{title}</h2>
       <div className={styles.FAQList}>
-        {faqData.map((faq, index) => (
-          <div
-            key={index}
-            className={`${styles.FAQItem} ${
-              openQuestion === index ? styles.active : ""
-            }`}
-          >
-            <button
-              className={styles.FAQQuestion}
-              onClick={() => toggleFAQ(index)}
-            >
-              <span>{faq.question}</span>
-              <span
-                className={`${styles.Arrow} ${
-                  openQuestion === index ? styles.open : ""
-                }`}
-              >
-                {openQuestion === index ? "▲" : "▼"}
-              </span>
-            </button>
+        {faqData.map((faq, index) => {
+          const isOpen = openQuestion === index;
+          return (
             <div
-              className={styles.FAQAnswer}
-              ref={(el) => (answerRefs.current[index] = el)}
-              style={{
-                height: 0,
-                overflow: "hidden",
-                paddingTop: 0,
-                paddingBottom: 0,
-              }}
+              key={faq.question}
+              className={`${styles.FAQItem} ${isOpen ? styles.active : ""}`}
             >
-              <p>{faq.answer}</p>
+              <button
+                className={styles.FAQQuestion}
+                onClick={() => toggleFAQ(index)}
+                aria-expanded={isOpen}
+                aria-controls={`faq-answer-${index}`}
+              >
+                <span>{faq.question}</span>
+                <span
+                  className={`${styles.Toggle} ${isOpen ? styles.open : ""}`}
+                  aria-hidden="true"
+                >
+                  <span className={styles.hLine} />
+                  <span className={styles.vLine} />
+                </span>
+              </button>
+              <AnimatePresence initial={false}>
+                {isOpen && (
+                  <motion.div
+                    id={`faq-answer-${index}`}
+                    className={styles.FAQAnswer}
+                    initial={{ height: 0 }}
+                    animate={{ height: "auto" }}
+                    exit={{ height: 0 }}
+                    transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
+                    style={{ overflow: "hidden" }}
+                  >
+                    {faq.answer.split("\n\n").map((para, i) => (
+                      <p key={i}>{para}</p>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

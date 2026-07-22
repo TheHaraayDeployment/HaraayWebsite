@@ -65,6 +65,8 @@ import Nexora from "./CaseStudies/Nexora/NexoraCaseStudy.jsx";
 import CaseStudyPage from "./NewCaseStudies/CaseStudyPage/CaseStudyPage.jsx";
 // Intelligence page
 import Intelligence from "./pages/Intelligence.jsx";
+// Dummy demo — interactive 3D site plan
+import SitePlanDemo from "./pages/SitePlanDemo/SitePlanDemo.jsx";
 function App() {
   const isNavigating = useNavigationEvent(); // Get navigation event status
   const location = useLocation();
@@ -164,6 +166,7 @@ function App() {
     "/casestudy/nexora",
     "/intelligence",
     "/package",
+    "/site-plan-demo",
     "/work/nexora",
     "/work/hylete",
     "/work/bms",
@@ -208,6 +211,7 @@ function App() {
           <Route path="/expertise" element={<Expertise />} />
           <Route path="/intelligence" element={<Intelligence />} />
           <Route path="/package" element={<PackagePage />} />
+          <Route path="/site-plan-demo" element={<SitePlanDemo />} />
           <Route path="/service1" element={<Service1 />} />
           {/* <Route path="/service2" element={<Service2 />} />
           <Route path="/service3" element={<Service3 />} />

@@ -1,7 +1,5 @@
 import React from "react";
-
 import styles from "../styles/Partners.module.scss";
-
 import AkoyaLOGO from "../../assets/Logo/LOGO Akoya.png";
 import BakersLOGO from "../../assets/Logo/LOGO Bakers.png";
 import BoschLOGO from "../../assets/Logo/LOGO Bosch.png";
@@ -14,6 +12,7 @@ import ViratLOGO from "../../assets/Logo/LOGO Virat.png";
 import OtherLOGO from "../../assets/Logo/LOGO h.png";
 
 const partnerImages = [
+
   { logo: AkoyaLOGO, name: "Akoya" },
   { logo: BakersLOGO, name: "Bakers" },
   { logo: BoschLOGO, name: "Bosch" },
@@ -24,7 +23,7 @@ const partnerImages = [
   { logo: SunLOGO, name: "Sun" },
   { logo: ViratLOGO, name: "Virat" },
   { logo: OtherLOGO, name: "Other" },
-   
+
 ];
 
 const Partners = () => {
