@@ -26,17 +26,12 @@ export default defineConfig({
     fixPackageRouteCollision(),
 
     viteImagemin({
+      disable: true,
+      filter: /\.(png|jpe?g|gif|webp)$/i,
       mozjpeg: { quality: 75 },
       pngquant: { quality: [0.7, 0.8], speed: 4 },
       gifsicle: false,
-      svgo: {
-        plugins: [
-          {
-            name: 'removeViewBox',
-            active: false,
-          },
-        ],
-      },
+      svgo: false,
       webp: { quality: 75 },
     }),
   ],
