@@ -20,209 +20,999 @@ $breakpoint-extra-large: 1200px;
     @media (max-width: $breakpoint-large) {
       @content;
     }
+  } @else if $breakpoint==xlarge {
+    @media (max-width: $breakpoint-extra-large) {
+      @content;
+    }
   }
 }
 
+// --------------------------VARIABLES --------------------------------------
+$bg-dark: #1c1d21;
+$text-white: #ffffff;
+$text-muted: #a0a0a8;
+$accent-pink: #e5348c;
+$font-display: "Etherel", Georgia, "Times New Roman", serif;
+$font-sans: "Inter", "Lato", sans-serif;
+$font-body: "Stara", "Inter", sans-serif;
+
+// --------------------------BASE --------------------------------------
 .packagepage {
   width: 100%;
   min-height: 100vh;
-  background-color: #1c1d21;
+  background-color: $bg-dark;
   padding-top: 50px;
-}
+  overflow-x: hidden;
+  color: $text-white;
+  font-family: $font-sans;
 
-// testimonials
-.testimonial {
-  overflow: auto;
-  position: relative;
-  padding: 2rem;
-  // background-color: #1a1a1a;
-  color: #fff;
-  text-align: center;
-  @include respond-to(small) {
-    min-height: 60vh;
-    padding: 0px;
-    overflow: hidden;
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: $font-sans;
   }
 
+  section {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding-left: clamp(20px, 4vw, 60px);
+    padding-right: clamp(20px, 4vw, 60px);
+  }
+}
+
+// Accent italic word used inside headings ("Possibilities", "finally")
+%accent-word {
+  font-family: $font-display;
+  font-style: italic;
+  font-weight: 500;
+}
+
+// --------------------------BUTTONS --------------------------------------
+%pill-button {
+  border: none;
+  border-radius: 999px;
+  padding: 14px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+  color: $text-white;
+  white-space: nowrap;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  @include respond-to(small) {
+    padding: 12px 22px;
+    font-size: 14px;
+  }
+}
+
+// ============================================================================
+// 1. HERO SECTION
+// ============================================================================
+.sectionOne {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: stretch;
+  gap: clamp(30px, 4vw, 60px);
+  padding-top: 30px;
+  padding-bottom: 60px;
+  width: 100%;
+
+  @include respond-to(medium) {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 32px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+}
+
+.leftDiv {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.topDiv {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.buttonsDiv {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-bottom: clamp(30px, 4vw, 60px);
+
+  @include respond-to(medium) {
+    justify-content: flex-start;
+    margin-bottom: 24px;
+  }
+}
+
+.Herobutton {
+  @extend %pill-button;
+  background-color: $accent-pink;
+  box-shadow: 0 8px 24px rgba(229, 52, 140, 0.35);
+
+  &:hover {
+    box-shadow: 0 12px 30px rgba(229, 52, 140, 0.5);
+  }
+}
+
+.Herobutton2 {
+  @extend %pill-button;
+  background-color: #2b2c31;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  &:hover {
+    background-color: #35363c;
+  }
+}
+
+.title {
+  width: 100%;
+
   h1 {
-    // font-size: 3rem;
-    text-align: left;
-    font-size: 96px;
-    margin: 40px 0 0 0;
-    font-weight: 500;
-    font-family: Etherel;
+    font-size: clamp(38px, 5.2vw, 84px);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 24px 0;
+    color: $text-white;
+
     @include respond-to(small) {
-      font-size: 48px;
-      font-weight: 900;
+      font-size: 34px;
+      line-height: 1.08;
+      margin-bottom: 16px;
+    }
+  }
+}
+
+.bottomMeta {
+  width: 100%;
+  margin-top: 40px;
+
+  .dividerLine {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+    margin-bottom: 24px;
+  }
+
+  h3 {
+    @extend %accent-word;
+    font-size: clamp(22px, 2.4vw, 32px);
+    margin: 0 0 6px 0;
+    font-weight: 500;
+    color: $text-white;
+
+    @include respond-to(small) {
+      font-size: 20px;
     }
   }
 
   p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    font-size: 32px;
-    width: 40vw;
-    line-height: 36px;
-    @include respond-to(small) {
-      font-size: 20px;
-      width: 100%;
-    }
+    font-size: clamp(15px, 1.4vw, 18px);
+    color: $text-muted;
+    margin: 0;
+  }
+}
+
+.rightDiv {
+  width: 100%;
+  height: 100%;
+  min-height: 460px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 
-  .testimonialContainer {
+  @include respond-to(medium) {
+    height: auto;
+    min-height: 320px;
+    aspect-ratio: 16 / 10;
+  }
+
+  @include respond-to(small) {
+    aspect-ratio: 4 / 3.2;
+    min-height: 260px;
+    border-radius: 18px;
+  }
+}
+
+// ============================================================================
+// 2. ONE SUBSCRIPTION. ENDLESS POSSIBILITIES.
+// ============================================================================
+.sectionTwo {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  text-align: center;
+  width: 100%;
+
+  @include respond-to(medium) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  @include respond-to(small) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  h2 {
+    font-size: clamp(28px, 4vw, 52px);
+    font-weight: 700;
+    line-height: 1.2;
+    width: 100%;
+    margin: 0 auto 48px;
+    color: $text-white;
+
+    span {
+      @extend %accent-word;
+      font-weight: 500;
+    }
+
+    @include respond-to(small) {
+      margin-bottom: 32px;
+    }
+  }
+}
+
+// ---- Billing toggle (Monthly / Yearly) ------------------------------------
+.billingToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: clamp(32px, 5vw, 56px);
+  width: 100%;
+}
+
+.toggleLabel {
+  font-size: 15px;
+  font-weight: 500;
+  color: $text-muted;
+  transition: color 0.25s ease;
+}
+
+.toggleLabelActive {
+  @extend .toggleLabel;
+  color: $text-white;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toggleSavings {
+  font-size: 12px;
+  font-weight: 700;
+  color: $accent-pink;
+  background: rgba(229, 52, 140, 0.12);
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+
+.toggleSwitch {
+  position: relative;
+  width: 56px;
+  height: 30px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: #2b2c31;
+  cursor: pointer;
+  padding: 0;
+  flex: 0 0 auto;
+}
+
+.toggleThumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: $accent-pink;
+  transition: transform 0.25s ease;
+}
+
+.toggleThumbRight {
+  transform: translateX(26px);
+}
+
+// ---- Pricing cards ----------------------------------------------------
+.pricingGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+  text-align: left;
+  box-sizing: border-box;
+
+  @include respond-to(large) {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+.pricingCard {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  background: #212227;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: clamp(24px, 3vw, 36px);
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+}
+
+.pricingCardPopular {
+  border-color: $accent-pink;
+  background: #24191f;
+  box-shadow: 0 20px 50px rgba(229, 52, 140, 0.15);
+}
+
+.popularBadge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: $accent-pink;
+  color: $text-white;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.pricingHead {
+  margin-bottom: 18px;
+
+  h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: $text-white;
+    margin: 0 0 4px 0;
+  }
+}
+
+.pricingTagline {
+  color: $text-muted;
+  font-size: 14px;
+  margin: 0;
+}
+
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.priceValue {
+  font-size: clamp(28px, 3vw, 36px);
+  font-weight: 800;
+  color: $text-white;
+}
+
+.pricePeriod {
+  color: $text-muted;
+  font-size: 14px;
+}
+
+.priceBilledNote {
+  color: $text-muted;
+  font-size: 13px;
+  margin: 0 0 18px 0;
+}
+
+.priceRow + .pricingMeta {
+  margin-top: 16px;
+}
+
+.pricingMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.pricingMetaRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: $text-muted;
+  font-size: 14px;
+
+  svg {
+    color: $accent-pink;
+    flex: 0 0 auto;
+  }
+}
+
+.pricingDivider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  margin: 8px 0 20px;
+}
+
+.pricingDeliverablesTitle {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $text-muted;
+  margin: 0 0 14px 0;
+}
+
+.featureList {
+  list-style: none;
+  margin: 0 0 28px 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1 1 auto;
+
+  li {
     display: flex;
-    position: relative;
-    gap: 2rem;
-    // overflow-x: hidden; // Prevent overflowing
-    // cursor: grab;
-    width: 100vw;
-    overflow-x: scroll;
-    padding: 100px 20px;
-    // background-color: red;11
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    color: $text-white;
+    line-height: 1.4;
+  }
+}
 
-    @include respond-to(small) {
-      padding: 100px 0 0 0px;
-      // margin-left: 10%;
+.featureExcluded {
+  color: $text-muted !important;
+  text-decoration: line-through;
+}
+
+.featureIconYes {
+  color: #4ade80;
+  flex: 0 0 auto;
+  margin-top: 2px;
+}
+
+.featureIconNo {
+  color: $text-muted;
+  flex: 0 0 auto;
+  margin-top: 2px;
+}
+
+.pricingCta {
+  @extend %pill-button;
+  width: 100%;
+  background: #2b2c31;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+
+  &:hover {
+    background: #35363c;
+  }
+}
+
+.pricingCtaPrimary {
+  @extend %pill-button;
+  width: 100%;
+  background: $accent-pink;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(229, 52, 140, 0.35);
+
+  &:hover {
+    box-shadow: 0 12px 30px rgba(229, 52, 140, 0.5);
+  }
+}
+
+.CardsThree {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+  box-sizing: border-box;
+
+  @include respond-to(medium) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.possibilityCardLarge {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 3 / 3.6;
+  background: #2b2c31;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.06);
+  }
+
+  @include respond-to(small) {
+    aspect-ratio: 3 / 2.6;
+  }
+}
+
+// ============================================================================
+// 3. DESIGN, FINALLY DONE RIGHT
+// ============================================================================
+.sectionThree {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+
+  .Container {
+    text-align: center;
+    width: 100%;
+
+    h2 {
+      font-size: clamp(28px, 4vw, 52px);
+      font-weight: 700;
+      margin: 0 0 20px 0;
+      padding-left: clamp(20px, 4vw, 60px);
+      padding-right: clamp(20px, 4vw, 60px);
+
+      span {
+        @extend %accent-word;
+        font-weight: 500;
+      }
+    }
+
+    p {
+      color: $text-muted;
+      font-size: clamp(15px, 1.5vw, 18px);
+      line-height: 1.6;
+      width: 100%;
+      margin: 0 auto 40px;
+      padding-left: clamp(20px, 4vw, 60px);
+      padding-right: clamp(20px, 4vw, 60px);
     }
   }
 
-  .testimonialCard {
-    position: relative;
-    width: 644px;
-    height: 298px;
-    min-width: 644px;
-    min-height: 300px;
+  .cards {
+    width: 100%;
+  }
 
-    border: 2px solid white;
-    border-radius: 50px;
+  .card {
+    width: 100%;
+  }
+}
+
+// ============================================================================
+// 4. TESTIMONIALS
+// ============================================================================
+.testimonial {
+  overflow: visible;
+  position: relative;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+
+  @include respond-to(small) {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  p {
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 700;
+    margin: 0 0 20px;
+    color: $text-white;
+  }
+}
+
+.testimonialWrap {
+  position: relative;
+  width: 100%;
+}
+
+.testimonialContainer {
+  display: flex;
+  position: relative;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  padding: 40px 4px 24px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  width: 100%;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @include respond-to(small) {
+    padding: 30px 4px 20px;
+    gap: 1rem;
+  }
+}
+
+.testimonialCard {
+  position: relative;
+  scroll-snap-align: start;
+  width: 560px;
+  min-width: 460px;
+  min-height: 320px;
+  text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 44px;
+  padding: 36px 32px 28px;
+  background: rgba(255, 255, 255, 0.02);
+
+  @include respond-to(small) {
+    width: 82vw;
+    min-width: 260px;
+    min-height: 300px;
+    padding: 30px 22px 22px;
+    border-radius: 32px;
+  }
+
+  .profile {
+    img {
+      border-radius: 50%;
+      width: 76px;
+      height: 76px;
+      position: absolute;
+      top: -38px;
+      left: 32px;
+      z-index: 2;
+      border: 2px solid $bg-dark;
+      background-color: black;
+      object-fit: cover;
+      box-shadow: 0 0 0 3px rgba(200, 230, 80, 0.55);
+    }
+  }
+
+  .content {
+    padding-top: 24px;
+  }
+
+  .testname {
+    h3 {
+      font-size: 20px;
+      margin: 0 0 4px 0;
+      color: white;
+      font-weight: 700;
+    }
+  }
+
+  .testrole {
+    color: $text-muted;
+    font-size: 14px;
+    margin: 0 0 18px 0;
+    text-transform: capitalize;
+  }
+
+  .review {
+    font-size: 16px;
+    color: #d6d6db;
+    line-height: 1.55;
+    margin: 0 0 22px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    padding-bottom: 20px;
 
     @include respond-to(small) {
-      width: 304px;
-      height: 298px;
-      min-width: 314px;
-      min-height: 300px;
+      font-size: 14px;
     }
-    .profile {
+  }
+
+  .caseStudy {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    .caseStudyLink {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: $text-white;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.25s ease;
+
+      &:hover {
+        color: $accent-pink;
+      }
+    }
+
+    .rating {
+      display: flex;
+      align-items: center;
+
+      span {
+        margin-right: 0.5rem;
+        font-weight: 600;
+      }
+
+      .stars {
+        color: #ffd700;
+        letter-spacing: 2px;
+      }
+
       img {
-        border-radius: 50%;
-        width: 100px;
-        height: 100px;
-        position: absolute;
-        top: -50px;
-        z-index: +10;
-        left: 10%;
-        border: 2px solid white;
-        background-color: black;
-        object-fit: cover;
-        padding: 10px;
-      }
-    }
-
-    .content {
-      .testname {
-        position: absolute;
-        // background-color: #b8e7e7;
-        width: 50%;
-        margin-left: 32%;
-        @include respond-to(small) {
-          width: 100%;
-          margin-left: 20%;
-        }
-      }
-      h3 {
-        font-size: 20px;
-        margin: 0.5rem 0 0 0;
-        color: white;
-        text-align: left;
-        @include respond-to(small) {
-          text-align: right;
-          font-size: 18px;
-          width: 70%;
-          // background-color: red;
-          margin: 30px 0 0 0;
-        }
-      }
-
-      p {
-        font-size: 18px;
-        color: #ffffff;
-        text-align: left;
-        // margin-top: -10px;
-        line-height: 22px;
-        font-family: Stara;
-        height: 55%;
-        overflow: scroll;
-        @include respond-to(small) {
-          font-size: 16px !important;
-        }
-      }
-      .testrole {
-        @include respond-to(small) {
-          // display: none;
-          text-align: right;
-          width: 60%;
-        }
-      }
-      .review {
-        position: absolute;
-        bottom: 20px; /* Adjust the value as needed */
-        border-bottom: 2px solid white;
-        width: 80%;
-        margin-left: 10%;
-        text-align: justify;
-        font-size: 18px;
-        padding-bottom: 20px;
-        @include respond-to(small) {
-          margin: 1%;
-          border-bottom: none;
-          padding-bottom: 5px;
-          width: 98%;
-          // margin-left: 0;
-        }
-      }
-      .caseStudy {
-        // position: absolute;
-        // top: 80%;
-        // display: flex;
-        // justify-content: space-between;
-        // align-items: end;
-        // background-color: #b8e7e7;
-        width: 90%;
-        // display: none;
-
-        p {
-          opacity: 0;
-        }
-        h4 {
-          position: absolute;
-          bottom: 10px;
-          left: 60px;
-          font-size: 20px;
-        }
-        .rating {
-          position: absolute;
-          bottom: 10px;
-          right: 35%;
-          display: flex;
-          align-items: center;
-          @include respond-to(small) {
-            display: none;
-          }
-
-          span {
-            margin-right: 0.5rem;
-          }
-
-          .stars {
-            color: #ffd700; // Gold stars
-          }
-
-          img {
-            width: 20px;
-            margin-left: 0.5rem;
-          }
-        }
+        width: 20px;
+        margin-left: 0.5rem;
       }
     }
   }
 }
+
+.arrowbtns {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 12px;
+
+  button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    line-height: 0;
+    transition: transform 0.25s ease;
+
+    &:hover {
+      transform: scale(1.08);
+    }
+  }
+}
+
+// ============================================================================
+// 5. LARGE BANNER
+// ============================================================================
+.bannerSection {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  text-align: center;
+  width: 100%;
+}
+
+.bannerDots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  transition: background 0.3s ease, width 0.3s ease;
+}
+
+.dotActive {
+  background: $accent-pink;
+  width: 24px;
+  border-radius: 4px;
+}
+
+.bannerImageWrap {
+  width: 100%;
+  border-radius: clamp(20px, 3vw, 40px);
+  overflow: hidden;
+  aspect-ratio: 21 / 9;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  @include respond-to(medium) {
+    aspect-ratio: 16 / 9;
+  }
+
+  @include respond-to(small) {
+    aspect-ratio: 4 / 3;
+    border-radius: 20px;
+  }
+}
+
+// ============================================================================
+// 7. FEATURE CARDS (Pause anytime / Try it for a week)
+// ============================================================================
+.featureSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(24px, 3vw, 40px);
+  padding-top: 70px;
+  padding-bottom: 70px;
+  width: 100%;
+
+  @include respond-to(medium) {
+    grid-template-columns: 1fr;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+.featureCard {
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: clamp(28px, 4vw, 44px);
+  padding: clamp(40px, 5vw, 64px) clamp(24px, 4vw, 48px);
+  background: rgba(255, 255, 255, 0.03);
+  transition: border-color 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    border-color: $accent-pink;
+    transform: translateY(-4px);
+  }
+
+  h3 {
+    font-size: clamp(24px, 3.2vw, 38px);
+    font-weight: 500;
+    margin: 0 0 12px 0;
+    color: $text-white;
+    line-height: 1.2;
+  }
+
+  p {
+    color: $text-muted;
+    font-size: clamp(15px, 1.4vw, 18px);
+    line-height: 1.55;
+    margin: 0 auto;
+    max-width: 480px;
+  }
+
+  @include respond-to(small) {
+    padding: 32px 24px;
+  }
+}
+
+// ============================================================================
+// 9. FINAL CTA
+// ============================================================================
+.ctaSection {
+  padding-top: 40px;
+  padding-bottom: 100px;
+  width: 100%;
+
+  @include respond-to(small) {
+    padding-bottom: 60px;
+  }
+}
+
+.ctaBox {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  background: #f3efe9;
+  border-radius: clamp(20px, 3vw, 32px);
+  padding: clamp(28px, 4vw, 56px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+
+  @include respond-to(medium) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.ctaLeft {
+  color: #1c1d21;
+  min-width: 0;
+  max-width: 100%;
+
+  h3 {
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    color: #1c1d21;
+  }
+}
+
+.ctaEmail {
+  p {
+    margin: 0 0 4px 0;
+    color: #6b6b6b;
+    font-size: 14px;
+  }
+
+  a {
+    color: #1c1d21;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover {
+      color: $accent-pink;
+    }
+  }
+}
+
+.ctaRight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1 1 60%;
+  width: 100%;
+  max-width: 100%;
+  justify-content: flex-end;
+  min-width: 0;
+
+  @include respond-to(medium) {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  @include respond-to(small) {
+    flex-wrap: wrap;
+  }
+}
+
+.ctaBookButton {
+  @extend %pill-button;
+  background-color: $accent-pink;
+  flex: 1 1 auto;
+  width: 100%;
+  padding: 20px 30px;
+  font-size: 17px;
+  box-shadow: 0 8px 24px rgba(229, 52, 140, 0.3);
+}
+
+.ctaArrowButton {
+  flex: 0 0 auto;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background-color: #1c1d21;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+
+  &:hover {
+    transform: rotate(-45deg);
+  }
+}
+

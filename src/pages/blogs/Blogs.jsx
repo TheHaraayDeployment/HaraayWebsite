@@ -62,37 +62,37 @@ import blog4Img from "./blog4b.png";
 import blog2Img from "../../assets/blogs/blog2heroimg.jpg";
 const blogs = [
   {
-    id: "blog01",
+    id: "blog03",
     title:
       "They said AI would replace design. Instead, it proved how much it matters.",
     description:
       "The most ironic outcome of the AI design revolution is this: it has made strategic design more valuable, more visible, and more urgently necessary than at any point in the last decade. Here is why the prediction got it exactly backwards.",
-    tags: ["AI", "Haraay' AI", "Technology"],
-    image: blog1Img,
-  },
-  {
-    id: "blog02",
-    title: "Why I started a design studio when everyone said AI would end it.",
-    description:
-      'When I was building the foundations of Haraay, the most common question I received was not "what kind of work will you do?" It was: "why now when AI can already do this?" Here is what I have learned since.',
-    tags: ["Haraay", "Personal Story", "Haraay's Story"],
-    image: blog2Img,
-  },
-  {
-    id: "blog03",
-    title: "10 Rules for Great Branding & Design",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus.",
-    tags: ["Brand Identity", "3D Design", "Graphic Designing"],
+    tags: ["AI", "Haraay AI", "Technology"],
     image: blog3Img,
   },
   {
     id: "blog04",
+    title: "Why I started a design studio when everyone said AI would end it.",
+    description:
+      'When I was building the foundations of Haraay, the most common question I received was not "what kind of work will you do?" It was: "why now when AI can already do this?" Here is what I have learned since.',
+    tags: ["Haraay", "Personal Story", "Haraay's Story"],
+    image: blog4Img,
+  },
+  {
+    id: "blog01",
     title: "10 Rules for Great Branding & Design",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus.",
+      "Developing a distinctive creative style and voice is key to standing out in a crowded field. It sets you apart, makes your work unforgettable, and positions you as desirable in the job market.",
     tags: ["Brand Identity", "3D Design", "Graphic Designing"],
-    image: blog4Img,
+    image: blog1Img,
+  },
+  {
+    id: "blog02",
+    title: "6 Steps to Creating a Personal Style",
+    description:
+      "Every groundbreaking idea begins with a simple yet powerful question: Why? Take a moment to reflect on what frustrates or disappoints you about the world around you and let it guide your thinking.",
+    tags: ["Personal Style", "Branding", "Creative Voice"],
+    image: blog2Img,
   },
 ];
 

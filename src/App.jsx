@@ -18,7 +18,7 @@ import { AnimatePresence } from "framer-motion";
 import PageTransition from "./pages/Pagetransition/PageTransition.jsx";
 // Main Pages
 import Navbar from "./components/NavbarMain.jsx";
-import Footer from "./components/Footer.jsx";
+import NewFooter from "./components/NewFooter.jsx";
 import LandingPage from "./pages/LandingScreen/LandingPage.jsx";
 import Works from "./pages/Works.jsx";
 import AboutUs from "./pages/AboutUs.jsx";
@@ -65,6 +65,8 @@ import Nexora from "./CaseStudies/Nexora/NexoraCaseStudy.jsx";
 import CaseStudyPage from "./NewCaseStudies/CaseStudyPage/CaseStudyPage.jsx";
 // Intelligence page
 import Intelligence from "./pages/Intelligence.jsx";
+// Dummy demo — interactive 3D site plan
+import SitePlanDemo from "./pages/SitePlanDemo/SitePlanDemo.jsx";
 function App() {
   const isNavigating = useNavigationEvent(); // Get navigation event status
   const location = useLocation();
@@ -164,6 +166,7 @@ function App() {
     "/casestudy/nexora",
     "/intelligence",
     "/package",
+    "/site-plan-demo",
     "/work/nexora",
     "/work/hylete",
     "/work/bms",
@@ -208,6 +211,7 @@ function App() {
           <Route path="/expertise" element={<Expertise />} />
           <Route path="/intelligence" element={<Intelligence />} />
           <Route path="/package" element={<PackagePage />} />
+          <Route path="/site-plan-demo" element={<SitePlanDemo />} />
           <Route path="/service1" element={<Service1 />} />
           {/* <Route path="/service2" element={<Service2 />} />
           <Route path="/service3" element={<Service3 />} />
@@ -238,7 +242,7 @@ function App() {
           {/* <Route path="/casestudy/akoya1" element={<Akoyavideo />} /> */}
           <Route path="*" element={<NotFound />} />
         </Routes>
-        {isValidRoute && <Footer />}
+        {isValidRoute && <NewFooter />}
       </div>
       {/* </PageTransition>
       </AnimatePresence> */}
